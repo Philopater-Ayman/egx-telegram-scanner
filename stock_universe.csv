@@ -1,87 +1,191 @@
 Ticker,Company Name,Sector,Index Tags,Yahoo Symbol,Active
-COMI.CA,Commercial International Bank Egypt,Banking & Financials,EGX30,COMI.CA,TRUE
-HDBK.CA,Housing and Development Bank Egypt,Banking & Financials,EGX30,HDBK.CA,TRUE
-CIEB.CA,Credit Agricole Egypt,Banking & Financials,EGX30,CIEB.CA,TRUE
-ADIB.CA,Abu Dhabi Islamic Bank Egypt,Banking & Financials,EGX30,ADIB.CA,TRUE
-SAUD.CA,Al Baraka Bank Egypt,Banking & Financials,EGX70,SAUD.CA,TRUE
-HRHO.CA,EFG Holding,Non-bank Financial Services,EGX30,HRHO.CA,TRUE
-EFIH.CA,E-Finance For Digital and Financial Investments,Fintech & Payments,EGX30,EFIH.CA,TRUE
-FWRY.CA,Fawry For Banking Technology and Electronic Payments,Fintech & Payments,EGX30,FWRY.CA,TRUE
-TMGH.CA,Talaat Moustafa Group Holding,Real Estate,EGX30,TMGH.CA,TRUE
-EMFD.CA,Emaar Misr for Development,Real Estate,EGX30,EMFD.CA,TRUE
-OCDI.CA,Sixth of October Development and Investment,Real Estate,EGX30,OCDI.CA,TRUE
-HELI.CA,Heliopolis Housing,Real Estate,EGX70,HELI.CA,TRUE
-ORHD.CA,Orascom Development Egypt,Real Estate,EGX70,ORHD.CA,TRUE
-PHDC.CA,Palm Hills Development,Real Estate,EGX70,PHDC.CA,TRUE
-SWDY.CA,Elsewedy Electric,Industrial Goods & Cables,EGX30,SWDY.CA,TRUE
-ORAS.CA,Orascom Construction,Industrial Goods & Construction,EGX30,ORAS.CA,TRUE
-SKPC.CA,Sidi Kerir Petrochemicals,Basic Resources & Chemicals,EGX30,SKPC.CA,TRUE
-ABUK.CA,Abu Qir Fertilizers,Basic Resources & Chemicals,EGX30,ABUK.CA,TRUE
-EGAL.CA,Egypt Aluminum,Basic Resources & Chemicals,EGX30,EGAL.CA,TRUE
-MFPC.CA,Misr Fertilizers Production,Basic Resources & Chemicals,EGX30,MFPC.CA,TRUE
-EGCH.CA,Egyptian Chemical Industries Kima,Basic Resources & Chemicals,EGX70,EGCH.CA,TRUE
-IRON.CA,Egyptian Iron and Steel,Basic Resources & Chemicals,EGX70,IRON.CA,TRUE
-AMOC.CA,Alexandria Mineral Oils,Energy & Petrochemicals,EGX70,AMOC.CA,TRUE
-EKHO.CA,Egypt Kuwait Holding,Energy & Petrochemicals,EGX30,EKHO.CA,TRUE
-EFID.CA,Edita Food Industries,"Food, Beverages & Tobacco",EGX30,EFID.CA,TRUE
-EAST.CA,Eastern Company,"Food, Beverages & Tobacco",EGX30,EAST.CA,TRUE
-JUFO.CA,Juhayna Food Industries,"Food, Beverages & Tobacco",EGX70,JUFO.CA,TRUE
-DOMT.CA,Arabian Food Industries Domty,"Food, Beverages & Tobacco",EGX70,DOMT.CA,TRUE
-POUL.CA,Cairo Poultry,"Food, Beverages & Tobacco",EGX70,POUL.CA,TRUE
-ETEL.CA,Telecom Egypt,Telecommunications,EGX30,ETEL.CA,TRUE
-CLHO.CA,Cleopatra Hospital Group,Healthcare,EGX30,CLHO.CA,TRUE
-ISPH.CA,Ibn Sina Pharma,Healthcare,EGX70,ISPH.CA,TRUE
-RMDA.CA,Tenth of Ramadan Pharmaceutical Industries,Healthcare,EGX70,RMDA.CA,TRUE
-CIRA.CA,Cairo Investment and Real Estate Development,Education,EGX70,CIRA.CA,TRUE
-TALM.CA,Talim Management Services,Education,EGX70,TALM.CA,TRUE
-ACGC.CA,Arab Cotton Ginning,Textiles,EGX70,ACGC.CA,TRUE
-KABO.CA,El Nasr Clothing and Textiles,Textiles,EGX70,KABO.CA,TRUE
-ALCN.CA,Alexandria Containers and Cargo Handling,Transportation & Logistics,EGX70,ALCN.CA,TRUE
-CSAG.CA,Canal Shipping Agencies,Transportation & Logistics,EGX70,CSAG.CA,TRUE
-MPCO.CA,Mansoura Poultry,Agriculture & Food Production,EGX70,MPCO.CA,TRUE
-OLFI.CA,Obour Land For Food Industries,"Food, Beverages & Tobacco",EGX70,OLFI.CA,TRUE
-RAYA.CA,Raya Holding,Technology & Distribution,EGX70,RAYA.CA,TRUE
-BTFH.CA,Beltone Holding,Non-bank Financial Services,EGX70,BTFH.CA,TRUE
-MTIE.CA,MM Group For Industry and International Trade,Automotive & Distribution,EGX70,MTIE.CA,TRUE
-CNFN.CA,Contact Financial Holding,Non-bank Financial Services,EGX70,CNFN.CA,TRUE
-ATLC.CA,Al Tawfeek Leasing,Non-bank Financial Services,EGX70,ATLC.CA,TRUE
-OIH.CA,Orascom Investment Holding,Investment Holding,EGX70,OIH.CA,TRUE
-PHAR.CA,Egyptian International Pharmaceutical Industries,Healthcare,EGX70,PHAR.CA,TRUE
-LCSW.CA,Lecico Egypt,Building Materials,EGX70,LCSW.CA,TRUE
-MBSC.CA,Misr Beni Suef Cement,Building Materials,EGX70,MBSC.CA,TRUE
-ARCC.CA,Arabian Cement Company,Building Materials,EGX70,ARCC.CA,TRUE
-PRCL.CA,Ceramic and Porcelain,Building Materials,EGX70,PRCL.CA,TRUE
-SPIN.CA,Alexandria Spinning and Weaving,Textiles,EGX70,SPIN.CA,TRUE
-ARAB.CA,Arab Developers Holding,Real Estate,EGX70,ARAB.CA,TRUE
-AMER.CA,Amer Group Holding,Real Estate,EGX70,AMER.CA,TRUE
-MENA.CA,Mena Touristic and Real Estate Investment,Real Estate,EGX70,MENA.CA,TRUE
-ZMID.CA,Zahraa Maadi Investment and Development,Real Estate,EGX70,ZMID.CA,TRUE
-UNIT.CA,United Housing and Development,Real Estate,EGX70,UNIT.CA,TRUE
-PRDC.CA,Pioneers Properties For Urban Development,Real Estate,EGX70,PRDC.CA,TRUE
-GBCO.CA,GB Corp,Automotive & Distribution,EGX70,GBCO.CA,TRUE
-BINV.CA,B Investments Holding,Investment Holding,EGX70,BINV.CA,TRUE
-SCTS.CA,Suez Canal Company for Technology Settling,Education,EXPANDED,SCTS.CA,TRUE
-CANA.CA,Suez Canal Bank,Banking & Financials,EXPANDED,CANA.CA,TRUE
-FERC.CA,Ferchem Misr Fertilizers and Chemicals,Basic Resources & Chemicals,EXPANDED,FERC.CA,TRUE
-FAITA.CA,Faisal Islamic Bank of Egypt A,Banking & Financials,EXPANDED,FAITA.CA,TRUE
-FAIT.CA,Faisal Islamic Bank of Egypt,Banking & Financials,EXPANDED,FAIT.CA,TRUE
-EXPA.CA,Export Development Bank of Egypt,Banking & Financials,EXPANDED,EXPA.CA,TRUE
-CCAP.CA,Qalaa Holdings,Investment Holding,EXPANDED,CCAP.CA,TRUE
-EFIC.CA,Egyptian Financial and Industrial,Basic Resources & Chemicals,EXPANDED,EFIC.CA,TRUE
-EGTS.CA,Egyptian Resorts Company,Real Estate,EXPANDED,EGTS.CA,TRUE
-MCQE.CA,Misr Cement Qena,Building Materials,EXPANDED,MCQE.CA,TRUE
-SCEM.CA,Sinai Cement,Building Materials,EXPANDED,SCEM.CA,TRUE
-EGSA.CA,Egyptian Satellites,Telecommunications,EXPANDED,EGSA.CA,TRUE
-ORWE.CA,Oriental Weavers,Textiles,EXPANDED,ORWE.CA,TRUE
-CICH.CA,CI Capital Holding,Non-bank Financial Services,EXPANDED,CICH.CA,TRUE
-EGBE.CA,Egyptian Gulf Bank,Banking & Financials,EXPANDED,EGBE.CA,TRUE
-ATQA.CA,Misr National Steel Ataqa,Basic Resources & Chemicals,EXPANDED,ATQA.CA,TRUE
-MOIL.CA,Maridive and Oil Services,Energy & Petrochemicals,EXPANDED,MOIL.CA,TRUE
-MHOT.CA,Misr Hotels,Tourism & Leisure,EXPANDED,MHOT.CA,TRUE
-IFAP.CA,International Agricultural Products,Agriculture & Food Production,EXPANDED,IFAP.CA,TRUE
-MIPH.CA,Minapharm Pharmaceuticals,Healthcare,EXPANDED,MIPH.CA,TRUE
-NIPH.CA,El Nile Pharmaceuticals,Healthcare,EXPANDED,NIPH.CA,TRUE
-ISMQ.CA,Iron and Steel for Mines and Quarries,Basic Resources & Chemicals,EXPANDED,ISMQ.CA,TRUE
-EGAS.CA,Natural Gas and Mining Project,Energy & Petrochemicals,EXPANDED,EGAS.CA,TRUE
-ELEC.CA,Electro Cable Egypt,Industrial Goods & Cables,EXPANDED,ELEC.CA,TRUE
-SUGR.CA,Delta Sugar,"Food, Beverages & Tobacco",EXPANDED,SUGR.CA,TRUE
+COMI.CA,Commercial International Bank Egypt,Banking & Financials,EGX30,COMI.CA,True
+HDBK.CA,Housing and Development Bank Egypt,Banking & Financials,EGX30,HDBK.CA,True
+CIEB.CA,Credit Agricole Egypt,Banking & Financials,EGX30,CIEB.CA,True
+ADIB.CA,Abu Dhabi Islamic Bank Egypt,Banking & Financials,EGX30,ADIB.CA,True
+SAUD.CA,Al Baraka Bank Egypt,Banking & Financials,EGX70,SAUD.CA,True
+HRHO.CA,EFG Holding,Non-bank Financial Services,EGX30,HRHO.CA,True
+EFIH.CA,E-Finance For Digital and Financial Investments,Fintech & Payments,EGX30,EFIH.CA,True
+FWRY.CA,Fawry For Banking Technology and Electronic Payments,Fintech & Payments,EGX30,FWRY.CA,True
+TMGH.CA,Talaat Moustafa Group Holding,Real Estate,EGX30,TMGH.CA,True
+EMFD.CA,Emaar Misr for Development,Real Estate,EGX30,EMFD.CA,True
+OCDI.CA,Sixth of October Development and Investment,Real Estate,EGX30,OCDI.CA,True
+HELI.CA,Heliopolis Housing,Real Estate,EGX70,HELI.CA,True
+ORHD.CA,Orascom Development Egypt,Real Estate,EGX70,ORHD.CA,True
+PHDC.CA,Palm Hills Development,Real Estate,EGX70,PHDC.CA,True
+SWDY.CA,Elsewedy Electric,Industrial Goods & Cables,EGX30,SWDY.CA,True
+ORAS.CA,Orascom Construction,Industrial Goods & Construction,EGX30,ORAS.CA,True
+SKPC.CA,Sidi Kerir Petrochemicals,Basic Resources & Chemicals,EGX30,SKPC.CA,True
+ABUK.CA,Abu Qir Fertilizers,Basic Resources & Chemicals,EGX30,ABUK.CA,True
+EGAL.CA,Egypt Aluminum,Basic Resources & Chemicals,EGX30,EGAL.CA,True
+MFPC.CA,Misr Fertilizers Production,Basic Resources & Chemicals,EGX30,MFPC.CA,True
+EGCH.CA,Egyptian Chemical Industries Kima,Basic Resources & Chemicals,EGX70,EGCH.CA,True
+IRON.CA,Egyptian Iron and Steel,Basic Resources & Chemicals,EGX70,IRON.CA,True
+AMOC.CA,Alexandria Mineral Oils,Energy & Petrochemicals,EGX70,AMOC.CA,True
+EKHO.CA,Egypt Kuwait Holding,Energy & Petrochemicals,EGX30,EKHO.CA,True
+EFID.CA,Edita Food Industries,"Food, Beverages & Tobacco",EGX30,EFID.CA,True
+EAST.CA,Eastern Company,"Food, Beverages & Tobacco",EGX30,EAST.CA,True
+JUFO.CA,Juhayna Food Industries,"Food, Beverages & Tobacco",EGX70,JUFO.CA,True
+DOMT.CA,Arabian Food Industries Domty,"Food, Beverages & Tobacco",EGX70,DOMT.CA,True
+POUL.CA,Cairo Poultry,"Food, Beverages & Tobacco",EGX70,POUL.CA,True
+ETEL.CA,Telecom Egypt,Telecommunications,EGX30,ETEL.CA,True
+CLHO.CA,Cleopatra Hospital Group,Healthcare,EGX30,CLHO.CA,True
+ISPH.CA,Ibn Sina Pharma,Healthcare,EGX70,ISPH.CA,True
+RMDA.CA,Tenth of Ramadan Pharmaceutical Industries,Healthcare,EGX70,RMDA.CA,True
+CIRA.CA,Cairo Investment and Real Estate Development,Education,EGX70,CIRA.CA,True
+TALM.CA,Talim Management Services,Education,EGX70,TALM.CA,True
+ACGC.CA,Arab Cotton Ginning,Textiles,EGX70,ACGC.CA,True
+KABO.CA,El Nasr Clothing and Textiles,Textiles,EGX70,KABO.CA,True
+ALCN.CA,Alexandria Containers and Cargo Handling,Transportation & Logistics,EGX70,ALCN.CA,True
+CSAG.CA,Canal Shipping Agencies,Transportation & Logistics,EGX70,CSAG.CA,True
+MPCO.CA,Mansoura Poultry,Agriculture & Food Production,EGX70,MPCO.CA,True
+OLFI.CA,Obour Land For Food Industries,"Food, Beverages & Tobacco",EGX70,OLFI.CA,True
+RAYA.CA,Raya Holding,Technology & Distribution,EGX70,RAYA.CA,True
+BTFH.CA,Beltone Holding,Non-bank Financial Services,EGX70,BTFH.CA,True
+MTIE.CA,MM Group For Industry and International Trade,Automotive & Distribution,EGX70,MTIE.CA,True
+CNFN.CA,Contact Financial Holding,Non-bank Financial Services,EGX70,CNFN.CA,True
+ATLC.CA,Al Tawfeek Leasing,Non-bank Financial Services,EGX70,ATLC.CA,True
+OIH.CA,Orascom Investment Holding,Investment Holding,EGX70,OIH.CA,True
+PHAR.CA,Egyptian International Pharmaceutical Industries,Healthcare,EGX70,PHAR.CA,True
+LCSW.CA,Lecico Egypt,Building Materials,EGX70,LCSW.CA,True
+MBSC.CA,Misr Beni Suef Cement,Building Materials,EGX70,MBSC.CA,True
+ARCC.CA,Arabian Cement Company,Building Materials,EGX70,ARCC.CA,True
+PRCL.CA,Ceramic and Porcelain,Building Materials,EGX70,PRCL.CA,True
+SPIN.CA,Alexandria Spinning and Weaving,Textiles,EGX70,SPIN.CA,True
+ARAB.CA,Arab Developers Holding,Real Estate,EGX70,ARAB.CA,True
+AMER.CA,Amer Group Holding,Real Estate,EGX70,AMER.CA,True
+MENA.CA,Mena Touristic and Real Estate Investment,Real Estate,EGX70,MENA.CA,True
+ZMID.CA,Zahraa Maadi Investment and Development,Real Estate,EGX70,ZMID.CA,True
+UNIT.CA,United Housing and Development,Real Estate,EGX70,UNIT.CA,True
+PRDC.CA,Pioneers Properties For Urban Development,Real Estate,EGX70,PRDC.CA,True
+GBCO.CA,GB Corp,Automotive & Distribution,EGX70,GBCO.CA,True
+BINV.CA,B Investments Holding,Investment Holding,EGX70,BINV.CA,True
+SCTS.CA,Suez Canal Company for Technology Settling,Education,EXPANDED,SCTS.CA,True
+CANA.CA,Suez Canal Bank,Banking & Financials,EXPANDED,CANA.CA,True
+FERC.CA,Ferchem Misr Fertilizers and Chemicals,Basic Resources & Chemicals,EXPANDED,FERC.CA,True
+FAITA.CA,Faisal Islamic Bank of Egypt A,Banking & Financials,EXPANDED,FAITA.CA,True
+FAIT.CA,Faisal Islamic Bank of Egypt,Banking & Financials,EXPANDED,FAIT.CA,True
+EXPA.CA,Export Development Bank of Egypt,Banking & Financials,EXPANDED,EXPA.CA,True
+CCAP.CA,Qalaa Holdings,Investment Holding,EXPANDED,CCAP.CA,True
+EFIC.CA,Egyptian Financial and Industrial,Basic Resources & Chemicals,EXPANDED,EFIC.CA,True
+EGTS.CA,Egyptian Resorts Company,Real Estate,EXPANDED,EGTS.CA,True
+MCQE.CA,Misr Cement Qena,Building Materials,EXPANDED,MCQE.CA,True
+SCEM.CA,Sinai Cement,Building Materials,EXPANDED,SCEM.CA,True
+EGSA.CA,Egyptian Satellites,Telecommunications,EXPANDED,EGSA.CA,True
+ORWE.CA,Oriental Weavers,Textiles,EXPANDED,ORWE.CA,True
+CICH.CA,CI Capital Holding,Non-bank Financial Services,EXPANDED,CICH.CA,True
+EGBE.CA,Egyptian Gulf Bank,Banking & Financials,EXPANDED,EGBE.CA,True
+ATQA.CA,Misr National Steel Ataqa,Basic Resources & Chemicals,EXPANDED,ATQA.CA,True
+MOIL.CA,Maridive and Oil Services,Energy & Petrochemicals,EXPANDED,MOIL.CA,True
+MHOT.CA,Misr Hotels,Tourism & Leisure,EXPANDED,MHOT.CA,True
+IFAP.CA,International Agricultural Products,Agriculture & Food Production,EXPANDED,IFAP.CA,True
+MIPH.CA,Minapharm Pharmaceuticals,Healthcare,EXPANDED,MIPH.CA,True
+NIPH.CA,El Nile Pharmaceuticals,Healthcare,EXPANDED,NIPH.CA,True
+ISMQ.CA,Iron and Steel for Mines and Quarries,Basic Resources & Chemicals,EXPANDED,ISMQ.CA,True
+EGAS.CA,Natural Gas and Mining Project,Energy & Petrochemicals,EXPANDED,EGAS.CA,True
+ELEC.CA,Electro Cable Egypt,Industrial Goods & Cables,EXPANDED,ELEC.CA,True
+SUGR.CA,Delta Sugar,"Food, Beverages & Tobacco",EXPANDED,SUGR.CA,True
+AALR.CA,"General Company For Land Reclamation, Development & Reconstruction",General / Verified EGX Expansion,YAHOO_VERIFIED_EXPANSION,AALR.CA,True
+ACAMD.CA,"Arab Co.,for asset management and development",General / Verified EGX Expansion,YAHOO_VERIFIED_EXPANSION,ACAMD.CA,True
+ADCI.CA,The Arab Drug Company,General / Verified EGX Expansion,YAHOO_VERIFIED_EXPANSION,ADCI.CA,True
+ADPC.CA,The Arab Dairy Products Co.,General / Verified EGX Expansion,YAHOO_VERIFIED_EXPANSION,ADPC.CA,True
+AFDI.CA,Al Ahly for Development & Investment,General / Verified EGX Expansion,YAHOO_VERIFIED_EXPANSION,AFDI.CA,True
+AFMC.CA,Alexandria Flour Mills,General / Verified EGX Expansion,YAHOO_VERIFIED_EXPANSION,AFMC.CA,True
+AJWA.CA,AJWA For Food Industries Co. Egypt,General / Verified EGX Expansion,YAHOO_VERIFIED_EXPANSION,AJWA.CA,True
+ALUM.CA,Arab Aluminum Company (S.A.E),General / Verified EGX Expansion,YAHOO_VERIFIED_EXPANSION,ALUM.CA,True
+AMES.CA,Alexandria New Medical Center,General / Verified EGX Expansion,YAHOO_VERIFIED_EXPANSION,AMES.CA,True
+AMIA.CA,Arab Moltaqa Investments Company,General / Verified EGX Expansion,YAHOO_VERIFIED_EXPANSION,AMIA.CA,True
+ANFI.CA,Tycoon Holding Company For Financial Investments,General / Verified EGX Expansion,YAHOO_VERIFIED_EXPANSION,ANFI.CA,True
+APSW.CA,Unirab Polvara Spinning & Weaving Co.,General / Verified EGX Expansion,YAHOO_VERIFIED_EXPANSION,APSW.CA,True
+AREH.CA,Real Estate Egyptian Consortium S.A.E,General / Verified EGX Expansion,YAHOO_VERIFIED_EXPANSION,AREH.CA,True
+ARVA.CA,Arab Valves Company,General / Verified EGX Expansion,YAHOO_VERIFIED_EXPANSION,ARVA.CA,True
+ASCM.CA,"ASEC Company for Mining ASCOM, S.A.E",General / Verified EGX Expansion,YAHOO_VERIFIED_EXPANSION,ASCM.CA,True
+ASPI.CA,Aspire Capital Holding for Financial Investments,General / Verified EGX Expansion,YAHOO_VERIFIED_EXPANSION,ASPI.CA,True
+AXPH.CA,Alexandria Co. For Pharmaceuticals & Chemical Industries,General / Verified EGX Expansion,YAHOO_VERIFIED_EXPANSION,AXPH.CA,True
+BIOC.CA,GlaxoSmithKline S.A.E,General / Verified EGX Expansion,YAHOO_VERIFIED_EXPANSION,BIOC.CA,True
+CAED.CA,Cairo Educational Services SAE,General / Verified EGX Expansion,YAHOO_VERIFIED_EXPANSION,CAED.CA,True
+CCRS.CA,Gulf Canadian Company for Arab Real Estate Investment,General / Verified EGX Expansion,YAHOO_VERIFIED_EXPANSION,CCRS.CA,True
+CEFM.CA,Middle Egypt Flour Mills,General / Verified EGX Expansion,YAHOO_VERIFIED_EXPANSION,CEFM.CA,True
+CERA.CA,The Arab Ceramic Co.,General / Verified EGX Expansion,YAHOO_VERIFIED_EXPANSION,CERA.CA,True
+CFGH.CA,Concrete Fashion Group For Commercial and Industrial investments S.A.E,General / Verified EGX Expansion,YAHOO_VERIFIED_EXPANSION,CFGH.CA,True
+COPR.CA,Copper for Commercial Investment & Real Estate Development,General / Verified EGX Expansion,YAHOO_VERIFIED_EXPANSION,COPR.CA,True
+COSG.CA,Cairo Oil & Soap Company,General / Verified EGX Expansion,YAHOO_VERIFIED_EXPANSION,COSG.CA,True
+CPCI.CA,Kahira Pharmaceuticals & Chemical Industries Company,General / Verified EGX Expansion,YAHOO_VERIFIED_EXPANSION,CPCI.CA,True
+DAPH.CA,Development & Engineering Consultants,General / Verified EGX Expansion,YAHOO_VERIFIED_EXPANSION,DAPH.CA,True
+DEIN.CA,Delta Insurance Company,General / Verified EGX Expansion,YAHOO_VERIFIED_EXPANSION,DEIN.CA,True
+DSCW.CA,Dice For Ready-Made Garments (SAE),General / Verified EGX Expansion,YAHOO_VERIFIED_EXPANSION,DSCW.CA,True
+DTPP.CA,Delta Co. For Printing & Packaging S.A.E,General / Verified EGX Expansion,YAHOO_VERIFIED_EXPANSION,DTPP.CA,True
+EALR.CA,Arab Company For Land Reclamation,General / Verified EGX Expansion,YAHOO_VERIFIED_EXPANSION,EALR.CA,True
+EASB.CA,Egyptian Arabian Company (Themar) for securities Brokerage EAC,General / Verified EGX Expansion,YAHOO_VERIFIED_EXPANSION,EASB.CA,True
+EBSC.CA,Osool ESB Securities Brokerage,General / Verified EGX Expansion,YAHOO_VERIFIED_EXPANSION,EBSC.CA,True
+ECAP.CA,Al Ezz Ceramics & Porcelain Co.,General / Verified EGX Expansion,YAHOO_VERIFIED_EXPANSION,ECAP.CA,True
+EDFM.CA,East Delta Flour Mills,General / Verified EGX Expansion,YAHOO_VERIFIED_EXPANSION,EDFM.CA,True
+EEII.CA,Arab Engineering Industries,General / Verified EGX Expansion,YAHOO_VERIFIED_EXPANSION,EEII.CA,True
+EHDR.CA,Egyptians for Housing & Development Co.,General / Verified EGX Expansion,YAHOO_VERIFIED_EXPANSION,EHDR.CA,True
+ELKA.CA,Cairo for Housing and Development Company (S.A.E),General / Verified EGX Expansion,YAHOO_VERIFIED_EXPANSION,ELKA.CA,True
+ELNA.CA,El Nasr Manufacturing Agricultural Crops S.A.E,General / Verified EGX Expansion,YAHOO_VERIFIED_EXPANSION,ELNA.CA,True
+ELSH.CA,Al Shams Housing and Urbanization SAE,General / Verified EGX Expansion,YAHOO_VERIFIED_EXPANSION,ELSH.CA,True
+ELWA.CA,El Wadi for International and Investment Development SAE,General / Verified EGX Expansion,YAHOO_VERIFIED_EXPANSION,ELWA.CA,True
+ENGC.CA,Industrial Engineering Company for Construction and Development (ICON) (S.A.E),General / Verified EGX Expansion,YAHOO_VERIFIED_EXPANSION,ENGC.CA,True
+EOSB.CA,El Orouba Securities Brokerage,General / Verified EGX Expansion,YAHOO_VERIFIED_EXPANSION,EOSB.CA,True
+EPCO.CA,Egypt for Poultry,General / Verified EGX Expansion,YAHOO_VERIFIED_EXPANSION,EPCO.CA,True
+EPPK.CA,El Ahram Co. For Printing And Packaging SAE,General / Verified EGX Expansion,YAHOO_VERIFIED_EXPANSION,EPPK.CA,True
+ETRS.CA,Egyptian Transport and Commercial Services Company S.A.E.,General / Verified EGX Expansion,YAHOO_VERIFIED_EXPANSION,ETRS.CA,True
+GDWA.CA,Gadwa for Industrial Development,General / Verified EGX Expansion,YAHOO_VERIFIED_EXPANSION,GDWA.CA,True
+GGCC.CA,Giza General - Contracting and Real Estate Investment S.A.E,General / Verified EGX Expansion,YAHOO_VERIFIED_EXPANSION,GGCC.CA,True
+GIHD.CA,Gharbia Islamic Housing Development Company,General / Verified EGX Expansion,YAHOO_VERIFIED_EXPANSION,GIHD.CA,True
+GMCI.CA,GMC Group For Industrial Commercial & Financial Investments,General / Verified EGX Expansion,YAHOO_VERIFIED_EXPANSION,GMCI.CA,True
+GRCA.CA,Grand Capital for Financial Investments,General / Verified EGX Expansion,YAHOO_VERIFIED_EXPANSION,GRCA.CA,True
+GSSC.CA,General Co. For Silos & Storage,General / Verified EGX Expansion,YAHOO_VERIFIED_EXPANSION,GSSC.CA,True
+GTWL.CA,Golden Textiles & Clothes Wool,General / Verified EGX Expansion,YAHOO_VERIFIED_EXPANSION,GTWL.CA,True
+ICID.CA,International Co. For Investment & Development,General / Verified EGX Expansion,YAHOO_VERIFIED_EXPANSION,ICID.CA,True
+IDRE.CA,Ismailia Development and Real Estate Co,General / Verified EGX Expansion,YAHOO_VERIFIED_EXPANSION,IDRE.CA,True
+INFI.CA,Ismailia National Co. for Food Industries,General / Verified EGX Expansion,YAHOO_VERIFIED_EXPANSION,INFI.CA,True
+ISMA.CA,Ismailia / Misr Poultry Company S.A.E,General / Verified EGX Expansion,YAHOO_VERIFIED_EXPANSION,ISMA.CA,True
+KWIN.CA,El Kahera El Watania Investment,General / Verified EGX Expansion,YAHOO_VERIFIED_EXPANSION,KWIN.CA,True
+KZPC.CA,Kafr El Zayat For Pesticides & Chemicals Co.(S.A.E),General / Verified EGX Expansion,YAHOO_VERIFIED_EXPANSION,KZPC.CA,True
+LUTS.CA,Lotus Agri Capital,General / Verified EGX Expansion,YAHOO_VERIFIED_EXPANSION,LUTS.CA,True
+MAAL.CA,Marseille Almasreia Alkhalegeya For Holding Investment SAE,General / Verified EGX Expansion,YAHOO_VERIFIED_EXPANSION,MAAL.CA,True
+MASR.CA,Madinet Masr For Housing and Development,General / Verified EGX Expansion,YAHOO_VERIFIED_EXPANSION,MASR.CA,True
+MCRO.CA,Macro Group Pharmaceuticals (Macro Capital) S.A.E,General / Verified EGX Expansion,YAHOO_VERIFIED_EXPANSION,MCRO.CA,True
+MEPA.CA,Medical Packaging Company,General / Verified EGX Expansion,YAHOO_VERIFIED_EXPANSION,MEPA.CA,True
+MFSC.CA,Egypt Free Shops Co.,General / Verified EGX Expansion,YAHOO_VERIFIED_EXPANSION,MFSC.CA,True
+MICH.CA,Misr Chemical Industries Co.,General / Verified EGX Expansion,YAHOO_VERIFIED_EXPANSION,MICH.CA,True
+MILS.CA,North Cairo Flour Mills,General / Verified EGX Expansion,YAHOO_VERIFIED_EXPANSION,MILS.CA,True
+MOED.CA,"The Egyptian Modern Education Systems, S.A.E.",General / Verified EGX Expansion,YAHOO_VERIFIED_EXPANSION,MOED.CA,True
+MOIN.CA,Mohandes Insurance Company,General / Verified EGX Expansion,YAHOO_VERIFIED_EXPANSION,MOIN.CA,True
+MOSC.CA,Misr Oils & Soap,General / Verified EGX Expansion,YAHOO_VERIFIED_EXPANSION,MOSC.CA,True
+MPCI.CA,Memphis Pharmaceuticals & Chemical Industries,General / Verified EGX Expansion,YAHOO_VERIFIED_EXPANSION,MPCI.CA,True
+MPRC.CA,Egyptian Media Production City,General / Verified EGX Expansion,YAHOO_VERIFIED_EXPANSION,MPRC.CA,True
+NAHO.CA,Naeem Holding Company For Investments (S.A.E - Free Zone),General / Verified EGX Expansion,YAHOO_VERIFIED_EXPANSION,NAHO.CA,True
+NCCW.CA,Nasr Company for Civil Works,General / Verified EGX Expansion,YAHOO_VERIFIED_EXPANSION,NCCW.CA,True
+NEDA.CA,Northern Upper Egypt For Development & Agricultural Production Co.,General / Verified EGX Expansion,YAHOO_VERIFIED_EXPANSION,NEDA.CA,True
+NHPS.CA,National Company for Housing Professional Syndicates SAE,General / Verified EGX Expansion,YAHOO_VERIFIED_EXPANSION,NHPS.CA,True
+NINH.CA,Nozha International Hospital,General / Verified EGX Expansion,YAHOO_VERIFIED_EXPANSION,NINH.CA,True
+OBRI.CA,El-Ebour Co. for Real Estate Investment S.A.E.,General / Verified EGX Expansion,YAHOO_VERIFIED_EXPANSION,OBRI.CA,True
+OCPH.CA,October Pharma S.A.E,General / Verified EGX Expansion,YAHOO_VERIFIED_EXPANSION,OCPH.CA,True
+ODIN.CA,ODIN Investments (S.A.E),General / Verified EGX Expansion,YAHOO_VERIFIED_EXPANSION,ODIN.CA,True
+OFH.CA,O B Financial Holding S.A.E,General / Verified EGX Expansion,YAHOO_VERIFIED_EXPANSION,OFH.CA,True
+PHTV.CA,Pyramisa Hotels & Resorts,General / Verified EGX Expansion,YAHOO_VERIFIED_EXPANSION,PHTV.CA,True
+PRMH.CA,Prime Holding S.A.E,General / Verified EGX Expansion,YAHOO_VERIFIED_EXPANSION,PRMH.CA,True
+RACC.CA,Raya Customer Experience,General / Verified EGX Expansion,YAHOO_VERIFIED_EXPANSION,RACC.CA,True
+RAKT.CA,Rakta Paper Manufacturing Company,General / Verified EGX Expansion,YAHOO_VERIFIED_EXPANSION,RAKT.CA,True
+ROTO.CA,Rowad Tourism Company,General / Verified EGX Expansion,YAHOO_VERIFIED_EXPANSION,ROTO.CA,True
+RREI.CA,Arab Real Estate Investment Co.,General / Verified EGX Expansion,YAHOO_VERIFIED_EXPANSION,RREI.CA,True
+RTVC.CA,Remco Tourism Villages Construction,General / Verified EGX Expansion,YAHOO_VERIFIED_EXPANSION,RTVC.CA,True
+RUBX.CA,Rubex International for Plastic and Acrylic Manufacturing,General / Verified EGX Expansion,YAHOO_VERIFIED_EXPANSION,RUBX.CA,True
+SCFM.CA,South Cairo and Giza Flour Mills and Bakeries Company,General / Verified EGX Expansion,YAHOO_VERIFIED_EXPANSION,SCFM.CA,True
+SDTI.CA,SHARM DREAMS Co. for Touristic Investment S.A.E,General / Verified EGX Expansion,YAHOO_VERIFIED_EXPANSION,SDTI.CA,True
+SEIG.CA,Saudi Egyptian Investment & Finance Co. S.A.E,General / Verified EGX Expansion,YAHOO_VERIFIED_EXPANSION,SEIG.CA,True
+SIPC.CA,Sabaa International Company for Pharmaceutical and Chemical Industry,General / Verified EGX Expansion,YAHOO_VERIFIED_EXPANSION,SIPC.CA,True
+SMFR.CA,Samad Misr EGYFERT.S.A.E,General / Verified EGX Expansion,YAHOO_VERIFIED_EXPANSION,SMFR.CA,True
+SNFC.CA,Sharkia National Company for Food Security,General / Verified EGX Expansion,YAHOO_VERIFIED_EXPANSION,SNFC.CA,True
+SPMD.CA,Speed Medical Co,General / Verified EGX Expansion,YAHOO_VERIFIED_EXPANSION,SPMD.CA,True
+SVCE.CA,South Valley Cement Company,General / Verified EGX Expansion,YAHOO_VERIFIED_EXPANSION,SVCE.CA,True
+TRTO.CA,Trans Oceans Tours,General / Verified EGX Expansion,YAHOO_VERIFIED_EXPANSION,TRTO.CA,True
+UEFM.CA,Upper Egypt Mills Company J.S.C,General / Verified EGX Expansion,YAHOO_VERIFIED_EXPANSION,UEFM.CA,True
+UEGC.CA,"El-Saeed Company for Contracting and Real Estate Investment ""SCCD"" (S.A.E.)",General / Verified EGX Expansion,YAHOO_VERIFIED_EXPANSION,UEGC.CA,True
+UNIP.CA,Universal For Paper and Packaging Materials,General / Verified EGX Expansion,YAHOO_VERIFIED_EXPANSION,UNIP.CA,True
+WCDF.CA,Middle & West Delta Flour Mills,General / Verified EGX Expansion,YAHOO_VERIFIED_EXPANSION,WCDF.CA,True
+WKOL.CA,Wadi Kom Ombo For Land Reclamation Co.,General / Verified EGX Expansion,YAHOO_VERIFIED_EXPANSION,WKOL.CA,True
+ZEOT.CA,Extracted Oil & Derivatives Co.,General / Verified EGX Expansion,YAHOO_VERIFIED_EXPANSION,ZEOT.CA,True

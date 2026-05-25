@@ -16,12 +16,16 @@ from config import (
 HISTORY_COLUMNS = [
     "timestamp_utc",
     "advisor_only",
+    "priority",
     "action",
     "ticker",
     "entry",
     "take_profit",
     "stop_loss",
     "confidence",
+    "priority_score",
+    "outlook_label",
+    "outlook_score",
     "source_freshness",
     "model",
     "telegram_sent",
@@ -33,12 +37,16 @@ ACTION_TICKET_COLUMNS = [
     "ticket_id",
     "timestamp_utc",
     "status",
+    "priority",
     "action",
     "ticker",
     "entry",
     "take_profit",
     "stop_loss",
     "confidence",
+    "priority_score",
+    "outlook_label",
+    "outlook_score",
     "source_freshness",
     "evidence_count",
     "reason",
@@ -126,12 +134,16 @@ def append_trade_history(ticket, source_freshness, model, telegram_sent, warning
     row = {
         "timestamp_utc": datetime.now(timezone.utc).isoformat(),
         "advisor_only": True,
+        "priority": ticket.get("priority", ""),
         "action": ticket.get("action", "HOLD"),
         "ticker": ticket.get("ticker", ""),
         "entry": ticket.get("entry", 0),
         "take_profit": ticket.get("take_profit", 0),
         "stop_loss": ticket.get("stop_loss", 0),
         "confidence": ticket.get("confidence", "LOW"),
+        "priority_score": ticket.get("priority_score", ""),
+        "outlook_label": ticket.get("outlook_label", ""),
+        "outlook_score": ticket.get("outlook_score", ""),
         "source_freshness": source_freshness,
         "model": model,
         "telegram_sent": telegram_sent,
@@ -194,12 +206,16 @@ def append_action_ticket(ticket, source_freshness, warnings, evidence_packets):
         "ticket_id": f"{timestamp}_{action}_{ticker or 'NONE'}",
         "timestamp_utc": datetime.now(timezone.utc).isoformat(),
         "status": status,
+        "priority": ticket.get("priority", ""),
         "action": action,
         "ticker": ticker,
         "entry": ticket.get("entry", 0),
         "take_profit": ticket.get("take_profit", 0),
         "stop_loss": ticket.get("stop_loss", 0),
         "confidence": ticket.get("confidence", "LOW"),
+        "priority_score": ticket.get("priority_score", ""),
+        "outlook_label": ticket.get("outlook_label", ""),
+        "outlook_score": ticket.get("outlook_score", ""),
         "source_freshness": source_freshness,
         "evidence_count": evidence_count,
         "reason": ticket.get("trade_reason", ""),
@@ -218,3 +234,24 @@ def append_action_ticket(ticket, source_freshness, warnings, evidence_packets):
             writer.writerow(row)
         print(f"Warning: action_tickets.csv is locked. Wrote pending ticket to {fallback.name}.")
         return row["ticket_id"]
+
+
+def _tickets_for_logging(decision):
+    tickets = decision.get("trade_recommendations")
+    if isinstance(tickets, list) and tickets:
+        return tickets
+    return [decision.get("trade_recommendation", {}) or {}]
+
+
+def append_trade_histories(decision, source_freshness, model, telegram_sent, warnings):
+    paths = []
+    for ticket in _tickets_for_logging(decision):
+        paths.append(append_trade_history(ticket, source_freshness, model, telegram_sent, warnings))
+    return paths
+
+
+def append_action_tickets(decision, source_freshness, warnings, evidence_packets):
+    ticket_ids = []
+    for ticket in _tickets_for_logging(decision):
+        ticket_ids.append(append_action_ticket(ticket, source_freshness, warnings, evidence_packets))
+    return ticket_ids

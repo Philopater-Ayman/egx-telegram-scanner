@@ -2,7 +2,7 @@
 
 ## Current Product Shape
 
-This is a Telegram-first EGX scanner, not an auto-trading broker. The main command is `python trading_bot_core.py`. It uses deterministic scanner rules for tickets, Gemini for grounded evidence when available, and OpenRouter free-model fallback for Telegram narrative. It produces a signal-only action ticket, full Telegram summary, report files, and scanner CSV logs.
+This is a Telegram-first EGX scanner, not an auto-trading broker. The main command is `python trading_bot_core.py`. It uses deterministic scanner rules for tickets, Gemini for grounded evidence when available, and OpenRouter free-model fallback for Telegram narrative. It produces up to three prioritized signal-only action tickets, a full Telegram summary, report files, and scanner CSV logs.
 
 ## Runtime Flow
 
@@ -11,8 +11,8 @@ This is a Telegram-first EGX scanner, not an auto-trading broker. The main comma
 4. Fetch active universe OHLCV through yfinance, with `manual_market_data.csv` as an optional fallback and StockAnalysis as quote-only public fallback.
 5. Calculate deterministic indicators, liquidity spikes, sector scores, and scanner rank.
 7. Write scanner artifacts: `market_prices.csv`, `indicators.csv`, `sector_scores.csv`, `scan_results.csv`, `watchlist_signals.csv`, and `data_quality.csv`.
-8. Gather evidence for the top candidates with local sources and Gemini grounding only if enabled.
-9. Create a deterministic advisor-only signal ticket. `USE_AI_DECISION` should stay false; AI is evidence/narrative support only.
+8. Gather evidence for the top candidates with local sources and Gemini grounding only if enabled. `EVIDENCE_TOP_N=8` is the current default.
+9. Create up to three deterministic advisor-only signal tickets from the evidence-backed candidate pool. `USE_AI_DECISION` should stay false; AI is evidence/narrative support only.
 10. Ask OpenRouter for a concise narrative summary if `OPENROUTER_API_KEY` and `USE_OPENROUTER_NARRATIVE=true` are set.
 10. Apply deterministic risk gates, including institution-flow BUY blocking.
 11. Write `daily_report.md`, `provider_status.md`, `action_tickets.csv`, and `trade_history.csv`.
@@ -20,7 +20,7 @@ This is a Telegram-first EGX scanner, not an auto-trading broker. The main comma
 
 ## Daily Use Loop
 
-The user reads Telegram only. Local CSV and Markdown files are internal logs. Tickets include action, ticker, entry, TP, SL, confidence, evidence quality, sector movement, liquidity regime, and 1-3 day outlook. Tickets do not include quantity or cash sizing.
+The user reads Telegram only. Local CSV and Markdown files are internal logs. Tickets include priority, action, ticker, entry, TP, SL, confidence, evidence quality, sector movement, liquidity regime, and 1-3 day outlook. Tickets do not include quantity or cash sizing.
 
 ## Automation
 

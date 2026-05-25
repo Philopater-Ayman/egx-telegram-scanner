@@ -22,12 +22,66 @@ def enforce_watchlist_limits(watchlist, sector_map):
 def apply_risk_gates(decision, market_data, egx30_data, evidence_packets, flow_status=None):
     flow_status = flow_status or {"status": "FLOW_MISSING", "regime": "MISSING"}
     warnings = []
+
+    trades = decision.get("trade_recommendations")
+    if isinstance(trades, list) and trades:
+        accepted = []
+        for trade in trades:
+            gated_trade, trade_warnings = _apply_single_trade_gate(
+                trade,
+                market_data,
+                egx30_data,
+                evidence_packets,
+                flow_status,
+            )
+            warnings.extend(trade_warnings)
+            if str(gated_trade.get("action", "HOLD")).upper() in {"BUY", "SELL"}:
+                accepted.append(gated_trade)
+
+        for index, trade in enumerate(accepted, start=1):
+            trade["priority"] = index
+
+        if accepted:
+            decision["trade_recommendations"] = accepted
+            decision["trade_recommendation"] = accepted[0]
+            return decision, warnings
+
+        hold_ticker = (trades[0] or {}).get("ticker", "")
+        hold = {
+            "action": "HOLD",
+            "ticker": hold_ticker,
+            "entry": 0,
+            "take_profit": 0,
+            "stop_loss": 0,
+            "confidence": "LOW",
+            "priority": 1,
+            "trade_reason": "All candidate tickets were downgraded by safety gates.",
+        }
+        decision["trade_recommendations"] = []
+        decision["trade_recommendation"] = hold
+        return decision, warnings
+
     trade = decision.get("trade_recommendation", {}) or {}
+    gated_trade, trade_warnings = _apply_single_trade_gate(
+        trade,
+        market_data,
+        egx30_data,
+        evidence_packets,
+        flow_status,
+    )
+    warnings.extend(trade_warnings)
+    decision["trade_recommendation"] = gated_trade
+    decision["trade_recommendations"] = [gated_trade] if str(gated_trade.get("action", "HOLD")).upper() in {"BUY", "SELL"} else []
+    return decision, warnings
+
+
+def _apply_single_trade_gate(trade, market_data, egx30_data, evidence_packets, flow_status):
+    warnings = []
     action = str(trade.get("action", "HOLD")).upper()
     ticker = trade.get("ticker") or ""
 
     if action not in {"BUY", "SELL", "HOLD"}:
-        warnings.append("Invalid action from AI; changed to HOLD.")
+        warnings.append(f"{ticker or 'ticket'}: invalid action; changed to HOLD.")
         action = "HOLD"
 
     if action == "BUY":
@@ -63,7 +117,7 @@ def apply_risk_gates(decision, market_data, egx30_data, evidence_packets, flow_s
             blocking.append("BUY blocked: invalid stop loss or take profit.")
 
         if blocking:
-            warnings.extend(blocking)
+            warnings.extend(f"{ticker}: {item}" for item in blocking)
             trade = {
                 "action": "HOLD",
                 "ticker": ticker,
@@ -75,7 +129,6 @@ def apply_risk_gates(decision, market_data, egx30_data, evidence_packets, flow_s
             }
 
     if action == "SELL" and ticker and ticker not in market_data:
-        warnings.append("SELL warning: missing fresh market data; verify manually in Thndr before acting.")
+        warnings.append(f"{ticker}: SELL warning: missing fresh market data; verify manually in Thndr before acting.")
 
-    decision["trade_recommendation"] = trade
-    return decision, warnings
+    return trade, warnings

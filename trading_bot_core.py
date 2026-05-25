@@ -1,6 +1,6 @@
 from ai_agents import build_openrouter_narrative, gather_batch_evidence
 from config import EGX_CANDIDATE_POOL, EVIDENCE_TOP_N, MODEL_NAME, USE_AI_DECISION, get_sector_map, get_yahoo_symbol_map
-from local_strategy import build_local_fallback_decision
+from local_strategy import build_local_fallback_decisions
 from market_calendar import should_run_scanner
 from market_scanner import (
     build_watchlist_signal_rows,
@@ -14,8 +14,8 @@ from providers import get_backtest_summary, get_macro_status, get_technical_data
 from reporting import print_ticket, send_telegram_notification, write_daily_report, write_provider_status
 from risk import apply_risk_gates, enforce_watchlist_limits
 from storage import (
-    append_trade_history,
-    append_action_ticket,
+    append_trade_histories,
+    append_action_tickets,
     get_local_watchlist,
     merge_pending_history_files,
     update_local_watchlist,
@@ -75,12 +75,13 @@ def run_daily_advisor():
     backtests = [get_backtest_summary(row["Ticker"]) for row in top_for_evidence[:3]]
 
     deterministic_watchlist = build_watchlist_from_ranked(ranked_rows, active_watchlist)
-    decision = build_local_fallback_decision(
-        ranked_rows[:10],
+    decision = build_local_fallback_decisions(
+        top_for_evidence,
         deterministic_watchlist,
         egx30,
         evidence_packets,
         flow_status,
+        max_tickets=3,
     )
     if USE_AI_DECISION:
         print("USE_AI_DECISION=true is ignored in Telegram-first mode. Gemini is used for evidence/narrative only.")
@@ -101,13 +102,14 @@ def run_daily_advisor():
         warnings.append(warning)
     write_daily_report(egx30, ranked_market_data, decision, evidence_packets, warnings, backtests, sector_scores, flow_status, scan_failures, narrative)
     telegram_sent = send_telegram_notification(decision, egx30, warnings, ranked_market_data, sector_scores, evidence_packets, scan_failures, narrative)
-    history_path = append_trade_history(decision["trade_recommendation"], source_freshness, MODEL_NAME, telegram_sent, warnings)
-    ticket_id = append_action_ticket(decision["trade_recommendation"], source_freshness, warnings, evidence_packets)
-    write_provider_status(egx30, ranked_market_data, evidence_packets, telegram_sent, history_path, ticket_id, flow_status, scan_failures, narrative)
+    history_paths = append_trade_histories(decision, source_freshness, MODEL_NAME, telegram_sent, warnings)
+    ticket_ids = append_action_tickets(decision, source_freshness, warnings, evidence_packets)
+    write_provider_status(egx30, ranked_market_data, evidence_packets, telegram_sent, history_paths, ticket_ids, flow_status, scan_failures, narrative)
     print_ticket(decision, warnings)
     print("\nCreated/updated daily_report.md, action_tickets.csv, provider_status.md, and trade_history.csv.")
-    if "pending" in history_path:
-        print(f"History CSV was locked, so the latest row was saved to {history_path}.")
+    pending_paths = [path for path in history_paths if "pending" in path]
+    if pending_paths:
+        print(f"History CSV was locked, so the latest rows were saved to: {', '.join(pending_paths)}.")
     print("Advisor-only mode is active. No trade was executed.")
 
 

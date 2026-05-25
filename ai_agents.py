@@ -331,7 +331,8 @@ def build_openrouter_narrative(decision, ranked_rows, sector_scores, evidence_pa
     }
     payload = {
         "role": "telegram_narrative_only_not_trade_decision",
-        "ticket": decision.get("trade_recommendation", {}),
+        "primary_ticket": decision.get("trade_recommendation", {}),
+        "tickets": decision.get("trade_recommendations", []) or [decision.get("trade_recommendation", {})],
         "top_scanner_rows": top_rows,
         "top_sectors": sorted((sector_scores or {}).values(), key=lambda row: row.get("Sector_Rank", 99))[:5],
         "evidence": evidence_summary,
@@ -340,7 +341,7 @@ def build_openrouter_narrative(decision, ranked_rows, sector_scores, evidence_pa
     prompt = (
         "Write a concise Telegram narrative for a personal EGX stock scanner. "
         "Do not make a new trade decision. Do not invent live data. Do not mention quantities or position sizing. "
-        "Explain why the local scanner selected the action, what liquidity/sector/support/resistance/outlook means for the next 1-3 days, "
+        "Explain why the local scanner selected these prioritized tickets, what liquidity/sector/support/resistance/outlook means for the next 1-3 days, "
         "and include uncertainty. Return only valid compact JSON with keys summary and bullets, where bullets is 3 to 5 short strings. "
         f"Scanner payload: {json.dumps(payload, default=str)}"
     )

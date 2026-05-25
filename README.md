@@ -1,6 +1,6 @@
 # Gemini EGX Copilot
 
-Private advisor-only EGX trading scanner. It scans a local EGX universe, collects market data/history, calculates deterministic liquidity/trend/sector/support-resistance/flow/outlook signals, creates one signal-only action ticket, sends a full Telegram report, and writes local CSV/Markdown logs. Gemini is used for grounded evidence when available; OpenRouter is used for narrative explanation. Local scanner rules create the ticket.
+Private advisor-only EGX trading scanner. It scans a local EGX universe, collects market data/history, calculates deterministic liquidity/trend/sector/support-resistance/flow/outlook signals, creates up to three prioritized signal-only action tickets, sends a full Telegram report, and writes local CSV/Markdown logs. Gemini is used for grounded evidence when available; OpenRouter is used for narrative explanation. Local scanner rules create the tickets.
 
 ## Daily Use
 
@@ -17,7 +17,7 @@ The bot never executes trades automatically.
 
 ## Telegram-First Tickets
 
-Tickets are signal-only. They include action, ticker, entry, take profit, stop loss, support, resistance, confidence, liquidity context, sector context, evidence quality, warnings, and a transparent 1-3 day outlook. They do not include quantity or cash sizing.
+Tickets are signal-only. The scanner can send up to three prioritized tickets, with priority #1 being the highest-ranked swing-trade setup after evidence, liquidity, trend, RSI, support/resistance, sector, and data-quality gates. They include action, ticker, entry, take profit, stop loss, support, resistance, confidence, liquidity context, sector context, evidence quality, warnings, and a transparent 1-3 day outlook. They do not include quantity or cash sizing.
 
 ## Automation
 
@@ -43,7 +43,7 @@ Add official holidays, Ramadan hours, or special sessions to `market_calendar.cs
 - `trade_history.csv`: durable recommendation history.
 - `daily_report.md`: human-readable daily report.
 - `provider_status.md`: source health and warnings.
-- `stock_universe.csv`: active EGX candidate universe with sector, index tags, and Yahoo symbol.
+- `stock_universe.csv`: active EGX candidate universe with sector, index tags, and Yahoo symbol. Expanded rows tagged `YAHOO_VERIFIED_EXPANSION` had usable Yahoo history when added.
 - `market_prices.csv`: latest collected price/volume snapshot for scanned tickers.
 - `indicators.csv`: deterministic indicators such as MA20/MA50/MA200, RSI, MACD, liquidity spike, returns, volatility, support, and resistance.
 - `sector_scores.csv`: sector rotation leaderboard.

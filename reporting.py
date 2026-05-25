@@ -23,6 +23,7 @@ def write_daily_report(
     scan_failures = scan_failures or []
     narrative = narrative or {}
     trade = decision.get("trade_recommendation", {})
+    tickets = decision.get("trade_recommendations") or ([trade] if trade else [])
     buy_ready = [row for row in market_data.values() if row.get("Buy_Ready")]
     top_liquidity = sorted(market_data.values(), key=lambda row: float(row.get("Daily_Liquidity_EGP") or 0), reverse=True)[:5]
     top_movers = sorted(market_data.values(), key=lambda row: float(row.get("Liquidity_Spike") or 0), reverse=True)[:5]
@@ -32,7 +33,7 @@ def write_daily_report(
         f"Generated UTC: {datetime.now(timezone.utc).isoformat()}",
         "",
         "## Control Center",
-        f"- Action ticket: {trade.get('action', 'HOLD')} {trade.get('ticker', '')}".strip(),
+        f"- Action tickets: {len([ticket for ticket in tickets if str(ticket.get('action', '')).upper() in {'BUY', 'SELL'}])} prioritized signal(s)",
         f"- BUY-ready candidates: {len(buy_ready)}",
         f"- Data quality issues: {len(scan_failures)}",
         f"- Fresh tickers: {sum(1 for row in market_data.values() if row.get('Price_Freshness') == 'FRESH')}/{len(market_data)}",
@@ -81,14 +82,20 @@ def write_daily_report(
         lines.append("- No sector scores available.")
     lines.extend([
         "",
-        "## Today's Scanner Action Ticket",
-        f"- Action: {trade.get('action', 'HOLD')}",
-        f"- Ticker: {trade.get('ticker', '')}",
-        f"- Entry: {trade.get('entry', 0)}",
-        f"- Take profit: {trade.get('take_profit', 0)}",
-        f"- Stop loss: {trade.get('stop_loss', 0)}",
-        f"- Confidence: {trade.get('confidence', 'LOW')}",
-        f"- Reason: {trade.get('trade_reason', '')}",
+        "## Today's Prioritized Action Tickets",
+    ])
+    active_tickets = [ticket for ticket in tickets if str(ticket.get("action", "HOLD")).upper() in {"BUY", "SELL"}]
+    if active_tickets:
+        for ticket in active_tickets:
+            lines.extend([
+                f"- Priority #{ticket.get('priority', '')}: {ticket.get('action', 'HOLD')} {ticket.get('ticker', '')}",
+                f"  - Entry: {ticket.get('entry', 0)} | Take profit: {ticket.get('take_profit', 0)} | Stop loss: {ticket.get('stop_loss', 0)}",
+                f"  - Confidence: {ticket.get('confidence', 'LOW')} | score={ticket.get('priority_score', '')} | outlook={ticket.get('outlook_label', '')} {ticket.get('outlook_score', '')}",
+                f"  - Reason: {ticket.get('trade_reason', '')}",
+            ])
+    else:
+        lines.append(f"- HOLD: {trade.get('trade_reason', 'No ticket passed the final gates.')}")
+    lines.extend([
         "",
         "## Thndr Instruction",
         "- Advisor-only signal mode is active. The scanner never executes trades.",
@@ -182,8 +189,8 @@ def write_provider_status(egx30, market_data, evidence_packets, telegram_sent, h
         f"- Evidence sources found: {evidence_count}",
         f"- AI narrative: {narrative.get('provider', 'OpenRouter')} {narrative.get('status', 'NOT_RUN')} ({narrative.get('model', '') or 'n/a'})",
         f"- Telegram sent on latest run: {telegram_sent}",
-        f"- Latest ticket id: {ticket_id}",
-        f"- Latest history write: {history_path}",
+        f"- Latest ticket id(s): {', '.join(ticket_id) if isinstance(ticket_id, list) else ticket_id}",
+        f"- Latest history write(s): {', '.join(history_path) if isinstance(history_path, list) else history_path}",
         "",
         "## Warnings",
     ]
@@ -234,6 +241,8 @@ def send_telegram_notification(decision, egx30, warnings, market_data=None, sect
         return False
 
     trade = decision.get("trade_recommendation", {})
+    tickets = decision.get("trade_recommendations") or ([trade] if trade else [])
+    active_tickets = [ticket for ticket in tickets if str(ticket.get("action", "HOLD")).upper() in {"BUY", "SELL"}]
     rows = list((market_data or {}).values())
     ranked = sorted(rows, key=lambda row: float(row.get("Rank_Score") or 0), reverse=True)
     buy_ready = [row for row in ranked if row.get("Buy_Ready")]
@@ -245,6 +254,18 @@ def send_telegram_notification(decision, egx30, warnings, market_data=None, sect
     fresh_count = sum(1 for row in rows if row.get("Price_Freshness") == "FRESH")
     warning_text = "\n".join(f"- {item}" for item in warnings[:5]) if warnings else "- None"
     data_quality = f"{fresh_count}/{len(rows)} fresh tickers, {len(scan_failures or [])} data quality issues"
+    ticket_text = _line_items(
+        active_tickets,
+        lambda ticket: (
+            f"#{ticket.get('priority', '')} {ticket.get('action', 'HOLD')} {ticket.get('ticker', '')} | "
+            f"Entry {_fmt_num(ticket.get('entry', 0))} TP {_fmt_num(ticket.get('take_profit', 0))} SL {_fmt_num(ticket.get('stop_loss', 0))} | "
+            f"{ticket.get('confidence', 'LOW')} | score {ticket.get('priority_score', '')} | outlook {ticket.get('outlook_label', '')}"
+        ),
+        limit=3,
+    )
+    if not active_tickets:
+        ticket_text = f"- HOLD: {trade.get('trade_reason', 'No ticket passed the final gates.')}"
+
     message = "\n".join(
         [
             "EGX Scanner - Telegram-First Signal",
@@ -253,12 +274,9 @@ def send_telegram_notification(decision, egx30, warnings, market_data=None, sect
             f"Data quality: {data_quality}",
             f"Gemini evidence: {evidence_status} ({source_count} sources)",
             "",
-            "ACTION TICKET",
-            f"Action: {trade.get('action', 'HOLD')}",
-            f"Ticker: {trade.get('ticker', '') or 'NONE'}",
-            f"Entry: {_fmt_num(trade.get('entry', 0))} | TP: {_fmt_num(trade.get('take_profit', 0))} | SL: {_fmt_num(trade.get('stop_loss', 0))}",
-            f"Confidence: {trade.get('confidence', 'LOW')}",
-            f"Reason: {trade.get('trade_reason', '')}",
+            "TOP ACTION TICKETS",
+            ticket_text,
+            f"Primary reason: {trade.get('trade_reason', '')}",
             "",
             f"AI narrative: {narrative.get('provider', 'OpenRouter')} {narrative.get('status', 'NOT_RUN')} | {narrative.get('model', '') or 'n/a'}",
             f"{narrative.get('summary', '')}",
@@ -317,9 +335,10 @@ def send_telegram_notification(decision, egx30, warnings, market_data=None, sect
 
 
 def print_ticket(decision, warnings):
-    print("\nSCANNER ACTION TICKET")
-    print("=====================")
-    print(json.dumps(decision.get("trade_recommendation", {}), indent=2))
+    print("\nSCANNER ACTION TICKETS")
+    print("======================")
+    tickets = decision.get("trade_recommendations") or [decision.get("trade_recommendation", {})]
+    print(json.dumps(tickets, indent=2))
     if warnings:
         print("\nSAFETY WARNINGS")
         for warning in warnings:
