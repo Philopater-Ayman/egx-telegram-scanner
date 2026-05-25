@@ -17,7 +17,7 @@ OPENROUTER_FALLBACK_MODELS = [
     item.strip()
     for item in os.getenv(
         "OPENROUTER_FALLBACK_MODELS",
-        "deepseek/deepseek-v4-flash:free,nvidia/nemotron-3-super-120b-a12b:free,z-ai/glm-4.5-air:free,arcee-ai/trinity-large-thinking:free,google/gemma-4-31b-it:free",
+        "deepseek/deepseek-v4-flash:free,nvidia/nemotron-3-super-120b-a12b:free",
     ).split(",")
     if item.strip()
 ]

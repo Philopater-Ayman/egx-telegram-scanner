@@ -23,7 +23,7 @@ Tickets are signal-only. They include action, ticker, entry, take profit, stop l
 
 Read `AUTOMATION_GUIDE.md` before enabling scheduled runs. GitHub Actions is the preferred always-on free path for public repo automation. Windows Task Scheduler remains a local fallback and only runs while the laptop is awake unless Windows wake settings are configured.
 
-For GitHub Actions, publish the repo and add these repository secrets: `TELEGRAM_BOT_TOKEN`, `TELEGRAM_CHAT_ID`, `GEMINI_API_KEY`, and `OPENROUTER_API_KEY`. The workflow is already in `.github/workflows/egx-scanner.yml`.
+For GitHub Actions, publish the repo and add these repository secrets: `TELEGRAM_BOT_TOKEN`, `TELEGRAM_CHAT_ID`, `GEMINI_API_KEY`, and `OPENROUTER_API_KEY`. The workflow is already in `.github/workflows/egx-scanner.yml`. OpenRouter fallback is capped at 3 models because the API rejects larger fallback arrays.
 
 To install default Sunday-Thursday Windows tasks locally, run this manually from PowerShell:
 

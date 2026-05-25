@@ -73,6 +73,10 @@ def _extract_json_object(text):
     match = re.search(r"\{.*\}", text, re.S)
     if not match:
         return None
+    try:
+        return json.loads(match.group(0))
+    except Exception:
+        return None
 
 
 def _openrouter_models():
@@ -82,11 +86,25 @@ def _openrouter_models():
     for model in OPENROUTER_FALLBACK_MODELS:
         if model not in models:
             models.append(model)
-    return models
-    try:
-        return json.loads(match.group(0))
-    except Exception:
-        return None
+    return models[:3]
+
+
+def _coerce_narrative(content):
+    parsed = _extract_json_object(content) or {}
+    if parsed:
+        bullets = parsed.get("bullets") if isinstance(parsed.get("bullets"), list) else []
+        return parsed.get("summary", "").strip(), [str(item).strip() for item in bullets if str(item).strip()]
+
+    summary_match = re.search(r'"summary"\s*:\s*"((?:[^"\\]|\\.)*)"', content, re.S)
+    summary = ""
+    if summary_match:
+        try:
+            summary = json.loads(f'"{summary_match.group(1)}"')
+        except Exception:
+            summary = summary_match.group(1)
+    bullet_matches = re.findall(r'"([^"]{20,220})"', content)
+    bullets = [item for item in bullet_matches if item != summary and "summary" not in item.lower()]
+    return summary or content.strip(), bullets[:5]
 
 
 def evidence_from_market_data(ticker, row):
@@ -319,7 +337,7 @@ def build_openrouter_narrative(decision, ranked_rows, sector_scores, evidence_pa
         "Write a concise Telegram narrative for a personal EGX stock scanner. "
         "Do not make a new trade decision. Do not invent live data. Do not mention quantities or position sizing. "
         "Explain why the local scanner selected the action, what liquidity/sector/outlook means for the next 1-3 days, "
-        "and include uncertainty. Return only JSON with keys summary and bullets, where bullets is 3 to 5 short strings. "
+        "and include uncertainty. Return only valid compact JSON with keys summary and bullets, where bullets is 3 to 5 short strings. "
         f"Scanner payload: {json.dumps(payload, default=str)}"
     )
     models = _openrouter_models()
@@ -343,7 +361,7 @@ def build_openrouter_narrative(decision, ranked_rows, sector_scores, evidence_pa
                     {"role": "user", "content": prompt},
                 ],
                 "temperature": 0.2,
-                "max_tokens": 500,
+                "max_tokens": 900,
             },
             timeout=45,
         )
@@ -359,13 +377,12 @@ def build_openrouter_narrative(decision, ranked_rows, sector_scores, evidence_pa
         data = response.json()
         message = (data.get("choices") or [{}])[0].get("message", {})
         content = message.get("content") or ""
-        parsed = _extract_json_object(content) or {}
-        bullets = parsed.get("bullets") if isinstance(parsed.get("bullets"), list) else []
+        summary, bullets = _coerce_narrative(content)
         return {
             "provider": "OpenRouter",
             "status": "OK",
             "model": data.get("model") or (models[0] if models else ""),
-            "summary": (parsed.get("summary") or content).strip()[:700],
+            "summary": summary[:700],
             "bullets": [str(item).strip()[:220] for item in bullets[:5] if str(item).strip()],
             "warnings": [],
         }
