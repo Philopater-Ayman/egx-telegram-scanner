@@ -25,7 +25,7 @@ jobs:
       USE_OPENROUTER_NARRATIVE: "true"
       USE_AI_DECISION: "false"
       MAX_PRICE_AGE_DAYS: "5"
-      EVIDENCE_TOP_N: "3"
+      EVIDENCE_TOP_N: "8"
       REQUIRE_FLOW_FOR_BUY: "false"
       PYTHONUNBUFFERED: "1"
 
