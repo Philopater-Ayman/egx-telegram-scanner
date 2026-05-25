@@ -199,6 +199,12 @@ def _stockanalysis_market_row(ticker):
         "Daily_Liquidity_EGP": 0.0,
         "Avg20_Liquidity_EGP": 0.0,
         "Liquidity_Spike": 0.0,
+        "Support_20D": round(price, 2),
+        "Resistance_20D": round(price, 2),
+        "Support_50D": round(price, 2),
+        "Resistance_50D": round(price, 2),
+        "Support_Distance_%": 0.0,
+        "Resistance_Distance_%": 0.0,
         "Return_5D_%": 0.0,
         "Return_20D_%": 0.0,
         "Volatility_20D_%": 0.0,
@@ -237,6 +243,10 @@ def _manual_market_row(ticker):
         if close <= 0:
             return None
         as_of = latest.get("Date") or latest.get("Price_As_Of") or datetime.now(timezone.utc).date().isoformat()
+        support_20d = float(latest.get("Support_20D") or latest.get("Support") or close)
+        resistance_20d = float(latest.get("Resistance_20D") or latest.get("Resistance") or close)
+        support_50d = float(latest.get("Support_50D") or latest.get("Support") or support_20d)
+        resistance_50d = float(latest.get("Resistance_50D") or latest.get("Resistance") or resistance_20d)
         return {
             "Ticker": ticker,
             "Sector": get_sector_map().get(ticker, "General"),
@@ -250,6 +260,12 @@ def _manual_market_row(ticker):
             "Daily_Liquidity_EGP": round(close * volume, 2),
             "Avg20_Liquidity_EGP": round(float(latest.get("Avg20_Liquidity_EGP") or close * volume), 2),
             "Liquidity_Spike": round(float(latest.get("Liquidity_Spike") or 1), 2),
+            "Support_20D": round(support_20d, 2),
+            "Resistance_20D": round(resistance_20d, 2),
+            "Support_50D": round(support_50d, 2),
+            "Resistance_50D": round(resistance_50d, 2),
+            "Support_Distance_%": round(((close / support_20d) - 1) * 100, 2) if support_20d > 0 else 0.0,
+            "Resistance_Distance_%": round(((resistance_20d / close) - 1) * 100, 2) if close > 0 else 0.0,
             "Volume": volume,
             "Price_Source": "manual_market_data.csv",
             "Price_As_Of": str(as_of),
@@ -286,6 +302,10 @@ def get_technical_data(ticker):
         df["Liquidity"] = df["Close"] * df["Volume"].fillna(0)
         df["Avg20_Liquidity"] = df["Liquidity"].rolling(window=20).mean()
         df["High20"] = df["Close"].rolling(window=20).max()
+        df["Support20"] = df["Low"].rolling(window=20).min()
+        df["Resistance20"] = df["High"].rolling(window=20).max()
+        df["Support50"] = df["Low"].rolling(window=50).min()
+        df["Resistance50"] = df["High"].rolling(window=50).max()
 
         latest = df.iloc[-1]
         if pd.isna(latest["Close"]):
@@ -297,6 +317,10 @@ def get_technical_data(ticker):
         volume = 0.0 if pd.isna(raw_volume) else float(raw_volume or 0)
         avg20_liquidity = latest["Avg20_Liquidity"] if not pd.isna(latest["Avg20_Liquidity"]) else current_price * volume
         liquidity_spike = (current_price * volume) / avg20_liquidity if avg20_liquidity else 0
+        support_20d = float(latest["Support20"]) if not pd.isna(latest["Support20"]) else current_price
+        resistance_20d = float(latest["Resistance20"]) if not pd.isna(latest["Resistance20"]) else current_price
+        support_50d = float(latest["Support50"]) if not pd.isna(latest["Support50"]) else support_20d
+        resistance_50d = float(latest["Resistance50"]) if not pd.isna(latest["Resistance50"]) else resistance_20d
         warnings = []
         if stale:
             warnings.append("Price data is stale.")
@@ -334,6 +358,12 @@ def get_technical_data(ticker):
             "Daily_Liquidity_EGP": round(current_price * volume, 2),
             "Avg20_Liquidity_EGP": round(float(avg20_liquidity), 2) if not pd.isna(avg20_liquidity) else 0,
             "Liquidity_Spike": round(float(liquidity_spike), 2),
+            "Support_20D": round(support_20d, 2),
+            "Resistance_20D": round(resistance_20d, 2),
+            "Support_50D": round(support_50d, 2),
+            "Resistance_50D": round(resistance_50d, 2),
+            "Support_Distance_%": round(((current_price / support_20d) - 1) * 100, 2) if support_20d > 0 else 0.0,
+            "Resistance_Distance_%": round(((resistance_20d / current_price) - 1) * 100, 2) if current_price > 0 else 0.0,
             "Return_5D_%": round(((current_price / float(df["Close"].dropna().iloc[-6])) - 1) * 100, 2) if len(df["Close"].dropna()) >= 6 else 0.0,
             "Return_20D_%": round(((current_price / float(df["Close"].dropna().iloc[-21])) - 1) * 100, 2) if len(df["Close"].dropna()) >= 21 else 0.0,
             "Volatility_20D_%": round(float(df["Close"].pct_change().tail(20).std() * 100), 2),

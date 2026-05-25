@@ -54,6 +54,9 @@ def build_local_fallback_decision(ranked_rows, current_watchlist, egx30_data, ev
         ma50 = _float(row.get("MA50"))
         rsi = _float(row.get("RSI"), 50)
         liquidity = _float(row.get("Daily_Liquidity_EGP"))
+        support_20d = _float(row.get("Support_20D"))
+        resistance_20d = _float(row.get("Resistance_20D"))
+        resistance_distance = _float(row.get("Resistance_Distance_%"))
         fresh = row.get("Price_Freshness") == "FRESH"
 
         if not evidence_items or not fresh or liquidity < MIN_DAILY_LIQUIDITY_EGP:
@@ -62,12 +65,17 @@ def build_local_fallback_decision(ranked_rows, current_watchlist, egx30_data, ev
             continue
         if not (price > ma20 and price >= ma50 and 35 <= rsi <= 65):
             continue
+        if resistance_20d and resistance_20d > price and resistance_distance < 2:
+            continue
 
-        stop_loss = round(max(price * 0.96, ma20 * 0.98), 2)
+        support_stop = support_20d * 0.985 if support_20d and support_20d < price else 0
+        stop_loss = round(max(price * 0.96, ma20 * 0.98, support_stop), 2)
         if stop_loss >= price:
             stop_loss = round(price * 0.97, 2)
         risk = price - stop_loss
-        take_profit = round(price + (risk * 2), 2)
+        risk_reward_target = price + (risk * 2)
+        resistance_target = resistance_20d * 0.995 if resistance_20d and resistance_20d > price else 0
+        take_profit = round(max(risk_reward_target, resistance_target), 2)
         confidence = "MEDIUM" if macro_trend != "Bearish" else "LOW"
         if flow_status.get("status") != "FLOW_AVAILABLE":
             confidence = "LOW"
@@ -83,7 +91,7 @@ def build_local_fallback_decision(ranked_rows, current_watchlist, egx30_data, ev
                 "confidence": confidence,
                 "trade_reason": (
                     f"Local fallback BUY candidate: {ticker} has fresh Yahoo price data, liquidity above threshold, "
-                    f"price above MA20/MA50, RSI {rsi}, and evidence sources. Macro trend is {macro_trend}; "
+                    f"price above MA20/MA50, RSI {rsi}, support {support_20d}, resistance {resistance_20d}, and evidence sources. Macro trend is {macro_trend}; "
                     "this is a signal-only ticket, so choose any position size manually in Thndr."
                 ),
             },

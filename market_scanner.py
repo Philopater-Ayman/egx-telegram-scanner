@@ -151,6 +151,8 @@ def _outlook_fields(row, sector_rank, sector_score):
     avg20_liquidity = _float(row.get("Avg20_Liquidity_EGP"))
     liquidity_spike = _float(row.get("Liquidity_Spike"))
     volatility = _float(row.get("Volatility_20D_%"))
+    support_distance = _float(row.get("Support_Distance_%"))
+    resistance_distance = _float(row.get("Resistance_Distance_%"))
     score = 0
     risk_notes = []
 
@@ -194,6 +196,16 @@ def _outlook_fields(row, sector_rank, sector_score):
         risk_notes.append("overheated RSI")
     if row.get("Breakout_20D"):
         score += 8
+    if 2 <= support_distance <= 12:
+        score += 6
+    elif support_distance > 20:
+        score -= 4
+        risk_notes.append("far above support")
+    if resistance_distance >= 5:
+        score += 6
+    elif 0 < resistance_distance < 2:
+        score -= 6
+        risk_notes.append("close to resistance")
     if sector_rank <= 3:
         score += 10
     elif sector_rank >= 8:
@@ -400,6 +412,12 @@ def write_scanner_outputs(ranked_rows, sector_scores, flow_status, scan_failures
                 "MACD_Signal": row.get("MACD_Signal"),
                 "Avg20_Liquidity_EGP": row.get("Avg20_Liquidity_EGP"),
                 "Liquidity_Spike": row.get("Liquidity_Spike"),
+                "Support_20D": row.get("Support_20D"),
+                "Resistance_20D": row.get("Resistance_20D"),
+                "Support_50D": row.get("Support_50D"),
+                "Resistance_50D": row.get("Resistance_50D"),
+                "Support_Distance_%": row.get("Support_Distance_%"),
+                "Resistance_Distance_%": row.get("Resistance_Distance_%"),
                 "Return_5D_%": row.get("Return_5D_%"),
                 "Return_20D_%": row.get("Return_20D_%"),
                 "Volatility_20D_%": row.get("Volatility_20D_%"),
@@ -425,6 +443,10 @@ def write_scanner_outputs(ranked_rows, sector_scores, flow_status, scan_failures
                 "Daily_Liquidity_EGP": row.get("Daily_Liquidity_EGP"),
                 "Liquidity_Spike": row.get("Liquidity_Spike"),
                 "RSI": row.get("RSI"),
+                "Support_20D": row.get("Support_20D"),
+                "Resistance_20D": row.get("Resistance_20D"),
+                "Support_Distance_%": row.get("Support_Distance_%"),
+                "Resistance_Distance_%": row.get("Resistance_Distance_%"),
             }
         )
         quality_rows.append(

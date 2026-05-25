@@ -310,6 +310,10 @@ def build_openrouter_narrative(decision, ranked_rows, sector_scores, evidence_pa
             "liquidity_regime": row.get("Liquidity_Regime"),
             "liquidity": row.get("Daily_Liquidity_EGP"),
             "liquidity_spike": row.get("Liquidity_Spike"),
+            "support_20d": row.get("Support_20D"),
+            "resistance_20d": row.get("Resistance_20D"),
+            "support_distance_pct": row.get("Support_Distance_%"),
+            "resistance_distance_pct": row.get("Resistance_Distance_%"),
             "rsi": row.get("RSI"),
             "sector": row.get("Sector"),
             "sector_rank": row.get("Sector_Rank"),
@@ -336,7 +340,7 @@ def build_openrouter_narrative(decision, ranked_rows, sector_scores, evidence_pa
     prompt = (
         "Write a concise Telegram narrative for a personal EGX stock scanner. "
         "Do not make a new trade decision. Do not invent live data. Do not mention quantities or position sizing. "
-        "Explain why the local scanner selected the action, what liquidity/sector/outlook means for the next 1-3 days, "
+        "Explain why the local scanner selected the action, what liquidity/sector/support/resistance/outlook means for the next 1-3 days, "
         "and include uncertainty. Return only valid compact JSON with keys summary and bullets, where bullets is 3 to 5 short strings. "
         f"Scanner payload: {json.dumps(payload, default=str)}"
     )

@@ -106,7 +106,7 @@ def write_daily_report(
     if buy_ready:
         for row in buy_ready[:10]:
             lines.append(
-                f"- {row.get('Ticker')}: rank={row.get('Rank_Score')} outlook={row.get('Outlook_Label')} outlook_score={row.get('Outlook_Score')} sector_rank={row.get('Sector_Rank')} price={row.get('Current_Price')} liquidity={row.get('Daily_Liquidity_EGP')}"
+                f"- {row.get('Ticker')}: rank={row.get('Rank_Score')} outlook={row.get('Outlook_Label')} outlook_score={row.get('Outlook_Score')} sector_rank={row.get('Sector_Rank')} price={row.get('Current_Price')} support={row.get('Support_20D')} resistance={row.get('Resistance_20D')} liquidity={row.get('Daily_Liquidity_EGP')}"
             )
     else:
         lines.append("- No BUY-ready candidates. Review block reasons and institution-flow status.")
@@ -121,7 +121,7 @@ def write_daily_report(
     lines.extend(["", "## Ranked Scanner Results"])
     for ticker, data in sorted(market_data.items()):
         lines.append(
-            f"- {ticker}: score={data.get('Rank_Score', 'n/a')} buy_ready={data.get('Buy_Ready')} sector_rank={data.get('Sector_Rank')} price={data.get('Current_Price')} source={data.get('Price_Source')} as_of={data.get('Price_As_Of')} freshness={data.get('Price_Freshness')} RSI={data.get('RSI')} liquidity={data.get('Daily_Liquidity_EGP')} spike={data.get('Liquidity_Spike')}"
+            f"- {ticker}: score={data.get('Rank_Score', 'n/a')} buy_ready={data.get('Buy_Ready')} sector_rank={data.get('Sector_Rank')} price={data.get('Current_Price')} support={data.get('Support_20D')} resistance={data.get('Resistance_20D')} source={data.get('Price_Source')} as_of={data.get('Price_As_Of')} freshness={data.get('Price_Freshness')} RSI={data.get('RSI')} liquidity={data.get('Daily_Liquidity_EGP')} spike={data.get('Liquidity_Spike')}"
         )
 
     lines.extend(["", "## Backtesting Lite"])
@@ -267,13 +267,13 @@ def send_telegram_notification(decision, egx30, warnings, market_data=None, sect
             "Top ranked",
             _line_items(
                 ranked,
-                lambda row: f"- {row.get('Ticker')}: rank {row.get('Rank_Score')} | outlook {row.get('Outlook_Label')} {row.get('Outlook_Score')} | RSI {row.get('RSI')} | liq {_fmt_num(row.get('Daily_Liquidity_EGP'))}",
+                lambda row: f"- {row.get('Ticker')}: rank {row.get('Rank_Score')} | outlook {row.get('Outlook_Label')} {row.get('Outlook_Score')} | RSI {row.get('RSI')} | S/R {_fmt_num(row.get('Support_20D'))}/{_fmt_num(row.get('Resistance_20D'))} | liq {_fmt_num(row.get('Daily_Liquidity_EGP'))}",
             ),
             "",
             "BUY-ready",
             _line_items(
                 buy_ready,
-                lambda row: f"- {row.get('Ticker')}: entry {_fmt_num(row.get('Current_Price'))} | outlook {row.get('Outlook_Label')} | sector #{row.get('Sector_Rank')}",
+                lambda row: f"- {row.get('Ticker')}: entry {_fmt_num(row.get('Current_Price'))} | S/R {_fmt_num(row.get('Support_20D'))}/{_fmt_num(row.get('Resistance_20D'))} | outlook {row.get('Outlook_Label')} | sector #{row.get('Sector_Rank')}",
             ),
             "",
             "Liquidity movers",

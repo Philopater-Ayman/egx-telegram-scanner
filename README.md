@@ -1,6 +1,6 @@
 # Gemini EGX Copilot
 
-Private advisor-only EGX trading scanner. It scans a local EGX universe, collects market data/history, calculates deterministic liquidity/trend/sector/flow/outlook signals, creates one signal-only action ticket, sends a full Telegram report, and writes local CSV/Markdown logs. Gemini is used for grounded evidence when available; OpenRouter is used for narrative explanation. Local scanner rules create the ticket.
+Private advisor-only EGX trading scanner. It scans a local EGX universe, collects market data/history, calculates deterministic liquidity/trend/sector/support-resistance/flow/outlook signals, creates one signal-only action ticket, sends a full Telegram report, and writes local CSV/Markdown logs. Gemini is used for grounded evidence when available; OpenRouter is used for narrative explanation. Local scanner rules create the ticket.
 
 ## Daily Use
 
@@ -17,7 +17,7 @@ The bot never executes trades automatically.
 
 ## Telegram-First Tickets
 
-Tickets are signal-only. They include action, ticker, entry, take profit, stop loss, confidence, liquidity context, sector context, evidence quality, warnings, and a transparent 1-3 day outlook. They do not include quantity or cash sizing.
+Tickets are signal-only. They include action, ticker, entry, take profit, stop loss, support, resistance, confidence, liquidity context, sector context, evidence quality, warnings, and a transparent 1-3 day outlook. They do not include quantity or cash sizing.
 
 ## Automation
 
@@ -45,7 +45,7 @@ Add official holidays, Ramadan hours, or special sessions to `market_calendar.cs
 - `provider_status.md`: source health and warnings.
 - `stock_universe.csv`: active EGX candidate universe with sector, index tags, and Yahoo symbol.
 - `market_prices.csv`: latest collected price/volume snapshot for scanned tickers.
-- `indicators.csv`: deterministic indicators such as MA20/MA50/MA200, RSI, MACD, liquidity spike, returns, and volatility.
+- `indicators.csv`: deterministic indicators such as MA20/MA50/MA200, RSI, MACD, liquidity spike, returns, volatility, support, and resistance.
 - `sector_scores.csv`: sector rotation leaderboard.
 - `market_calendar.csv`: local holiday/Ramadan/special-session override file.
 - `scan_results.csv`: deterministic scanner ranking and BUY block reasons.
@@ -65,7 +65,7 @@ Add official holidays, Ramadan hours, or special sessions to `market_calendar.cs
 ## Safety Rules
 
 - Advisor-only mode: manual Thndr execution only.
-- BUY must have fresh ticker data, acceptable liquidity, stop loss, take profit, and evidence.
+- BUY must have fresh ticker data, acceptable liquidity, support/resistance-aware stop loss and take profit, and evidence.
 - Tickets are signal-only. Choose position size manually in Thndr.
 - Delayed macro data caps confidence.
 - Missing or weak evidence downgrades/block BUY.
