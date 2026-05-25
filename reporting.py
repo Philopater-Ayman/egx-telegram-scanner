@@ -147,7 +147,9 @@ def write_daily_report(
     lines.extend(["", "## Evidence"])
     if evidence_packets:
         for ticker, packet in evidence_packets.items():
-            lines.append(f"- {ticker}: {packet.get('summary', '')}")
+            lines.append(
+                f"- {ticker}: status={packet.get('evidence_status', 'UNKNOWN')} sources={len(packet.get('items', []))} expected={packet.get('expected_company', '')} summary={packet.get('summary', '')}"
+            )
             for item in packet.get("items", [])[:3]:
                 if isinstance(item, dict):
                     title = item.get("title") or item.get("source") or "source"
@@ -232,6 +234,35 @@ def _line_items(rows, formatter, limit=5):
     return "\n".join(formatter(row) for row in rows[:limit]) or "- None"
 
 
+def _why_not_ticket_rows(ranked, active_tickers, limit=6):
+    rows = []
+    for row in ranked:
+        ticker = row.get("Ticker")
+        if ticker in active_tickers:
+            continue
+        reasons = []
+        try:
+            rsi = float(row.get("RSI") or 0)
+        except Exception:
+            rsi = 0
+        try:
+            resistance_distance = float(row.get("Resistance_Distance_%") or 0)
+        except Exception:
+            resistance_distance = 0
+        if not row.get("Buy_Ready"):
+            reasons.append(row.get("Buy_Block_Reasons") or "not BUY-ready after first filters")
+        if rsi > 70:
+            reasons.append("RSI is too hot")
+        if 0 < resistance_distance < 2:
+            reasons.append("too close to resistance")
+        if not reasons:
+            reasons.append("lower priority than final top tickets")
+        rows.append({**row, "Skip_Reasons": "; ".join(reasons)})
+        if len(rows) >= limit:
+            break
+    return rows
+
+
 def _send_telegram_text(text):
     response = requests.post(
         f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/sendMessage",
@@ -255,11 +286,13 @@ def send_telegram_notification(decision, egx30, warnings, market_data=None, sect
     trade = decision.get("trade_recommendation", {})
     tickets = decision.get("trade_recommendations") or ([trade] if trade else [])
     active_tickets = [ticket for ticket in tickets if str(ticket.get("action", "HOLD")).upper() in {"BUY", "SELL"}]
+    active_tickers = {ticket.get("ticker") for ticket in active_tickets}
     rows = list((market_data or {}).values())
     ranked = sorted(rows, key=lambda row: float(row.get("Rank_Score") or 0), reverse=True)
     buy_ready = [row for row in ranked if row.get("Buy_Ready")]
     liquidity_movers = sorted(rows, key=lambda row: float(row.get("Liquidity_Spike") or 0), reverse=True)
     outlook_rows = sorted(rows, key=lambda row: float(row.get("Outlook_Score") or 0), reverse=True)
+    skipped_rows = _why_not_ticket_rows(ranked, active_tickers)
     sectors = sorted((sector_scores or {}).values(), key=lambda row: row.get("Sector_Rank", 99))
     narrative = narrative or {}
     evidence_status, source_count = _evidence_quality(evidence_packets)
@@ -270,8 +303,10 @@ def send_telegram_notification(decision, egx30, warnings, market_data=None, sect
         active_tickets,
         lambda ticket: (
             f"#{ticket.get('priority', '')} {ticket.get('action', 'HOLD')} {ticket.get('ticker', '')}\n"
+            f"Setup: {ticket.get('setup_label', ticket.get('action', 'HOLD'))}\n"
             f"Entry {_fmt_num(ticket.get('entry', 0))} | TP {_fmt_num(ticket.get('take_profit', 0))} | SL {_fmt_num(ticket.get('stop_loss', 0))}\n"
             f"Confidence {ticket.get('confidence', 'LOW')} | rank score {ticket.get('priority_score', '')} | outlook {ticket.get('outlook_label', '')} {ticket.get('outlook_score', '')}\n"
+            f"Risk notes: {ticket.get('risk_notes', '') or 'No major scanner risk flags.'}\n"
             f"Reason: {ticket.get('trade_reason', '')}"
         ),
         limit=3,
@@ -293,7 +328,8 @@ def send_telegram_notification(decision, egx30, warnings, market_data=None, sect
             "",
             "How to read this:",
             "- Priority #1 is the strongest setup after ranking, liquidity, trend, RSI, evidence, support/resistance, and risk gates.",
-            "- LOW confidence means macro or momentum risk exists; it is not a command to trade.",
+            "- WATCH/BUY SETUP means the technical setup exists, but macro or momentum risk requires extra patience.",
+            "- LOW confidence means risk exists; it is not a command to trade.",
             "- Signal-only mode. No quantity is calculated. Verify price/spread in Thndr and choose size manually.",
         ]
     )
@@ -314,6 +350,13 @@ def send_telegram_notification(decision, egx30, warnings, market_data=None, sect
                 buy_ready,
                 lambda row: f"- {row.get('Ticker')}: entry {_fmt_num(row.get('Current_Price'))} | S/R {_fmt_num(row.get('Support_20D'))}/{_fmt_num(row.get('Resistance_20D'))} | outlook {row.get('Outlook_Label')} | sector #{row.get('Sector_Rank')}",
                 limit=8,
+            ),
+            "",
+            "Why high-ranked names were not final tickets",
+            _line_items(
+                skipped_rows,
+                lambda row: f"- {row.get('Ticker')}: rank {row.get('Rank_Score')} | {row.get('Skip_Reasons')}",
+                limit=6,
             ),
             "",
             "Liquidity movers",
@@ -355,7 +398,7 @@ def send_telegram_notification(decision, egx30, warnings, market_data=None, sect
             "Evidence packets",
             _line_items(
                 [{"ticker": ticker, **packet} for ticker, packet in (evidence_packets or {}).items()],
-                lambda packet: f"- {packet.get('ticker')}: {len(packet.get('items', []))} source(s) | {packet.get('source_mode', 'n/a')} | {packet.get('summary', '')[:220]}",
+                lambda packet: f"- {packet.get('ticker')}: {packet.get('evidence_status', 'UNKNOWN')} | {len(packet.get('items', []))} source(s) | {packet.get('source_mode', 'n/a')} | {packet.get('summary', '')[:220]}",
                 limit=8,
             ),
             "",

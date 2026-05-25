@@ -45,9 +45,15 @@ def _ticket_from_row(row, macro_trend):
     risk_reward_target = price + (risk * 2)
     resistance_target = resistance_20d * 0.995 if resistance_20d and resistance_20d > price else 0
     take_profit = round(max(risk_reward_target, resistance_target), 2)
-    confidence = "MEDIUM" if macro_trend != "Bearish" else "LOW"
+    confidence = "MEDIUM" if macro_trend != "Bearish" and rsi <= 65 else "LOW"
+    setup_label = "BUY SETUP"
+    if confidence == "LOW":
+        setup_label = "LOW-CONFIDENCE BUY SETUP"
+    if macro_trend == "Bearish" or rsi > 65:
+        setup_label = "WATCH/BUY SETUP"
     return {
         "action": "BUY",
+        "setup_label": setup_label,
         "ticker": ticker,
         "entry": round(price, 2),
         "take_profit": take_profit,
@@ -56,10 +62,11 @@ def _ticket_from_row(row, macro_trend):
         "priority_score": row.get("Rank_Score", 0),
         "outlook_label": row.get("Outlook_Label", ""),
         "outlook_score": row.get("Outlook_Score", 0),
+        "risk_notes": row.get("Risk_Notes", ""),
         "trade_reason": (
-            f"Local fallback BUY candidate: {ticker} has fresh Yahoo price data, liquidity above threshold, "
+            f"{setup_label}: {ticker} has fresh Yahoo price data, liquidity above threshold, "
             f"price above MA20/MA50, RSI {rsi}, support {support_20d}, resistance {resistance_20d}, and evidence sources. Macro trend is {macro_trend}; "
-            "this is a signal-only ticket, so choose any position size manually in Thndr."
+            "verify price action in Thndr before treating it as a swing entry."
         ),
     }
 

@@ -16,6 +16,8 @@ from config import (
     OPENROUTER_MODEL,
     USE_GEMINI_GROUNDING,
     USE_OPENROUTER_NARRATIVE,
+    get_company_name_map,
+    get_yahoo_symbol_map,
 )
 
 
@@ -107,6 +109,70 @@ def _coerce_narrative(content):
     return summary or content.strip(), bullets[:5]
 
 
+def _norm_text(value):
+    return re.sub(r"[^A-Z0-9]+", " ", str(value or "").upper()).strip()
+
+
+def _company_terms(company_name):
+    stopwords = {
+        "THE",
+        "AND",
+        "FOR",
+        "OF",
+        "S",
+        "SAE",
+        "S A E",
+        "EGYPT",
+        "EGYPTIAN",
+        "COMPANY",
+        "CO",
+        "GROUP",
+        "HOLDING",
+        "HOLDINGS",
+        "INTERNATIONAL",
+        "INVESTMENT",
+        "INVESTMENTS",
+        "DEVELOPMENT",
+    }
+    terms = []
+    for term in re.findall(r"[A-Z0-9]{3,}", _norm_text(company_name)):
+        if term not in stopwords and term not in terms:
+            terms.append(term)
+    return terms[:5]
+
+
+def _validate_evidence_packet(ticker, packet, company_name="", yahoo_symbol=""):
+    packet = dict(packet or {})
+    items = [item for item in packet.get("items", []) if isinstance(item, dict)]
+    summary = str(packet.get("summary") or "")
+    evidence_text = " ".join(
+        [summary]
+        + [
+            " ".join(str(item.get(key, "")) for key in ("title", "url", "source"))
+            for item in items
+        ]
+    )
+    normalized = _norm_text(evidence_text)
+    symbol = ticker.replace(".CA", "").upper()
+    yahoo_base = str(yahoo_symbol or ticker).replace(".CA", "").upper()
+    company = company_name or get_company_name_map().get(ticker, ticker)
+    terms = _company_terms(company)
+    matched_symbol = symbol in normalized.split() or yahoo_base in normalized.split()
+    matched_terms = [term for term in terms if term in normalized]
+    accepted = bool(items) and (matched_symbol or len(matched_terms) >= 2)
+    packet["items"] = items[:3] if accepted else []
+    packet["expected_company"] = company
+    packet["evidence_status"] = "ACCEPTED" if accepted else "REJECTED_TICKER_MISMATCH"
+    packet["matched_terms"] = ", ".join(([symbol] if matched_symbol else []) + matched_terms)
+    packet.setdefault("warnings", [])
+    if not accepted:
+        reason = f"Evidence rejected for {ticker}: source text did not clearly match {ticker} / {company}."
+        packet["summary"] = reason
+        if reason not in packet["warnings"]:
+            packet["warnings"].append(reason)
+    return packet
+
+
 def evidence_from_market_data(ticker, row):
     items = row.get("News_Items") or []
     headlines = row.get("Recent_Headlines") or []
@@ -120,13 +186,19 @@ def evidence_from_market_data(ticker, row):
         source_mode = mubasher.get("source_mode", "MUBASHER_STOCK_PAGE")
     if not items and not headlines:
         warnings.append(f"No Yahoo or Mubasher evidence found for {ticker}.")
-    return {
+    packet = {
         "ticker": ticker,
         "items": items[:3],
         "summary": "; ".join(headlines[:3]) if headlines else "No public fallback evidence found.",
         "warnings": warnings,
         "source_mode": source_mode,
     }
+    return _validate_evidence_packet(
+        ticker,
+        packet,
+        company_name=get_company_name_map().get(ticker, ""),
+        yahoo_symbol=get_yahoo_symbol_map().get(ticker, ticker),
+    )
 
 
 def mubasher_stock_evidence(ticker):
@@ -204,13 +276,14 @@ def gather_evidence(ticker, company_context=""):
         if grounded_items:
             seen = {item.get("url") for item in items if isinstance(item, dict)}
             items.extend([item for item in grounded_items if item.get("url") not in seen])
-        return {
+        packet = {
             "ticker": ticker,
             "items": items[:3],
             "summary": data.get("summary") or raw[:600] or "Grounded evidence collected.",
             "warnings": [],
             "source_mode": "GEMINI_GROUNDING",
         }
+        return _validate_evidence_packet(ticker, packet, company_name=company_context)
     except Exception as exc:
         return {
             "ticker": ticker,
@@ -229,9 +302,13 @@ def gather_batch_evidence(candidate_rows):
         return packets
 
     tickers = [row["Ticker"] for row in candidate_rows]
+    company_map = get_company_name_map()
+    yahoo_map = get_yahoo_symbol_map()
     context = [
         {
             "ticker": row["Ticker"],
+            "company": company_map.get(row["Ticker"], row["Ticker"]),
+            "yahoo_symbol": yahoo_map.get(row["Ticker"], row["Ticker"]),
             "sector": row.get("Sector"),
             "price": row.get("Current_Price"),
             "rsi": row.get("RSI"),
@@ -247,6 +324,8 @@ def gather_batch_evidence(candidate_rows):
             contents=(
                 "Search the web for recent, ticker-relevant evidence for these EGX candidates. "
                 "Prefer official company, exchange, disclosure, financial news, and market pages. "
+                "Each evidence item must clearly match the exact ticker and company name in the candidate object. "
+                "Reject similarly named US tickers or other EGX tickers. "
                 "Return a compact JSON object like {\"evidence\":{\"TICKER.CA\":{\"summary\":\"...\",\"items\":[{\"title\":\"...\",\"url\":\"...\"}]}}}. "
                 "If evidence is not clearly about the ticker, leave items empty. Candidates: "
                 + json.dumps(context)
@@ -263,13 +342,24 @@ def gather_batch_evidence(candidate_rows):
             packet = evidence.get(ticker, {}) if isinstance(evidence.get(ticker), dict) else {}
             items = packet.get("items") if isinstance(packet.get("items"), list) else []
             if items:
-                packets[ticker] = {
+                candidate_packet = {
                     "ticker": ticker,
                     "items": items[:3],
                     "summary": packet.get("summary") or f"Gemini grounding found public sources for {ticker}.",
                     "warnings": [],
                     "source_mode": "GEMINI_BATCH_GROUNDING",
                 }
+                validated = _validate_evidence_packet(
+                    ticker,
+                    candidate_packet,
+                    company_name=company_map.get(ticker, ""),
+                    yahoo_symbol=yahoo_map.get(ticker, ticker),
+                )
+                if validated.get("items"):
+                    packets[ticker] = validated
+                else:
+                    packets[ticker].setdefault("warnings", []).extend(validated.get("warnings", []))
+                    packets[ticker]["evidence_status"] = "REJECTED_TICKER_MISMATCH"
             elif raw and packets[ticker].get("items"):
                 packets[ticker]["summary"] = packets[ticker]["summary"] + " Gemini also reviewed web evidence but did not return ticker-specific citations."
         return packets
