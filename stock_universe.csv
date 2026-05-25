@@ -1,0 +1,87 @@
+Ticker,Company Name,Sector,Index Tags,Yahoo Symbol,Active
+COMI.CA,Commercial International Bank Egypt,Banking & Financials,EGX30,COMI.CA,TRUE
+HDBK.CA,Housing and Development Bank Egypt,Banking & Financials,EGX30,HDBK.CA,TRUE
+CIEB.CA,Credit Agricole Egypt,Banking & Financials,EGX30,CIEB.CA,TRUE
+ADIB.CA,Abu Dhabi Islamic Bank Egypt,Banking & Financials,EGX30,ADIB.CA,TRUE
+SAUD.CA,Al Baraka Bank Egypt,Banking & Financials,EGX70,SAUD.CA,TRUE
+HRHO.CA,EFG Holding,Non-bank Financial Services,EGX30,HRHO.CA,TRUE
+EFIH.CA,E-Finance For Digital and Financial Investments,Fintech & Payments,EGX30,EFIH.CA,TRUE
+FWRY.CA,Fawry For Banking Technology and Electronic Payments,Fintech & Payments,EGX30,FWRY.CA,TRUE
+TMGH.CA,Talaat Moustafa Group Holding,Real Estate,EGX30,TMGH.CA,TRUE
+EMFD.CA,Emaar Misr for Development,Real Estate,EGX30,EMFD.CA,TRUE
+OCDI.CA,Sixth of October Development and Investment,Real Estate,EGX30,OCDI.CA,TRUE
+HELI.CA,Heliopolis Housing,Real Estate,EGX70,HELI.CA,TRUE
+ORHD.CA,Orascom Development Egypt,Real Estate,EGX70,ORHD.CA,TRUE
+PHDC.CA,Palm Hills Development,Real Estate,EGX70,PHDC.CA,TRUE
+SWDY.CA,Elsewedy Electric,Industrial Goods & Cables,EGX30,SWDY.CA,TRUE
+ORAS.CA,Orascom Construction,Industrial Goods & Construction,EGX30,ORAS.CA,TRUE
+SKPC.CA,Sidi Kerir Petrochemicals,Basic Resources & Chemicals,EGX30,SKPC.CA,TRUE
+ABUK.CA,Abu Qir Fertilizers,Basic Resources & Chemicals,EGX30,ABUK.CA,TRUE
+EGAL.CA,Egypt Aluminum,Basic Resources & Chemicals,EGX30,EGAL.CA,TRUE
+MFPC.CA,Misr Fertilizers Production,Basic Resources & Chemicals,EGX30,MFPC.CA,TRUE
+EGCH.CA,Egyptian Chemical Industries Kima,Basic Resources & Chemicals,EGX70,EGCH.CA,TRUE
+IRON.CA,Egyptian Iron and Steel,Basic Resources & Chemicals,EGX70,IRON.CA,TRUE
+AMOC.CA,Alexandria Mineral Oils,Energy & Petrochemicals,EGX70,AMOC.CA,TRUE
+EKHO.CA,Egypt Kuwait Holding,Energy & Petrochemicals,EGX30,EKHO.CA,TRUE
+EFID.CA,Edita Food Industries,"Food, Beverages & Tobacco",EGX30,EFID.CA,TRUE
+EAST.CA,Eastern Company,"Food, Beverages & Tobacco",EGX30,EAST.CA,TRUE
+JUFO.CA,Juhayna Food Industries,"Food, Beverages & Tobacco",EGX70,JUFO.CA,TRUE
+DOMT.CA,Arabian Food Industries Domty,"Food, Beverages & Tobacco",EGX70,DOMT.CA,TRUE
+POUL.CA,Cairo Poultry,"Food, Beverages & Tobacco",EGX70,POUL.CA,TRUE
+ETEL.CA,Telecom Egypt,Telecommunications,EGX30,ETEL.CA,TRUE
+CLHO.CA,Cleopatra Hospital Group,Healthcare,EGX30,CLHO.CA,TRUE
+ISPH.CA,Ibn Sina Pharma,Healthcare,EGX70,ISPH.CA,TRUE
+RMDA.CA,Tenth of Ramadan Pharmaceutical Industries,Healthcare,EGX70,RMDA.CA,TRUE
+CIRA.CA,Cairo Investment and Real Estate Development,Education,EGX70,CIRA.CA,TRUE
+TALM.CA,Talim Management Services,Education,EGX70,TALM.CA,TRUE
+ACGC.CA,Arab Cotton Ginning,Textiles,EGX70,ACGC.CA,TRUE
+KABO.CA,El Nasr Clothing and Textiles,Textiles,EGX70,KABO.CA,TRUE
+ALCN.CA,Alexandria Containers and Cargo Handling,Transportation & Logistics,EGX70,ALCN.CA,TRUE
+CSAG.CA,Canal Shipping Agencies,Transportation & Logistics,EGX70,CSAG.CA,TRUE
+MPCO.CA,Mansoura Poultry,Agriculture & Food Production,EGX70,MPCO.CA,TRUE
+OLFI.CA,Obour Land For Food Industries,"Food, Beverages & Tobacco",EGX70,OLFI.CA,TRUE
+RAYA.CA,Raya Holding,Technology & Distribution,EGX70,RAYA.CA,TRUE
+BTFH.CA,Beltone Holding,Non-bank Financial Services,EGX70,BTFH.CA,TRUE
+MTIE.CA,MM Group For Industry and International Trade,Automotive & Distribution,EGX70,MTIE.CA,TRUE
+CNFN.CA,Contact Financial Holding,Non-bank Financial Services,EGX70,CNFN.CA,TRUE
+ATLC.CA,Al Tawfeek Leasing,Non-bank Financial Services,EGX70,ATLC.CA,TRUE
+OIH.CA,Orascom Investment Holding,Investment Holding,EGX70,OIH.CA,TRUE
+PHAR.CA,Egyptian International Pharmaceutical Industries,Healthcare,EGX70,PHAR.CA,TRUE
+LCSW.CA,Lecico Egypt,Building Materials,EGX70,LCSW.CA,TRUE
+MBSC.CA,Misr Beni Suef Cement,Building Materials,EGX70,MBSC.CA,TRUE
+ARCC.CA,Arabian Cement Company,Building Materials,EGX70,ARCC.CA,TRUE
+PRCL.CA,Ceramic and Porcelain,Building Materials,EGX70,PRCL.CA,TRUE
+SPIN.CA,Alexandria Spinning and Weaving,Textiles,EGX70,SPIN.CA,TRUE
+ARAB.CA,Arab Developers Holding,Real Estate,EGX70,ARAB.CA,TRUE
+AMER.CA,Amer Group Holding,Real Estate,EGX70,AMER.CA,TRUE
+MENA.CA,Mena Touristic and Real Estate Investment,Real Estate,EGX70,MENA.CA,TRUE
+ZMID.CA,Zahraa Maadi Investment and Development,Real Estate,EGX70,ZMID.CA,TRUE
+UNIT.CA,United Housing and Development,Real Estate,EGX70,UNIT.CA,TRUE
+PRDC.CA,Pioneers Properties For Urban Development,Real Estate,EGX70,PRDC.CA,TRUE
+GBCO.CA,GB Corp,Automotive & Distribution,EGX70,GBCO.CA,TRUE
+BINV.CA,B Investments Holding,Investment Holding,EGX70,BINV.CA,TRUE
+SCTS.CA,Suez Canal Company for Technology Settling,Education,EXPANDED,SCTS.CA,TRUE
+CANA.CA,Suez Canal Bank,Banking & Financials,EXPANDED,CANA.CA,TRUE
+FERC.CA,Ferchem Misr Fertilizers and Chemicals,Basic Resources & Chemicals,EXPANDED,FERC.CA,TRUE
+FAITA.CA,Faisal Islamic Bank of Egypt A,Banking & Financials,EXPANDED,FAITA.CA,TRUE
+FAIT.CA,Faisal Islamic Bank of Egypt,Banking & Financials,EXPANDED,FAIT.CA,TRUE
+EXPA.CA,Export Development Bank of Egypt,Banking & Financials,EXPANDED,EXPA.CA,TRUE
+CCAP.CA,Qalaa Holdings,Investment Holding,EXPANDED,CCAP.CA,TRUE
+EFIC.CA,Egyptian Financial and Industrial,Basic Resources & Chemicals,EXPANDED,EFIC.CA,TRUE
+EGTS.CA,Egyptian Resorts Company,Real Estate,EXPANDED,EGTS.CA,TRUE
+MCQE.CA,Misr Cement Qena,Building Materials,EXPANDED,MCQE.CA,TRUE
+SCEM.CA,Sinai Cement,Building Materials,EXPANDED,SCEM.CA,TRUE
+EGSA.CA,Egyptian Satellites,Telecommunications,EXPANDED,EGSA.CA,TRUE
+ORWE.CA,Oriental Weavers,Textiles,EXPANDED,ORWE.CA,TRUE
+CICH.CA,CI Capital Holding,Non-bank Financial Services,EXPANDED,CICH.CA,TRUE
+EGBE.CA,Egyptian Gulf Bank,Banking & Financials,EXPANDED,EGBE.CA,TRUE
+ATQA.CA,Misr National Steel Ataqa,Basic Resources & Chemicals,EXPANDED,ATQA.CA,TRUE
+MOIL.CA,Maridive and Oil Services,Energy & Petrochemicals,EXPANDED,MOIL.CA,TRUE
+MHOT.CA,Misr Hotels,Tourism & Leisure,EXPANDED,MHOT.CA,TRUE
+IFAP.CA,International Agricultural Products,Agriculture & Food Production,EXPANDED,IFAP.CA,TRUE
+MIPH.CA,Minapharm Pharmaceuticals,Healthcare,EXPANDED,MIPH.CA,TRUE
+NIPH.CA,El Nile Pharmaceuticals,Healthcare,EXPANDED,NIPH.CA,TRUE
+ISMQ.CA,Iron and Steel for Mines and Quarries,Basic Resources & Chemicals,EXPANDED,ISMQ.CA,TRUE
+EGAS.CA,Natural Gas and Mining Project,Energy & Petrochemicals,EXPANDED,EGAS.CA,TRUE
+ELEC.CA,Electro Cable Egypt,Industrial Goods & Cables,EXPANDED,ELEC.CA,TRUE
+SUGR.CA,Delta Sugar,"Food, Beverages & Tobacco",EXPANDED,SUGR.CA,TRUE

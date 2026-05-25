@@ -1,0 +1,81 @@
+from collections import Counter
+
+from config import MAX_WATCHLIST_SIZE, MIN_DAILY_LIQUIDITY_EGP, REQUIRE_FLOW_FOR_BUY
+
+
+def enforce_watchlist_limits(watchlist, sector_map):
+    clean = []
+    sector_counts = Counter()
+    for ticker in watchlist:
+        if not ticker:
+            continue
+        sector = sector_map.get(ticker, "General")
+        if ticker in clean or sector_counts[sector] >= 2:
+            continue
+        clean.append(ticker)
+        sector_counts[sector] += 1
+        if len(clean) >= MAX_WATCHLIST_SIZE:
+            break
+    return clean
+
+
+def apply_risk_gates(decision, market_data, egx30_data, evidence_packets, flow_status=None):
+    flow_status = flow_status or {"status": "FLOW_MISSING", "regime": "MISSING"}
+    warnings = []
+    trade = decision.get("trade_recommendation", {}) or {}
+    action = str(trade.get("action", "HOLD")).upper()
+    ticker = trade.get("ticker") or ""
+
+    if action not in {"BUY", "SELL", "HOLD"}:
+        warnings.append("Invalid action from AI; changed to HOLD.")
+        action = "HOLD"
+
+    if action == "BUY":
+        blocking = []
+        ticker_data = market_data.get(ticker)
+        evidence = evidence_packets.get(ticker, {})
+        evidence_items = evidence.get("items") or []
+        entry = float(trade.get("entry") or 0)
+        take_profit = float(trade.get("take_profit") or 0)
+        stop_loss = float(trade.get("stop_loss") or 0)
+
+        if not ticker_data:
+            blocking.append("BUY blocked: missing market data.")
+        else:
+            if ticker_data.get("Price_Freshness") != "FRESH":
+                blocking.append("BUY blocked: price data is stale or missing.")
+            if float(ticker_data.get("Daily_Liquidity_EGP") or 0) < MIN_DAILY_LIQUIDITY_EGP:
+                blocking.append("BUY blocked: liquidity is below minimum threshold.")
+        if egx30_data.get("Freshness") not in {"FRESH", "DELAYED"}:
+            blocking.append("BUY blocked: EGX30 macro data is unavailable or stale.")
+        elif egx30_data.get("Freshness") == "DELAYED" and str(trade.get("confidence", "LOW")).upper() == "HIGH":
+            warnings.append("BUY adjusted: delayed EGX30 macro data caps confidence at MEDIUM.")
+            trade["confidence"] = "MEDIUM"
+        if flow_status.get("status") != "FLOW_AVAILABLE" and REQUIRE_FLOW_FOR_BUY:
+            blocking.append("BUY blocked: institution-flow data is missing or weak.")
+        elif flow_status.get("regime") in {"INSTITUTION_OUTFLOW", "INSTITUTION_SELL_PRESSURE"}:
+            blocking.append(f"BUY blocked: institution-flow regime is {flow_status.get('regime')}.")
+        if not evidence_items:
+            blocking.append("BUY blocked: no relevant grounded evidence source.")
+        if entry <= 0:
+            blocking.append("BUY blocked: invalid entry.")
+        if stop_loss <= 0 or take_profit <= 0 or stop_loss >= entry or take_profit <= entry:
+            blocking.append("BUY blocked: invalid stop loss or take profit.")
+
+        if blocking:
+            warnings.extend(blocking)
+            trade = {
+                "action": "HOLD",
+                "ticker": ticker,
+                "entry": 0,
+                "take_profit": 0,
+                "stop_loss": 0,
+                "confidence": "LOW",
+                "trade_reason": "BUY was downgraded to HOLD by safety gates. " + " ".join(blocking),
+            }
+
+    if action == "SELL" and ticker and ticker not in market_data:
+        warnings.append("SELL warning: missing fresh market data; verify manually in Thndr before acting.")
+
+    decision["trade_recommendation"] = trade
+    return decision, warnings
