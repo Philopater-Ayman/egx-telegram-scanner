@@ -232,6 +232,18 @@ def _line_items(rows, formatter, limit=5):
     return "\n".join(formatter(row) for row in rows[:limit]) or "- None"
 
 
+def _send_telegram_text(text):
+    response = requests.post(
+        f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/sendMessage",
+        json={"chat_id": TELEGRAM_CHAT_ID, "text": text[:3900]},
+        timeout=20,
+    )
+    if response.status_code != 200:
+        print(f"Telegram API error: {response.status_code} {response.text}")
+        return False
+    return True
+
+
 def send_telegram_notification(decision, egx30, warnings, market_data=None, sector_scores=None, evidence_packets=None, scan_failures=None, narrative=None):
     if not SEND_TELEGRAM:
         print("Telegram disabled by SEND_TELEGRAM=false.")
@@ -257,77 +269,110 @@ def send_telegram_notification(decision, egx30, warnings, market_data=None, sect
     ticket_text = _line_items(
         active_tickets,
         lambda ticket: (
-            f"#{ticket.get('priority', '')} {ticket.get('action', 'HOLD')} {ticket.get('ticker', '')} | "
-            f"Entry {_fmt_num(ticket.get('entry', 0))} TP {_fmt_num(ticket.get('take_profit', 0))} SL {_fmt_num(ticket.get('stop_loss', 0))} | "
-            f"{ticket.get('confidence', 'LOW')} | score {ticket.get('priority_score', '')} | outlook {ticket.get('outlook_label', '')}"
+            f"#{ticket.get('priority', '')} {ticket.get('action', 'HOLD')} {ticket.get('ticker', '')}\n"
+            f"Entry {_fmt_num(ticket.get('entry', 0))} | TP {_fmt_num(ticket.get('take_profit', 0))} | SL {_fmt_num(ticket.get('stop_loss', 0))}\n"
+            f"Confidence {ticket.get('confidence', 'LOW')} | rank score {ticket.get('priority_score', '')} | outlook {ticket.get('outlook_label', '')} {ticket.get('outlook_score', '')}\n"
+            f"Reason: {ticket.get('trade_reason', '')}"
         ),
         limit=3,
     )
     if not active_tickets:
         ticket_text = f"- HOLD: {trade.get('trade_reason', 'No ticket passed the final gates.')}"
 
-    message = "\n".join(
+    summary_message = "\n".join(
         [
-            "EGX Scanner - Telegram-First Signal",
+            "EGX Scanner 1/3 - Action Tickets",
             "",
             f"Market: {egx30.get('Trend')} | {egx30.get('Freshness')} | {egx30.get('Source')}",
             f"Data quality: {data_quality}",
             f"Gemini evidence: {evidence_status} ({source_count} sources)",
+            f"Universe awareness: scanned {len(rows)} active stocks, {len(buy_ready)} BUY-ready after first scanner filters",
             "",
             "TOP ACTION TICKETS",
             ticket_text,
-            f"Primary reason: {trade.get('trade_reason', '')}",
             "",
-            f"AI narrative: {narrative.get('provider', 'OpenRouter')} {narrative.get('status', 'NOT_RUN')} | {narrative.get('model', '') or 'n/a'}",
-            f"{narrative.get('summary', '')}",
-            _line_items([{"bullet": item} for item in narrative.get("bullets", [])], lambda row: f"- {row.get('bullet')}", limit=5),
+            "How to read this:",
+            "- Priority #1 is the strongest setup after ranking, liquidity, trend, RSI, evidence, support/resistance, and risk gates.",
+            "- LOW confidence means macro or momentum risk exists; it is not a command to trade.",
+            "- Signal-only mode. No quantity is calculated. Verify price/spread in Thndr and choose size manually.",
+        ]
+    )
+
+    market_message = "\n".join(
+        [
+            "EGX Scanner 2/3 - Market Map",
             "",
-            "Top ranked",
+            "Top ranked by scanner",
             _line_items(
                 ranked,
                 lambda row: f"- {row.get('Ticker')}: rank {row.get('Rank_Score')} | outlook {row.get('Outlook_Label')} {row.get('Outlook_Score')} | RSI {row.get('RSI')} | S/R {_fmt_num(row.get('Support_20D'))}/{_fmt_num(row.get('Resistance_20D'))} | liq {_fmt_num(row.get('Daily_Liquidity_EGP'))}",
+                limit=8,
             ),
             "",
-            "BUY-ready",
+            "BUY-ready candidates",
             _line_items(
                 buy_ready,
                 lambda row: f"- {row.get('Ticker')}: entry {_fmt_num(row.get('Current_Price'))} | S/R {_fmt_num(row.get('Support_20D'))}/{_fmt_num(row.get('Resistance_20D'))} | outlook {row.get('Outlook_Label')} | sector #{row.get('Sector_Rank')}",
+                limit=8,
             ),
             "",
             "Liquidity movers",
             _line_items(
                 liquidity_movers,
                 lambda row: f"- {row.get('Ticker')}: spike {row.get('Liquidity_Spike')} | regime {row.get('Liquidity_Regime')} | liq {_fmt_num(row.get('Daily_Liquidity_EGP'))}",
+                limit=8,
             ),
             "",
             "Sector rotation",
             _line_items(
                 sectors,
-                lambda row: f"- #{row.get('Sector_Rank')} {row.get('Sector')}: score {row.get('Sector_Score')} | 5d {row.get('Median_5D_Return_%')}%",
-                limit=4,
+                lambda row: f"- #{row.get('Sector_Rank')} {row.get('Sector')}: score {row.get('Sector_Score')} | 5d {row.get('Median_5D_Return_%')}% | 20d {row.get('Median_20D_Return_%')}% | above MA50 {row.get('Above_MA50_%')}%",
+                limit=8,
             ),
             "",
-            "1-3 day outlook",
+            "1-3 day outlook leaders",
             _line_items(
                 outlook_rows,
                 lambda row: f"- {row.get('Ticker')}: {row.get('Outlook_Label')} {row.get('Outlook_Score')} | {row.get('Risk_Notes')}",
+                limit=8,
+            ),
+        ]
+    )
+
+    narrative_message = "\n".join(
+        [
+            "EGX Scanner 3/3 - AI Evidence & Warnings",
+            "",
+            f"AI narrative: {narrative.get('provider', 'OpenRouter')} {narrative.get('status', 'NOT_RUN')} | {narrative.get('model', '') or 'n/a'}",
+            f"{narrative.get('summary', '')}",
+            _line_items([{"bullet": item} for item in narrative.get("bullets", [])], lambda row: f"- {row.get('bullet')}", limit=5),
+            "",
+            "Evidence quality",
+            f"- {evidence_status}",
+            f"- Sources found across top evidence candidates: {source_count}",
+            f"- Gemini failure does not stop the scanner; local deterministic rules still create or block tickets.",
+            "",
+            "Evidence packets",
+            _line_items(
+                [{"ticker": ticker, **packet} for ticker, packet in (evidence_packets or {}).items()],
+                lambda packet: f"- {packet.get('ticker')}: {len(packet.get('items', []))} source(s) | {packet.get('source_mode', 'n/a')} | {packet.get('summary', '')[:220]}",
+                limit=8,
             ),
             "",
             f"Warnings:\n{warning_text}",
             "",
-            "Signal-only mode. No quantity is calculated. Verify in Thndr and choose size manually.",
+            "Remember: the scanner can improve discipline and awareness, but it cannot guarantee profit.",
         ]
     )
     try:
-        response = requests.post(
-            f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/sendMessage",
-            json={"chat_id": TELEGRAM_CHAT_ID, "text": message[:3900]},
-            timeout=20,
-        )
-        if response.status_code == 200:
-            print("Telegram notification sent.")
+        sent = [
+            _send_telegram_text(summary_message),
+            _send_telegram_text(market_message),
+            _send_telegram_text(narrative_message),
+        ]
+        if all(sent):
+            print("Telegram notification sent in 3 messages.")
             return True
-        print(f"Telegram API error: {response.status_code} {response.text}")
         return False
     except Exception as exc:
         print(f"Telegram network error: {exc}")
