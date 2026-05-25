@@ -89,6 +89,7 @@ def _apply_single_trade_gate(trade, market_data, egx30_data, evidence_packets, f
         ticker_data = market_data.get(ticker)
         evidence = evidence_packets.get(ticker, {})
         evidence_items = evidence.get("items") or []
+        evidence_status = evidence.get("evidence_status")
         entry = float(trade.get("entry") or 0)
         take_profit = float(trade.get("take_profit") or 0)
         stop_loss = float(trade.get("stop_loss") or 0)
@@ -111,6 +112,8 @@ def _apply_single_trade_gate(trade, market_data, egx30_data, evidence_packets, f
             blocking.append(f"BUY blocked: institution-flow regime is {flow_status.get('regime')}.")
         if not evidence_items:
             blocking.append("BUY blocked: no relevant grounded evidence source.")
+        elif evidence_status != "RECENT_ACCEPTED":
+            blocking.append(f"BUY blocked: evidence is not recent accepted evidence ({evidence_status or 'UNKNOWN'}).")
         if entry <= 0:
             blocking.append("BUY blocked: invalid entry.")
         if stop_loss <= 0 or take_profit <= 0 or stop_loss >= entry or take_profit <= entry:

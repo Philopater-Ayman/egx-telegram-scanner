@@ -1,5 +1,6 @@
 import json
 import re
+from datetime import datetime, timezone
 from typing import List, Literal, Optional
 
 import requests
@@ -141,6 +142,71 @@ def _company_terms(company_name):
     return terms[:5]
 
 
+def _parse_evidence_dates(text):
+    text = str(text or "")
+    dates = []
+    month_map = {
+        "JANUARY": 1,
+        "FEBRUARY": 2,
+        "MARCH": 3,
+        "APRIL": 4,
+        "MAY": 5,
+        "JUNE": 6,
+        "JULY": 7,
+        "AUGUST": 8,
+        "SEPTEMBER": 9,
+        "OCTOBER": 10,
+        "NOVEMBER": 11,
+        "DECEMBER": 12,
+        "JAN": 1,
+        "FEB": 2,
+        "MAR": 3,
+        "APR": 4,
+        "JUN": 6,
+        "JUL": 7,
+        "AUG": 8,
+        "SEP": 9,
+        "SEPT": 9,
+        "OCT": 10,
+        "NOV": 11,
+        "DEC": 12,
+    }
+    for year, month, day in re.findall(r"\b(20\d{2})[-/](\d{1,2})[-/](\d{1,2})\b", text):
+        try:
+            dates.append(datetime(int(year), int(month), int(day), tzinfo=timezone.utc))
+        except ValueError:
+            pass
+    month_pattern = "|".join(month_map)
+    for month, day, year in re.findall(rf"\b({month_pattern})\.?\s+(\d{{1,2}}),?\s+(20\d{{2}})\b", text, re.I):
+        try:
+            dates.append(datetime(int(year), month_map[month.upper().rstrip(".")], int(day), tzinfo=timezone.utc))
+        except ValueError:
+            pass
+    for day, month, year in re.findall(rf"\b(\d{{1,2}})\s+({month_pattern})\.?\s+(20\d{{2}})\b", text, re.I):
+        try:
+            dates.append(datetime(int(year), month_map[month.upper().rstrip(".")], int(day), tzinfo=timezone.utc))
+        except ValueError:
+            pass
+    for year in re.findall(r"\b(20\d{2})\b", text):
+        try:
+            dates.append(datetime(int(year), 1, 1, tzinfo=timezone.utc))
+        except ValueError:
+            pass
+    return dates
+
+
+def _evidence_freshness(evidence_text):
+    dates = _parse_evidence_dates(evidence_text)
+    if not dates:
+        return "ACCEPTED_UNDATED", "", ""
+    latest = max(dates)
+    now = datetime.now(timezone.utc)
+    age_days = max(0, (now - latest).days)
+    if age_days <= 365:
+        return "RECENT_ACCEPTED", latest.date().isoformat(), age_days
+    return "OLD_ACCEPTED", latest.date().isoformat(), age_days
+
+
 def _validate_evidence_packet(ticker, packet, company_name="", yahoo_symbol=""):
     packet = dict(packet or {})
     items = [item for item in packet.get("items", []) if isinstance(item, dict)]
@@ -160,12 +226,26 @@ def _validate_evidence_packet(ticker, packet, company_name="", yahoo_symbol=""):
     matched_symbol = symbol in normalized.split() or yahoo_base in normalized.split()
     matched_terms = [term for term in terms if term in normalized]
     accepted = bool(items) and (matched_symbol or len(matched_terms) >= 2)
-    packet["items"] = items[:3] if accepted else []
     packet["expected_company"] = company
-    packet["evidence_status"] = "ACCEPTED" if accepted else "REJECTED_TICKER_MISMATCH"
     packet["matched_terms"] = ", ".join(([symbol] if matched_symbol else []) + matched_terms)
     packet.setdefault("warnings", [])
-    if not accepted:
+    if accepted:
+        freshness, latest_date, age_days = _evidence_freshness(evidence_text)
+        packet["items"] = items[:3]
+        packet["evidence_status"] = freshness
+        packet["evidence_latest_date"] = latest_date
+        packet["evidence_age_days"] = age_days
+        if freshness == "OLD_ACCEPTED":
+            packet["warnings"].append(
+                f"Evidence for {ticker} matches the company but appears old; latest detected date is {latest_date}."
+            )
+        elif freshness == "ACCEPTED_UNDATED":
+            packet["warnings"].append(f"Evidence for {ticker} matches the company but no source/report date was detected.")
+    else:
+        packet["items"] = []
+        packet["evidence_status"] = "REJECTED_TICKER_MISMATCH"
+        packet["evidence_latest_date"] = ""
+        packet["evidence_age_days"] = ""
         reason = f"Evidence rejected for {ticker}: source text did not clearly match {ticker} / {company}."
         packet["summary"] = reason
         if reason not in packet["warnings"]:
@@ -262,6 +342,7 @@ def gather_evidence(ticker, company_context=""):
             contents=(
                 f"Find recent, relevant public evidence for EGX stock {ticker}. "
                 f"Context: {company_context}. Return concise JSON with summary and up to 3 cited source URLs. "
+                "Use evidence from the last 12 months when possible. Include the source/report date in each title or summary. "
                 "If evidence is not clearly relevant to this ticker, return an empty items list."
             ),
             config=types.GenerateContentConfig(
@@ -326,6 +407,7 @@ def gather_batch_evidence(candidate_rows):
                 "Prefer official company, exchange, disclosure, financial news, and market pages. "
                 "Each evidence item must clearly match the exact ticker and company name in the candidate object. "
                 "Reject similarly named US tickers or other EGX tickers. "
+                "Use evidence from the last 12 months when possible and include source/report dates in the summary or item titles. "
                 "Return a compact JSON object like {\"evidence\":{\"TICKER.CA\":{\"summary\":\"...\",\"items\":[{\"title\":\"...\",\"url\":\"...\"}]}}}. "
                 "If evidence is not clearly about the ticker, leave items empty. Candidates: "
                 + json.dumps(context)

@@ -147,8 +147,11 @@ def write_daily_report(
     lines.extend(["", "## Evidence"])
     if evidence_packets:
         for ticker, packet in evidence_packets.items():
+            latest = packet.get("evidence_latest_date", "") or "n/a"
+            age_value = packet.get("evidence_age_days", "")
+            age_days = age_value if age_value != "" else "n/a"
             lines.append(
-                f"- {ticker}: status={packet.get('evidence_status', 'UNKNOWN')} sources={len(packet.get('items', []))} expected={packet.get('expected_company', '')} summary={packet.get('summary', '')}"
+                f"- {ticker}: status={packet.get('evidence_status', 'UNKNOWN')} latest={latest} age_days={age_days} sources={len(packet.get('items', []))} expected={packet.get('expected_company', '')} summary={packet.get('summary', '')}"
             )
             for item in packet.get("items", [])[:3]:
                 if isinstance(item, dict):
@@ -218,13 +221,18 @@ def _evidence_quality(evidence_packets):
     packets = evidence_packets or {}
     source_count = sum(len(packet.get("items", [])) for packet in packets.values())
     gemini_packets = [packet for packet in packets.values() if "GEMINI" in str(packet.get("source_mode", ""))]
+    recent_count = sum(1 for packet in packets.values() if packet.get("evidence_status") == "RECENT_ACCEPTED")
+    old_count = sum(1 for packet in packets.values() if packet.get("evidence_status") == "OLD_ACCEPTED")
+    undated_count = sum(1 for packet in packets.values() if packet.get("evidence_status") == "ACCEPTED_UNDATED")
+    rejected_count = sum(1 for packet in packets.values() if str(packet.get("evidence_status", "")).startswith("REJECTED"))
     warning_count = sum(len(packet.get("warnings", [])) for packet in packets.values())
+    recency = f"{recent_count} recent, {old_count} old, {undated_count} undated, {rejected_count} rejected"
     if gemini_packets and source_count:
-        status = "Gemini helped with grounded citations"
+        status = f"Gemini helped with grounded citations ({recency})"
     elif warning_count:
-        status = "Gemini/fallback evidence had warnings; scanner still used local rules"
+        status = f"Gemini/fallback evidence had warnings; scanner still used local rules ({recency})"
     elif source_count:
-        status = "Fallback evidence found public sources"
+        status = f"Fallback evidence found public sources ({recency})"
     else:
         status = "No useful public evidence found"
     return status, source_count
@@ -398,7 +406,7 @@ def send_telegram_notification(decision, egx30, warnings, market_data=None, sect
             "Evidence packets",
             _line_items(
                 [{"ticker": ticker, **packet} for ticker, packet in (evidence_packets or {}).items()],
-                lambda packet: f"- {packet.get('ticker')}: {packet.get('evidence_status', 'UNKNOWN')} | {len(packet.get('items', []))} source(s) | {packet.get('source_mode', 'n/a')} | {packet.get('summary', '')[:220]}",
+                lambda packet: f"- {packet.get('ticker')}: {packet.get('evidence_status', 'UNKNOWN')} | latest {packet.get('evidence_latest_date', 'n/a') or 'n/a'} | age {packet.get('evidence_age_days') if packet.get('evidence_age_days') != '' else 'n/a'}d | {len(packet.get('items', []))} source(s) | {packet.get('source_mode', 'n/a')} | {packet.get('summary', '')[:220]}",
                 limit=8,
             ),
             "",

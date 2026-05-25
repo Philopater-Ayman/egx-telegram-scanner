@@ -73,7 +73,9 @@ def _ticket_from_row(row, macro_trend):
 
 def _passes_final_buy_checks(row, evidence_packets):
     ticker = row.get("Ticker")
-    evidence_items = (evidence_packets.get(ticker, {}) or {}).get("items", [])
+    evidence_packet = evidence_packets.get(ticker, {}) or {}
+    evidence_items = evidence_packet.get("items", [])
+    evidence_status = evidence_packet.get("evidence_status")
     price = _float(row.get("Current_Price"))
     ma20 = _float(row.get("MA20"))
     ma50 = _float(row.get("MA50"))
@@ -83,7 +85,7 @@ def _passes_final_buy_checks(row, evidence_packets):
     resistance_distance = _float(row.get("Resistance_Distance_%"))
     fresh = row.get("Price_Freshness") == "FRESH"
 
-    if not evidence_items or not fresh or liquidity < MIN_DAILY_LIQUIDITY_EGP:
+    if not evidence_items or evidence_status != "RECENT_ACCEPTED" or not fresh or liquidity < MIN_DAILY_LIQUIDITY_EGP:
         return False
     if not row.get("Buy_Ready"):
         return False
