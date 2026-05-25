@@ -28,7 +28,8 @@ def _hold(watchlist, reason):
     }
 
 
-def _ticket_from_row(row, macro_trend):
+def _ticket_from_row(row, macro_trend, market_regime=None):
+    market_regime = market_regime or {}
     ticker = row.get("Ticker")
     price = _float(row.get("Current_Price"))
     ma20 = _float(row.get("MA20"))
@@ -45,11 +46,12 @@ def _ticket_from_row(row, macro_trend):
     risk_reward_target = price + (risk * 2)
     resistance_target = resistance_20d * 0.995 if resistance_20d and resistance_20d > price else 0
     take_profit = round(max(risk_reward_target, resistance_target), 2)
-    confidence = "MEDIUM" if macro_trend != "Bearish" and rsi <= 65 else "LOW"
+    risk_mode = market_regime.get("risk_mode", "UNKNOWN")
+    confidence = "MEDIUM" if macro_trend != "Bearish" and risk_mode in {"BROAD_RISK_ON", "SELECTIVE_SWING_TRADES_ONLY"} and rsi <= 65 else "LOW"
     setup_label = "BUY SETUP"
     if confidence == "LOW":
         setup_label = "LOW-CONFIDENCE BUY SETUP"
-    if macro_trend == "Bearish" or rsi > 65:
+    if macro_trend == "Bearish" or risk_mode in {"SELECTIVE_SMALL_MID_SWINGS", "DEFENSIVE_NO_NEW_BUY"} or rsi > 65:
         setup_label = "WATCH/BUY SETUP"
     return {
         "action": "BUY",
@@ -66,6 +68,7 @@ def _ticket_from_row(row, macro_trend):
         "trade_reason": (
             f"{setup_label}: {ticker} has fresh Yahoo price data, liquidity above threshold, "
             f"price above MA20/MA50, RSI {rsi}, support {support_20d}, resistance {resistance_20d}, and evidence sources. Macro trend is {macro_trend}; "
+            f"market regime is {risk_mode}; "
             "verify price action in Thndr before treating it as a swing entry."
         ),
     }
@@ -96,8 +99,9 @@ def _passes_final_buy_checks(row, evidence_packets):
     return True
 
 
-def build_local_fallback_decisions(ranked_rows, current_watchlist, egx30_data, evidence_packets, flow_status=None, max_tickets=3):
+def build_local_fallback_decisions(ranked_rows, current_watchlist, egx30_data, evidence_packets, flow_status=None, market_regime=None, max_tickets=3):
     flow_status = flow_status or {"status": "FLOW_MISSING", "regime": "MISSING"}
+    market_regime = market_regime or {}
 
     if flow_status.get("status") != "FLOW_AVAILABLE" and REQUIRE_FLOW_FOR_BUY:
         return _hold(
@@ -109,6 +113,11 @@ def build_local_fallback_decisions(ranked_rows, current_watchlist, egx30_data, e
             current_watchlist,
             f"Local scanner HOLD: institution-flow regime is {flow_status.get('regime')}, so new BUY is blocked.",
         )
+    if market_regime.get("risk_mode") == "DEFENSIVE_NO_NEW_BUY":
+        return _hold(
+            current_watchlist,
+            "Local scanner HOLD: EGX30/EGX70 regime and sector breadth are defensive, so no new BUY is allowed.",
+        )
 
     macro_freshness = egx30_data.get("Freshness")
     macro_trend = egx30_data.get("Trend")
@@ -118,7 +127,7 @@ def build_local_fallback_decisions(ranked_rows, current_watchlist, egx30_data, e
     tickets = []
     for row in ranked_rows:
         if _passes_final_buy_checks(row, evidence_packets):
-            ticket = _ticket_from_row(row, macro_trend)
+            ticket = _ticket_from_row(row, macro_trend, market_regime)
             if flow_status.get("status") != "FLOW_AVAILABLE":
                 ticket["confidence"] = "LOW"
             ticket["priority"] = len(tickets) + 1
@@ -138,5 +147,5 @@ def build_local_fallback_decisions(ranked_rows, current_watchlist, egx30_data, e
     return _hold(current_watchlist, "Local fallback HOLD: no candidate passed evidence, liquidity, freshness, and technical gates.")
 
 
-def build_local_fallback_decision(ranked_rows, current_watchlist, egx30_data, evidence_packets, flow_status=None):
-    return build_local_fallback_decisions(ranked_rows, current_watchlist, egx30_data, evidence_packets, flow_status, max_tickets=1)
+def build_local_fallback_decision(ranked_rows, current_watchlist, egx30_data, evidence_packets, flow_status=None, market_regime=None):
+    return build_local_fallback_decisions(ranked_rows, current_watchlist, egx30_data, evidence_packets, flow_status, market_regime, max_tickets=1)

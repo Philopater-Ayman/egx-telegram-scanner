@@ -5,6 +5,7 @@ from market_calendar import should_run_scanner
 from market_scanner import (
     build_watchlist_signal_rows,
     build_sector_scores,
+    build_market_regime,
     build_watchlist_from_ranked,
     get_latest_institution_flow,
     rank_candidates,
@@ -62,14 +63,20 @@ def run_daily_advisor():
             )
 
     sector_scores = build_sector_scores(list(market_data.values()))
-    ranked_rows = rank_candidates(list(market_data.values()), sector_scores, flow_status)
+    market_regime = build_market_regime(list(market_data.values()), sector_scores)
+    print(f"Market regime: {market_regime.get('summary')}")
+    ranked_rows = rank_candidates(list(market_data.values()), sector_scores, flow_status, market_regime)
     signal_rows = build_watchlist_signal_rows(ranked_rows, active_watchlist, flow_status)
     write_scanner_outputs(ranked_rows, sector_scores, flow_status, scan_failures, active_watchlist)
     top_for_evidence = ranked_rows[:EVIDENCE_TOP_N]
     print(f"Collected usable market data for {len(market_data)} tickers.")
 
-    print(f"Gathering evidence for top {len(top_for_evidence)} candidates...")
-    evidence_packets = gather_batch_evidence(top_for_evidence)
+    use_gemini_evidence = market_regime.get("risk_mode") != "DEFENSIVE_NO_NEW_BUY"
+    if use_gemini_evidence:
+        print(f"Gathering evidence for top {len(top_for_evidence)} candidates...")
+    else:
+        print(f"Gathering local fallback evidence for top {len(top_for_evidence)} candidates; Gemini skipped because market regime is defensive.")
+    evidence_packets = gather_batch_evidence(top_for_evidence, use_gemini=use_gemini_evidence)
 
     print("Running lightweight historical checks for top candidates...")
     backtests = [get_backtest_summary(row["Ticker"]) for row in top_for_evidence[:3]]
@@ -81,6 +88,7 @@ def run_daily_advisor():
         egx30,
         evidence_packets,
         flow_status,
+        market_regime,
         max_tickets=3,
     )
     if USE_AI_DECISION:
@@ -92,19 +100,19 @@ def run_daily_advisor():
     if not decision["updated_watchlist"]:
         decision["updated_watchlist"] = active_watchlist[:5]
 
-    decision, warnings = apply_risk_gates(decision, market_data, egx30, evidence_packets, flow_status)
+    decision, warnings = apply_risk_gates(decision, market_data, egx30, evidence_packets, flow_status, market_regime)
     update_local_watchlist(decision["updated_watchlist"], signal_rows)
 
     source_freshness = f"market_context={egx30.get('Freshness')}; fresh_tickers={sum(1 for x in market_data.values() if x.get('Price_Freshness') == 'FRESH')}/{len(market_data)}"
     ranked_market_data = {row["Ticker"]: row for row in ranked_rows}
-    narrative = build_openrouter_narrative(decision, ranked_rows, sector_scores, evidence_packets, warnings)
+    narrative = build_openrouter_narrative(decision, ranked_rows, sector_scores, evidence_packets, warnings, market_regime)
     for warning in narrative.get("warnings", []):
         warnings.append(warning)
-    write_daily_report(egx30, ranked_market_data, decision, evidence_packets, warnings, backtests, sector_scores, flow_status, scan_failures, narrative)
-    telegram_sent = send_telegram_notification(decision, egx30, warnings, ranked_market_data, sector_scores, evidence_packets, scan_failures, narrative)
+    write_daily_report(egx30, ranked_market_data, decision, evidence_packets, warnings, backtests, sector_scores, flow_status, scan_failures, narrative, market_regime)
+    telegram_sent = send_telegram_notification(decision, egx30, warnings, ranked_market_data, sector_scores, evidence_packets, scan_failures, narrative, market_regime)
     history_paths = append_trade_histories(decision, source_freshness, MODEL_NAME, telegram_sent, warnings)
     ticket_ids = append_action_tickets(decision, source_freshness, warnings, evidence_packets)
-    write_provider_status(egx30, ranked_market_data, evidence_packets, telegram_sent, history_paths, ticket_ids, flow_status, scan_failures, narrative)
+    write_provider_status(egx30, ranked_market_data, evidence_packets, telegram_sent, history_paths, ticket_ids, flow_status, scan_failures, narrative, market_regime)
     print_ticket(decision, warnings)
     print("\nCreated/updated daily_report.md, action_tickets.csv, provider_status.md, and trade_history.csv.")
     pending_paths = [path for path in history_paths if "pending" in path]

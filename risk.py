@@ -19,8 +19,9 @@ def enforce_watchlist_limits(watchlist, sector_map):
     return clean
 
 
-def apply_risk_gates(decision, market_data, egx30_data, evidence_packets, flow_status=None):
+def apply_risk_gates(decision, market_data, egx30_data, evidence_packets, flow_status=None, market_regime=None):
     flow_status = flow_status or {"status": "FLOW_MISSING", "regime": "MISSING"}
+    market_regime = market_regime or {}
     warnings = []
 
     trades = decision.get("trade_recommendations")
@@ -33,6 +34,7 @@ def apply_risk_gates(decision, market_data, egx30_data, evidence_packets, flow_s
                 egx30_data,
                 evidence_packets,
                 flow_status,
+                market_regime,
             )
             warnings.extend(trade_warnings)
             if str(gated_trade.get("action", "HOLD")).upper() in {"BUY", "SELL"}:
@@ -68,6 +70,7 @@ def apply_risk_gates(decision, market_data, egx30_data, evidence_packets, flow_s
         egx30_data,
         evidence_packets,
         flow_status,
+        market_regime,
     )
     warnings.extend(trade_warnings)
     decision["trade_recommendation"] = gated_trade
@@ -75,7 +78,7 @@ def apply_risk_gates(decision, market_data, egx30_data, evidence_packets, flow_s
     return decision, warnings
 
 
-def _apply_single_trade_gate(trade, market_data, egx30_data, evidence_packets, flow_status):
+def _apply_single_trade_gate(trade, market_data, egx30_data, evidence_packets, flow_status, market_regime):
     warnings = []
     action = str(trade.get("action", "HOLD")).upper()
     ticker = trade.get("ticker") or ""
@@ -110,6 +113,8 @@ def _apply_single_trade_gate(trade, market_data, egx30_data, evidence_packets, f
             blocking.append("BUY blocked: institution-flow data is missing or weak.")
         elif flow_status.get("regime") in {"INSTITUTION_OUTFLOW", "INSTITUTION_SELL_PRESSURE"}:
             blocking.append(f"BUY blocked: institution-flow regime is {flow_status.get('regime')}.")
+        if market_regime.get("risk_mode") == "DEFENSIVE_NO_NEW_BUY":
+            blocking.append("BUY blocked: EGX30/EGX70 market regime is defensive.")
         if not evidence_items:
             blocking.append("BUY blocked: no relevant grounded evidence source.")
         elif evidence_status != "RECENT_ACCEPTED":

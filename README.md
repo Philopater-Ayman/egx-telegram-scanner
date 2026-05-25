@@ -1,6 +1,6 @@
 # Gemini EGX Copilot
 
-Private advisor-only EGX trading scanner. It scans a local EGX universe, collects market data/history, calculates deterministic liquidity/trend/sector/support-resistance/flow/outlook signals, creates up to three prioritized signal-only action tickets, sends a full Telegram report, and writes local CSV/Markdown logs. Gemini is used for grounded evidence when available; OpenRouter is used for narrative explanation. Local scanner rules create the tickets.
+Private advisor-only EGX trading scanner. It scans a local EGX universe, collects market data/history, calculates deterministic liquidity/trend/sector/support-resistance/flow/outlook signals, checks EGX30/EGX70 market regime, creates up to three prioritized signal-only action tickets, sends a full Telegram report, and writes local CSV/Markdown logs. Gemini is used for grounded evidence when available; OpenRouter is used for narrative explanation. Local scanner rules create the tickets.
 
 ## Daily Use
 
@@ -66,6 +66,7 @@ Add official holidays, Ramadan hours, or special sessions to `market_calendar.cs
 
 - Advisor-only mode: manual Thndr execution only.
 - BUY must have fresh ticker data, acceptable liquidity, support/resistance-aware stop loss and take profit, and evidence.
+- Defensive EGX30/EGX70 market regime blocks new BUY tickets and sends HOLD.
 - Tickets are signal-only. Choose position size manually in Thndr.
 - Delayed macro data caps confidence.
 - Missing or weak evidence downgrades/block BUY.

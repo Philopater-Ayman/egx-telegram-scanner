@@ -14,6 +14,7 @@ from config import (
     SCAN_RESULTS_FILE,
     SECTOR_SCORES_FILE,
     WATCHLIST_SIGNALS_FILE,
+    get_index_tags_map,
 )
 
 
@@ -141,6 +142,115 @@ def build_sector_scores(market_rows):
     return {row["Sector"]: {**row, "Sector_Rank": index + 1} for index, row in enumerate(ranked)}
 
 
+def _regime_for_group(label, rows):
+    if not rows:
+        return {
+            "label": label,
+            "trend": "UNAVAILABLE",
+            "ticker_count": 0,
+            "fresh_count": 0,
+            "above_ma20_pct": 0.0,
+            "above_ma50_pct": 0.0,
+            "median_5d_return_pct": 0.0,
+            "median_20d_return_pct": 0.0,
+            "median_liquidity_spike": 0.0,
+            "notes": "No tagged stocks available.",
+        }
+    df = pd.DataFrame(rows)
+    above_ma20 = (df["Current_Price"].astype(float) > df["MA20"].astype(float)).mean() * 100
+    above_ma50 = (df["Current_Price"].astype(float) > df["MA50"].astype(float)).mean() * 100
+    median_5d = df.get("Return_5D_%", pd.Series([0])).astype(float).median()
+    median_20d = df.get("Return_20D_%", pd.Series([0])).astype(float).median()
+    median_liquidity_spike = df.get("Liquidity_Spike", pd.Series([0])).astype(float).median()
+    fresh_count = int((df["Price_Freshness"] == "FRESH").sum())
+
+    if above_ma20 >= 60 and above_ma50 >= 55 and median_5d > 0 and median_20d > 0:
+        trend = "BULLISH"
+    elif above_ma20 >= 50 and above_ma50 >= 45 and median_5d >= 0:
+        trend = "CONSTRUCTIVE"
+    elif above_ma20 < 45 or above_ma50 < 45 or (median_5d < 0 and median_20d < 0):
+        trend = "BEARISH"
+    else:
+        trend = "MIXED"
+
+    notes = []
+    if above_ma20 < 50:
+        notes.append("below MA20 breadth weak")
+    if above_ma50 < 50:
+        notes.append("below MA50 breadth weak")
+    if median_5d < 0:
+        notes.append("5d return negative")
+    if median_liquidity_spike >= 1.2:
+        notes.append("liquidity expanding")
+    return {
+        "label": label,
+        "trend": trend,
+        "ticker_count": len(rows),
+        "fresh_count": fresh_count,
+        "above_ma20_pct": round(float(above_ma20), 2),
+        "above_ma50_pct": round(float(above_ma50), 2),
+        "median_5d_return_pct": round(float(median_5d), 2),
+        "median_20d_return_pct": round(float(median_20d), 2),
+        "median_liquidity_spike": round(float(median_liquidity_spike), 2),
+        "notes": "; ".join(notes) or "Index breadth supports normal selection.",
+    }
+
+
+def build_market_regime(market_rows, sector_scores):
+    index_tags_map = get_index_tags_map()
+    tagged_rows = []
+    for row in market_rows:
+        enriched = dict(row)
+        enriched["Index_Tags"] = index_tags_map.get(row.get("Ticker"), "")
+        tagged_rows.append(enriched)
+
+    egx30_rows = [row for row in tagged_rows if "EGX30" in str(row.get("Index_Tags", "")).upper()]
+    egx70_rows = [row for row in tagged_rows if "EGX70" in str(row.get("Index_Tags", "")).upper()]
+    egx30 = _regime_for_group("EGX30", egx30_rows)
+    egx70 = _regime_for_group("EGX70", egx70_rows)
+    sector_rows = list((sector_scores or {}).values())
+    if sector_rows:
+        improving = [
+            row for row in sector_rows
+            if _float(row.get("Median_5D_Return_%")) > 0 and _float(row.get("Above_MA50_%")) >= 50
+        ]
+        sector_breadth_pct = round((len(improving) / len(sector_rows)) * 100, 2)
+        leading_sectors = [row.get("Sector") for row in sorted(sector_rows, key=lambda item: item.get("Sector_Rank", 99))[:3]]
+    else:
+        sector_breadth_pct = 0.0
+        leading_sectors = []
+
+    bullishish = {"BULLISH", "CONSTRUCTIVE"}
+    if egx30["trend"] in bullishish and egx70["trend"] in bullishish and sector_breadth_pct >= 55:
+        risk_mode = "BROAD_RISK_ON"
+        buy_support = "MARKET_SUPPORTS_BUYS"
+    elif egx70["trend"] in bullishish and egx30["trend"] in {"BEARISH", "MIXED"}:
+        risk_mode = "SELECTIVE_SMALL_MID_SWINGS"
+        buy_support = "SELECTIVE_ONLY"
+    elif egx30["trend"] == "BEARISH" and egx70["trend"] == "BEARISH":
+        risk_mode = "DEFENSIVE_NO_NEW_BUY"
+        buy_support = "MARKET_DOES_NOT_SUPPORT_NEW_BUYS"
+    elif sector_breadth_pct < 35:
+        risk_mode = "DEFENSIVE_NO_NEW_BUY"
+        buy_support = "BREADTH_TOO_WEAK"
+    else:
+        risk_mode = "SELECTIVE_SWING_TRADES_ONLY"
+        buy_support = "SELECTIVE_ONLY"
+
+    return {
+        "egx30": egx30,
+        "egx70": egx70,
+        "sector_breadth_pct": sector_breadth_pct,
+        "leading_sectors": leading_sectors,
+        "risk_mode": risk_mode,
+        "buy_support": buy_support,
+        "summary": (
+            f"EGX30 {egx30['trend']} / EGX70 {egx70['trend']} / "
+            f"sector breadth {sector_breadth_pct}% / risk mode {risk_mode}"
+        ),
+    }
+
+
 def _outlook_fields(row, sector_rank, sector_score):
     price = _float(row.get("Current_Price"))
     ma20 = _float(row.get("MA20"))
@@ -254,12 +364,15 @@ def _outlook_fields(row, sector_rank, sector_score):
     }
 
 
-def rank_candidates(market_rows, sector_scores, flow_status):
+def rank_candidates(market_rows, sector_scores, flow_status, market_regime=None):
     ranked = []
+    market_regime = market_regime or {}
     flow_regime = flow_status.get("regime", "MISSING")
     flow_bonus = 2 if flow_regime == "INSTITUTION_INFLOW" else -4 if flow_regime in {"INSTITUTION_OUTFLOW", "INSTITUTION_SELL_PRESSURE"} else 0
+    risk_mode = market_regime.get("risk_mode", "UNKNOWN")
+    regime_bonus = 1.5 if risk_mode == "BROAD_RISK_ON" else -3 if risk_mode == "DEFENSIVE_NO_NEW_BUY" else 0
     hard_negative_flow = flow_regime in {"INSTITUTION_OUTFLOW", "INSTITUTION_SELL_PRESSURE"}
-    flow_gate = not hard_negative_flow and (not REQUIRE_FLOW_FOR_BUY or flow_status.get("status") == "FLOW_AVAILABLE")
+    flow_gate = not hard_negative_flow and risk_mode != "DEFENSIVE_NO_NEW_BUY" and (not REQUIRE_FLOW_FOR_BUY or flow_status.get("status") == "FLOW_AVAILABLE")
     for row in market_rows:
         price = _float(row.get("Current_Price"))
         ma20 = _float(row.get("MA20"))
@@ -301,6 +414,7 @@ def rank_candidates(market_rows, sector_scores, flow_status):
             + freshness_score
             + sector_component
             + flow_bonus
+            + regime_bonus
         )
         buy_ready = (
             flow_gate
@@ -313,7 +427,7 @@ def rank_candidates(market_rows, sector_scores, flow_status):
         )
         reasons = []
         if not flow_gate:
-            reasons.append(f"flow_gate={flow_status.get('regime')}")
+            reasons.append(f"flow_or_market_gate={flow_status.get('regime')}/{risk_mode}")
         if liquidity < MIN_DAILY_LIQUIDITY_EGP:
             reasons.append("liquidity_below_min")
         if row.get("Price_Freshness") != "FRESH":
@@ -326,6 +440,7 @@ def rank_candidates(market_rows, sector_scores, flow_status):
                 "Sector_Rank": sector_rank,
                 "Sector_Score": round(float(sector_score), 2),
                 "Flow_Regime": flow_regime,
+                "Market_Risk_Mode": risk_mode,
                 "Buy_Ready": buy_ready,
                 "Buy_Block_Reasons": ";".join(reasons),
                 "Rank_Score": round(float(score), 2),
@@ -432,6 +547,7 @@ def write_scanner_outputs(ranked_rows, sector_scores, flow_status, scan_failures
                 "Rank_Score": row.get("Rank_Score"),
                 "Sector_Rank": row.get("Sector_Rank"),
                 "Flow_Regime": row.get("Flow_Regime"),
+                "Market_Risk_Mode": row.get("Market_Risk_Mode"),
                 "Buy_Ready": row.get("Buy_Ready"),
                 "Buy_Block_Reasons": row.get("Buy_Block_Reasons"),
                 "Outlook_Label": row.get("Outlook_Label"),

@@ -6,6 +6,17 @@ import requests
 from config import PROVIDER_STATUS_FILE, REPORT_FILE, SEND_TELEGRAM, TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_ID
 
 
+def _unique(items):
+    seen = set()
+    unique_items = []
+    for item in items:
+        if item in seen:
+            continue
+        seen.add(item)
+        unique_items.append(item)
+    return unique_items
+
+
 def write_daily_report(
     egx30,
     market_data,
@@ -17,11 +28,13 @@ def write_daily_report(
     flow_status=None,
     scan_failures=None,
     narrative=None,
+    market_regime=None,
 ):
     sector_scores = sector_scores or {}
     flow_status = flow_status or {}
     scan_failures = scan_failures or []
     narrative = narrative or {}
+    market_regime = market_regime or {}
     trade = decision.get("trade_recommendation", {})
     tickets = decision.get("trade_recommendations") or ([trade] if trade else [])
     buy_ready = [row for row in market_data.values() if row.get("Buy_Ready")]
@@ -44,6 +57,10 @@ def write_daily_report(
         f"- Source: {egx30.get('Source')}",
         f"- As of: {egx30.get('As_Of')}",
         f"- Freshness: {egx30.get('Freshness')}",
+        f"- EGX30 regime: {market_regime.get('egx30', {}).get('trend', 'n/a')} / above MA20 {market_regime.get('egx30', {}).get('above_ma20_pct', 'n/a')}% / above MA50 {market_regime.get('egx30', {}).get('above_ma50_pct', 'n/a')}%",
+        f"- EGX70 regime: {market_regime.get('egx70', {}).get('trend', 'n/a')} / above MA20 {market_regime.get('egx70', {}).get('above_ma20_pct', 'n/a')}% / above MA50 {market_regime.get('egx70', {}).get('above_ma50_pct', 'n/a')}%",
+        f"- Sector breadth: {market_regime.get('sector_breadth_pct', 'n/a')}%",
+        f"- Risk mode: {market_regime.get('risk_mode', 'n/a')}",
         "",
         "## Top Liquidity",
     ]
@@ -166,6 +183,7 @@ def write_daily_report(
     all_warnings.extend(egx30.get("Warnings", []))
     for packet in evidence_packets.values():
         all_warnings.extend(packet.get("warnings", []))
+    all_warnings = _unique(all_warnings)
     if all_warnings:
         for warning in all_warnings:
             lines.append(f"- {warning}")
@@ -175,10 +193,11 @@ def write_daily_report(
     REPORT_FILE.write_text("\n".join(lines) + "\n", encoding="utf-8")
 
 
-def write_provider_status(egx30, market_data, evidence_packets, telegram_sent, history_path, ticket_id, flow_status=None, scan_failures=None, narrative=None):
+def write_provider_status(egx30, market_data, evidence_packets, telegram_sent, history_path, ticket_id, flow_status=None, scan_failures=None, narrative=None, market_regime=None):
     flow_status = flow_status or {}
     scan_failures = scan_failures or []
     narrative = narrative or {}
+    market_regime = market_regime or {}
     fresh_count = sum(1 for row in market_data.values() if row.get("Price_Freshness") == "FRESH")
     evidence_count = sum(len(packet.get("items", [])) for packet in evidence_packets.values())
     lines = [
@@ -189,6 +208,7 @@ def write_provider_status(egx30, market_data, evidence_packets, telegram_sent, h
         f"- Macro source: {egx30.get('Source')}",
         f"- Macro freshness: {egx30.get('Freshness')}",
         f"- Macro trend: {egx30.get('Trend')}",
+        f"- Market regime: {market_regime.get('summary', 'n/a')}",
         f"- Market data: {fresh_count}/{len(market_data)} tickers fresh from Yahoo/yfinance",
         f"- Data quality issues: {len(scan_failures)}",
         f"- Evidence sources found: {evidence_count}",
@@ -203,6 +223,7 @@ def write_provider_status(egx30, market_data, evidence_packets, telegram_sent, h
     warnings.extend(f"{item.get('Ticker')}: {item.get('Issue')}" for item in scan_failures)
     for packet in evidence_packets.values():
         warnings.extend(packet.get("warnings", []))
+    warnings = _unique(warnings)
     if warnings:
         lines.extend(f"- {warning}" for warning in warnings)
     else:
@@ -283,7 +304,7 @@ def _send_telegram_text(text):
     return True
 
 
-def send_telegram_notification(decision, egx30, warnings, market_data=None, sector_scores=None, evidence_packets=None, scan_failures=None, narrative=None):
+def send_telegram_notification(decision, egx30, warnings, market_data=None, sector_scores=None, evidence_packets=None, scan_failures=None, narrative=None, market_regime=None):
     if not SEND_TELEGRAM:
         print("Telegram disabled by SEND_TELEGRAM=false.")
         return False
@@ -303,8 +324,10 @@ def send_telegram_notification(decision, egx30, warnings, market_data=None, sect
     skipped_rows = _why_not_ticket_rows(ranked, active_tickers)
     sectors = sorted((sector_scores or {}).values(), key=lambda row: row.get("Sector_Rank", 99))
     narrative = narrative or {}
+    market_regime = market_regime or {}
     evidence_status, source_count = _evidence_quality(evidence_packets)
     fresh_count = sum(1 for row in rows if row.get("Price_Freshness") == "FRESH")
+    warnings = _unique(warnings)
     warning_text = "\n".join(f"- {item}" for item in warnings[:5]) if warnings else "- None"
     data_quality = f"{fresh_count}/{len(rows)} fresh tickers, {len(scan_failures or [])} data quality issues"
     ticket_text = _line_items(
@@ -327,6 +350,7 @@ def send_telegram_notification(decision, egx30, warnings, market_data=None, sect
             "EGX Scanner 1/3 - Action Tickets",
             "",
             f"Market: {egx30.get('Trend')} | {egx30.get('Freshness')} | {egx30.get('Source')}",
+            f"Market regime: {market_regime.get('risk_mode', 'n/a')} | EGX30 {market_regime.get('egx30', {}).get('trend', 'n/a')} | EGX70 {market_regime.get('egx70', {}).get('trend', 'n/a')} | breadth {market_regime.get('sector_breadth_pct', 'n/a')}%",
             f"Data quality: {data_quality}",
             f"Gemini evidence: {evidence_status} ({source_count} sources)",
             f"Universe awareness: scanned {len(rows)} active stocks, {len(buy_ready)} BUY-ready after first scanner filters",
@@ -345,6 +369,13 @@ def send_telegram_notification(decision, egx30, warnings, market_data=None, sect
     market_message = "\n".join(
         [
             "EGX Scanner 2/3 - Market Map",
+            "",
+            "Market Regime",
+            f"- EGX30: {market_regime.get('egx30', {}).get('trend', 'n/a')} / above MA20 {market_regime.get('egx30', {}).get('above_ma20_pct', 'n/a')}% / above MA50 {market_regime.get('egx30', {}).get('above_ma50_pct', 'n/a')}%",
+            f"- EGX70: {market_regime.get('egx70', {}).get('trend', 'n/a')} / above MA20 {market_regime.get('egx70', {}).get('above_ma20_pct', 'n/a')}% / above MA50 {market_regime.get('egx70', {}).get('above_ma50_pct', 'n/a')}%",
+            f"- Sector breadth: {market_regime.get('sector_breadth_pct', 'n/a')}%",
+            f"- Risk mode: {market_regime.get('risk_mode', 'n/a')}",
+            f"- Leading sectors: {', '.join(market_regime.get('leading_sectors', []) or []) or 'n/a'}",
             "",
             "Top ranked by scanner",
             _line_items(

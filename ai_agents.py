@@ -281,6 +281,13 @@ def evidence_from_market_data(ticker, row):
     )
 
 
+def _compact_ai_error(exc):
+    text = str(exc)
+    if "429" in text or "RESOURCE_EXHAUSTED" in text or "quota" in text.lower():
+        return "Gemini evidence quota/rate limit reached; local fallback evidence used."
+    return text[:300]
+
+
 def mubasher_stock_evidence(ticker):
     symbol = ticker.replace(".CA", "").upper()
     url = f"https://english.mubasher.info/markets/EGX/stocks/{symbol}"
@@ -366,18 +373,24 @@ def gather_evidence(ticker, company_context=""):
         }
         return _validate_evidence_packet(ticker, packet, company_name=company_context)
     except Exception as exc:
+        error = _compact_ai_error(exc)
         return {
             "ticker": ticker,
             "items": [],
             "summary": "Grounded evidence retrieval failed.",
-            "warnings": [f"Evidence agent failed for {ticker}: {exc}"],
+            "warnings": [f"Evidence agent failed for {ticker}: {error}"],
         }
 
 
-def gather_batch_evidence(candidate_rows):
+def gather_batch_evidence(candidate_rows, use_gemini=True):
     packets = {}
     for row in candidate_rows:
         packets[row["Ticker"]] = evidence_from_market_data(row["Ticker"], row)
+
+    if not use_gemini:
+        for packet in packets.values():
+            packet.setdefault("warnings", []).append("Gemini grounding skipped because market regime is defensive; local fallback evidence used.")
+        return packets
 
     if not GEMINI_API_KEY or not USE_GEMINI_GROUNDING or not candidate_rows:
         return packets
@@ -446,13 +459,13 @@ def gather_batch_evidence(candidate_rows):
                 packets[ticker]["summary"] = packets[ticker]["summary"] + " Gemini also reviewed web evidence but did not return ticker-specific citations."
         return packets
     except Exception as exc:
-        warning = f"Gemini batch evidence failed: {exc}"
+        warning = f"Gemini batch evidence failed: {_compact_ai_error(exc)}"
         for packet in packets.values():
             packet.setdefault("warnings", []).append(warning)
         return packets
 
 
-def build_openrouter_narrative(decision, ranked_rows, sector_scores, evidence_packets, warnings):
+def build_openrouter_narrative(decision, ranked_rows, sector_scores, evidence_packets, warnings, market_regime=None):
     if not USE_OPENROUTER_NARRATIVE:
         return {
             "provider": "OpenRouter",
@@ -505,6 +518,7 @@ def build_openrouter_narrative(decision, ranked_rows, sector_scores, evidence_pa
         "role": "telegram_narrative_only_not_trade_decision",
         "primary_ticket": decision.get("trade_recommendation", {}),
         "tickets": decision.get("trade_recommendations", []) or [decision.get("trade_recommendation", {})],
+        "market_regime": market_regime or {},
         "top_scanner_rows": top_rows,
         "top_sectors": sorted((sector_scores or {}).values(), key=lambda row: row.get("Sector_Rank", 99))[:5],
         "evidence": evidence_summary,
@@ -514,6 +528,7 @@ def build_openrouter_narrative(decision, ranked_rows, sector_scores, evidence_pa
         "Write a concise Telegram narrative for a personal EGX stock scanner. "
         "Do not make a new trade decision. Do not invent live data. Do not mention quantities or position sizing. "
         "Explain why the local scanner selected these prioritized tickets, what liquidity/sector/support/resistance/outlook means for the next 1-3 days, "
+        "and how the EGX30/EGX70 market regime changes risk mode, "
         "and include uncertainty. Return only valid compact JSON with keys summary and bullets, where bullets is 3 to 5 short strings. "
         f"Scanner payload: {json.dumps(payload, default=str)}"
     )

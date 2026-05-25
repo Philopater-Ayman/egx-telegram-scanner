@@ -127,6 +127,11 @@ def get_yahoo_symbol_map():
     return {row["Ticker"]: row.get("Yahoo Symbol") or row["Ticker"] for row in records}
 
 
+def get_index_tags_map():
+    records = get_active_universe_records()
+    return {row["Ticker"]: str(row.get("Index Tags") or "") for row in records}
+
+
 def get_company_name_map():
     records = get_active_universe_records()
     return {row["Ticker"]: row.get("Company Name") or row["Ticker"] for row in records}

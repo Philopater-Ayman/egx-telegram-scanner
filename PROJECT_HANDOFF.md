@@ -9,7 +9,7 @@ This is a Telegram-first EGX scanner, not an auto-trading broker. The main comma
 1. Load watchlist from `watchlist.csv`.
 3. Fetch market context from Mubasher delayed EGX page fallback.
 4. Fetch active universe OHLCV through yfinance, with `manual_market_data.csv` as an optional fallback and StockAnalysis as quote-only public fallback.
-5. Calculate deterministic indicators, liquidity spikes, sector scores, and scanner rank.
+5. Calculate deterministic indicators, liquidity spikes, sector scores, EGX30/EGX70 regime, sector breadth, risk mode, and scanner rank.
 7. Write scanner artifacts: `market_prices.csv`, `indicators.csv`, `sector_scores.csv`, `scan_results.csv`, `watchlist_signals.csv`, and `data_quality.csv`.
 8. Gather evidence for the top candidates with local sources and Gemini grounding only if enabled. `EVIDENCE_TOP_N=8` is the current default.
 9. Create up to three deterministic advisor-only signal tickets from the evidence-backed candidate pool. `USE_AI_DECISION` should stay false; AI is evidence/narrative support only.
@@ -34,4 +34,5 @@ The user reads Telegram only. Local CSV and Markdown files are internal logs. Ti
 - The product no longer asks the user to manually search for institution-flow data every day. If an automated reliable source is added later, confirmed institution outflow can be reintroduced as a risk block.
 - Never allow a StockAnalysis quote-only fallback to support BUY by itself because it has no volume/history.
 - If evidence is missing or unrelated, do not support BUY.
+- If EGX30/EGX70 regime and sector breadth are defensive, send HOLD instead of forcing BUY tickets.
 - Keep secrets only in `.env`.
