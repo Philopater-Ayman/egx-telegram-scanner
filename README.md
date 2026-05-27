@@ -5,7 +5,7 @@ Private advisor-only EGX trading scanner. It scans a local EGX universe, collect
 ## Daily Use
 
 1. Edit `watchlist.csv` only if you want to force stocks into active tracking.
-2. Run:
+2. Run manually only when you want an immediate scan:
 
 ```powershell
 python trading_bot_core.py
@@ -21,19 +21,22 @@ Tickets are signal-only. The scanner can send up to three prioritized tickets, w
 
 ## Automation
 
-Read `AUTOMATION_GUIDE.md` before enabling scheduled runs. GitHub Actions is the preferred always-on free path for public repo automation. Windows Task Scheduler remains a local fallback and only runs while the laptop is awake unless Windows wake settings are configured.
+GitHub Actions is the only scheduled automation path. Windows Task Scheduler is intentionally not used, so closing the laptop does not stop the scheduled cloud runs.
 
 For GitHub Actions, publish the repo and add these repository secrets: `TELEGRAM_BOT_TOKEN`, `TELEGRAM_CHAT_ID`, `GEMINI_API_KEY`, and `OPENROUTER_API_KEY`. The workflow is already in `.github/workflows/egx-scanner.yml`. OpenRouter fallback is capped at 3 models because the API rejects larger fallback arrays.
 
-To install default Sunday-Thursday Windows tasks locally, run this manually from PowerShell:
+Scheduled runs target Cairo time:
 
-```powershell
-.\install_windows_tasks.ps1
-```
+- 09:30: pre-open data/evidence refresh before the 10:00 session.
+- 12:30: midday liquidity and setup refresh.
+- 16:00: post-close report and action-ticket refresh.
+- 20:00: evening provider/data-quality refresh.
 
-The scheduled tasks only run the scanner. They do not execute broker orders.
+GitHub cron runs in UTC, so the workflow includes paired UTC schedules plus a Cairo-time gate. This keeps the intended Cairo schedule across Egypt UTC+2/UTC+3 changes and prevents duplicate Telegram sends from the paired cron entries.
 
 Add official holidays, Ramadan hours, or special sessions to `market_calendar.csv`. If a date is marked `CLOSED`, scheduled scanner runs exit without creating a new ticket.
+
+Each successful GitHub run commits the generated scanner outputs back to the repository: `daily_report.md`, `provider_status.md`, `action_tickets.csv`, `trade_history.csv`, `market_prices.csv`, `indicators.csv`, `sector_scores.csv`, `scan_results.csv`, `data_quality.csv`, `watchlist_signals.csv`, and `watchlist.csv`.
 
 ## Important Files
 

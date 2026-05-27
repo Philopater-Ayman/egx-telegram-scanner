@@ -6,33 +6,33 @@ This is a Telegram-first EGX scanner, not an auto-trading broker. The main comma
 
 ## Runtime Flow
 
-1. Load watchlist from `watchlist.csv`.
-3. Fetch market context from Mubasher delayed EGX page fallback.
-4. Fetch active universe OHLCV through yfinance, with `manual_market_data.csv` as an optional fallback and StockAnalysis as quote-only public fallback.
+1. Check `market_calendar.csv`; exit without new tickets if the date is closed.
+2. Load watchlist rows from `watchlist.csv`.
+3. Fetch market context from the public Mubasher EGX page fallback.
+4. Fetch active universe OHLCV through yfinance, with manual fallback data only when available.
 5. Calculate deterministic indicators, liquidity spikes, sector scores, EGX30/EGX70 regime, sector breadth, risk mode, and scanner rank.
-7. Write scanner artifacts: `market_prices.csv`, `indicators.csv`, `sector_scores.csv`, `scan_results.csv`, `watchlist_signals.csv`, and `data_quality.csv`.
-8. Gather evidence for the top candidates with local sources and Gemini grounding only if enabled. `EVIDENCE_TOP_N=8` is the current default.
-9. Create up to three deterministic advisor-only signal tickets from the evidence-backed candidate pool. `USE_AI_DECISION` should stay false; AI is evidence/narrative support only.
-10. Ask OpenRouter for a concise narrative summary if `OPENROUTER_API_KEY` and `USE_OPENROUTER_NARRATIVE=true` are set.
-10. Apply deterministic risk gates, including institution-flow BUY blocking.
+6. Write scanner artifacts: `market_prices.csv`, `indicators.csv`, `sector_scores.csv`, `scan_results.csv`, `watchlist_signals.csv`, and `data_quality.csv`.
+7. Gather evidence for the top candidates with local sources and Gemini grounding only if enabled.
+8. Create up to three deterministic advisor-only signal tickets from the evidence-backed candidate pool.
+9. Ask OpenRouter for a concise narrative summary when enabled.
+10. Apply deterministic risk gates.
 11. Write `daily_report.md`, `provider_status.md`, `action_tickets.csv`, and `trade_history.csv`.
 12. Send Telegram if enabled.
 
-## Daily Use Loop
-
-The user reads Telegram only. Local CSV and Markdown files are internal logs. Tickets include priority, action, ticker, entry, TP, SL, confidence, evidence quality, sector movement, liquidity regime, and 1-3 day outlook. Tickets do not include quantity or cash sizing.
-
 ## Automation
 
-`AUTOMATION_GUIDE.md` describes the intended schedule. GitHub Actions is the preferred always-on path for a public repo. `install_windows_tasks.ps1` remains a local fallback. `market_calendar.csv` is the override for official holidays, Ramadan hours, and special sessions.
+GitHub Actions is the only scheduled automation path. Windows Task Scheduler has been removed to prevent duplicate or confusing Telegram timing.
+
+The workflow targets 09:30, 12:30, 16:00, and 20:00 Africa/Cairo from Sunday through Thursday. Because GitHub cron is UTC, the workflow uses paired UTC schedules for Egypt UTC+2/UTC+3 plus a Cairo-time gate.
+
+Successful cloud runs commit generated scanner outputs back to GitHub. After a long laptop shutdown, pull the repository to receive the latest cloud-generated reports, prices, indicators, tickets, and trade history.
 
 ## Non-Negotiable Guardrails
 
 - Never auto-execute trades.
 - Never invent live data.
 - Never treat delayed/public macro data as live execution-grade data.
-- The product no longer asks the user to manually search for institution-flow data every day. If an automated reliable source is added later, confirmed institution outflow can be reintroduced as a risk block.
-- Never allow a StockAnalysis quote-only fallback to support BUY by itself because it has no volume/history.
+- Never allow a quote-only fallback to support BUY by itself because it has no volume/history.
 - If evidence is missing or unrelated, do not support BUY.
 - If EGX30/EGX70 regime and sector breadth are defensive, send HOLD instead of forcing BUY tickets.
-- Keep secrets only in `.env`.
+- Keep secrets only in `.env` locally or GitHub repository secrets remotely.

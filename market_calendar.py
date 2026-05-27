@@ -23,8 +23,8 @@ def get_market_day(target_date=None):
         "date": target_text,
         "status": default_status,
         "label": "Default Sunday-Thursday calendar" if default_status == "OPEN" else "Default weekend",
-        "open_time": "09:30",
-        "close_time": "15:00",
+        "open_time": "10:00",
+        "close_time": "14:30",
         "notes": "Add rows to market_calendar.csv for official holidays, Ramadan hours, and special sessions.",
     }
     try:

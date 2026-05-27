@@ -1,53 +1,65 @@
 # EGX Scanner Automation Guide
 
-This system should run automatically, but it must stay advisor-only. It does not place broker orders.
+This project uses GitHub Actions as the only scheduled automation path. The laptop does not need to be open for scheduled Telegram updates.
 
-## Daily Schedule
+## Scheduled Cairo Runs
 
-Use Cairo local time and keep the exact hours configurable because EGX hours can change during Ramadan, holidays, and exchange rule updates.
+The workflow targets these Africa/Cairo times from Sunday through Thursday:
 
-- Pre-market scan: 08:45
-  - Refresh universe data.
-  - Check data quality.
-  - Review watchlist and scanner context.
-  - Send a Telegram brief if enabled.
-- Open-prep scan: 09:15
-  - Re-run scanner close to market open.
-  - Highlight watched names and blocked BUY reasons.
-- Midday scan: 12:00
-  - Refresh prices and liquidity.
-  - Detect unusual liquidity spikes.
-  - Do not create aggressive BUY tickets without valid institution-flow data.
-- Post-close scan: 15:30
-  - Run full scanner after the regular session.
-  - Produce `daily_report.md`, `data_quality.csv`, `scan_results.csv`, and `action_tickets.csv`.
-- Evening maintenance: 20:00
-  - Review provider failures.
-  - Update `stock_universe.csv` if symbols failed.
-  - Record institution-flow data when available.
+- 09:30: pre-open scan before the normal 10:00 EGX session.
+- 12:30: midday scan during the regular session.
+- 16:00: post-close scan after the normal 14:30 close.
+- 20:00: evening data-quality and provider refresh.
 
-## Free Always-On Automation
+GitHub cron is UTC, so `.github/workflows/egx-scanner.yml` includes paired UTC schedules for Egypt UTC+2 and UTC+3. A Cairo-time gate inside the workflow only allows runs near the four intended Cairo times. This prevents duplicate Telegram messages from the paired UTC schedules.
 
-Use GitHub Actions for scans when the laptop is closed or off. Put API keys in repository secrets, not in code:
+## Required GitHub Secrets
+
+Set these in the GitHub repository:
 
 - `TELEGRAM_BOT_TOKEN`
 - `TELEGRAM_CHAT_ID`
 - `GEMINI_API_KEY`
+- `OPENROUTER_API_KEY`
 
-Scheduled GitHub Actions use UTC cron. The included workflow maps the core Cairo scan times to UTC and still lets `market_calendar.csv` block closed days.
+Optional repository variables:
 
-## What Can Run Automatically
+- `GEMINI_MODEL`
+- `OPENROUTER_MODEL`
+- `OPENROUTER_FALLBACK_MODELS`
 
-- Market data collection.
-- Indicator calculation.
-- Sector ranking.
-- Data quality checks.
-- Watchlist tier updates.
-- Scanner action tickets.
-- Telegram notifications.
+## What The Cloud Run Does
 
-## What Must Stay Manual
+Each accepted scheduled run executes:
 
-- Actual Thndr order execution.
-- Fixing incorrect or stale symbols in `stock_universe.csv`.
-- Adding official holidays and special Ramadan trading hours to `market_calendar.csv` when EGX announces them.
+```powershell
+python trading_bot_core.py
+```
+
+The scanner checks `market_calendar.csv`, loads `stock_universe.csv`, fetches available Yahoo/yfinance data, calculates indicators, ranks candidates, sends Telegram, and writes local CSV/Markdown outputs in the GitHub runner.
+
+After a successful run, the workflow commits these generated outputs back to the repository:
+
+- `daily_report.md`
+- `provider_status.md`
+- `action_tickets.csv`
+- `trade_history.csv`
+- `market_prices.csv`
+- `indicators.csv`
+- `sector_scores.csv`
+- `scan_results.csv`
+- `data_quality.csv`
+- `watchlist_signals.csv`
+- `watchlist.csv`
+
+When you reopen the laptop after time away, run `git pull` to bring those cloud-generated files into the local project.
+
+## Market Calendar
+
+`market_calendar.csv` blocks official holidays and special closures. The scanner exits without creating new tickets when the date is marked `CLOSED`.
+
+For Eid al-Adha 2026, EGX is marked closed from `2026-05-26` through `2026-05-31`, with trading resuming on `2026-06-01`.
+
+## Manual Only
+
+The scanner never executes broker orders. Any BUY/SELL action remains a manual Thndr decision.

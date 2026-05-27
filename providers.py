@@ -326,6 +326,13 @@ def get_technical_data(ticker):
             warnings.append("Price data is stale.")
         if volume <= 0:
             warnings.append("Latest volume is missing or zero.")
+        valid_closes = df["Close"].dropna()
+        if len(valid_closes) < 20:
+            warnings.append("Less than 20 price rows returned; MA20, RSI, support/resistance, and Avg20 liquidity may use fallback values.")
+        if len(valid_closes) < 50:
+            warnings.append("Less than 50 price rows returned; MA50 and 50-day support/resistance may use fallback values.")
+        if len(valid_closes) < 200:
+            warnings.append("Less than 200 price rows returned; MA200 may use a fallback value.")
 
         headlines = []
         news_items = []

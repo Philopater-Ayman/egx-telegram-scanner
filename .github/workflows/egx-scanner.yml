@@ -3,10 +3,19 @@ name: EGX Telegram Scanner
 on:
   workflow_dispatch:
   schedule:
-    # GitHub cron is UTC. These map to 09:15, 12:00, and 15:30 Cairo when Cairo is UTC+3.
-    - cron: "15 6 * * 0-4"
-    - cron: "0 9 * * 0-4"
-    - cron: "30 12 * * 0-4"
+    # GitHub cron is UTC. Pairs cover Egypt UTC+2 and UTC+3; the Cairo-time
+    # gate below only allows 09:30, 12:30, 16:00, and 20:00 Africa/Cairo runs.
+    - cron: "30 6 * * 0-4"
+    - cron: "30 7 * * 0-4"
+    - cron: "30 9 * * 0-4"
+    - cron: "30 10 * * 0-4"
+    - cron: "0 13 * * 0-4"
+    - cron: "0 14 * * 0-4"
+    - cron: "0 17 * * 0-4"
+    - cron: "0 18 * * 0-4"
+
+permissions:
+  contents: write
 
 jobs:
   scan:
@@ -42,5 +51,56 @@ jobs:
       - name: Install dependencies
         run: python -m pip install --upgrade pip && pip install -r requirements.txt
 
+      - name: Check Cairo schedule window
+        id: schedule_gate
+        shell: python
+        run: |
+          import os
+          from datetime import datetime, timedelta
+          from zoneinfo import ZoneInfo
+
+          if os.environ.get("GITHUB_EVENT_NAME") == "workflow_dispatch":
+              allowed = True
+              reason = "manual workflow_dispatch"
+          else:
+              now = datetime.now(ZoneInfo("Africa/Cairo"))
+              targets = [(9, 30), (12, 30), (16, 0), (20, 0)]
+              allowed = any(
+                  abs(now - now.replace(hour=hour, minute=minute, second=0, microsecond=0)) <= timedelta(minutes=45)
+                  for hour, minute in targets
+              )
+              reason = f"Cairo now {now:%Y-%m-%d %H:%M}; target windows 09:30, 12:30, 16:00, 20:00"
+          with open(os.environ["GITHUB_OUTPUT"], "a", encoding="utf-8") as output:
+              output.write(f"allowed={'true' if allowed else 'false'}\n")
+              output.write(f"reason={reason}\n")
+          print(reason)
+
       - name: Run Telegram scanner
+        if: steps.schedule_gate.outputs.allowed == 'true'
         run: python trading_bot_core.py
+
+      - name: Commit scanner outputs
+        if: steps.schedule_gate.outputs.allowed == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          files=(
+            daily_report.md
+            provider_status.md
+            action_tickets.csv
+            trade_history.csv
+            market_prices.csv
+            indicators.csv
+            sector_scores.csv
+            scan_results.csv
+            data_quality.csv
+            watchlist_signals.csv
+            watchlist.csv
+          )
+          for file in "${files[@]}"; do
+            if [ -e "$file" ]; then
+              git add "$file"
+            fi
+          done
+          git diff --cached --quiet || git commit -m "Update automated scanner outputs"
+          git push
