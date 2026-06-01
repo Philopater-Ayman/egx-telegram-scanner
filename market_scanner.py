@@ -48,7 +48,7 @@ def _float(value, default=0.0):
 
 
 def _is_tradeable_price(row):
-    return row.get("Price_Freshness") in {"FRESH", "DELAYED_CURRENT"}
+    return row.get("Price_Freshness") in {"FRESH", "DELAYED_CURRENT"} and row.get("Technical_Source_Status") != "UNALIGNED_BLOCKED"
 
 
 def get_latest_institution_flow():
@@ -147,6 +147,7 @@ def build_sector_scores(market_rows):
 
 
 def _regime_for_group(label, rows):
+    rows = [row for row in rows if row.get("Technical_Source_Status") != "UNALIGNED_BLOCKED"]
     if not rows:
         return {
             "label": label,
@@ -269,6 +270,9 @@ def _outlook_fields(row, sector_rank, sector_score):
     resistance_distance = _float(row.get("Resistance_Distance_%"))
     score = 0
     risk_notes = []
+    if row.get("Technical_Source_Status") == "UNALIGNED_BLOCKED":
+        score -= 35
+        risk_notes.append("DirectFN/Yahoo history mismatch; technicals blocked")
 
     if _is_tradeable_price(row):
         score += 15
@@ -522,6 +526,9 @@ def write_scanner_outputs(ranked_rows, sector_scores, flow_status, scan_failures
                 "DirectFN_High": row.get("DirectFN_High"),
                 "DirectFN_Low": row.get("DirectFN_Low"),
                 "DirectFN_Change_%": row.get("DirectFN_Change_%"),
+                "Yahoo_Last_Close": row.get("Yahoo_Last_Close"),
+                "DirectFN_Yahoo_Delta_%": row.get("DirectFN_Yahoo_Delta_%"),
+                "Technical_Source_Status": row.get("Technical_Source_Status"),
             }
         )
         indicator_rows.append(
@@ -573,6 +580,7 @@ def write_scanner_outputs(ranked_rows, sector_scores, flow_status, scan_failures
                 "Resistance_20D": row.get("Resistance_20D"),
                 "Support_Distance_%": row.get("Support_Distance_%"),
                 "Resistance_Distance_%": row.get("Resistance_Distance_%"),
+                "Technical_Source_Status": row.get("Technical_Source_Status"),
             }
         )
         quality_rows.append(
@@ -583,6 +591,7 @@ def write_scanner_outputs(ranked_rows, sector_scores, flow_status, scan_failures
                 "Data_Status": "OK",
                 "Provider": row.get("Price_Source"),
                 "Liquidity_Source": row.get("Liquidity_Source"),
+                "Technical_Source_Status": row.get("Technical_Source_Status"),
                 "Price_As_Of": row.get("Price_As_Of"),
                 "Freshness": row.get("Price_Freshness"),
                 "Volume": row.get("Volume"),

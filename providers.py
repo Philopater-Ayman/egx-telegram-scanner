@@ -247,6 +247,7 @@ def _merge_directfn_liquidity(row, avg20_liquidity):
     current_price = float(directfn["Current_Price"])
     support_20d = float(row.get("Support_20D") or current_price)
     resistance_20d = float(row.get("Resistance_20D") or current_price)
+    price_delta_pct = abs(current_price - previous_price) / previous_price * 100 if previous_price else 0.0
     row.update(directfn)
     row["Current_Price"] = round(current_price, 2)
     row["Daily_Liquidity_EGP"] = round(float(directfn["Daily_Liquidity_EGP"]), 2)
@@ -260,11 +261,34 @@ def _merge_directfn_liquidity(row, avg20_liquidity):
     row["Price_Source"] = "Yahoo Finance history + DirectFN delayed current liquidity"
     row["Price_As_Of"] = directfn["DirectFN_As_Of"]
     row["Price_Freshness"] = "DELAYED_CURRENT"
+    row["Yahoo_Last_Close"] = round(previous_price, 2)
+    row["DirectFN_Yahoo_Delta_%"] = round(price_delta_pct, 2)
+    row["Technical_Source_Status"] = "ALIGNED"
     row.setdefault("Warnings", [])
     row["Warnings"] = [item for item in row["Warnings"] if item != "Latest volume is missing or zero."]
     row["Warnings"].append("Current liquidity uses DirectFN delayed trading data; verify live price/spread in Thndr.")
-    if abs(current_price - previous_price) / previous_price > 0.05 if previous_price else False:
-        row["Warnings"].append("DirectFN delayed price differs materially from Yahoo latest close; verify in Thndr.")
+    if price_delta_pct > 5:
+        row["Technical_Source_Status"] = "UNALIGNED_BLOCKED"
+        row["Price_Freshness"] = "DELAYED_CURRENT_UNALIGNED"
+        row["MA20"] = round(current_price, 2)
+        row["MA50"] = round(current_price, 2)
+        row["MA200"] = round(current_price, 2)
+        row["RSI"] = 50.0
+        row["MACD"] = 0.0
+        row["MACD_Signal"] = 0.0
+        row["Support_20D"] = round(float(directfn.get("DirectFN_Low") or current_price), 2)
+        row["Resistance_20D"] = round(float(directfn.get("DirectFN_High") or current_price), 2)
+        row["Support_50D"] = row["Support_20D"]
+        row["Resistance_50D"] = row["Resistance_20D"]
+        row["Support_Distance_%"] = round(((current_price / row["Support_20D"]) - 1) * 100, 2) if row["Support_20D"] > 0 else 0.0
+        row["Resistance_Distance_%"] = round(((row["Resistance_20D"] / current_price) - 1) * 100, 2) if current_price > 0 else 0.0
+        row["Return_5D_%"] = 0.0
+        row["Return_20D_%"] = 0.0
+        row["Volatility_20D_%"] = 0.0
+        row["Breakout_20D"] = False
+        row["Warnings"].append(
+            "DirectFN current price differs materially from Yahoo history; historical indicators/support/resistance are blocked until the symbol mapping/history is verified."
+        )
     return row
 
 

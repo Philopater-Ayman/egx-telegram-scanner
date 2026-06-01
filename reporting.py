@@ -238,6 +238,7 @@ def write_provider_status(egx30, market_data, evidence_packets, telegram_sent, h
     market_regime = market_regime or {}
     tradeable_price_count = sum(1 for row in market_data.values() if _is_tradeable_price(row))
     directfn_count = sum(1 for row in market_data.values() if "DirectFN" in str(row.get("Liquidity_Source", "")))
+    unaligned_count = sum(1 for row in market_data.values() if row.get("Technical_Source_Status") == "UNALIGNED_BLOCKED")
     directfn_health = get_directfn_health()
     evidence_count = sum(len(packet.get("items", [])) for packet in evidence_packets.values())
     lines = [
@@ -252,6 +253,7 @@ def write_provider_status(egx30, market_data, evidence_packets, telegram_sent, h
         f"- Market regime: {market_regime.get('summary', 'n/a')}",
         f"- Market data: {tradeable_price_count}/{len(market_data)} tickers have tradeable current/delayed price data",
         f"- DirectFN liquidity rows used: {directfn_count}/{len(market_data)}",
+        f"- DirectFN/Yahoo technical mismatches blocked: {unaligned_count}/{len(market_data)}",
         f"- DirectFN health: {directfn_health.get('rows')} rows | as_of={directfn_health.get('as_of') or 'n/a'} | error={directfn_health.get('error') or 'none'}",
         f"- Data quality issues: {len(scan_failures)}",
         f"- Evidence sources found: {evidence_count}",
@@ -278,6 +280,7 @@ def write_automation_status(scan_phase, market_day, market_data, telegram_sent):
     directfn_health = get_directfn_health()
     tradeable_price_count = sum(1 for row in market_data.values() if _is_tradeable_price(row))
     directfn_count = sum(1 for row in market_data.values() if "DirectFN" in str(row.get("Liquidity_Source", "")))
+    unaligned_count = sum(1 for row in market_data.values() if row.get("Technical_Source_Status") == "UNALIGNED_BLOCKED")
     lines = [
         "# Automation Status",
         "",
@@ -296,6 +299,7 @@ def write_automation_status(scan_phase, market_day, market_data, telegram_sent):
         "## Data Health",
         f"- Tradeable delayed/current price rows: {tradeable_price_count}/{len(market_data)}",
         f"- DirectFN liquidity rows used: {directfn_count}/{len(market_data)}",
+        f"- DirectFN/Yahoo technical mismatches blocked: {unaligned_count}/{len(market_data)}",
         f"- DirectFN table rows available: {directfn_health.get('rows')}",
         f"- DirectFN as of: {directfn_health.get('as_of') or 'n/a'}",
         f"- DirectFN error: {directfn_health.get('error') or 'none'}",
