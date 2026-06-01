@@ -1,6 +1,6 @@
 # Telegram-First EGX Scanner Report
 
-Generated UTC: 2026-06-01T06:44:31.099174+00:00
+Generated UTC: 2026-06-01T12:21:28.482740+00:00
 
 ## Control Center
 - Action tickets: 0 prioritized signal(s)
@@ -12,7 +12,7 @@ Generated UTC: 2026-06-01T06:44:31.099174+00:00
 ## Market Context
 - Market trend: Bullish
 - Source: Mubasher EGX market page (delayed public data)
-- As of: Monday, May 25
+- As of: Monday, June 01
 - Freshness: DELAYED
 - EGX30 regime: BEARISH / above MA20 33.33% / above MA50 85.71%
 - EGX70 regime: CONSTRUCTIVE / above MA20 55.0% / above MA50 90.0%
@@ -29,12 +29,12 @@ Generated UTC: 2026-06-01T06:44:31.099174+00:00
 ## AI Narrative
 - Provider: OpenRouter OK
 - Model: openai/gpt-oss-120b:free
-- Summary: EGX30 stays bearish while EGX70 shows constructive momentum. Sector breadth is strong (85.7%) and the scanner highlights a few tickets, but all fail liquidity and buy‑ready gates, so the recommendation is HOLD. Risk mode is SELECTIVE_SMALL_MID_SWINGS, meaning only high‑conviction, well‑liquidity‑backed setups would be taken.
-- Liquidity is missing for all top‑ranked tickets; price is near resistance on KABO, ORWE, RAYA and others.
-- EGX30 breadth below MA20 signals weak downside support; EGX70 breadth above MA20/50 supports a more constructive outlook.
-- Leading sectors (Tech & Distribution, Telecom, Tourism) show solid returns, but none of the screened stocks meet the buy‑ready criteria.
-- Outlook for the next 1‑3 days remains uncertain – bearish pressure on EGX30 could spill over, while EGX70 may sustain modest gains.
-- Maintain HOLD stance until a candidate clears evidence, liquidity and technical gates.
+- Summary: Local scanner found no buy‑ready candidates; all tickets flagged HOLD due to missing liquidity and mixed technical outlooks. EGX30 remains bearish with weak breadth below MA20, while EGX70 shows a constructive trend and stronger sector support, keeping risk mode at SELECTIVE_SMALL_MID_SWINGS.
+- Liquidity gaps across top tickets (KABO, PHDC, ORWE, etc.) prevent entry despite recent earnings beats.
+- Technical view: most stocks sit near resistance; only RAYA shows a constructive outlook but still lacks liquidity.
+- EGX30 bearish pressure may weigh on mid‑cap stocks; EGX70’s constructive bias offers limited upside for selective plays.
+- Sector breadth is healthy (85.7%); leading sectors – Tech & Distribution, Telecom, Tourism – merit watch for future signals.
+- Uncertainty remains high as liquidity regimes are missing; monitor any sudden volume spikes before revisiting entries.
 
 ## Top Liquidity Spikes
 - ANFI.CA: spike=0.63 liquidity=16371369.32 outlook=WEAK_OR_RISKY score=11.85 buy_ready=False
@@ -272,49 +272,44 @@ Generated UTC: 2026-06-01T06:44:31.099174+00:00
 - ZMID.CA: score=12.4 buy_ready=False sector_rank=7 price=5.82 support=5.77 resistance=6.57 source=Yahoo Finance as_of=2026-05-27T21:00:00+00:00 freshness=FRESH RSI=49.61 liquidity=0.0 spike=0.0
 
 ## Backtesting Lite
-- KABO.CA: 180d return=19.77%, max drawdown=-24.26%, MA20>MA50 days last20=20, as_of=2026-05-27T21:00:00+00:00
-- PHDC.CA: 180d return=108.95%, max drawdown=-15.81%, MA20>MA50 days last20=20, as_of=2026-05-27T21:00:00+00:00
-- ORWE.CA: 180d return=12.7%, max drawdown=-13.64%, MA20>MA50 days last20=20, as_of=2026-05-27T21:00:00+00:00
+- KABO.CA: 180d return=18.18%, max drawdown=-24.26%, MA20>MA50 days last20=20, as_of=2026-05-27T21:00:00+00:00
+- PHDC.CA: 180d return=113.66%, max drawdown=-15.81%, MA20>MA50 days last20=20, as_of=2026-05-27T21:00:00+00:00
+- ORWE.CA: 180d return=11.5%, max drawdown=-13.64%, MA20>MA50 days last20=20, as_of=2026-05-27T21:00:00+00:00
 - These checks are historical context only, not a prediction or guarantee.
 
 ## Evidence
-- KABO.CA: status=ACCEPTED_UNDATED latest=n/a age_days=n/a sources=3 expected=El Nasr Clothing and Textiles summary=KABO posts EGP 17m in Q1-25/26 unaudited consolidated net profits; KABO sells over 1.9m shares in Spinalex for EGP 20m; KABO unveils international agreements, expansion plan including export lines
-  - KABO posts EGP 17m in Q1-25/26 unaudited consolidated net profits: https://english.mubasher.info/news/4600162/KABO-posts-EGP-17m-in-Q1-25-26-unaudited-consolidated-net-profits/
-  - KABO sells over 1.9m shares in Spinalex for EGP 20m: https://english.mubasher.info/news/4543747/KABO-sells-over-1-9m-shares-in-Spinalex-for-EGP-20m/
-  - KABO unveils international agreements, expansion plan including export lines: https://english.mubasher.info/news/4533185/KABO-unveils-international-agreements-expansion-plan-including-export-lines/
-- PHDC.CA: status=OLD_ACCEPTED latest=2025-01-01 age_days=516 sources=3 expected=Palm Hills Development summary=Palm Hills, UAE’s Miran to launch new development project in Ras Al Hikma; Palm Hills records 30% higher profits in 2025, unveils new project in UAE; Strong momentum pushes Palm Hills toward EGP 10.15
-  - Palm Hills, UAE’s Miran to launch new development project in Ras Al Hikma: https://english.mubasher.info/news/4598123/Palm-Hills-UAE-s-Miran-to-launch-new-development-project-in-Ras-Al-Hikma/
-  - Palm Hills records 30% higher profits in 2025, unveils new project in UAE: https://english.mubasher.info/news/4580548/Palm-Hills-records-30-higher-profits-in-2025-unveils-new-project-in-UAE/
-  - Strong momentum pushes Palm Hills toward EGP 10.15: https://english.mubasher.info/news/4560871/Strong-momentum-pushes-Palm-Hills-toward-EGP-10-15/
-- ORWE.CA: status=OLD_ACCEPTED latest=2025-01-01 age_days=516 sources=3 expected=Oriental Weavers summary=Oriental Weavers to disburse EGP 1.5/shr dividends for 2025; Oriental Weavers’ consolidated profits cross EGP 2.2bn in 2025; Oriental Weavers generates EGP 12.5bn consolidated sales in H1-25
-  - Oriental Weavers to disburse EGP 1.5/shr dividends for 2025: https://english.mubasher.info/news/4590236/Oriental-Weavers-to-disburse-EGP-1-5-shr-dividends-for-2025/
-  - Oriental Weavers’ consolidated profits cross EGP 2.2bn in 2025: https://english.mubasher.info/news/4562972/Oriental-Weavers-consolidated-profits-cross-EGP-2-2bn-in-2025/
-  - Oriental Weavers generates EGP 12.5bn consolidated sales in H1-25: https://english.mubasher.info/news/4487417/Oriental-Weavers-generates-EGP-12-5bn-consolidated-sales-in-H1-25/
-- POUL.CA: status=ACCEPTED_UNDATED latest=n/a age_days=n/a sources=3 expected=Cairo Poultry summary=Cairo Poultry stock approaching historic peak – Analysis; Cairo Poultry cancels commercial license in Dubai&#39;s JAFZA; Cairo Poultry sees EGP 871m block-trading deal
-  - Cairo Poultry stock approaching historic peak – Analysis: https://english.mubasher.info/news/4539104/Cairo-Poultry-stock-approaching-historic-peak-Analysis/
-  - Cairo Poultry cancels commercial license in Dubai&#39;s JAFZA: https://english.mubasher.info/news/3962334/Cairo-Poultry-cancels-commercial-license-in-Dubai-s-JAFZA/
-  - Cairo Poultry sees EGP 871m block-trading deal: https://english.mubasher.info/news/3862165/Cairo-Poultry-sees-EGP-871m-block-trading-deal/
-- SPMD.CA: status=ACCEPTED_UNDATED latest=n/a age_days=n/a sources=3 expected=Speed Medical Co summary=Speed Medical’s stock reflects strong technical breakthrough; Speed Medical turns to losses in 9M-22; Shareholder ups stake in Speed Medical for EGP 3.5m
-  - Speed Medical’s stock reflects strong technical breakthrough: https://english.mubasher.info/news/4546374/Speed-Medical-s-stock-reflects-strong-technical-breakthrough/
-  - Speed Medical turns to losses in 9M-22: https://english.mubasher.info/news/4054471/Speed-Medical-turns-to-losses-in-9M-22/
-  - Shareholder ups stake in Speed Medical for EGP 3.5m: https://english.mubasher.info/news/4049449/Shareholder-ups-stake-in-Speed-Medical-for-EGP-3-5m/
-- MHOT.CA: status=ACCEPTED_UNDATED latest=n/a age_days=n/a sources=3 expected=Misr Hotels summary=Misr Hotels’ net profits cross EGP 1.1bn in 9M-25/26; Shareholder buys EGP 3.39m worth of shares in Misr Hotels; Misr Hotels repays EGP 383m of NBE&#39;s loan, unveils estimated profits
-  - Misr Hotels’ net profits cross EGP 1.1bn in 9M-25/26: https://english.mubasher.info/news/4602482/Misr-Hotels-net-profits-cross-EGP-1-1bn-in-9M-25-26/
-  - Shareholder buys EGP 3.39m worth of shares in Misr Hotels: https://english.mubasher.info/news/4013808/Shareholder-buys-EGP-3-39m-worth-of-shares-in-Misr-Hotels/
-  - Misr Hotels repays EGP 383m of NBE&#39;s loan, unveils estimated profits: https://english.mubasher.info/news/3975543/Misr-Hotels-repays-EGP-383m-of-NBE-s-loan-unveils-estimated-profits/
-- RAYA.CA: status=OLD_ACCEPTED latest=2025-01-01 age_days=516 sources=3 expected=Raya Holding summary=Raya stock maintains bullish momentum above EGP 9; Aman Holding, MSMEDA partner to inject EGP 300m into SMEs across Egypt; Raya Holding’s consolidated profits surge in 2025; revenues hit EGP 63.8bn
-  - Raya stock maintains bullish momentum above EGP 9: https://english.mubasher.info/news/4601857/Raya-stock-maintains-bullish-momentum-above-EGP-9/
-  - Aman Holding, MSMEDA partner to inject EGP 300m into SMEs across Egypt: https://english.mubasher.info/news/4577815/Aman-Holding-MSMEDA-partner-to-inject-EGP-300m-into-SMEs-across-Egypt/
-  - Raya Holding’s consolidated profits surge in 2025; revenues hit EGP 63.8bn: https://english.mubasher.info/news/4564195/Raya-Holding-s-consolidated-profits-surge-in-2025-revenues-hit-EGP-63-8bn/
-- EFIH.CA: status=REJECTED_TICKER_MISMATCH latest=n/a age_days=n/a sources=0 expected=E-Finance For Digital and Financial Investments summary=Evidence rejected for EFIH.CA: source text did not clearly match EFIH.CA / E-Finance For Digital and Financial Investments.
+- KABO.CA: status=RECENT_ACCEPTED latest=2026-05-25 age_days=7 sources=3 expected=El Nasr Clothing and Textiles summary=El Nasr Clothing and Textiles (KABO.CA) reported strong financial performance for fiscal year 2024 with significant increases in revenue and earnings. The company also released its Q1 2025/2026 unaudited consolidated net profits and faced a penalty from the EGX Listing Committee in September 2025.
+  - Fiscal Year 2024 Financial Performance (Reported May 25, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH6CqhhdvR80ERIlM5kOxKx68Q_2ajUU6Qrsh40cjQA-hEFUF_MNDkMf7cX4TLwCVLGNYXzFcS0wQQSI30agNdsroktiaFWvaM9KBk1dlUlttLDA0Q7Dw870a5ny6TVqBBVn08=
+  - Q1 2025/2026 Unaudited Consolidated Net Profits (Reported May 21, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFErm8-xkJGFRNGRsQp8JYBOk2RQFSkg40oeA4_ZEFWNL5TVtu6b4nEfd5KU9G6-U3w3uLzxvW-tlLf5p-W-4frQibBZMSPVnoiPHWRsQpyC6OELfk3Hq6AZBpxKMpmoViGU-P-_w8y3E9hEcPiGIts
+  - Latest Quarter Financials - Sales, Net Income, EPS (Implied Q1 2026, Reported May 21, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFlDNc-IssX4IONsMnq16f7x2D7LfGPVlc6-NLALhSGQLsZUV0ljn-vvMs_cCukN6G0-yndel-aADhMC0-K8VsUgNOAXqIOfgQQU0WlX-09JG2L3lCYBKI8peV8A5H_kq0_jkqoJmtVzBrry1g0yF7lZR8K
+- PHDC.CA: status=RECENT_ACCEPTED latest=2026-08-10 age_days=0 sources=3 expected=Palm Hills Development summary=Palm Hills Development (PHDC.CA) reported its Q1 2026 standalone and consolidated financial results, showing a significant increase in standalone net profit. The company also announced an exceptional project in Ras Al Hikma, a purchase of treasury stocks, and a change in its board composition. Analysts increased price targets for the stock.
+  - Q1 2026 Standalone Financial Results (Reported May 21, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHZnmUcjxxS7aQWBDzouhxJBtdQUrK5iC8J9TjIrWjzy6hOPtYA4nxjG9_sH3KKcwt_lNcHz23FFl4ypPqi9wG4ob0FozBdZvODp79exaRaqPrF_zTWcS8lndtSXHOlvqb7K_AfPlidzvYqoAm-Jif78gU=
+  - Q1 2026 Consolidated Financial Results (Reported May 22, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEHc-_R5I7E7W5C1Ytp1Y0Y0Y0WEg_cW2oHDmrYGcrOTy3hR0JftpETTPmso-BwLVh30T3MBzANEnL27VhKVIVePpaYqETybJZpiOBeKkEfjHAPaN8jhJoEvNvhhiy7-zKu1nIXI0n3SHWfGTYdttKyFRYuIYgohLxXRtxVmJIXVb77pCQStUn-sABtD0NWsPeghr8dSARZmwFcoYCK6OJ_uRnYVtzaoUdn8A==
+  - Fiscal Year 2025 Financial Performance (Earnings Date: August 10, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEbgx1L3Wv9U7y0pc4qlJ4IVA9u1Qe5hXxolCOd42CUYtg7DugWR-sWlI3CruBGsPB9-YmAwrNMahuBK8rbRTjQA4iLoBSvEsq1y_bR33CAIINE_d925YVmllvwl8DrW44XeFE=
+- ORWE.CA: status=RECENT_ACCEPTED latest=2026-08-20 age_days=0 sources=3 expected=Oriental Weavers summary=Oriental Weavers (ORWE.CA) announced strong Q1 2026 results with increased revenue and a significant surge in net profit. The company also released its Q1 2026 earnings and financial statements, and declared a dividend. Investor presentations for Q1 2026, 3Q 2025, and FY 2025 are available.
+  - Q1 2026 Results (Announced June 1, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGsJk7G-pTqn7Z9ihQDL4qO_meNH7c0Ry2cxi-Me2bndW_oEEZpXhwgl-00e7kDYkRadbGsNKUPT9MJn3eX39aid70DF4Q6xxDE0PVUuhlweBkFHfga_AzARW7p7CDeWXyeLAvXGH89oZoz5fG2IyRU97iQwniSUXMTogdPfFNTpkLTZNyCNum2GnCTE4Yi7UxZTLpRf1ZSLlwVAbm2eQpQZ7g=
+  - Q1 2026 Earnings Release and Financial Statements (Released May 20, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHLC_6rmacPGqsksMxdZ3eZYnkxVZ5WDadJ-Rl0WA0_dTjih3Yai6qmc0buP3cYaKtPikR0cr3KlNzdWF2_ZeHbzGxDyjuPZQNI_-lfpORqtN3bw27X6gKMWANA4mB0Q9y02d-AH20EI5M=
+  - Fiscal Year 2025 Financial Performance (Earnings Date: August 20, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF4APA19fk7aomTkxaC4Bmy9N5PzuGprnrT0bKLH6XQxCv2AEmC4aJGIHmOtIphjmqFbUts63Pig2WFjJ92KnevfnROOvBbd1ZEa7msoXTbkmZXOIOgdf_zU8G3iTs2FvHaOy8=
+- POUL.CA: status=RECENT_ACCEPTED latest=2026-05-25 age_days=7 sources=3 expected=Cairo Poultry summary=Cairo Poultry (POUL.CA) reported its Q1 2026 standalone financial results with an increase in net profit. The company also announced its fiscal year 2025 financial performance and distributed a cash dividend in April 2026.
+  - Q1 2026 Standalone Financial Results (Reported May 14, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFbdAIuo5fecmHaV8VSt7lPJ_XxD7Vc-gfZEQiUSXaB6Z2NvBCRC0DSQyVJPvvlbWV0RwZYgviqwRQE0lFOQua7gzBQ7_Vy2L_ybMoIOkFCW_gl9sxHVwgSZWe8seXIvFydb3ewCJMoam2bfPB81_nJ9HpAIxyr91ttwZmwz4f6JBAMQbLSp93QK9BZ11nrfl4b
+  - Fiscal Year 2025 Financial Performance (Earnings Date: May 25, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEqWUq4kgDu551wGaOOwSQqUTiboHo8f-Db8jGOZLRLf3hsCa4-GvPpi7nGiUQISYHSypbISN_T-dbIjBfXuXOnncpt6_fuMx9vb-1xFbfDhFTTCU1SJkwUVrh1NxIGksqfGco=
+  - Cash Dividend Distribution (April 27, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGEDyr8AB4KSYx6DHCBT4gmsUa6S6cedyPlHRyJVvl4B1YRpffr-R92dgVEcN8lGyUC77zsw_bwfNC5DG3RV4pFMBjRgMKnSY-wyAhZK8Ck3SXxQ_C5FYv45eD7ACxZiolZFrrYsooMWVTugSp2KbTSrPgb9jg=
+- SPMD.CA: status=RECENT_ACCEPTED latest=2026-05-25 age_days=7 sources=3 expected=Speed Medical Co summary=Speed Medical Co (SPMD.CA) has had several recent corporate announcements including an AGM & EGM invitation, releases regarding its auditor's report, board decisions, and financial statements. The company also reported its 9 months standalone results in March 2026 and Q2 2024 earnings.
+  - AGM & EGM Invitation (Dated May 25, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHDwcEbuQznaqTOe0woHDzQ9EZvAdmYEE3jZ-enh7ScJGx-U-JftB4HxKLD9FkgidCB37bfc79nE8NI8CH0jJNnm5bYruc-n-skQkPak7nHuTX1oqimrBdCH5zJemZkTqCw5iZSz-l7AhXa_K4q3LE=
+  - Auditor's Report Corporate Governance Report (Dated May 19, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHDwcEbuQznaqTOe0woHDzQ9EZvAdmYEE3jZ-enh7ScJGx-U-JftB4HxKLD9FkgidCB37bfc79nE8NI8CH0jJNnm5bYruc-n-skQkPak7nHuTX1oqimrBdCH5zJemZkTqCw5iZSz-l7AhXa_K4q3LE=
+  - Board of Directors' Decisions (Dated May 19, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHDwcEbuQznaqTOe0woHDzQ9EZvAdmYEE3jZ-enh7ScJGx-U-JftB4HxKLD9FkgidCB37bfc79nE8NI8CH0jJNnm5bYruc-n-skQkPak7nHuTX1oqimrBdCH5zJemZkTqCw5iZSz-l7AhXa_K4q3LE=
+- MHOT.CA: status=RECENT_ACCEPTED latest=2026-05-25 age_days=7 sources=3 expected=Misr Hotels summary=Misr Hotels (MHOT.CA) recently held a Board of Directors' meeting in May 2026 and reported its latest quarterly financials showing increased sales and net income. The company also had disclosures regarding its Board of Directors and shareholders' structure, and a report from the Accountability State Authority.
+  - Board of Directors' Meeting Decisions (Dated May 13, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHTAvoY6J2c4kPnbdilI_ue9dNL9fsjUV7IewRRmoo87nLJXmRLSqvP3UlPdUcDy7P18xCL8gpvZ4D_rvtko_Tu1ssAYDyKtUfEQarQBS_6gfvDKh7nxybVIBgHI1JSOdaZrBIWcHFQpbDGb-19C43MPJI=
+  - Latest Quarter Financials - Sales, Net Income, EPS (Reported May 25, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFQesHxGfPsnUghXmauv7Y0mw7Wm83zkXqFZYspO6OGm4CwiMbgAU0o8LWPfDwA5mj7Isu7XlWkLvofxLSq4N2jyeVnIqhXo_Um02Ob6zi3OxQYHpj01oi6qsV4XzXVMGgQSsv0nsa-9LlIHgEXP_zvGp5_q5b_BRjLAQ==
+  - Disclosure Form for BoD & Shareholders' Structure (Dated April 9, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG1pHrTKk2nTSFLKxbdKkEZg9PlrusvPTjQvusBnlsdpWUx04TD_umIpFs7K0_30DxMcgnCRXBSWkJQpdijmkfvJllBAfAHUM6HrYRAMETRs6gfz3XHzWQG2FZ30jX6JKHnRE4NmSmod4SjkvA63prE
+- RAYA.CA: status=RECENT_ACCEPTED latest=2026-05-14 age_days=18 sources=3 expected=Raya Holding summary=Raya Holding (RAYA.CA) released its Q1 2026 financial results and reported strong fiscal year 2025 performance with significant increases in revenue and earnings. The company also had recent Board of Directors' meeting decisions and disclosures regarding its shareholders' structure. Annual reports for 2024 and 2023 are available.
+  - Q1 2026 Financial Results (Reported May 14, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGywBOz80mCWGT0J9vagn3DtXCO8AyhmVEVgz8JYT0G5zsfWrCeROHt7BDQEZWxlJtOGCx9xTLpX4kaH6RSJ5Q1S4f8to-yTka7STeU2r6ruUaCErgZF_sSznFrFDD27Lczi6Yy69CzMy2Uw4UdBafNghM=
+  - Fiscal Year 2025 Financial Performance: https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF8rcrb7ocaeecGI59bqFLW1k-Br4ImRVbQgMX-KDmZUJYvAKG1_hRMlGM5ATMbVrRexkNweQjwDw-LBChk7KdBUu5cY6q6hFcZPTVRIuy11lynpC9EzAVkFpnEJb5LWGpFC7s=
+  - Board of Directors' Meeting Decisions (Dated May 14, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGxnicfRTnNv9zt3EJFrL2VaYo4lpJ5FrzYjqdRvdFR0MahtFC435lThvfbBTF6ViJ1G10_lYY9QrHzmujQtzrWD9RdYSLbZgwtW4ciaIaYdj2DUFjGez0fu-287TFqJm8YMjs06aZw4wqjFqn1vbnC
+- EFIH.CA: status=RECENT_ACCEPTED latest=2026-05-15 age_days=17 sources=3 expected=E-Finance For Digital and Financial Investments summary=E-Finance For Digital and Financial Investments (EFIH.CA) released its Q1 2026 financial results and reported strong Q1 2025 earnings with significant increases in EPS, revenue, and net income. The company also saw an increase in its price target and held its Annual General Meeting in March 2026. Various financial reports and board decisions were also disclosed.
+  - Q1 2026 Financial Results and Board Decisions (Dated May 12, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH1yJB6wtweaAa9KSBFSrHWmXMvDX3gXFsrb2uu_ruk7xIz5B_gM4YVKzAvgVol5y384sgNqcBGLYmDzarjAGT9XetrNDgblpYR0Kcb6ABkJYV5syk8Fay5f5ufd5saXkj_o3UwGPvG8QfILx82bAaQr-6P82jpYr2uzg==
+  - Q1 2025 Earnings (Reported May 15, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFKZh6JHTczmnVrSNQRnveqVOgZ_G5tuwZnCPuvXUNNBaKmYrlfVgbYqBDe6jgKtMUtOyk_ZDWDFV6byH8FbpMNlPDeJPY-74bs5xMxFD5iuO093VE5wpmHJ3vI7PfWiA==
+  - Fiscal Year 2025 Financial Performance: https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEIyE8p4qe4kOqqfwuzaaersOMPtG2ng6XpItNrOOASf-hbQQDFMgzuFgBOVzDRThW7Umf5rvVEwjm-HoVXBPhVRAPuyu2Lo27ReRR3mrEfaYs7lpmN87JG9JymhH6zxisFIck=
 
 ## Warnings
-- Evidence for KABO.CA matches the company but no source/report date was detected.
-- Gemini batch evidence failed: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
-- Evidence for PHDC.CA matches the company but appears old; latest detected date is 2025-01-01.
-- Evidence for ORWE.CA matches the company but appears old; latest detected date is 2025-01-01.
-- Evidence for POUL.CA matches the company but no source/report date was detected.
-- Evidence for SPMD.CA matches the company but no source/report date was detected.
-- Evidence for MHOT.CA matches the company but no source/report date was detected.
-- Evidence for RAYA.CA matches the company but appears old; latest detected date is 2025-01-01.
-- Evidence rejected for EFIH.CA: source text did not clearly match EFIH.CA / E-Finance For Digital and Financial Investments.
+- No blocking warnings.
