@@ -27,16 +27,17 @@ For GitHub Actions, publish the repo and add these repository secrets: `TELEGRAM
 
 Scheduled runs target Cairo time:
 
-- 09:30: pre-open data/evidence refresh before the 10:00 session.
-- 12:30: midday liquidity and setup refresh.
-- 16:00: post-close report and action-ticket refresh.
-- 20:00: evening provider/data-quality refresh.
+- 08:45: pre-market risk/news check before the 10:00 session.
+- 09:15: open preparation.
+- 11:00: delayed liquidity confirmation after the session has started.
+- 15:30: post-close report and action-ticket refresh.
+- 19:30: evening tomorrow-plan refresh.
 
-GitHub cron runs in UTC, so the workflow includes paired UTC schedules plus a Cairo-time gate. This keeps the intended Cairo schedule across Egypt UTC+2/UTC+3 changes and prevents duplicate Telegram sends from the paired cron entries.
+GitHub cron runs in UTC. Each scheduled cron maps directly to a `SCAN_PHASE`; the scanner no longer uses a loose Cairo-time gate.
 
 Add official holidays, Ramadan hours, or special sessions to `market_calendar.csv`. If a date is marked `CLOSED`, scheduled scanner runs exit without creating a new ticket.
 
-Each successful GitHub run commits the generated scanner outputs back to the repository: `daily_report.md`, `provider_status.md`, `action_tickets.csv`, `trade_history.csv`, `market_prices.csv`, `indicators.csv`, `sector_scores.csv`, `scan_results.csv`, `data_quality.csv`, `watchlist_signals.csv`, and `watchlist.csv`.
+Each successful GitHub run commits the generated scanner outputs back to the repository: `daily_report.md`, `provider_status.md`, `automation_status.md`, `action_tickets.csv`, `trade_history.csv`, `market_prices.csv`, `indicators.csv`, `sector_scores.csv`, `scan_results.csv`, `data_quality.csv`, `watchlist_signals.csv`, and `watchlist.csv`.
 
 ## Important Files
 
@@ -46,6 +47,7 @@ Each successful GitHub run commits the generated scanner outputs back to the rep
 - `trade_history.csv`: durable recommendation history.
 - `daily_report.md`: human-readable daily report.
 - `provider_status.md`: source health and warnings.
+- `automation_status.md`: latest cloud-run phase, schedule, Telegram status, and provider health.
 - `stock_universe.csv`: active EGX candidate universe with sector, index tags, and Yahoo symbol. Expanded rows tagged `YAHOO_VERIFIED_EXPANSION` had usable Yahoo history when added.
 - `market_prices.csv`: latest collected price/volume snapshot for scanned tickers.
 - `indicators.csv`: deterministic indicators such as MA20/MA50/MA200, RSI, MACD, liquidity spike, returns, volatility, support, and resistance.
@@ -58,6 +60,7 @@ Each successful GitHub run commits the generated scanner outputs back to the rep
 ## Current Free Sources
 
 - Yahoo/yfinance for EGX ticker OHLCV when available.
+- DirectFN delayed trading data for current price, volume, turnover, and liquidity override when Yahoo volume is stale or zero.
 - Mubasher EGX page for delayed EGX30 macro fallback.
 - StockAnalysis EGX public list as quote-only fallback when Yahoo has no rows. This has no volume/history, so it cannot support BUY by itself.
 - Gemini Google Search grounding for evidence and citations when enabled.
@@ -68,7 +71,7 @@ Each successful GitHub run commits the generated scanner outputs back to the rep
 ## Safety Rules
 
 - Advisor-only mode: manual Thndr execution only.
-- BUY must have fresh ticker data, acceptable liquidity, support/resistance-aware stop loss and take profit, and evidence.
+- BUY must have fresh or delayed-current ticker data, acceptable liquidity, support/resistance-aware stop loss and take profit, and evidence.
 - Defensive EGX30/EGX70 market regime blocks new BUY tickets and sends HOLD.
 - Tickets are signal-only. Choose position size manually in Thndr.
 - Delayed macro data caps confidence.

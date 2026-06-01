@@ -1,5 +1,5 @@
 from ai_agents import build_openrouter_narrative, gather_batch_evidence
-from config import EGX_CANDIDATE_POOL, EVIDENCE_TOP_N, MODEL_NAME, USE_AI_DECISION, get_sector_map, get_yahoo_symbol_map
+from config import EGX_CANDIDATE_POOL, EVIDENCE_TOP_N, MODEL_NAME, SCAN_PHASE, USE_AI_DECISION, get_sector_map, get_yahoo_symbol_map
 from local_strategy import build_local_fallback_decisions
 from market_calendar import should_run_scanner
 from market_scanner import (
@@ -11,8 +11,8 @@ from market_scanner import (
     rank_candidates,
     write_scanner_outputs,
 )
-from providers import get_backtest_summary, get_macro_status, get_technical_data
-from reporting import print_ticket, send_telegram_notification, write_daily_report, write_provider_status
+from providers import get_backtest_summary, get_directfn_health, get_macro_status, get_technical_data
+from reporting import print_ticket, send_telegram_notification, write_automation_status, write_daily_report, write_provider_status
 from risk import apply_risk_gates, enforce_watchlist_limits
 from storage import (
     append_trade_histories,
@@ -25,10 +25,12 @@ from storage import (
 
 def run_daily_advisor():
     print("=== Running EGX Scanner Advisor (Advisor Only) ===")
+    print(f"Scan phase: {SCAN_PHASE}")
     should_run, market_day = should_run_scanner()
     print(f"Market calendar: {market_day.get('status')} | {market_day.get('label')} | {market_day.get('open_time')}-{market_day.get('close_time')}")
     if not should_run:
         print("Market calendar is CLOSED today. Scanner exits without creating a new action ticket.")
+        write_automation_status(SCAN_PHASE, market_day, {}, False)
         return
     merged = merge_pending_history_files()
     if merged:
@@ -41,6 +43,11 @@ def run_daily_advisor():
     print(f"EGX30: {egx30.get('Trend')} | {egx30.get('Freshness')} | {egx30.get('Source')}")
 
     flow_status = get_latest_institution_flow()
+    directfn_health = get_directfn_health()
+    print(
+        f"DirectFN delayed liquidity: {directfn_health.get('rows')} rows | "
+        f"as_of={directfn_health.get('as_of') or 'n/a'} | error={directfn_health.get('error') or 'none'}"
+    )
 
     combined_pool = list(dict.fromkeys(active_watchlist + EGX_CANDIDATE_POOL))
     print(f"Scanning {len(combined_pool)} EGX candidates through the deterministic market scanner...")
@@ -103,16 +110,23 @@ def run_daily_advisor():
     decision, warnings = apply_risk_gates(decision, market_data, egx30, evidence_packets, flow_status, market_regime)
     update_local_watchlist(decision["updated_watchlist"], signal_rows)
 
-    source_freshness = f"market_context={egx30.get('Freshness')}; fresh_tickers={sum(1 for x in market_data.values() if x.get('Price_Freshness') == 'FRESH')}/{len(market_data)}"
+    tradeable_count = sum(1 for x in market_data.values() if x.get("Price_Freshness") in {"FRESH", "DELAYED_CURRENT"})
+    directfn_count = sum(1 for x in market_data.values() if "DirectFN" in str(x.get("Liquidity_Source", "")))
+    source_freshness = (
+        f"market_context={egx30.get('Freshness')}; "
+        f"tradeable_price_tickers={tradeable_count}/{len(market_data)}; "
+        f"directfn_liquidity={directfn_count}/{len(market_data)}"
+    )
     ranked_market_data = {row["Ticker"]: row for row in ranked_rows}
     narrative = build_openrouter_narrative(decision, ranked_rows, sector_scores, evidence_packets, warnings, market_regime)
     for warning in narrative.get("warnings", []):
         warnings.append(warning)
-    write_daily_report(egx30, ranked_market_data, decision, evidence_packets, warnings, backtests, sector_scores, flow_status, scan_failures, narrative, market_regime)
-    telegram_sent = send_telegram_notification(decision, egx30, warnings, ranked_market_data, sector_scores, evidence_packets, scan_failures, narrative, market_regime)
+    write_daily_report(egx30, ranked_market_data, decision, evidence_packets, warnings, backtests, sector_scores, flow_status, scan_failures, narrative, market_regime, SCAN_PHASE)
+    telegram_sent = send_telegram_notification(decision, egx30, warnings, ranked_market_data, sector_scores, evidence_packets, scan_failures, narrative, market_regime, SCAN_PHASE)
     history_paths = append_trade_histories(decision, source_freshness, MODEL_NAME, telegram_sent, warnings)
     ticket_ids = append_action_tickets(decision, source_freshness, warnings, evidence_packets)
-    write_provider_status(egx30, ranked_market_data, evidence_packets, telegram_sent, history_paths, ticket_ids, flow_status, scan_failures, narrative, market_regime)
+    write_provider_status(egx30, ranked_market_data, evidence_packets, telegram_sent, history_paths, ticket_ids, flow_status, scan_failures, narrative, market_regime, SCAN_PHASE)
+    write_automation_status(SCAN_PHASE, market_day, ranked_market_data, telegram_sent)
     print_ticket(decision, warnings)
     print("\nCreated/updated daily_report.md, action_tickets.csv, provider_status.md, and trade_history.csv.")
     pending_paths = [path for path in history_paths if "pending" in path]

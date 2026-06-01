@@ -47,6 +47,10 @@ def _float(value, default=0.0):
         return default
 
 
+def _is_tradeable_price(row):
+    return row.get("Price_Freshness") in {"FRESH", "DELAYED_CURRENT"}
+
+
 def get_latest_institution_flow():
     ensure_institution_flow_file()
     try:
@@ -162,7 +166,7 @@ def _regime_for_group(label, rows):
     median_5d = df.get("Return_5D_%", pd.Series([0])).astype(float).median()
     median_20d = df.get("Return_20D_%", pd.Series([0])).astype(float).median()
     median_liquidity_spike = df.get("Liquidity_Spike", pd.Series([0])).astype(float).median()
-    fresh_count = int((df["Price_Freshness"] == "FRESH").sum())
+    fresh_count = int(df.apply(lambda row: _is_tradeable_price(row), axis=1).sum())
 
     if above_ma20 >= 60 and above_ma50 >= 55 and median_5d > 0 and median_20d > 0:
         trend = "BULLISH"
@@ -266,7 +270,7 @@ def _outlook_fields(row, sector_rank, sector_score):
     score = 0
     risk_notes = []
 
-    if row.get("Price_Freshness") == "FRESH":
+    if _is_tradeable_price(row):
         score += 15
     else:
         score -= 30
@@ -401,7 +405,7 @@ def rank_candidates(market_rows, sector_scores, flow_status, market_regime=None)
         momentum_score = 2 if macd > macd_signal else 0
         rsi_score = 3 if 35 <= rsi <= 65 else 1 if 65 < rsi <= 75 else -2
         breakout_score = 2 if row.get("Breakout_20D") else 0
-        freshness_score = 3 if row.get("Price_Freshness") == "FRESH" else -6
+        freshness_score = 3 if _is_tradeable_price(row) else -6
         sector_component = max(4 - min(sector_rank, 4), 0) + min(max(sector_score, -4), 6) * 0.4
 
         score = (
@@ -418,7 +422,7 @@ def rank_candidates(market_rows, sector_scores, flow_status, market_regime=None)
         )
         buy_ready = (
             flow_gate
-            and row.get("Price_Freshness") == "FRESH"
+            and _is_tradeable_price(row)
             and liquidity >= MIN_DAILY_LIQUIDITY_EGP
             and avg20_liquidity > 0
             and price > ma20
@@ -430,7 +434,7 @@ def rank_candidates(market_rows, sector_scores, flow_status, market_regime=None)
             reasons.append(f"flow_or_market_gate={flow_status.get('regime')}/{risk_mode}")
         if liquidity < MIN_DAILY_LIQUIDITY_EGP:
             reasons.append("liquidity_below_min")
-        if row.get("Price_Freshness") != "FRESH":
+        if not _is_tradeable_price(row):
             reasons.append("price_not_fresh")
         if price <= ma50:
             reasons.append("below_MA50")
@@ -471,7 +475,7 @@ def build_watchlist_signal_rows(ranked_rows, current_watchlist, flow_status):
             tier = "CORE"
         if row.get("Buy_Ready"):
             tier = "WATCH"
-        if row.get("Price_Freshness") != "FRESH" or row.get("Daily_Liquidity_EGP", 0) < MIN_DAILY_LIQUIDITY_EGP:
+        if not _is_tradeable_price(row) or row.get("Daily_Liquidity_EGP", 0) < MIN_DAILY_LIQUIDITY_EGP:
             tier = "DISABLED"
         rows.append(
             {
@@ -510,9 +514,14 @@ def write_scanner_outputs(ranked_rows, sector_scores, flow_status, scan_failures
                 "Current_Price": row.get("Current_Price"),
                 "Volume": row.get("Volume"),
                 "Daily_Liquidity_EGP": row.get("Daily_Liquidity_EGP"),
+                "Liquidity_Source": row.get("Liquidity_Source"),
                 "Price_Source": row.get("Price_Source"),
                 "Price_As_Of": row.get("Price_As_Of"),
                 "Price_Freshness": row.get("Price_Freshness"),
+                "DirectFN_Open": row.get("DirectFN_Open"),
+                "DirectFN_High": row.get("DirectFN_High"),
+                "DirectFN_Low": row.get("DirectFN_Low"),
+                "DirectFN_Change_%": row.get("DirectFN_Change_%"),
             }
         )
         indicator_rows.append(
@@ -557,6 +566,7 @@ def write_scanner_outputs(ranked_rows, sector_scores, flow_status, scan_failures
                 "Risk_Notes": row.get("Risk_Notes"),
                 "Current_Price": row.get("Current_Price"),
                 "Daily_Liquidity_EGP": row.get("Daily_Liquidity_EGP"),
+                "Liquidity_Source": row.get("Liquidity_Source"),
                 "Liquidity_Spike": row.get("Liquidity_Spike"),
                 "RSI": row.get("RSI"),
                 "Support_20D": row.get("Support_20D"),
@@ -572,6 +582,7 @@ def write_scanner_outputs(ranked_rows, sector_scores, flow_status, scan_failures
                 "Sector": row.get("Sector"),
                 "Data_Status": "OK",
                 "Provider": row.get("Price_Source"),
+                "Liquidity_Source": row.get("Liquidity_Source"),
                 "Price_As_Of": row.get("Price_As_Of"),
                 "Freshness": row.get("Price_Freshness"),
                 "Volume": row.get("Volume"),

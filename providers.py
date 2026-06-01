@@ -19,7 +19,9 @@ logging.getLogger("yfinance").setLevel(logging.CRITICAL)
 
 MANUAL_MARKET_DATA_FILE = BASE_DIR / "manual_market_data.csv"
 STOCKANALYSIS_EGX_URL = "https://stockanalysis.com/list/egyptian-stock-exchange/"
+DIRECTFN_TRADING_DATA_URL = "https://directfn.com.eg/tradingData.aspx"
 _STOCKANALYSIS_CACHE = {"loaded_at": None, "rows": {}}
+_DIRECTFN_CACHE = {"loaded_at": None, "rows": {}, "as_of": None, "error": None}
 
 
 def _to_utc_iso(ts):
@@ -139,6 +141,131 @@ def get_macro_status():
 def _clean_html_text(value):
     value = re.sub(r"<.*?>", " ", value or "")
     return " ".join(unescape(value).split())
+
+
+def _number(value, default=0.0):
+    try:
+        text = str(value or "").replace(",", "").replace("%", "").strip()
+        if not text:
+            return default
+        return float(text)
+    except Exception:
+        return default
+
+
+def _ticker_symbol(ticker):
+    return str(ticker or "").replace(".CA", "").upper().strip()
+
+
+def _load_directfn_rows():
+    loaded_at = _DIRECTFN_CACHE.get("loaded_at")
+    if loaded_at and datetime.now(timezone.utc) - loaded_at < timedelta(minutes=10):
+        return _DIRECTFN_CACHE["rows"]
+
+    rows = {}
+    try:
+        response = requests.get(DIRECTFN_TRADING_DATA_URL, timeout=25, headers={"User-Agent": "Mozilla/5.0"})
+        response.raise_for_status()
+        html = response.text
+        date_match = re.search(r'id="lblDate"[^>]*>\s*([^<]+)<', html)
+        as_of = _clean_html_text(date_match.group(1)) if date_match else datetime.now(timezone.utc).isoformat()
+        for row_html in re.findall(r"<tr[^>]*>(.*?)</tr>", html, flags=re.S | re.I):
+            cells = [_clean_html_text(cell) for cell in re.findall(r"<td[^>]*>(.*?)</td>", row_html, flags=re.S | re.I)]
+            if len(cells) < 10:
+                continue
+            symbol = _ticker_symbol(cells[1])
+            if not symbol or symbol == "SYMBOL":
+                continue
+            last = _number(cells[3])
+            volume = _number(cells[8])
+            turnover = _number(cells[9])
+            if last <= 0:
+                continue
+            rows[symbol] = {
+                "symbol": symbol,
+                "company": cells[0],
+                "open": _number(cells[2]),
+                "last": last,
+                "high": _number(cells[4]),
+                "low": _number(cells[5]),
+                "change": _number(cells[6]),
+                "change_pct": _number(cells[7]),
+                "volume": volume,
+                "turnover": turnover,
+                "as_of": as_of,
+                "source_url": DIRECTFN_TRADING_DATA_URL,
+            }
+        _DIRECTFN_CACHE.update({"loaded_at": datetime.now(timezone.utc), "rows": rows, "as_of": as_of, "error": None})
+        return rows
+    except Exception as exc:
+        _DIRECTFN_CACHE.update({"loaded_at": datetime.now(timezone.utc), "rows": {}, "as_of": None, "error": str(exc)})
+        return {}
+
+
+def get_directfn_health():
+    rows = _load_directfn_rows()
+    return {
+        "source": "DirectFN delayed trading data",
+        "url": DIRECTFN_TRADING_DATA_URL,
+        "rows": len(rows),
+        "as_of": _DIRECTFN_CACHE.get("as_of"),
+        "error": _DIRECTFN_CACHE.get("error"),
+    }
+
+
+def _directfn_market_row(ticker):
+    row = _load_directfn_rows().get(_ticker_symbol(ticker))
+    if not row:
+        return None
+    return {
+        "Ticker": ticker,
+        "Current_Price": round(row["last"], 2),
+        "Volume": row["volume"],
+        "Daily_Liquidity_EGP": round(row["turnover"], 2),
+        "DirectFN_Open": round(row["open"], 2),
+        "DirectFN_High": round(row["high"], 2),
+        "DirectFN_Low": round(row["low"], 2),
+        "DirectFN_Change": round(row["change"], 2),
+        "DirectFN_Change_%": round(row["change_pct"], 2),
+        "DirectFN_As_Of": row["as_of"],
+        "DirectFN_Source_URL": row["source_url"],
+        "Liquidity_Source": "DirectFN delayed trading data",
+    }
+
+
+def _merge_directfn_liquidity(row, avg20_liquidity):
+    directfn = _directfn_market_row(row.get("Ticker"))
+    if not directfn:
+        row["Liquidity_Source"] = "Yahoo Finance"
+        return row
+    if directfn["Daily_Liquidity_EGP"] <= 0:
+        row["Liquidity_Source"] = "Yahoo Finance; DirectFN delayed row had zero turnover"
+        return row
+
+    row = dict(row)
+    previous_price = float(row.get("Current_Price") or directfn["Current_Price"])
+    current_price = float(directfn["Current_Price"])
+    support_20d = float(row.get("Support_20D") or current_price)
+    resistance_20d = float(row.get("Resistance_20D") or current_price)
+    row.update(directfn)
+    row["Current_Price"] = round(current_price, 2)
+    row["Daily_Liquidity_EGP"] = round(float(directfn["Daily_Liquidity_EGP"]), 2)
+    row["Avg20_Liquidity_EGP"] = round(float(avg20_liquidity or directfn["Daily_Liquidity_EGP"]), 2)
+    row["Liquidity_Spike"] = round(
+        float(directfn["Daily_Liquidity_EGP"]) / float(row["Avg20_Liquidity_EGP"]),
+        2,
+    ) if row["Avg20_Liquidity_EGP"] else 1.0
+    row["Support_Distance_%"] = round(((current_price / support_20d) - 1) * 100, 2) if support_20d > 0 else 0.0
+    row["Resistance_Distance_%"] = round(((resistance_20d / current_price) - 1) * 100, 2) if current_price > 0 else 0.0
+    row["Price_Source"] = "Yahoo Finance history + DirectFN delayed current liquidity"
+    row["Price_As_Of"] = directfn["DirectFN_As_Of"]
+    row["Price_Freshness"] = "DELAYED_CURRENT"
+    row.setdefault("Warnings", [])
+    row["Warnings"] = [item for item in row["Warnings"] if item != "Latest volume is missing or zero."]
+    row["Warnings"].append("Current liquidity uses DirectFN delayed trading data; verify live price/spread in Thndr.")
+    if abs(current_price - previous_price) / previous_price > 0.05 if previous_price else False:
+        row["Warnings"].append("DirectFN delayed price differs materially from Yahoo latest close; verify in Thndr.")
+    return row
 
 
 def _load_stockanalysis_rows():
@@ -315,7 +442,11 @@ def get_technical_data(ticker):
         current_price = float(latest["Close"])
         raw_volume = latest.get("Volume", 0)
         volume = 0.0 if pd.isna(raw_volume) else float(raw_volume or 0)
+        nonzero_liquidity = df["Liquidity"].replace(0, pd.NA).dropna()
+        nonzero_avg20_liquidity = float(nonzero_liquidity.tail(20).mean()) if len(nonzero_liquidity) else 0.0
         avg20_liquidity = latest["Avg20_Liquidity"] if not pd.isna(latest["Avg20_Liquidity"]) else current_price * volume
+        if not avg20_liquidity and nonzero_avg20_liquidity:
+            avg20_liquidity = nonzero_avg20_liquidity
         liquidity_spike = (current_price * volume) / avg20_liquidity if avg20_liquidity else 0
         support_20d = float(latest["Support20"]) if not pd.isna(latest["Support20"]) else current_price
         resistance_20d = float(latest["Resistance20"]) if not pd.isna(latest["Resistance20"]) else current_price
@@ -351,7 +482,7 @@ def get_technical_data(ticker):
         except Exception:
             pass
 
-        return {
+        row = {
             "Ticker": ticker,
             "Yahoo_Symbol": yahoo_symbol,
             "Sector": get_sector_map().get(ticker, "General"),
@@ -383,13 +514,14 @@ def get_technical_data(ticker):
             "News_Items": news_items,
             "Warnings": warnings,
         }
+        return _merge_directfn_liquidity(row, nonzero_avg20_liquidity or avg20_liquidity)
     except Exception as exc:
         manual = _manual_market_row(ticker)
         if manual:
-            return manual
+            return _merge_directfn_liquidity(manual, manual.get("Avg20_Liquidity_EGP"))
         stockanalysis = _stockanalysis_market_row(ticker)
         if stockanalysis:
-            return stockanalysis
+            return _merge_directfn_liquidity(stockanalysis, stockanalysis.get("Avg20_Liquidity_EGP"))
         print(f"Warning: market data failed for {ticker}: {exc}")
         return None
 

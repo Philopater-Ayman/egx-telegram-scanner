@@ -24,12 +24,14 @@ OPENROUTER_FALLBACK_MODELS = [
 TELEGRAM_BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN", "").strip()
 TELEGRAM_CHAT_ID = os.getenv("TELEGRAM_CHAT_ID", "").strip()
 SEND_TELEGRAM = os.getenv("SEND_TELEGRAM", "true").strip().lower() in {"1", "true", "yes", "on"}
+SCAN_PHASE = os.getenv("SCAN_PHASE", "daily").strip().lower() or "daily"
 
 WATCHLIST_FILE = BASE_DIR / "watchlist.csv"
 HISTORY_FILE = BASE_DIR / "trade_history.csv"
 REPORT_FILE = BASE_DIR / "daily_report.md"
 ACTION_TICKETS_FILE = BASE_DIR / "action_tickets.csv"
 PROVIDER_STATUS_FILE = BASE_DIR / "provider_status.md"
+AUTOMATION_STATUS_FILE = BASE_DIR / "automation_status.md"
 STOCK_UNIVERSE_FILE = BASE_DIR / "stock_universe.csv"
 MARKET_PRICES_FILE = BASE_DIR / "market_prices.csv"
 INDICATORS_FILE = BASE_DIR / "indicators.csv"

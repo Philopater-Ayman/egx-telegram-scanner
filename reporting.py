@@ -3,7 +3,42 @@ from datetime import datetime, timezone
 
 import requests
 
-from config import PROVIDER_STATUS_FILE, REPORT_FILE, SEND_TELEGRAM, TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_ID
+from config import AUTOMATION_STATUS_FILE, PROVIDER_STATUS_FILE, REPORT_FILE, SEND_TELEGRAM, TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_ID
+from providers import get_directfn_health
+
+
+def _is_tradeable_price(row):
+    return row.get("Price_Freshness") in {"FRESH", "DELAYED_CURRENT"}
+
+
+PHASE_LABELS = {
+    "pre_market": "Pre-market risk check",
+    "open_confirm": "Open liquidity confirmation",
+    "intraday": "Intraday liquidity update",
+    "post_close": "Post-close tomorrow tickets",
+    "evening_plan": "Evening tomorrow plan",
+    "manual": "Manual scan",
+    "daily": "Daily scan",
+}
+
+
+def _phase_label(scan_phase):
+    return PHASE_LABELS.get(str(scan_phase or "daily").lower(), str(scan_phase or "daily").replace("_", " ").title())
+
+
+def _phase_instruction(scan_phase):
+    phase = str(scan_phase or "daily").lower()
+    if phase == "pre_market":
+        return "Before the open, use this as a risk/news check only; wait for live or delayed open liquidity before buying."
+    if phase == "open_confirm":
+        return "This is the first tradeability check. Only consider candidates with confirmed liquidity, clean spread, and unchanged risk in Thndr."
+    if phase == "intraday":
+        return "Use this to confirm whether liquidity appeared after the open; do not chase names near resistance."
+    if phase == "post_close":
+        return "Use this as the main preparation list for the next EGX session."
+    if phase == "evening_plan":
+        return "Use this as tomorrow's watchlist plan; morning should confirm risk, not invent trades from stale data."
+    return "Signal-only mode. Verify price/spread in Thndr and choose size manually."
 
 
 def _unique(items):
@@ -29,6 +64,7 @@ def write_daily_report(
     scan_failures=None,
     narrative=None,
     market_regime=None,
+    scan_phase="daily",
 ):
     sector_scores = sector_scores or {}
     flow_status = flow_status or {}
@@ -38,18 +74,20 @@ def write_daily_report(
     trade = decision.get("trade_recommendation", {})
     tickets = decision.get("trade_recommendations") or ([trade] if trade else [])
     buy_ready = [row for row in market_data.values() if row.get("Buy_Ready")]
+    tradeable_price_count = sum(1 for row in market_data.values() if _is_tradeable_price(row))
     top_liquidity = sorted(market_data.values(), key=lambda row: float(row.get("Daily_Liquidity_EGP") or 0), reverse=True)[:5]
     top_movers = sorted(market_data.values(), key=lambda row: float(row.get("Liquidity_Spike") or 0), reverse=True)[:5]
     lines = [
         "# Telegram-First EGX Scanner Report",
         "",
+        f"Scan phase: {_phase_label(scan_phase)}",
         f"Generated UTC: {datetime.now(timezone.utc).isoformat()}",
         "",
         "## Control Center",
         f"- Action tickets: {len([ticket for ticket in tickets if str(ticket.get('action', '')).upper() in {'BUY', 'SELL'}])} prioritized signal(s)",
         f"- BUY-ready candidates: {len(buy_ready)}",
         f"- Data quality issues: {len(scan_failures)}",
-        f"- Fresh tickers: {sum(1 for row in market_data.values() if row.get('Price_Freshness') == 'FRESH')}/{len(market_data)}",
+        f"- Tradeable price/liquidity tickers: {tradeable_price_count}/{len(market_data)}",
         f"- Top sector: {next(iter(sorted(sector_scores.values(), key=lambda row: row.get('Sector_Rank', 99))), {}).get('Sector', 'n/a') if sector_scores else 'n/a'}",
         "",
         "## Market Context",
@@ -193,23 +231,28 @@ def write_daily_report(
     REPORT_FILE.write_text("\n".join(lines) + "\n", encoding="utf-8")
 
 
-def write_provider_status(egx30, market_data, evidence_packets, telegram_sent, history_path, ticket_id, flow_status=None, scan_failures=None, narrative=None, market_regime=None):
+def write_provider_status(egx30, market_data, evidence_packets, telegram_sent, history_path, ticket_id, flow_status=None, scan_failures=None, narrative=None, market_regime=None, scan_phase="daily"):
     flow_status = flow_status or {}
     scan_failures = scan_failures or []
     narrative = narrative or {}
     market_regime = market_regime or {}
-    fresh_count = sum(1 for row in market_data.values() if row.get("Price_Freshness") == "FRESH")
+    tradeable_price_count = sum(1 for row in market_data.values() if _is_tradeable_price(row))
+    directfn_count = sum(1 for row in market_data.values() if "DirectFN" in str(row.get("Liquidity_Source", "")))
+    directfn_health = get_directfn_health()
     evidence_count = sum(len(packet.get("items", [])) for packet in evidence_packets.values())
     lines = [
         "# Provider Status",
         "",
         f"Generated UTC: {datetime.now(timezone.utc).isoformat()}",
+        f"- Scan phase: {_phase_label(scan_phase)}",
         "",
         f"- Macro source: {egx30.get('Source')}",
         f"- Macro freshness: {egx30.get('Freshness')}",
         f"- Macro trend: {egx30.get('Trend')}",
         f"- Market regime: {market_regime.get('summary', 'n/a')}",
-        f"- Market data: {fresh_count}/{len(market_data)} tickers fresh from Yahoo/yfinance",
+        f"- Market data: {tradeable_price_count}/{len(market_data)} tickers have tradeable current/delayed price data",
+        f"- DirectFN liquidity rows used: {directfn_count}/{len(market_data)}",
+        f"- DirectFN health: {directfn_health.get('rows')} rows | as_of={directfn_health.get('as_of') or 'n/a'} | error={directfn_health.get('error') or 'none'}",
         f"- Data quality issues: {len(scan_failures)}",
         f"- Evidence sources found: {evidence_count}",
         f"- AI narrative: {narrative.get('provider', 'OpenRouter')} {narrative.get('status', 'NOT_RUN')} ({narrative.get('model', '') or 'n/a'})",
@@ -229,6 +272,35 @@ def write_provider_status(egx30, market_data, evidence_packets, telegram_sent, h
     else:
         lines.append("- No provider warnings.")
     PROVIDER_STATUS_FILE.write_text("\n".join(lines) + "\n", encoding="utf-8")
+
+
+def write_automation_status(scan_phase, market_day, market_data, telegram_sent):
+    directfn_health = get_directfn_health()
+    tradeable_price_count = sum(1 for row in market_data.values() if _is_tradeable_price(row))
+    directfn_count = sum(1 for row in market_data.values() if "DirectFN" in str(row.get("Liquidity_Source", "")))
+    lines = [
+        "# Automation Status",
+        "",
+        f"Generated UTC: {datetime.now(timezone.utc).isoformat()}",
+        f"Scan phase: {_phase_label(scan_phase)}",
+        f"Market calendar: {market_day.get('status')} | {market_day.get('label')} | {market_day.get('open_time')}-{market_day.get('close_time')}",
+        f"Telegram sent: {telegram_sent}",
+        "",
+        "## Schedule",
+        "- 08:45 Cairo: pre-market risk/news check",
+        "- 09:15 Cairo: open preparation",
+        "- 11:00 Cairo: delayed liquidity confirmation",
+        "- 15:30 Cairo: post-close review",
+        "- 19:30 Cairo: tomorrow plan",
+        "",
+        "## Data Health",
+        f"- Tradeable delayed/current price rows: {tradeable_price_count}/{len(market_data)}",
+        f"- DirectFN liquidity rows used: {directfn_count}/{len(market_data)}",
+        f"- DirectFN table rows available: {directfn_health.get('rows')}",
+        f"- DirectFN as of: {directfn_health.get('as_of') or 'n/a'}",
+        f"- DirectFN error: {directfn_health.get('error') or 'none'}",
+    ]
+    AUTOMATION_STATUS_FILE.write_text("\n".join(lines) + "\n", encoding="utf-8")
 
 
 def _fmt_num(value):
@@ -304,7 +376,7 @@ def _send_telegram_text(text):
     return True
 
 
-def send_telegram_notification(decision, egx30, warnings, market_data=None, sector_scores=None, evidence_packets=None, scan_failures=None, narrative=None, market_regime=None):
+def send_telegram_notification(decision, egx30, warnings, market_data=None, sector_scores=None, evidence_packets=None, scan_failures=None, narrative=None, market_regime=None, scan_phase="daily"):
     if not SEND_TELEGRAM:
         print("Telegram disabled by SEND_TELEGRAM=false.")
         return False
@@ -326,10 +398,11 @@ def send_telegram_notification(decision, egx30, warnings, market_data=None, sect
     narrative = narrative or {}
     market_regime = market_regime or {}
     evidence_status, source_count = _evidence_quality(evidence_packets)
-    fresh_count = sum(1 for row in rows if row.get("Price_Freshness") == "FRESH")
+    tradeable_price_count = sum(1 for row in rows if _is_tradeable_price(row))
+    directfn_count = sum(1 for row in rows if "DirectFN" in str(row.get("Liquidity_Source", "")))
     warnings = _unique(warnings)
     warning_text = "\n".join(f"- {item}" for item in warnings[:5]) if warnings else "- None"
-    data_quality = f"{fresh_count}/{len(rows)} fresh tickers, {len(scan_failures or [])} data quality issues"
+    data_quality = f"{tradeable_price_count}/{len(rows)} tradeable delayed/current tickers, {directfn_count} DirectFN liquidity rows, {len(scan_failures or [])} data quality issues"
     ticket_text = _line_items(
         active_tickets,
         lambda ticket: (
@@ -347,7 +420,7 @@ def send_telegram_notification(decision, egx30, warnings, market_data=None, sect
 
     summary_message = "\n".join(
         [
-            "EGX Scanner 1/3 - Action Tickets",
+            f"EGX Scanner 1/3 - {_phase_label(scan_phase)}",
             "",
             f"Market: {egx30.get('Trend')} | {egx30.get('Freshness')} | {egx30.get('Source')}",
             f"Market regime: {market_regime.get('risk_mode', 'n/a')} | EGX30 {market_regime.get('egx30', {}).get('trend', 'n/a')} | EGX70 {market_regime.get('egx70', {}).get('trend', 'n/a')} | breadth {market_regime.get('sector_breadth_pct', 'n/a')}%",
@@ -362,7 +435,8 @@ def send_telegram_notification(decision, egx30, warnings, market_data=None, sect
             "- Priority #1 is the strongest setup after ranking, liquidity, trend, RSI, evidence, support/resistance, and risk gates.",
             "- WATCH/BUY SETUP means the technical setup exists, but macro or momentum risk requires extra patience.",
             "- LOW confidence means risk exists; it is not a command to trade.",
-            "- Signal-only mode. No quantity is calculated. Verify price/spread in Thndr and choose size manually.",
+            f"- {_phase_instruction(scan_phase)}",
+            "- Signal-only mode. No quantity is calculated.",
         ]
     )
 
@@ -401,7 +475,7 @@ def send_telegram_notification(decision, egx30, warnings, market_data=None, sect
             "Liquidity movers",
             _line_items(
                 liquidity_movers,
-                lambda row: f"- {row.get('Ticker')}: spike {row.get('Liquidity_Spike')} | regime {row.get('Liquidity_Regime')} | liq {_fmt_num(row.get('Daily_Liquidity_EGP'))}",
+                lambda row: f"- {row.get('Ticker')}: spike {row.get('Liquidity_Spike')} | regime {row.get('Liquidity_Regime')} | liq {_fmt_num(row.get('Daily_Liquidity_EGP'))} | {row.get('Liquidity_Source', 'n/a')}",
                 limit=8,
             ),
             "",

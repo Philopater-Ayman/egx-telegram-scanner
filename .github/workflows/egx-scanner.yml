@@ -2,17 +2,27 @@ name: EGX Telegram Scanner
 
 on:
   workflow_dispatch:
+    inputs:
+      scan_phase:
+        description: "Scan phase to run"
+        required: false
+        default: "manual"
+        type: choice
+        options:
+          - manual
+          - pre_market
+          - open_confirm
+          - intraday
+          - post_close
+          - evening_plan
   schedule:
-    # GitHub cron is UTC. Pairs cover Egypt UTC+2 and UTC+3; the Cairo-time
-    # gate below only allows 09:30, 12:30, 16:00, and 20:00 Africa/Cairo runs.
-    - cron: "30 6 * * 0-4"
-    - cron: "30 7 * * 0-4"
-    - cron: "30 9 * * 0-4"
-    - cron: "30 10 * * 0-4"
-    - cron: "0 13 * * 0-4"
-    - cron: "0 14 * * 0-4"
-    - cron: "0 17 * * 0-4"
-    - cron: "0 18 * * 0-4"
+    # GitHub cron is UTC. Egypt is UTC+3 for this production schedule.
+    # Each cron maps to one product phase; no loose time gate is used.
+    - cron: "45 5 * * 0-4"   # 08:45 Cairo - pre-market risk/news check
+    - cron: "15 6 * * 0-4"   # 09:15 Cairo - open preparation
+    - cron: "0 8 * * 0-4"    # 11:00 Cairo - delayed liquidity confirmation
+    - cron: "30 12 * * 0-4"  # 15:30 Cairo - post-close review
+    - cron: "30 16 * * 0-4"  # 19:30 Cairo - tomorrow plan
 
 permissions:
   contents: write
@@ -37,6 +47,7 @@ jobs:
       EVIDENCE_TOP_N: "8"
       REQUIRE_FLOW_FOR_BUY: "false"
       PYTHONUNBUFFERED: "1"
+      INPUT_SCAN_PHASE: ${{ github.event.inputs.scan_phase || '' }}
 
     steps:
       - name: Check out repository
@@ -51,42 +62,51 @@ jobs:
       - name: Install dependencies
         run: python -m pip install --upgrade pip && pip install -r requirements.txt
 
-      - name: Check Cairo schedule window
-        id: schedule_gate
+      - name: Resolve scan phase
+        id: scan_phase
         shell: python
         run: |
+          import json
           import os
-          from datetime import datetime, timedelta
+          from datetime import datetime
           from zoneinfo import ZoneInfo
 
+          phase = os.environ.get("INPUT_SCAN_PHASE", "").strip()
           if os.environ.get("GITHUB_EVENT_NAME") == "workflow_dispatch":
-              allowed = True
-              reason = "manual workflow_dispatch"
+              phase = phase or "manual"
+              reason = f"manual workflow_dispatch phase={phase}"
           else:
+              with open(os.environ["GITHUB_EVENT_PATH"], encoding="utf-8") as event_file:
+                  event = json.load(event_file)
+              schedule = event.get("schedule", "")
+              phase_map = {
+                  "45 5 * * 0-4": "pre_market",
+                  "15 6 * * 0-4": "open_confirm",
+                  "0 8 * * 0-4": "intraday",
+                  "30 12 * * 0-4": "post_close",
+                  "30 16 * * 0-4": "evening_plan",
+              }
+              phase = phase_map.get(schedule, "daily")
               now = datetime.now(ZoneInfo("Africa/Cairo"))
-              targets = [(9, 30), (12, 30), (16, 0), (20, 0)]
-              allowed = any(
-                  abs(now - now.replace(hour=hour, minute=minute, second=0, microsecond=0)) <= timedelta(minutes=45)
-                  for hour, minute in targets
-              )
-              reason = f"Cairo now {now:%Y-%m-%d %H:%M}; target windows 09:30, 12:30, 16:00, 20:00"
+              reason = f"scheduled cron={schedule or 'unknown'} mapped to {phase}; Cairo now {now:%Y-%m-%d %H:%M}"
+          with open(os.environ["GITHUB_ENV"], "a", encoding="utf-8") as env_file:
+              env_file.write(f"SCAN_PHASE={phase}\n")
           with open(os.environ["GITHUB_OUTPUT"], "a", encoding="utf-8") as output:
-              output.write(f"allowed={'true' if allowed else 'false'}\n")
+              output.write(f"phase={phase}\n")
               output.write(f"reason={reason}\n")
           print(reason)
 
       - name: Run Telegram scanner
-        if: steps.schedule_gate.outputs.allowed == 'true'
         run: python trading_bot_core.py
 
       - name: Commit scanner outputs
-        if: steps.schedule_gate.outputs.allowed == 'true'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           files=(
             daily_report.md
             provider_status.md
+            automation_status.md
             action_tickets.csv
             trade_history.csv
             market_prices.csv

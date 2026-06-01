@@ -6,12 +6,13 @@ This project uses GitHub Actions as the only scheduled automation path. The lapt
 
 The workflow targets these Africa/Cairo times from Sunday through Thursday:
 
-- 09:30: pre-open scan before the normal 10:00 EGX session.
-- 12:30: midday scan during the regular session.
-- 16:00: post-close scan after the normal 14:30 close.
-- 20:00: evening data-quality and provider refresh.
+- 08:45: pre-market risk/news check. This is not a liquidity confirmation because the session has not opened.
+- 09:15: open preparation before the normal 10:00 EGX session.
+- 11:00: delayed liquidity confirmation after enough session activity should be visible.
+- 15:30: post-close review after the normal 14:30 close.
+- 19:30: evening tomorrow-plan refresh.
 
-GitHub cron is UTC, so `.github/workflows/egx-scanner.yml` includes paired UTC schedules for Egypt UTC+2 and UTC+3. A Cairo-time gate inside the workflow only allows runs near the four intended Cairo times. This prevents duplicate Telegram messages from the paired UTC schedules.
+GitHub cron is UTC, so `.github/workflows/egx-scanner.yml` maps each UTC cron directly to a `SCAN_PHASE`. The old loose Cairo-time gate was removed because delayed GitHub starts could skip or misclassify runs.
 
 ## Required GitHub Secrets
 
@@ -36,12 +37,13 @@ Each accepted scheduled run executes:
 python trading_bot_core.py
 ```
 
-The scanner checks `market_calendar.csv`, loads `stock_universe.csv`, fetches available Yahoo/yfinance data, calculates indicators, ranks candidates, sends Telegram, and writes local CSV/Markdown outputs in the GitHub runner.
+The scanner checks `market_calendar.csv`, loads `stock_universe.csv`, fetches Yahoo/yfinance history for indicators, overlays DirectFN delayed current trading data for price/volume/turnover when available, calculates indicators, ranks candidates, sends Telegram, and writes local CSV/Markdown outputs in the GitHub runner.
 
 After a successful run, the workflow commits these generated outputs back to the repository:
 
 - `daily_report.md`
 - `provider_status.md`
+- `automation_status.md`
 - `action_tickets.csv`
 - `trade_history.csv`
 - `market_prices.csv`
