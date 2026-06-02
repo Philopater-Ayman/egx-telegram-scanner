@@ -360,6 +360,8 @@ def _why_not_ticket_rows(ranked, active_tickers, limit=6):
             reasons.append("RSI is too hot")
         if 0 < resistance_distance < 2:
             reasons.append("too close to resistance")
+        if not reasons and not active_tickers and row.get("Buy_Ready"):
+            reasons.append("passed first scanner filters; final evidence/safety gate did not select it")
         if not reasons:
             reasons.append("lower priority than final top tickets")
         rows.append({**row, "Skip_Reasons": "; ".join(reasons)})

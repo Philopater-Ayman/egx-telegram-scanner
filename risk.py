@@ -78,6 +78,10 @@ def apply_risk_gates(decision, market_data, egx30_data, evidence_packets, flow_s
     return decision, warnings
 
 
+def _has_tradeable_current_price(row):
+    return row.get("Price_Freshness") in {"FRESH", "DELAYED_CURRENT"} and row.get("Technical_Source_Status") != "UNALIGNED_BLOCKED"
+
+
 def _apply_single_trade_gate(trade, market_data, egx30_data, evidence_packets, flow_status, market_regime):
     warnings = []
     action = str(trade.get("action", "HOLD")).upper()
@@ -100,8 +104,8 @@ def _apply_single_trade_gate(trade, market_data, egx30_data, evidence_packets, f
         if not ticker_data:
             blocking.append("BUY blocked: missing market data.")
         else:
-            if ticker_data.get("Price_Freshness") != "FRESH":
-                blocking.append("BUY blocked: price data is stale or missing.")
+            if not _has_tradeable_current_price(ticker_data):
+                blocking.append("BUY blocked: price data is stale, missing, or unaligned.")
             if float(ticker_data.get("Daily_Liquidity_EGP") or 0) < MIN_DAILY_LIQUIDITY_EGP:
                 blocking.append("BUY blocked: liquidity is below minimum threshold.")
         if egx30_data.get("Freshness") not in {"FRESH", "DELAYED"}:

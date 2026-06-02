@@ -28,6 +28,10 @@ def _hold(watchlist, reason):
     }
 
 
+def _has_tradeable_current_price(row):
+    return row.get("Price_Freshness") in {"FRESH", "DELAYED_CURRENT"} and row.get("Technical_Source_Status") != "UNALIGNED_BLOCKED"
+
+
 def _ticket_from_row(row, macro_trend, market_regime=None):
     market_regime = market_regime or {}
     ticker = row.get("Ticker")
@@ -66,7 +70,7 @@ def _ticket_from_row(row, macro_trend, market_regime=None):
         "outlook_score": row.get("Outlook_Score", 0),
         "risk_notes": row.get("Risk_Notes", ""),
         "trade_reason": (
-            f"{setup_label}: {ticker} has fresh Yahoo price data, liquidity above threshold, "
+            f"{setup_label}: {ticker} has aligned current price data, liquidity above threshold, "
             f"price above MA20/MA50, RSI {rsi}, support {support_20d}, resistance {resistance_20d}, and evidence sources. Macro trend is {macro_trend}; "
             f"market regime is {risk_mode}; "
             "verify price action in Thndr before treating it as a swing entry."
@@ -86,7 +90,7 @@ def _passes_final_buy_checks(row, evidence_packets):
     liquidity = _float(row.get("Daily_Liquidity_EGP"))
     resistance_20d = _float(row.get("Resistance_20D"))
     resistance_distance = _float(row.get("Resistance_Distance_%"))
-    fresh = row.get("Price_Freshness") == "FRESH"
+    fresh = _has_tradeable_current_price(row)
 
     if not evidence_items or evidence_status != "RECENT_ACCEPTED" or not fresh or liquidity < MIN_DAILY_LIQUIDITY_EGP:
         return False
