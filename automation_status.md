@@ -1,7 +1,7 @@
 # Automation Status
 
-Generated UTC: 2026-06-02T10:58:09.780016+00:00
-Scan phase: Open liquidity confirmation
+Generated UTC: 2026-06-02T12:05:30.875871+00:00
+Scan phase: Intraday liquidity update
 Market calendar: OPEN | Default Sunday-Thursday calendar | 10:00-14:30
 Telegram sent: True
 
@@ -14,8 +14,8 @@ Telegram sent: True
 
 ## Data Health
 - Tradeable delayed/current price rows: 181/190
-- Mubasher delayed current rows used: 180/190
+- Mubasher delayed current rows used: 181/190
 - Current/Yahoo technical mismatches blocked: 9/190
 - DirectFN public table rows available, health only: 250
-- DirectFN public table as of: 2026-06-02T10:54:29.387778+00:00
+- DirectFN public table as of: 2026-06-02T12:01:12.606682+00:00
 - DirectFN error: none
