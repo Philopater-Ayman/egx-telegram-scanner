@@ -37,7 +37,7 @@ Each accepted scheduled run executes:
 python trading_bot_core.py
 ```
 
-The scanner checks `market_calendar.csv`, loads `stock_universe.csv`, fetches Yahoo/yfinance history for indicators, overlays DirectFN delayed current trading data for price/volume/turnover when available, calculates indicators, ranks candidates, sends Telegram, and writes local CSV/Markdown outputs in the GitHub runner.
+The scanner checks `market_calendar.csv`, loads `stock_universe.csv`, fetches Yahoo/yfinance history for indicators, overlays Mubasher delayed per-stock trading data for current price/volume/turnover when available, calculates indicators, ranks candidates, sends Telegram, and writes local CSV/Markdown outputs in the GitHub runner. DirectFN public table data is treated as provider-health context only, not as a trusted action-ticket price source.
 
 After a successful run, the workflow commits these generated outputs back to the repository:
 

@@ -20,8 +20,10 @@ logging.getLogger("yfinance").setLevel(logging.CRITICAL)
 MANUAL_MARKET_DATA_FILE = BASE_DIR / "manual_market_data.csv"
 STOCKANALYSIS_EGX_URL = "https://stockanalysis.com/list/egyptian-stock-exchange/"
 DIRECTFN_TRADING_DATA_URL = "https://directfn.com.eg/tradingData.aspx"
+MUBASHER_STOCK_URL_TEMPLATE = "https://english.mubasher.info/markets/EGX/stocks/{symbol}"
 _STOCKANALYSIS_CACHE = {"loaded_at": None, "rows": {}}
 _DIRECTFN_CACHE = {"loaded_at": None, "rows": {}, "as_of": None, "error": None}
+_MUBASHER_STOCK_CACHE = {}
 
 
 def _to_utc_iso(ts):
@@ -233,40 +235,117 @@ def _directfn_market_row(ticker):
     }
 
 
-def _merge_directfn_liquidity(row, avg20_liquidity):
-    directfn = _directfn_market_row(row.get("Ticker"))
-    if not directfn:
-        row["Liquidity_Source"] = "Yahoo Finance"
+def _load_mubasher_stock_row(ticker):
+    symbol = _ticker_symbol(ticker)
+    cached = _MUBASHER_STOCK_CACHE.get(symbol)
+    if cached and datetime.now(timezone.utc) - cached["loaded_at"] < timedelta(minutes=10):
+        return cached["row"]
+
+    url = MUBASHER_STOCK_URL_TEMPLATE.format(symbol=symbol)
+    try:
+        response = requests.get(url, timeout=20, headers={"User-Agent": "Mozilla/5.0"})
+        response.raise_for_status()
+        text = _clean_html_text(response.text)
+        if "No data available" in text:
+            raise ValueError("Mubasher stock page did not contain the requested symbol")
+
+        update_match = re.search(r"Last update:\s*(.*?)\s*market time\.", text, flags=re.I)
+        stats_match = re.search(
+            r"Last update:\s*.*?market time\.\s*"
+            r"(?P<last>[\d,]+(?:\.\d+)?)\s+"
+            r"(?P<change>[+-]?[\d,]+(?:\.\d+)?)\s+"
+            r"(?P<change_pct>[+-]?[\d,]+(?:\.\d+)?)%\s+"
+            r"Open\s+(?P<open>[\d,]+(?:\.\d+)?)\s+"
+            r"Previous Close\s+(?P<prev>[\d,]+(?:\.\d+)?)\s+"
+            r"High\s+(?P<high>[\d,]+(?:\.\d+)?)\s+"
+            r"Low\s+(?P<low>[\d,]+(?:\.\d+)?)",
+            text,
+            flags=re.I,
+        )
+        volume_match = re.search(r"\bVolume\s+([\d,]+(?:\.\d+)?)", text, flags=re.I)
+        turnover_match = re.search(r"\bTurnover\s+([\d,]+(?:\.\d+)?)", text, flags=re.I)
+        if not stats_match:
+            raise ValueError("Could not parse Mubasher stock quote fields")
+
+        row = {
+            "symbol": symbol,
+            "last": _number(stats_match.group("last")),
+            "open": _number(stats_match.group("open")),
+            "previous_close": _number(stats_match.group("prev")),
+            "high": _number(stats_match.group("high")),
+            "low": _number(stats_match.group("low")),
+            "change": _number(stats_match.group("change")),
+            "change_pct": _number(stats_match.group("change_pct")),
+            "volume": _number(volume_match.group(1)) if volume_match else 0.0,
+            "turnover": _number(turnover_match.group(1)) if turnover_match else 0.0,
+            "as_of": f"{update_match.group(1).strip()} market time" if update_match else "Mubasher delayed stock page",
+            "source_url": url,
+        }
+        if row["last"] <= 0:
+            raise ValueError("Mubasher stock page returned a non-positive last price")
+        _MUBASHER_STOCK_CACHE[symbol] = {"loaded_at": datetime.now(timezone.utc), "row": row}
         return row
-    if directfn["Daily_Liquidity_EGP"] <= 0:
-        row["Liquidity_Source"] = "Yahoo Finance; DirectFN delayed row had zero turnover"
+    except Exception as exc:
+        _MUBASHER_STOCK_CACHE[symbol] = {"loaded_at": datetime.now(timezone.utc), "row": None, "error": str(exc)}
+        return None
+
+
+def _mubasher_market_row(ticker):
+    row = _load_mubasher_stock_row(ticker)
+    if not row:
+        return None
+    return {
+        "Ticker": ticker,
+        "Current_Price": round(row["last"], 2),
+        "Volume": row["volume"],
+        "Daily_Liquidity_EGP": round(row["turnover"], 2),
+        "Current_Open": round(row["open"], 2),
+        "Current_High": round(row["high"], 2),
+        "Current_Low": round(row["low"], 2),
+        "Current_Previous_Close": round(row["previous_close"], 2),
+        "Current_Change": round(row["change"], 2),
+        "Current_Change_%": round(row["change_pct"], 2),
+        "Current_As_Of": row["as_of"],
+        "Current_Source_URL": row["source_url"],
+        "Liquidity_Source": "Mubasher delayed stock page",
+    }
+
+
+def _merge_current_market_data(row, avg20_liquidity):
+    current = _mubasher_market_row(row.get("Ticker"))
+    if not current:
+        row["Liquidity_Source"] = row.get("Liquidity_Source") or "Yahoo Finance"
+        return row
+
+    if current["Daily_Liquidity_EGP"] <= 0:
+        row["Liquidity_Source"] = "Yahoo Finance; Mubasher delayed row had zero turnover"
         return row
 
     row = dict(row)
-    previous_price = float(row.get("Current_Price") or directfn["Current_Price"])
-    current_price = float(directfn["Current_Price"])
+    previous_price = float(row.get("Current_Price") or current["Current_Price"])
+    current_price = float(current["Current_Price"])
     support_20d = float(row.get("Support_20D") or current_price)
     resistance_20d = float(row.get("Resistance_20D") or current_price)
     price_delta_pct = abs(current_price - previous_price) / previous_price * 100 if previous_price else 0.0
-    row.update(directfn)
+    row.update(current)
     row["Current_Price"] = round(current_price, 2)
-    row["Daily_Liquidity_EGP"] = round(float(directfn["Daily_Liquidity_EGP"]), 2)
-    row["Avg20_Liquidity_EGP"] = round(float(avg20_liquidity or directfn["Daily_Liquidity_EGP"]), 2)
+    row["Daily_Liquidity_EGP"] = round(float(current["Daily_Liquidity_EGP"]), 2)
+    row["Avg20_Liquidity_EGP"] = round(float(avg20_liquidity or current["Daily_Liquidity_EGP"]), 2)
     row["Liquidity_Spike"] = round(
-        float(directfn["Daily_Liquidity_EGP"]) / float(row["Avg20_Liquidity_EGP"]),
+        float(current["Daily_Liquidity_EGP"]) / float(row["Avg20_Liquidity_EGP"]),
         2,
     ) if row["Avg20_Liquidity_EGP"] else 1.0
     row["Support_Distance_%"] = round(((current_price / support_20d) - 1) * 100, 2) if support_20d > 0 else 0.0
     row["Resistance_Distance_%"] = round(((resistance_20d / current_price) - 1) * 100, 2) if current_price > 0 else 0.0
-    row["Price_Source"] = "Yahoo Finance history + DirectFN delayed current liquidity"
-    row["Price_As_Of"] = directfn["DirectFN_As_Of"]
+    row["Price_Source"] = "Yahoo Finance history + Mubasher delayed current trading data"
+    row["Price_As_Of"] = current["Current_As_Of"]
     row["Price_Freshness"] = "DELAYED_CURRENT"
     row["Yahoo_Last_Close"] = round(previous_price, 2)
-    row["DirectFN_Yahoo_Delta_%"] = round(price_delta_pct, 2)
+    row["Current_Yahoo_Delta_%"] = round(price_delta_pct, 2)
     row["Technical_Source_Status"] = "ALIGNED"
     row.setdefault("Warnings", [])
     row["Warnings"] = [item for item in row["Warnings"] if item != "Latest volume is missing or zero."]
-    row["Warnings"].append("Current liquidity uses DirectFN delayed trading data; verify live price/spread in Thndr.")
+    row["Warnings"].append("Current quote uses Mubasher delayed stock page data; verify live price/spread in Thndr.")
     if price_delta_pct > 5:
         row["Technical_Source_Status"] = "UNALIGNED_BLOCKED"
         row["Price_Freshness"] = "DELAYED_CURRENT_UNALIGNED"
@@ -276,8 +355,8 @@ def _merge_directfn_liquidity(row, avg20_liquidity):
         row["RSI"] = 50.0
         row["MACD"] = 0.0
         row["MACD_Signal"] = 0.0
-        row["Support_20D"] = round(float(directfn.get("DirectFN_Low") or current_price), 2)
-        row["Resistance_20D"] = round(float(directfn.get("DirectFN_High") or current_price), 2)
+        row["Support_20D"] = round(float(current.get("Current_Low") or current_price), 2)
+        row["Resistance_20D"] = round(float(current.get("Current_High") or current_price), 2)
         row["Support_50D"] = row["Support_20D"]
         row["Resistance_50D"] = row["Resistance_20D"]
         row["Support_Distance_%"] = round(((current_price / row["Support_20D"]) - 1) * 100, 2) if row["Support_20D"] > 0 else 0.0
@@ -287,7 +366,7 @@ def _merge_directfn_liquidity(row, avg20_liquidity):
         row["Volatility_20D_%"] = 0.0
         row["Breakout_20D"] = False
         row["Warnings"].append(
-            "DirectFN current price differs materially from Yahoo history; historical indicators/support/resistance are blocked until the symbol mapping/history is verified."
+            "Mubasher current price differs materially from Yahoo history; historical indicators/support/resistance are blocked until the symbol mapping/history is verified."
         )
     return row
 
@@ -538,14 +617,14 @@ def get_technical_data(ticker):
             "News_Items": news_items,
             "Warnings": warnings,
         }
-        return _merge_directfn_liquidity(row, nonzero_avg20_liquidity or avg20_liquidity)
+        return _merge_current_market_data(row, nonzero_avg20_liquidity or avg20_liquidity)
     except Exception as exc:
         manual = _manual_market_row(ticker)
         if manual:
-            return _merge_directfn_liquidity(manual, manual.get("Avg20_Liquidity_EGP"))
+            return _merge_current_market_data(manual, manual.get("Avg20_Liquidity_EGP"))
         stockanalysis = _stockanalysis_market_row(ticker)
         if stockanalysis:
-            return _merge_directfn_liquidity(stockanalysis, stockanalysis.get("Avg20_Liquidity_EGP"))
+            return _merge_current_market_data(stockanalysis, stockanalysis.get("Avg20_Liquidity_EGP"))
         print(f"Warning: market data failed for {ticker}: {exc}")
         return None
 

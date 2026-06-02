@@ -45,7 +45,7 @@ def run_daily_advisor():
     flow_status = get_latest_institution_flow()
     directfn_health = get_directfn_health()
     print(
-        f"DirectFN delayed liquidity: {directfn_health.get('rows')} rows | "
+        f"DirectFN public table health only: {directfn_health.get('rows')} rows | "
         f"as_of={directfn_health.get('as_of') or 'n/a'} | error={directfn_health.get('error') or 'none'}"
     )
 
@@ -111,11 +111,11 @@ def run_daily_advisor():
     update_local_watchlist(decision["updated_watchlist"], signal_rows)
 
     tradeable_count = sum(1 for x in market_data.values() if x.get("Price_Freshness") in {"FRESH", "DELAYED_CURRENT"})
-    directfn_count = sum(1 for x in market_data.values() if "DirectFN" in str(x.get("Liquidity_Source", "")))
+    mubasher_count = sum(1 for x in market_data.values() if "Mubasher" in str(x.get("Liquidity_Source", "")))
     source_freshness = (
         f"market_context={egx30.get('Freshness')}; "
         f"tradeable_price_tickers={tradeable_count}/{len(market_data)}; "
-        f"directfn_liquidity={directfn_count}/{len(market_data)}"
+        f"mubasher_current_rows={mubasher_count}/{len(market_data)}"
     )
     ranked_market_data = {row["Ticker"]: row for row in ranked_rows}
     narrative = build_openrouter_narrative(decision, ranked_rows, sector_scores, evidence_packets, warnings, market_regime)

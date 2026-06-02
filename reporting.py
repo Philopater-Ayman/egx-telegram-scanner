@@ -237,7 +237,7 @@ def write_provider_status(egx30, market_data, evidence_packets, telegram_sent, h
     narrative = narrative or {}
     market_regime = market_regime or {}
     tradeable_price_count = sum(1 for row in market_data.values() if _is_tradeable_price(row))
-    directfn_count = sum(1 for row in market_data.values() if "DirectFN" in str(row.get("Liquidity_Source", "")))
+    mubasher_count = sum(1 for row in market_data.values() if "Mubasher" in str(row.get("Liquidity_Source", "")))
     unaligned_count = sum(1 for row in market_data.values() if row.get("Technical_Source_Status") == "UNALIGNED_BLOCKED")
     directfn_health = get_directfn_health()
     evidence_count = sum(len(packet.get("items", [])) for packet in evidence_packets.values())
@@ -252,9 +252,9 @@ def write_provider_status(egx30, market_data, evidence_packets, telegram_sent, h
         f"- Macro trend: {egx30.get('Trend')}",
         f"- Market regime: {market_regime.get('summary', 'n/a')}",
         f"- Market data: {tradeable_price_count}/{len(market_data)} tickers have tradeable current/delayed price data",
-        f"- DirectFN liquidity rows used: {directfn_count}/{len(market_data)}",
-        f"- DirectFN/Yahoo technical mismatches blocked: {unaligned_count}/{len(market_data)}",
-        f"- DirectFN health: {directfn_health.get('rows')} rows | as_of={directfn_health.get('as_of') or 'n/a'} | error={directfn_health.get('error') or 'none'}",
+        f"- Mubasher delayed current rows used: {mubasher_count}/{len(market_data)}",
+        f"- Current/Yahoo technical mismatches blocked: {unaligned_count}/{len(market_data)}",
+        f"- DirectFN public table health only, not trusted for action tickets: {directfn_health.get('rows')} rows | as_of={directfn_health.get('as_of') or 'n/a'} | error={directfn_health.get('error') or 'none'}",
         f"- Data quality issues: {len(scan_failures)}",
         f"- Evidence sources found: {evidence_count}",
         f"- AI narrative: {narrative.get('provider', 'OpenRouter')} {narrative.get('status', 'NOT_RUN')} ({narrative.get('model', '') or 'n/a'})",
@@ -279,7 +279,7 @@ def write_provider_status(egx30, market_data, evidence_packets, telegram_sent, h
 def write_automation_status(scan_phase, market_day, market_data, telegram_sent):
     directfn_health = get_directfn_health()
     tradeable_price_count = sum(1 for row in market_data.values() if _is_tradeable_price(row))
-    directfn_count = sum(1 for row in market_data.values() if "DirectFN" in str(row.get("Liquidity_Source", "")))
+    mubasher_count = sum(1 for row in market_data.values() if "Mubasher" in str(row.get("Liquidity_Source", "")))
     unaligned_count = sum(1 for row in market_data.values() if row.get("Technical_Source_Status") == "UNALIGNED_BLOCKED")
     lines = [
         "# Automation Status",
@@ -298,10 +298,10 @@ def write_automation_status(scan_phase, market_day, market_data, telegram_sent):
         "",
         "## Data Health",
         f"- Tradeable delayed/current price rows: {tradeable_price_count}/{len(market_data)}",
-        f"- DirectFN liquidity rows used: {directfn_count}/{len(market_data)}",
-        f"- DirectFN/Yahoo technical mismatches blocked: {unaligned_count}/{len(market_data)}",
-        f"- DirectFN table rows available: {directfn_health.get('rows')}",
-        f"- DirectFN as of: {directfn_health.get('as_of') or 'n/a'}",
+        f"- Mubasher delayed current rows used: {mubasher_count}/{len(market_data)}",
+        f"- Current/Yahoo technical mismatches blocked: {unaligned_count}/{len(market_data)}",
+        f"- DirectFN public table rows available, health only: {directfn_health.get('rows')}",
+        f"- DirectFN public table as of: {directfn_health.get('as_of') or 'n/a'}",
         f"- DirectFN error: {directfn_health.get('error') or 'none'}",
     ]
     AUTOMATION_STATUS_FILE.write_text("\n".join(lines) + "\n", encoding="utf-8")
@@ -403,10 +403,10 @@ def send_telegram_notification(decision, egx30, warnings, market_data=None, sect
     market_regime = market_regime or {}
     evidence_status, source_count = _evidence_quality(evidence_packets)
     tradeable_price_count = sum(1 for row in rows if _is_tradeable_price(row))
-    directfn_count = sum(1 for row in rows if "DirectFN" in str(row.get("Liquidity_Source", "")))
+    mubasher_count = sum(1 for row in rows if "Mubasher" in str(row.get("Liquidity_Source", "")))
     warnings = _unique(warnings)
     warning_text = "\n".join(f"- {item}" for item in warnings[:5]) if warnings else "- None"
-    data_quality = f"{tradeable_price_count}/{len(rows)} tradeable delayed/current tickers, {directfn_count} DirectFN liquidity rows, {len(scan_failures or [])} data quality issues"
+    data_quality = f"{tradeable_price_count}/{len(rows)} tradeable delayed/current tickers, {mubasher_count} Mubasher current rows, {len(scan_failures or [])} data quality issues"
     ticket_text = _line_items(
         active_tickets,
         lambda ticket: (

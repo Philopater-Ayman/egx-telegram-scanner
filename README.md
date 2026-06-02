@@ -60,7 +60,8 @@ Each successful GitHub run commits the generated scanner outputs back to the rep
 ## Current Free Sources
 
 - Yahoo/yfinance for EGX ticker OHLCV when available.
-- DirectFN delayed trading data for current price, volume, turnover, and liquidity override when Yahoo volume is stale or zero.
+- Mubasher delayed per-stock pages for current price, volume, turnover, and liquidity when Yahoo volume is stale or zero.
+- DirectFN public table is kept for provider health only and is not trusted for action-ticket prices.
 - Mubasher EGX page for delayed EGX30 macro fallback.
 - StockAnalysis EGX public list as quote-only fallback when Yahoo has no rows. This has no volume/history, so it cannot support BUY by itself.
 - Gemini Google Search grounding for evidence and citations when enabled.

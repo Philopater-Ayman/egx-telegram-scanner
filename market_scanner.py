@@ -272,7 +272,7 @@ def _outlook_fields(row, sector_rank, sector_score):
     risk_notes = []
     if row.get("Technical_Source_Status") == "UNALIGNED_BLOCKED":
         score -= 35
-        risk_notes.append("DirectFN/Yahoo history mismatch; technicals blocked")
+        risk_notes.append("current price/Yahoo history mismatch; technicals blocked")
 
     if _is_tradeable_price(row):
         score += 15
@@ -522,12 +522,14 @@ def write_scanner_outputs(ranked_rows, sector_scores, flow_status, scan_failures
                 "Price_Source": row.get("Price_Source"),
                 "Price_As_Of": row.get("Price_As_Of"),
                 "Price_Freshness": row.get("Price_Freshness"),
-                "DirectFN_Open": row.get("DirectFN_Open"),
-                "DirectFN_High": row.get("DirectFN_High"),
-                "DirectFN_Low": row.get("DirectFN_Low"),
-                "DirectFN_Change_%": row.get("DirectFN_Change_%"),
+                "Current_Open": row.get("Current_Open"),
+                "Current_High": row.get("Current_High"),
+                "Current_Low": row.get("Current_Low"),
+                "Current_Previous_Close": row.get("Current_Previous_Close"),
+                "Current_Change_%": row.get("Current_Change_%"),
+                "Current_Source_URL": row.get("Current_Source_URL"),
                 "Yahoo_Last_Close": row.get("Yahoo_Last_Close"),
-                "DirectFN_Yahoo_Delta_%": row.get("DirectFN_Yahoo_Delta_%"),
+                "Current_Yahoo_Delta_%": row.get("Current_Yahoo_Delta_%"),
                 "Technical_Source_Status": row.get("Technical_Source_Status"),
             }
         )
