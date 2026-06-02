@@ -1,6 +1,6 @@
 # Automation Status
 
-Generated UTC: 2026-06-02T07:06:26.517868+00:00
+Generated UTC: 2026-06-02T09:54:56.652523+00:00
 Scan phase: Pre-market risk check
 Market calendar: OPEN | Default Sunday-Thursday calendar | 10:00-14:30
 Telegram sent: True
@@ -13,9 +13,9 @@ Telegram sent: True
 - 19:30 Cairo: tomorrow plan
 
 ## Data Health
-- Tradeable delayed/current price rows: 189/190
-- Mubasher delayed current rows used: 177/190
-- Current/Yahoo technical mismatches blocked: 1/190
-- DirectFN public table rows available, health only: 0
-- DirectFN public table as of: 2026-06-02T07:02:36.154197+00:00
+- Tradeable delayed/current price rows: 183/190
+- Mubasher delayed current rows used: 178/190
+- Current/Yahoo technical mismatches blocked: 7/190
+- DirectFN public table rows available, health only: 250
+- DirectFN public table as of: 2026-06-02T09:51:07.763083+00:00
 - DirectFN error: none
