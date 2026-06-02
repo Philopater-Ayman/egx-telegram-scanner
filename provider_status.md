@@ -1,7 +1,7 @@
 # Provider Status
 
-Generated UTC: 2026-06-02T12:05:30.875637+00:00
-- Scan phase: Intraday liquidity update
+Generated UTC: 2026-06-02T17:02:54.723599+00:00
+- Scan phase: Post-close tomorrow tickets
 
 - Macro source: Mubasher EGX market page (delayed public data)
 - Macro freshness: DELAYED
@@ -10,12 +10,12 @@ Generated UTC: 2026-06-02T12:05:30.875637+00:00
 - Market data: 181/190 tickers have tradeable current/delayed price data
 - Mubasher delayed current rows used: 181/190
 - Current/Yahoo technical mismatches blocked: 9/190
-- DirectFN public table health only, not trusted for action tickets: 250 rows | as_of=2026-06-02T12:01:12.606682+00:00 | error=none
+- DirectFN public table health only, not trusted for action tickets: 250 rows | as_of=2026-06-02T16:59:20.792733+00:00 | error=none
 - Data quality issues: 0
 - Evidence sources found: 18
-- AI narrative: OpenRouter OK (nvidia/nemotron-3-super-120b-a12b-20230311:free)
+- AI narrative: OpenRouter OK (openai/gpt-oss-120b:free)
 - Telegram sent on latest run: True
-- Latest ticket id(s): 20260602T120530Z_HOLD_NONE
+- Latest ticket id(s): 20260602T170254Z_HOLD_NONE
 - Latest history write(s): /home/runner/work/egx-telegram-scanner/egx-telegram-scanner/trade_history.csv
 
 ## Warnings

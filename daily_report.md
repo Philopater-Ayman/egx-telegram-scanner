@@ -1,7 +1,7 @@
 # Telegram-First EGX Scanner Report
 
-Scan phase: Intraday liquidity update
-Generated UTC: 2026-06-02T12:05:29.153918+00:00
+Scan phase: Post-close tomorrow tickets
+Generated UTC: 2026-06-02T17:02:53.485394+00:00
 
 ## Control Center
 - Action tickets: 0 prioritized signal(s)
@@ -29,9 +29,12 @@ Generated UTC: 2026-06-02T12:05:29.153918+00:00
 
 ## AI Narrative
 - Provider: OpenRouter OK
-- Model: nvidia/nemotron-3-super-120b-a12b-20230311:free
-- Summary: EGX30 and EGX70 are bullish with strong sector breadth (71.4%) and a BROAD_RISK_ON regime, but the scanner’s liquidity, freshness and technical gates did not pass, resulting in only low‑confidence HOLD suggestions.
-- Top rows show accumulation‑spike liquidity and bullish watch outlooks yet sit well above 20‑day support and near resistance levels.
+- Model: openai/gpt-oss-120b:free
+- Summary: The local scanner found no clear entry candidates, so all tickets are HOLD. EGX30 and EGX70 remain bullish with strong breadth (≈71% sectors positive) and a BROAD_RISK_ON regime, but short‑term outlook stays uncertain as many top‑ranked stocks show extended momentum near resistance.
+- Liquidity spikes in EMFD.CA, ORWE.CA and CLHO.CA signal active trading but prices sit close to resistance.
+- RSI levels above 65 on several tickets (MHOT.CA, ETRS.CA, ICID.CA) suggest overbought conditions for the next 1‑3 days.
+- Sector breadth favors Tourism & Leisure, Real Estate and Building Materials, yet no single stock cleared all technical gates.
+- Market regime stays bullish, but the lack of fresh buy‑ready signals adds uncertainty to short‑term moves.
 
 ## Top Liquidity Spikes
 - DEIN.CA: spike=18.18 liquidity=341.4 outlook=NEUTRAL score=36.87 buy_ready=False
