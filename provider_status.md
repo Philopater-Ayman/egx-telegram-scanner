@@ -1,26 +1,25 @@
 # Provider Status
 
-Generated UTC: 2026-06-03T03:42:40.389169+00:00
-Generated Cairo: 2026-06-03 06:42
-- Scan phase: Manual scan
-- Run timing: target manual run | generated Cairo 2026-06-03 06:42 | cron manual/local
-- Trigger: manual workflow_dispatch phase=manual
+Generated UTC: 2026-06-03T10:31:30.899267+00:00
+Generated Cairo: 2026-06-03 13:31
+- Scan phase: Pre-market risk check
+- Run timing: target 08:45 Cairo | generated Cairo 2026-06-03 13:31 | cron 45 5 * * 0-4
+- Trigger: scheduled cron=45 5 * * 0-4 mapped to pre_market; Cairo now 2026-06-03 13:25
 
-- Macro source: Market context unavailable
-- Macro freshness: MISSING
-- Macro trend: Unavailable
-- Market regime: EGX30 BULLISH / EGX70 BULLISH / sector breadth 76.19% / risk mode BROAD_RISK_ON
-- Market data: 189/190 tickers have tradeable current/delayed price data
-- Mubasher delayed current rows used: 180/190
-- Current/Yahoo technical mismatches blocked: 1/190
-- DirectFN public table health only, not trusted for action tickets: 136 rows | as_of=2026-06-03T03:39:02.159084+00:00 | error=none
+- Macro source: Mubasher EGX market page (delayed public data)
+- Macro freshness: DELAYED
+- Macro trend: Bearish
+- Market regime: EGX30 BEARISH / EGX70 BULLISH / sector breadth 76.19% / risk mode SELECTIVE_SMALL_MID_SWINGS
+- Market data: 185/190 tickers have tradeable current/delayed price data
+- Mubasher delayed current rows used: 181/190
+- Current/Yahoo technical mismatches blocked: 5/190
+- DirectFN public table health only, not trusted for action tickets: 254 rows | as_of=2026-06-03T10:25:19.569297+00:00 | error=none
 - Data quality issues: 0
 - Evidence sources found: 24
-- AI narrative: OpenRouter OK (openai/gpt-oss-120b:free)
+- AI narrative: OpenRouter OK (nvidia/nemotron-3-super-120b-a12b-20230311:free)
 - Telegram sent on latest run: True
-- Latest ticket id(s): 20260603T034240Z_HOLD_NONE
-- Latest history write(s): /home/runner/work/egx-telegram-scanner/egx-telegram-scanner/trade_history.csv
+- Latest ticket id(s): 20260603T103130Z_BUY_UNIT.CA, 20260603T103130Z_BUY_ELKA.CA, 20260603T103130Z_BUY_EMFD.CA
+- Latest history write(s): /home/runner/work/egx-telegram-scanner/egx-telegram-scanner/trade_history.csv, /home/runner/work/egx-telegram-scanner/egx-telegram-scanner/trade_history.csv, /home/runner/work/egx-telegram-scanner/egx-telegram-scanner/trade_history.csv
 
 ## Warnings
-- Evidence for UNIT.CA matches the company but appears old; latest detected date is 2025-01-01.
-- Evidence for MENA.CA matches the company but no source/report date was detected.
+- No provider warnings.
