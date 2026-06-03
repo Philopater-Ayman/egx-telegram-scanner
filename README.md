@@ -33,7 +33,7 @@ Scheduled runs target Cairo time:
 - 15:30: post-close report and action-ticket refresh.
 - 19:30: evening tomorrow-plan refresh.
 
-GitHub cron runs in UTC. Each scheduled cron maps directly to a `SCAN_PHASE`; the scanner no longer uses a loose Cairo-time gate.
+GitHub cron runs in UTC. Each scheduled cron maps directly to a `SCAN_PHASE`; the scanner no longer uses a loose Cairo-time gate. GitHub scheduled workflows can start late or occasionally skip during platform load, so Telegram message 1/3 includes the intended Cairo target and actual generated Cairo time for audit.
 
 Add official holidays, Ramadan hours, or special sessions to `market_calendar.csv`. If a date is marked `CLOSED`, scheduled scanner runs exit without creating a new ticket.
 

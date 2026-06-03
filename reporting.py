@@ -1,9 +1,20 @@
 import json
 from datetime import datetime, timezone
+from zoneinfo import ZoneInfo
 
 import requests
 
-from config import AUTOMATION_STATUS_FILE, PROVIDER_STATUS_FILE, REPORT_FILE, SEND_TELEGRAM, TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_ID
+from config import (
+    AUTOMATION_STATUS_FILE,
+    PROVIDER_STATUS_FILE,
+    REPORT_FILE,
+    SCAN_SCHEDULE_CRON,
+    SCAN_TARGET_CAIRO,
+    SCAN_TRIGGER_REASON,
+    SEND_TELEGRAM,
+    TELEGRAM_BOT_TOKEN,
+    TELEGRAM_CHAT_ID,
+)
 from providers import get_directfn_health
 
 
@@ -39,6 +50,16 @@ def _phase_instruction(scan_phase):
     if phase == "evening_plan":
         return "Use this as tomorrow's watchlist plan; morning should confirm risk, not invent trades from stale data."
     return "Signal-only mode. Verify price/spread in Thndr and choose size manually."
+
+
+def _generated_cairo():
+    return datetime.now(ZoneInfo("Africa/Cairo")).strftime("%Y-%m-%d %H:%M")
+
+
+def _run_timing_line():
+    target = SCAN_TARGET_CAIRO or "not provided"
+    cron = SCAN_SCHEDULE_CRON or "manual/local"
+    return f"Run timing: target {target} | generated Cairo {_generated_cairo()} | cron {cron}"
 
 
 def _unique(items):
@@ -82,6 +103,9 @@ def write_daily_report(
         "",
         f"Scan phase: {_phase_label(scan_phase)}",
         f"Generated UTC: {datetime.now(timezone.utc).isoformat()}",
+        f"Generated Cairo: {_generated_cairo()}",
+        _run_timing_line(),
+        f"Trigger: {SCAN_TRIGGER_REASON or 'local/manual run'}",
         "",
         "## Control Center",
         f"- Action tickets: {len([ticket for ticket in tickets if str(ticket.get('action', '')).upper() in {'BUY', 'SELL'}])} prioritized signal(s)",
@@ -245,7 +269,10 @@ def write_provider_status(egx30, market_data, evidence_packets, telegram_sent, h
         "# Provider Status",
         "",
         f"Generated UTC: {datetime.now(timezone.utc).isoformat()}",
+        f"Generated Cairo: {_generated_cairo()}",
         f"- Scan phase: {_phase_label(scan_phase)}",
+        f"- {_run_timing_line()}",
+        f"- Trigger: {SCAN_TRIGGER_REASON or 'local/manual run'}",
         "",
         f"- Macro source: {egx30.get('Source')}",
         f"- Macro freshness: {egx30.get('Freshness')}",
@@ -285,7 +312,10 @@ def write_automation_status(scan_phase, market_day, market_data, telegram_sent):
         "# Automation Status",
         "",
         f"Generated UTC: {datetime.now(timezone.utc).isoformat()}",
+        f"Generated Cairo: {_generated_cairo()}",
         f"Scan phase: {_phase_label(scan_phase)}",
+        _run_timing_line(),
+        f"Trigger: {SCAN_TRIGGER_REASON or 'local/manual run'}",
         f"Market calendar: {market_day.get('status')} | {market_day.get('label')} | {market_day.get('open_time')}-{market_day.get('close_time')}",
         f"Telegram sent: {telegram_sent}",
         "",
@@ -428,6 +458,7 @@ def send_telegram_notification(decision, egx30, warnings, market_data=None, sect
         [
             f"EGX Scanner 1/3 - {_phase_label(scan_phase)}",
             "",
+            _run_timing_line(),
             f"Market: {egx30.get('Trend')} | {egx30.get('Freshness')} | {egx30.get('Source')}",
             f"Market regime: {market_regime.get('risk_mode', 'n/a')} | EGX30 {market_regime.get('egx30', {}).get('trend', 'n/a')} | EGX70 {market_regime.get('egx70', {}).get('trend', 'n/a')} | breadth {market_regime.get('sector_breadth_pct', 'n/a')}%",
             f"Data quality: {data_quality}",

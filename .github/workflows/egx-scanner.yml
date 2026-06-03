@@ -72,8 +72,10 @@ jobs:
           from zoneinfo import ZoneInfo
 
           phase = os.environ.get("INPUT_SCAN_PHASE", "").strip()
+          schedule = ""
           if os.environ.get("GITHUB_EVENT_NAME") == "workflow_dispatch":
               phase = phase or "manual"
+              target_cairo = "manual run"
               reason = f"manual workflow_dispatch phase={phase}"
           else:
               with open(os.environ["GITHUB_EVENT_PATH"], encoding="utf-8") as event_file:
@@ -86,11 +88,22 @@ jobs:
                   "30 12 * * 0-4": "post_close",
                   "30 16 * * 0-4": "evening_plan",
               }
+              target_map = {
+                  "45 5 * * 0-4": "08:45 Cairo",
+                  "15 6 * * 0-4": "09:15 Cairo",
+                  "0 8 * * 0-4": "11:00 Cairo",
+                  "30 12 * * 0-4": "15:30 Cairo",
+                  "30 16 * * 0-4": "19:30 Cairo",
+              }
               phase = phase_map.get(schedule, "daily")
+              target_cairo = target_map.get(schedule, "unknown scheduled time")
               now = datetime.now(ZoneInfo("Africa/Cairo"))
               reason = f"scheduled cron={schedule or 'unknown'} mapped to {phase}; Cairo now {now:%Y-%m-%d %H:%M}"
           with open(os.environ["GITHUB_ENV"], "a", encoding="utf-8") as env_file:
               env_file.write(f"SCAN_PHASE={phase}\n")
+              env_file.write(f"SCAN_TARGET_CAIRO={target_cairo}\n")
+              env_file.write(f"SCAN_SCHEDULE_CRON={schedule}\n")
+              env_file.write(f"SCAN_TRIGGER_REASON={reason}\n")
           with open(os.environ["GITHUB_OUTPUT"], "a", encoding="utf-8") as output:
               output.write(f"phase={phase}\n")
               output.write(f"reason={reason}\n")

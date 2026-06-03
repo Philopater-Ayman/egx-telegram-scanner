@@ -6,13 +6,17 @@ This project uses GitHub Actions as the only scheduled automation path. The lapt
 
 The workflow targets these Africa/Cairo times from Sunday through Thursday:
 
-- 08:45: pre-market risk/news check. This is not a liquidity confirmation because the session has not opened.
-- 09:15: open preparation before the normal 10:00 EGX session.
-- 11:00: delayed liquidity confirmation after enough session activity should be visible.
-- 15:30: post-close review after the normal 14:30 close.
-- 19:30: evening tomorrow-plan refresh.
+| Cairo target | Telegram phase | Goal | Your action |
+| --- | --- | --- | --- |
+| 08:45 | Pre-market risk check | Check overnight/news/evidence risk before the EGX session. This is not a trade-entry confirmation because the market has not opened. | Read the risk notes and candidate list only. Do not buy from this message alone; wait for open liquidity and Thndr price/spread confirmation. |
+| 09:15 | Open liquidity confirmation | Prepare the likely open watchlist shortly before the normal 10:00 session. Public data can still be delayed or stale. | Mark candidates to watch in Thndr. Still wait for actual market activity before entering. |
+| 11:00 | Intraday liquidity update | Confirm that liquidity/turnover appeared after the session started and detect changing sector breadth. | Consider only candidates that still have clean price action, liquidity, and spread in Thndr. Avoid chasing names already near resistance. |
+| 15:30 | Post-close tomorrow tickets | Build the main next-session preparation list after the normal close. | Use it as the first tomorrow watchlist and risk plan. No same-day execution is expected. |
+| 19:30 | Evening tomorrow plan | Refresh evidence/narrative and tomorrow's watchlist using end-of-day data. | Treat it as the final evening plan. The next morning message should confirm risk, not invent trades from stale data. |
 
 GitHub cron is UTC, so `.github/workflows/egx-scanner.yml` maps each UTC cron directly to a `SCAN_PHASE`. The old loose Cairo-time gate was removed because delayed GitHub starts could skip or misclassify runs.
+
+GitHub scheduled workflows are not exact alarms. A run may start late, and on rare occasions GitHub may skip a scheduled run during platform load. Future Telegram message 1/3 includes a `Run timing` line showing the intended Cairo target, actual generated Cairo time, and the cron that triggered it. If the target and generated time differ heavily, the scan phase is still the intended phase, but the delivery was delayed.
 
 ## Required GitHub Secrets
 

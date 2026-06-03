@@ -25,6 +25,9 @@ TELEGRAM_BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN", "").strip()
 TELEGRAM_CHAT_ID = os.getenv("TELEGRAM_CHAT_ID", "").strip()
 SEND_TELEGRAM = os.getenv("SEND_TELEGRAM", "true").strip().lower() in {"1", "true", "yes", "on"}
 SCAN_PHASE = os.getenv("SCAN_PHASE", "daily").strip().lower() or "daily"
+SCAN_TARGET_CAIRO = os.getenv("SCAN_TARGET_CAIRO", "").strip()
+SCAN_SCHEDULE_CRON = os.getenv("SCAN_SCHEDULE_CRON", "").strip()
+SCAN_TRIGGER_REASON = os.getenv("SCAN_TRIGGER_REASON", "").strip()
 
 WATCHLIST_FILE = BASE_DIR / "watchlist.csv"
 HISTORY_FILE = BASE_DIR / "trade_history.csv"
