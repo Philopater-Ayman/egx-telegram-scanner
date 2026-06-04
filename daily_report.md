@@ -1,23 +1,23 @@
 # Telegram-First EGX Scanner Report
 
-Scan phase: Post-close tomorrow tickets
-Generated UTC: 2026-06-04T15:58:34.378391+00:00
-Generated Cairo: 2026-06-04 18:58
-Run timing: target 15:30 Cairo | generated Cairo 2026-06-04 18:58 | cron 30 12 * * 0-4
-Trigger: scheduled cron=30 12 * * 0-4 mapped to post_close; Cairo now 2026-06-04 18:54
+Scan phase: Evening tomorrow plan
+Generated UTC: 2026-06-04T18:37:36.318459+00:00
+Generated Cairo: 2026-06-04 21:37
+Run timing: target 19:30 Cairo | generated Cairo 2026-06-04 21:37 | cron 30 16 * * 0-4
+Trigger: scheduled cron=30 16 * * 0-4 mapped to evening_plan; Cairo now 2026-06-04 21:33
 
 ## Control Center
-- Action tickets: 0 prioritized signal(s)
+- Action tickets: 3 prioritized signal(s)
 - BUY-ready candidates: 73
 - Data quality issues: 0
 - Tradeable price/liquidity tickers: 179/190
 - Top sector: Tourism & Leisure
 
 ## Market Context
-- Market trend: Unavailable
-- Source: Market context unavailable
-- As of: None
-- Freshness: MISSING
+- Market trend: Bearish
+- Source: Mubasher EGX market page (delayed public data)
+- As of: Thursday, June 04
+- Freshness: DELAYED
 - EGX30 regime: BEARISH / above MA20 35.0% / above MA50 85.0%
 - EGX70 regime: BULLISH / above MA20 69.23% / above MA50 89.74%
 - Sector breadth: 66.67%
@@ -33,12 +33,12 @@ Trigger: scheduled cron=30 12 * * 0-4 mapped to post_close; Cairo now 2026-06-04
 ## AI Narrative
 - Provider: OpenRouter OK
 - Model: openai/gpt-oss-120b:free
-- Summary: The scanner highlights a handful of high‑rank, buy‑ready tickets despite a mixed market backdrop: EGX30 remains bearish while EGX70 shows bullish breadth. Liquidity is solid in the top picks, most sit near short‑term resistance but above key 20‑day supports, and sector breadth (66.7%) leans toward Tourism, Technology and Investment Holding. Risk mode is set to SELECTIVE_SMALL_MID_SWINGS, so only the strongest setups are kept, but uncertainty remains due to the bearish EGX30 trend and limited macro signals.
-- EMFD.CA, ISPH.CA and ARCC.CA are buy‑ready with strong accumulation spikes and price close to resistance, suggesting short‑term upside.
-- EHDR.CA shows an overheated RSI and is not buy‑ready, while GGCC.CA, ARVA.CA and others sit far above support in non‑leading sectors.
-- EGX30 bearish breadth limits broad market risk, but EGX70 bullish breadth supports selective long‑short swings in leading sectors.
-- Liquidity spikes (5‑7×) and support‑to‑resistance distances under 2% give room for 1‑3 day moves, yet sector non‑leadership adds caution.
-- Overall outlook is uncertain: strong ticket fundamentals vs. a weak EGX30 trend and missing macro trigger.
+- Summary: The scanner highlights ISPH.CA as the top watch‑buy candidate, followed by ARVA.CA and ACAMD.CA. All three show strong liquidity spikes, price above the 20‑ and 50‑day MAs, and clear support‑resistance zones. The EGX30 remains bearish while the broader EGX70 is bullish, placing the market in a SELECTIVE_SMALL_MID_SWINGS risk mode – favoring isolated, well‑supported moves rather than broad index‑wide rallies. Expect modest upside over the next 1‑3 days if price respects the identified support levels, but be aware of heightened uncertainty from the mixed index trends and low confidence scores.
+- ISPH.CA: liquidity spike, price > MA20/MA50, support 10.8, resistance 12.25, RSI 54.6 – low‑confidence bullish watch.
+- ARVA.CA & ACAMD.CA: solid liquidity, price above MAs, but RSI above 60 and sector not leading – monitor for over‑extension.
+- EGX30 bearish, EGX70 bullish → risk mode SELECTIVE_SMALL_MID_SWINGS; focus on tight support‑resistance setups.
+- Sector breadth 66.7% with Healthcare and Real Estate leading; tourism & tech showing strongest returns.
+- Uncertainty remains high due to mixed macro trend and low confidence; verify price action on Thndr before acting.
 
 ## Top Liquidity Spikes
 - ASPI.CA: spike=13.9 liquidity=382521024.0 outlook=WEAK_OR_RISKY score=0 buy_ready=False
@@ -58,7 +58,18 @@ Trigger: scheduled cron=30 12 * * 0-4 mapped to post_close; Cairo now 2026-06-04
 - #8 Building Materials: score=7.32 5d=0.92% 20d=4.33% aboveMA50=100.0%
 
 ## Today's Prioritized Action Tickets
-- HOLD: Local fallback HOLD: macro source is missing, so no new BUY is allowed.
+- Priority #1: BUY ISPH.CA
+  - Entry: 12.54 | Take profit: 13.54 | Stop loss: 12.04
+  - Confidence: LOW | score=31.34 | outlook=BULLISH_WATCH 97.65
+  - Reason: WATCH/BUY SETUP: ISPH.CA has aligned current price data, liquidity above threshold, price above MA20/MA50, RSI 54.59, support 10.8, resistance 12.25, and evidence sources. Macro trend is Bearish; market regime is SELECTIVE_SMALL_MID_SWINGS; verify price action in Thndr before treating it as a swing entry.
+- Priority #2: BUY ARVA.CA
+  - Entry: 10.6 | Take profit: 11.44 | Stop loss: 10.18
+  - Confidence: LOW | score=30.24 | outlook=BULLISH_WATCH 78.14
+  - Reason: WATCH/BUY SETUP: ARVA.CA has aligned current price data, liquidity above threshold, price above MA20/MA50, RSI 64.71, support 7.71, resistance 10.5, and evidence sources. Macro trend is Bearish; market regime is SELECTIVE_SMALL_MID_SWINGS; verify price action in Thndr before treating it as a swing entry.
+- Priority #3: BUY ACAMD.CA
+  - Entry: 2.37 | Take profit: 2.55 | Stop loss: 2.28
+  - Confidence: LOW | score=29.52 | outlook=BULLISH_WATCH 78.14
+  - Reason: WATCH/BUY SETUP: ACAMD.CA has aligned current price data, liquidity above threshold, price above MA20/MA50, RSI 67.31, support 1.94, resistance 2.46, and evidence sources. Macro trend is Bearish; market regime is SELECTIVE_SMALL_MID_SWINGS; verify price action in Thndr before treating it as a swing entry.
 
 ## Thndr Instruction
 - Advisor-only signal mode is active. The scanner never executes trades.
@@ -291,37 +302,37 @@ Trigger: scheduled cron=30 12 * * 0-4 mapped to post_close; Cairo now 2026-06-04
 - These checks are historical context only, not a prediction or guarantee.
 
 ## Evidence
-- EMFD.CA: status=RECENT_ACCEPTED latest=2026-05-25 age_days=10 sources=3 expected=Emaar Misr for Development summary=Emaar Misr for Development (EMFD.CA) has reported recent financial results, including interim condensed consolidated financial statements for Q1 2026 and separate financial statements for FY 2025. The company's financials are regularly updated on market analysis platforms.
-  - Interim Condensed Consolidated Financial Statements for the three-months period ended March 31, 2026 (May 25, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFfXvDjk3tz6S8R1RYrn7izZJrHIWXV_QZZuyLc2tCw-Sd8Fzm-585BaREFHObLv593kqgJB66tAavCnSYSJoIz2krmKpGmYPIciqcBuFBOvaLAbVYrGCAbuMwqs7gHFEbvnHbRGIO64fCM7Zk7tONBdA==
-  - Emaar Misr for Development Company (S.A.E.) Financials & Income Statement (March 31, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEXG5yGx8DjRO3N_u6BpK17RIGE0TJWAsc-IzeRVrPejhju9PhLfOJjFFSTlsrpjh4Z9XJKAAFAfQ4-1Eqcqgf8S8h8ciR5dko9bxzdkHkTsaN9rmAB1HHSGx1R_lv1lKKbq8e26C5GEvh3X1STkw==
-  - Emaar Misr for Development SAE Financial Summary and Key Ratios (May 25, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQENlAiRErz63O_9gNXpzI52iziTG97ccdel0hk846Z2R7Sj4qNtn3uIRaYoWsdPPPiMI9KIN049qcoc8QCdbgZqusbRZKElPVflqW728nBuoW2yAMpQ0kQtPNQE1yMqK1lHKqZrfhhXPFJ7koDubbUVBlo0D8_vuXwvHer8UjsQw0O3DoBXOprjo3ijwb0=
-- EHDR.CA: status=RECENT_ACCEPTED latest=2026-02-14 age_days=110 sources=2 expected=Egyptians for Housing & Development Co. summary=Egyptians for Housing & Development Co. (EHDR.CA) has shown an increase in revenue and earnings in 2025. Recent financial summaries and key ratios are available, with the latest quarterly earnings reported in February 2026.
-  - Egyptians for Housing & Development Co. Financial Performance (2025): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFPZGNWJ2HYaDCBnkfLwgtMpTlfzMrX5dFxHmBHpiJ0dYhZtCTfrPZ0-qsWGDmDlpV3Hxsp0MmB70VJJABGk8rNuNetG10kz0fNz8eHPmfHXZ9KQy-hFrbvBvjtOPL38V8269Y=
-  - Egyptians Housing Develop Financial Summary and Key Ratios (Latest Release Feb 14, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFMGXa393ihzWvY_4TebmIeFrfzLRYG65Ecy1YtiPEhQmr2ACCqvY6Y9r9NZTAcyqxnBNcgGL6CbMPCaCyJriGR7Ye4JIcMGh4GAW3BkUYd9bjWqbj5U54qH0rsc85vYZb7McAOGTOge81NsV9uTvtlAEQVZOh5SFUkPHhy
-- ISPH.CA: status=RECENT_ACCEPTED latest=2026-05-17 age_days=18 sources=3 expected=Ibn Sina Pharma summary=Ibn Sina Pharma (ISPH.CA) has released its Q1 2026 and FY 2025 results, showing significant revenue and profit. The company also announced an annual dividend payable in October 2025 and has ongoing disclosures to the EGX.
-  - Ibnsina Pharma Releases Audited 1Q26 Results (May 17, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG_iX8U5kD5x8bNxKY21R1CUiR1fNPGRhrLmDtQLTUU8TX8TAfWQWG1GEgvQQtNkY5biZEnu9juODIwsHNwarGAT75-ZOia02qCPnxZYex7CriSpGJz_Yv3
-  - Ibnsina Pharma Releases Audited FY25 Results (March 2, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG_iX8U5kD5x8bNxKY21R1CUiR1fNPGRhrLmDtQLTUU8TX8TAfWQWG1GEgvQQtNkY5biZEnu9juODIwsHNwarGAT75-ZOia02qCPnxZYex7CriSpGJz_Yv3
-  - EBRD ushers in greener era for Ibnisna Pharma (January 25, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG_iX8U5kD5x8bNxKY21R1CUiR1fNPGRhrLmDtQLTUU8TX8TAfWQWG1GEgvQQtNkY5biZEnu9juODIwsHNwarGAT75-ZOia02qCPnxZYex7CriSpGJz_Yv3
-- GGCC.CA: status=RECENT_ACCEPTED latest=2026-05-15 age_days=20 sources=3 expected=Giza General - Contracting and Real Estate Investment S.A.E summary=Giza General - Contracting and Real Estate Investment S.A.E (GGCC.CA) reported a net sales revenue increase of 13.57% in 2025, with total assets growing by 7.76% and net profit margin increasing by 5.26% in the same year. The company's TTM revenue was up 7.98% year-over-year as of Q3 2025.
-  - Giza General Contracting & Real Estate Investment Co. Sae Company Profile and Financials (March 24, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGCRFy6SHDRe8fnkQRxcBp0p0VGMjsXjaqPl4BP4XYSIsj0yjzyNxwN487D-sGoY9hfUp0x_LmtCeB1NeV7HuyR_2mT38Vk1m1iAOJO2Hn6kLNy9DfoYa13sH640r4xep88UIlQu-ZZ76eR51Q0qJqsCVXr5-gxwVfgrXbZX2vrE5RnpM9RaU0uOGsTP7-SzaftqzPdjl1VMWpji3eamo8JBJviwGCtH5XKgqR4EYVgKCr00pacBREY88fcF9XBZNfPryv_X28ZDmqkCzg627uTCiIHFEVR1rsRihuq2MGHhgdWW6W0mr0J6DmPrrBI5K7JIGU8M8yscF2s8Ll9j2h0wJ831jGd_pjwVVX78T_d2HCNi7QKrJ6zlhz850ct4R6tfnmXYv1jVrZrgA5YgfktbOJmXWwFulOJyGt_vlMnfeLEc6QynuSwicqnoDHx_Ndj1sI32P-LNb06gCuEtMOz7cxXiodEoL_n6mpAuMRynGIkCxebuCN5sR4rd1PkFw7DozemnvKvo50CWLXEIvC2cRS5bo513k55IAHk-t2pbeOMa5Dpual6B_HFqbnybd0h7kcThfCYRtomIkcbuCUOYGCIY0r65olie-Rl1EL8sRR_b7c9Vj3CnYIwb6hOKDcXxh4Ax6Vom-h2im0Baeb66wJ2rKTunGHqrDzkWeXczlKe8wXIDnASszdgYW1eCTQ7Bstjc41AiXbJtRGuCcwLLk_2mKLRoTY-q6675kv-eP5jdrYkSONKRb-gQP7xriGsKjvNuys19Na-UD9UVZR7T4D3Maxv-Abq2nRYnFK7QlZaO77j01Z330vWRd82d4C1qhzSblq9xTpFZcOej9cxH41_m7sjVRMLKpUNKeEO1SPbPxjnQeM6tlLN1gH7iGjb2_vT293MiTN0BMiKCr8xS94F0fD_Ij9igW21H5GKgA==
-  - Giza General - Contracting and Real Estate Investment S.A.E Revenue (Q3 2025): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF31broAzbpplumLsZug_i6RY3XFLV__T3xZEZ_QJUaXj7_z_VcQsCgofMbnwfNhrW5gG3J3F7FSMC_RU6a1tp04OJ3zntyddzvTvQMQWmTkunToba9QBPHUmmHSyZ4JBjb_QXuZHM30mMG8A==
-  - Giza General - Contracting and Real Estate Investment S.A.E Company Information (May 15, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHtb6vZIdMebKqfWReSyI82USkzlvX0STpqoLlz2ygMjXCiQqiH4zVrlInrj7nbKVFgSl_6ax3oFj3PqF6589AjtGHsiFm59ZiOPbhQM8TEsUnnkOMMHvyE_vqjBnaQQ2vhEgJLy20FTG2VlzHrYexjitjqFkuUs5hAK9d-N19KkIpPCm9zI1-xxgB1bfG0egstiELDL6o2abboHY1adQUlphmc7Q7ljHZUMHQIKWUbQP8wE_a18zV90NHnhPV7PM_79OLtismh-857KlJnAPqSEvOK
-- ARVA.CA: status=RECENT_ACCEPTED latest=2026-05-25 age_days=10 sources=3 expected=Arab Valves Company summary=Arab Valves Company (ARVA.CA) has reported its 2025 revenue and earnings, with a significant increase in stock price over the last 52 weeks. Recent quarterly earnings were released in April 2026, and a disclosure form was released in May 2026.
-  - Arab Valves Company Stock Price & Overview (2025 Financial Performance, May 25, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFWhBQyDZ9fOfvcDmkctaWiuOUgaOMXTYGpgLJkSjl2lQ8ZiaFI6NZyLN5RKogm-9y9PPRwMcuM9ow1iCauFCDgk-x96IOHVl2L9USm_C72T6rhcsDtZtbBWHdRN-Zg5afL920=
-  - Arab Valves Company Financials and Earnings (Latest Release Apr 29, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGUYaxyhiU-cheFWk4PizSYKHNPyzIx9E3VdtCNdVlmj-ln2a3UCB-0sznyCn3vwy8sHp5J4bPaOJYyrjBWQ-o_5SktqRPHxq9jSgTfbOhc3AANYcea2XFbFfSq4dpuci-ROBzE71RLbg6aeUEr16DcAa5If8-_TVT_eeriTj51q6Dz
-  - Arab Valves Company (ARVA.CA) - Release Regarding a Disclosure Form (May 14, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGLaidOHqeKlSHEecNaR7YRTLAdo9Ohibx0i9X3YCrPQop1stqtfr-ni_FoXOyN_a5L0ULO3cANgqckubQQ0TOMQR_b9cChmDFXAYmmPrZBVLMeZH-70YbWps8qnvxqDaZP96b_EF0W6f3qUlUvWA==
-- ARCC.CA: status=OLD_ACCEPTED latest=2025-01-01 age_days=519 sources=3 expected=Arabian Cement Company summary=Arabian Cement to pay out EGP 2bn dividends for 2025; Arabian Cement’s EGM approves nearly EGP 8m capital cut; Arabian Cement’s consolidated profits near EGP 3.6bn in 2025 Gemini also reviewed web evidence but did not return ticker-specific citations.
-  - Arabian Cement to pay out EGP 2bn dividends for 2025: https://english.mubasher.info/news/4587912/Arabian-Cement-to-pay-out-EGP-2bn-dividends-for-2025/
-  - Arabian Cement’s EGM approves nearly EGP 8m capital cut: https://english.mubasher.info/news/4583762/Arabian-Cement-s-EGM-approves-nearly-EGP-8m-capital-cut/
-  - Arabian Cement’s consolidated profits near EGP 3.6bn in 2025: https://english.mubasher.info/news/4562679/Arabian-Cement-s-consolidated-profits-near-EGP-3-6bn-in-2025/
-- ACAMD.CA: status=RECENT_ACCEPTED latest=2026-05-25 age_days=10 sources=3 expected=Arab Co.,for asset management and development summary=Arab Co.,for asset management and development (ACAMD.CA) reported earnings results for the full year ended December 31, 2025, in May 2026. The company's 2024 revenue decreased, and losses increased compared to the previous year.
-  - Arab Co.,for asset management and development Reports Earnings Results for the Full Year Ended December 31, 2025 (May 12, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHX5YcrquEPH69jbRzLAo2Fm93NINWNIk-5Jt2kPbEAdu_oJS3UH0xC9XKZ_rqPZHxra7rUFgk6RR_Aq3DF4SI19QnGZ1Xdcyx_C8WS4jwsNTNOaD4nntp4JbvDSu32rpMtmci8LfwwJ3W7WdZmAIlSitqH_EIcx9AhoP5RGYDC01cQcYGKRCfc
-  - Arab Co.,for asset management and development Financial Summary and Key Ratios (May 25, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFnMkx_GDbkYSbuhGeEQnVPmqpNrBa4RovYEEHc1QpboUG_6blxbtgYr-9UR-kq1s8eolC_0drMjKgZyQEA5w64YQ9wWuUPsMXMHDmya0bDjh8CpC3rOMWeqmIclAWg1APgPXGTNIxA3VfatZNHLLrxi8qstAr8cmBxsI4rjvst6ulSn2U8vlA==
-  - Arab Co.,for asset management and development Financial Performance (2024): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEKzqJ3P1nI8Q5op1so1E7xZ5Xeih2RFaXz_K2bu-bgcjLPQ9T5mkfiHAGpcHHq7N8o9KVxkedp-HlAXgkGqjozCsvoZYzO4XeWeMvf0ZAG0YzdFe-cuOkiRhGetj7cdzqes6ke
-- MPRC.CA: status=RECENT_ACCEPTED latest=2026-05-25 age_days=10 sources=3 expected=Egyptian Media Production City summary=Egyptian Media Production City (MPRC.CA) reported strong earnings results for the first quarter ended March 31, 2026, with increased sales, revenue, and net income. The company also released its full-year 2025 earnings in March 2026.
-  - Egyptian Media Production City Reports Earnings Results for the First Quarter Ended March 31, 2026 (May 20, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGWeue1VIGA_KTMrT_UkZ50c4fVv5VvWFSizSV3QdloHlAh_RXbxnGfv8Z028G7YBlstdolYBfevWURj-sXCADVEgH0LiDnJGiOkSQlVbvl9jYHpTyJ2p6Bmrsk9lp7FdZ1MdXLqg0SsYRr4oAZefxxC4d4HNw16FIma1b2ulovAIJS9sfez6RTvvFn69NWAwPZx5pjdMRRzZCmT9HOsvvB-iTawiLbmlXE0NS8E3Sva6GnF7sdrrEq2p_HcJwiDIauEnUPTVwjN-Ql24edj3AnAg==
-  - Egyptian Media Production City Revenue (Q1 2026, March 31, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHwI0sg_csz_PhNVk5q85wrmyNVMIS1xCiC97LurLzjKiGAIKc05S1uLh2UyDEQXzzOk8854OzXEd0lzVZ5Lran3h4RzpUkCZUawITO-eOJIEUtUO22cBbVxDRrZwrx2BJvVMvtpz1KQTGJ8A==
-  - Egyptian Media Production City Financials and Key Ratios (May 25, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQExbbXrVbI-cpYsUQSru54rdZf2ywXvkyyNS5ov8z_cr-IGF8k0kJHylpn-Xo2UwzTX7P37gnHQzSDyXAutc9hqBXiiCY6AdmrX_MTCNUV93NkLsMqkvxc7VDqbCvDRn-VaO623EcW5_40PS54hSD4CWrFZL3-ybNeYmMb7IA==
+- EMFD.CA: status=RECENT_ACCEPTED latest=2026-06-01 age_days=3 sources=3 expected=Emaar Misr for Development summary=Emaar Misr for Development (EMFD.CA) has reported its Q1 2026 financial results, showing significant profit increases. The company also announced a change in its CEO role and released its full-year 2025 earnings.
+  - Emaar Misr for Development (EMFD.CA) Reports its Financial Results (Consolidated) for the Period from 01/01/2026 to 31/03/2026 (June 01, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEVr0j7BAEJFgmlmw4bjinccmfLxx4KvMbM7fXVHve5x-nLW5lG1_37m_FQTNcsApEhOQvJbNoPmrpVrqubd7bS7ago76iT-89Gyvekf08bGkEkrsYDlhTFeE1chg_5ZhIBnNzjevgLM52CdJoNknHYwcM=
+  - Emaar Misr for Development (EMFD.CA) Reports its Financial Results (Standalone) for the Period from 01/01/2026 to 31/03/2026 (June 01, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHUK4edRoV_fIB69SpMgziqGUmzVCXUuPms_C69fYvEa54qvOimQL3LVkLa9OFmVF--btzNQbwBby3Fe5fcF-abuEiOP5LGA1FcPdaR4c3vnw-VyaL_u8Hv-OF_JhhCO6x9XG39rXEk7gktuPI8u5JROhQ=
+  - Emaar Misr for Development Company (S.A.E.) Reports Earnings Results for the Full Year Ended December 31, 2025 (February 23, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHnjfO4-pKxrzBOWbRH0x61VjNJ_4b2t45ArJMSHTG5Xe0ex6vDsfzXHmD2LgenkFz2aEa5W9px33TQ9zUeoyWGWiUqpY1cJOUr-i3Dhnk6IS-aze5H1TiMQzHB5jYJgwPe0TmJoywl3AbD1RQT8w9ej8i9Wgg2YFfvuTCsPewK1KYFENGJ866K
+- EHDR.CA: status=OLD_ACCEPTED latest=2025-01-01 age_days=519 sources=3 expected=Egyptians for Housing & Development Co. summary=Egyptians for Housing to disburse EGP 0.01/shr for 2025; EGX-listed companies, banks propose cash dividends for 2025; Egyptians for Housing stock witnesses selling pressures amid key levels to observe – Analysis Gemini also reviewed web evidence but did not return ticker-specific citations.
+  - Egyptians for Housing to disburse EGP 0.01/shr for 2025: https://english.mubasher.info/news/4584569/Egyptians-for-Housing-to-disburse-EGP-0-01-shr-for-2025/
+  - EGX-listed companies, banks propose cash dividends for 2025: https://english.mubasher.info/news/4560139/EGX-listed-companies-banks-propose-cash-dividends-for-2025/
+  - Egyptians for Housing stock witnesses selling pressures amid key levels to observe – Analysis: https://english.mubasher.info/news/4547337/Egyptians-for-Housing-stock-witnesses-selling-pressures-amid-key-levels-to-observe-Analysis/
+- ISPH.CA: status=RECENT_ACCEPTED latest=2026-05-18 age_days=17 sources=3 expected=Ibn Sina Pharma summary=Ibn Sina Pharma (ISPH.CA) has released its Q1 2026 and full-year 2025 financial results, declared cash dividends, and secured significant financing from the EBRD for green transformation initiatives.
+  - Ibnsina Pharma (ISPH.CA) Reports Its Financial Results (Standalone) for The Period From 01/01/2026 to 31/03/2026 (May 17, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG-1NlB-r_SnrX8u6JO_OfJHHpppuuwCVDi9xa7qfwjhxfAzHFKtEhpWWRUaEWSXGeLEk5EjYtWM_wsnUyrgg61eQAZdZDev4Tl5jyey_0Z4LIpn5ZFPZBrFLNHemYJd4o8fYZXsH_NtVC75aAR9A==
+  - Release from Ibnsina Pharma (ISPH.CA) Concerning the Consolidated Financial Results (May 18, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHgKD8Xfu1WbC1qb5J0CIjD2I-RvqT8g5kvifWbUAbV8SZXbWwViLwFocrqwZNZLwJaCphdhyIXhkr0oeLd3g2xsFqD3ZQtzMYydNTjf9tr-C18aw1SF15lBPsXC3HU7B92ZIyWs_ve-44ogPWw4BA==
+  - Ibnsina Pharma Releases Audited FY25 Results (March 02, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEWz7c-BfIUqsSW99z8DkD_cEUJ8GNQ9OvMD96L_Ik6EEz1JIv3j0yVzAzPg-gdO74K4r9Cl7NC4wns9BxPAOikUvkkhQD1xuk3_Cumf_vlFK5eFQ6KoZx2
+- GGCC.CA: status=OLD_ACCEPTED latest=2025-01-01 age_days=519 sources=3 expected=Giza General - Contracting and Real Estate Investment S.A.E summary=Giza General - Contracting and Real Estate Investment S.A.E (GGCC.CA) has reported its Q1 2025 financial results and 9M 2025 consolidated net profits. The company has also been awarded several new projects.
+  - Giza General Contracting (GGCC.CA) Reports Its Financial Results (Standalone) for the Period from 01/01/2025 to 31/03/2025 (Date not specified, but within 12 months of current date): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEMq0JPG_FfvvGjdD1rWQx3MUoUAbq-5OZk6Xj-71thXZ_tEAqV8rJvWsXyYu8wdAOkghYkPCnpZhOzERTUq86VfjoJkFcguZkF6SSIIaAqLOtBRqUdL1WCcrqhlVZjrXUJvsKTtnRh3W3siXfRPQ==
+  - Giza General Contracting and Real Estate Investment Company consolidated net profits after tax reached EGP 140.07 million in 9M 2025 (Date not specified, but within 12 months of current date): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGVGS_r1jH1zxLD-4g_t1LxSkNmoZa1T1VcCo7aHfdS7YU52J7iYrOe7yOQb1TTaKBwpc9n6FgMQ6d9qW_V_7PK7Bc6HCopm4Orzx-ZbosWX7-lbpR0hE1D_vHL2I1TeU2YmedYfVaRnIoB6Y1pJdYVXgJcMsU=
+  - Giza General Contracting and Real Estate Investment Company awarded a project contract valued at EGP 539.11 million (Date not specified, but within 12 months of current date): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGVGS_r1jH1zxLD-4g_t1LxSkNmoZa1T1VcCo7aHfdS7YU52J7iYrOe7yOQb1TTaKBwpc9n6FgMQ6d9qW_V_7PK7Bc6HCopm4Orzx-ZbosWX7-lbpR0hE1D_vHL2I1TeU2YmedYfVaRnIoB6Y1pJdYVXgJcMsU=
+- ARVA.CA: status=RECENT_ACCEPTED latest=2026-05-25 age_days=10 sources=3 expected=Arab Valves Company summary=Arab Valves Company (ARVA.CA) experienced a suspension of trading in late 2025 and has released its Q4 2025 financial performance. A disclosure form was also released in May 2026.
+  - Suspension of Trading on Arab Valves Company (ARVA.CA) (November 30, 2025): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGHIzlDalywYuRIgWsbz4A9ZACJKgz74vrl03wBH4TjdCjbfztBpnIhlBfWQPyjl8N4kW6ChZN6wUa1o1baouCXzrKF5DOA3J2pPEic0ABcOx3j5rqevZUbtMa7L4HtOpo6kIs11feBaK-jdtx5itG2rL6ezV2kq0_qoZ0K0FAHNsLVsazfa2lhdMBLy47hF9JH
+  - EGX:ARVA Financials | Arab Valves Co - Investing.com (Q4 2025 financial data, accessed May 25, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFIsFYmqYHxCNzmA--7rllmO-s_AefnPaXv5JxSFvEcofYbn9KlFz-iDi6ePC52WXChcdCPisS3Rs_F6JuDo5EGUO6KNeswhvhBVaSCboyn3kzw9GW0AvB7AckwPYH8I8vprDAv_0AdB-kc6MWcIRjx-oEl2Jr2EsVBHWbUKdXolywi
+  - Arab Valves Company (EGX:ARVA) Stock Price & Overview - 2025 Financial Performance (Accessed May 25, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHoeSBgbT224hAnyDWf2oeKEFUhJssAdBeS5NnZy-qQk7bPq2_7Hf86GFG1qiwExK5JYbmtFFXO78e1F0TvlbthMbComkj4p0vObQojD6upW64hyenp6CLleGh3NToWb8SjzHQ=
+- ARCC.CA: status=RECENT_ACCEPTED latest=2026-06-04 age_days=0 sources=3 expected=Arabian Cement Company summary=Arabian Cement Company (ARCC.CA) has reported its Q1 2026 financial results and announced dividend details for April 2026. The company also saw significant growth in revenue and earnings in 2025.
+  - Arabian Cement Company (ARCC.CA) Reports its Financial Results (Standalone) for the Period from 01/01/2026 to 31/03/2026 (June 01, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH4uccIP7tzC_e6LMuXd0VhbDa1symcAL6Ti8QT_UyZU_SWeMe_RDaVLBJZFYFCSfuzOL37YvHfYcOqz5POzQm-WMr7brxqJl97a36jzTrSaSYVf6DtEdyASweOnH3cBu_qIYgXIcqatgXWujw_5lVuUK5x8M-nyRQiW9c15l1fn4eYSLnEuCO1UghzQ=
+  - Arabian Cement Company (ARCC.CA) - Listing Committee Decision and EGM Minutes (before Certification) (April 26, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGTk2O59jzcUr0LPR2syDZU5kScZPPmAZYFCBmulB3iP5KYlb1XwCCj6J7jocZVmaMEZ6DwFkHiY8oxjy9IJyIOw2puR9smYBPmvNFLMhW35zcNc4Uei1l3PvrNxqyPbXbnaW--V8HS41p7sFNGtuE=
+  - Arabian Cement Co SAE Stock Price Today | EGX: ARCC Live - Ex-Dividend Date: Apr 14, 2026, Payment Date: Apr 16, 2026 (Accessed June 04, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFqFkfsM3xB8Z8ygwZRC-v030a7dN_lVa6PwyXjH9zQABd9muFGTQXODcvSalnUnolRLnKvc-nYPzLMsPp9UwGqzs6JEknyLNB7-c8QXegB2C4ZmJ8sYLmpaJqswxmWWJ8cvDNgouY6A__3bvQslSt60ow=
+- ACAMD.CA: status=RECENT_ACCEPTED latest=2026-06-04 age_days=0 sources=3 expected=Arab Co.,for asset management and development summary=Arab Co.,for asset management and development (ACAMD.CA) has reported its 9M 2025 net profits and Q4 2025 EPS. The company has also been involved in discussions regarding land sales and treasury stock purchases, with a Listing Committee Decision in May 2026.
+  - Arab Co. for Asset Management And Development (ACAMD) - Arab Company for Asset Management shifts to EGP 7m net profits in 9M-25 (Date not specified, but within 12 months of current date): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHluWUFP70tGXFyN0_6bbNtKsZAb_wwA6NHCodqlfxp1iH92cqNBs2_qgXLSsr9NDeD68gYU_guSzc1iCnyW5N_-gDdDk6ZzZXFNYH0-1AzAvr4jswP0EFtXO-8445fManee977yJKtsU0HKVA56RwSXg==
+  - Arab Co. for Asset Management And Development (ACAMD) - EPS -0.03 Egyptian Pound Based on: Fourth Quarter 2025 (Accessed June 04, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHluWUFP70tGXFyN0_6bbNtKsZAb_wwA6NHCodqlfxp1iH92cqNBs2_qgXLSsr9NDeD68gYU_guSzc1iCnyW5N_-gDdDk6ZzZXFNYH0-1AzAvr4jswP0EFtXO-8445fManee977yJKtsU0HKVA56RwSXg==
+  - Release from Arab Co.,for asset management and development (ACAMD.CA) concerning an offer to purchase a plot of land (Date not specified, but within 12 months of current date): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHJHEx5PbCD8qhMjFOjBUYF4l61z6XB_O0d8Qq7YXlz0fHd_sy_lvDBN1_2uFK7yAT4_jeZDH9DpnXQVcHiqLE0Rhf4PmwPwXXL2xRJUTDQjnwixWxnvnYbUj8hCsf-kBVgsgJ9sjeZx_6QPR8ZQg==
+- MPRC.CA: status=RECENT_ACCEPTED latest=2026-05-25 age_days=10 sources=1 expected=Egyptian Media Production City summary=Egyptian Media Production City (MPRC.CA) has reported its Q1 2026 financial results, showing increases in revenue, net income, and EPS.
+  - EGX:MPRC Financials | Egyptian Media Production City - Investing.com (Q1 2026 financial data, accessed May 25, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGwfpGb_6aue3X8_mQPlI8vFebDVPxVtssNmmMGClWvXFy91hlbkNVV43yH-0EVG9BMF0dHo0u9t7_XR8fbFT3UyIfHXtdaisnJzK6pCi3b2-CgNalA_QfuF0P-dlmMPk57ieHv94y9qtVtjtqjmw1RsgYXK9SuawqsaTaUmA==
 
 ## Warnings
-- Evidence for ARCC.CA matches the company but appears old; latest detected date is 2025-01-01.
+- Evidence for EHDR.CA matches the company but appears old; latest detected date is 2025-01-01.
+- Evidence for GGCC.CA matches the company but appears old; latest detected date is 2025-01-01.
