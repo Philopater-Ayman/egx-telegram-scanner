@@ -1,13 +1,13 @@
 # Telegram-First EGX Scanner Report
 
-Scan phase: Post-close tomorrow tickets
-Generated UTC: 2026-06-07T14:28:50.480503+00:00
-Generated Cairo: 2026-06-07 17:28
-Run timing: target 15:30 Cairo | generated Cairo 2026-06-07 17:28 | cron 30 12 * * 0-4
-Trigger: scheduled cron=30 12 * * 0-4 mapped to post_close; Cairo now 2026-06-07 17:25
+Scan phase: Evening tomorrow plan
+Generated UTC: 2026-06-07T17:48:16.798537+00:00
+Generated Cairo: 2026-06-07 20:48
+Run timing: target 19:30 Cairo | generated Cairo 2026-06-07 20:48 | cron 30 16 * * 0-4
+Trigger: scheduled cron=30 16 * * 0-4 mapped to evening_plan; Cairo now 2026-06-07 20:45
 
 ## Control Center
-- Action tickets: 1 prioritized signal(s)
+- Action tickets: 0 prioritized signal(s)
 - BUY-ready candidates: 77
 - Data quality issues: 0
 - Tradeable price/liquidity tickers: 178/190
@@ -33,19 +33,19 @@ Trigger: scheduled cron=30 12 * * 0-4 mapped to post_close; Cairo now 2026-06-07
 ## AI Narrative
 - Provider: OpenRouter OK
 - Model: openai/gpt-oss-120b:free
-- Summary: The scanner highlighted EMFD.CA as the top BUY‑watch candidate. It cleared liquidity thresholds, trades above its 20‑ and 50‑day MAs, and sits at a strong resistance level (12.38 EGP) with RSI 67.5, suggesting short‑term bullish pressure despite an overall bearish EGX30 and a constructive EGX70 backdrop. The market regime is in SELECTIVE_SMALL_MID_SWINGS, meaning risk is limited to selective setups; sector breadth is healthy (76%) but Real Estate is not a leading sector, adding uncertainty.
-- EMFD.CA shows strong price momentum (above MA20/MA50, RSI 67.5) but is far from its 20‑day support (9.83 EGP).
-- Liquidity spike (5.1×) and accumulation regime support a short‑term watch, yet sector lag and extended momentum raise risk.
-- EGX30 remains bearish while EGX70 is constructive; this mixed regime pushes the risk mode to selective small‑mid swings.
-- Next 1‑3 days outlook hinges on price breaking the 12.38 EGP resistance; failure may pull back toward support.
-- Uncertainty remains high due to low confidence score and sector not leading the market.
+- Summary: The scanner found no trade‑ready candidate; all tickets are flagged HOLD due to insufficient evidence, liquidity, freshness, or technical confirmation. EGX30 remains bearish with weak breadth below MA20, while EGX70 shows a constructive trend and broader support, allowing a selective‑small‑mid swing risk mode. Leading sectors (Tourism & Leisure, Technology & Distribution, Agriculture) are healthy, but most top‑ranked stocks sit in non‑leading general sectors, limiting confidence for the next 1‑3 days.
+- EGX30 bearish (30% above MA20, 75% above MA50) → higher downside risk for small caps.
+- EGX70 constructive (56% above MA20, 82% above MA50) → supports selective swing opportunities.
+- Top‑ranked stocks show bullish outlooks but sit in non‑leading sectors and have extended momentum.
+- Liquidity spikes indicate accumulation, yet support distances (10‑15%) suggest price may need room to move.
+- Uncertainty remains high: sector breadth 76% and mixed market regimes limit clear entry signals.
 
 ## Top Liquidity Spikes
+- TRTO.CA: spike=178.57 liquidity=162714.96 outlook=NEUTRAL score=38.14 buy_ready=False
 - LUTS.CA: spike=22.07 liquidity=143389760.0 outlook=WEAK_OR_RISKY score=0 buy_ready=False
 - UNIP.CA: spike=5.31 liquidity=65309568.0 outlook=WEAK_OR_RISKY score=0 buy_ready=False
-- AREH.CA: spike=5.11 liquidity=109493552.0 outlook=BULLISH_WATCH score=90.08 buy_ready=True
+- AREH.CA: spike=5.11 liquidity=109493552.0 outlook=BULLISH_WATCH score=90.14 buy_ready=True
 - EMFD.CA: spike=5.11 liquidity=964109248.0 outlook=BULLISH_WATCH score=78.7 buy_ready=True
-- NCCW.CA: spike=4.85 liquidity=81983472.0 outlook=BULLISH_WATCH score=72.08 buy_ready=True
 
 ## Sector Leaderboard
 - #1 Tourism & Leisure: score=12.13 5d=4.25% 20d=18.02% aboveMA50=100.0%
@@ -58,10 +58,7 @@ Trigger: scheduled cron=30 12 * * 0-4 mapped to post_close; Cairo now 2026-06-07
 - #8 Building Materials: score=6.74 5d=0.82% 20d=5.21% aboveMA50=100.0%
 
 ## Today's Prioritized Action Tickets
-- Priority #1: BUY EMFD.CA
-  - Entry: 12.38 | Take profit: 13.38 | Stop loss: 11.88
-  - Confidence: LOW | score=31.4 | outlook=BULLISH_WATCH 78.7
-  - Reason: WATCH/BUY SETUP: EMFD.CA has aligned current price data, liquidity above threshold, price above MA20/MA50, RSI 67.51, support 9.83, resistance 12.38, and evidence sources. Macro trend is Bearish; market regime is SELECTIVE_SMALL_MID_SWINGS; verify price action in Thndr before treating it as a swing entry.
+- HOLD: Local fallback HOLD: no candidate passed evidence, liquidity, freshness, and technical gates.
 
 ## Thndr Instruction
 - Advisor-only signal mode is active. The scanner never executes trades.
@@ -70,26 +67,26 @@ Trigger: scheduled cron=30 12 * * 0-4 mapped to post_close; Cairo now 2026-06-07
 
 ## Top 1-3 Day Outlook
 - MPCO.CA: BULLISH_WATCH score=100 liquidity=ACCUMULATION_SPIKE sector=LEADING risk=momentum is extended
-- AREH.CA: BULLISH_WATCH score=90.08 liquidity=ACCUMULATION_SPIKE sector=IMPROVING risk=sector is not leading
-- MPRC.CA: BULLISH_WATCH score=90.08 liquidity=ACCUMULATION_SPIKE sector=IMPROVING risk=sector is not leading
-- SIPC.CA: BULLISH_WATCH score=88.08 liquidity=ACCUMULATION_SPIKE sector=IMPROVING risk=sector is not leading
+- AREH.CA: BULLISH_WATCH score=90.14 liquidity=ACCUMULATION_SPIKE sector=IMPROVING risk=sector is not leading
+- MPRC.CA: BULLISH_WATCH score=90.14 liquidity=ACCUMULATION_SPIKE sector=IMPROVING risk=sector is not leading
+- SIPC.CA: BULLISH_WATCH score=88.14 liquidity=ACCUMULATION_SPIKE sector=IMPROVING risk=sector is not leading
 - KABO.CA: BULLISH_WATCH score=86.97 liquidity=ACCUMULATION_SPIKE sector=IMPROVING risk=momentum is extended
-- GDWA.CA: BULLISH_WATCH score=85.08 liquidity=ACCUMULATION_SPIKE sector=IMPROVING risk=close to resistance; sector is not leading
-- ODIN.CA: BULLISH_WATCH score=84.08 liquidity=TRADEABLE sector=IMPROVING risk=sector is not leading
+- GDWA.CA: BULLISH_WATCH score=85.14 liquidity=ACCUMULATION_SPIKE sector=IMPROVING risk=close to resistance; sector is not leading
+- ODIN.CA: BULLISH_WATCH score=84.14 liquidity=TRADEABLE sector=IMPROVING risk=sector is not leading
 - CLHO.CA: BULLISH_WATCH score=83.51 liquidity=TRADEABLE sector=IMPROVING risk=liquidity is cooling
-- GGCC.CA: BULLISH_WATCH score=83.08 liquidity=ACCUMULATION_SPIKE sector=IMPROVING risk=momentum is extended; sector is not leading
-- ELKA.CA: BULLISH_WATCH score=83.08 liquidity=ACCUMULATION_SPIKE sector=IMPROVING risk=momentum is extended; sector is not leading
+- GGCC.CA: BULLISH_WATCH score=83.14 liquidity=ACCUMULATION_SPIKE sector=IMPROVING risk=momentum is extended; sector is not leading
+- ELKA.CA: BULLISH_WATCH score=83.14 liquidity=ACCUMULATION_SPIKE sector=IMPROVING risk=momentum is extended; sector is not leading
 
 ## BUY-Ready Candidates
-- AREH.CA: rank=33.4 outlook=BULLISH_WATCH outlook_score=90.08 sector_rank=11 price=1.47 support=1.27 resistance=1.43 liquidity=109493552.0
-- COSG.CA: rank=32.68 outlook=BULLISH_WATCH outlook_score=82.08 sector_rank=11 price=1.65 support=1.44 resistance=1.71 liquidity=161625088.0
+- AREH.CA: rank=33.4 outlook=BULLISH_WATCH outlook_score=90.14 sector_rank=11 price=1.47 support=1.27 resistance=1.43 liquidity=109493552.0
+- COSG.CA: rank=32.68 outlook=BULLISH_WATCH outlook_score=82.14 sector_rank=11 price=1.65 support=1.44 resistance=1.71 liquidity=161625088.0
 - MPCO.CA: rank=32.4 outlook=BULLISH_WATCH outlook_score=100 sector_rank=3 price=1.77 support=1.54 resistance=1.88 liquidity=221589648.0
 - EMFD.CA: rank=31.4 outlook=BULLISH_WATCH outlook_score=78.7 sector_rank=9 price=12.38 support=9.83 resistance=12.38 liquidity=964109248.0
-- UEGC.CA: rank=31.4 outlook=BULLISH_WATCH outlook_score=82.08 sector_rank=11 price=1.5 support=1.3 resistance=1.46 liquidity=96498128.0
-- NCCW.CA: rank=31.4 outlook=BULLISH_WATCH outlook_score=72.08 sector_rank=11 price=6.19 support=5.13 resistance=6.2 liquidity=81983472.0
-- GGCC.CA: rank=30.4 outlook=BULLISH_WATCH outlook_score=83.08 sector_rank=11 price=0.43 support=0.39 resistance=0.44 liquidity=24663022.0
-- MPRC.CA: rank=30.2 outlook=BULLISH_WATCH outlook_score=90.08 sector_rank=11 price=34.0 support=30.1 resistance=33.7 liquidity=35967752.0
-- GDWA.CA: rank=30.02 outlook=BULLISH_WATCH outlook_score=85.08 sector_rank=11 price=0.82 support=0.77 resistance=0.83 liquidity=25407232.0
+- NCCW.CA: rank=31.4 outlook=BULLISH_WATCH outlook_score=72.14 sector_rank=11 price=6.19 support=5.13 resistance=6.2 liquidity=81983472.0
+- UEGC.CA: rank=31.4 outlook=BULLISH_WATCH outlook_score=82.14 sector_rank=11 price=1.5 support=1.3 resistance=1.46 liquidity=96498128.0
+- GGCC.CA: rank=30.4 outlook=BULLISH_WATCH outlook_score=83.14 sector_rank=11 price=0.43 support=0.39 resistance=0.44 liquidity=24663022.0
+- MPRC.CA: rank=30.2 outlook=BULLISH_WATCH outlook_score=90.14 sector_rank=11 price=34.0 support=30.1 resistance=33.7 liquidity=35967752.0
+- GDWA.CA: rank=30.02 outlook=BULLISH_WATCH outlook_score=85.14 sector_rank=11 price=0.82 support=0.77 resistance=0.83 liquidity=25407232.0
 - MHOT.CA: rank=29.4 outlook=BULLISH_WATCH outlook_score=82 sector_rank=1 price=30.83 support=26.3 resistance=34.3 liquidity=10836366.0
 
 ## Data Quality Issues
@@ -277,7 +274,7 @@ Trigger: scheduled cron=30 12 * * 0-4 mapped to post_close; Cairo now 2026-06-07
 - SWDY.CA: score=24.4 buy_ready=True sector_rank=5 price=88.06 support=85.25 resistance=91.11 source=Yahoo Finance history + Mubasher delayed current trading data as_of=01:28 PM market time freshness=DELAYED_CURRENT RSI=53.16 liquidity=13839017.0 spike=0.38
 - TALM.CA: score=14.3 buy_ready=False sector_rank=15 price=15.85 support=15.12 resistance=17.27 source=Yahoo Finance history + Mubasher delayed current trading data as_of=01:28 PM market time freshness=DELAYED_CURRENT RSI=40.94 liquidity=2338833.75 spike=0.18
 - TMGH.CA: score=22.4 buy_ready=False sector_rank=9 price=94.55 support=91.87 resistance=101.4 source=Yahoo Finance history + Mubasher delayed current trading data as_of=01:28 PM market time freshness=DELAYED_CURRENT RSI=55.39 liquidity=225499808.0 spike=0.41
-- TRTO.CA: score=10.4 buy_ready=False sector_rank=11 price=0.03 support=0.03 resistance=0.04 source=Yahoo Finance as_of=2026-06-03T21:00:00+00:00 freshness=FRESH RSI=50.0 liquidity=0.0 spike=0.0
+- TRTO.CA: score=15.56 buy_ready=False sector_rank=11 price=0.03 support=0.03 resistance=0.04 source=Yahoo Finance history + Mubasher delayed current trading data as_of=3 June 02:00 AM market time freshness=DELAYED_CURRENT RSI=50.0 liquidity=162714.96 spike=178.57
 - UEFM.CA: score=4.78 buy_ready=False sector_rank=11 price=475.42 support=455.6 resistance=517.0 source=Yahoo Finance history + Mubasher delayed current trading data as_of=01:12 PM market time freshness=DELAYED_CURRENT RSI=32.78 liquidity=1384732.63 spike=0.75
 - UEGC.CA: score=31.4 buy_ready=True sector_rank=11 price=1.5 support=1.3 resistance=1.46 source=Yahoo Finance history + Mubasher delayed current trading data as_of=01:29 PM market time freshness=DELAYED_CURRENT RSI=65.22 liquidity=96498128.0 spike=4.82
 - UNIP.CA: score=14.4 buy_ready=False sector_rank=11 price=0.33 support=0.31 resistance=0.33 source=Yahoo Finance history + Mubasher delayed current trading data as_of=01:29 PM market time freshness=DELAYED_CURRENT_UNALIGNED RSI=50.0 liquidity=65309568.0 spike=5.31
@@ -294,31 +291,31 @@ Trigger: scheduled cron=30 12 * * 0-4 mapped to post_close; Cairo now 2026-06-07
 - These checks are historical context only, not a prediction or guarantee.
 
 ## Evidence
-- AREH.CA: status=ACCEPTED_UNDATED latest=n/a age_days=n/a sources=3 expected=Real Estate Egyptian Consortium S.A.E summary=Real Estate Egyptian Consortium’s net profits approach EGP 2m in 9M-25; Shareholder ups stake in Real Estate Egyptian; Target for Real Estate Investment cuts stake in Real Estate Egyptian Gemini also reviewed web evidence but did not return ticker-specific citations.
+- AREH.CA: status=ACCEPTED_UNDATED latest=n/a age_days=n/a sources=3 expected=Real Estate Egyptian Consortium S.A.E summary=Real Estate Egyptian Consortium’s net profits approach EGP 2m in 9M-25; Shareholder ups stake in Real Estate Egyptian; Target for Real Estate Investment cuts stake in Real Estate Egyptian
   - Real Estate Egyptian Consortium’s net profits approach EGP 2m in 9M-25: https://english.mubasher.info/news/4528467/Real-Estate-Egyptian-Consortium-s-net-profits-approach-EGP-2m-in-9M-25/
   - Shareholder ups stake in Real Estate Egyptian: https://english.mubasher.info/news/4026301/Shareholder-ups-stake-in-Real-Estate-Egyptian/
   - Target for Real Estate Investment cuts stake in Real Estate Egyptian: https://english.mubasher.info/news/4010821/Target-for-Real-Estate-Investment-cuts-stake-in-Real-Estate-Egyptian/
-- COSG.CA: status=ACCEPTED_UNDATED latest=n/a age_days=n/a sources=3 expected=Cairo Oil & Soap Company summary=Cairo Oils stock stabilizes above EGP 1.50 resistance level; EGX approves capital increase, reduction of several listed firms; Cairo oils incurs EGP 25m losses in H1-19 Gemini also reviewed web evidence but did not return ticker-specific citations.
+- COSG.CA: status=ACCEPTED_UNDATED latest=n/a age_days=n/a sources=3 expected=Cairo Oil & Soap Company summary=Cairo Oils stock stabilizes above EGP 1.50 resistance level; EGX approves capital increase, reduction of several listed firms; Cairo oils incurs EGP 25m losses in H1-19
   - Cairo Oils stock stabilizes above EGP 1.50 resistance level: https://english.mubasher.info/news/4546423/Cairo-Oils-stock-stabilizes-above-EGP-1-50-resistance-level/
   - EGX approves capital increase, reduction of several listed firms: https://english.mubasher.info/news/3828111/EGX-approves-capital-increase-reduction-of-several-listed-firms/
   - Cairo oils incurs EGP 25m losses in H1-19: https://english.mubasher.info/news/3521392/Cairo-oils-incurs-EGP-25m-losses-in-H1-19/
-- MPCO.CA: status=OLD_ACCEPTED latest=2025-01-01 age_days=522 sources=3 expected=Mansoura Poultry summary=Mansoura Poultry’s consolidated net profits drop in 2025; revenues near EGP 857m; Mansoura Poultry’s stock rebounds from key support level; Mansoura Poultry stock witnesses clear emergence of buying power Gemini also reviewed web evidence but did not return ticker-specific citations.
+- MPCO.CA: status=OLD_ACCEPTED latest=2025-01-01 age_days=522 sources=3 expected=Mansoura Poultry summary=Mansoura Poultry’s consolidated net profits drop in 2025; revenues near EGP 857m; Mansoura Poultry’s stock rebounds from key support level; Mansoura Poultry stock witnesses clear emergence of buying power
   - Mansoura Poultry’s consolidated net profits drop in 2025; revenues near EGP 857m: https://english.mubasher.info/news/4596342/Mansoura-Poultry-s-consolidated-net-profits-drop-in-2025-revenues-near-EGP-857m/
   - Mansoura Poultry’s stock rebounds from key support level: https://english.mubasher.info/news/4554482/Mansoura-Poultry-s-stock-rebounds-from-key-support-level/
   - Mansoura Poultry stock witnesses clear emergence of buying power: https://english.mubasher.info/news/4539119/Mansoura-Poultry-stock-witnesses-clear-emergence-of-buying-power/
-- EMFD.CA: status=RECENT_ACCEPTED latest=2026-01-01 age_days=157 sources=3 expected=Emaar Misr for Development summary=Recent disclosures from Emaar Misr for Development (EMFD.CA) include financial results for Q1 2026 and updates regarding its Board of Directors and Executive Managers.
-  - Release from Emaar Misr for Development (EMFD.CA) Concerning the Board of Directors & the Executive Managers. 03/06/2026: https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH9V5ZNwRD3IdkXr_saM2vAHoitQMJvdaixTlwyap8e9pPvuo2qI6wBCWgSSMTHjKBPjrJ8plgd_ZZPnrw6Cf1CtxKpjQ6u5hOa0ddn8n52oufL73K0RarrxqUKlCHUhn5jjQzd2wG7I-FZ4dYtxLNA9CUTXAxkFfeOhNk9HmNPYs7hrCj5rf0ZsvhalN_6YNJ1hEwActm3eeHAzlg=
-  - Emaar Misr for Development (EMFD.CA) Reports its Financial Results (Consolidated) for the Period from 01/01/2026 to 31/03/2026 01/06/2026: https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFhTAUrvK6g1kAPMUG69aGnp3LvSQfpjW-n-US7JHea7EQX-ay-UdaUMkJ-Oo7tG_9pg1hykCPmb4Bw17FqfSSltpuA844L0xvU5iGvy6Ura2-draTsmvcoHwxe6uBjYMXhfRfRYhy_wuTGnoUjnT761Cg=
-  - EGX 30 Index Constituents (EMFD.CA weight 0.72%) 04/06/2026: https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHhiAlwG7SzpJJR2q7YEOAVFj5xJ3b5X4O6vK8aCtJM9CzjJTFUCFztF4JHABbyAnVEPfjp4VaeQSGHtS5jHaLsVyFnAFwVFBl9pCtnDu3eUv5XxE2FnIJZPXuL7OwVMAQZI9PDK--iCGdQxO5GSuSjH90jMEGuSWH1Pf7nbyY=
-- UEGC.CA: status=OLD_ACCEPTED latest=2025-01-01 age_days=522 sources=3 expected=El-Saeed Company for Contracting and Real Estate Investment "SCCD" (S.A.E.) summary=ElSaeed Contracting stock eyes break above EGP 1.44 amid uptrend; ElSaeed Contracting posts higher consolidated profits at EGP 93m in 2025; ElSaeed Contracting stock signals upside move towards EGP 1.50 Gemini also reviewed web evidence but did not return ticker-specific citations.
+- EMFD.CA: status=OLD_ACCEPTED latest=2025-01-01 age_days=522 sources=3 expected=Emaar Misr for Development summary=Emaar Misr posts higher revenues at EGP 19.8bn in 2025; Emaar Misr’s consolidated net profits drop to EGP 4.2bn in 9M-25; Emaar Misr, Golden Coast to establish EGP 900bn project in Red Sea
+  - Emaar Misr posts higher revenues at EGP 19.8bn in 2025: https://english.mubasher.info/news/4561643/Emaar-Misr-posts-higher-revenues-at-EGP-19-8bn-in-2025/
+  - Emaar Misr’s consolidated net profits drop to EGP 4.2bn in 9M-25: https://english.mubasher.info/news/4525192/Emaar-Misr-s-consolidated-net-profits-drop-to-EGP-4-2bn-in-9M-25/
+  - Emaar Misr, Golden Coast to establish EGP 900bn project in Red Sea: https://english.mubasher.info/news/4495287/Emaar-Misr-Golden-Coast-to-establish-EGP-900bn-project-in-Red-Sea/
+- NCCW.CA: status=ACCEPTED_UNDATED latest=n/a age_days=n/a sources=3 expected=Nasr Company for Civil Works summary=Nasr for Civil Works unveils EGP 150m capital increase; Arabia Investments, Nasr Company for Civil Works unveil capital hike; Nasr Company for Civil Works’ consortium signs EUR 46m agreement with Uganda
+  - Nasr for Civil Works unveils EGP 150m capital increase: https://english.mubasher.info/news/4550493/Nasr-for-Civil-Works-unveils-EGP-150m-capital-increase/
+  - Arabia Investments, Nasr Company for Civil Works unveil capital hike: https://english.mubasher.info/news/4284206/Arabia-Investments-Nasr-Company-for-Civil-Works-unveil-capital-hike/
+  - Nasr Company for Civil Works’ consortium signs EUR 46m agreement with Uganda: https://english.mubasher.info/news/4249759/Nasr-Company-for-Civil-Works-consortium-signs-EUR-46m-agreement-with-Uganda/
+- UEGC.CA: status=OLD_ACCEPTED latest=2025-01-01 age_days=522 sources=3 expected=El-Saeed Company for Contracting and Real Estate Investment "SCCD" (S.A.E.) summary=ElSaeed Contracting stock eyes break above EGP 1.44 amid uptrend; ElSaeed Contracting posts higher consolidated profits at EGP 93m in 2025; ElSaeed Contracting stock signals upside move towards EGP 1.50
   - ElSaeed Contracting stock eyes break above EGP 1.44 amid uptrend: https://english.mubasher.info/news/4595500/ElSaeed-Contracting-stock-eyes-break-above-EGP-1-44-amid-uptrend/
   - ElSaeed Contracting posts higher consolidated profits at EGP 93m in 2025: https://english.mubasher.info/news/4589666/ElSaeed-Contracting-posts-higher-consolidated-profits-at-EGP-93m-in-2025/
   - ElSaeed Contracting stock signals upside move towards EGP 1.50: https://english.mubasher.info/news/4564890/ElSaeed-Contracting-stock-signals-upside-move-towards-EGP-1-50/
-- NCCW.CA: status=RECENT_ACCEPTED latest=2026-01-01 age_days=157 sources=3 expected=Nasr Company for Civil Works summary=Nasr Company for Civil Works (NCCW.CA) has recently published AGM minutes, announced an EGM invitation, and disclosed being awarded new construction works.
-  - Nasr Company for Civil Works (NCCW.CA) - AGM Minutes (after Certification). 03/06/2026: https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH9V5ZNwRD3IdkXr_saM2vAHoitQMJvdaixTlwyap8e9pPvuo2qI6wBCWgSSMTHjKBPjrJ8plgd_ZZPnrw6Cf1CtxKpjQ6u5hOa0ddn8n52oufL73K0RarrxqUKlCHUhn5jjQzd2wG7I-FZ4dYtxLNA9CUTXAxkFfeOhNk9HmNPYs7hrCj5rf0ZsvhalN_6YNJ1hEwActm3eeHAzlg=
-  - Release from Nasr Company for Civil Works (NCCW.CA) 03/09/2025: https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFn6dHWLOKE-pRrBv8MM2LsVNq8mb-Sj3vBCZS2TISmV2C_YExtkKpxWU_gLMOZ03c8G049fTBvKgsYFUJMCxL698l8FRp8ZzdPXBCTAXMiL9wNtn4f_w3Fg2DE4zOpkOpAFCGtfzGX_Rpzy85xfw=
-  - Release from Nasr Company for Civil Works (NCCW.CA) Concerning the EGM Invitation 29/04/2026: https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQECck-cnPja3BPo-KjphStgdeQb_6uso2QYam2RJiQ5l-NZ2FbN1hm7Rvl9d0ml6irHl_WbrS6c01SX0tZZijJ1OHzk14yd2Lp6TAPWe7Ag1iL5bN3kH7et-wUaiwqW5jRnL_xS-VP6yx6j868d9sowq1Y=
-- GGCC.CA: status=ACCEPTED_UNDATED latest=n/a age_days=n/a sources=3 expected=Giza General - Contracting and Real Estate Investment S.A.E summary=EGX approves listing EGP 144m capital increase for Giza Contracting; Giza Contracting tests key EGP 0.51 level; Giza Contracting’s consolidated net profits leap to EGP 140m in 9M-25 Gemini also reviewed web evidence but did not return ticker-specific citations.
+- GGCC.CA: status=ACCEPTED_UNDATED latest=n/a age_days=n/a sources=3 expected=Giza General - Contracting and Real Estate Investment S.A.E summary=EGX approves listing EGP 144m capital increase for Giza Contracting; Giza Contracting tests key EGP 0.51 level; Giza Contracting’s consolidated net profits leap to EGP 140m in 9M-25
   - EGX approves listing EGP 144m capital increase for Giza Contracting: https://english.mubasher.info/news/4588793/EGX-approves-listing-EGP-144m-capital-increase-for-Giza-Contracting/
   - Giza Contracting tests key EGP 0.51 level: https://english.mubasher.info/news/4563778/Giza-Contracting-tests-key-EGP-0-51-level/
   - Giza Contracting’s consolidated net profits leap to EGP 140m in 9M-25: https://english.mubasher.info/news/4530408/Giza-Contracting-s-consolidated-net-profits-leap-to-EGP-140m-in-9M-25/
@@ -326,8 +323,11 @@ Trigger: scheduled cron=30 12 * * 0-4 mapped to post_close; Cairo now 2026-06-07
 
 ## Warnings
 - Evidence for AREH.CA matches the company but no source/report date was detected.
+- Gemini batch evidence failed: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
 - Evidence for COSG.CA matches the company but no source/report date was detected.
 - Evidence for MPCO.CA matches the company but appears old; latest detected date is 2025-01-01.
+- Evidence for EMFD.CA matches the company but appears old; latest detected date is 2025-01-01.
+- Evidence for NCCW.CA matches the company but no source/report date was detected.
 - Evidence for UEGC.CA matches the company but appears old; latest detected date is 2025-01-01.
 - Evidence for GGCC.CA matches the company but no source/report date was detected.
 - Evidence rejected for MPRC.CA: source text did not clearly match MPRC.CA / Egyptian Media Production City.
