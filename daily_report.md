@@ -1,13 +1,13 @@
 # Telegram-First EGX Scanner Report
 
-Scan phase: Intraday liquidity update
-Generated UTC: 2026-06-08T12:28:59.729512+00:00
-Generated Cairo: 2026-06-08 15:28
-Run timing: target 11:00 Cairo | generated Cairo 2026-06-08 15:28 | cron 0 8 * * 0-4
-Trigger: scheduled cron=0 8 * * 0-4 mapped to intraday; Cairo now 2026-06-08 15:24
+Scan phase: Post-close tomorrow tickets
+Generated UTC: 2026-06-08T16:37:51.007372+00:00
+Generated Cairo: 2026-06-08 19:37
+Run timing: target 15:30 Cairo | generated Cairo 2026-06-08 19:37 | cron 30 12 * * 0-4
+Trigger: scheduled cron=30 12 * * 0-4 mapped to post_close; Cairo now 2026-06-08 19:33
 
 ## Control Center
-- Action tickets: 3 prioritized signal(s)
+- Action tickets: 0 prioritized signal(s)
 - BUY-ready candidates: 63
 - Data quality issues: 0
 - Tradeable price/liquidity tickers: 184/190
@@ -33,12 +33,12 @@ Trigger: scheduled cron=0 8 * * 0-4 mapped to intraday; Cairo now 2026-06-08 15:
 ## AI Narrative
 - Provider: OpenRouter OK
 - Model: openai/gpt-oss-120b:free
-- Summary: The scanner highlighted three BUY‑watch candidates—RMDA.CA, CCAP.CA and MPRC.CA—because they all sit above their 20‑ and 50‑day moving averages, show solid liquidity spikes, and have bullish outlook scores above 90. RMDA leads with the highest priority score, supported by a clear support zone at 4.78 EGP and a modest resistance at 5.19 EGP, while CCAP and MPRC trade well above support and have RSI in the 55‑61 range, indicating room for upside. The broader market context shows a bearish EGX30 but a constructive EGX70, with sector breadth at 61.9 % and the risk mode set to SELECTIVE_SMALL_MID_SWINGS, meaning the scanner is focusing on isolated, higher‑conviction setups rather than broad marke
-- RMDA.CA: above MA20/MA50, liquidity spike 18.8 %, support 4.78 EGP, resistance 5.19 EGP, RSI 62.9 % (low confidence, momentum extended).
-- CCAP.CA: solid liquidity, price well above support 4.55 EGP, resistance 5.72 EGP, RSI 54.6 % (sector Investment Holding, far above support).
-- MPRC.CA: liquidity spike 1.8 %, support 30.61 EGP, resistance 34.55 EGP, RSI 60.7 % (sector not leading).
-- EGX30 bearish vs EGX70 constructive → risk mode SELECTIVE_SMALL_MID_SWINGS, favoring isolated swing entries.
-- Uncertainty: macro trend bearish, momentum extended on RMDA, and sector leadership not uniform; watch price action before treating as swing entry.
+- Summary: The scanner found no ticket meeting all evidence, liquidity, freshness, and technical gates, so the default action is HOLD. EGX30 remains bearish with weak breadth, while EGX70 shows a constructive trend and broader sector support. Risk mode is set to SELECTIVE_SMALL_MID_SWINGS, focusing on limited‑size, short‑term opportunities amid mixed market signals.
+- EGX30: 10% above MA20, 70% above MA50, median 5‑day return –0.75%; bearish regime limits upside risk.
+- EGX70: 51% above MA20, 85% above MA50, median 5‑day return +0.91%; constructive regime permits selective swings.
+- Sector breadth 61.9% with Technology & Distribution, Investment Holding, Tourism & Leisure leading.
+- Top scanner rows (RMDA, ECAP, CCAP, etc.) show bullish outlooks but lack confirmed evidence, so they stay on hold.
+- Uncertainty remains high: liquidity spikes and RSI levels vary, and market regime shift could change risk exposure in the next 1‑3 days.
 
 ## Top Liquidity Spikes
 - RMDA.CA: spike=18.77 liquidity=1053935232.0 outlook=BULLISH_WATCH score=96.1 buy_ready=True
@@ -58,18 +58,7 @@ Trigger: scheduled cron=0 8 * * 0-4 mapped to intraday; Cairo now 2026-06-08 15:
 - #8 General / Verified EGX Expansion: score=5.79 5d=2.1% 20d=0.93% aboveMA50=81.73%
 
 ## Today's Prioritized Action Tickets
-- Priority #1: BUY RMDA.CA
-  - Entry: 5.24 | Take profit: 5.66 | Stop loss: 5.03
-  - Confidence: LOW | score=31.4 | outlook=BULLISH_WATCH 96.1
-  - Reason: WATCH/BUY SETUP: RMDA.CA has aligned current price data, liquidity above threshold, price above MA20/MA50, RSI 62.85, support 4.78, resistance 5.19, and evidence sources. Macro trend is Bearish; market regime is SELECTIVE_SMALL_MID_SWINGS; verify price action in Thndr before treating it as a swing entry.
-- Priority #2: BUY CCAP.CA
-  - Entry: 5.6 | Take profit: 6.04 | Stop loss: 5.38
-  - Confidence: LOW | score=30.64 | outlook=BULLISH_WATCH 93
-  - Reason: WATCH/BUY SETUP: CCAP.CA has aligned current price data, liquidity above threshold, price above MA20/MA50, RSI 54.55, support 4.55, resistance 5.72, and evidence sources. Macro trend is Bearish; market regime is SELECTIVE_SMALL_MID_SWINGS; verify price action in Thndr before treating it as a swing entry.
-- Priority #3: BUY MPRC.CA
-  - Entry: 33.56 | Take profit: 36.24 | Stop loss: 32.22
-  - Confidence: LOW | score=29.84 | outlook=BULLISH_WATCH 95.79
-  - Reason: WATCH/BUY SETUP: MPRC.CA has aligned current price data, liquidity above threshold, price above MA20/MA50, RSI 60.71, support 30.61, resistance 34.55, and evidence sources. Macro trend is Bearish; market regime is SELECTIVE_SMALL_MID_SWINGS; verify price action in Thndr before treating it as a swing entry.
+- HOLD: Local fallback HOLD: no candidate passed evidence, liquidity, freshness, and technical gates.
 
 ## Thndr Instruction
 - Advisor-only signal mode is active. The scanner never executes trades.
@@ -302,35 +291,33 @@ Trigger: scheduled cron=0 8 * * 0-4 mapped to intraday; Cairo now 2026-06-08 15:
 - These checks are historical context only, not a prediction or guarantee.
 
 ## Evidence
-- RMDA.CA: status=RECENT_ACCEPTED latest=2026-03-31 age_days=69 sources=3 expected=Tenth of Ramadan Pharmaceutical Industries summary=Recent evidence for Tenth of Ramadan Pharmaceutical Industries (RMDA.CA) includes financial results for Q4 2025 and the latest quarter, showing total revenue of EGP 1.13 billion and net income of EGP 30.17 million for Q4 2025. The company also reported sales of EGP 1,066.78 million and net income of EGP 102.76 million for the latest quarter. Additionally, there are recent disclosures regarding the Board of Directors and shareholder structure, as well as AGM resolutions.
-  - Tenth of Ramadan Pharmaceutical Industries & Diagnostic-Rameda Income Statement – EGX:RMDA - TradingView (Q4 2025 Financials): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE522k9Js3g6iYT2O6OgCzfZ93W9CQ_7ujZ6bWsI0aAMc1NgtaWbNacGsuLqd1O1DBemMvc-lacuThKtQJExVl2j68wD4JQP1NDOjFDtYBStwxpEVVcoxSIvb2FHzacmJb8IB8BT-83SBS2bIkzc1XBuAFecHf6emOgvxbBuW-Xg6OuPQ==
-  - EGX:RMDA Financials | Tenth of Ramadan for Pharmaceutical - Investing.com (Latest Quarter Financials): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFqyks69WN8twM2A6w3c8zvzviSvnjzzEpKRqIlj3xQKqaCkQ4vXoF2LKW2SFaLwHE6Je8KBq8e5uOcq7c2x3wLTX9_fK5amNA3aUEJYpPv93iqKxRKhoa8Q8rlXLvwQ_n8Cp3245ssWZ4yINHbdVzic27f6x5jjdYwLEAaIp8KbCOOX3GajO6JcXBKew6Rm2JASw==
-  - Tenth Of Ramadan Pharmaceutical Industries&Diagnostic-Rameda (RMDA.CA) - Disclosure Form Concerning the BoD & the Shareholders' Structure - The Egyptian Exchange (March 31, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQELmWlVYjyMdxDG3x3NHT4_w6ExxSTflBK4O1lC85jqFyD-VghvX7Uxpvu9-Bz9y-mS1u0ziAObnevLsTU3ZyvTWTx7SSpuVfXI4ZWGIOjH7LQ9xtoM7FCnugtgiZOuK2GsmH3Mkxwrv39sT-9T4RdGLSc=
+- RMDA.CA: status=REJECTED_TICKER_MISMATCH latest=n/a age_days=n/a sources=0 expected=Tenth of Ramadan Pharmaceutical Industries summary=Evidence rejected for RMDA.CA: source text did not clearly match RMDA.CA / Tenth of Ramadan Pharmaceutical Industries.
 - ECAP.CA: status=REJECTED_TICKER_MISMATCH latest=n/a age_days=n/a sources=0 expected=Al Ezz Ceramics & Porcelain Co. summary=Evidence rejected for ECAP.CA: source text did not clearly match ECAP.CA / Al Ezz Ceramics & Porcelain Co..
-- CCAP.CA: status=RECENT_ACCEPTED latest=2026-06-07 age_days=1 sources=3 expected=Qalaa Holdings summary=Qalaa Holdings (CCAP.CA) has released several financial results within the last 12 months, including consolidated financial results for the year ending December 31, 2023, and for the three- and nine-month periods ending September 30, 2025. The company also had disclosures regarding a debt purchase offer and capital increase plans, with updates as recent as June 15, 2025. The stock price was recently reported as 5.750 EGP as of June 7, 2026.
-  - NewsRoom - Qalaa Holdings (FY 2023, 9M 2025, 6M 2025, 6M 2024 Financial Results): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG2FVNqB-LmAzavSTUD63-gijNTyAczgnAcPJ-uM86PFU8t_Uex9seHCAkSU6pTqYC4vfBt2YqZuqgPgtK3aCwIuaxYBvQ-cwL0xBtItn7kgQMlx5xqzIQD2VSzTkA5lSgUWmc=
-  - Qalaa (CCAP) Debt Purchase Offer – Thndr Support (June 15, 2025 Update): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHfaTGTwKiznu8sVo_QKPiMh93SMe6jMFag_YtZRYqR0EtwyZNcxb6Rx-dDhH7Al6ZMIS0HR9iII02Df9eOgHeRB15yUa6GWo8miqlZuCys1pRmcm44sEjxLGas_Y7nkwDsULv4jrL88BQz6v_kJBLIxhcoELXNXA8Q_EKjGUyPwO6EBBUFqy281LK3K6tOW96QUgdlaQj7XiscdMwqw1rwHwPhINHV
-  - Citadel Capital - CS Stock Price Today | EGX: CCAP Live - Investing.com (June 7, 2026 Stock Price): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEG_s2KRgTUoq3tGdSJW4dH545Pvu53oYJCLFyMssxzQuJtJ8SHHN-RZWDcx1WbG5k4vZDcmbJUt28e9z1wb9gZGoFJuQMEydeXnSjYDhXXAV2XJzE-6zaeGM3cKX0eAx56ggk688vV7kD2zg==
-- MPRC.CA: status=RECENT_ACCEPTED latest=2026-05-20 age_days=19 sources=3 expected=Egyptian Media Production City summary=Egyptian Media Production City (MPRC.CA) reported earnings results for the first quarter ended March 31, 2026, with sales of EGP 377.13 million and net income of EGP 389.67 million. The total revenue for the last quarter was EGP 381.52 million. The company also reported its financial results (standalone) for the period ending December 31, 2024.
-  - Egyptian Media Production City Reports Earnings Results for the First Quarter Ended March 31, 2026 | MarketScreener (May 20, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFJM5SCOp8dkXjLc9GPog9zc5SmCzm0PhxAsaRrNILTtIgep8TTJZnJmd6ANOexC0LeuGoRGG3HYJWyur98fI1knlppdLURFFt5crGveHTYfe3afAXJw1N5jN3u_Be7qpAfp_AjFMyUHwzvYvcU1cJ0bsCjCgLGekVxb45QrF3ugKP9iVVKHkYcuxRcCiEUfjmRVnN0rz-9kUqx7UmxOXoMSaGER3DfkP_jKVA2w2v12EqIrxIQn_0eO1z8VSohrWvox0XUv-Kk46gkIHU27IHP7Q==
-  - Egyptian Media Production City Income Statement – EGX:MPRC - TradingView (Q4 2025 Financials): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGTHle1gsbiGAAzkREf1St7LXhnBT5f51eVUqx5U4m6UBuDngtR1MYvz_CTFRAzEAslUaCub7BWgAvUu6BYrhIwHoBC-x1u_52WWh8KyjH0Q3vAl1GE2VKLytEkH0H1XSb72uR_vzh9rAzd1uadXKi3hcVHXJ6Ql9EYJPghh-umBd0gwg==
-  - EGX:MPRC Financials | Egyptian Media Production City - Investing.com (Latest Quarter Financials): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEP8uQBxn7-YoFmzveU6qxOZO9htHmYU6FYDPIgLiXLdyY2Sqa5A2mCh_uOa40Dy3Eyebbttn289V3wACgFv5Cq-QMJixI2gspLu82ghDKBaC6uDdsmT2CSf7vw7SKuYzpS4ZbRtjTPoezPFXC4mMfkZtYIwzBqUBUWrqEw5Q==
-- RAYA.CA: status=RECENT_ACCEPTED latest=2025-07-10 age_days=333 sources=3 expected=Raya Holding summary=Raya Holding (RAYA.CA) reported significant financial growth in 2025, with revenue increasing by 41.47% to EGP 63.83 billion and earnings by 53.29% to EGP 2.59 billion. Recent news includes Q2 2025 consolidated profit of EGP 521.8 million, a EGP 1 billion credit facility from MIDBANK, inclusion in the EGX 30 Index, and an annual dividend payable on July 10, 2025. The company also reported Q1 2025 earnings results.
-  - Raya Holding Company for Financial Investments (SAE) (EGX:RAYA) - Stock Analysis (2025 Financial Performance): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHaduaUE2vj-fykBymvwZPYD1kjn95JgqwZP9UWoEprgpooN66vQEE8ToMkFTymwxQ9xueVcwCbftgvxdAHcchfYXDjO97JdUz99im-8ccZVFTABPk3Sik0Q4cTJGav_rBDsLk=
-  - News Raya Holding Company for Financial Investments (SAE) - MarketScreener (Various News from August 2025 to April 2025): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFzWkLP4BOxesBsLjOEqBYloL4eQnckHU-RSvlJBklePXpZiQM_VJ7F1qobUkQEaCUJ6TUWTRZTSV7N5B6mBYmkOuI_HyTlgV3EIqZyc9daOLXnVXPyQU6A9LjpB63IEGbB4pMx47HcfmFY6zQ1McAJ73ShwedOe2Oz_MBGSSqd0FPE_X92a6vB5oRTTtNTmU9Elmwi9TyhJJmS
-  - EGX:RAYA Financials | Raya Hld - Investing.com (Latest Quarter Financials): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGJ2XT4esfv83cSTPW3F8y_CIIjlkTpaOF-WnD_ub6ZZFHmsn44uFnGlPO91nGNPG0bWlpUlR6sAtxdTkaqcbBe6KvR162gIARDifaLKxNLl1KpL3UQsL9B0duwypMVp_04c7Kxo14N83jG0vhSTvjWRDarDxkXEzNRA80w-A==
-- NCCW.CA: status=RECENT_ACCEPTED latest=2026-06-06 age_days=2 sources=3 expected=Nasr Company for Civil Works summary=Nasr Company for Civil Works (NCCW.CA) reported revenue of EGP 43.30 million for the quarter ending March 31, 2026, and full-year earnings results for December 31, 2025, with sales of EGP 348.76 million. The company has had several recent announcements from the EGX, including AGM minutes, 3-month results, and Board of Directors' decisions in May and June 2026. The stock price was 6.26 EGP as of June 6, 2026.
-  - Nasr Company for Civil Works (EGX:NCCW) Revenue - Stock Analysis (March 31, 2026 Revenue): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEc5nylQLVjlJ2jnP2IZsEP5JG-uhbltyoBKyQjh3OLHSn5leBUOTX8IAd2r-HzncpHXoRhmQVFCF8FhCX2R2koD55Dc3CflbANFtDgiJlKwPkoinajdlQecMqRhcFKXbiZ7mfk9mQckgD1Tw==
-  - Nasr Company for Civil Works Reports Earnings Results for the Full Year Ended December 31, 2025 | MarketScreener (April 5, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFgXVToF_uETsdsk0DOhokgeGcplkoEObj8XUe09jOueZcMVFZ5F-3h_GPSI-7StZ3wYHcZjUzMV7fDiyN7QnJ513IdrGlE_8eN2ZJ-JLFsAd5TIzjmqCjymJ_dsetz45XUalY833YBZ_wD_sU-1vTtF8QATcMUG7L7PiWkB3kWQJyRQfAFvqH05XtTO9002wWvn7vXnB05ZKPWP_mz4L9AgVM0sF8GGsNTHC8T04fq8i6nQ9rgsf_8krVSYepgfQJo3n3SUhrmofh8PaMZ5g==
-  - The Egyptian Exchange - EGX News & Media Releases, Listing News, Members News, Financial Statements (June 3, May 25, May 18, 2026 News): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGVYb6mRsZ9msnAkR5E3DkAQWXIODvJXdnXbEia25xaq0NxbhL2IEy6CxetW-tM5PCg6x5yg8-r44zHGfc136ztnZ8AQE_SO4UYSX70REA5Us4BFJiUg72eFZpnJ7vVSEjZAOaYFl2W3bWFwf_0Nqb9m42x
-- AREH.CA: status=RECENT_ACCEPTED latest=2026-06-15 age_days=0 sources=3 expected=Real Estate Egyptian Consortium S.A.E summary=Real Estate Egyptian Consortium S.A.E (AREH.CA) reported earnings results for the full year ended December 31, 2025, showing a shift to net loss of EGP 39.42 million. However, Q1 2026 profits hiked 91% year-over-year. The company also released its Q1 2026 earnings on June 4, 2026, with revenue up 21% and net income up 91%. Recent disclosures include a Board of Directors and shareholders' structure form dated April 20, 2026, and an AGM invitation for June 15, 2026. The market capitalization was EGP 548 million as of May 8, 2026.
-  - Real Estate Egyptian Consortium S.A.E Reports Earnings Results for the Full Year Ended December 31, 2025 | MarketScreener (April 30, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFgZQlfUZllQ_Fa2wEChQwUKye_gYK8GuR1uo4_gp5JoXemmLv8qbhGbjH4uk0vzsxe9s1azNLewzPOBngn92qaV12ooZsPWs7vPIpWpwohbKRYuOMfqcC3USGVnvBCrH9WTuKd5LK1_9m3Hwc6zEk8pk_wkAE4ZXi9HoUZ-ey2sxpmV4PtMh8-wutrNea3WquCF8UQfgsS14LRW6bHsXYdBPaQXKyqD8fY24fjyMiWmq7YMoXQtjB82HgbAPFUa-HAOveUdMfYfMBh_15j-oFLKfI=
-  - Real Estate Egyptian Group (AREH.CA) - Stock Analysis - Simply Wall St (Q1 2026 Earnings, June 4, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGw0ICWcI_Eg5S1WQ6KO5QD5DHe7cmNGi74JVk-CpONV2E-J3lQ7_J8IhHZ05tGQ8tghH_Fa1GQ3JKCdG1RUTocCoza6xLVlM1jbpIGZOWUkKcvyopnC9_Lddisy5nHgBwEggDLPVOZq3s6fXG7bp8HYaKhxZRgQR9qWEWt7mjXb2FFRemvmnTvICD1qJauBo14n4ncSsiIeLpfb_7R9WduQbiwLiron9OWcJGzFiDe9PgA
-  - Real Estate Egyptian Consortium 1.47 4.26 - Arab Finance - Company Profile (June 2, 2026 and April 30, 2026 News): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHroSKeiEYyRABq7y4Ut3bzLt4c5TAXAw4OTrULAWkr-vwjtBjdwvpP09CSxJ4msR3BBqen1JWE4rj8IagIE7IHywazY4eaa4ngR_NcDdzn2ZWn6hZo_Kr2s1iP8WHYkfSUvZOm1YaxGGeeddPc-MZePg==
+- CCAP.CA: status=REJECTED_TICKER_MISMATCH latest=n/a age_days=n/a sources=0 expected=Qalaa Holdings summary=Evidence rejected for CCAP.CA: source text did not clearly match CCAP.CA / Qalaa Holdings.
+- MPRC.CA: status=REJECTED_TICKER_MISMATCH latest=n/a age_days=n/a sources=0 expected=Egyptian Media Production City summary=Evidence rejected for MPRC.CA: source text did not clearly match MPRC.CA / Egyptian Media Production City.
+- RAYA.CA: status=OLD_ACCEPTED latest=2025-01-01 age_days=523 sources=3 expected=Raya Holding summary=Raya stock maintains bullish momentum above EGP 9; Aman Holding, MSMEDA partner to inject EGP 300m into SMEs across Egypt; Raya Holding’s consolidated profits surge in 2025; revenues hit EGP 63.8bn
+  - Raya stock maintains bullish momentum above EGP 9: https://english.mubasher.info/news/4601857/Raya-stock-maintains-bullish-momentum-above-EGP-9/
+  - Aman Holding, MSMEDA partner to inject EGP 300m into SMEs across Egypt: https://english.mubasher.info/news/4577815/Aman-Holding-MSMEDA-partner-to-inject-EGP-300m-into-SMEs-across-Egypt/
+  - Raya Holding’s consolidated profits surge in 2025; revenues hit EGP 63.8bn: https://english.mubasher.info/news/4564195/Raya-Holding-s-consolidated-profits-surge-in-2025-revenues-hit-EGP-63-8bn/
+- NCCW.CA: status=ACCEPTED_UNDATED latest=n/a age_days=n/a sources=3 expected=Nasr Company for Civil Works summary=Nasr for Civil Works unveils EGP 150m capital increase; Arabia Investments, Nasr Company for Civil Works unveil capital hike; Nasr Company for Civil Works’ consortium signs EUR 46m agreement with Uganda
+  - Nasr for Civil Works unveils EGP 150m capital increase: https://english.mubasher.info/news/4550493/Nasr-for-Civil-Works-unveils-EGP-150m-capital-increase/
+  - Arabia Investments, Nasr Company for Civil Works unveil capital hike: https://english.mubasher.info/news/4284206/Arabia-Investments-Nasr-Company-for-Civil-Works-unveil-capital-hike/
+  - Nasr Company for Civil Works’ consortium signs EUR 46m agreement with Uganda: https://english.mubasher.info/news/4249759/Nasr-Company-for-Civil-Works-consortium-signs-EUR-46m-agreement-with-Uganda/
+- AREH.CA: status=ACCEPTED_UNDATED latest=n/a age_days=n/a sources=3 expected=Real Estate Egyptian Consortium S.A.E summary=Real Estate Egyptian Consortium’s net profits approach EGP 2m in 9M-25; Shareholder ups stake in Real Estate Egyptian; Target for Real Estate Investment cuts stake in Real Estate Egyptian
+  - Real Estate Egyptian Consortium’s net profits approach EGP 2m in 9M-25: https://english.mubasher.info/news/4528467/Real-Estate-Egyptian-Consortium-s-net-profits-approach-EGP-2m-in-9M-25/
+  - Shareholder ups stake in Real Estate Egyptian: https://english.mubasher.info/news/4026301/Shareholder-ups-stake-in-Real-Estate-Egyptian/
+  - Target for Real Estate Investment cuts stake in Real Estate Egyptian: https://english.mubasher.info/news/4010821/Target-for-Real-Estate-Investment-cuts-stake-in-Real-Estate-Egyptian/
 - LUTS.CA: status=REJECTED_TICKER_MISMATCH latest=n/a age_days=n/a sources=0 expected=Lotus Agri Capital summary=Evidence rejected for LUTS.CA: source text did not clearly match LUTS.CA / Lotus Agri Capital.
 
 ## Warnings
+- Evidence rejected for RMDA.CA: source text did not clearly match RMDA.CA / Tenth of Ramadan Pharmaceutical Industries.
+- Gemini batch evidence failed: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
 - Evidence rejected for ECAP.CA: source text did not clearly match ECAP.CA / Al Ezz Ceramics & Porcelain Co..
+- Evidence rejected for CCAP.CA: source text did not clearly match CCAP.CA / Qalaa Holdings.
+- Evidence rejected for MPRC.CA: source text did not clearly match MPRC.CA / Egyptian Media Production City.
+- Evidence for RAYA.CA matches the company but appears old; latest detected date is 2025-01-01.
+- Evidence for NCCW.CA matches the company but no source/report date was detected.
+- Evidence for AREH.CA matches the company but no source/report date was detected.
 - Mubasher stock page returned no evidence titles for LUTS.CA.
 - No Yahoo or Mubasher evidence found for LUTS.CA.
 - Evidence rejected for LUTS.CA: source text did not clearly match LUTS.CA / Lotus Agri Capital.
