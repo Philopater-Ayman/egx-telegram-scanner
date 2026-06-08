@@ -1,10 +1,10 @@
 # Telegram-First EGX Scanner Report
 
-Scan phase: Post-close tomorrow tickets
-Generated UTC: 2026-06-08T16:37:51.007372+00:00
-Generated Cairo: 2026-06-08 19:37
-Run timing: target 15:30 Cairo | generated Cairo 2026-06-08 19:37 | cron 30 12 * * 0-4
-Trigger: scheduled cron=30 12 * * 0-4 mapped to post_close; Cairo now 2026-06-08 19:33
+Scan phase: Evening tomorrow plan
+Generated UTC: 2026-06-08T18:45:19.168504+00:00
+Generated Cairo: 2026-06-08 21:45
+Run timing: target 19:30 Cairo | generated Cairo 2026-06-08 21:45 | cron 30 16 * * 0-4
+Trigger: scheduled cron=30 16 * * 0-4 mapped to evening_plan; Cairo now 2026-06-08 21:40
 
 ## Control Center
 - Action tickets: 0 prioritized signal(s)
@@ -33,12 +33,12 @@ Trigger: scheduled cron=30 12 * * 0-4 mapped to post_close; Cairo now 2026-06-08
 ## AI Narrative
 - Provider: OpenRouter OK
 - Model: openai/gpt-oss-120b:free
-- Summary: The scanner found no ticket meeting all evidence, liquidity, freshness, and technical gates, so the default action is HOLD. EGX30 remains bearish with weak breadth, while EGX70 shows a constructive trend and broader sector support. Risk mode is set to SELECTIVE_SMALL_MID_SWINGS, focusing on limited‑size, short‑term opportunities amid mixed market signals.
-- EGX30: 10% above MA20, 70% above MA50, median 5‑day return –0.75%; bearish regime limits upside risk.
-- EGX70: 51% above MA20, 85% above MA50, median 5‑day return +0.91%; constructive regime permits selective swings.
-- Sector breadth 61.9% with Technology & Distribution, Investment Holding, Tourism & Leisure leading.
-- Top scanner rows (RMDA, ECAP, CCAP, etc.) show bullish outlooks but lack confirmed evidence, so they stay on hold.
-- Uncertainty remains high: liquidity spikes and RSI levels vary, and market regime shift could change risk exposure in the next 1‑3 days.
+- Summary: The local scanner highlighted a short list of buy‑ready stocks despite a bearish EGX30 backdrop and a constructive EGX70 environment. Liquidity spikes and bullish technical outlooks (support near 20‑day levels, RSI in the 55‑63 range) drove the selection, especially in leading sectors like Technology & Distribution, Investment Holding and Healthcare. The market regime shifts to a selective‑small‑mid swing risk mode, meaning only the strongest candidates are considered, but the overall outlook remains uncertain over the next 1‑3 days.
+- Liquidity regimes (accumulation spikes or tradeable) and proximity to 20‑day support/resistance signal short‑term buying interest.
+- Sector breadth at 61.9% and leading sectors (Tech, Investment Holding, Tourism) reinforce the scanner’s focus on these tickets.
+- EGX30’s bearish trend limits broad market upside, while EGX70’s constructive trend offers sector‑specific opportunities.
+- Risk mode SELECTIVE_SMALL_MID_SWINGS narrows exposure to high‑confidence setups; however, evidence gaps keep confidence low.
+- Uncertainty remains due to mixed market signals and limited fresh fundamental evidence for most tickets.
 
 ## Top Liquidity Spikes
 - RMDA.CA: spike=18.77 liquidity=1053935232.0 outlook=BULLISH_WATCH score=96.1 buy_ready=True
