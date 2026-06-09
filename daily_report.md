@@ -1,10 +1,10 @@
 # Telegram-First EGX Scanner Report
 
-Scan phase: Post-close tomorrow tickets
-Generated UTC: 2026-06-09T15:36:10.564860+00:00
-Generated Cairo: 2026-06-09 18:36
-Run timing: target 15:30 Cairo | generated Cairo 2026-06-09 18:36 | cron 30 12 * * 0-4
-Trigger: scheduled cron=30 12 * * 0-4 mapped to post_close; Cairo now 2026-06-09 18:32
+Scan phase: Evening tomorrow plan
+Generated UTC: 2026-06-09T18:32:27.411749+00:00
+Generated Cairo: 2026-06-09 21:32
+Run timing: target 19:30 Cairo | generated Cairo 2026-06-09 21:32 | cron 30 16 * * 0-4
+Trigger: scheduled cron=30 16 * * 0-4 mapped to evening_plan; Cairo now 2026-06-09 21:28
 
 ## Control Center
 - Action tickets: 0 prioritized signal(s)
@@ -33,12 +33,12 @@ Trigger: scheduled cron=30 12 * * 0-4 mapped to post_close; Cairo now 2026-06-09
 ## AI Narrative
 - Provider: OpenRouter OK
 - Model: openai/gpt-oss-120b:free
-- Summary: The local scanner stays on HOLD because the EGX30 is in a bearish regime and sector breadth is weak (19%). EGX70 shows mixed signals but also negative 5‑day returns, prompting a defensive risk mode that blocks new buys. The top‑ranked tickets (MAAL, CCAP, KWIN, etc.) all display bullish watch outlooks and decent liquidity spikes, yet they sit near resistance or have cooling liquidity, so they are not flagged as buy‑ready under the current risk constraints.
-- EGX30 bearish, only 10% above MA20 – limits upside; EGX70 mixed, 60% above MA20 but 5‑day return still negative.
-- Sector breadth at 19% is too weak; leading sectors (Investment Holding, Tourism & Leisure, Tech) cannot lift overall market risk mode.
-- Top scanner stocks show bullish outlooks but are close to resistance or have waning liquidity, so no new entry is permitted.
-- Risk mode DEFENSIVE_NO_NEW_BUY remains until breadth improves or EGX30 shows signs of stabilization.
-- Uncertainty remains high for the next 1‑3 days as market sentiment could shift quickly with any macro news.
+- Summary: The scanner stays on HOLD because EGX30 is in a bearish regime and sector breadth is weak (19%). EGX70 shows mixed signals but still negative 5‑day returns. Risk mode is DEFENSIVE_NO_NEW_BUY, so no new entries are permitted despite several tickets showing bullish watch outlooks.
+- EGX30 trend bearish, only 10% of stocks above MA20 – limits upside potential.
+- EGX70 mixed, but 5‑day median return still negative, adding uncertainty.
+- Sector breadth at 19% is too low; leading sectors (Investment Holding, Tourism, Tech) lack broad support.
+- Top tickets (MAAL, CCAP, KWIN, etc.) are near resistance or have cooling liquidity, reinforcing the defensive stance.
+- Risk mode remains defensive; any new BUY would be blocked until breadth improves.
 
 ## Top Liquidity Spikes
 - AJWA.CA: spike=14.93 liquidity=155943632.0 outlook=WEAK_OR_RISKY score=0 buy_ready=False
