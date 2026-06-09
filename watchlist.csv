@@ -1,6 +1,6 @@
 Ticker,Company Name,Sector,AI Status,Watchlist Tier,Signal Status
-RMDA.CA,Tenth of Ramadan Pharmaceutical Industries,Healthcare,Active Tracking,WATCH,BUY_READY
-ECAP.CA,Al Ezz Ceramics & Porcelain Co.,General / Verified EGX Expansion,Active Tracking,WATCH,BUY_READY
-CCAP.CA,Qalaa Holdings,Investment Holding,Active Tracking,WATCH,BUY_READY
-MPRC.CA,Egyptian Media Production City,General / Verified EGX Expansion,Active Tracking,WATCH,BUY_READY
-RAYA.CA,Raya Holding,Technology & Distribution,Active Tracking,WATCH,BUY_READY
+RMDA.CA,Tenth of Ramadan Pharmaceutical Industries,Healthcare,Active Tracking,WATCH,WATCH_ONLY
+ECAP.CA,Al Ezz Ceramics & Porcelain Co.,General / Verified EGX Expansion,Active Tracking,WATCH,WATCH_ONLY
+CCAP.CA,Qalaa Holdings,Investment Holding,Active Tracking,WATCH,WATCH_ONLY
+MPRC.CA,Egyptian Media Production City,General / Verified EGX Expansion,Active Tracking,WATCH,WATCH_ONLY
+RAYA.CA,Raya Holding,Technology & Distribution,Active Tracking,WATCH,WATCH_ONLY
