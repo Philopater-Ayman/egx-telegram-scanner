@@ -1,10 +1,10 @@
 # Telegram-First EGX Scanner Report
 
-Scan phase: Post-close tomorrow tickets
-Generated UTC: 2026-06-10T16:16:06.649108+00:00
-Generated Cairo: 2026-06-10 19:16
-Run timing: target 15:30 Cairo | generated Cairo 2026-06-10 19:16 | cron 30 12 * * 0-4
-Trigger: scheduled cron=30 12 * * 0-4 mapped to post_close; Cairo now 2026-06-10 19:13
+Scan phase: Evening tomorrow plan
+Generated UTC: 2026-06-10T19:12:42.971531+00:00
+Generated Cairo: 2026-06-10 22:12
+Run timing: target 19:30 Cairo | generated Cairo 2026-06-10 22:12 | cron 30 16 * * 0-4
+Trigger: scheduled cron=30 16 * * 0-4 mapped to evening_plan; Cairo now 2026-06-10 22:08
 
 ## Control Center
 - Action tickets: 0 prioritized signal(s)
@@ -33,11 +33,12 @@ Trigger: scheduled cron=30 12 * * 0-4 mapped to post_close; Cairo now 2026-06-10
 ## AI Narrative
 - Provider: OpenRouter OK
 - Model: openai/gpt-oss-120b:free
-- Summary: The EGX30 and EGX70 indices are both in a bearish regime, with weak breadth (≈19%) and negative short‑term returns. Consequently the scanner is in DEFENSIVE_NO_NEW_BUY mode, so no BUY signals are issued despite several tickets showing bullish watch outlooks.
-- Liquidity is adequate (spikes up to 11×) but momentum is extended, keeping risk flags high.
-- Key support levels sit 4‑9% below current prices; resistance is within 1‑7%, limiting upside in the next 1‑3 days.
-- Sector breadth is low; Real Estate and General/Verified EGX Expansion lead but remain under pressure.
-- Market regime shift to defensive mode raises uncertainty; any new entry should wait for broader index recovery.
+- Summary: The EGX30 and EGX70 indices are both in a bearish regime with weak breadth (≈19%). Market risk mode is DEFENSIVE_NO_NEW_BUY, so the scanner flags HOLD for all tickets despite several stocks showing bullish watch outlooks. Liquidity is decent, but support levels sit a few percent below current prices and resistance is relatively close, adding uncertainty for the next 1‑3 days.
+- Bearish EGX30/EGX70 trends and low sector breadth keep risk mode defensive, blocking new buys.
+- Top watchlist stocks (ZMID, ADCI, KZPC, LUTS, MICH) have strong liquidity spikes but sit near resistance or show extended momentum.
+- Real Estate sector leads breadth but overall market support is weak; short‑term outlook remains uncertain.
+- RSI levels range from neutral to overheated, suggesting possible pull‑backs before any upside.
+- Expect heightened volatility; monitor support/resistance breaches before reconsidering positions.
 
 ## Top Liquidity Spikes
 - MICH.CA: spike=11.09 liquidity=99037672.0 outlook=BULLISH_WATCH score=73.82 buy_ready=False
