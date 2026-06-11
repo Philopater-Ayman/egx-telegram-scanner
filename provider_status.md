@@ -1,37 +1,35 @@
 # Provider Status
 
-Generated UTC: 2026-06-10T19:12:44.596044+00:00
-Generated Cairo: 2026-06-10 22:12
-- Scan phase: Evening tomorrow plan
-- Run timing: target 19:30 Cairo | generated Cairo 2026-06-10 22:12 | cron 30 16 * * 0-4
-- Trigger: scheduled cron=30 16 * * 0-4 mapped to evening_plan; Cairo now 2026-06-10 22:08
+Generated UTC: 2026-06-11T09:55:51.494834+00:00
+Generated Cairo: 2026-06-11 12:55
+- Scan phase: Pre-market risk check
+- Run timing: target 08:45 Cairo | generated Cairo 2026-06-11 12:55 | cron 45 5 * * 0-4
+- Trigger: scheduled cron=45 5 * * 0-4 mapped to pre_market; Cairo now 2026-06-11 12:53
 
 - Macro source: Mubasher EGX market page (delayed public data)
 - Macro freshness: DELAYED
 - Macro trend: Bearish
-- Market regime: EGX30 BEARISH / EGX70 BEARISH / sector breadth 19.05% / risk mode DEFENSIVE_NO_NEW_BUY
-- Market data: 177/190 tickers have tradeable current/delayed price data
-- Mubasher delayed current rows used: 184/190
-- Current/Yahoo technical mismatches blocked: 13/190
-- DirectFN public table health only, not trusted for action tickets: 257 rows | as_of=2026-06-10T19:08:56.802134+00:00 | error=none
+- Market regime: EGX30 BEARISH / EGX70 BEARISH / sector breadth 9.52% / risk mode DEFENSIVE_NO_NEW_BUY
+- Market data: 188/190 tickers have tradeable current/delayed price data
+- Mubasher delayed current rows used: 173/190
+- Current/Yahoo technical mismatches blocked: 2/190
+- DirectFN public table health only, not trusted for action tickets: 235 rows | as_of=2026-06-11T09:53:16.756807+00:00 | error=none
 - Data quality issues: 0
-- Evidence sources found: 15
+- Evidence sources found: 12
 - AI narrative: OpenRouter OK (openai/gpt-oss-120b:free)
 - Telegram sent on latest run: True
-- Latest ticket id(s): 20260610T191244Z_HOLD_NONE
+- Latest ticket id(s): 20260611T095551Z_HOLD_NONE
 - Latest history write(s): /home/runner/work/egx-telegram-scanner/egx-telegram-scanner/trade_history.csv
 
 ## Warnings
 - Evidence for ZMID.CA matches the company but appears old; latest detected date is 2025-01-01.
 - Gemini grounding skipped because market regime is defensive; local fallback evidence used.
-- Evidence for ADCI.CA matches the company but no source/report date was detected.
-- Evidence for KZPC.CA matches the company but appears old; latest detected date is 2024-01-01.
-- Mubasher stock page returned no evidence titles for LUTS.CA.
-- No Yahoo or Mubasher evidence found for LUTS.CA.
-- Evidence rejected for LUTS.CA: source text did not clearly match LUTS.CA / Lotus Agri Capital.
-- Evidence for MICH.CA matches the company but no source/report date was detected.
-- Evidence rejected for MAAL.CA: source text did not clearly match MAAL.CA / Marseille Almasreia Alkhalegeya For Holding Investment SAE.
-- Evidence for ALUM.CA matches the company but no source/report date was detected.
 - Mubasher stock-page evidence failed for ANFI.CA: 404 Client Error: Not Found for url: https://english.mubasher.info/markets/EGX/stocks/ANFI
 - No Yahoo or Mubasher evidence found for ANFI.CA.
 - Evidence rejected for ANFI.CA: source text did not clearly match ANFI.CA / Tycoon Holding Company For Financial Investments.
+- Evidence rejected for GBCO.CA: source text did not clearly match GBCO.CA / GB Corp.
+- Evidence rejected for EGAS.CA: source text did not clearly match EGAS.CA / Natural Gas and Mining Project.
+- Evidence for EMFD.CA matches the company but appears old; latest detected date is 2025-01-01.
+- Evidence for ASPI.CA matches the company but no source/report date was detected.
+- Evidence rejected for MPCI.CA: source text did not clearly match MPCI.CA / Memphis Pharmaceuticals & Chemical Industries.
+- Evidence for SDTI.CA matches the company but no source/report date was detected.
