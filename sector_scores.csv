@@ -5,15 +5,15 @@ Real Estate,13,-1.44,0.0,53.85,69.23,0.65,"PHDC.CA, TMGH.CA, EMFD.CA, ORHD.CA, Z
 Education,3,-2.15,-3.64,66.67,100.0,0.22,"CIRA.CA, TALM.CA, SCTS.CA",3.74,4
 Energy & Petrochemicals,4,-1.29,0.1,25.0,75.0,0.59,"AMOC.CA, EGAS.CA, MOIL.CA, EKHO.CA",3.39,5
 "Food, Beverages & Tobacco",7,-3.69,-1.35,42.86,71.43,0.54,"OLFI.CA, EAST.CA, POUL.CA, EFID.CA, JUFO.CA",2.49,6
-General / Verified EGX Expansion,104,-2.24,-2.17,36.54,61.54,0.52,"PRMH.CA, ELSH.CA, LUTS.CA, ASCM.CA, ANFI.CA",2.39,7
-Healthcare,6,-2.42,-4.87,33.33,83.33,0.49,"ISPH.CA, NIPH.CA, RMDA.CA, PHAR.CA, CLHO.CA",2.29,8
-Banking & Financials,10,-1.97,-3.73,20.0,50.0,0.69,"COMI.CA, ADIB.CA, EXPA.CA, HDBK.CA, SAUD.CA",1.6,9
+Banking & Financials,10,-1.97,-3.73,40.0,60.0,0.64,"COMI.CA, ADIB.CA, EXPA.CA, HDBK.CA, SAUD.CA",2.42,7
+General / Verified EGX Expansion,104,-2.24,-2.17,36.54,61.54,0.51,"PRMH.CA, ELSH.CA, LUTS.CA, ASCM.CA, ANFI.CA",2.38,8
+Healthcare,6,-2.42,-4.87,33.33,83.33,0.49,"ISPH.CA, NIPH.CA, RMDA.CA, PHAR.CA, CLHO.CA",2.29,9
 Industrial Goods & Construction,1,0.0,0.0,0.0,0.0,1.0,ORAS.CA,1.5,10
 Tourism & Leisure,1,-8.53,6.42,0.0,100.0,0.14,MHOT.CA,1.08,11
 Telecommunications,2,-5.03,-1.71,0.0,50.0,1.28,"ETEL.CA, EGSA.CA",1.06,12
 Building Materials,6,-5.52,-6.21,16.67,83.33,0.72,"MBSC.CA, ARCC.CA, PRCL.CA, MCQE.CA, SCEM.CA",0.63,13
-Technology & Distribution,1,-7.81,-3.6,0.0,100.0,0.92,RAYA.CA,0.54,14
-Agriculture & Food Production,2,-5.74,-5.61,50.0,50.0,0.58,"MPCO.CA, IFAP.CA",0.45,15
+Agriculture & Food Production,2,-5.74,-5.61,50.0,50.0,0.58,"MPCO.CA, IFAP.CA",0.45,14
+Technology & Distribution,1,-7.81,-3.6,0.0,100.0,0.8,RAYA.CA,0.36,15
 Investment Holding,3,-4.1,0.0,0.0,33.33,0.64,"CCAP.CA, OIH.CA, BINV.CA",0.32,16
 Transportation & Logistics,2,-5.63,-5.37,0.0,50.0,0.99,"ALCN.CA, CSAG.CA",-0.34,17
 Non-bank Financial Services,5,-4.5,-8.98,20.0,60.0,0.44,"HRHO.CA, BTFH.CA, CNFN.CA, ATLC.CA, CICH.CA",-0.54,18
