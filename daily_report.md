@@ -1,10 +1,10 @@
 # Telegram-First EGX Scanner Report
 
-Scan phase: Intraday liquidity update
-Generated UTC: 2026-06-15T13:53:24.947801+00:00
-Generated Cairo: 2026-06-15 16:53
-Run timing: target 11:00 Cairo | generated Cairo 2026-06-15 16:53 | cron 0 8 * * 0-4
-Trigger: scheduled cron=0 8 * * 0-4 mapped to intraday; Cairo now 2026-06-15 16:50
+Scan phase: Post-close tomorrow tickets
+Generated UTC: 2026-06-15T17:32:31.231820+00:00
+Generated Cairo: 2026-06-15 20:32
+Run timing: target 15:30 Cairo | generated Cairo 2026-06-15 20:32 | cron 30 12 * * 0-4
+Trigger: scheduled cron=30 12 * * 0-4 mapped to post_close; Cairo now 2026-06-15 20:29
 
 ## Control Center
 - Action tickets: 0 prioritized signal(s)
@@ -33,11 +33,12 @@ Trigger: scheduled cron=0 8 * * 0-4 mapped to intraday; Cairo now 2026-06-15 16:
 ## AI Narrative
 - Provider: OpenRouter OK
 - Model: openai/gpt-oss-120b:free
-- Summary: The local scanner stays on HOLD because both EGX30 and EGX70 are in a bearish regime with weak breadth (23.8%). Liquidity is expanding but most sectors are defensive, so new buys are blocked. The top‑ranked tickets show bullish watch signals, but they sit near resistance, have extended momentum or cooling liquidity, and the market’s risk mode remains DEFENSIVE_NO_NEW_BUY for the next 1‑3 days. Uncertainty remains high as broader indices stay below key moving averages.
-- EGX30/EGX70 trends bearish; median 5‑day returns negative, breadth under 25%
-- Real Estate and Automotive sectors lead but face resistance and extended momentum
-- Liquidity spikes indicate accumulation, yet market risk mode blocks new entries
-- Outlook for next 1‑3 days remains defensive with high uncertainty
+- Summary: The local scanner stays on HOLD because both EGX30 and EGX70 are in a bearish regime with weak breadth (23.81%). Liquidity is modest and sector support is limited, so the market is in DEFENSIVE_NO_NEW_BUY mode. While a few stocks show bullish watch signals, the overall outlook for the next 1‑3 days remains cautious.
+- EGX30/EGX70 trends are bearish; median 5‑day returns are negative and only ~35‑53% of stocks sit above MA20.
+- Real Estate and Automotive & Distribution lead the sector rank, but support levels are 6‑16% away and resistance is near, limiting upside.
+- Liquidity spikes indicate accumulation for several tickers, yet momentum is extended and risk notes flag no clear short‑term entry.
+- Defensive risk mode means new buys are blocked until market breadth improves; expect continued volatility.
+- Uncertainty remains high as sector breadth and liquidity could shift quickly, so monitor any change in EGX30/EGX70 breadth.
 
 ## Top Liquidity Spikes
 - EASB.CA: spike=10.42 liquidity=20741704.0 outlook=CONSTRUCTIVE score=55.55 buy_ready=False
