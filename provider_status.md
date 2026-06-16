@@ -1,10 +1,10 @@
 # Provider Status
 
-Generated UTC: 2026-06-16T11:36:17.113324+00:00
-Generated Cairo: 2026-06-16 14:36
-- Scan phase: Open liquidity confirmation
-- Run timing: target 09:15 Cairo | generated Cairo 2026-06-16 14:36 | cron 15 6 * * 0-4
-- Trigger: scheduled cron=15 6 * * 0-4 mapped to open_confirm; Cairo now 2026-06-16 14:32
+Generated UTC: 2026-06-16T12:53:06.176527+00:00
+Generated Cairo: 2026-06-16 15:53
+- Scan phase: Intraday liquidity update
+- Run timing: target 11:00 Cairo | generated Cairo 2026-06-16 15:53 | cron 0 8 * * 0-4
+- Trigger: scheduled cron=0 8 * * 0-4 mapped to intraday; Cairo now 2026-06-16 15:49
 
 - Macro source: Mubasher EGX market page (delayed public data)
 - Macro freshness: DELAYED
@@ -13,12 +13,12 @@ Generated Cairo: 2026-06-16 14:36
 - Market data: 179/190 tickers have tradeable current/delayed price data
 - Mubasher delayed current rows used: 183/190
 - Current/Yahoo technical mismatches blocked: 11/190
-- DirectFN public table health only, not trusted for action tickets: 235 rows | as_of=2026-06-16T11:32:35.934133+00:00 | error=none
+- DirectFN public table health only, not trusted for action tickets: 119 rows | as_of=2026-06-16T12:49:19.039680+00:00 | error=none
 - Data quality issues: 0
-- Evidence sources found: 9
+- Evidence sources found: 12
 - AI narrative: OpenRouter OK (openai/gpt-oss-120b:free)
 - Telegram sent on latest run: True
-- Latest ticket id(s): 20260616T113617Z_HOLD_NONE
+- Latest ticket id(s): 20260616T125306Z_HOLD_NONE
 - Latest history write(s): /home/runner/work/egx-telegram-scanner/egx-telegram-scanner/trade_history.csv
 
 ## Warnings
@@ -30,4 +30,4 @@ Generated Cairo: 2026-06-16 14:36
 - Evidence rejected for EPCO.CA: source text did not clearly match EPCO.CA / Egypt for Poultry.
 - Evidence for MOSC.CA matches the company but no source/report date was detected.
 - Evidence for PHDC.CA matches the company but appears old; latest detected date is 2025-01-01.
-- Evidence rejected for EAST.CA: source text did not clearly match EAST.CA / Eastern Company.
+- Evidence for ARAB.CA matches the company but no source/report date was detected.
