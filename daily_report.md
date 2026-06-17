@@ -1,10 +1,10 @@
 # Telegram-First EGX Scanner Report
 
-Scan phase: Intraday liquidity update
-Generated UTC: 2026-06-17T12:16:35.164421+00:00
-Generated Cairo: 2026-06-17 15:16
-Run timing: target 11:00 Cairo | generated Cairo 2026-06-17 15:16 | cron 0 8 * * 0-4
-Trigger: scheduled cron=0 8 * * 0-4 mapped to intraday; Cairo now 2026-06-17 15:13
+Scan phase: Post-close tomorrow tickets
+Generated UTC: 2026-06-17T16:13:13.450173+00:00
+Generated Cairo: 2026-06-17 19:13
+Run timing: target 15:30 Cairo | generated Cairo 2026-06-17 19:13 | cron 30 12 * * 0-4
+Trigger: scheduled cron=30 12 * * 0-4 mapped to post_close; Cairo now 2026-06-17 19:09
 
 ## Control Center
 - Action tickets: 0 prioritized signal(s)
@@ -33,11 +33,12 @@ Trigger: scheduled cron=0 8 * * 0-4 mapped to intraday; Cairo now 2026-06-17 15:
 ## AI Narrative
 - Provider: OpenRouter OK
 - Model: openai/gpt-oss-120b:free
-- Summary: The scanner highlights several high‑rank stocks (MTIE, MASR, HDBK, COMI, TMGH, etc.) that show bullish watch outlooks, solid liquidity spikes and price near support or modestly below resistance. However, the overall EGX30/EGX70 regime is mixed with weak breadth (14.29%) and recent negative 5‑day returns, prompting a defensive risk mode that blocks new buys until sector breadth improves.
-- Sector breadth is too weak, so the system stays in DEFENSIVE_NO_NEW_BUY despite individual bullish signals.
-- Liquidity spikes (e.g., MASR 2.64×, COMI 2.2×) and support levels within 5‑6% suggest short‑term stability for the highlighted tickets.
-- Automotive & Distribution leads sector scores, but EGX30/EGX70 mixed trends and sub‑MA20 breadth keep overall risk elevated.
-- Outlook remains bullish for the top tickets over the next 1‑3 days, yet uncertainty from market‑wide negative returns could reverse momentum.
+- Summary: The local scanner stays on HOLD as the EGX30 and EGX70 are in a mixed regime with weak breadth (14.29%). Defensive risk mode blocks new buys until sector support strengthens.
+- Sector breadth is low; only 14.29% of stocks show strength, keeping the risk mode at DEFENSIVE_NO_NEW_BUY.
+- EGX30 shows mixed trend, 45% above MA20 and a slight 5‑day negative return, limiting upside momentum.
+- EGX70 also mixed, 53.9% above MA20 but a –1.03% 5‑day median return, adding uncertainty for the next 1‑3 days.
+- Top‑ranked tickets (MTIE, MASR, HDBK, COMI, TMGH) are flagged as bullish watches but lack buy‑ready signals and face modest support/resistance distances.
+- Liquidity spikes suggest accumulation, yet without clear short‑term catalysts the outlook remains cautious.
 
 ## Top Liquidity Spikes
 - KWIN.CA: spike=31.94 liquidity=155374736.0 outlook=WEAK_OR_RISKY score=0 buy_ready=False
