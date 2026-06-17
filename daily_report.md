@@ -1,10 +1,10 @@
 # Telegram-First EGX Scanner Report
 
-Scan phase: Post-close tomorrow tickets
-Generated UTC: 2026-06-17T16:13:13.450173+00:00
-Generated Cairo: 2026-06-17 19:13
-Run timing: target 15:30 Cairo | generated Cairo 2026-06-17 19:13 | cron 30 12 * * 0-4
-Trigger: scheduled cron=30 12 * * 0-4 mapped to post_close; Cairo now 2026-06-17 19:09
+Scan phase: Evening tomorrow plan
+Generated UTC: 2026-06-17T18:41:48.434630+00:00
+Generated Cairo: 2026-06-17 21:41
+Run timing: target 19:30 Cairo | generated Cairo 2026-06-17 21:41 | cron 30 16 * * 0-4
+Trigger: scheduled cron=30 16 * * 0-4 mapped to evening_plan; Cairo now 2026-06-17 21:39
 
 ## Control Center
 - Action tickets: 0 prioritized signal(s)
@@ -33,12 +33,12 @@ Trigger: scheduled cron=30 12 * * 0-4 mapped to post_close; Cairo now 2026-06-17
 ## AI Narrative
 - Provider: OpenRouter OK
 - Model: openai/gpt-oss-120b:free
-- Summary: The local scanner stays on HOLD as the EGX30 and EGX70 are in a mixed regime with weak breadth (14.29%). Defensive risk mode blocks new buys until sector support strengthens.
-- Sector breadth is low; only 14.29% of stocks show strength, keeping the risk mode at DEFENSIVE_NO_NEW_BUY.
-- EGX30 shows mixed trend, 45% above MA20 and a slight 5‑day negative return, limiting upside momentum.
-- EGX70 also mixed, 53.9% above MA20 but a –1.03% 5‑day median return, adding uncertainty for the next 1‑3 days.
-- Top‑ranked tickets (MTIE, MASR, HDBK, COMI, TMGH) are flagged as bullish watches but lack buy‑ready signals and face modest support/resistance distances.
-- Liquidity spikes suggest accumulation, yet without clear short‑term catalysts the outlook remains cautious.
+- Summary: The EGX30 and EGX70 indices are in a mixed regime with weak breadth (14.29%) and a defensive risk mode that blocks new buys. Liquidity spikes are present in several stocks, but sector breadth is thin, so the scanner flags HOLD for all tickets. Expect limited upside and heightened uncertainty over the next 1‑3 days.
+- EGX30/EGX70 mixed trends, 5‑day returns negative, risk mode = DEFENSIVE_NO_NEW_BUY
+- Sector breadth low; only automotive & distribution shows strong momentum
+- Liquidity spikes (e.g., MTIE, MASR) indicate accumulation but no clear breakout
+- Support levels 4‑6% away, resistance nearby; short‑term price action likely range‑bound
+- Uncertainty remains high due to weak market breadth and mixed index signals
 
 ## Top Liquidity Spikes
 - KWIN.CA: spike=31.94 liquidity=155374736.0 outlook=WEAK_OR_RISKY score=0 buy_ready=False
