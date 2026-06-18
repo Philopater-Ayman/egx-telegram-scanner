@@ -1,13 +1,13 @@
 # Telegram-First EGX Scanner Report
 
-Scan phase: Pre-market risk check
-Generated UTC: 2026-06-18T10:01:12.172746+00:00
-Generated Cairo: 2026-06-18 13:01
-Run timing: target 08:45 Cairo | generated Cairo 2026-06-18 13:01 | cron 45 5 * * 0-4
-Trigger: scheduled cron=45 5 * * 0-4 mapped to pre_market; Cairo now 2026-06-18 12:58
+Scan phase: Open liquidity confirmation
+Generated UTC: 2026-06-18T10:49:23.448725+00:00
+Generated Cairo: 2026-06-18 13:49
+Run timing: target 09:15 Cairo | generated Cairo 2026-06-18 13:49 | cron 15 6 * * 0-4
+Trigger: scheduled cron=15 6 * * 0-4 mapped to open_confirm; Cairo now 2026-06-18 13:46
 
 ## Control Center
-- Action tickets: 0 prioritized signal(s)
+- Action tickets: 3 prioritized signal(s)
 - BUY-ready candidates: 61
 - Data quality issues: 0
 - Tradeable price/liquidity tickers: 180/190
@@ -33,12 +33,12 @@ Trigger: scheduled cron=45 5 * * 0-4 mapped to pre_market; Cairo now 2026-06-18 
 ## AI Narrative
 - Provider: OpenRouter OK
 - Model: openai/gpt-oss-120b:free
-- Summary: The scanner highlighted a handful of EGX stocks that cleared liquidity, freshness and technical gates, mainly in bullish‑watch mode. MASR, MTIE, HDBK, COMI, TMGH and CANA show strong accumulation spikes, support‑nearby price levels and favorable sector breadth, while ECAP and ANFI are flagged for overheated RSI. EGX30 shows mixed breadth (45% above MA20) limiting risk, whereas EGX70 remains constructive (≈59% above MA20), allowing a selective‑small‑mid swing risk mode. Sector breadth is healthy at ~81%, with Automotive & Distribution leading.
-- Liquidity spikes and support within 5‑6% of current price make MASR, MTIE, HDBK, COMI, TMGH and CANA priority watch.
-- ECAP and ANFI exhibit high RSI (>85) and sector weakness, suggesting caution despite liquidity.
-- EGX30 mixed trend (below MA20 breadth) raises risk; EGX70 constructive trend supports selective swing exposure.
-- Automotive & Distribution leads sector performance; banking and real‑estate also show solid support‑resistance setups.
-- Outlook remains uncertain over the next 1‑3 days as market regime shifts could tighten liquidity and alter support levels.
+- Summary: The scanner highlights MASR.CA as the top watch‑buy candidate, followed by HDBK.CA and TMGH.CA. All three show price above their 20‑ and 50‑day MAs, solid liquidity spikes, and bullish outlook scores. MASR.CA sits near its 7.40 resistance with support at 6.54, HDBK.CA trades above 138 support and below 154 resistance, while TMGH.CA is anchored by 92.9 support and 101.4 resistance. The broader EGX70 is in a constructive regime, offering a healthier breadth than the mixed EGX30, which keeps the risk mode at SELECTIVE_SMALL_MID_SWINGS. Expect modest upside over the next 1‑3 days if price respects these support‑resistance zones, but sector leadership is weak for MASR.CA and overall market breadt
+- MASR.CA: price 7.44, RSI 61, support 6.54, resistance 7.40 – low‑confidence watch‑buy, sector not leading
+- HDBK.CA: price above MA20/50, RSI 59, support 138, resistance 154 – bullish watch‑buy, banking sector stable
+- TMGH.CA: price above MA20/50, RSI 48, support 92.9, resistance 101.4 – bullish watch‑buy, real‑estate sector neutral
+- EGX70 constructive, EGX30 mixed → risk mode stays SELECTIVE_SMALL_MID_SWINGS
+- Uncertainty: sector breadth modest, macro trend bullish but short‑term volatility possible
 
 ## Top Liquidity Spikes
 - KWIN.CA: spike=31.94 liquidity=155374736.0 outlook=WEAK_OR_RISKY score=0 buy_ready=False
@@ -58,7 +58,18 @@ Trigger: scheduled cron=45 5 * * 0-4 mapped to pre_market; Cairo now 2026-06-18 
 - #8 General / Verified EGX Expansion: score=5.26 5d=1.18% 20d=0.0% aboveMA50=68.27%
 
 ## Today's Prioritized Action Tickets
-- HOLD: Local fallback HOLD: no candidate passed evidence, liquidity, freshness, and technical gates.
+- Priority #1: BUY MASR.CA
+  - Entry: 7.44 | Take profit: 8.04 | Stop loss: 7.14
+  - Confidence: LOW | score=31.38 | outlook=BULLISH_WATCH 89.26
+  - Reason: WATCH/BUY SETUP: MASR.CA has aligned current price data, liquidity above threshold, price above MA20/MA50, RSI 61.24, support 6.54, resistance 7.4, and evidence sources. Macro trend is Bullish; market regime is SELECTIVE_SMALL_MID_SWINGS; verify price action in Thndr before treating it as a swing entry.
+- Priority #2: BUY HDBK.CA
+  - Entry: 145.42 | Take profit: 156.32 | Stop loss: 139.97
+  - Confidence: LOW | score=28.9 | outlook=BULLISH_WATCH 95.24
+  - Reason: WATCH/BUY SETUP: HDBK.CA has aligned current price data, liquidity above threshold, price above MA20/MA50, RSI 59.06, support 138.0, resistance 154.0, and evidence sources. Macro trend is Bullish; market regime is SELECTIVE_SMALL_MID_SWINGS; verify price action in Thndr before treating it as a swing entry.
+- Priority #3: BUY TMGH.CA
+  - Entry: 96.86 | Take profit: 102.32 | Stop loss: 94.13
+  - Confidence: LOW | score=28.04 | outlook=BULLISH_WATCH 92.91
+  - Reason: WATCH/BUY SETUP: TMGH.CA has aligned current price data, liquidity above threshold, price above MA20/MA50, RSI 48.52, support 92.91, resistance 101.4, and evidence sources. Macro trend is Bullish; market regime is SELECTIVE_SMALL_MID_SWINGS; verify price action in Thndr before treating it as a swing entry.
 
 ## Thndr Instruction
 - Advisor-only signal mode is active. The scanner never executes trades.
@@ -291,30 +302,33 @@ Trigger: scheduled cron=45 5 * * 0-4 mapped to pre_market; Cairo now 2026-06-18 
 - These checks are historical context only, not a prediction or guarantee.
 
 ## Evidence
-- MASR.CA: status=OLD_ACCEPTED latest=2025-01-01 age_days=533 sources=3 expected=Madinet Masr For Housing and Development summary=Madinet Masr to pay out EGP 0.15/shr for 2025 upon equityholders&#39; approval; Madinet Masr logs 24% higher consolidated profits in 2025; dividends recommended; Madinet Masr to distribute treasury stocks in first-ever move
-  - Madinet Masr to pay out EGP 0.15/shr for 2025 upon equityholders&#39; approval: https://english.mubasher.info/news/4601386/Madinet-Masr-to-pay-out-EGP-0-15-shr-for-2025-upon-equityholders-approval/
-  - Madinet Masr logs 24% higher consolidated profits in 2025; dividends recommended: https://english.mubasher.info/news/4578449/Madinet-Masr-logs-24-higher-consolidated-profits-in-2025-dividends-recommended/
-  - Madinet Masr to distribute treasury stocks in first-ever move: https://english.mubasher.info/news/4577724/Madinet-Masr-to-distribute-treasury-stocks-in-first-ever-move/
+- MASR.CA: status=RECENT_ACCEPTED latest=2026-06-01 age_days=17 sources=3 expected=Madinet Masr For Housing and Development summary=Madinet Masr For Housing and Development (MASR.CA) reported its Q1 2026 consolidated and standalone financial results on June 1, 2026. The company's CEO, Eng. Abdallah Sallam, was recognized among Forbes Middle East's 100 Most Impactful Real Estate Leaders for 2026.
+  - Medinet MASR Housing (MASR.CA) Reports 3 Months Consolidated Results (01/06/2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHxn80ra9cFEN-88zUFRw4mrN5tlSYtX6pau9C7wZYjjzOFJSPFFlQKXSM-LabbJqmmeVycDstEFSXv8u5Ucg7w_F_TxvBX6pnKwJ50XD1bQFUG_vXatuUWRy-TjB0FQTCpW2AD6bJavfKIjV1ECkK5lF8
+  - Medinet MASR Housing (MASR.CA) Reports 3 Months Standalone Results (01/06/2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHxn80ra9cFEN-88zUFRw4mrN5tlSYtX6pau9C7wZYjjzOFJSPFFlQKXSM-LabbJqmmeVycDstEFSXv8u5Ucg7w_F_TxvBX6pnKwJ50XD1bQFUG_vXatuUWRy-TjB0FQTCpW2AD6bJavfKIjV1ECkK5lF8
+  - Madinet Masr CEO named among Forbes Middle East's 100 Most Impactful Real Estate Leaders for 2026: https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHTPN0zkjfTMKTPYxrwkqorcEjfAKPOrCk7KphYZ7Lv-P2KD9IKmeKKH1BQBHdea1T9xytiEwA0vrYEFHIZbNpDnTzzqDgf8WypAkQrbn0BUGQVYdw=
 - MTIE.CA: status=REJECTED_TICKER_MISMATCH latest=n/a age_days=n/a sources=0 expected=MM Group For Industry and International Trade summary=Evidence rejected for MTIE.CA: source text did not clearly match MTIE.CA / MM Group For Industry and International Trade.
-- HDBK.CA: status=REJECTED_TICKER_MISMATCH latest=n/a age_days=n/a sources=0 expected=Housing and Development Bank Egypt summary=Evidence rejected for HDBK.CA: source text did not clearly match HDBK.CA / Housing and Development Bank Egypt.
-- COMI.CA: status=REJECTED_TICKER_MISMATCH latest=n/a age_days=n/a sources=0 expected=Commercial International Bank Egypt summary=Evidence rejected for COMI.CA: source text did not clearly match COMI.CA / Commercial International Bank Egypt.
+- HDBK.CA: status=RECENT_ACCEPTED latest=2026-05-22 age_days=27 sources=3 expected=Housing and Development Bank Egypt summary=Housing and Development Bank Egypt (HDBK.CA) released its Q1 2026 earnings on May 22, 2026, showing an EPS of EGP 10.57 and net income of EGP 5.61 billion. The bank also reported its consolidated and standalone financial results for Q1 2026 on May 19, 2026.
+  - Housing and Development Bank- Egypt (S.A.E)(CASE:HDBK) First quarter 2026 earnings released (May 22, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQECxzpzWRBzIV0RINCyLHKIThrZIZMyN1YwF7Pmx2DcvbTWGyD5Je7Ht_dHqhprF6QXZiVl5DRIuPGcb1I6ZndZOLv3PQOZ6JbgMub5gnx3ZczAaALPT55Um1QYlEcQ
+  - Housing & Development Bank (HDBK.CA) Reports Its Financial Results (Consolidated) for The Period From 01/01/2026 to 31/03/2026 (19/05/2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFJKVmjiw4owq_-HAWnFeMKsFuISufGScWnLa_5TxN9ygavQEAVWa6qia_18jHyXZQhKfXorZB0n4rFUmgeQbGkRSrZLzi3AiNeD85KBXQVhIaY35bDrok6wyTnUEf6Z84Cs2DHqYmaF4TtAbT6gh6gYuU
+  - Housing & Development Bank (HDBK.CA) Reports Its Financial Results (Standalone) for The Period From 01/01/2026 to 31/03/2026 (19/05/2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFJKVmjiw4owq_-HAWnFeMKsFuISufGScWnLa_5TxN9ygavQEAVWa6qia_18jHyXZQhKfXorZB0n4rFUmgeQbGkRSrZLzi3AiNeD85KBXQVhIaY35bDrok6wyTnUEf6Z84Cs2DHqYmaF4TtAbT6gh6gYuU
+- COMI.CA: status=RECENT_ACCEPTED latest=2026-05-12 age_days=37 sources=3 expected=Commercial International Bank Egypt summary=Commercial International Bank Egypt (COMI.CA) reported a Q1 2026 net income of EGP 17.8 billion on May 12, 2026. The bank also held an Extraordinary General Assembly on March 15, 2026, and declared cash dividends on March 17, 2026. CIB began the due diligence process on HSBC's retail banking portfolio on February 23, 2026.
+  - Commercial International Bank (EGX:COMI) reported first-quarter 2026 net income of EGP 17.8 billion (May 12, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGhy6qrPd_XpLTWWrtbPoPEPEi_Aho4IKSk2RRFzb22eTnkrJ6vCtGpwhaDGdIMT43erFQh3yS1xznuYHOz2jYZE-ylTLPhUetou1G_GWsP-94j-Au0BdPDBpZIjxhzvIBvU22L58aJ
+  - CIB Consolidated Financial Statements 1Q26 (May 12, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG-YfUDbVO8NYaSWqce4en7jTauGUz2ny210QnzxQFNB_zfqNi-fYWjgwFsVSvIwyPvceZjMQuoUc1sw0mo8N1onw076jKtBEoAjE7KuQj-VWWUVCFKYyLYM-DSbtn0JyXTLqvKZO3HmwVVjOGDf_IGhOZSQQs3R19M8w==
+  - Commercial International Bank Egypt (CIB) has scheduled an Extraordinary General Assembly for March 15, 2026 (Feb 19, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGhy6qrPd_XpLTWWrtbPoPEPEi_Aho4IKSk2RRFzb22eTnkrJ6vCtGpwhaDGdIMT43erFQh3yS1xznuYHOz2jYZE-ylTLPhUetou1G_GWsP-94j-Au0BdPDBpZIjxhzvIBvU22L58aJ
+- ANFI.CA: status=RECENT_ACCEPTED latest=2026-06-17 age_days=1 sources=3 expected=Tycoon Holding Company For Financial Investments summary=Tycoon Holding Company For Financial Investments (ANFI.CA) reported a net loss of EGP 1,093,760 for Q1 2026 on June 1, 2026. The stock experienced a significant surge of 20.00% on June 17, 2026. The company's 2025 financial performance showed substantial increases in revenue and earnings.
+  - Tycoon Holding Company For Financial Investments (TYCN.CA) Reports Its Financial Results for The Period From 01/01/2026 to 31/03/2026 (01/06/2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGpRG95BffXHjvxns3QRlah8V5AGjOHXvcs0LcbBFdqFo0RnXaAn3JLY8XSWpPHtHccUhSR6LYdM8lw8vpuTDdFDIu3XNb4ZVpcSG87o1FTYSHfUGr_Q9Fpz505BSHJ53RXA80YTElsO2GHKlGvfozKag==
+  - Tycoon Holding Company for Financial Investments surged 20.00% to EGP 34.50 (June 17, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEJ_ie-euy9l1Smnlmf3geptzg5GkahR9KhBk2_AJdyqOSR0iHdst8iVOSSydPAEfg90Pu9M0gGSoSfyfGb5imPZrpw3mk0FKdV3OH6oF4BxbnL16r6-AhfcTgh8nFYGJ6O7VYJ_D5yvk1H_Uo6mL7XJIP1R-8cbJHICh5fshm-glV01rV4cFgfjkEOczc7T0VfOwdJz9mgE1Bch_ynvq5liUo4x65ZN_RKJivyytLFR0gUn3rq_N37ZDWQFZLw
+  - Tycoon Holding Company For Financial Investments (EGX:ANFI) Financial Performance in 2025: https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEOKFgjqAZ52E4Kr4UkRwK0pV_451MQlFM_Ht_fctku29URrpQv3vdDJqR9gjTiKF-OVQwCR8hM9hCFlc-PzhWgWE0vpv3y7vyIxAx224E8mOUPx6iP1L7NA4fIblcEQrgvzw==
 - ECAP.CA: status=REJECTED_TICKER_MISMATCH latest=n/a age_days=n/a sources=0 expected=Al Ezz Ceramics & Porcelain Co. summary=Evidence rejected for ECAP.CA: source text did not clearly match ECAP.CA / Al Ezz Ceramics & Porcelain Co..
-- ANFI.CA: status=REJECTED_TICKER_MISMATCH latest=n/a age_days=n/a sources=0 expected=Tycoon Holding Company For Financial Investments summary=Evidence rejected for ANFI.CA: source text did not clearly match ANFI.CA / Tycoon Holding Company For Financial Investments.
-- TMGH.CA: status=REJECTED_TICKER_MISMATCH latest=n/a age_days=n/a sources=0 expected=Talaat Moustafa Group Holding summary=Evidence rejected for TMGH.CA: source text did not clearly match TMGH.CA / Talaat Moustafa Group Holding.
-- CANA.CA: status=OLD_ACCEPTED latest=2025-01-01 age_days=533 sources=3 expected=Suez Canal Bank summary=Suez Canal Bank delivers EGP 1.6bn profits in Q1-26; Suez Canal Bank unveils details for previous dividends payout; Suez Canal Bank to distribute EGP 5bn bonus shares for 2025
-  - Suez Canal Bank delivers EGP 1.6bn profits in Q1-26: https://english.mubasher.info/news/4611255/Suez-Canal-Bank-delivers-EGP-1-6bn-profits-in-Q1-26/
-  - Suez Canal Bank unveils details for previous dividends payout: https://english.mubasher.info/news/4586807/Suez-Canal-Bank-unveils-details-for-previous-dividends-payout/
-  - Suez Canal Bank to distribute EGP 5bn bonus shares for 2025: https://english.mubasher.info/news/4581661/Suez-Canal-Bank-to-distribute-EGP-5bn-bonus-shares-for-2025/
+- TMGH.CA: status=RECENT_ACCEPTED latest=2026-05-19 age_days=30 sources=3 expected=Talaat Moustafa Group Holding summary=Talaat Moustafa Group Holding (TMGH.CA) reported strong Q1 2026 earnings on May 12, 2026, with revenues up 39% YoY to EGP 13.1 billion and net profit up 24% YoY to EGP 5.5 billion. The company also released its FY 2025 earnings on February 22, 2026, showing a 46% YoY increase in revenues to EGP 62.5 billion and a 43% increase in net profit to EGP 18.2 billion. An ex-dividend date of May 19, 2026, was noted.
+  - TMG Delivers Strong Broad-Based Growth in 1Q26, with Revenues Rising 39% YoY to EGP 13.1 Billion (May 12, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGYXbXyV9kStqDxxizuj0b48hm-mLmWdvs33SoIfQ4qrifvC4lWjH_ZS77PAae1jUT3koOA07DF3cKUXWvLdk7pAuCIVOwVBlS_tW5btpK4w6H6nM_GOG9hDVqxI5qwoi-LKwKPV1QcRbmZrzbdxHf9M_UmBawwkwTtgeCo2YHtas=
+  - Talaat Moustafa Group Holding FY 2025 Earnings Release (February 22, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGiLRxNsdze6JloG5aTdr854Wuz0WBCXzJ2zXaWZErj6VsXNeVbu0MroSl-ePp92Lvt9A2Rr9uum-Vp1nWY_zcAIEyC4w2Vk4XSV-en4Gxk5eng3RADL_0N5lymHvKBIT-Py-Pa3brufddj8meuQTc4f41gD4F45beufhml7kd6Oae37ScJ5jN1dAGYMRbdHsd99tYA_Qbii54aZDn8Kn9a-rHI_jZzES0yPrZ8cfJSnOSTI02_mHlVOEl78w==
+  - Talaat Moustafa Group Holding (EGX:TMGH) Financial Performance in 2025: https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE2bK8r3DjRdvi1TTJTUn4flpJceU1NG0x4DCClPnKSogWyWWWyGg3Zyfx0KQbzxhkKnpZPagp11OxQL7XAE5Ifm-HzUZ7yADtW3F8Kp7l5P4BtMIBDWWwSzbiuHhA3vfbNDA==
+- CANA.CA: status=RECENT_ACCEPTED latest=2026-05-11 age_days=38 sources=3 expected=Suez Canal Bank summary=Suez Canal Bank (CANA.CA) reported Q1 2026 profit of EGP 1.64 billion on May 11, 2026, and FY 2025 profit of EGP 6.42 billion on February 12, 2026. The bank underwent a stock split on April 15, 2026, and shareholders approved bonus shares on March 24, 2026. The bank also participated in a $23 million funding round for Lucky App on April 6, 2026.
+  - Suez Canal Bank Q1 profit EGP 1.64 billion (May 11, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHgEtV_99xlV4rh2Jr7RuRMSbEXfsAwJVjDF4CCX0lEm4emFx63Zjjmvqu-vGGCXMb4DqeXq4wklk2rXz_a8Z8g0vW71n9YpbE71afrJ_zd2S56qrSQpyciOJPA4fRowcfvvMkGkExRpymLFj5LglejI7F7Kb6HDmX5bdl-ru23uWTR
+  - Suez Canal Bank FY profit EGP 6.42 billion (Feb 12, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHgEtV_99xlV4rh2Jr7RuRMSbEXfsAwJVjDF4CCX0lEm4emFx63Zjjmvqu-vGGCXMb4DqeXq4wklk2rXz_a8Z8g0vW71n9YpbE71afrJ_zd2S56qrSQpyciOJPA4fRowcfvvMkGkExRpymLFj5LglejI7F7Kb6HDmX5bdl-ru23uWTR
+  - Suez Canal Bank (S.A.E) (EGX:CANA) Stock Split on April 15, 2026: https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGN-K6xo-XIE7gqgbIDjWpPKKBsGR-TeHqiS0dc8Y7L0ET1hnmT0zKcr57BwxM7ujmPOUrYQ0dNte6C0lavmc1aZLaY_CbJ0-zckJgiuGbft55338NRMj6WTQY4oGs7QiFiWjnoPkGbLzTW38tV
 
 ## Warnings
-- Evidence for MASR.CA matches the company but appears old; latest detected date is 2025-01-01.
-- Gemini batch evidence failed: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
 - Evidence rejected for MTIE.CA: source text did not clearly match MTIE.CA / MM Group For Industry and International Trade.
-- Evidence rejected for HDBK.CA: source text did not clearly match HDBK.CA / Housing and Development Bank Egypt.
-- Evidence rejected for COMI.CA: source text did not clearly match COMI.CA / Commercial International Bank Egypt.
 - Evidence rejected for ECAP.CA: source text did not clearly match ECAP.CA / Al Ezz Ceramics & Porcelain Co..
-- Mubasher stock-page evidence failed for ANFI.CA: 404 Client Error: Not Found for url: https://english.mubasher.info/markets/EGX/stocks/ANFI
-- No Yahoo or Mubasher evidence found for ANFI.CA.
-- Evidence rejected for ANFI.CA: source text did not clearly match ANFI.CA / Tycoon Holding Company For Financial Investments.
-- Evidence rejected for TMGH.CA: source text did not clearly match TMGH.CA / Talaat Moustafa Group Holding.
-- Evidence for CANA.CA matches the company but appears old; latest detected date is 2025-01-01.
