@@ -1,10 +1,10 @@
 # Telegram-First EGX Scanner Report
 
-Scan phase: Intraday liquidity update
-Generated UTC: 2026-06-18T11:54:26.138287+00:00
-Generated Cairo: 2026-06-18 14:54
-Run timing: target 11:00 Cairo | generated Cairo 2026-06-18 14:54 | cron 0 8 * * 0-4
-Trigger: scheduled cron=0 8 * * 0-4 mapped to intraday; Cairo now 2026-06-18 14:47
+Scan phase: Post-close tomorrow tickets
+Generated UTC: 2026-06-18T16:03:07.556985+00:00
+Generated Cairo: 2026-06-18 19:03
+Run timing: target 15:30 Cairo | generated Cairo 2026-06-18 19:03 | cron 30 12 * * 0-4
+Trigger: scheduled cron=30 12 * * 0-4 mapped to post_close; Cairo now 2026-06-18 18:58
 
 ## Control Center
 - Action tickets: 0 prioritized signal(s)
@@ -33,12 +33,12 @@ Trigger: scheduled cron=0 8 * * 0-4 mapped to intraday; Cairo now 2026-06-18 14:
 ## AI Narrative
 - Provider: OpenRouter OK
 - Model: openai/gpt-oss-120b:free
-- Summary: The scanner highlighted a short list of EGX tickers that cleared evidence, liquidity, freshness and technical gates. Most are in bullish‑watch mode with strong accumulation spikes and support within 5‑6% of current price, especially MTIE.CA (top automotive sector) and MASR.CA (general expansion). EGX30 shows mixed breadth (45% above MA20) while EGX70 remains constructive (≈59% above MA20), driving the engine into a SELECTIVE_SMALL_MID_SWINGS risk mode. Sector breadth is healthy at ~81%, with automotive & distribution leading. However, evidence gaps for several names and overheated RSI on some (ANFI.CA, ECAP.CA) add uncertainty for the next 1‑3 days.
-- Liquidity spikes (1.6‑2.8×) and support levels 4‑6% below price make MTIE.CA, MASR.CA, TMGH.CA attractive for short‑term holds.
-- Automotive & Distribution leads sector breadth; banking shows solid support but some stocks near resistance.
-- EGX70’s constructive trend supports normal selection, while EGX30’s mixed trend limits broader market upside.
-- Risk mode stays selective; only tickets with clear bullish outlook and manageable volatility are kept.
-- Uncertainty remains due to missing evidence on several tickers and high RSI on ANFI.CA and ECAP.CA.
+- Summary: The scanner highlighted a handful of EGX stocks that cleared liquidity, freshness and technical gates, most showing bullish watch outlooks and solid support levels. EGX30 is mixed with weak breadth below MA20, while EGX70 remains constructive, allowing a selective small‑mid swing risk mode. Sector breadth is healthy (≈81%) and leading sectors – Automotive & Distribution, Agriculture & Food Production, Education – are reinforcing the outlook, but overall market direction remains uncertain for the next 1‑3 days.
+- MASR.CA, MTIE.CA, HDBK.CA, COMI.CA, TMGH.CA and CANA.CA show strong liquidity spikes and support within 5‑6% of current price, keeping them watch‑list candidates.
+- Resistance levels are modestly close (0‑5% above price) for COMI.CA and MASR.CA, suggesting limited upside in the short term.
+- EGX30 mixed trend and sub‑MA20 breadth increase downside risk, while EGX70 constructive trend supports the selected tickets.
+- Automotive & Distribution leads sector performance, boosting confidence in MTIE.CA and related peers.
+- Market regime uncertainty persists; price action may swing on news or broader index moves, so maintain a cautious stance.
 
 ## Top Liquidity Spikes
 - KWIN.CA: spike=31.94 liquidity=155374736.0 outlook=WEAK_OR_RISKY score=0 buy_ready=False
@@ -153,7 +153,7 @@ Trigger: scheduled cron=0 8 * * 0-4 mapped to intraday; Cairo now 2026-06-18 14:
 - EDFM.CA: score=12.1 buy_ready=False sector_rank=8 price=331.68 support=320.2 resistance=355.0 source=Yahoo Finance as_of=2026-06-16T21:00:00+00:00 freshness=FRESH RSI=52.43 liquidity=0.0 spike=0.0
 - EEII.CA: score=23.33 buy_ready=True sector_rank=8 price=2.43 support=2.27 resistance=2.55 source=Yahoo Finance history + Mubasher delayed current trading data as_of=17 June 01:25 PM market time freshness=DELAYED_CURRENT RSI=61.54 liquidity=9229679.0 spike=0.51
 - EFIC.CA: score=1.53 buy_ready=False sector_rank=21 price=203.26 support=192.01 resistance=217.96 source=Yahoo Finance history + Mubasher delayed current trading data as_of=17 June 12:55 PM market time freshness=DELAYED_CURRENT RSI=23.12 liquidity=386268.22 spike=0.16
-- EFID.CA: score=12.4 buy_ready=False sector_rank=5 price=28.39 support=27.06 resistance=29.4 source=Yahoo Finance as_of=2026-06-16T21:00:00+00:00 freshness=FRESH RSI=43.58 liquidity=0.0 spike=0.0
+- EFID.CA: score=22.4 buy_ready=False sector_rank=5 price=28.26 support=27.06 resistance=29.4 source=Yahoo Finance history + Mubasher delayed current trading data as_of=17 June 01:27 PM market time freshness=DELAYED_CURRENT RSI=43.58 liquidity=37890600.0 spike=0.51
 - EFIH.CA: score=22.16 buy_ready=False sector_rank=18 price=21.4 support=20.2 resistance=22.78 source=Yahoo Finance history + Mubasher delayed current trading data as_of=17 June 01:29 PM market time freshness=DELAYED_CURRENT RSI=35.74 liquidity=74439816.0 spike=1.41
 - EGAL.CA: score=12.14 buy_ready=False sector_rank=21 price=298.3 support=297.1 resistance=335.0 source=Yahoo Finance history + Mubasher delayed current trading data as_of=17 June 01:28 PM market time freshness=DELAYED_CURRENT RSI=24.21 liquidity=34029720.0 spike=0.43
 - EGAS.CA: score=17.2 buy_ready=True sector_rank=11 price=51.93 support=47.5 resistance=55.0 source=Yahoo Finance history + Mubasher delayed current trading data as_of=17 June 01:29 PM market time freshness=DELAYED_CURRENT RSI=69.09 liquidity=5353922.5 spike=0.43
@@ -291,7 +291,7 @@ Trigger: scheduled cron=0 8 * * 0-4 mapped to intraday; Cairo now 2026-06-18 14:
 - These checks are historical context only, not a prediction or guarantee.
 
 ## Evidence
-- MASR.CA: status=OLD_ACCEPTED latest=2025-01-01 age_days=533 sources=3 expected=Madinet Masr For Housing and Development summary=Madinet Masr to pay out EGP 0.15/shr for 2025 upon equityholders&#39; approval; Madinet Masr logs 24% higher consolidated profits in 2025; dividends recommended; Madinet Masr to distribute treasury stocks in first-ever move Gemini also reviewed web evidence but did not return ticker-specific citations.
+- MASR.CA: status=OLD_ACCEPTED latest=2025-01-01 age_days=533 sources=3 expected=Madinet Masr For Housing and Development summary=Madinet Masr to pay out EGP 0.15/shr for 2025 upon equityholders&#39; approval; Madinet Masr logs 24% higher consolidated profits in 2025; dividends recommended; Madinet Masr to distribute treasury stocks in first-ever move
   - Madinet Masr to pay out EGP 0.15/shr for 2025 upon equityholders&#39; approval: https://english.mubasher.info/news/4601386/Madinet-Masr-to-pay-out-EGP-0-15-shr-for-2025-upon-equityholders-approval/
   - Madinet Masr logs 24% higher consolidated profits in 2025; dividends recommended: https://english.mubasher.info/news/4578449/Madinet-Masr-logs-24-higher-consolidated-profits-in-2025-dividends-recommended/
   - Madinet Masr to distribute treasury stocks in first-ever move: https://english.mubasher.info/news/4577724/Madinet-Masr-to-distribute-treasury-stocks-in-first-ever-move/
@@ -301,13 +301,14 @@ Trigger: scheduled cron=0 8 * * 0-4 mapped to intraday; Cairo now 2026-06-18 14:
 - ANFI.CA: status=REJECTED_TICKER_MISMATCH latest=n/a age_days=n/a sources=0 expected=Tycoon Holding Company For Financial Investments summary=Evidence rejected for ANFI.CA: source text did not clearly match ANFI.CA / Tycoon Holding Company For Financial Investments.
 - ECAP.CA: status=REJECTED_TICKER_MISMATCH latest=n/a age_days=n/a sources=0 expected=Al Ezz Ceramics & Porcelain Co. summary=Evidence rejected for ECAP.CA: source text did not clearly match ECAP.CA / Al Ezz Ceramics & Porcelain Co..
 - TMGH.CA: status=REJECTED_TICKER_MISMATCH latest=n/a age_days=n/a sources=0 expected=Talaat Moustafa Group Holding summary=Evidence rejected for TMGH.CA: source text did not clearly match TMGH.CA / Talaat Moustafa Group Holding.
-- CANA.CA: status=OLD_ACCEPTED latest=2025-01-01 age_days=533 sources=3 expected=Suez Canal Bank summary=Suez Canal Bank delivers EGP 1.6bn profits in Q1-26; Suez Canal Bank unveils details for previous dividends payout; Suez Canal Bank to distribute EGP 5bn bonus shares for 2025 Gemini also reviewed web evidence but did not return ticker-specific citations.
+- CANA.CA: status=OLD_ACCEPTED latest=2025-01-01 age_days=533 sources=3 expected=Suez Canal Bank summary=Suez Canal Bank delivers EGP 1.6bn profits in Q1-26; Suez Canal Bank unveils details for previous dividends payout; Suez Canal Bank to distribute EGP 5bn bonus shares for 2025
   - Suez Canal Bank delivers EGP 1.6bn profits in Q1-26: https://english.mubasher.info/news/4611255/Suez-Canal-Bank-delivers-EGP-1-6bn-profits-in-Q1-26/
   - Suez Canal Bank unveils details for previous dividends payout: https://english.mubasher.info/news/4586807/Suez-Canal-Bank-unveils-details-for-previous-dividends-payout/
   - Suez Canal Bank to distribute EGP 5bn bonus shares for 2025: https://english.mubasher.info/news/4581661/Suez-Canal-Bank-to-distribute-EGP-5bn-bonus-shares-for-2025/
 
 ## Warnings
 - Evidence for MASR.CA matches the company but appears old; latest detected date is 2025-01-01.
+- Gemini batch evidence failed: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
 - Evidence rejected for MTIE.CA: source text did not clearly match MTIE.CA / MM Group For Industry and International Trade.
 - Evidence rejected for HDBK.CA: source text did not clearly match HDBK.CA / Housing and Development Bank Egypt.
 - Evidence rejected for COMI.CA: source text did not clearly match COMI.CA / Commercial International Bank Egypt.
