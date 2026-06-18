@@ -1,10 +1,10 @@
 # Telegram-First EGX Scanner Report
 
-Scan phase: Post-close tomorrow tickets
-Generated UTC: 2026-06-18T16:03:07.556985+00:00
-Generated Cairo: 2026-06-18 19:03
-Run timing: target 15:30 Cairo | generated Cairo 2026-06-18 19:03 | cron 30 12 * * 0-4
-Trigger: scheduled cron=30 12 * * 0-4 mapped to post_close; Cairo now 2026-06-18 18:58
+Scan phase: Evening tomorrow plan
+Generated UTC: 2026-06-18T18:42:47.813637+00:00
+Generated Cairo: 2026-06-18 21:42
+Run timing: target 19:30 Cairo | generated Cairo 2026-06-18 21:42 | cron 30 16 * * 0-4
+Trigger: scheduled cron=30 16 * * 0-4 mapped to evening_plan; Cairo now 2026-06-18 21:39
 
 ## Control Center
 - Action tickets: 0 prioritized signal(s)
@@ -33,12 +33,12 @@ Trigger: scheduled cron=30 12 * * 0-4 mapped to post_close; Cairo now 2026-06-18
 ## AI Narrative
 - Provider: OpenRouter OK
 - Model: openai/gpt-oss-120b:free
-- Summary: The scanner highlighted a handful of EGX stocks that cleared liquidity, freshness and technical gates, most showing bullish watch outlooks and solid support levels. EGX30 is mixed with weak breadth below MA20, while EGX70 remains constructive, allowing a selective small‑mid swing risk mode. Sector breadth is healthy (≈81%) and leading sectors – Automotive & Distribution, Agriculture & Food Production, Education – are reinforcing the outlook, but overall market direction remains uncertain for the next 1‑3 days.
-- MASR.CA, MTIE.CA, HDBK.CA, COMI.CA, TMGH.CA and CANA.CA show strong liquidity spikes and support within 5‑6% of current price, keeping them watch‑list candidates.
-- Resistance levels are modestly close (0‑5% above price) for COMI.CA and MASR.CA, suggesting limited upside in the short term.
-- EGX30 mixed trend and sub‑MA20 breadth increase downside risk, while EGX70 constructive trend supports the selected tickets.
-- Automotive & Distribution leads sector performance, boosting confidence in MTIE.CA and related peers.
-- Market regime uncertainty persists; price action may swing on news or broader index moves, so maintain a cautious stance.
+- Summary: The scanner found no clear trade candidates; all tickets are flagged HOLD. EGX30 shows mixed breadth with only 45% above MA20, keeping risk modest, while EGX70 remains constructive with strong sector support (80.95% breadth) and the regime set to SELECTIVE_SMALL_MID_SWINGS. Liquidity spikes and bullish outlooks appear in several stocks, but evidence gaps and sector‑risk notes limit confidence for the next 1‑3 days.
+- EGX30 mixed (below MA20 breadth weak) → tighter risk, favors selective small‑mid swings.
+- EGX70 constructive, sector breadth 80.95% supports normal selection.
+- Top bullish watches (MASR, MTIE, HDBK, COMI, TMGH, CANA) show accumulation spikes but lack solid news evidence.
+- Automotive & Distribution leads sector score; banking shows moderate support.
+- Uncertainty remains due to missing evidence and high RSI alerts on some tickets.
 
 ## Top Liquidity Spikes
 - KWIN.CA: spike=31.94 liquidity=155374736.0 outlook=WEAK_OR_RISKY score=0 buy_ready=False
