@@ -1,13 +1,13 @@
 # Telegram-First EGX Scanner Report
 
-Scan phase: Intraday liquidity update
-Generated UTC: 2026-06-22T13:36:31.825878+00:00
-Generated Cairo: 2026-06-22 16:36
-Run timing: target 11:00 Cairo | generated Cairo 2026-06-22 16:36 | cron 0 8 * * 0-4
-Trigger: scheduled cron=0 8 * * 0-4 mapped to intraday; Cairo now 2026-06-22 16:31
+Scan phase: Post-close tomorrow tickets
+Generated UTC: 2026-06-22T17:19:47.575081+00:00
+Generated Cairo: 2026-06-22 20:19
+Run timing: target 15:30 Cairo | generated Cairo 2026-06-22 20:19 | cron 30 12 * * 0-4
+Trigger: scheduled cron=30 12 * * 0-4 mapped to post_close; Cairo now 2026-06-22 20:14
 
 ## Control Center
-- Action tickets: 0 prioritized signal(s)
+- Action tickets: 3 prioritized signal(s)
 - BUY-ready candidates: 65
 - Data quality issues: 0
 - Tradeable price/liquidity tickers: 179/190
@@ -33,10 +33,12 @@ Trigger: scheduled cron=0 8 * * 0-4 mapped to intraday; Cairo now 2026-06-22 16:
 ## AI Narrative
 - Provider: OpenRouter OK
 - Model: openai/gpt-oss-120b:free
-- Summary: The scanner highlighted a short list of EGX tickers that cleared evidence, liquidity, freshness and technical gates. Most show bullish watch outlooks, solid 20‑day support, and recent liquidity spikes (accumulation or tradeable regimes). Non‑bank Financial Services leads sector breadth, while EGX30 and EGX70 remain in a constructive trend, keeping the market in a BROAD_RISK_ON mode, but short‑term direction remains uncertain.
-- Liquidity spikes (e.g., DOMT, CIEB, OCDI) indicate fresh buying interest, but support distances vary from ~5% to 13% of price.
-- Non‑bank Financial Services tops sector scores; other leading sectors (Tech, Healthcare) also show above‑MA20/50 strength.
-- EGX30/EGX70 constructive trends support normal selection, yet sector breadth at 57% and mixed resistance proximity add short‑term uncertainty.
+- Summary: The scanner highlighted DOMT.CA, CIEB.CA and CNFN.CA as top BUY‑watch candidates. All three show price above the 20‑ and 50‑day MAs, decent liquidity spikes, and RSI in the mid‑50s‑60s, with support just below current levels and modest resistance ahead. The broader market is in a CONSTRUCTIVE regime on both EGX30 and EGX70, with sector breadth at ~57% and risk mode set to BROAD_RISK_ON, meaning upside bias is present but still subject to macro‑bearish pressure.
+- DOMT.CA (Food) near its 20‑day support (23.7) and just below resistance (26.3); liquidity spike 11.3×, but sector lagging the market.
+- CIEB.CA (Banking) sits above support (23.27) with resistance at 24.09; liquidity spike 5.5×, sector not leading.
+- CNFN.CA (Non‑bank Finance) shows strongest momentum (RSI 63.5) and a 1.36× liquidity spike; support 4.36, resistance 4.88.
+- EGX30/EGX70 constructive trends support normal stock selection, yet macro trend remains bearish, adding uncertainty for the next 1‑3 days.
+- Risk mode BROAD_RISK_ON encourages buying on strength, but watch price action on Thndr before treating any entry as a swing trade.
 
 ## Top Liquidity Spikes
 - DOMT.CA: spike=11.27 liquidity=23837350.0 outlook=BULLISH_WATCH score=96.71 buy_ready=True
@@ -56,7 +58,18 @@ Trigger: scheduled cron=0 8 * * 0-4 mapped to intraday; Cairo now 2026-06-22 16:
 - #8 Food, Beverages & Tobacco: score=6.71 5d=1.7% 20d=2.29% aboveMA50=71.43%
 
 ## Today's Prioritized Action Tickets
-- HOLD: Local fallback HOLD: no candidate passed evidence, liquidity, freshness, and technical gates.
+- Priority #1: BUY DOMT.CA
+  - Entry: 26.5 | Take profit: 28.62 | Stop loss: 25.44
+  - Confidence: LOW | score=34.9 | outlook=BULLISH_WATCH 96.71
+  - Reason: WATCH/BUY SETUP: DOMT.CA has aligned current price data, liquidity above threshold, price above MA20/MA50, RSI 58.59, support 23.7, resistance 26.3, and evidence sources. Macro trend is Bearish; market regime is BROAD_RISK_ON; verify price action in Thndr before treating it as a swing entry.
+- Priority #2: BUY CIEB.CA
+  - Entry: 24.38 | Take profit: 26.34 | Stop loss: 23.4
+  - Confidence: LOW | score=34.42 | outlook=BULLISH_WATCH 94.79
+  - Reason: WATCH/BUY SETUP: CIEB.CA has aligned current price data, liquidity above threshold, price above MA20/MA50, RSI 58.88, support 23.27, resistance 24.09, and evidence sources. Macro trend is Bearish; market regime is BROAD_RISK_ON; verify price action in Thndr before treating it as a swing entry.
+- Priority #3: BUY CNFN.CA
+  - Entry: 4.72 | Take profit: 5.1 | Stop loss: 4.53
+  - Confidence: LOW | score=33.62 | outlook=BULLISH_WATCH 95
+  - Reason: WATCH/BUY SETUP: CNFN.CA has aligned current price data, liquidity above threshold, price above MA20/MA50, RSI 63.55, support 4.36, resistance 4.88, and evidence sources. Macro trend is Bearish; market regime is BROAD_RISK_ON; verify price action in Thndr before treating it as a swing entry.
 
 ## Thndr Instruction
 - Advisor-only signal mode is active. The scanner never executes trades.
@@ -289,30 +302,36 @@ Trigger: scheduled cron=0 8 * * 0-4 mapped to intraday; Cairo now 2026-06-22 16:
 - These checks are historical context only, not a prediction or guarantee.
 
 ## Evidence
-- DOMT.CA: status=OLD_ACCEPTED latest=2025-01-01 age_days=537 sources=3 expected=Arabian Food Industries Domty summary=Domty posts lower consolidated net profits at EGP 161m in 2025; net sales exceed EGP 9.3bn; Selling pressure pushes Domty’s stock toward EGP 23.50–22.85; Domty unveils demerger, establishes Dairy Products Euro Arabian Gemini also reviewed web evidence but did not return ticker-specific citations.
-  - Domty posts lower consolidated net profits at EGP 161m in 2025; net sales exceed EGP 9.3bn: https://english.mubasher.info/news/4593671/Domty-posts-lower-consolidated-net-profits-at-EGP-161m-in-2025-net-sales-exceed-EGP-9-3bn/
-  - Selling pressure pushes Domty’s stock toward EGP 23.50–22.85: https://english.mubasher.info/news/4562323/Selling-pressure-pushes-Domty-s-stock-toward-EGP-23-50-22-85/
-  - Domty unveils demerger, establishes Dairy Products Euro Arabian: https://english.mubasher.info/news/4543153/Domty-unveils-demerger-establishes-Dairy-Products-Euro-Arabian/
-- CIEB.CA: status=REJECTED_TICKER_MISMATCH latest=n/a age_days=n/a sources=0 expected=Credit Agricole Egypt summary=Evidence rejected for CIEB.CA: source text did not clearly match CIEB.CA / Credit Agricole Egypt.
-- CNFN.CA: status=OLD_ACCEPTED latest=2025-01-01 age_days=537 sources=3 expected=Contact Financial Holding summary=Contact’s consolidated profits approach EGP 471m in 2025; Contact logs lower consolidated net profits at EGP 291m in 9M-25; Contact, e&amp; money forge partnership to boost Egypt’s financial ecosystem Gemini also reviewed web evidence but did not return ticker-specific citations.
-  - Contact’s consolidated profits approach EGP 471m in 2025: https://english.mubasher.info/news/4582855/Contact-s-consolidated-profits-approach-EGP-471m-in-2025/
-  - Contact logs lower consolidated net profits at EGP 291m in 9M-25: https://english.mubasher.info/news/4526894/Contact-logs-lower-consolidated-net-profits-at-EGP-291m-in-9M-25/
-  - Contact, e&amp; money forge partnership to boost Egypt’s financial ecosystem: https://english.mubasher.info/news/4509412/Contact-e-money-forge-partnership-to-boost-Egypt-s-financial-ecosystem/
-- OCDI.CA: status=REJECTED_TICKER_MISMATCH latest=n/a age_days=n/a sources=0 expected=Sixth of October Development and Investment summary=Evidence rejected for OCDI.CA: source text did not clearly match OCDI.CA / Sixth of October Development and Investment.
+- DOMT.CA: status=RECENT_ACCEPTED latest=2026-06-21 age_days=1 sources=3 expected=Arabian Food Industries Domty summary=Arabian Food Industries Domty (DOMT.CA) has shown recent activity including plans for its dairy arm to list on the EGX, strong Q1 2026 consolidated profit growth, and reported full-year 2025 financial results. The company's Q1 2026 consolidated net profits attributable to shareholders increased by 581.53% year-on-year to EGP 72.193 million. For the full year 2025, consolidated net profits were EGP 161.266 million, a 67.82% decrease year-on-year, with net sales reaching EGP 9.390 billion. The company's newly established unit, Dairy Products Euro Arabian for Food Industries, is expected to list on the Egyptian Exchange in July 2026. An Annual General Meeting (AGM) was held on June 7, 2026, and Q1 2026 standalone results were reported on May 24, 2026.
+  - Domty's dairy arm eyes EGX debut next July: CEO - Arab Finance (June 21, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHJaQyOhPjQt4CArxZUnXoYwHC63rTnigwzvcbJLNCBMGbOz48brV_gFIyleY63JI2pUyJNZ9IMdRrwMgEn0JAxf9h0HfQu_AtLBaS0Kr-hNjReQ8-H0qt8bGuBpc6ytOLogR-cNfGkQa1qTIMXTLRdzDP20P4DT2PcENI1FdK_a-a6fzqLaBGWpVbkd8wD_Epn
+  - Domty generates 581.5% YoY higher consolidated profits in Q1 2026 - Arab Finance (May 24, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE6k_Os1Xi56xkeuw_2v28f8aZ1e1ZWia_Q5nrKio22-vdIXwMKa_GO063ir1PYBIJpoGB4QscxuapU4dkLn2wFUiy9uhMkUjIem-F8hG6ch2dfsCx7A_XwECPG3RzI5QTgM7jo5OJrpk5KqGi6LvBvDPu0vFuZAZ5LffruPTXmMJb2rORMILkI5mWM3C_SPn-KoJkzOIkA4zHxlQI_4xY=
+  - Arabian Food Industries Company (DOMTY) - S.A.E Reports Earnings Results for the Full Year Ended December 31, 2025 (April 09, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF69drWd5zXQMrvx80RZhALsoxL-zJKofb5hAC9cbkwwD3Mx4YUd_1N9oEB78fVmZYo1IPxXYLgbT5ufi71weSXN7aEGftFC6GtnxzB00Yz9xAnKUh506XnxhyE8lfGWSjGENsCtEjPRCDOCMt3I3Y5sMm_bZDmXvOVqPm82BbC3T9VRvMngSuTOBwbyu_7UdVdypjASFNE4pIrNw==
+- CIEB.CA: status=RECENT_ACCEPTED latest=2026-04-30 age_days=53 sources=3 expected=Credit Agricole Egypt summary=Credit Agricole Egypt (CIEB.CA) reported consolidated net profits after tax of EGP 1.785 billion in Q1 2026, a 4.41% decrease year-on-year. The bank's net banking income (NBI) rose 6% year-on-year in Q1 2026 to EGP 3.616 billion. For the full year 2025, Credit Agricole Egypt achieved a consolidated net profit after tax of EGP 6.960 billion, with customer deposits reaching EGP 110.2 billion (up 15% YoY) and gross loans reaching EGP 67.5 billion (up 22% YoY).
+  - Credit Agricole Egypt Q1 2026 consolidated profits hit EGP 1.78B - Arab Finance (April 30, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHWgurZeOcX31yK4jsj4uPK_sB2aIg_62HseNscztRWpGpIZV_imwQT2ZTbPbJ2lJDucFMxLbX4UrF3rGjkxa5Bez1NQ_ojj_hyDnoqp-FkpOaZWT_Z2919qecmOXwg-5E8xprcIF2G8i3avIKZknYRO5V9aBQ7oxNL3E5vd5O9KVHNwbqZ41FEH6jMuEzdqnPQjpnbh-1eUA==
+  - Crédit Agricole Egypt: Standalone Financial Results for the period ended March 31, 2026 (April 30, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFvDcw7yhOfQxYOtzaokRVytdxPUR2taHnx3DzxoXqfU_bhFrRi5C8Lkgp62fbfhuHdDr-_F6j-FwG6O8YqwoJNlgZr70TGiUeIDeN3U0JgxPpLV6nWLDRhvJnQDp8m_FsyDbpeTrcxdReX1E0H6gzWccSoAr17i2s-MfZNJELYPD2plAO_nT4yukuL5H7wZgStfVVYl14f5CRlEyX0XqhkfSEFnQwJZ2cnSP5tUoCxsLk=
+  - Crédit Agricole Egypt: Standalone Financial Results for the year ending December 31, 2025 (February 04, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGBz0qcreU0Df30AiTUPDAaJIckN0gIPjKUFvm2glTBmXT5Us0fiQF5zmcxf1LHMgRn37DlkLEjBjOZ3h4QAQ5wiUkytcnSNk3CqFBrEGxBcrY5bHG7YzYQkS6NuTKuONLM2KUgpYKyzaZ-sgEDtGVwsjuf0yhcZWUZwnzOmfLTmSYP8pqB7KVru5kbiQuPX2mMzEhKNLd2czN1fqeWTpT1fAYvs5SU9_748g==
+- CNFN.CA: status=RECENT_ACCEPTED latest=2026-05-24 age_days=29 sources=3 expected=Contact Financial Holding summary=Contact Financial Holding (CNFN.CA) announced its Q1 2026 consolidated financial results, with total operating income increasing by 27% year-on-year to EGP 642 million and consolidated net income rising by 12% to EGP 66 million. For the full year 2025, the company achieved a consolidated operating income of EGP 2.8 billion, a 12% year-on-year increase, and a consolidated net income of EGP 345 million. The company's investor relations page provides access to corporate news, equity disclosures, and financial results.
+  - Contact Financial Holding announces Q1-2026 results (May 24, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFfRE0rmXfFbxY7E7_SPQ11xXm9mXLprNAWglX3iKa-ix8i0sjdzGvJW4mw1OPzLt9ghjrAKVfZuBw1AKVgJV7prkbuzsUEvAiPjKdc-sGNtHlOoPW6nl4-RKnLZlZrWEcZ6xqq08H9tlcF50MG1Rgst9Fn6hkLlGYkk8LHcpZ28H5ubGnqv-xNAD4CrAz5LMHAEO2S4uoQSF3SY3xRfnVznzWXuwiJK4II0RpT
+  - Contact Financial announces FY 2025 Results (March 25, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFieUiL6kMD6VkyaxNJv3M4OQoreR7jKE7BX-Vg1BibMsHaKrx3AepXzBf2GJgrtCW0NJHXL5FtbzHj6iv0DarUDvnWHk_ModLkY_LUe321UkiKvTI1F_-ourFuKw6uKBQ-xd8lnxdDXMtkCZxe11qfa4QNKjdNcYRovL_O0szZ7nesXv-Fx3x0ycIwctktHVwEY_06sImiR76z_tFKmOVC-igugmWuQuc7ai4=
+  - Contact Financial Holding - Investor Relations: https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE8RMoFOVM537ha8raEWTjFbEpWu2z0XAffkzhGdhWbMG55WghP9j0K5JS6Df7_a_Lw7MXl9JQbfbphMeWGTHgyaT8W_HBvY23TK_jshxoZbkAv7Isyb8L4KNCHwG_Dtw==
+- OCDI.CA: status=RECENT_ACCEPTED latest=2026-03-31 age_days=83 sources=3 expected=Sixth of October Development and Investment summary=Sixth of October Development and Investment (OCDI.CA), also known as SODIC, reported a net profit of EGP 4.49 billion in 2025, a 77% year-on-year increase, with revenues surging 118% to EGP 21.26 billion. Gross contracted sales reached EGP 48.4 billion in 2025. The company also released its interim condensed consolidated financial statements for the three-month period ended March 31, 2026. Additionally, SODIC released its consolidated operational and financial results for the period ended June 30, 2025, showing a 107% year-on-year growth in net profit.
+  - Sixth of October for Development and Investment "SODIC" E : Earning Release 4Q2025 (February 12, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGKo0JklKIuR0Mh5IOAgoOfsWOqu2uHcUZdpB1eI_P2YmfvW282441hzXjwhRFdpY1yS1dRaz83nJoXOBxYgGtPuaSxJ8BJoq6eXyRP-CZ2ec7TkUMzwTb2FxbSlsI_GgeZTRi0R4UGTHOTTNg0P4IpAngrtJZHXF1MgsVCSREEPwwXX6mCkeSKdKLR4pOj_X_h4KxGXMPbGXBYdCff4z-ZXzajA0FpVpKzW-kFw2qph_SAcVJW4R6UxpRV6RYt
+  - SODIC ("Sixth of October Development & Investment Company") (EGX OCDI.CA) has released its consolidated operational and financial results for the period ended 30th of June 2025.: https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEscWXf94NiCBKI4QifAgdWIrtyrXIT4GwHCP97ItaskY12fVVGSbm5aLWwxs_6evSytrpbhFjj2iIm22X93vOGXVkPY-s4pFOmcFk7re0Zc2oM1hiRga1E8IqwKr6g23aLYNFqhbT6kV5i9LbAdi6UJm3pnduXdryG_vcahFcp8xbSLrLBO7w3yUasgPQArIhtrKy5eA-A_WZb
+  - SIXTH OF OCTOBER FOR DEVELOPMENT AND INVESTMENT SODIC (AN EGYPTIAN JOINT STOCK COMPANY) AND ITS SUBSIDIARIES INTERIM CONDENSED C (March 31, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFTaifGbFrrS3AMUv8qqTr0gQqPpNXiXaVzbB_mdtlLEQ-5D1j_cuJRuw6xUY46CjXAU-Nn5Cmfjg45eB8ANnhfh-8r8bLKHvO-iwmFoCnLnAa10OUWjl5xKFS41n-c6zy3pA6E1cO4nKBtV4i2Hlj6oBAUeH0cqo5M6xDIPa0cu43It2qFQ-IGAI0CRrsJjwK3O-n3IRG9AbUmYH72q5QzvwR7jQnI6Xhn7B9jZfZNfpyvZioB5twT7qpCcZolVVujlvikJLS3eKXexwTz1YxGvzgJEeQ37_asnNxQ2UVev2nZKxg=
 - ADCI.CA: status=ACCEPTED_UNDATED latest=n/a age_days=n/a sources=3 expected=The Arab Drug Company summary=ADCO’s net profits after tax cross EGP 182.5m in 8M-25/26; Arab Drug unveils cash dividends for FY22/23; Arab Drug’s OGM approves FY21/22 dividends Gemini also reviewed web evidence but did not return ticker-specific citations.
   - ADCO’s net profits after tax cross EGP 182.5m in 8M-25/26: https://english.mubasher.info/news/4587961/ADCO-s-net-profits-after-tax-cross-EGP-182-5m-in-8M-25-26/
   - Arab Drug unveils cash dividends for FY22/23: https://english.mubasher.info/news/4193946/Arab-Drug-unveils-cash-dividends-for-FY22-23/
   - Arab Drug’s OGM approves FY21/22 dividends: https://english.mubasher.info/news/4022664/Arab-Drug-s-OGM-approves-FY21-22-dividends/
 - ATLC.CA: status=REJECTED_TICKER_MISMATCH latest=n/a age_days=n/a sources=0 expected=Al Tawfeek Leasing summary=Evidence rejected for ATLC.CA: source text did not clearly match ATLC.CA / Al Tawfeek Leasing.
-- HRHO.CA: status=REJECTED_TICKER_MISMATCH latest=n/a age_days=n/a sources=0 expected=EFG Holding summary=Evidence rejected for HRHO.CA: source text did not clearly match HRHO.CA / EFG Holding.
-- RUBX.CA: status=REJECTED_TICKER_MISMATCH latest=n/a age_days=n/a sources=0 expected=Rubex International for Plastic and Acrylic Manufacturing summary=Evidence rejected for RUBX.CA: source text did not clearly match RUBX.CA / Rubex International for Plastic and Acrylic Manufacturing.
+- HRHO.CA: status=RECENT_ACCEPTED latest=2026-05-21 age_days=32 sources=3 expected=EFG Holding summary=EFG Holding (HRHO.CA) reported an 18% year-on-year increase in group revenues to EGP 6.6 billion ($123.6 million) in Q1 2026, with net operating profit and net profit before tax both increasing by 20% annually. Net profit after tax and minority interest reached EGP 1 billion. The company also released its final IFRS results for the full year 2025 on April 30, 2026. Q1 2025 results, showing a net profit after tax and minority interest of EGP 1.2 billion on operating revenues of EGP 5.6 billion, were reported on May 21, 2025.
+  - EFG Holding revenues surge 18 percent to $123.6 million in Q1 2026 as net operating profit hits $46.8 million - Economy Middle East (May 20, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE7bsB8-o8GkOx6LMbrOQtPDe3VViF9nN6AmjiRRHVCNg5wPdDxYTfaFwg-Pp3kAnKYB5Y-JspOy1ya_ZFR9wkbZQJdSjfWFywr2IYT4RM5lFDta1kgMdlwYxnBu6OWOaAwOAzmOdS-kPY-5dS9i4Hk6wDboODvnP8DP9MnpnctoSJlA3oNDJsFR-zKNR_r-pHe7NKRzv7GnnrAeUQ7bA8awqzsKQMg1KG3JYgUEsZ1-tMIkHAQM7tK_G3vh458TVpK
+  - EFG Holding Posts 18% Revenue Growth in First Quarter of 2026 (May 21, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEIkSe18rmpfdPVgoD_RA6ZHdGlgTyVN_5n8IsJmIqf55xEQj36aga43bs5rOAG8uIOIYEthgec89tuEruj0LWZ3QeDfS4a0jFSnpK4OKZmb_fvIEuD7ZMXyV7-gzonTrbgrsCfOnmlMex52yZnneFbI_qxWlRm2mpDmlUIw1t8fH3RZAtSSYm4oEnKW3DGDDzcoevWCwiZSOwuTe6K9nrnCLA=
+  - EFG Holding S.A.E. - 1st Quarter Results - Stockopedia (May 20, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEW077c8j6iN03OCJi3B_3wb0tjEPW0WROhkYZyX9k_WDBdazfeP7SQZu0wsl4qyUGI1tErmTI_WTpSCLCoz3R7myhPLR8rDj6SCZIazTrkdYYUGsGL3fA8iT1YfeHbnHYWs5S0s0S8OttonTwuickjNN34dwapGc6ABLJrrcqhoJdA0qD01Fv3BsJXlKoaq2k3FP26eDfWUJce_7v6BddqWWaw59CQ-oE7vvUcfopmHjXAfz3ysJo1YyqfqzGRh-28gLeE-TnsIBmveSRr
+- RUBX.CA: status=RECENT_ACCEPTED latest=2026-06-01 age_days=21 sources=3 expected=Rubex International for Plastic and Acrylic Manufacturing summary=Rubex International for Plastic and Acrylic Manufacturing (RUBX.CA) reported sales of EGP 87.34 million for Q1 2026, a decrease of 7.25% year-on-year, and a net loss of EGP 19.69 million compared to a net income of EGP 3.31 million in the prior year. The company's revenue for the last twelve months ending March 31, 2026, was EGP 381.75 million, up 4.30% year-on-year. For the full year 2025, annual revenue was EGP 388.58 million, with 17.96% growth. The company's board of directors meeting minutes for Q1 2026 were released on June 1, 2026.
+  - Rubex International for Plastic and Acrylic Manufacturing Reports Earnings Results for the First Quarter Ended March 31, 2026 | MarketScreener (June 01, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHfwi4oNtmbU6awjjoI14_0zI1e9nE9GyeOImP3pHa8S6CpxWS6cqByw84sZ0Sb4-lxYg15OIixgka8flmFYCqNF9-NPOhixbpjE77bLAwVSsHEsu9BPDM9poyejru6EbVFQ2TgEyGFJYqAwBWORiVgbYcOP46IBnS793-Hl8h_cIWo7WFfQ1GNeKc42gb9atYUAAwPplGMfT7X_kl-waVfKetBjpiXU3aOlBDUMBeONlzGiaNrwUvDrvq-pIvqEqdCka_2IJ3WBw9ktcbTGNkVdv-TLQ==
+  - Rubex International for Plastic and Acrylic Manufacturing (EGX:RUBX) Revenue (March 31, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHVFxNh2clLuOGZsAqU21DQFgB9QHvL3B5V1bY_cQOSmVJFfLwbX3SVZSf_K0c52lCgwnXekbd1Vh2ecUqStNkzSkmDqdiCdt5OVcl3oMJIAw__7lmFwZBPTf2BCO1rX9jXYk6RQPzapoUS8w==
+  - Rubex International for Plastic and Acrylic Manufacturing Stock Overview - Decypha (June 01, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE3OWe-L1F1iuTcvQn_rzqXQWB9XiZJNDDrB7U4bPDpcdCFdoeV5kVJjV0UV9WhChbAt1Of0DQPelEFZHILS0Zz_eZ_eaJmYfYJUwO4vlquOYna5xFz5fJl0qzTqk3XcB6RFjPjmZ19oXGBrXmm56cY62v-UIRL49pFAT68lg7SR8Asp2Rg9xvYrEsx0Vb0fkaVV7p3O945gr4walOIdWlv1FVE1xdXwJqq1l7U9pY=
 
 ## Warnings
-- Evidence for DOMT.CA matches the company but appears old; latest detected date is 2025-01-01.
-- Evidence rejected for CIEB.CA: source text did not clearly match CIEB.CA / Credit Agricole Egypt.
-- Evidence for CNFN.CA matches the company but appears old; latest detected date is 2025-01-01.
-- Evidence rejected for OCDI.CA: source text did not clearly match OCDI.CA / Sixth of October Development and Investment.
 - Evidence for ADCI.CA matches the company but no source/report date was detected.
 - Evidence rejected for ATLC.CA: source text did not clearly match ATLC.CA / Al Tawfeek Leasing.
-- Evidence rejected for HRHO.CA: source text did not clearly match HRHO.CA / EFG Holding.
-- Evidence rejected for RUBX.CA: source text did not clearly match RUBX.CA / Rubex International for Plastic and Acrylic Manufacturing.
