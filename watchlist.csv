@@ -1,6 +1,6 @@
 Ticker,Company Name,Sector,AI Status,Watchlist Tier,Signal Status
-CNFN.CA,Contact Financial Holding,Non-bank Financial Services,Active Tracking,WATCH,BUY_READY
-DOMT.CA,Arabian Food Industries Domty,"Food, Beverages & Tobacco",Active Tracking,WATCH,BUY_READY
-CLHO.CA,Cleopatra Hospital Group,Healthcare,Active Tracking,WATCH,BUY_READY
-OCDI.CA,Sixth of October Development and Investment,Real Estate,Active Tracking,WATCH,BUY_READY
-ATLC.CA,Al Tawfeek Leasing,Non-bank Financial Services,Active Tracking,WATCH,BUY_READY
+CNFN.CA,Contact Financial Holding,Non-bank Financial Services,Active Tracking,WATCH,WATCH_ONLY
+DOMT.CA,Arabian Food Industries Domty,"Food, Beverages & Tobacco",Active Tracking,WATCH,WATCH_ONLY
+CLHO.CA,Cleopatra Hospital Group,Healthcare,Active Tracking,WATCH,WATCH_ONLY
+OCDI.CA,Sixth of October Development and Investment,Real Estate,Active Tracking,WATCH,WATCH_ONLY
+ATLC.CA,Al Tawfeek Leasing,Non-bank Financial Services,Active Tracking,WATCH,WATCH_ONLY
