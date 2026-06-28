@@ -1,10 +1,10 @@
 # Telegram-First EGX Scanner Report
 
-Scan phase: Post-close tomorrow tickets
-Generated UTC: 2026-06-28T14:23:43.418088+00:00
-Generated Cairo: 2026-06-28 17:23
-Run timing: target 15:30 Cairo | generated Cairo 2026-06-28 17:23 | cron 30 12 * * 0-4
-Trigger: scheduled cron=30 12 * * 0-4 mapped to post_close; Cairo now 2026-06-28 17:20
+Scan phase: Evening tomorrow plan
+Generated UTC: 2026-06-28T17:45:57.333555+00:00
+Generated Cairo: 2026-06-28 20:45
+Run timing: target 19:30 Cairo | generated Cairo 2026-06-28 20:45 | cron 30 16 * * 0-4
+Trigger: scheduled cron=30 16 * * 0-4 mapped to evening_plan; Cairo now 2026-06-28 20:42
 
 ## Control Center
 - Action tickets: 0 prioritized signal(s)
@@ -33,11 +33,7 @@ Trigger: scheduled cron=30 12 * * 0-4 mapped to post_close; Cairo now 2026-06-28
 ## AI Narrative
 - Provider: OpenRouter OK
 - Model: nvidia/nemotron-3-super-120b-a12b-20230311:free
-- Summary: Scanner highlighted a few stocks with accumulation spikes and bullish‑watch outlooks, but the overall EGX30/EGX70 bearish trend, weak sector breadth, and defensive risk mode keep new buys disallowed.
-- EGX30 and EGX70 are both bearish with low MA20/MA50 breadth, reinforcing a defensive stance.
-- Top tickets show liquidity accumulation spikes and sit near support/resistance, giving short‑term bullish watch signals despite limited conviction.
-- Sector breadth is only 14% and leading sectors are narrow, adding uncertainty to any upside.
-- Risk mode is DEFENSIVE_NO_NEW_BUY; any potential upside remains tentative and could reverse if market weakness persists.
+- Summary: EGX30/EGX70 remain bearish with weak breadth; scanner stays in DEFENSIVE_NO_NEW_BUY mode, flagging a handful of accumulation‑spike stocks that sit near key resistance levels but face overall market headwinds.
 
 ## Top Liquidity Spikes
 - RUBX.CA: spike=14.57 liquidity=134018512.0 outlook=WEAK_OR_RISKY score=0 buy_ready=False
