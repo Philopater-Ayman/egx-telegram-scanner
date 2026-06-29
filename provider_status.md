@@ -1,33 +1,33 @@
 # Provider Status
 
-Generated UTC: 2026-06-28T17:45:58.671116+00:00
-Generated Cairo: 2026-06-28 20:45
-- Scan phase: Evening tomorrow plan
-- Run timing: target 19:30 Cairo | generated Cairo 2026-06-28 20:45 | cron 30 16 * * 0-4
-- Trigger: scheduled cron=30 16 * * 0-4 mapped to evening_plan; Cairo now 2026-06-28 20:42
+Generated UTC: 2026-06-29T10:15:46.448808+00:00
+Generated Cairo: 2026-06-29 13:15
+- Scan phase: Pre-market risk check
+- Run timing: target 08:45 Cairo | generated Cairo 2026-06-29 13:15 | cron 45 5 * * 0-4
+- Trigger: scheduled cron=45 5 * * 0-4 mapped to pre_market; Cairo now 2026-06-29 13:12
 
 - Macro source: Mubasher EGX market page (delayed public data)
 - Macro freshness: DELAYED
 - Macro trend: Bearish
-- Market regime: EGX30 BEARISH / EGX70 BEARISH / sector breadth 14.29% / risk mode DEFENSIVE_NO_NEW_BUY
-- Market data: 172/190 tickers have tradeable current/delayed price data
-- Mubasher delayed current rows used: 182/190
-- Current/Yahoo technical mismatches blocked: 18/190
-- DirectFN public table health only, not trusted for action tickets: 252 rows | as_of=2026-06-28T17:42:09.565729+00:00 | error=none
+- Market regime: EGX30 BEARISH / EGX70 BEARISH / sector breadth 9.52% / risk mode DEFENSIVE_NO_NEW_BUY
+- Market data: 182/190 tickers have tradeable current/delayed price data
+- Mubasher delayed current rows used: 173/190
+- Current/Yahoo technical mismatches blocked: 7/190
+- DirectFN public table health only, not trusted for action tickets: 254 rows | as_of=2026-06-29T10:12:30.311813+00:00 | error=none
 - Data quality issues: 0
-- Evidence sources found: 12
-- AI narrative: OpenRouter OK (nvidia/nemotron-3-super-120b-a12b-20230311:free)
+- Evidence sources found: 15
+- AI narrative: OpenRouter OK (openai/gpt-oss-120b:free)
 - Telegram sent on latest run: True
-- Latest ticket id(s): 20260628T174558Z_HOLD_NONE
+- Latest ticket id(s): 20260629T101546Z_HOLD_NONE
 - Latest history write(s): /home/runner/work/egx-telegram-scanner/egx-telegram-scanner/trade_history.csv
 
 ## Warnings
-- Evidence for CSAG.CA matches the company but no source/report date was detected.
+- Evidence rejected for RUBX.CA: source text did not clearly match RUBX.CA / Rubex International for Plastic and Acrylic Manufacturing.
 - Gemini grounding skipped because market regime is defensive; local fallback evidence used.
-- Evidence for GGCC.CA matches the company but no source/report date was detected.
-- Evidence rejected for SPIN.CA: source text did not clearly match SPIN.CA / Alexandria Spinning and Weaving.
-- Evidence rejected for ENGC.CA: source text did not clearly match ENGC.CA / Industrial Engineering Company for Construction and Development (ICON) (S.A.E).
-- Evidence rejected for OCDI.CA: source text did not clearly match OCDI.CA / Sixth of October Development and Investment.
-- Evidence for GTWL.CA matches the company but no source/report date was detected.
-- Evidence rejected for GBCO.CA: source text did not clearly match GBCO.CA / GB Corp.
+- Evidence for CSAG.CA matches the company but no source/report date was detected.
 - Evidence for ZMID.CA matches the company but appears old; latest detected date is 2025-01-01.
+- Evidence rejected for MTIE.CA: source text did not clearly match MTIE.CA / MM Group For Industry and International Trade.
+- Evidence for POUL.CA matches the company but no source/report date was detected.
+- Evidence for MHOT.CA matches the company but no source/report date was detected.
+- Evidence rejected for LCSW.CA: source text did not clearly match LCSW.CA / Lecico Egypt.
+- Evidence for CNFN.CA matches the company but appears old; latest detected date is 2025-01-01.
