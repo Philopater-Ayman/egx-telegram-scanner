@@ -1,10 +1,10 @@
 # Telegram-First EGX Scanner Report
 
-Scan phase: Intraday liquidity update
-Generated UTC: 2026-06-29T12:30:08.112930+00:00
-Generated Cairo: 2026-06-29 15:30
-Run timing: target 11:00 Cairo | generated Cairo 2026-06-29 15:30 | cron 0 8 * * 0-4
-Trigger: scheduled cron=0 8 * * 0-4 mapped to intraday; Cairo now 2026-06-29 15:27
+Scan phase: Post-close tomorrow tickets
+Generated UTC: 2026-06-29T16:19:14.020973+00:00
+Generated Cairo: 2026-06-29 19:19
+Run timing: target 15:30 Cairo | generated Cairo 2026-06-29 19:19 | cron 30 12 * * 0-4
+Trigger: scheduled cron=30 12 * * 0-4 mapped to post_close; Cairo now 2026-06-29 19:15
 
 ## Control Center
 - Action tickets: 0 prioritized signal(s)
@@ -33,12 +33,12 @@ Trigger: scheduled cron=0 8 * * 0-4 mapped to intraday; Cairo now 2026-06-29 15:
 ## AI Narrative
 - Provider: OpenRouter OK
 - Model: openai/gpt-oss-120b:free
-- Summary: The EGX30 and EGX70 indices are both in a bearish regime with weak breadth (≈9.5%). Liquidity spikes are modest and most sectors are under pressure, so the scanner flags a defensive risk mode – no new buys are permitted. The top‑ranked tickets show mixed outlooks (constructive to bullish‑watch) but face constraints such as overheated RSI, cooling liquidity, or non‑leading sectors, reinforcing the hold stance for the next 1‑3 days.
-- EGX30/EGX70 bearish, median 5‑day returns ~‑3.5%, breadth below MA20/50 → defensive risk mode
-- Sector breadth low; only Tourism & Leisure shows positive momentum, others lag
-- Top tickets (RUBX, MHOT, CPCI, etc.) have constructive/bullish‑watch outlooks but face high RSI or weak liquidity
-- Liquidity spikes modest; support levels 5‑15% away, resistance 4‑13% away → limited short‑term upside
-- Uncertainty remains high due to overall market weakness and sector lag, so hold positions only
+- Summary: EGX30 and EGX70 are both in a bearish regime with weak breadth (≈9.5%). The market is in DEFENSIVE_NO_NEW_BUY mode, so the scanner flags HOLD for all tickets. Liquidity is mixed – a few stocks show accumulation spikes, but overall sector support is limited and resistance is near. Leading sectors (Tourism & Leisure, Automotive & Distribution, Transportation & Logistics) show modest upside, yet the broader market outlook remains uncertain for the next 1‑3 days.
+- Bearish EGX30/EGX70 trends and low sector breadth keep risk mode defensive.
+- Liquidity spikes in RUBX, CPCI, LCSW suggest short‑term interest, but RSI overbought on RUBX.
+- Tourism & Leisure (MHOT) leads with strong 20‑day MA support, but liquidity is cooling.
+- Transportation & Logistics (CSAG) shows clean technicals, yet sector is not market‑leading.
+- Overall outlook 1‑3 days: limited upside, watch for any shift in breadth or liquidity before considering new entries.
 
 ## Top Liquidity Spikes
 - AMES.CA: spike=12.36 liquidity=33500140.0 outlook=WEAK_OR_RISKY score=0 buy_ready=False
