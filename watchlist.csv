@@ -1,6 +1,5 @@
 Ticker,Company Name,Sector,AI Status,Watchlist Tier,Signal Status
-DAPH.CA,Development & Engineering Consultants,General / Verified EGX Expansion,Active Tracking,WATCH,WATCH_ONLY
-OCDI.CA,Sixth of October Development and Investment,Real Estate,Active Tracking,WATCH,WATCH_ONLY
-CIRA.CA,Cairo Investment and Real Estate Development,Education,Active Tracking,WATCH,WATCH_ONLY
-GIHD.CA,Gharbia Islamic Housing Development Company,General / Verified EGX Expansion,Active Tracking,WATCH,WATCH_ONLY
-CLHO.CA,Cleopatra Hospital Group,Healthcare,Active Tracking,WATCH,WATCH_ONLY
+SCTS.CA,Suez Canal Company for Technology Settling,Education,Active Tracking,WATCH,BUY_READY
+NHPS.CA,National Company for Housing Professional Syndicates SAE,General / Verified EGX Expansion,Active Tracking,WATCH,BUY_READY
+AXPH.CA,Alexandria Co. For Pharmaceuticals & Chemical Industries,General / Verified EGX Expansion,Active Tracking,WATCH,BUY_READY
+LCSW.CA,Lecico Egypt,Building Materials,Active Tracking,WATCH,BUY_READY
