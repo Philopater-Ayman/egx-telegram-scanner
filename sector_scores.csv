@@ -1,22 +1,22 @@
 Sector,Ticker_Count,Median_5D_Return_%,Median_20D_Return_%,Above_MA20_%,Above_MA50_%,Median_Liquidity_Spike,Top_Liquidity_Stocks,Sector_Score,Sector_Rank
-Automotive & Distribution,2,2.7,12.9,100.0,100.0,0.36,"MTIE.CA, GBCO.CA",10.2,1
-Technology & Distribution,1,4.05,3.08,100.0,100.0,0.39,RAYA.CA,8.82,2
-Education,3,0.24,2.86,100.0,100.0,0.11,"CIRA.CA, SCTS.CA, TALM.CA",6.83,3
-Tourism & Leisure,1,-2.91,5.66,100.0,100.0,0.17,MHOT.CA,6.22,4
-Investment Holding,3,0.4,-3.42,100.0,66.67,0.31,"CCAP.CA, OIH.CA, BINV.CA",4.94,5
-Textiles,4,-0.07,-3.31,50.0,100.0,0.28,"KABO.CA, SPIN.CA, ORWE.CA, ACGC.CA",4.23,6
-Transportation & Logistics,2,2.54,-0.55,50.0,50.0,0.17,"CSAG.CA, ALCN.CA",4.16,7
-Banking & Financials,10,0.55,-0.73,50.0,70.0,0.17,"COMI.CA, HDBK.CA, ADIB.CA, EXPA.CA, CIEB.CA",3.93,8
-General / Verified EGX Expansion,104,0.0,0.0,51.92,59.62,0.26,"RUBX.CA, DTPP.CA, GTWL.CA, OBRI.CA, SVCE.CA",3.73,9
-Healthcare,6,-0.5,0.83,50.0,66.67,0.11,"NIPH.CA, ISPH.CA, PHAR.CA, RMDA.CA, CLHO.CA",3.64,10
-Real Estate,13,-0.76,-2.27,53.85,84.62,0.13,"TMGH.CA, ARAB.CA, PHDC.CA, ZMID.CA, ORHD.CA",3.59,11
-Agriculture & Food Production,2,-0.76,3.67,50.0,50.0,0.08,"MPCO.CA, IFAP.CA",3.54,12
-Non-bank Financial Services,5,-1.66,0.36,80.0,40.0,0.2,"BTFH.CA, HRHO.CA, CNFN.CA, ATLC.CA, CICH.CA",3.31,13
-Building Materials,6,0.03,-1.98,50.0,50.0,0.41,"SCEM.CA, PRCL.CA, LCSW.CA, ARCC.CA, MCQE.CA",3.22,14
-"Food, Beverages & Tobacco",7,-0.82,2.21,42.86,57.14,0.07,"EFID.CA, JUFO.CA, POUL.CA, OLFI.CA, DOMT.CA",3.22,15
-Industrial Goods & Cables,2,-0.63,-1.27,50.0,50.0,0.21,"SWDY.CA, ELEC.CA",2.81,16
-Energy & Petrochemicals,4,-0.31,-0.4,25.0,50.0,0.35,"AMOC.CA, EGAS.CA, MOIL.CA, EKHO.CA",2.57,17
-Telecommunications,2,-1.08,-3.31,50.0,50.0,0.03,"ETEL.CA, EGSA.CA",1.95,18
-Industrial Goods & Construction,1,0.0,0.0,0.0,0.0,1.0,ORAS.CA,1.5,19
-Fintech & Payments,2,-1.78,-7.0,50.0,0.0,0.22,"FWRY.CA, EFIH.CA",-0.29,20
-Basic Resources & Chemicals,10,-0.89,-8.96,30.0,10.0,0.23,"ISMQ.CA, MFPC.CA, ABUK.CA, EGCH.CA, ATQA.CA",-0.61,21
+Automotive & Distribution,2,2.7,12.9,100.0,100.0,1.05,"MTIE.CA, GBCO.CA",11.24,1
+Technology & Distribution,1,4.05,3.08,100.0,100.0,1.13,RAYA.CA,9.93,2
+Education,3,0.24,2.86,100.0,100.0,0.14,"CIRA.CA, SCTS.CA, TALM.CA",6.88,3
+Tourism & Leisure,1,-2.91,5.66,100.0,100.0,0.23,MHOT.CA,6.31,4
+Investment Holding,3,0.4,-3.42,100.0,66.67,0.37,"CCAP.CA, OIH.CA, BINV.CA",5.03,5
+Textiles,4,-0.07,-3.31,50.0,100.0,0.33,"KABO.CA, ORWE.CA, SPIN.CA, ACGC.CA",4.31,6
+Transportation & Logistics,2,2.54,-0.55,50.0,50.0,0.24,"CSAG.CA, ALCN.CA",4.28,7
+Healthcare,6,-0.5,0.83,50.0,83.33,0.19,"NIPH.CA, ISPH.CA, RMDA.CA, PHAR.CA, CLHO.CA",4.25,8
+Banking & Financials,10,0.55,-0.73,50.0,70.0,0.27,"COMI.CA, HDBK.CA, ADIB.CA, EXPA.CA, CIEB.CA",4.07,9
+Non-bank Financial Services,5,-1.66,0.36,80.0,60.0,0.27,"BTFH.CA, HRHO.CA, CNFN.CA, ATLC.CA, CICH.CA",4.01,10
+Agriculture & Food Production,2,-0.76,3.67,50.0,50.0,0.27,"MPCO.CA, IFAP.CA",3.83,11
+Real Estate,13,-0.76,-2.27,53.85,84.62,0.26,"TMGH.CA, PHDC.CA, ARAB.CA, PRDC.CA, ZMID.CA",3.79,12
+General / Verified EGX Expansion,104,0.0,0.0,50.96,58.65,0.33,"RUBX.CA, GTWL.CA, DTPP.CA, OBRI.CA, ELSH.CA",3.78,13
+Building Materials,6,0.15,-3.67,50.0,66.67,0.52,"SCEM.CA, PRCL.CA, LCSW.CA, ARCC.CA, MCQE.CA",3.61,14
+"Food, Beverages & Tobacco",7,-0.82,2.21,42.86,57.14,0.13,"EFID.CA, EAST.CA, JUFO.CA, OLFI.CA, POUL.CA",3.31,15
+Industrial Goods & Cables,2,-0.63,-1.27,50.0,50.0,0.26,"SWDY.CA, ELEC.CA",2.88,16
+Industrial Goods & Construction,1,0.0,0.0,0.0,0.0,1.0,ORAS.CA,1.5,17
+Energy & Petrochemicals,4,0.0,-0.4,0.0,25.0,0.42,"AMOC.CA, EGAS.CA, MOIL.CA, EKHO.CA",1.3,18
+Telecommunications,2,-1.08,-3.31,0.0,50.0,0.06,"ETEL.CA, EGSA.CA",0.49,19
+Fintech & Payments,2,-1.78,-7.0,50.0,0.0,0.31,"FWRY.CA, EFIH.CA",-0.15,20
+Basic Resources & Chemicals,10,-0.89,-8.96,20.0,0.0,0.32,"ISMQ.CA, ABUK.CA, MFPC.CA, ATQA.CA, EGCH.CA",-1.07,21
