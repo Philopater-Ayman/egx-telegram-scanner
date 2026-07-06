@@ -1,13 +1,13 @@
 # Telegram-First EGX Scanner Report
 
-Scan phase: Post-close tomorrow tickets
-Generated UTC: 2026-07-06T16:02:45.054617+00:00
-Generated Cairo: 2026-07-06 19:02
-Run timing: target 15:30 Cairo | generated Cairo 2026-07-06 19:02 | cron 30 12 * * 0-4
-Trigger: scheduled cron=30 12 * * 0-4 mapped to post_close; Cairo now 2026-07-06 18:58
+Scan phase: Evening tomorrow plan
+Generated UTC: 2026-07-06T18:27:38.192469+00:00
+Generated Cairo: 2026-07-06 21:27
+Run timing: target 19:30 Cairo | generated Cairo 2026-07-06 21:27 | cron 30 16 * * 0-4
+Trigger: scheduled cron=30 16 * * 0-4 mapped to evening_plan; Cairo now 2026-07-06 21:24
 
 ## Control Center
-- Action tickets: 3 prioritized signal(s)
+- Action tickets: 0 prioritized signal(s)
 - BUY-ready candidates: 75
 - Data quality issues: 0
 - Tradeable price/liquidity tickers: 176/190
@@ -33,8 +33,11 @@ Trigger: scheduled cron=30 12 * * 0-4 mapped to post_close; Cairo now 2026-07-06
 ## AI Narrative
 - Provider: OpenRouter OK
 - Model: nvidia/nemotron-3-super-120b-a12b-20230311:free
-- Summary: {
-  "summary": "Scanner prioritized RAYA.CA
+- Summary: Scanner issued a fallback HOLD for all tickets because none satisfied evidence, liquidity, freshness, and technical gates; EGX30 is constructive, EGX70 bullish, sector breadth 47.6%, and risk mode is SELECTIVE_SWING_TRADES_ONLY.
+- No candidate passed evidence/liquidity/freshness/technical filters → fallback HOLD (low confidence).
+- EGX30 constructive: ~65% above MA20, median 5‑day return +0.6%, liquidity expanding.
+- EGX70 bullish: ~71% above MA20, median 5‑day return +0.6%, breadth supports normal picks.
+- Risk mode SELECTIVE_SWING_TRADES_ONLY adds uncertainty for the next 1‑3 days.
 
 ## Top Liquidity Spikes
 - KABO.CA: spike=10.24 liquidity=144973520.0 outlook=WEAK_OR_RISKY score=0 buy_ready=False
@@ -54,18 +57,7 @@ Trigger: scheduled cron=30 12 * * 0-4 mapped to post_close; Cairo now 2026-07-06
 - #8 Education: score=6.37 5d=0.61% 20d=2.37% aboveMA50=66.67%
 
 ## Today's Prioritized Action Tickets
-- Priority #1: BUY RAYA.CA
-  - Entry: 8.05 | Take profit: 8.69 | Stop loss: 7.73
-  - Confidence: LOW | score=33.8 | outlook=BULLISH_WATCH 97
-  - Reason: WATCH/BUY SETUP: RAYA.CA has aligned current price data, liquidity above threshold, price above MA20/MA50, RSI 68.47, support 6.7, resistance 7.93, and evidence sources. Macro trend is Bullish; market regime is SELECTIVE_SWING_TRADES_ONLY; verify price action in Thndr before treating it as a swing entry.
-- Priority #2: BUY ARAB.CA
-  - Entry: 0.23 | Take profit: 0.25 | Stop loss: 0.22
-  - Confidence: LOW | score=31.28 | outlook=BULLISH_WATCH 81.71
-  - Reason: BUY SETUP: ARAB.CA has aligned current price data, liquidity above threshold, price above MA20/MA50, RSI 48.48, support 0.2, resistance 0.22, and evidence sources. Macro trend is Bullish; market regime is SELECTIVE_SWING_TRADES_ONLY; verify price action in Thndr before treating it as a swing entry.
-- Priority #3: BUY OBRI.CA
-  - Entry: 37.38 | Take profit: 40.38 | Stop loss: 35.88
-  - Confidence: LOW | score=28.79 | outlook=BULLISH_WATCH 83.47
-  - Reason: BUY SETUP: OBRI.CA has aligned current price data, liquidity above threshold, price above MA20/MA50, RSI 57.4, support 31.5, resistance 39.27, and evidence sources. Macro trend is Bullish; market regime is SELECTIVE_SWING_TRADES_ONLY; verify price action in Thndr before treating it as a swing entry.
+- HOLD: Local fallback HOLD: no candidate passed evidence, liquidity, freshness, and technical gates.
 
 ## Thndr Instruction
 - Advisor-only signal mode is active. The scanner never executes trades.
@@ -298,31 +290,34 @@ Trigger: scheduled cron=30 12 * * 0-4 mapped to post_close; Cairo now 2026-07-06
 - These checks are historical context only, not a prediction or guarantee.
 
 ## Evidence
-- RAYA.CA: status=RECENT_ACCEPTED latest=2026-07-01 age_days=5 sources=3 expected=Raya Holding summary=Raya Holding for Financial Investments (RAYA.CA) has shown recent activity including an employee incentive share transfer, Q1 2026 financial results, and various market announcements. The company reported record-breaking financial results in 2024 with significant increases in consolidated revenues and net income. Raya Holding is listed on the Egyptian Exchange (EGX) and operates across diverse sectors including information technology, fintech, and manufacturing.
-  - Raya Holding executes EGP 23.9M employee incentive share transfer (June 29, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHdj2_quPhN4DR4dpA4-LrFrTyzTg27Nif_dIno9puwZT5WP582GVEQBLx2YhYZeRko1WlSYKTWDE_0AVP9ubcqFIaPpTzTk6tQIy0SeJuTiPlgCEv4MIy4f0WM8jQPVmEK9CuYj9sQL2y_zev6SKor3tHXPwuU7KKjGIGoyZmq8faXwiNrjdcR9SvYJmFFGl0pBd3AMMazMV5sU1bUQT4Z
-  - Raya Holding For Financial Investments (RAYA.CA) Reports Its Financial Results (Standalone) for The Period From 01/01/2026 to 31/03/2026 (May 14, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEpNkyw8ATtzHRphyvnv1P2eMCcAR5C9IA0HEn71DfEwDZk6SqqYA8mkTKRSC8fO4CJpvU95INHv_G2l97ut5NOiOm4zbTDj7lOfs-FpZVBydETHNW-eZ35dd7hsZEPB1mVYAJwj26NdjtfzY_sBL28-Tg=
-  - Release from Raya Holding For Financial Investments (RAYA.CA) Concerning Raya Information Technology (July 1, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEjed1CBN-DFRI5CgIv3vJxf5SHM9XhhMauMcxMT1ckr6nexTZNnaZYfiyD-CJUl0Tv42enQrjEgXFGeg0v0PZ0z9ghUyuxn1grC32SAxSeR74LPqGTpaUBSCP3KLT7UEkaN6p2ti2b1Tj2mL5g5N5NtrE=
+- RAYA.CA: status=OLD_ACCEPTED latest=2025-01-01 age_days=551 sources=3 expected=Raya Holding summary=Raya stock maintains bullish momentum above EGP 9; Aman Holding, MSMEDA partner to inject EGP 300m into SMEs across Egypt; Raya Holding’s consolidated profits surge in 2025; revenues hit EGP 63.8bn
+  - Raya stock maintains bullish momentum above EGP 9: https://english.mubasher.info/news/4601857/Raya-stock-maintains-bullish-momentum-above-EGP-9/
+  - Aman Holding, MSMEDA partner to inject EGP 300m into SMEs across Egypt: https://english.mubasher.info/news/4577815/Aman-Holding-MSMEDA-partner-to-inject-EGP-300m-into-SMEs-across-Egypt/
+  - Raya Holding’s consolidated profits surge in 2025; revenues hit EGP 63.8bn: https://english.mubasher.info/news/4564195/Raya-Holding-s-consolidated-profits-surge-in-2025-revenues-hit-EGP-63-8bn/
 - CICH.CA: status=REJECTED_TICKER_MISMATCH latest=n/a age_days=n/a sources=0 expected=CI Capital Holding summary=Evidence rejected for CICH.CA: source text did not clearly match CICH.CA / CI Capital Holding.
-- ARAB.CA: status=RECENT_ACCEPTED latest=2026-06-22 age_days=14 sources=3 expected=Arab Developers Holding summary=Arab Developers Holding (ARAB.CA, also referred to as PORT.CA on EGX) has recently completed a significant capital increase, with strong investor backing. The company also reported its full-year 2025 earnings and has had several disclosures and AGM minutes released through the Egyptian Exchange.
-  - ARAB Developers Holding (PORT.CA) - AGM Minutes (after Certification) (June 22, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHoBd5whNnqVPBMvHRUu73L_9E-00PFNRXY9m8B4p60XtsLVRrqx2WQRqgccNikPkinuFQMPHKMAo3ZsNNcvx_VpMIdUDhzVlp-zPlTyj0geJxO28twbbQSWsJjR-iolhA1QWQOg2RKYp5l_aKWNhfj
-  - Release from ARAB Developers Holding (PORT.CA) Regarding the Signing of a Contract (June 10, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHNMurQJlDqrI29JByDPIn3Z8ckhAV5E3kZ2PoltXHEZft8Tvqq-LICKsHjO51jxxDpzk_qMl0nC2hgXOrHp1r4EBl-XYAYP8m-zFlpKZ-LHLGL_eqvQj9F9YqLzaX1vuO1WzJCB9fIXjpiZe4W9nw=
-  - Arab Developers Holding raises EGP 986.6mln with strong backing from major investors (April 23, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGZg_AXQCygi7HkAaKS_hoBaMh-Yce-pyjFSovDiPYs0O2D8m6A1hEbYWORMdc5oFuZtygyclCXvje2DtoyNwFXUa1PX80oIbZwLaeevov4-qjsJ1hsU7XnKksTT3f-Dfh8sry5N6-gxjI3uzLgmqQAsrpobuz3JbRC4hygf5EnQu6EnKXX8vK4_x243LmNMIxoAHyJkhzhkYzXFoppmRdOBd8lmmyrisrmxh02w3A6GLcvrwCXKFmwcTvqUAI3m9o6BJooJJW-pGV9PkGj
+- ARAB.CA: status=ACCEPTED_UNDATED latest=n/a age_days=n/a sources=3 expected=Arab Developers Holding summary=Arab Developers Holding unveils EGP 1bn expansion plans to improve financial efficiency; FRA gives initial approval for Arab Developers’ rights issue; Arab Developers stock stabilizes after correction
+  - Arab Developers Holding unveils EGP 1bn expansion plans to improve financial efficiency: https://english.mubasher.info/news/4601724/Arab-Developers-Holding-unveils-EGP-1bn-expansion-plans-to-improve-financial-efficiency/
+  - FRA gives initial approval for Arab Developers’ rights issue: https://english.mubasher.info/news/4582627/FRA-gives-initial-approval-for-Arab-Developers-rights-issue/
+  - Arab Developers stock stabilizes after correction: https://english.mubasher.info/news/4564643/Arab-Developers-stock-stabilizes-after-correction/
 - EBSC.CA: status=REJECTED_TICKER_MISMATCH latest=n/a age_days=n/a sources=0 expected=Osool ESB Securities Brokerage summary=Evidence rejected for EBSC.CA: source text did not clearly match EBSC.CA / Osool ESB Securities Brokerage.
 - NHPS.CA: status=REJECTED_TICKER_MISMATCH latest=n/a age_days=n/a sources=0 expected=National Company for Housing Professional Syndicates SAE summary=Evidence rejected for NHPS.CA: source text did not clearly match NHPS.CA / National Company for Housing Professional Syndicates SAE.
-- ODIN.CA: status=OLD_ACCEPTED latest=2025-01-01 age_days=551 sources=3 expected=ODIN Investments (S.A.E) summary=Odin Investments to distribute EGP 45m dividends for 2025; EGX-listed companies, banks propose cash dividends for 2025; Odin Investments to launch EGP 5m fund for investments in metals Gemini also reviewed web evidence but did not return ticker-specific citations.
+- ODIN.CA: status=OLD_ACCEPTED latest=2025-01-01 age_days=551 sources=3 expected=ODIN Investments (S.A.E) summary=Odin Investments to distribute EGP 45m dividends for 2025; EGX-listed companies, banks propose cash dividends for 2025; Odin Investments to launch EGP 5m fund for investments in metals
   - Odin Investments to distribute EGP 45m dividends for 2025: https://english.mubasher.info/news/4586642/Odin-Investments-to-distribute-EGP-45m-dividends-for-2025/
   - EGX-listed companies, banks propose cash dividends for 2025: https://english.mubasher.info/news/4560139/EGX-listed-companies-banks-propose-cash-dividends-for-2025/
   - Odin Investments to launch EGP 5m fund for investments in metals: https://english.mubasher.info/news/4550653/Odin-Investments-to-launch-EGP-5m-fund-for-investments-in-metals/
-- RACC.CA: status=RECENT_ACCEPTED latest=2026-06-04 age_days=32 sources=3 expected=Raya Customer Experience summary=Raya Customer Experience (RACC.CA) has reported strong Q1 2026 financial results, showing significant year-on-year increases in revenue and net profit. The company, a leading BPO and CCO services provider, also released its Q1 2025 results within the last 12 months and has had several market announcements regarding board meetings and an AGM.
-  - Raya Customer Experience Reports Q1 2026 Results (May 11, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEKk89r3b3dkzfuw72xaDk5fqRdmqojhiNjkHRfB4g3Jca95FdjSKZPCe3G9HMQuf2PYmN6SFa_OV2-Sb1u31W2_hyhnk32UffICG90lVBu_rbaD3-G3WA_e3k79Je8HcAYkWeko2sazdnRjpRl
-  - Raya Customer Experience (RACC.CA) - AGM Invitation (June 4, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEtllX0rOB2atNXNhgYYEzEUtc0HJTxei55qdeEolYIysBuMztzZcJnzDGLo1VIfJAqZ3ZfVGbkUd6roWF3JtZpxHK3EwJkzA4Ln8Jy2dKPyBBZQEb-lHG9cOZuy-urHp4FD6POal6bmtvH9nc9AMTH
-  - Raya Customer Experience (RACC.CA) - Board of Directors' Meeting Minutes (May 12, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEtllX0rOB2atNXNhgYYEzEUtc0HJTxei55qdeEolYIysBuMztzZcJnzDGLo1VIfJAqZ3ZfVGbkUd6roWF3JtZpxHK3EwJkzA4Ln8Jy2dKPyBBZQEb-lHG9cOZuy-urHp4FD6POal6bmtvH9nc9AMTH
-- OBRI.CA: status=RECENT_ACCEPTED latest=2026-07-04 age_days=2 sources=2 expected=El-Ebour Co. for Real Estate Investment S.A.E. summary=El-Ebour Co. for Real Estate Investment S.A.E. (OBRI.CA) has recent financial statements available as of March 31, 2026. The company is involved in real estate investment and contract services in Egypt and is listed on the EGX.
-  - Detailed annual and quarterly financials and income statement for El-Ebour Co. for Real Estate Investment S.A.E. (EGX:OBRI) (March 31, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE6h5BYQfnSWk4voeQA9ber8JPb-k9QkC5EU7lCRvX2abcFwWoFem1pW5MA7Lf7h-88vu-AuaRIfVYcKR5vM8a1X1jIHe12UGbOAgMzajcsZ0lLIn93CBE0K1X5yKb-hGEciT1MwIyOulBKHb2Ckg==
-  - El-Ebour Co. for Real Estate Investment S.A.E. (CASE:OBRI) Stock Report - Market Cap (July 4, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHXjQpl4ehopfVc1qWSMgCXzFKtbqfxhKY-t_kQKTGR2feq_KAVF_-beGM8-RBDzh7efXrSslhjC_FpMvJ28lVzQJKy6Mrimm7jkrGUMfCx3QdgwhezvoSEmJfn34AoE55CZlvNwljyGknzMT4qrH9SeacwIhYz1vseA-Lq2SXNKvyS63Bj83uIVjzZt7ipfGD4Oc17XTSPTbx35Lys7eqffloGw6R18_12iUYSKh-03g1uT37jnQ==
+- RACC.CA: status=REJECTED_TICKER_MISMATCH latest=n/a age_days=n/a sources=0 expected=Raya Customer Experience summary=Evidence rejected for RACC.CA: source text did not clearly match RACC.CA / Raya Customer Experience.
+- OBRI.CA: status=ACCEPTED_UNDATED latest=n/a age_days=n/a sources=3 expected=El-Ebour Co. for Real Estate Investment S.A.E. summary=El Obour for Real Estate advances UAE expansion via new subsidiary; El Obour for Real Estate registers EGP 39m consolidated net profits in 9M-25; El Ebour for Real Estate expands business in UAE
+  - El Obour for Real Estate advances UAE expansion via new subsidiary: https://english.mubasher.info/news/4547120/El-Obour-for-Real-Estate-advances-UAE-expansion-via-new-subsidiary/
+  - El Obour for Real Estate registers EGP 39m consolidated net profits in 9M-25: https://english.mubasher.info/news/4527519/El-Obour-for-Real-Estate-registers-EGP-39m-consolidated-net-profits-in-9M-25/
+  - El Ebour for Real Estate expands business in UAE: https://english.mubasher.info/news/4469178/El-Ebour-for-Real-Estate-expands-business-in-UAE/
 
 ## Warnings
+- Evidence for RAYA.CA matches the company but appears old; latest detected date is 2025-01-01.
+- Gemini batch evidence failed: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
 - Evidence rejected for CICH.CA: source text did not clearly match CICH.CA / CI Capital Holding.
+- Evidence for ARAB.CA matches the company but no source/report date was detected.
 - Evidence rejected for EBSC.CA: source text did not clearly match EBSC.CA / Osool ESB Securities Brokerage.
 - Evidence rejected for NHPS.CA: source text did not clearly match NHPS.CA / National Company for Housing Professional Syndicates SAE.
 - Evidence for ODIN.CA matches the company but appears old; latest detected date is 2025-01-01.
+- Evidence rejected for RACC.CA: source text did not clearly match RACC.CA / Raya Customer Experience.
+- Evidence for OBRI.CA matches the company but no source/report date was detected.

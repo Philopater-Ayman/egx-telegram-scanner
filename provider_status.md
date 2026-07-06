@@ -1,10 +1,10 @@
 # Provider Status
 
-Generated UTC: 2026-07-06T16:02:46.521948+00:00
-Generated Cairo: 2026-07-06 19:02
-- Scan phase: Post-close tomorrow tickets
-- Run timing: target 15:30 Cairo | generated Cairo 2026-07-06 19:02 | cron 30 12 * * 0-4
-- Trigger: scheduled cron=30 12 * * 0-4 mapped to post_close; Cairo now 2026-07-06 18:58
+Generated UTC: 2026-07-06T18:27:39.647112+00:00
+Generated Cairo: 2026-07-06 21:27
+- Scan phase: Evening tomorrow plan
+- Run timing: target 19:30 Cairo | generated Cairo 2026-07-06 21:27 | cron 30 16 * * 0-4
+- Trigger: scheduled cron=30 16 * * 0-4 mapped to evening_plan; Cairo now 2026-07-06 21:24
 
 - Macro source: Mubasher EGX market page (delayed public data)
 - Macro freshness: DELAYED
@@ -13,16 +13,21 @@ Generated Cairo: 2026-07-06 19:02
 - Market data: 176/190 tickers have tradeable current/delayed price data
 - Mubasher delayed current rows used: 182/190
 - Current/Yahoo technical mismatches blocked: 13/190
-- DirectFN public table health only, not trusted for action tickets: 252 rows | as_of=2026-07-06T15:58:05.407262+00:00 | error=none
+- DirectFN public table health only, not trusted for action tickets: 252 rows | as_of=2026-07-06T18:24:08.203502+00:00 | error=none
 - Data quality issues: 0
-- Evidence sources found: 14
+- Evidence sources found: 12
 - AI narrative: OpenRouter OK (nvidia/nemotron-3-super-120b-a12b-20230311:free)
 - Telegram sent on latest run: True
-- Latest ticket id(s): 20260706T160246Z_BUY_RAYA.CA, 20260706T160246Z_BUY_ARAB.CA, 20260706T160246Z_BUY_OBRI.CA
-- Latest history write(s): /home/runner/work/egx-telegram-scanner/egx-telegram-scanner/trade_history.csv, /home/runner/work/egx-telegram-scanner/egx-telegram-scanner/trade_history.csv, /home/runner/work/egx-telegram-scanner/egx-telegram-scanner/trade_history.csv
+- Latest ticket id(s): 20260706T182739Z_HOLD_NONE
+- Latest history write(s): /home/runner/work/egx-telegram-scanner/egx-telegram-scanner/trade_history.csv
 
 ## Warnings
+- Evidence for RAYA.CA matches the company but appears old; latest detected date is 2025-01-01.
+- Gemini batch evidence failed: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
 - Evidence rejected for CICH.CA: source text did not clearly match CICH.CA / CI Capital Holding.
+- Evidence for ARAB.CA matches the company but no source/report date was detected.
 - Evidence rejected for EBSC.CA: source text did not clearly match EBSC.CA / Osool ESB Securities Brokerage.
 - Evidence rejected for NHPS.CA: source text did not clearly match NHPS.CA / National Company for Housing Professional Syndicates SAE.
 - Evidence for ODIN.CA matches the company but appears old; latest detected date is 2025-01-01.
+- Evidence rejected for RACC.CA: source text did not clearly match RACC.CA / Raya Customer Experience.
+- Evidence for OBRI.CA matches the company but no source/report date was detected.
