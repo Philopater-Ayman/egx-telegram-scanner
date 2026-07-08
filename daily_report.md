@@ -1,13 +1,13 @@
 # Telegram-First EGX Scanner Report
 
-Scan phase: Post-close tomorrow tickets
-Generated UTC: 2026-07-08T14:52:05.654906+00:00
-Generated Cairo: 2026-07-08 17:52
-Run timing: target 15:30 Cairo | generated Cairo 2026-07-08 17:52 | cron 30 12 * * 0-4
-Trigger: scheduled cron=30 12 * * 0-4 mapped to post_close; Cairo now 2026-07-08 17:45
+Scan phase: Evening tomorrow plan
+Generated UTC: 2026-07-08T17:59:42.333258+00:00
+Generated Cairo: 2026-07-08 20:59
+Run timing: target 19:30 Cairo | generated Cairo 2026-07-08 20:59 | cron 30 16 * * 0-4
+Trigger: scheduled cron=30 16 * * 0-4 mapped to evening_plan; Cairo now 2026-07-08 20:55
 
 ## Control Center
-- Action tickets: 0 prioritized signal(s)
+- Action tickets: 3 prioritized signal(s)
 - BUY-ready candidates: 52
 - Data quality issues: 0
 - Tradeable price/liquidity tickers: 181/190
@@ -33,11 +33,10 @@ Trigger: scheduled cron=30 12 * * 0-4 mapped to post_close; Cairo now 2026-07-08
 ## AI Narrative
 - Provider: OpenRouter OK
 - Model: nvidia/nemotron-3-super-120b-a12b-20230311:free
-- Summary: EGX30 bearish / EGX70 bullish, sector breadth 66.7%, risk mode selective small‑mid swings; scanner highlights several Real Estate and Tech names with accumulation spikes and near‑resistance levels, but evidence is thin and confidence remains low.
-- Selected tickets show high rank scores, BULLISH_WATCH outlook, and ACCUMULATION_SPIKE liquidity, sitting within 1‑2% of their 20‑day resistance while staying ~10‑12% above support.
-- Liquidity spikes suggest short‑term institutional interest; proximity to resistance offers upside if broken, yet also raises pullback risk; sector alignment with leading Real Estate, Technology & Distribution, and Fintec
-- EGX30’s bearish bias drags overall market confidence, while EGX70’s bullish breadth shifts the risk mode to SELECTIVE_SMALL_MID_SWINGS, implying only limited, selective exposure is warranted.
-- Uncertainty remains high: most tickers lack clear fundamental evidence, RSI readings approach overbought levels, and momentum flags are extended, so the outlook for the next 1‑3 days stays watchful with possible reversal
+- Summary: Scanner prioritized three Real Estate tickets (HELI.CA, TMGH.CA, PRDC.CA) as WATCH/BUY setups despite a bearish EGX30, bullish EGX70 and a selective small‑mid swing regime, noting low confidence and mixed technical cues.
+- HELI.CA: high liquidity spike, price above MA20/MA50, RSI 63, near resistance; momentum extended → watch for possible pullback.
+- TMGH.CA: strong liquidity, price above MA20/MA50, RSI ~60, no major risk flags, sector strength → watch for continuation.
+- PRDC.CA: liquidity cooling, price far above support, RSI 62, sector weight → watch for mean‑reversion risk.
 
 ## Top Liquidity Spikes
 - SEIG.CA: spike=35.87 liquidity=166478688.0 outlook=WEAK_OR_RISKY score=0 buy_ready=False
@@ -57,7 +56,18 @@ Trigger: scheduled cron=30 12 * * 0-4 mapped to post_close; Cairo now 2026-07-08
 - #8 Food, Beverages & Tobacco: score=8.25 5d=4.82% 20d=5.65% aboveMA50=57.14%
 
 ## Today's Prioritized Action Tickets
-- HOLD: Local fallback HOLD: no candidate passed evidence, liquidity, freshness, and technical gates.
+- Priority #1: BUY HELI.CA
+  - Entry: 6.85 | Take profit: 7.39 | Stop loss: 6.58
+  - Confidence: LOW | score=30.54 | outlook=BULLISH_WATCH 99
+  - Reason: WATCH/BUY SETUP: HELI.CA has aligned current price data, liquidity above threshold, price above MA20/MA50, RSI 63.48, support 6.28, resistance 6.84, and evidence sources. Macro trend is Bearish; market regime is SELECTIVE_SMALL_MID_SWINGS; verify price action in Thndr before treating it as a swing entry.
+- Priority #2: BUY TMGH.CA
+  - Entry: 97.0 | Take profit: 104.02 | Stop loss: 93.49
+  - Confidence: LOW | score=29.4 | outlook=BULLISH_WATCH 100
+  - Reason: WATCH/BUY SETUP: TMGH.CA has aligned current price data, liquidity above threshold, price above MA20/MA50, RSI 59.88, support 92.1, resistance 99.43, and evidence sources. Macro trend is Bearish; market regime is SELECTIVE_SMALL_MID_SWINGS; verify price action in Thndr before treating it as a swing entry.
+- Priority #3: BUY PRDC.CA
+  - Entry: 8.3 | Take profit: 8.96 | Stop loss: 7.97
+  - Confidence: LOW | score=29.4 | outlook=BULLISH_WATCH 94
+  - Reason: WATCH/BUY SETUP: PRDC.CA has aligned current price data, liquidity above threshold, price above MA20/MA50, RSI 61.97, support 5.91, resistance 9.0, and evidence sources. Macro trend is Bearish; market regime is SELECTIVE_SMALL_MID_SWINGS; verify price action in Thndr before treating it as a swing entry.
 
 ## Thndr Instruction
 - Advisor-only signal mode is active. The scanner never executes trades.
@@ -82,8 +92,8 @@ Trigger: scheduled cron=30 12 * * 0-4 mapped to post_close; Cairo now 2026-07-08
 - MIPH.CA: rank=31.4 outlook=BULLISH_WATCH outlook_score=83.93 sector_rank=9 price=698.41 support=630.13 resistance=710.0 liquidity=10737573.0
 - HELI.CA: rank=30.54 outlook=BULLISH_WATCH outlook_score=99 sector_rank=3 price=6.85 support=6.28 resistance=6.84 liquidity=282626848.0
 - LCSW.CA: rank=29.7 outlook=BULLISH_WATCH outlook_score=73.1 sector_rank=11 price=31.27 support=26.0 resistance=31.33 liquidity=125802360.0
-- PRDC.CA: rank=29.4 outlook=BULLISH_WATCH outlook_score=94 sector_rank=3 price=8.3 support=5.91 resistance=9.0 liquidity=70464344.0
 - TMGH.CA: rank=29.4 outlook=BULLISH_WATCH outlook_score=100 sector_rank=3 price=97.0 support=92.1 resistance=99.43 liquidity=334318112.0
+- PRDC.CA: rank=29.4 outlook=BULLISH_WATCH outlook_score=94 sector_rank=3 price=8.3 support=5.91 resistance=9.0 liquidity=70464344.0
 - ARAB.CA: rank=29.06 outlook=BULLISH_WATCH outlook_score=100 sector_rank=3 price=0.23 support=0.2 resistance=0.24 liquidity=129980032.0
 - MASR.CA: rank=28.64 outlook=BULLISH_WATCH outlook_score=70.47 sector_rank=15 price=7.61 support=6.54 resistance=7.84 liquidity=83927136.0
 - OLFI.CA: rank=28.5 outlook=BULLISH_WATCH outlook_score=84.25 sector_rank=8 price=22.9 support=21.0 resistance=23.2 liquidity=54585768.0
@@ -290,27 +300,35 @@ Trigger: scheduled cron=30 12 * * 0-4 mapped to post_close; Cairo now 2026-07-08
 - These checks are historical context only, not a prediction or guarantee.
 
 ## Evidence
-- RREI.CA: status=REJECTED_TICKER_MISMATCH latest=n/a age_days=n/a sources=0 expected=Arab Real Estate Investment Co. summary=Evidence rejected for RREI.CA: source text did not clearly match RREI.CA / Arab Real Estate Investment Co..
-- BIOC.CA: status=REJECTED_TICKER_MISMATCH latest=n/a age_days=n/a sources=0 expected=GlaxoSmithKline S.A.E summary=Evidence rejected for BIOC.CA: source text did not clearly match BIOC.CA / GlaxoSmithKline S.A.E.
-- MIPH.CA: status=ACCEPTED_UNDATED latest=n/a age_days=n/a sources=3 expected=Minapharm Pharmaceuticals summary=Minapharm’ consolidated net profits retreat to EGP 62m in 9M-25; Minapharm posts EGP 66.5m standalone net profits in 9M-25; sales hit EGP 2.8bn; Investor buys EGP 1.3bn stake in Minapharm Pharmaceuticals Gemini also reviewed web evidence but did not return ticker-specific citations.
-  - Minapharm’ consolidated net profits retreat to EGP 62m in 9M-25: https://english.mubasher.info/news/4531893/Minapharm-consolidated-net-profits-retreat-to-EGP-62m-in-9M-25/
-  - Minapharm posts EGP 66.5m standalone net profits in 9M-25; sales hit EGP 2.8bn: https://english.mubasher.info/news/4528557/Minapharm-posts-EGP-66-5m-standalone-net-profits-in-9M-25-sales-hit-EGP-2-8bn/
-  - Investor buys EGP 1.3bn stake in Minapharm Pharmaceuticals: https://english.mubasher.info/news/4295954/Investor-buys-EGP-1-3bn-stake-in-Minapharm-Pharmaceuticals/
-- HELI.CA: status=REJECTED_TICKER_MISMATCH latest=n/a age_days=n/a sources=0 expected=Heliopolis Housing summary=Evidence rejected for HELI.CA: source text did not clearly match HELI.CA / Heliopolis Housing.
-- LCSW.CA: status=REJECTED_TICKER_MISMATCH latest=n/a age_days=n/a sources=0 expected=Lecico Egypt summary=Evidence rejected for LCSW.CA: source text did not clearly match LCSW.CA / Lecico Egypt.
-- PRDC.CA: status=REJECTED_TICKER_MISMATCH latest=n/a age_days=n/a sources=0 expected=Pioneers Properties For Urban Development summary=Evidence rejected for PRDC.CA: source text did not clearly match PRDC.CA / Pioneers Properties For Urban Development.
-- TMGH.CA: status=REJECTED_TICKER_MISMATCH latest=n/a age_days=n/a sources=0 expected=Talaat Moustafa Group Holding summary=Evidence rejected for TMGH.CA: source text did not clearly match TMGH.CA / Talaat Moustafa Group Holding.
-- AMER.CA: status=OLD_ACCEPTED latest=2025-01-01 age_days=553 sources=3 expected=Amer Group Holding summary=Amer Group stock holds above EGP 1.95 as bulls target higher levels; Amer Group’s consolidated profits hit EGP 196m in 2025; Amer Group stock’s technical outlook on profit-taking, holding above main support – Analysis Gemini also reviewed web evidence but did not return ticker-specific citations.
-  - Amer Group stock holds above EGP 1.95 as bulls target higher levels: https://english.mubasher.info/news/4583812/Amer-Group-stock-holds-above-EGP-1-95-as-bulls-target-higher-levels/
-  - Amer Group’s consolidated profits hit EGP 196m in 2025: https://english.mubasher.info/news/4563160/Amer-Group-s-consolidated-profits-hit-EGP-196m-in-2025/
-  - Amer Group stock’s technical outlook on profit-taking, holding above main support – Analysis: https://english.mubasher.info/news/4546813/Amer-Group-stock-s-technical-outlook-on-profit-taking-holding-above-main-support-Analysis/
+- RREI.CA: status=OLD_ACCEPTED latest=2024-01-01 age_days=919 sources=1 expected=Arab Real Estate Investment Co. summary=Arab Real Estate Investment Co. (RREI.CA) reported a revenue of EGP 70.94 million in 2024, a slight decrease of 0.41% from the previous year, with earnings at EGP 5.76 million, a 56.03% decrease.
+  - Arab Real Estate Investment Co. (EGX:RREI) Stock Price & Overview (2024 Financial Performance): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGRKxa6W0AfkGmXExpPUeZkG8YjqLjn8REpPHZdjiYEGCwJFcLvELdeyKDrF2aC_tc3-o2bummD38pjtOXNOqYszyMNzJgIsObFeMkfN82JxLgga4rA4n3wjhu1sp4suIz611I=
+- BIOC.CA: status=RECENT_ACCEPTED latest=2025-08-11 age_days=331 sources=3 expected=GlaxoSmithKline S.A.E summary=GlaxoSmithKline S.A.E (BIOC.CA) reported a revenue of EGP 3.73 billion in 2025, a 24.73% increase from the previous year, and earnings of EGP 213.23 million, up by 22.56%. The company's consolidated interim condensed financial statements as of June 30, 2025, were reviewed and reported on August 11, 2025. For the latest quarter, sales were EGP 837.48 million, with a net income of EGP 183.02 million and EPS of EGP 2.21.
+  - GlaxoSmithKline S.A.E (EGX:BIOC) Stock Price & Overview (2025 Financial Performance): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGOh844ZN2lxwVCluY_PD0iDdBqOKTNUu9-EQkLTNnIOGtg2edY8ViHVKSPKGgtK87ZnsxhfK-kvajmyVfHnwM7kk4uCYkJeDh3FakJOrYFgj1Tck74yjzHKllbrE8VLvIUYOs=
+  - Glaxo SmithKline - SAE - Consolidated Interim Condensed Financial Statements and Auditor's Limited Review (June 30, 2025, Report Date: August 11, 2025): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEg3PYn02AeZuoZBfDDcBA6cfZ6AOhcWhWA1aNiX8dLOJEykEXj5Ra4_-IfwoFpAoJ2iFdmyhcOPaqTwgcvppu4-EX0wzGYXrWkkV6RitNkpcF5DUIJCbiEcSkRftACVwT5S--CgoPwdwYzac43bPufSWDhljW5rX_HLefUXOGu5sQI6Hy1qBpGFpYUHGAkfARo_yOE9t1oUOwVYDzStsaFS3yc8dstHKV9we1hztqBiPSR-qPbJ6LoSr1PMGYw0e9Fa0YkKbeMGubEQ1mcWO-uCcEz88CC5OK_LPXGnjQAqAwgHZ8=
+  - EGX:BIOC Financials | Glaxo Smith Kline (Latest Quarter Earnings): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQETrH3tKbnc2j7aG8DOTxQH5yBQ5doWULfkriO3ElnBL2x7KIDMcieooT8oiFD5k2UBqpc4tgrWCVYp7LaIVPI0-B_JTqtBI5fmkSsStCbiuDyLbuxOFN7RQlVL4EDX1tUV0cWRLduPBPKjzaAT0ly_BXcb2QpbbRzdwQ==
+- MIPH.CA: status=RECENT_ACCEPTED latest=2026-07-01 age_days=7 sources=3 expected=Minapharm Pharmaceuticals summary=Minapharm Pharmaceuticals (MIPH.CA) reported a 74.4% year-on-year drop in 2025 consolidated profits, and unveiled EGP 2.5/share cash dividends for 2025. The company is also in talks regarding a €13.25 million EBRD loan. For the latest quarter (as of July 1, 2026), sales were EGP 1,598.11 million, with a net loss of EGP 14.64 million. In 2025, revenue was EGP 6.44 billion, a 14.97% increase, but earnings were EGP 6.62 million, a 94.84% decrease.
+  - Minapharm Pharmaceuticals reports 74.4% YoY drop in 2025 consolidated profits (June 10, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEIkZkWakyP3OTH8XEqpgF9WUYywaqUlUug91xFr9nvjva_s_eYCH3fi2p21OV3Z-PM368UE26k8Rs3Ciop1jBagq3L5a1QUV3FveSz8x89vZ4yXPdcE7jQywY9jgD0dWIPW7Saxghjijdk83Bo7Y0Rnw==
+  - Minapharm Pharmaceuticals unveils EGP 2.5/share cash dividends for 2025 (June 3, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEIkZkWakyP3OTH8XEqpgF9WUYywaqUlUug91xFr9nvjva_s_eYCH3fi2p21OV3Z-PM368UE26k8Rs3Ciop1jBagq3L5a1QUV3FveSz8x89vZ4yXPdcE7jQywY9jgD0dWIPW7Saxghjijdk83Bo7Y0Rnw==
+  - Minapharm Pharmaceuticals' OGM nods to EBRD loan (February 25, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEIkZkWakyP3OTH8XEqpgF9WUYywaqUlUug91xFr9nvjva_s_eYCH3fi2p21OV3Z-PM368UE26k8Rs3Ciop1jBagq3L5a1QUV3FveSz8x89vZ4yXPdcE7jQywY9jgD0dWIPW7Saxghjijdk83Bo7Y0Rnw==
+- HELI.CA: status=RECENT_ACCEPTED latest=2026-08-18 age_days=0 sources=3 expected=Heliopolis Housing summary=Heliopolis Housing (HELI.CA) reported a net profit after tax of EGP 2.711 billion in 2025, a 6% year-on-year increase, with sales growing by 197% to EGP 3.137 billion in the 12-month period ended December 31, 2025. The company's interim financial statements as of June 30, 2025, were reviewed and reported on August 17, 2025. Heliopolis Housing is expected to release its next earnings report on August 18, 2026. Recent announcements include decisions from the Board of Directors on June 8, 2026, and AGM minutes on May 18, 2026. The company also reported earnings results for Q1 2026 on June 8, 2026, and full-year 2025 results on April 5, 2026.
+  - Heliopolis Housing's profits rise 6% YoY in 2025 - Arab Finance (March 1, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGIETNVIIzb9_JYOgAZI5s2w49FTwvoJKgMbjb5DIQRlikEwM_GBspv0X6ZnPcRft8SqS2r7lVXU2042ukbYJE40_5dgCQE713W2sY8ZjZlS4BMzl7Q73EUtK85odZoB4_HlR53K9r_yZUi-7dc5cti5zJnJlAsG0ioXb5PVtLgKIN0WmodeIkNf6T-HmXON5GdjUCk_cnh5bvBhJ-ziQ==
+  - Heliopolis for Housing and Development Company (SAE) - Interim Financial Statements (June 30, 2025, Report Date: August 17, 2025): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHIDuiysuMYzGIkFDQqqpwTzpWvjhjnvKaGpn4Bq29gGTtBxMyQHoK7VjJFIeaK0o3BItkiUS515nwTZq0JfXZUJ35xUNibJtPiazt6El17AMT_4Ds87Gf042R4Ph6ImX2yzHqsM4u01MF-fLlz1BaCwKilAO3kfaoD0TCE6sPwUjdBLG6Z5OcG10VKoPALThm-S_zn3zs0rEvEIn3TNPecGp7I1YvWxT2Yu-tQwRk_n0ypFhBjAiBeRuqTGnSb0wLIL1u_cbdsftYflb1dq1BuY2h94RtsQL_Ad3OE4T8VbMGcFT6-Vt4JtW7hrbQ2m867tTBSAANdS9WVLwtwKZV1Q2WUvpCkKrpLWU6K-M4KABVtWJy-tRXL91W2hX6HEfLPCBzXu_P9XwIPaXPfL-vkVKde7Z3CS5U=
+  - Heliopolis Housing Actuals & Estimates (EGX:HELI) - TradingView (Next earnings report: August 18, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFqOlnYzjpci8brgb72L1Y162SlKdhresc4QaSTSf4TJ1_TyQeqRLvRTuahC5gBTlFuD-sCf-sQUT2MZ7rtApO8Vi7jBQzXXu2-pOgl41U6wogFZt4gs85Mct9t-KA-xTjENMA6lCVcgZgqVqSSbYQicdbBZu4sYz2MDNKRA0xH0Z2GKjDCSQ==
+- LCSW.CA: status=RECENT_ACCEPTED latest=2025-11-13 age_days=237 sources=3 expected=Lecico Egypt summary=Lecico Egypt (LCSW.CA) reported a net profit of EGP 143,352,172 for the financial period ended September 2025, a decrease compared to EGP 608,198,872 in the same period last year, primarily due to exceptional gains in Q1 2024. In 2025, revenue was EGP 7.80 billion, an increase of 17.44%, while earnings were EGP 340.89 million, a decrease of 64.10%. For the latest quarter, sales were EGP 1,956.800 million, with a net income of EGP 42.400 million and EPS of EGP 1.060. The company's FY 2024 financial statements were available as of December 31, 2024.
+  - Mr. / Head of Disclosure Sector in the Egyptian Stock Exchange (Lecico Egypt S.A.E. Financial Results for September 2025, November 13, 2025): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGxpwJ65rp2blgpy3OKlCnb7X1OzqX-5o42Jhig1M8lum2m4ltmCkVmFM1EPoPm8x3BTyHGsfhzACv6h0dEBsvgeQFnnCPbYlS79PN7O0bGAPS_7YAZaAkltWc1-qibg77ewq8erKBwEJuK5wCdS8BE4g==
+  - Lecico Egypt (S.A.E.) (EGX:LCSW) Stock Price & Overview (2025 Financial Performance): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGcAlBzIlVrhLmSFqvRwRDl48DPy7pVlLmVzi7Auwq8b_LB-gPKCwp-Oq8xWjKH2oAipaGdvjLJ4evOMngXap54njY2R7t_f0fgF31CRWXDVCEuzDJODhU74BLst9T9DCq6bpc=
+  - Lecico Egypt - EGX:LCSW Financials - Investing.com (Latest Quarter Earnings): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGF1D8YPyCfMEKmLTsXmYo3nKXzFHx_AzvsZILrAL4hQU02t8OdhXTCt8H8eySCL17VvcnxekfmJedzjhmQ7DXOGZV38y8b2wxdUtudYRd5I2_UumhmpvyMBWF_NgTdmUzE8DiAILE5YKeEdSJ7FweabxE90MdSlHWiL7A=
+- TMGH.CA: status=RECENT_ACCEPTED latest=2026-07-07 age_days=1 sources=2 expected=Talaat Moustafa Group Holding summary=Talaat Moustafa Group Holding (TMGH.CA) had a revenue of EGP 66.14 billion and profits of EGP 14.85 billion in the last 12 months, with an earnings per share of EGP 7.21. The stock price has increased by 76.53% in the last 52 weeks. For Q1 2026, the total revenue was EGP 14.25 billion, and the net income was EGP 4.15 billion.
+  - Talaat Moustafa Group Holding (EGX:TMGH) Statistics & Valuation Metrics - Stock Analysis (Last 12 months financial performance, July 7, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFLnLeir7VTLHyIjoctfBkxILRxTHYFK2Nt2QnuB96-GsStZpnWo4wsu6Jz0sej8iQuhpmdXk7OSoohBAhmixlJjEunp5tY4QhUkuOxWTnwyvAmv1da-c2xJnAa3BbORk0NLMKT4iZ-2MCQqb7BuA==
+  - Talaat Moustafa Group Holding Income Statement – EGX:TMGH (Q1 2026 Financials): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHlnQWwXuAdnNkDKbVOcv4xn-ZOB1lJdcQ45jqOVRSEn30uIr6JmdxCtwQg3nlQJqlBw5erPfwB5PpJO6eFIYDOMWAI4WmKVk2QpVYKGKwqGq5x9XTuwSCT19M4Kd0nB_KwEEdSwozX-ZvpVSDIanT7ZZaRyqum_1asT06FFAfHEk2loA==
+- PRDC.CA: status=RECENT_ACCEPTED latest=2026-07-01 age_days=7 sources=3 expected=Pioneers Properties For Urban Development summary=Pioneers Properties For Urban Development (PRDC.CA) announced consolidated financial results for the period ended March 31, 2026, reporting revenues of EGP 1.9 billion in Q1 2026 and a net profit before minorities of EGP 450 million. The company's total assets amounted to EGP 71.2 billion in Q1 2026. In 2025, revenue was EGP 6.41 billion, a 28.32% increase, but earnings were EGP 361.77 million, a 67.15% decrease. The consolidated financial statements for the year ended December 31, 2025, are also available.
+  - Pioneers Properties -Pre Group- Announces Consolidated Results for the Period ended March 31, 2026 (July 1, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFyIx-RGJ6oRDJqzjgDGRTstTrPwzkG_L-JlbLGHpn2KCSfATacu8Ie-ja7hFP7gAAQ1LCfaLD8XhhslBh_C_7Dh0GtgE6h0_2qoEoVoi9C4I7y3ex6oND0N_vtKt3-iVuuQJXMAxDRhpauSa0ZrjPjNg==
+  - Pioneers Properties For Urban Development - PRE Group (EGX:PRDC) - Stock Analysis (2025 Financial Performance): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEtqLzjFDFaNUXnxAGneN2wBP-y2Ckdblj5nZcXniyvv_R6D82AVqXRV9Abx-mr9JoVgj5uuSnYkIUFiJLLL96ipE50KxWIbG1p1Xj1jWu2GQqTbWGHZhuPhVTWA1wylYa8MBs=
+  - Pioneers Properties for Urban Development Company - PRE Group (SAE) Consolidated Financial Statements For The Year Ended 31 December 2025 (December 31, 2025): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEt9zXEoHnDpSP3r0yLwYTSgYhHp0loP1yDw55U0-VEmJWQkuHnpdzUpdCWgd90RILXnme9o5Owk9ngDhBuy1JNZjEHz6ffN3kdwOa0eJDo2xR7euF4A09XpR8M6UwUJjv89zCqXQwJWlBy-LZi_4ZyWA==
+- AMER.CA: status=RECENT_ACCEPTED latest=2026-03-31 age_days=99 sources=3 expected=Amer Group Holding summary=Amer Group Holding (AMER.CA) reported sales of EGP 398.332 million, net income of EGP 58.610 million, and EPS of EGP 0.060 for the latest quarter. The company's revenue increased from EGP 365.014 million in the previous quarter to EGP 398.332 million in the latest quarter. In 2025, revenue was EGP 1.62 billion, a 14.63% increase, and earnings were EGP 123.10 million, a 139.08% increase. The balance sheet as of March 31, 2026, is also available.
+  - EGX:AMER Financials | Amer Group Holding - Investing.com (Latest Quarter Earnings): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHun_t8YdBTX1r5153u_0fh_jq0m1zNd67IPERLGj61zfm3AeQxSuCaZV2FvdRnbF2HyuNWAXmck7mE19Tx-VJDlQfapNM35CurCJoVzAqgtMsl11-b98qm-IVrMuyub_TPq0L6IAqoIx3orxzpgPlx99o2IxHVOOfpA_j6LMObmBk=
+  - Amer Group Holding Company S.A.E. (EGX:AMER) Stock Price & Overview - Stock Analysis (2025 Financial Performance): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEtbaOx90wXsPJncStGtrtRMLcmRKKvRqD8AO3DLk3hRJTpEyUmCJQm0IY9yKp9FY5PPqERzCyHJZgE_tNhTTcP9gAB02H45Q5i_6Pbywkhix4cNvSf0hsXr3d1S7ucoW943yI=
+  - Amer Group Holding Company S.A.E. (EGX:AMER) Balance Sheet (March 31, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGe27BGUD8RrG0oBwdcGFu7sGiqT8KpGCMa1IH2rv5gV-mNrr2NlTVZ08VwBgXgWUrBtagtRmanE-svP8O6K1-2chswtM3zdjqUQ45c0JhW55zkEbsdOXXfgzU3bYuEIXVk-2VVmgQLFMCaOEs6dzSRGsIHMLdtPfGeoDtA
 
 ## Warnings
-- Evidence rejected for RREI.CA: source text did not clearly match RREI.CA / Arab Real Estate Investment Co..
-- Evidence rejected for BIOC.CA: source text did not clearly match BIOC.CA / GlaxoSmithKline S.A.E.
-- Evidence for MIPH.CA matches the company but no source/report date was detected.
-- Evidence rejected for HELI.CA: source text did not clearly match HELI.CA / Heliopolis Housing.
-- Evidence rejected for LCSW.CA: source text did not clearly match LCSW.CA / Lecico Egypt.
-- Evidence rejected for PRDC.CA: source text did not clearly match PRDC.CA / Pioneers Properties For Urban Development.
-- Evidence rejected for TMGH.CA: source text did not clearly match TMGH.CA / Talaat Moustafa Group Holding.
-- Evidence for AMER.CA matches the company but appears old; latest detected date is 2025-01-01.
+- Evidence for RREI.CA matches the company but appears old; latest detected date is 2024-01-01.
