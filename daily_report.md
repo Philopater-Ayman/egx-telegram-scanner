@@ -1,13 +1,13 @@
 # Telegram-First EGX Scanner Report
 
-Scan phase: Post-close tomorrow tickets
-Generated UTC: 2026-07-12T14:05:11.637020+00:00
-Generated Cairo: 2026-07-12 17:05
-Run timing: target 15:30 Cairo | generated Cairo 2026-07-12 17:05 | cron 30 12 * * 0-4
-Trigger: scheduled cron=30 12 * * 0-4 mapped to post_close; Cairo now 2026-07-12 17:00
+Scan phase: Evening tomorrow plan
+Generated UTC: 2026-07-12T17:35:10.084066+00:00
+Generated Cairo: 2026-07-12 20:35
+Run timing: target 19:30 Cairo | generated Cairo 2026-07-12 20:35 | cron 30 16 * * 0-4
+Trigger: scheduled cron=30 16 * * 0-4 mapped to evening_plan; Cairo now 2026-07-12 20:30
 
 ## Control Center
-- Action tickets: 3 prioritized signal(s)
+- Action tickets: 0 prioritized signal(s)
 - BUY-ready candidates: 75
 - Data quality issues: 1
 - Tradeable price/liquidity tickers: 174/189
@@ -32,12 +32,13 @@ Trigger: scheduled cron=30 12 * * 0-4 mapped to post_close; Cairo now 2026-07-12
 
 ## AI Narrative
 - Provider: OpenRouter OK
-- Model: nvidia/nemotron-3-super-120b-a12b-20230311:free
-- Summary: Scanner prioritized ALCN.CA, RREI.CA and CAED.CA as watch/buy setups because each trades above its MA20/MA50, shows adequate liquidity spikes and sits near defined support/resistance, while EGX30 is constructive and EGX70 bullish, maintaining a broad risk‑on mode despite an overall bearish macro trend that adds uncertainty.
-- ALCN.CA (Transportation & Logistics) price > MA20/MA50, RSI ~54, liquidity spike, support ~25.5, resistance ~33.2; sector leading, outlook bullish watch.
-- RREI.CA (Real Estate) price > MA20/MA50, RSI ~58, liquidity spike, support ~3.34, resistance ~3.93; sector not leading, adds uncertainty.
-- CAED.CA (Education) price > MA20/MA50, RSI ~55, liquidity spike, support ~67.2, resistance ~78.4; sector not leading, outlook bullish watch.
-- EGX30 constructive (65% above MA20) and EGX70 bullish (79% above MA20) keep risk mode broad risk‑on, but macro bearish trend tempers confidence.
+- Model: openai/gpt-oss-120b:free
+- Summary: The local scanner highlighted a short list of buy‑ready tickets, all showing strong liquidity spikes and bullish technical outlooks. Most sit in the leading Transportation & Logistics sector or other expanding EGX groups, with support levels comfortably below current prices and modest distance to resistance, suggesting limited downside over the next 1‑3 days. EGX30 remains in a constructive trend while EGX70 is bullish, pushing the overall risk mode to BROAD_RISK_ON, yet the market still carries uncertainty from limited fresh evidence and sector‑specific news gaps.
+- ALCN.CA leads the list with a 9.9× liquidity spike, 17 % distance to 20‑day support and 10 % to resistance, in the top‑ranked Transportation & Logistics sector.
+- All highlighted stocks are in an accumulation‑spike regime, trading above their 20‑day MA, and show bullish watch scores ≥84, indicating short‑term upside potential.
+- EGX30 constructive and EGX70 bullish regimes lift market breadth to 61.9 %, supporting a broad‑risk‑on stance but still leave room for volatility due to sparse fresh news.
+- Support levels are generally 5‑15 % below price, while resistance is within 1‑5 %, so price action may test these zones before any clear breakout.
+- Uncertainty remains from limited evidence confirmations and sector‑specific catalysts, so monitor liquidity spikes and news flow closely.
 
 ## Top Liquidity Spikes
 - NHPS.CA: spike=12.08 liquidity=236375728.0 outlook=WEAK_OR_RISKY score=0 buy_ready=False
@@ -57,18 +58,7 @@ Trigger: scheduled cron=30 12 * * 0-4 mapped to post_close; Cairo now 2026-07-12
 - #8 Investment Holding: score=8.43 5d=3.17% 20d=4.41% aboveMA50=66.67%
 
 ## Today's Prioritized Action Tickets
-- Priority #1: BUY ALCN.CA
-  - Entry: 29.98 | Take profit: 33.03 | Stop loss: 28.78
-  - Confidence: LOW | score=35.9 | outlook=BULLISH_WATCH 100
-  - Reason: WATCH/BUY SETUP: ALCN.CA has aligned current price data, liquidity above threshold, price above MA20/MA50, RSI 53.59, support 25.51, resistance 33.2, and evidence sources. Macro trend is Bearish; market regime is BROAD_RISK_ON; verify price action in Thndr before treating it as a swing entry.
-- Priority #2: BUY RREI.CA
-  - Entry: 3.78 | Take profit: 4.08 | Stop loss: 3.63
-  - Confidence: LOW | score=32.98 | outlook=BULLISH_WATCH 90.27
-  - Reason: WATCH/BUY SETUP: RREI.CA has aligned current price data, liquidity above threshold, price above MA20/MA50, RSI 58.46, support 3.34, resistance 3.93, and evidence sources. Macro trend is Bearish; market regime is BROAD_RISK_ON; verify price action in Thndr before treating it as a swing entry.
-- Priority #3: BUY CAED.CA
-  - Entry: 74.78 | Take profit: 80.76 | Stop loss: 71.79
-  - Confidence: LOW | score=32.9 | outlook=BULLISH_WATCH 88.27
-  - Reason: WATCH/BUY SETUP: CAED.CA has aligned current price data, liquidity above threshold, price above MA20/MA50, RSI 54.69, support 67.21, resistance 78.4, and evidence sources. Macro trend is Bearish; market regime is BROAD_RISK_ON; verify price action in Thndr before treating it as a swing entry.
+- HOLD: Local fallback HOLD: no candidate passed evidence, liquidity, freshness, and technical gates.
 
 ## Thndr Instruction
 - Advisor-only signal mode is active. The scanner never executes trades.
@@ -90,8 +80,8 @@ Trigger: scheduled cron=30 12 * * 0-4 mapped to post_close; Cairo now 2026-07-12
 ## BUY-Ready Candidates
 - ALCN.CA: rank=35.9 outlook=BULLISH_WATCH outlook_score=100 sector_rank=1 price=29.98 support=25.51 resistance=33.2 liquidity=113691216.0
 - RREI.CA: rank=32.98 outlook=BULLISH_WATCH outlook_score=90.27 sector_rank=12 price=3.78 support=3.34 resistance=3.93 liquidity=46312156.0
-- IDRE.CA: rank=32.9 outlook=BULLISH_WATCH outlook_score=84.27 sector_rank=12 price=46.54 support=41.1 resistance=46.7 liquidity=47844880.0
 - CAED.CA: rank=32.9 outlook=BULLISH_WATCH outlook_score=88.27 sector_rank=12 price=74.78 support=67.21 resistance=78.4 liquidity=26096576.0
+- IDRE.CA: rank=32.9 outlook=BULLISH_WATCH outlook_score=84.27 sector_rank=12 price=46.54 support=41.1 resistance=46.7 liquidity=47844880.0
 - ELSH.CA: rank=32.06 outlook=BULLISH_WATCH outlook_score=86.27 sector_rank=12 price=14.71 support=11.1 resistance=14.6 liquidity=381303648.0
 - ELEC.CA: rank=31.9 outlook=BULLISH_WATCH outlook_score=92 sector_rank=4 price=2.16 support=2.04 resistance=2.15 liquidity=98205176.0
 - AFDI.CA: rank=31.72 outlook=BULLISH_WATCH outlook_score=82.27 sector_rank=12 price=47.04 support=40.15 resistance=48.89 liquidity=35627960.0
@@ -296,43 +286,38 @@ Trigger: scheduled cron=30 12 * * 0-4 mapped to post_close; Cairo now 2026-07-12
 ## Backtesting Lite
 - ALCN.CA: 180d return=33.32%, max drawdown=-16.69%, MA20>MA50 days last20=0, as_of=2026-07-08T21:00:00+00:00
 - RREI.CA: 180d return=57.98%, max drawdown=-27.36%, MA20>MA50 days last20=2, as_of=2026-07-08T21:00:00+00:00
-- IDRE.CA: 180d return=23.16%, max drawdown=-24.62%, MA20>MA50 days last20=20, as_of=2026-07-08T21:00:00+00:00
+- CAED.CA: 180d return=-1.66%, max drawdown=-28.48%, MA20>MA50 days last20=18, as_of=2026-07-08T21:00:00+00:00
 - These checks are historical context only, not a prediction or guarantee.
 
 ## Evidence
-- ALCN.CA: status=RECENT_ACCEPTED latest=2026-09-22 age_days=0 sources=3 expected=Alexandria Containers and Cargo Handling summary=Alexandria Containers and Cargo Handling (ALCN.CA) has shown recent financial activity and corporate developments. The company reported its 2025 financial performance with a decrease in revenue but an increase in earnings. Dividends were announced for May 2026, and an earnings report is anticipated in September 2026. A significant corporate event was the proposed acquisition of a majority stake by Abu Dhabi Ports Company PJSC in December 2025, which was later declined by Egypt in January 2026. The company's board also approved its 2026 budget and an investment plan.
-  - Alexandria Container&Cargo Handling Company (EGX:ALCN) Stock Price & Overview - Financial Performance 2025, Ex-Dividend Date May 12, 2026, Earnings Date Sep 22, 2026: https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFdQaIhzRDrciCs34qZ2uFH8DHd4UjX7gosfjr0hzV6smwePNndb-tALsPVfA4WK3fPw-RrQqJpe3zJwDQfincYFMkjCjh79XOs9t_JkvtXGX8AoRuLQzlf68w656WLFhFSSdM=
-  - Alexandria Container&Cargo Handling (CASE:ALCN) - Stock Analysis - Simply Wall St - Annual dividend payable May 14, 2026, Abu Dhabi Ports Company PJSC proposed acquisition Dec 14, 2025, Full year 2024 earnings: https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGWT9DDx9L8sO1z9eiwue7yElhOR0xlLSQlcZzJ-X1b0Gu-2MULIuUE4qMq8svuDtK5AdHB3ITTquiKhNU0yTG9ESK0X63D2-U_xx9ucAdDMSBMBT7jd096sFEJHFVdUYHjX7bZAlQwMD0N-Z4T5Z_rlYt8dr4cO-mFZcdJJomqV95vjZGvS8eVH6nLg0JZ5ewCJc2qSqjsrFNxOe0=
-  - Alexandria Containers&goods Stock Price Today | EGX: ALCN Live - Investing.com - AD Ports to launch tender offer Dec 15, 2025, Dividend May 12, 2026, Next earnings Sep 02, 2026: https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFUGm9Vb3uJuSJP2w0TwD5pbbNZzkPhcnnH5tlFBwFosD6_tXIMPEe_4z0P4QfIJeOkZgv2Zmg2afGBklGEM-LgBrcup8S-j9MtM146dY4iIX3SYM_voTPUuNfH4z-eFaQzmepWE_3PXZHYRXGVbcdi3kjP6uevl218U0hu
-- RREI.CA: status=RECENT_ACCEPTED latest=2026-06-29 age_days=13 sources=3 expected=Arab Real Estate Investment Co. summary=Arab Real Estate Investment Co. (RREI.CA) has recently disclosed reasons for delaying its financial statements for the period ending March 31, 2026. Other recent announcements from the EGX and Mubasher Info include Board of Directors' decisions and disclosure forms regarding the Board and shareholders' structure, with updates spanning from December 2025 to June 2026. The company's financial data status was updated in June 2026.
-  - Release from Arab Real Estate Investment CO.-ALICO (RREI.CA) Regarding the Financial Statements - The Egyptian Exchange (June 29, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHFOJdmdAfGQ4hxu3d7Xp291sr6MKa8W6C9cuG7WFaX_TTWSqOPeT5QM9Q1jFrRIvwUeC10388PAPQnNLZu8Feua6THCBhj2g_-K2ojnBPqic5rj5ADMoSqCR8Gs78c9eFXVHLrwQ2hIUue7Uv2GzDMPq4=
-  - Arab Real Estate Investment (ALICO) - Mubasher Info - Market Announcements (June 29, 2026, May 19, 2026, April 23, 2026, January 18, 2026, December 8, 2025): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH8a3zQNnXzJpv0GdOVE8ndJFyjFoujvX9-fJLKBZv1Qu2nSrswhbz8YVns8yFn5EzVuWT9rUXWs_bexbYsg1diG_MX6TYqlrsSUBJbly_i11c99Pj2qMMBlcpYEw9lbk75dazmhm6W7HtLK5MY55s=
-  - Arab Real Estate Investment Co. (EGX:RREI) Stock Price & Overview - Financial Performance 2024: https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHUqEdDZbV2_OwyPTxvtWldlCoGXa-Us9DhGgB2GCPva5ITq6qzOHmOMJlDv2R7D9gxiXZSE3Ma8k9p-zl9jjeXwLJmI3J2p1w8BsUqbILfPWPgGZ30x3qqelWwgmlzDBbLm3Y=
-- IDRE.CA: status=RECENT_ACCEPTED latest=2026-08-06 age_days=0 sources=3 expected=Ismailia Development and Real Estate Co summary=Ismailia Development and Real Estate Co (IDRE.CA) has seen its market capitalization increase significantly over the past year, reaching 1.57 billion EGP as of July 2026. The company's 2025 financial performance showed a decrease in revenue and earnings, with the next earnings date set for August 2026. Recent disclosures from the EGX and FoudaLens include a release from the FRA in March 2026 regarding a disclosure report and an announcement about the AGM & EGM to be held in April 2026. Quarterly financial results for Q1 2026 have also been reported.
-  - Ismailia Development and Real Estate Co (EGX:IDRE) Stock Price & Overview - Financial Performance 2025, Earnings Date Aug 6, 2026: https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE1NBj_WM78pzvT_T16RHuj47qTlP_a5j7jQKNiAbuwVrbbRgUVEswb3S3a_KC0WduuqXjyj7VMJVIRFg9dsMTlaUmndNPjRZjjLbSGRVLqfi8HtpLN-cbSD6BVR9eN9Px7zH4=
-  - Ismailia Development and Real Estate Co (IDRE.CA) - Release from the FRA - The Egyptian Exchange (March 15, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFTGC1DvJzAcwpdsniMrY4pHb3Ojlc1bJUKunceu94T6tv9ADQPLCUE5-Ac_fBBY-1NloS6XXvxUvM_8dhI4FH5Hm7mAALU1GwhOYU_C3FAaLNn7EI7B_A980Ep3PEd4QrK0Y4EEHvb3CkimF4yBMiJx9U=
-  - Ismailia Development and Real Estate Co (EGX:IDRE) Market Cap & Net Worth - Market cap as of July 9, 2026: https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFgy46i89ZGPIU9P6vC_PYteSHn_QDGSAit5obsRXpEftrjpaGkhWe1_bSTIKDDS_DYhSKCtvG1trcD80RXHKJ9n3NdlBFKw6e6f246j2zrw9lzFh4kmNEhZDK4BaEg3WO_hKi_ckj-iO_q3wSxQg==
-- CAED.CA: status=RECENT_ACCEPTED latest=2026-07-21 age_days=0 sources=3 expected=Cairo Educational Services SAE summary=Cairo Educational Services SAE (CAED.CA) has been the subject of a mandatory tender offer by Cairo Investment and Real Estate Development Company (Sira Education), with the Financial Regulatory Authority approving the publication of the offer in August 2025 and extending its validity in September 2025. The company reported increased revenue and earnings for fiscal year 2025, with an ex-dividend date in January 2026 and an earnings date in July 2026. Recent quarterly financial results for Q1 2026 show positive net income.
-  - Cairo Educational Services (CAED.CA) - Release from FRA - The Egyptian Exchange (September 23, 2025): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHrCdM0NRJw5aAJD4JbAmRjOyi5qP53j4pmJiwEmmTpajvmeT5vxZkwK5nwIrUsO9mU5IMnNd7xxjwrc0sLdBVC91Xksa6onC8sHU9jbYSJ8zeIGwiMebCPoykpCQTDNKSLXaDS_YTyW4-zmu8N9A==
-  - Cairo Educational Services SAE (EGX:CAED) Stock Price & Overview - Financial Performance FY 2025, Ex-Dividend Date Jan 19, 2026, Earnings Date Jul 21, 2026: https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFcNCvJIaVRhvbB-SrTVR9KLgP-m2pjBBXZODDIybrIN4x76AtfoSJ8Vmwjq0hKPv4_OB-hzdHILg5BXabWl30842ZjKkjdyg2d0ASe6sCwbbSX4Omt_725qsXXQNjtkdxVavI=
-  - CAED Stock Price and Chart — EGX:CAED - TradingView - Net income for last quarter, Last dividend per share 1.40 EGP, All-time high May 11, 2026: https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFIH-M_ChiEJ0ClqlAIh9rvDujkoZW04ldjnhrzhT_oCNf3TCfNkCxe1qQVjwQox6gTEM27M7Sa0E-2dEe7KYxE_o6xG4Pczsiv3kygoXRFqAJR0G4bEN6Np1MuMEOn55gF6wbxQ_1T
-- ELSH.CA: status=ACCEPTED_UNDATED latest=n/a age_days=n/a sources=3 expected=Al Shams Housing and Urbanization SAE summary=Al Shams Housing’s stock tests key support amid selling pressure; FRA approves Al Shams Housing’s capital increase; Al Shams Housing awards part of NAC project to Olive Tree Gemini also reviewed web evidence but did not return ticker-specific citations.
+- ALCN.CA: status=REJECTED_TICKER_MISMATCH latest=n/a age_days=n/a sources=0 expected=Alexandria Containers and Cargo Handling summary=Evidence rejected for ALCN.CA: source text did not clearly match ALCN.CA / Alexandria Containers and Cargo Handling.
+- RREI.CA: status=REJECTED_TICKER_MISMATCH latest=n/a age_days=n/a sources=0 expected=Arab Real Estate Investment Co. summary=Evidence rejected for RREI.CA: source text did not clearly match RREI.CA / Arab Real Estate Investment Co..
+- CAED.CA: status=ACCEPTED_UNDATED latest=n/a age_days=n/a sources=3 expected=Cairo Educational Services SAE summary=Cairo Educational Services&#39; OGM approves EGP 1/shr coupon distribution; Cairo Educational Services’ board proposes 80 piastres per-share dividends; Cairo Educational Services’ profit declines in FY18/19
+  - Cairo Educational Services&#39; OGM approves EGP 1/shr coupon distribution: https://english.mubasher.info/news/3884789/Cairo-Educational-Services-OGM-approves-EGP-1-shr-coupon-distribution/
+  - Cairo Educational Services’ board proposes 80 piastres per-share dividends: https://english.mubasher.info/news/3556129/Cairo-Educational-Services-board-proposes-80-piastres-per-share-dividends/
+  - Cairo Educational Services’ profit declines in FY18/19: https://english.mubasher.info/news/3556119/Cairo-Educational-Services-profit-declines-in-FY18-19/
+- IDRE.CA: status=REJECTED_TICKER_MISMATCH latest=n/a age_days=n/a sources=0 expected=Ismailia Development and Real Estate Co summary=Evidence rejected for IDRE.CA: source text did not clearly match IDRE.CA / Ismailia Development and Real Estate Co.
+- ELSH.CA: status=ACCEPTED_UNDATED latest=n/a age_days=n/a sources=3 expected=Al Shams Housing and Urbanization SAE summary=Al Shams Housing’s stock tests key support amid selling pressure; FRA approves Al Shams Housing’s capital increase; Al Shams Housing awards part of NAC project to Olive Tree
   - Al Shams Housing’s stock tests key support amid selling pressure: https://english.mubasher.info/news/4553488/Al-Shams-Housing-s-stock-tests-key-support-amid-selling-pressure/
   - FRA approves Al Shams Housing’s capital increase: https://english.mubasher.info/news/3899254/FRA-approves-Al-Shams-Housing-s-capital-increase/
   - Al Shams Housing awards part of NAC project to Olive Tree: https://english.mubasher.info/news/3896693/Al-Shams-Housing-awards-part-of-NAC-project-to-Olive-Tree/
-- ELEC.CA: status=RECENT_ACCEPTED latest=2026-07-05 age_days=7 sources=3 expected=Electro Cable Egypt summary=Electro Cable Egypt (ELEC.CA) has released disclosure forms regarding its Board of Directors and shareholders' structure for the period ending December 31, 2025, as well as a general disclosure form in July 2026. The company, founded in 1954 and listed on the EGX since 1995, operates in the Capital Goods sector, focusing on electrical products.
-  - Electro Cable Egypt (ELEC.CA) - Disclosure Form for the BoD & the Shareholders' Structure - The Egyptian Exchange (January 20, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEIsApyDVwcex8jGqaqkWYovCNULqWzxwaRfiEuEwnxeLXhoCTk9bxhDZQ3KFCzPhV7SGBibwg4NOgmW83Yp3RRi9PYqhz51A0rMW-gTfs1gUgL7Ww5yqDolVSNWlXvNNnNMJN2Pyw9FS0QuSpkrjt6ue8=
-  - Electro Cable Egypt (ELEC.CA) - Release Regarding a Disclosure Form - Mubasher Info (July 5, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFH2SDp23s-jYdJ32l_ZU1KnUa2Li6c0DsFwruOAGR5HDKIHTfMTx5Bw0N6rqBc_NDjxHyhZAXKqxNga_5vszhE96VA7G2N7ObQWavhXvbHsIC8Kjjuy1jDNIJKwwSzoLoZCKTffp479iM-250Vr9PkPJoukVo5ZGjwsaGrsjl22vTFbr9o6Kz8jZm3opNW9GlVl1vyNT2XcLqC-KXx_T1RHQ-LOBGqB0Q==
-  - Electro Cable Profile - Decypha - Company profile, Employees as of 2025: https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGtVWybijZGfvx8RVPE8gk_1N9PFlFIZjE9lItVnxUMPtW4MKFFmj-Yz6Sv0z-I4whX_osUwNNQIPlcM7zpGzLCp8MiEgH-aDD6l28lJiJmCfrpsMZ36FkvrgXhS3GXMzxVBAlm-hsZ8J_OEID-lROd-_DzT9mvyTGwrAEs0ws5gPWziX1_
-- AFDI.CA: status=ACCEPTED_UNDATED latest=n/a age_days=n/a sources=3 expected=Al Ahly for Development & Investment summary=Al Ahly for Development and Investment stock breaks downtrend line; Al Ahly for Development and Investment weighs exiting subsidiary; Pico Investments ups stake in AFDI to over 15% Gemini also reviewed web evidence but did not return ticker-specific citations.
+- ELEC.CA: status=OLD_ACCEPTED latest=2025-01-01 age_days=557 sources=3 expected=Electro Cable Egypt summary=Electro Cable Egypt sees lower profits in 2025; revenues exceed EGP 10.8bn; Mashareq reduces equity in Electro Cable Egypt to 0.77%; Electro Cable Egypt stock is testing significant demand zone, will it succeed to rebound?
+  - Electro Cable Egypt sees lower profits in 2025; revenues exceed EGP 10.8bn: https://english.mubasher.info/news/4580607/Electro-Cable-Egypt-sees-lower-profits-in-2025-revenues-exceed-EGP-10-8bn/
+  - Mashareq reduces equity in Electro Cable Egypt to 0.77%: https://english.mubasher.info/news/4561520/Mashareq-reduces-equity-in-Electro-Cable-Egypt-to-0-77-/
+  - Electro Cable Egypt stock is testing significant demand zone, will it succeed to rebound?: https://english.mubasher.info/news/4556412/Electro-Cable-Egypt-stock-is-testing-significant-demand-zone-will-it-succeed-to-rebound-/
+- AFDI.CA: status=ACCEPTED_UNDATED latest=n/a age_days=n/a sources=3 expected=Al Ahly for Development & Investment summary=Al Ahly for Development and Investment stock breaks downtrend line; Al Ahly for Development and Investment weighs exiting subsidiary; Pico Investments ups stake in AFDI to over 15%
   - Al Ahly for Development and Investment stock breaks downtrend line: https://english.mubasher.info/news/4597902/Al-Ahly-for-Development-and-Investment-stock-breaks-downtrend-line/
   - Al Ahly for Development and Investment weighs exiting subsidiary: https://english.mubasher.info/news/4309777/Al-Ahly-for-Development-and-Investment-weighs-exiting-subsidiary/
   - Pico Investments ups stake in AFDI to over 15%: https://english.mubasher.info/news/4078120/Pico-Investments-ups-stake-in-AFDI-to-over-15-/
-- EBSC.CA: status=RECENT_ACCEPTED latest=2026-08-17 age_days=0 sources=3 expected=Osool ESB Securities Brokerage summary=Osool ESB Securities Brokerage (EBSC.CA) reported its 2025 financial performance with a decrease in revenue but an increase in earnings, with the next earnings date in August 2026. The company has provided disclosure forms regarding its Board of Directors and shareholders' structure for the period ending December 31, 2025. Recent news from June 2026 addressed a report about the company's investments. As of July 2026, the company's stock has shown significant increases over the last year.
-  - Osool ESB Securities Brokerage (EGX:EBSC) Stock Price & Overview - Financial Performance 2025, Earnings Date Aug 17, 2026: https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEY_LwXNzdNdj3Z2XGqom6W7EKRjAVy85JCs3jSmRoGWosE1DAYn_f-_so5GCakXEWDb7I8nxUdmR8NXPtvIf3dh60WCe82gIaz42x4dOJJ_dGMVobti2BHnqRNMrQNA2jXOQ=
-  - Osool ESB Securities Brokerage (EBSC) Financial Statements - Starta | Master the EGX - Annual financial statement highlights 2010-2025: https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH5ogFkl0wVKAMJUfk9cYmiEX4gUPEE8UjHV2Wp5HAp8HymABEG51E8kOuHYbwPExJvXGw69eUfZL6-AhWIu_qmkcC5GSyDjzIQbqMWjh-r-bMntoWvacqXqGF84aOoOR9PlquqzJrkhe_T
-  - The Egyptian Exchange - Company Details - Additional Information as of Last Trading Date (July 7, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGPpBZ1Um1rD2sVH_8zYnYyUIieqgljBApcutYVHzIqzKiVNnUS-1TmqNwwf8d0huXcYzB9h-lR6jBRorS4h5OSQIYVqhh37L33tlcQH2FZGMZLE4knsIAUUX-tGWeBj1ZrzRphEYgZC-e7X1NJlcnPwO5Vrs4vmLJf
+- EBSC.CA: status=REJECTED_TICKER_MISMATCH latest=n/a age_days=n/a sources=0 expected=Osool ESB Securities Brokerage summary=Evidence rejected for EBSC.CA: source text did not clearly match EBSC.CA / Osool ESB Securities Brokerage.
 
 ## Warnings
+- Evidence rejected for ALCN.CA: source text did not clearly match ALCN.CA / Alexandria Containers and Cargo Handling.
+- Gemini batch evidence failed: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+- Evidence rejected for RREI.CA: source text did not clearly match RREI.CA / Arab Real Estate Investment Co..
+- Evidence for CAED.CA matches the company but no source/report date was detected.
+- Evidence rejected for IDRE.CA: source text did not clearly match IDRE.CA / Ismailia Development and Real Estate Co.
 - Evidence for ELSH.CA matches the company but no source/report date was detected.
+- Evidence for ELEC.CA matches the company but appears old; latest detected date is 2025-01-01.
 - Evidence for AFDI.CA matches the company but no source/report date was detected.
+- Evidence rejected for EBSC.CA: source text did not clearly match EBSC.CA / Osool ESB Securities Brokerage.
