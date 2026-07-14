@@ -1,16 +1,16 @@
 # Telegram-First EGX Scanner Report
 
-Scan phase: Post-close tomorrow tickets
-Generated UTC: 2026-07-14T14:25:17.147583+00:00
-Generated Cairo: 2026-07-14 17:25
-Run timing: target 15:30 Cairo | generated Cairo 2026-07-14 17:25 | cron 30 12 * * 0-4
-Trigger: scheduled cron=30 12 * * 0-4 mapped to post_close; Cairo now 2026-07-14 17:21
+Scan phase: Evening tomorrow plan
+Generated UTC: 2026-07-14T17:44:40.813049+00:00
+Generated Cairo: 2026-07-14 20:44
+Run timing: target 19:30 Cairo | generated Cairo 2026-07-14 20:44 | cron 30 16 * * 0-4
+Trigger: scheduled cron=30 16 * * 0-4 mapped to evening_plan; Cairo now 2026-07-14 20:38
 
 ## Control Center
-- Action tickets: 3 prioritized signal(s)
+- Action tickets: 0 prioritized signal(s)
 - BUY-ready candidates: 83
 - Data quality issues: 1
-- Tradeable price/liquidity tickers: 177/189
+- Tradeable price/liquidity tickers: 178/189
 - Top sector: Technology & Distribution
 
 ## Market Context
@@ -33,12 +33,12 @@ Trigger: scheduled cron=30 12 * * 0-4 mapped to post_close; Cairo now 2026-07-14
 ## AI Narrative
 - Provider: OpenRouter OK
 - Model: nvidia/nemotron-3-super-120b-a12b:free
-- Summary: Scanner flagged EPCO.CA, AREH.CA and GDWA.CA as BUY watch setups due to price above MA20/MA50, adequate liquidity spikes and bullish watch outlook, while sector breadth is modest and EGX30 mixed/EGX70 bullish keeps risk mode selective.
+- Summary: We need to produce JSON<unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><u
 
 ## Top Liquidity Spikes
 - SMFR.CA: spike=45.66 liquidity=93975280.0 outlook=WEAK_OR_RISKY score=0 buy_ready=False
 - EFIC.CA: spike=23.82 liquidity=65956820.0 outlook=NEUTRAL score=46.72 buy_ready=False
-- EPCO.CA: spike=15.41 liquidity=124248752.0 outlook=BULLISH_WATCH score=91.41 buy_ready=True
+- EPCO.CA: spike=15.41 liquidity=124248752.0 outlook=BULLISH_WATCH score=91.44 buy_ready=True
 - CAED.CA: spike=13.97 liquidity=91542872.0 outlook=WEAK_OR_RISKY score=0 buy_ready=False
 - UEGC.CA: spike=6.99 liquidity=160782432.0 outlook=WEAK_OR_RISKY score=0 buy_ready=False
 
@@ -53,18 +53,7 @@ Trigger: scheduled cron=30 12 * * 0-4 mapped to post_close; Cairo now 2026-07-14
 - #8 Agriculture & Food Production: score=7.59 5d=2.16% 20d=3.55% aboveMA50=50.0%
 
 ## Today's Prioritized Action Tickets
-- Priority #1: BUY EPCO.CA
-  - Entry: 10.15 | Take profit: 10.97 | Stop loss: 9.74
-  - Confidence: LOW | score=33.4 | outlook=BULLISH_WATCH 91.41
-  - Reason: WATCH/BUY SETUP: EPCO.CA has aligned current price data, liquidity above threshold, price above MA20/MA50, RSI 61.23, support 8.5, resistance 9.8, and evidence sources. Macro trend is Bearish; market regime is SELECTIVE_SMALL_MID_SWINGS; verify price action in Thndr before treating it as a swing entry.
-- Priority #2: BUY AREH.CA
-  - Entry: 1.72 | Take profit: 1.86 | Stop loss: 1.65
-  - Confidence: LOW | score=32.46 | outlook=BULLISH_WATCH 91.41
-  - Reason: WATCH/BUY SETUP: AREH.CA has aligned current price data, liquidity above threshold, price above MA20/MA50, RSI 56.0, support 1.51, resistance 1.76, and evidence sources. Macro trend is Bearish; market regime is SELECTIVE_SMALL_MID_SWINGS; verify price action in Thndr before treating it as a swing entry.
-- Priority #3: BUY GDWA.CA
-  - Entry: 0.84 | Take profit: 0.9 | Stop loss: 0.81
-  - Confidence: LOW | score=32.4 | outlook=BULLISH_WATCH 92.41
-  - Reason: WATCH/BUY SETUP: GDWA.CA has aligned current price data, liquidity above threshold, price above MA20/MA50, RSI 58.39, support 0.76, resistance 0.87, and evidence sources. Macro trend is Bearish; market regime is SELECTIVE_SMALL_MID_SWINGS; verify price action in Thndr before treating it as a swing entry.
+- HOLD: Local fallback HOLD: no candidate passed evidence, liquidity, freshness, and technical gates.
 
 ## Thndr Instruction
 - Advisor-only signal mode is active. The scanner never executes trades.
@@ -76,24 +65,24 @@ Trigger: scheduled cron=30 12 * * 0-4 mapped to post_close; Cairo now 2026-07-14
 - AMOC.CA: BULLISH_WATCH score=100 liquidity=ACCUMULATION_SPIKE sector=LEADING risk=No major short-term scanner risk flags.
 - ELEC.CA: BULLISH_WATCH score=98.92 liquidity=ACCUMULATION_SPIKE sector=IMPROVING risk=No major short-term scanner risk flags.
 - ALCN.CA: BULLISH_WATCH score=95.74 liquidity=ACCUMULATION_SPIKE sector=IMPROVING risk=momentum is extended
-- RACC.CA: BULLISH_WATCH score=95.41 liquidity=ACCUMULATION_SPIKE sector=IMPROVING risk=momentum is extended; sector is not leading
-- GDWA.CA: BULLISH_WATCH score=92.41 liquidity=ACCUMULATION_SPIKE sector=IMPROVING risk=sector is not leading
-- EPCO.CA: BULLISH_WATCH score=91.41 liquidity=ACCUMULATION_SPIKE sector=IMPROVING risk=sector is not leading
-- AREH.CA: BULLISH_WATCH score=91.41 liquidity=ACCUMULATION_SPIKE sector=IMPROVING risk=sector is not leading
-- COSG.CA: BULLISH_WATCH score=91.41 liquidity=ACCUMULATION_SPIKE sector=IMPROVING risk=sector is not leading
-- NCCW.CA: BULLISH_WATCH score=91.41 liquidity=TRADEABLE sector=IMPROVING risk=sector is not leading
+- RACC.CA: BULLISH_WATCH score=95.44 liquidity=ACCUMULATION_SPIKE sector=IMPROVING risk=momentum is extended; sector is not leading
+- GDWA.CA: BULLISH_WATCH score=92.44 liquidity=ACCUMULATION_SPIKE sector=IMPROVING risk=sector is not leading
+- EPCO.CA: BULLISH_WATCH score=91.44 liquidity=ACCUMULATION_SPIKE sector=IMPROVING risk=sector is not leading
+- AREH.CA: BULLISH_WATCH score=91.44 liquidity=ACCUMULATION_SPIKE sector=IMPROVING risk=sector is not leading
+- COSG.CA: BULLISH_WATCH score=91.44 liquidity=ACCUMULATION_SPIKE sector=IMPROVING risk=sector is not leading
+- NCCW.CA: BULLISH_WATCH score=91.44 liquidity=TRADEABLE sector=IMPROVING risk=sector is not leading
 
 ## BUY-Ready Candidates
 - EGAS.CA: rank=34.3 outlook=BULLISH_WATCH outlook_score=100 sector_rank=2 price=53.15 support=46.51 resistance=54.0 liquidity=31797440.0
-- EPCO.CA: rank=33.4 outlook=BULLISH_WATCH outlook_score=91.41 sector_rank=9 price=10.15 support=8.5 resistance=9.8 liquidity=124248752.0
+- EPCO.CA: rank=33.4 outlook=BULLISH_WATCH outlook_score=91.44 sector_rank=9 price=10.15 support=8.5 resistance=9.8 liquidity=124248752.0
 - MIPH.CA: rank=32.63 outlook=BULLISH_WATCH outlook_score=82.08 sector_rank=17 price=722.56 support=630.13 resistance=725.0 liquidity=12918393.0
-- AREH.CA: rank=32.46 outlook=BULLISH_WATCH outlook_score=91.41 sector_rank=9 price=1.72 support=1.51 resistance=1.76 liquidity=107658224.0
-- GDWA.CA: rank=32.4 outlook=BULLISH_WATCH outlook_score=92.41 sector_rank=9 price=0.84 support=0.76 resistance=0.87 liquidity=102685120.0
-- RREI.CA: rank=32.36 outlook=BULLISH_WATCH outlook_score=77.41 sector_rank=9 price=3.92 support=3.34 resistance=3.93 liquidity=58821644.0
+- AREH.CA: rank=32.46 outlook=BULLISH_WATCH outlook_score=91.44 sector_rank=9 price=1.72 support=1.51 resistance=1.76 liquidity=107658224.0
+- GDWA.CA: rank=32.4 outlook=BULLISH_WATCH outlook_score=92.44 sector_rank=9 price=0.84 support=0.76 resistance=0.87 liquidity=102685120.0
+- RREI.CA: rank=32.36 outlook=BULLISH_WATCH outlook_score=77.44 sector_rank=9 price=3.92 support=3.34 resistance=3.93 liquidity=58821644.0
 - AMOC.CA: rank=31.84 outlook=BULLISH_WATCH outlook_score=100 sector_rank=2 price=8.32 support=7.42 resistance=8.16 liquidity=144931088.0
 - RAYA.CA: rank=31.4 outlook=BULLISH_WATCH outlook_score=80 sector_rank=1 price=8.2 support=6.8 resistance=8.49 liquidity=94898096.0
-- ADPC.CA: rank=31.4 outlook=BULLISH_WATCH outlook_score=83.41 sector_rank=9 price=3.8 support=3.32 resistance=3.94 liquidity=78648448.0
-- OFH.CA: rank=31.4 outlook=BULLISH_WATCH outlook_score=83.41 sector_rank=9 price=0.64 support=0.57 resistance=0.64 liquidity=77290104.0
+- ADPC.CA: rank=31.4 outlook=BULLISH_WATCH outlook_score=83.44 sector_rank=9 price=3.8 support=3.32 resistance=3.94 liquidity=78648448.0
+- OFH.CA: rank=31.4 outlook=BULLISH_WATCH outlook_score=83.44 sector_rank=9 price=0.64 support=0.57 resistance=0.64 liquidity=77290104.0
 
 ## Data Quality Issues
 - ANFI.CA: No usable market data returned. Check Yahoo symbol or add a manual fallback row.
@@ -175,7 +164,7 @@ Trigger: scheduled cron=30 12 * * 0-4 mapped to post_close; Cairo now 2026-07-14
 - ELWA.CA: score=15.45 buy_ready=True sector_rank=9 price=2.04 support=1.87 resistance=2.22 source=Yahoo Finance history + Mubasher delayed current trading data as_of=01:27 PM market time freshness=DELAYED_CURRENT RSI=45.24 liquidity=1054973.25 spike=0.57
 - EMFD.CA: score=22.4 buy_ready=False sector_rank=10 price=11.69 support=11.24 resistance=12.57 source=Yahoo Finance history + Mubasher delayed current trading data as_of=01:28 PM market time freshness=DELAYED_CURRENT RSI=43.03 liquidity=31528846.0 spike=0.23
 - ENGC.CA: score=24.4 buy_ready=True sector_rank=9 price=42.92 support=33.91 resistance=44.89 source=Yahoo Finance history + Mubasher delayed current trading data as_of=01:29 PM market time freshness=DELAYED_CURRENT RSI=66.86 liquidity=24111678.0 spike=0.99
-- EOSB.CA: score=-0.6 buy_ready=False sector_rank=9 price=1.48 support=1.48 resistance=1.48 source=StockAnalysis EGX public list (quote-only fallback) as_of=2026-07-14 freshness=QUOTE_ONLY RSI=50.0 liquidity=0.0 spike=0.0
+- EOSB.CA: score=14.43 buy_ready=False sector_rank=9 price=1.48 support=1.42 resistance=1.55 source=Yahoo Finance as_of=2026-07-12T21:00:00+00:00 freshness=FRESH RSI=50.0 liquidity=29345.44 spike=0.43
 - EPCO.CA: score=33.4 buy_ready=True sector_rank=9 price=10.15 support=8.5 resistance=9.8 source=Yahoo Finance history + Mubasher delayed current trading data as_of=01:27 PM market time freshness=DELAYED_CURRENT RSI=61.23 liquidity=124248752.0 spike=15.41
 - EPPK.CA: score=14.98 buy_ready=False sector_rank=9 price=14.13 support=11.75 resistance=15.25 source=Yahoo Finance history + Mubasher delayed current trading data as_of=01:13 PM market time freshness=DELAYED_CURRENT RSI=67.37 liquidity=576987.75 spike=0.57
 - ETEL.CA: score=26.4 buy_ready=True sector_rank=4 price=96.65 support=89.01 resistance=101.5 source=Yahoo Finance history + Mubasher delayed current trading data as_of=01:26 PM market time freshness=DELAYED_CURRENT RSI=59.2 liquidity=34004416.0 spike=0.47
@@ -296,35 +285,33 @@ Trigger: scheduled cron=30 12 * * 0-4 mapped to post_close; Cairo now 2026-07-14
 - These checks are historical context only, not a prediction or guarantee.
 
 ## Evidence
-- EGAS.CA: status=RECENT_ACCEPTED latest=2026-07-12 age_days=2 sources=3 expected=Natural Gas and Mining Project summary=Recent disclosures and financial reports for Natural Gas and Mining Project (Egypt Gas) on the Egyptian Exchange (EGX) indicate board decisions, AGM minutes, and financial results for 2025 and Q1 2026. The company's stock details are also available.
-  - Natural Gas & Mining Project (Egypt Gas) (EGAS.CA) - Board of Directors' Decisions (July 12, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEvJE_09HcCbXdj6XDvizQO596jqw0hGGFbMXH_KFSijB2x8vtrJgf18CrOaO9ufITfljG3knsScRiCZFVjF3G_YCpbLyYFNWQHc9Bko-q6D4MDJ_7bX8lPUUTOIgomA4n_4QZowuZzx314fkjFYs6T
-  - Natural Gas & Mining Project (Egypt Gas) (EGAS.CA) - Central Auditing Organization's Report (June 1, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEvJE_09HcCbXdj6XDvizQO596jqw0hGGFbMXH_KFSijB2x8vtrJgf18CrOaO9ufITfljG3knsScRiCZFVjF3G_YCpbLyYFNWQHc9Bko-q6D4MDJ_7bX8lPUUTOIgomA4n_4QZowuZzx314fkjFYs6T
-  - Natural Gas & Mining Project (Egypt Gas) (EGAS.CA) - AGM Minutes (Notarized) (May 6, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEvJE_09HcCbXdj6XDvizQO596jqw0hGGFbMXH_KFSijB2x8vtrJgf18CrOaO9ufITfljG3knsScRiCZFVjF3G_YCpbLyYFNWQHc9Bko-q6D4MDJ_7bX8lPUUTOIgomA4n_4QZowuZzx314fkjFYs6T
-- EPCO.CA: status=RECENT_ACCEPTED latest=2026-07-08 age_days=6 sources=3 expected=Egypt for Poultry summary=Egypt for Poultry has released recent disclosures including board and shareholder structure forms, AGM minutes, and audit committee meeting minutes. The company's financial performance for 2025 showed an increase in revenue but also higher losses. Latest quarterly results also indicate a decline in revenue and net income.
-  - Egypt for Poultry (EPCO.CA) - Disclosure Form for the BoD & the Shareholders' Structure (July 8, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF4soRCIO9iV-kJSt0gv3P8bAolm-E1HV0TwjBrHNjGgqlUrK6Hha5BUGsSYN6YJWRP7gsMldqOimSfxBdmMWL8DSDVJMqEdQM_D7nxh4nJz2Kx7h-gKnwBH-YyrF20VLFCgzqYrws6Qd4H6ajJJdVO
-  - Egypt for Poultry (EPCO.CA) - AGM Minutes (Notarized) (June 14, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF4soRCIO9iV-kJSt0gv3P8bAolm-E1HV0TwjBrHNjGgqlUrK6Hha5BUGsSYN6YJWRP7gsMldqOimSfxBdmMWL8DSDVJMqEdQM_D7nxh4nJz2Kx7h-gKnwBH-YyrF20VLFCgzqYrws6Qd4H6ajJJdVO
-  - Release from Egypt for Poultry (EPCO.CA) Concerning the Audit Committee Meeting Minutes (May 24, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF4soRCIO9iV-kJSt0gv3P8bAolm-E1HV0TwjBrHNjGgqlUrK6Hha5BUGsSYN6YJWRP7gsMldqOimSfxBdmMWL8DSDVJMqEdQM_D7nxh4nJz2Kx7h-gKnwBH-YyrF20VLFCgzqYrws6Qd4H6ajJJdVO
-- MIPH.CA: status=RECENT_ACCEPTED latest=2026-06-30 age_days=14 sources=3 expected=Minapharm Pharmaceuticals summary=Minapharm Pharmaceuticals has recently published various disclosures including corrections to AGM minutes, certified AGM minutes, financial statements, and board meeting minutes. The company reported consolidated net profits for 2025 and 9M 2025, and there was a significant investor stake acquisition.
-  - Correction from Minapharm Pharmaceuticals (MIPH.CA) Regarding the Minutes of the AGM (June 30, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFxhut7fFCXHR3Xr4edPgo_SnQWLfDPO_Q_U3GdWRD_32b_g3gwqd1Jyzh2EtmQQNj-wNB9YEWV91422pyL_MnYYRgRYqjKvNlHnUoNyatlbCXNWzPukgU7nuUeprBcf5a5xPzG_YaQr0JWihNotou-
-  - Minapharm Pharmaceuticals (MIPH.CA) - AGM Minutes (after Certification) (June 29, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFxhut7fFCXHR3Xr4edPgo_SnQWLfDPO_Q_U3GdWRD_32b_g3gwqd1Jyzh2EtmQQNj-wNB9YEWV91422pyL_MnYYRgRYqjKvNlHnUoNyatlbCXNWzPukgU7nuUeprBcf5a5xPzG_YaQr0JWihNotou-
-  - Release from Minapharm Pharmaceuticals (MIPH.CA) Regarding the Financial Statements (June 23, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFxhut7fFCXHR3Xr4edPgo_SnQWLfDPO_Q_U3GdWRD_32b_g3gwqd1Jyzh2EtmQQNj-wNB9YEWV91422pyL_MnYYRgRYqjKvNlHnUoNyatlbCXNWzPukgU7nuUeprBcf5a5xPzG_YaQr0JWihNotou-
-- AREH.CA: status=RECENT_ACCEPTED latest=2026-06-02 age_days=42 sources=3 expected=Real Estate Egyptian Consortium S.A.E summary=Real Estate Egyptian Consortium S.A.E has reported its financial results for Q1 2026, showing a decrease in total assets and liabilities. Board of Directors' decisions were also announced.
-  - Egyptian Real Estate Group (AREH.CA) Reports its Financial Results for the Period from 01/01/2026 to 31/03/2026 (June 2, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH1uETXspnEvkGtW92qIG-y8qkUEqEpyDT3FMGKsxtBzZ3PjXWJrNZfVo30v5AAyNXxbVkPhl-2cUJSSyiTHklzew05nQPsUM6yvFay29xyGxQqNK4mO3nA3IMwZVNkQhE7-yuOss4xGm-1eEtZLjI=
-  - Egyptian Real Estate Group (AREH.CA) - Decisions of the BoD Meeting (June 2, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH1uETXspnEvkGtW92qIG-y8qkUEqEpyDT3FMGKsxtBzZ3PjXWJrNZfVo30v5AAyNXxbVkPhl-2cUJSSyiTHklzew05nQPsUM6yvFay29xyGxQqNK4mO3nA3IMwZVNkQhE7-yuOss4xGm-1eEtZLjI=
-  - Egyptian Real Estate Group Q1 2026 Financial Position (Undated, refers to Q1 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGjovDi3lWMMHoqVntmCmo-U3D45G_kZ-ctV3vR3miOqZWDmoIVgxuv5SUdWkch2zucr1UZLdXsmb5TwV_qegjzW63sT1pBOl-9DAgjAxVmMRaA68TZx8zIQWIoa4_BLmOhkG_oMiK-wfDTZXrfLsleR-aBPM1AZg8mEedAZtt30A==
-- GDWA.CA: status=RECENT_ACCEPTED latest=2026-06-30 age_days=14 sources=3 expected=Gadwa for Industrial Development summary=Gadwa for Industrial Development has released recent financial results for Q1 2026, showing a net loss. Other disclosures include board decisions and EGM minutes. The company experienced a significant decrease in stock price over the last 52 weeks and reported losses in the last 12 months.
-  - Release from Gadwa For Industrial Development (GDWA.CA) Regarding the Company's Financial Results (June 30, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHXySMhxe9ffcmgeV4KJ6-wBs_S0K_ZH0B_s4Q1fEsOS_oB5xzIkV0xxqWMV6LDMUy2nhzaENcJkV_TWP_x_UwOe-dpTyh14GKl-jK7V5H8gVCRHCZgs67qQQoMo1tJrMKF0oqKpCGHAskTHWfI22MH
-  - Gadwa For Industrial Development (GDWA.CA) Reports its Financial Results (Consolidated) for the Period from 01/01/2026 to 31/03/2026 (June 30, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHF9xJ6WvAQAtS_iwYtFVPULv5Gcu89jNth4MoSqC4-E_6Nea5qe_B3jI-CmslGtu9bucd5ZYwYeuGAbgqdbwrYnYFlW8yC8vvgI-1Wfofzoop9ZOFxr-ykNIejDOzJzkBeqhEQOPl8XsyewofcpVSbTIw=
-  - Gadwa For Industrial Development (GDWA.CA) - Decisions of the Board of Directors' Meeting (June 30, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHXySMhxe9ffcmgeV4KJ6-wBs_S0K_ZH0B_s4Q1fEsOS_oB5xzIkV0xxqWMV6LDMUy2nhzaENcJkV_TWP_x_UwOe-dpTyh14GKl-jK7V5H8gVCRHCZgs67qQQoMo1tJrMKF0oqKpCGHAskTHWfI22MH
+- EGAS.CA: status=REJECTED_TICKER_MISMATCH latest=n/a age_days=n/a sources=0 expected=Natural Gas and Mining Project summary=Evidence rejected for EGAS.CA: source text did not clearly match EGAS.CA / Natural Gas and Mining Project.
+- EPCO.CA: status=REJECTED_TICKER_MISMATCH latest=n/a age_days=n/a sources=0 expected=Egypt for Poultry summary=Evidence rejected for EPCO.CA: source text did not clearly match EPCO.CA / Egypt for Poultry.
+- MIPH.CA: status=ACCEPTED_UNDATED latest=n/a age_days=n/a sources=3 expected=Minapharm Pharmaceuticals summary=Minapharm’ consolidated net profits retreat to EGP 62m in 9M-25; Minapharm posts EGP 66.5m standalone net profits in 9M-25; sales hit EGP 2.8bn; Investor buys EGP 1.3bn stake in Minapharm Pharmaceuticals Gemini also reviewed web evidence but did not return ticker-specific citations.
+  - Minapharm’ consolidated net profits retreat to EGP 62m in 9M-25: https://english.mubasher.info/news/4531893/Minapharm-consolidated-net-profits-retreat-to-EGP-62m-in-9M-25/
+  - Minapharm posts EGP 66.5m standalone net profits in 9M-25; sales hit EGP 2.8bn: https://english.mubasher.info/news/4528557/Minapharm-posts-EGP-66-5m-standalone-net-profits-in-9M-25-sales-hit-EGP-2-8bn/
+  - Investor buys EGP 1.3bn stake in Minapharm Pharmaceuticals: https://english.mubasher.info/news/4295954/Investor-buys-EGP-1-3bn-stake-in-Minapharm-Pharmaceuticals/
+- AREH.CA: status=ACCEPTED_UNDATED latest=n/a age_days=n/a sources=3 expected=Real Estate Egyptian Consortium S.A.E summary=Real Estate Egyptian Consortium’s net profits approach EGP 2m in 9M-25; Shareholder ups stake in Real Estate Egyptian; Target for Real Estate Investment cuts stake in Real Estate Egyptian Gemini also reviewed web evidence but did not return ticker-specific citations.
+  - Real Estate Egyptian Consortium’s net profits approach EGP 2m in 9M-25: https://english.mubasher.info/news/4528467/Real-Estate-Egyptian-Consortium-s-net-profits-approach-EGP-2m-in-9M-25/
+  - Shareholder ups stake in Real Estate Egyptian: https://english.mubasher.info/news/4026301/Shareholder-ups-stake-in-Real-Estate-Egyptian/
+  - Target for Real Estate Investment cuts stake in Real Estate Egyptian: https://english.mubasher.info/news/4010821/Target-for-Real-Estate-Investment-cuts-stake-in-Real-Estate-Egyptian/
+- GDWA.CA: status=REJECTED_TICKER_MISMATCH latest=n/a age_days=n/a sources=0 expected=Gadwa for Industrial Development summary=Evidence rejected for GDWA.CA: source text did not clearly match GDWA.CA / Gadwa for Industrial Development.
 - RREI.CA: status=REJECTED_TICKER_MISMATCH latest=n/a age_days=n/a sources=0 expected=Arab Real Estate Investment Co. summary=Evidence rejected for RREI.CA: source text did not clearly match RREI.CA / Arab Real Estate Investment Co..
-- AMOC.CA: status=RECENT_ACCEPTED latest=2026-06-29 age_days=15 sources=3 expected=Alexandria Mineral Oils summary=Alexandria Mineral Oils Company has revised its FY 2026 budget forecasts, projecting a significant increase in net profit. The company also reported strong Q1 2026 consolidated net profit and declared cash dividends for H2 2025. Various board decisions and disclosures have been released.
-  - Alexandria Mineral Oils Company (AMOC.CA) - Decisions of the BoD Meeting (June 29, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF2wQRkg6xivR9Zgzy9MC32orp0FiKAxmlSXR5bRlrAr7ts-xYL9u7Sd25vnY48nFiXRiY3xKLP-mgFBlOVWcKaOLyJ5wXaTtrijsUll4xymTruAVFTjhPxTPMWvYGkpjgpVNTb8jvsTpJyFaaSX2N7
-  - AMOC's Revises FY 2026 Budget Forecsts, Doubles Profit to EGP 2.1 Bn (June 29, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH8Cw_1KT1IZOhtGG8d6-TQNLct4-bjYQrApELBWD2doORj084Kkxr0Bzv0yv3s7XiLwQbc3f596C4r9Ay3O72y2pALTgr27KsVwGARuAPE_zAVRgXqWs9qSpl0xOCnUPV2ea57hnNrix43agPGPYz8iNaJWS296xeZEjZxUxV_yufUgblm3sJ5AupHf0ussFGEAj0P5IuAt-I-tA==
-  - AMOC Q1 2026 Consolidated and Standalone Net Profit (June 29, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH8Cw_1KT1IZOhtGG8d6-TQNLct4-bjYQrApELBWD2doORj084Kkxr0Bzv0yv3s7XiLwQbc3f596C4r9Ay3O72y2pALTgr27KsVwGARuAPE_zAVRgXqWs9qSpl0xOCnUPV2ea57hnNrix43agPGPYz8iNaJWS296xeZEjZxUxV_yufUgblm3sJ5AupHf0ussFGEAj0P5IuAt-I-tA==
-- RAYA.CA: status=RECENT_ACCEPTED latest=2026-07-01 age_days=13 sources=3 expected=Raya Holding summary=Raya Holding has released various disclosures including statements concerning Raya Information Technology, board decisions, and financial results for Q1 2026. The company reported significant revenue and profits in the last 12 months, with a substantial increase in stock price over the last 52 weeks. The next earnings report is expected in August 2026.
-  - Release from Raya Holding For Financial Investments (RAYA.CA) Concerning Raya Information Technology (July 1, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHZq7JL58WV9BMBFQWdbyCx2sU4nTmrqkYX4RlawUYk-dxdz-FmjZyt3Nt9jP_7Hb-8rhLbWp65ibEVFAVSfDdimIbP4aP85PMLbNsc7oOTRZRAE09bzT4fQrk2FpnAx8_FIFUWnXoaFJYrHEqCRWdL
-  - Release from Raya Holding For Financial Investments (RAYA.CA) Regarding the Board of Directors' Decisions (July 1, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHZq7JL58WV9BMBFQWdbyCx2sU4nTmrqkYX4RlawUYk-dxdz-FmjZyt3Nt9jP_7Hb-8rhLbWp65ibEVFAVSfDdimIbP4aP85PMLbNsc7oOTRZRAE09bzT4fQrk2FpnAx8_FIFUWnXoaFJYrHEqCRWdL
-  - Release from Raya Holding For Financial Investments (RAYA.CA) Concerning the Signing of MOU (June 9, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHZq7JL58WV9BMBFQWdbyCx2sU4nTmrqkYX4RlawUYk-dxdz-FmjZyt3Nt9jP_7Hb-8rhLbWp65ibEVFAVSfDdimIbP4aP85PMLbNsc7oOTRZRAE09bzT4fQrk2FpnAx8_FIFUWnXoaFJYrHEqCRWdL
+- AMOC.CA: status=ACCEPTED_UNDATED latest=n/a age_days=n/a sources=3 expected=Alexandria Mineral Oils summary=AMOC achieves EGP 10.5bn consolidated sales in Q1-26; AMOC studies potential project with Germany’s SULZER; AMOC to pay out EGP 0.4/shr dividends for H2-25 Gemini also reviewed web evidence but did not return ticker-specific citations.
+  - AMOC achieves EGP 10.5bn consolidated sales in Q1-26: https://english.mubasher.info/news/4604903/AMOC-achieves-EGP-10-5bn-consolidated-sales-in-Q1-26/
+  - AMOC studies potential project with Germany’s SULZER: https://english.mubasher.info/news/4586853/AMOC-studies-potential-project-with-Germany-s-SULZER/
+  - AMOC to pay out EGP 0.4/shr dividends for H2-25: https://english.mubasher.info/news/4586775/AMOC-to-pay-out-EGP-0-4-shr-dividends-for-H2-25/
+- RAYA.CA: status=OLD_ACCEPTED latest=2025-01-01 age_days=559 sources=3 expected=Raya Holding summary=Raya stock maintains bullish momentum above EGP 9; Aman Holding, MSMEDA partner to inject EGP 300m into SMEs across Egypt; Raya Holding’s consolidated profits surge in 2025; revenues hit EGP 63.8bn Gemini also reviewed web evidence but did not return ticker-specific citations.
+  - Raya stock maintains bullish momentum above EGP 9: https://english.mubasher.info/news/4601857/Raya-stock-maintains-bullish-momentum-above-EGP-9/
+  - Aman Holding, MSMEDA partner to inject EGP 300m into SMEs across Egypt: https://english.mubasher.info/news/4577815/Aman-Holding-MSMEDA-partner-to-inject-EGP-300m-into-SMEs-across-Egypt/
+  - Raya Holding’s consolidated profits surge in 2025; revenues hit EGP 63.8bn: https://english.mubasher.info/news/4564195/Raya-Holding-s-consolidated-profits-surge-in-2025-revenues-hit-EGP-63-8bn/
 
 ## Warnings
+- Evidence rejected for EGAS.CA: source text did not clearly match EGAS.CA / Natural Gas and Mining Project.
+- Evidence rejected for EPCO.CA: source text did not clearly match EPCO.CA / Egypt for Poultry.
+- Evidence for MIPH.CA matches the company but no source/report date was detected.
+- Evidence for AREH.CA matches the company but no source/report date was detected.
+- Evidence rejected for GDWA.CA: source text did not clearly match GDWA.CA / Gadwa for Industrial Development.
 - Evidence rejected for RREI.CA: source text did not clearly match RREI.CA / Arab Real Estate Investment Co..
+- Evidence for AMOC.CA matches the company but no source/report date was detected.
+- Evidence for RAYA.CA matches the company but appears old; latest detected date is 2025-01-01.
