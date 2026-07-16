@@ -1,6 +1,6 @@
 Ticker,Company Name,Sector,AI Status,Watchlist Tier,Signal Status
-OFH.CA,O B Financial Holding S.A.E,General / Verified EGX Expansion,Active Tracking,WATCH,WATCH_ONLY
-GBCO.CA,GB Corp,Automotive & Distribution,Active Tracking,WATCH,WATCH_ONLY
-SWDY.CA,Elsewedy Electric,Industrial Goods & Cables,Active Tracking,WATCH,WATCH_ONLY
-ELEC.CA,Electro Cable Egypt,Industrial Goods & Cables,Active Tracking,WATCH,WATCH_ONLY
-AFMC.CA,Alexandria Flour Mills,General / Verified EGX Expansion,Active Tracking,WATCH,WATCH_ONLY
+ELEC.CA,Electro Cable Egypt,Industrial Goods & Cables,Active Tracking,WATCH,BUY_READY
+SWDY.CA,Elsewedy Electric,Industrial Goods & Cables,Active Tracking,WATCH,BUY_READY
+RAYA.CA,Raya Holding,Technology & Distribution,Active Tracking,WATCH,BUY_READY
+DSCW.CA,Dice For Ready-Made Garments (SAE),General / Verified EGX Expansion,Active Tracking,WATCH,BUY_READY
+EXPA.CA,Export Development Bank of Egypt,Banking & Financials,Active Tracking,WATCH,BUY_READY
