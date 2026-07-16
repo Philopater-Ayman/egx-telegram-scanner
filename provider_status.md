@@ -1,10 +1,10 @@
 # Provider Status
 
-Generated UTC: 2026-07-16T14:33:14.983915+00:00
-Generated Cairo: 2026-07-16 17:33
-- Scan phase: Post-close tomorrow tickets
-- Run timing: target 15:30 Cairo | generated Cairo 2026-07-16 17:33 | cron 30 12 * * 0-4
-- Trigger: scheduled cron=30 12 * * 0-4 mapped to post_close; Cairo now 2026-07-16 17:29
+Generated UTC: 2026-07-16T17:48:43.708294+00:00
+Generated Cairo: 2026-07-16 20:48
+- Scan phase: Evening tomorrow plan
+- Run timing: target 19:30 Cairo | generated Cairo 2026-07-16 20:48 | cron 30 16 * * 0-4
+- Trigger: scheduled cron=30 16 * * 0-4 mapped to evening_plan; Cairo now 2026-07-16 20:44
 
 - Macro source: Mubasher EGX market page (delayed public data)
 - Macro freshness: DELAYED
@@ -13,14 +13,15 @@ Generated Cairo: 2026-07-16 17:33
 - Market data: 174/189 tickers have tradeable current/delayed price data
 - Mubasher delayed current rows used: 184/189
 - Current/Yahoo technical mismatches blocked: 15/189
-- DirectFN public table health only, not trusted for action tickets: 252 rows | as_of=2026-07-16T14:29:46.669109+00:00 | error=none
+- DirectFN public table health only, not trusted for action tickets: 252 rows | as_of=2026-07-16T17:44:08.566615+00:00 | error=none
 - Data quality issues: 1
-- Evidence sources found: 21
+- Evidence sources found: 24
 - AI narrative: OpenRouter ERROR (openai/gpt-oss-120b:free)
 - Telegram sent on latest run: True
-- Latest ticket id(s): 20260716T143314Z_BUY_ELEC.CA, 20260716T143314Z_BUY_SIPC.CA, 20260716T143314Z_BUY_MEPA.CA
+- Latest ticket id(s): 20260716T174843Z_BUY_ELEC.CA, 20260716T174843Z_BUY_SIPC.CA, 20260716T174843Z_BUY_MEPA.CA
 - Latest history write(s): /home/runner/work/egx-telegram-scanner/egx-telegram-scanner/trade_history.csv, /home/runner/work/egx-telegram-scanner/egx-telegram-scanner/trade_history.csv, /home/runner/work/egx-telegram-scanner/egx-telegram-scanner/trade_history.csv
 
 ## Warnings
 - ANFI.CA: No usable market data returned. Check Yahoo symbol or add a manual fallback row.
-- Evidence rejected for DSCW.CA: source text did not clearly match DSCW.CA / Dice For Ready-Made Garments (SAE).
+- Evidence for SWDY.CA matches the company but no source/report date was detected.
+- Evidence for DSCW.CA matches the company but no source/report date was detected.
