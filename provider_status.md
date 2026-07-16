@@ -1,25 +1,26 @@
 # Provider Status
 
-Generated UTC: 2026-07-16T10:06:55.629963+00:00
-Generated Cairo: 2026-07-16 13:06
-- Scan phase: Intraday liquidity update
-- Run timing: target 11:00 Cairo | generated Cairo 2026-07-16 13:06 | cron 0 8 * * 0-4
-- Trigger: scheduled cron=0 8 * * 0-4 mapped to intraday; Cairo now 2026-07-16 13:02
+Generated UTC: 2026-07-16T14:33:14.983915+00:00
+Generated Cairo: 2026-07-16 17:33
+- Scan phase: Post-close tomorrow tickets
+- Run timing: target 15:30 Cairo | generated Cairo 2026-07-16 17:33 | cron 30 12 * * 0-4
+- Trigger: scheduled cron=30 12 * * 0-4 mapped to post_close; Cairo now 2026-07-16 17:29
 
 - Macro source: Mubasher EGX market page (delayed public data)
 - Macro freshness: DELAYED
 - Macro trend: Bullish
 - Market regime: EGX30 CONSTRUCTIVE / EGX70 BULLISH / sector breadth 71.43% / risk mode BROAD_RISK_ON
-- Market data: 175/189 tickers have tradeable current/delayed price data
-- Mubasher delayed current rows used: 182/189
-- Current/Yahoo technical mismatches blocked: 14/189
-- DirectFN public table health only, not trusted for action tickets: 236 rows | as_of=2026-07-16T10:03:03.408038+00:00 | error=none
+- Market data: 174/189 tickers have tradeable current/delayed price data
+- Mubasher delayed current rows used: 184/189
+- Current/Yahoo technical mismatches blocked: 15/189
+- DirectFN public table health only, not trusted for action tickets: 252 rows | as_of=2026-07-16T14:29:46.669109+00:00 | error=none
 - Data quality issues: 1
-- Evidence sources found: 23
-- AI narrative: OpenRouter OK (nvidia/nemotron-3-super-120b-a12b:free)
+- Evidence sources found: 21
+- AI narrative: OpenRouter ERROR (openai/gpt-oss-120b:free)
 - Telegram sent on latest run: True
-- Latest ticket id(s): 20260716T100655Z_BUY_GBCO.CA, 20260716T100655Z_BUY_MEPA.CA
-- Latest history write(s): /home/runner/work/egx-telegram-scanner/egx-telegram-scanner/trade_history.csv, /home/runner/work/egx-telegram-scanner/egx-telegram-scanner/trade_history.csv
+- Latest ticket id(s): 20260716T143314Z_BUY_ELEC.CA, 20260716T143314Z_BUY_SIPC.CA, 20260716T143314Z_BUY_MEPA.CA
+- Latest history write(s): /home/runner/work/egx-telegram-scanner/egx-telegram-scanner/trade_history.csv, /home/runner/work/egx-telegram-scanner/egx-telegram-scanner/trade_history.csv, /home/runner/work/egx-telegram-scanner/egx-telegram-scanner/trade_history.csv
 
 ## Warnings
 - ANFI.CA: No usable market data returned. Check Yahoo symbol or add a manual fallback row.
+- Evidence rejected for DSCW.CA: source text did not clearly match DSCW.CA / Dice For Ready-Made Garments (SAE).
