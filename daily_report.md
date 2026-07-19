@@ -1,13 +1,13 @@
 # Telegram-First EGX Scanner Report
 
-Scan phase: Post-close tomorrow tickets
-Generated UTC: 2026-07-19T14:05:20.274439+00:00
-Generated Cairo: 2026-07-19 17:05
-Run timing: target 15:30 Cairo | generated Cairo 2026-07-19 17:05 | cron 30 12 * * 0-4
-Trigger: scheduled cron=30 12 * * 0-4 mapped to post_close; Cairo now 2026-07-19 16:58
+Scan phase: Evening tomorrow plan
+Generated UTC: 2026-07-19T17:36:05.109569+00:00
+Generated Cairo: 2026-07-19 20:36
+Run timing: target 19:30 Cairo | generated Cairo 2026-07-19 20:36 | cron 30 16 * * 0-4
+Trigger: scheduled cron=30 16 * * 0-4 mapped to evening_plan; Cairo now 2026-07-19 20:29
 
 ## Control Center
-- Action tickets: 0 prioritized signal(s)
+- Action tickets: 3 prioritized signal(s)
 - BUY-ready candidates: 57
 - Data quality issues: 1
 - Tradeable price/liquidity tickers: 168/189
@@ -33,11 +33,10 @@ Trigger: scheduled cron=30 12 * * 0-4 mapped to post_close; Cairo now 2026-07-19
 ## AI Narrative
 - Provider: OpenRouter OK
 - Model: nvidia/nemotron-3-super-120b-a12b:free
-- Summary: EGX30 constructive, EGX70 bullish, sector breadth ~48%, risk mode selective swing trades only; scanner fell back to HOLD as no ticket satisfied liquidity, freshness, and technical gates despite several rows showing accumulation spikes and bullish watch outlook.
-- Prioritized tickets showed accumulation spikes and bullish watch outlooks but lacked sufficient evidence/freshness to pass all gates, triggering a fallback HOLD.
-- Liquidity spikes (2‑6× average) and sectors like Telecom &nbsp;Telecommunications and Industrial Goods & Cables are strong; prices sit near resistance with support ~10‑16% below, indicating short‑term upside potential bu
-- EGX30’s constructive trend and EGX70’s bullish breadth shift risk mode to selective swing trades only, meaning only high‑conviction setups are considered; uncertainty remains due to mixed evidence and elevated RSI levels
-- Next 1‑3 days: bullish watch scores (76‑100) suggest possible upside if momentum holds, yet risk notes warn of extended momentum and proximity to resistance, raising chance of a pull‑back.
+- Summary: The scanner flagged ELEC.CA, SWDY.CA and PHAR.CA because each shows price above its 20‑ and 50‑day moving averages, adequate liquidity accumulation spikes, and clear support/resistance zones, yielding a BULLISH_WATCH outlook despite a bearish macro trend and low confidence. In the current EGX30‑CONSTRUCTIVE / EGX70‑BULLISH regime, risk mode is set to SELECTIVE_SWING_TRADES_ONLY, meaning only selective swing setups are considered and extra caution is warranted.
+- Liquidity accumulation spikes and price above MA20/MA50 suggest short‑term buying interest for the next 1‑3 days.
+- Support is well below current price while resistance is tight, offering limited upside room; watch for a breakout or pullback.
+- EGX70’s bullish breadth contrasts with EGX30’s constructive tone, but the SELECTIVE_SWING_TRADES_ONLY risk mode raises uncertainty and requires confirmation before acting.
 
 ## Top Liquidity Spikes
 - WCDF.CA: spike=38.56 liquidity=15152511.0 outlook=WEAK_OR_RISKY score=0 buy_ready=False
@@ -57,7 +56,18 @@ Trigger: scheduled cron=30 12 * * 0-4 mapped to post_close; Cairo now 2026-07-19
 - #8 Energy & Petrochemicals: score=7.9 5d=4.52% 20d=3.12% aboveMA50=75.0%
 
 ## Today's Prioritized Action Tickets
-- HOLD: Local fallback HOLD: no candidate passed evidence, liquidity, freshness, and technical gates.
+- Priority #1: BUY ELEC.CA
+  - Entry: 2.27 | Take profit: 2.45 | Stop loss: 2.18
+  - Confidence: LOW | score=32.4 | outlook=BULLISH_WATCH 94
+  - Reason: WATCH/BUY SETUP: ELEC.CA has aligned current price data, liquidity above threshold, price above MA20/MA50, RSI 63.89, support 2.04, resistance 2.26, and evidence sources. Macro trend is Bearish; market regime is SELECTIVE_SWING_TRADES_ONLY; verify price action in Thndr before treating it as a swing entry.
+- Priority #2: BUY SWDY.CA
+  - Entry: 91.52 | Take profit: 98.84 | Stop loss: 87.86
+  - Confidence: LOW | score=31.44 | outlook=BULLISH_WATCH 100
+  - Reason: WATCH/BUY SETUP: SWDY.CA has aligned current price data, liquidity above threshold, price above MA20/MA50, RSI 66.59, support 84.3, resistance 91.5, and evidence sources. Macro trend is Bearish; market regime is SELECTIVE_SWING_TRADES_ONLY; verify price action in Thndr before treating it as a swing entry.
+- Priority #3: BUY PHAR.CA
+  - Entry: 90.88 | Take profit: 98.16 | Stop loss: 87.24
+  - Confidence: LOW | score=31.4 | outlook=BULLISH_WATCH 95.3
+  - Reason: WATCH/BUY SETUP: PHAR.CA has aligned current price data, liquidity above threshold, price above MA20/MA50, RSI 51.65, support 83.6, resistance 90.48, and evidence sources. Macro trend is Bearish; market regime is SELECTIVE_SWING_TRADES_ONLY; verify price action in Thndr before treating it as a swing entry.
 
 ## Thndr Instruction
 - Advisor-only signal mode is active. The scanner never executes trades.
@@ -289,36 +299,38 @@ Trigger: scheduled cron=30 12 * * 0-4 mapped to post_close; Cairo now 2026-07-19
 - These checks are historical context only, not a prediction or guarantee.
 
 ## Evidence
-- ELEC.CA: status=OLD_ACCEPTED latest=2025-01-01 age_days=564 sources=3 expected=Electro Cable Egypt summary=Electro Cable Egypt sees lower profits in 2025; revenues exceed EGP 10.8bn; Mashareq reduces equity in Electro Cable Egypt to 0.77%; Electro Cable Egypt stock is testing significant demand zone, will it succeed to rebound? Gemini also reviewed web evidence but did not return ticker-specific citations.
-  - Electro Cable Egypt sees lower profits in 2025; revenues exceed EGP 10.8bn: https://english.mubasher.info/news/4580607/Electro-Cable-Egypt-sees-lower-profits-in-2025-revenues-exceed-EGP-10-8bn/
-  - Mashareq reduces equity in Electro Cable Egypt to 0.77%: https://english.mubasher.info/news/4561520/Mashareq-reduces-equity-in-Electro-Cable-Egypt-to-0-77-/
-  - Electro Cable Egypt stock is testing significant demand zone, will it succeed to rebound?: https://english.mubasher.info/news/4556412/Electro-Cable-Egypt-stock-is-testing-significant-demand-zone-will-it-succeed-to-rebound-/
-- SWDY.CA: status=ACCEPTED_UNDATED latest=n/a age_days=n/a sources=3 expected=Elsewedy Electric summary=Elsewedy Electric’s consolidated revenues total EGP 75.2bn in Q1-26; Elsewedy Electric accelerates power transformation project in KSA with 6 high-voltage substations; Elsewedy Electric’s subsidiary leads expansion of SAL project at Riyadh airport Gemini also reviewed web evidence but did not return ticker-specific citations.
-  - Elsewedy Electric’s consolidated revenues total EGP 75.2bn in Q1-26: https://english.mubasher.info/news/4614341/Elsewedy-Electric-s-consolidated-revenues-total-EGP-75-2bn-in-Q1-26/
-  - Elsewedy Electric accelerates power transformation project in KSA with 6 high-voltage substations: https://english.mubasher.info/news/4593166/Elsewedy-Electric-accelerates-power-transformation-project-in-KSA-with-6-high-voltage-substations/
-  - Elsewedy Electric’s subsidiary leads expansion of SAL project at Riyadh airport: https://english.mubasher.info/news/4580464/Elsewedy-Electric-s-subsidiary-leads-expansion-of-SAL-project-at-Riyadh-airport/
-- PHAR.CA: status=REJECTED_TICKER_MISMATCH latest=n/a age_days=n/a sources=0 expected=Egyptian International Pharmaceutical Industries summary=Evidence rejected for PHAR.CA: source text did not clearly match PHAR.CA / Egyptian International Pharmaceutical Industries.
-- MEPA.CA: status=ACCEPTED_UNDATED latest=n/a age_days=n/a sources=3 expected=Medical Packaging Company summary=Medical Packaging stock close to break above EGP 1.7; Medical Packaging announces EGP 62m capital hike; Medical Packaging&#39;s profit jumps 54% in Q1-21 Gemini also reviewed web evidence but did not return ticker-specific citations.
-  - Medical Packaging stock close to break above EGP 1.7: https://english.mubasher.info/news/4598700/Medical-Packaging-stock-close-to-break-above-EGP-1-7/
-  - Medical Packaging announces EGP 62m capital hike: https://english.mubasher.info/news/3936298/Medical-Packaging-announces-EGP-62m-capital-hike/
-  - Medical Packaging&#39;s profit jumps 54% in Q1-21: https://english.mubasher.info/news/3815448/Medical-Packaging-s-profit-jumps-54-in-Q1-21/
-- CCRS.CA: status=OLD_ACCEPTED latest=2016-01-01 age_days=3852 sources=3 expected=Gulf Canadian Company for Arab Real Estate Investment summary=10 EGX-listed firms deny ties to UAE-based Abraaj; Gulf Canadian OGM to discuss 2016 financials Thursday; Gulf Canadian OGM to discuss 2016 results 22 March Gemini also reviewed web evidence but did not return ticker-specific citations.
-  - 10 EGX-listed firms deny ties to UAE-based Abraaj: https://english.mubasher.info/news/3308086/10-EGX-listed-firms-deny-ties-to-UAE-based-Abraaj/
-  - Gulf Canadian OGM to discuss 2016 financials Thursday: https://english.mubasher.info/news/3076282/Gulf-Canadian-OGM-to-discuss-2016-financials-Thursday/
-  - Gulf Canadian OGM to discuss 2016 results 22 March: https://english.mubasher.info/news/3067564/Gulf-Canadian-OGM-to-discuss-2016-results-22-March/
-- NCCW.CA: status=ACCEPTED_UNDATED latest=n/a age_days=n/a sources=3 expected=Nasr Company for Civil Works summary=Nasr for Civil Works unveils EGP 150m capital increase; Arabia Investments, Nasr Company for Civil Works unveil capital hike; Nasr Company for Civil Works’ consortium signs EUR 46m agreement with Uganda Gemini also reviewed web evidence but did not return ticker-specific citations.
-  - Nasr for Civil Works unveils EGP 150m capital increase: https://english.mubasher.info/news/4550493/Nasr-for-Civil-Works-unveils-EGP-150m-capital-increase/
-  - Arabia Investments, Nasr Company for Civil Works unveil capital hike: https://english.mubasher.info/news/4284206/Arabia-Investments-Nasr-Company-for-Civil-Works-unveil-capital-hike/
-  - Nasr Company for Civil Works’ consortium signs EUR 46m agreement with Uganda: https://english.mubasher.info/news/4249759/Nasr-Company-for-Civil-Works-consortium-signs-EUR-46m-agreement-with-Uganda/
-- ETEL.CA: status=REJECTED_TICKER_MISMATCH latest=n/a age_days=n/a sources=0 expected=Telecom Egypt summary=Evidence rejected for ETEL.CA: source text did not clearly match ETEL.CA / Telecom Egypt.
-- SMFR.CA: status=REJECTED_TICKER_MISMATCH latest=n/a age_days=n/a sources=0 expected=Samad Misr EGYFERT.S.A.E summary=Evidence rejected for SMFR.CA: source text did not clearly match SMFR.CA / Samad Misr EGYFERT.S.A.E.
+- ELEC.CA: status=RECENT_ACCEPTED latest=2026-07-05 age_days=14 sources=3 expected=Electro Cable Egypt summary=Electro Cable Egypt (ELEC.CA) has released its standalone and consolidated financial statements for Q1 2026 and full-year 2025. The company also had a disclosure form released in July 2026 and announced Board of Directors' decisions in June 2026.
+  - Electro Cable Egypt (ELEC.CA) - Release Regarding a Disclosure Form (July 5, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEH05FRoypKimYhBZKEuJrtRRwQ1emWTN4LP7E9vHTGmMMVmF0IRG6sv_NeeCF_eitxXJvzLuK1I02giqqUnaqqkg5qplJQijihE4lvGdOgyRHfeOQ5mGk0FNY1ogXAw7f0JOzUeXRmBVXo6kZmdHjBmLajRRwScmYHfepCrCPfjOcxm8mMuwza8gP-Y-eskanzcHd_
+  - Electro Cable Egypt (ELEC.CA) - Consolidated Financial Statements for Q1 2026 (March 31, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEH05FRoypKimYhBZKEuJrtRRwQ1emWTN4LP7E9vHTGmMMVmF0IRG6sv_NeeCF_eitxXJvzLuK1I02giqqUnaqqkg5qplJQijihE4lvGdOgyRHfeOQ5mGk0FNY1ogXAw7f0JOzUeXRmBVXo6kZmdHjBmLajRRwScmYHfepCrCPfjOcxm8mMuwza8gP-Y-eskanzcHd_
+  - Electro Cable Egypt (ELEC.CA) - Standalone Financial Statements for Q1 2026 (March 31, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEH05FRoypKimYhBZKEuJrtRRwQ1emWTN4LP7E9vHTGmMMVmF0IRG6sv_NeeCF_eitxXJvzLuK1I02giqqUnaqqkg5qplJQijihE4lvGdOgyRHfeOQ5mGk0FNY1ogXAw7f0JOzUeXRmBVXo6kZmdHjBmLajRRwScmYHfepCrCPfjOcxm8mMuwza8gP-Y-eskanzcHd_
+- SWDY.CA: status=RECENT_ACCEPTED latest=2026-08-12 age_days=0 sources=3 expected=Elsewedy Electric summary=Elsewedy Electric (SWDY.CA) reported its latest quarterly financial results, showing sales of EGP 75,298.45 million and a net income of EGP 4,845.32 million. The company's full-year 2025 revenue increased by 21.15%. An earnings date is set for August 12, 2026.
+  - Elsewedy Electric Latest Quarterly Financials (Report Date: March 30, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFuYh29gKaoU-8bRmJC0sUgOMBTc2h3COPNzHKRpwC2SMYLbLNxKcqWWD8120gwrVpO43pXib_9-i9UtnXTSeu0HP2sMeckOIF6Cx6dbuUdmnGqZcdbOu-72BhQoZrBx19d8WA7-TNttia05nCL69IbAKMItlrmFcH3ZIp4CQ==
+  - El Sewedy Electric Company 2025 Financial Performance Overview: https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG63TuVlSACPDrTJiOM54RbDfsCOFdge0YTJ-RWmmYVNWLDvlCrwHCEZVzmFbYYGAnLMIw62k5ActkeUTt2WBU-yygo_LJdY6oIGYVALtmaEI4hReu32KZcLDjDnF7V0_DI6ew=
+  - El Sewedy Electric Company Upcoming Earnings Date (August 12, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG63TuVlSACPDrTJiOM54RbDfsCOFdge0YTJ-RWmmYVNWLDvlCrwHCEZVzmFbYYGAnLMIw62k5ActkeUTt2WBU-yygo_LJdY6oIGYVALtmaEI4hReu32KZcLDjDnF7V0_DI6ew=
+- PHAR.CA: status=RECENT_ACCEPTED latest=2026-07-13 age_days=6 sources=3 expected=Egyptian International Pharmaceutical Industries summary=Egyptian International Pharmaceutical Industries (PHAR.CA) reported a 10.5% decline in Q1 2026 earnings, with sales exceeding EGP 2.5 billion. The company also announced a dividend disbursement of over EGP 590.5 million for 2025. Recent market data and financial ratios are available up to July 2026.
+  - Egyptian International Pharmaceutical Industries Co. Q1 2026 Earnings Report (May 17, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGWi9mVCFd4Uo7YTG4p5ngcNnp4Vyswf3BANRgKLPJC7iHGykE914iigaYfIeXiFkR86fiXMTUJEKGyEg7K3UAi5kTH5CtS4I9nE17XnAAcf6bwotFRhVL6Cca2cTkDbg==
+  - EIPICO to disburse over EGP 590.5m dividends for 2025 (March 30, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGWi9mVCFd4Uo7YTG4p5ngcNnp4Vyswf3BANRgKLPJC7iHGykE914iigaYfIeXiFkR86fiXMTUJEKGyEg7K3UAi5kTH5CtS4I9nE17XnAAcf6bwotFRhVL6Cca2cTkDbg==
+  - Egyptian International Pharmaceutical Industries Company (EGX:PHAR) Financial Ratios (July 13, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGWPPIxWL4qIHCOAPoOkSjEW2apM87WFGMfUVGDSvBgqpXcQvX_GGCCFQoPCq-V2t8xazelSrCnnZCmrcs9MZ28toYISeMD1Vnuq4hrddj-dk8AXWTCpolfu_cO35dXGYBRxqqJUNLZjHoF2sI_TTkqc-rpMTs=
+- MEPA.CA: status=RECENT_ACCEPTED latest=2026-08-10 age_days=0 sources=3 expected=Medical Packaging Company summary=Medical Packaging Company (MEPA.CA) reported a decrease in revenue and earnings for 2025. The company released its latest quarterly earnings in May 2026, showing a net loss. An upcoming earnings date is scheduled for August 10, 2026.
+  - Medical Packaging Company 2025 Financial Performance Overview: https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEflXMWrZ2YVlewhwdXCuDLj5FmgIFhm_8qR1TaWkDIgbgU0TsW3LOhT-ttiiDTukJaq_KsWRxyogV0hA6r3lQeGbRYXdokPRhleO6lsjLXf2XPibWDzKeEB1BwTuMeJAlDKtI=
+  - Medical Packaging Company Latest Earnings Release (May 2, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGm6vbrVfxHloydEoebEWqB67chc0b4VqZQer4QhUDCzX3LIDkhd36ddLHBYy0sd5lK_Cn6JMCO9HIN45yDiJrXfMPYGvfKUC0QrbTTXBnWQIrUBQMMTeP-7uNd0KsNL2TroozglbwttwSs4GzwtSD7HVyKFLPr8Djy8UR1BSlh8ST4x1hIcY1m
+  - Medical Packaging Company Upcoming Earnings Date (August 10, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEflXMWrZ2YVlewhwdXCuDLj5FmgIFhm_8qR1TaWkDIgbgU0TsW3LOhT-ttiiDTukJaq_KsWRxyogV0hA6r3lQeGbRYXdokPRhleO6lsjLXf2XPibWDzKeEB1BwTuMeJAlDKtI=
+- CCRS.CA: status=RECENT_ACCEPTED latest=2026-08-12 age_days=0 sources=3 expected=Gulf Canadian Company for Arab Real Estate Investment summary=Gulf Canadian Company for Arab Real Estate Investment (CCRS.CA) has an upcoming earnings date on August 12, 2026, and held its Annual General Meeting on April 26, 2026. Recent market data for the stock is available as of July 2026.
+  - Gulf Canadian Company for Arab Real Estate Investment Upcoming Earnings Date (August 12, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHzjpsJp5XQE63qPB3NZAyKWXC1Y7MUw_1QeModV_QKLiZW2yDzBaLFYMCS7w9pcJeNU9gzHPdiUNiKqe_RBgWsvnIsDSktdFtxxezx0ixJSRkfMoYfAAx6hpQtX9_6A0mEUg0=
+  - Gulf Canadian Company for Arab Real Estate Investment, Annual General Meeting (April 26, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF3R_hN2f7VoyVnOW8Zu7DuGb3L_9cRMx14o_q4xuyuWN82piJSlz6Mm6lIYDj16JtKUHojt0B-1yky-PpInbAk3E6Je1-33aHX3SLMMnJWglEu_z2m-MuhKrlY9khI0g==
+  - Gulf Canadian RE Investment Co. Stock Price Today (July 17, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFHPZY-Nt87vePLjbnw68DBleYj_7aLvNDq3F1kYmFysyd3ve4eTWbrhmYvPnqIpQG-SyGcEGfaykAGHm_6_Xht6Jxkz-hojw9_ormljF4ecLZ4KoWBpE-uMAnyu4ZyNWP61RdV-FripTiGNw==
+- NCCW.CA: status=RECENT_ACCEPTED latest=2026-05-25 age_days=55 sources=3 expected=Nasr Company for Civil Works summary=Nasr Company for Civil Works (NCCW.CA) reported its Q1 2026 financial results, with revenue of EGP 43.30 million and net income of EGP 1.42 million. The company also released its full-year 2025 earnings and proposed a FY stock dividend. Recent stock price data is available as of July 2026.
+  - Nasr Company for Civil Works Q1 2026 Earnings Results (March 31, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE6HtJLSQFhMLjO-6RZ1yE-YZlywcC1e6bBcM00lzS-s9BaHZJoc8Yu7OmLFp0ogybqS41sEUkpe1-oYicxrs7RNbQZrsj70GXyHC4o034mLsVk8nIHocAA3j_jcdKkWpwbzkQRwHn_gmO-DQ==
+  - Nasr Company for Civil Works Q1 2026 Financial Performance (March 31, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGkVNmVLiT0pXCrNutDIglxz1Bzz4rvmApfrSBQtenNXitIMQNrdXC9gqeS1gLBe_pGgDfuXH_3JbhHv_OcTtLojO4yoK9beNH_zX9wXO_6AVOOqIhFJPvOxs0137TkeKEZX6PMvf3wT64eGiV_ZNqj83b1fWqQ2tiPUWaMXw==
+  - Nasr Company for Civil Works Reports Earnings Results for the First Quarter Ended March 31, 2026 (May 25, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF0g76rA2QNeAZG-9fyaAFe4Do4VNC2Rd7l0XdHTwvJKIzfejNVI9nSZn08aWsYYiQFNY3dqztdC_z8nIXMZ7oX03Ef41nzcqzeT88-mx3vmlvqiP1sTGK5f_xudAmkzIz0MMoXePaRyRuRA7gr3qoX9S2EXnWbk9Ou4N_PJXkGcKuPkXHgYxZL
+- ETEL.CA: status=RECENT_ACCEPTED latest=2026-07-16 age_days=3 sources=3 expected=Telecom Egypt summary=Telecom Egypt (ETEL.CA) announced it will not proceed with a proposed RDH transaction with Helios Investments on July 16, 2026. The company reported strong underlying business performance in Q1 2026 and delivered growth ahead of expectations for FY 2025. Various financial results, disclosures, and dividend declarations have been made in the last 12 months.
+  - Telecom Egypt Announces It Will Not Proceed with the Proposed RDH Transaction with Helios Investments (July 16, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGcHHMoAvjbc-vGjkuXCRkHJ--NEGrltTALcSgZWgv6hkYaYoJIoIbUj4LLZBcyw2reW50T43CPtZ3KPz600OaB0X1-r6jeNFIIFE6x0MPFDanrCcboDzfRdkyF-bSWgFR-2712Ti32r1g=
+  - Q1 2026 Results: Telecom Egypt Reports Strong Underlying Business Performance (May 21, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGcHHMoAvjbc-vGjkuXCRkHJ--NEGrltTALcSgZWgv6hkYaYoJIoIbUj4LLZBcyw2reW50T43CPtZ3KPz600OaB0X1-r6jeNFIIFE6x0MPFDanrCcboDzfRdkyF-bSWgFR-2712Ti32r1g=
+  - FY 2025 Results: Telecom Egypt Delivers Growth Ahead of Expectations (February 26, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGcHHMoAvjbc-vGjkuXCRkHJ--NEGrltTALcSgZWgv6hkYaYoJIoIbUj4LLZBcyw2reW50T43CPtZ3KPz600OaB0X1-r6jeNFIIFE6x0MPFDanrCcboDzfRdkyF-bSWgFR-2712Ti32r1g=
+- SMFR.CA: status=RECENT_ACCEPTED latest=2026-07-14 age_days=5 sources=3 expected=Samad Misr EGYFERT.S.A.E summary=Samad Misr EGYFERT.S.A.E (SMFR.CA) reported a significant increase in Q1 2026 consolidated net profits. The company's 9M 2025 consolidated profit after tax saw a decline. Recent disclosures and Board of Directors' decisions were announced in July and June 2026, respectively. The stock was temporarily suspended on July 14, 2026, due to price movement.
+  - Samad Misr (EGYFERT) (SMFR) Q1 2026 Consolidated Net Profits (Report Date: Q1 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEDp3v-0BS72milwUDwuIpME-V3uYc-ZNLTCEJ60dZN3RMC7iw95gwRQNmrkUl64JeAAOUUDkri7AlWvtf34BnFU6yb3tOtvEFCDaEJGp6U_G9itZwmv2Nluxq0IREOhT7chx6BTuxpLn9y-Q==
+  - Samad Misr (EGYFERT) (SMFR) 9M 2025 Consolidated Profit After Tax (November 11, 2025): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEDp3v-0BS72milwUDwuIpME-V3uYc-ZNLTCEJ60dZN3RMC7iw95gwRQNmrkUl64JeAAOUUDkri7AlWvtf34BnFU6yb3tOtvEFCDaEJGp6U_G9itZwmv2Nluxq0IREOhT7chx6BTuxpLn9y-Q==
+  - Samad Misr -EGYFERT (SMFR.CA) - Stock Suspension (July 14, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGun0dVqQYNQxu5a09li477CuBkmWM-c5G8x3LAwhoTS-KSpdn5YFSnDQjjhDNXziiJfZuSbVKpkRDzXQOUBnFi6IqIymVgXjUkQzidNkZYq1l9keWZFkDx4LTZOQ1IR2DejYAiYD1eHsLSdlZgaaMLqT2gwT4=
 
 ## Warnings
-- Evidence for ELEC.CA matches the company but appears old; latest detected date is 2025-01-01.
-- Evidence for SWDY.CA matches the company but no source/report date was detected.
-- Evidence rejected for PHAR.CA: source text did not clearly match PHAR.CA / Egyptian International Pharmaceutical Industries.
-- Evidence for MEPA.CA matches the company but no source/report date was detected.
-- Evidence for CCRS.CA matches the company but appears old; latest detected date is 2016-01-01.
-- Evidence for NCCW.CA matches the company but no source/report date was detected.
-- Evidence rejected for ETEL.CA: source text did not clearly match ETEL.CA / Telecom Egypt.
-- Evidence rejected for SMFR.CA: source text did not clearly match SMFR.CA / Samad Misr EGYFERT.S.A.E.
+- No blocking warnings.
