@@ -1,23 +1,23 @@
 # Telegram-First EGX Scanner Report
 
-Scan phase: Post-close tomorrow tickets
-Generated UTC: 2026-07-21T14:40:57.642358+00:00
-Generated Cairo: 2026-07-21 17:40
-Run timing: target 15:30 Cairo | generated Cairo 2026-07-21 17:40 | cron 30 12 * * 0-4
-Trigger: scheduled cron=30 12 * * 0-4 mapped to post_close; Cairo now 2026-07-21 17:30
+Scan phase: Evening tomorrow plan
+Generated UTC: 2026-07-21T17:55:09.827539+00:00
+Generated Cairo: 2026-07-21 20:55
+Run timing: target 19:30 Cairo | generated Cairo 2026-07-21 20:55 | cron 30 16 * * 0-4
+Trigger: scheduled cron=30 16 * * 0-4 mapped to evening_plan; Cairo now 2026-07-21 20:49
 
 ## Control Center
-- Action tickets: 0 prioritized signal(s)
+- Action tickets: 2 prioritized signal(s)
 - BUY-ready candidates: 46
 - Data quality issues: 1
 - Tradeable price/liquidity tickers: 172/189
 - Top sector: Building Materials
 
 ## Market Context
-- Market trend: Unavailable
-- Source: Market context unavailable
-- As of: None
-- Freshness: MISSING
+- Market trend: Bullish
+- Source: Mubasher EGX market page (delayed public data)
+- As of: Tuesday, July 21
+- Freshness: DELAYED
 - EGX30 regime: BULLISH / above MA20 85.0% / above MA50 60.0%
 - EGX70 regime: CONSTRUCTIVE / above MA20 76.92% / above MA50 79.49%
 - Sector breadth: 52.38%
@@ -32,10 +32,8 @@ Trigger: scheduled cron=30 12 * * 0-4 mapped to post_close; Cairo now 2026-07-21
 
 ## AI Narrative
 - Provider: OpenRouter OK
-- Model: nvidia/nemotron-3-super-120b-a12b:free
-- Summary: EGX30 is bullish (85% above MA20) while EGX70 is constructive (76% above MA20); sector breadth ~52% with leading Building Materials, Telecom, and Textiles. Risk mode is SELECTIVE_SWING_TRADES_ONLY, so the scanner flags accumulation‑spike stocks with bullish‑watch outlooks as candidates but maintains an overall HOLD stance due to missing macro source and low confidence.
-- Leading sectors (Building Materials, Telecom, Textiles) show >100% above MA20 and strong median liquidity spikes, indicating sector‑wide buying interest that may lift individual stocks.
-- EGX30’s bullish breadth supports normal selection, while EGX70’s constructive trend tempers aggression, reinforcing the selective swing‑trade risk mode.
+- Model: openai/gpt-oss-120b:free
+- Summary: 
 
 ## Top Liquidity Spikes
 - EGBE.CA: spike=37.0 liquidity=115102.45 outlook=NEUTRAL score=35.05 buy_ready=False
@@ -55,7 +53,14 @@ Trigger: scheduled cron=30 12 * * 0-4 mapped to post_close; Cairo now 2026-07-21
 - #8 Healthcare: score=8.99 5d=5.96% 20d=4.61% aboveMA50=66.67%
 
 ## Today's Prioritized Action Tickets
-- HOLD: Local fallback HOLD: macro source is missing, so no new BUY is allowed.
+- Priority #1: BUY ADIB.CA
+  - Entry: 49.3 | Take profit: 53.24 | Stop loss: 47.33
+  - Confidence: LOW | score=29.4 | outlook=BULLISH_WATCH 96.05
+  - Reason: BUY SETUP: ADIB.CA has aligned current price data, liquidity above threshold, price above MA20/MA50, RSI 57.06, support 44.1, resistance 48.49, and evidence sources. Macro trend is Bullish; market regime is SELECTIVE_SWING_TRADES_ONLY; verify price action in Thndr before treating it as a swing entry.
+- Priority #2: BUY DAPH.CA
+  - Entry: 90.85 | Take profit: 98.11 | Stop loss: 87.22
+  - Confidence: LOW | score=29.4 | outlook=BULLISH_WATCH 75.58
+  - Reason: WATCH/BUY SETUP: DAPH.CA has aligned current price data, liquidity above threshold, price above MA20/MA50, RSI 67.5, support 78.52, resistance 87.99, and evidence sources. Macro trend is Bullish; market regime is SELECTIVE_SWING_TRADES_ONLY; verify price action in Thndr before treating it as a swing entry.
 
 ## Thndr Instruction
 - Advisor-only signal mode is active. The scanner never executes trades.
@@ -287,38 +292,36 @@ Trigger: scheduled cron=30 12 * * 0-4 mapped to post_close; Cairo now 2026-07-21
 - These checks are historical context only, not a prediction or guarantee.
 
 ## Evidence
-- ARCC.CA: status=RECENT_ACCEPTED latest=2026-07-16 age_days=5 sources=3 expected=Arabian Cement Company summary=Recent evidence for Arabian Cement Company (ARCC.CA) includes several disclosures and decisions from the Egyptian Exchange (EGX) in July 2026, along with financial performance data for the latest quarter.
-  - Arabian Cement Company (ARCC.CA) - Disclosure Form for the BoD & the Shareholders' Structure (July 16, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE4xyQFwtVPPQc-lN-YI5cy2QnuJf-xbkdRmTClt-KRdEXzB-ioYUj9Rl3uF8dufSiUWYy0YqLd7BT4DgxSUISTE6DDEBLEiiQAN8BW6gWpxZnLEaJiKgawx4TI0SzlrDA6HV3y78m8cDpDkAKeOEE1WztafvIhfz49_j6B66g=
-  - Arabian Cement Company (ARCC.CA) - Listing Committee Decision (July 5, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE81Q-rAUiqusHK4LEkHPXO1wy6M6svzIef6o7daJaP_Yb0xPEoxBC_abrWpBTWuoeYAfPLIXH_1NWc8lnXeL_vHOa4ri99rgXHzCDc7iXoTlyZ4xcIfC5ujZpdNDXQxAo3btv_Eis447gnVOkMPBY=
-  - Arabian Cement Company (ARCC.CA) – Capital Decrease through Terminating Treasury Stocks (July 1, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE81Q-rAUiqusHK4LEkHPXO1wy6M6svzIef6o7daJaP_Yb0xPEoxBC_abrWpBTWuoeYAfPLIXH_1NWc8lnXeL_vHOa4ri99rgXHzCDc7iXoTlyZ4xcIfC5ujZpdNDXQxAo3btv_Eis447gnVOkMPBY=
-- SCEM.CA: status=RECENT_ACCEPTED latest=2026-02-05 age_days=166 sources=3 expected=Sinai Cement summary=Sinai Cement (SCEM.CA) has recent disclosures on its Board of Directors and shareholder structure, along with financial results for the first quarter of 2026.
-  - Sinai Cement (SCEM.CA) - Disclosure Form Concerning the BoD & the Shareholders' Structure (Q1 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEu5JPFm4rYy4xwVRZ2XRycrn-CUEps93BpHDymPBYXBc1OSHaEG_whCFAjLWfO2uVYn_0IJv1zlW8ft0SNPUwfjBe48st2OeBbnn9HCmPmXxi-tRPeBBnQu5cWXWeKQb-GUq_wI9x3AUr9SJKHSg==
-  - Sinai Cement (SCEM.CA) - Disclosure Form for the BoD & the Shareholders' Structure (January 18, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE-Kp19oduCUMiViDoCDBoSQdbWZ3VuBJyM1CCCiuMZGo7xnX2dAuG-vNPIDMNiZtUJVVswuL5R-pceoJXDAfLOWxhG5N-TuK_Yl4qsYBo4OJ6EJfCfiZlD8uyNpexeThb0ddauO5k99j1Fc5h7Lg==
-  - Release from Sinai Cement (SCEM.CA) Concerning the Board of Directors & the Executive Managers (February 5, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHxTA-xtXEN2-Q2b_-mgUvqTc_c3Q1_es7mB-dX7Yigo2DNRwDiUClbkB4nf9bCbb4PdUcsKlHnzuZX1r6z9SrXp4UJNIBdbeMiJKsgvtfJpOGqWsMzvKhI3cHJ47_skgrrF7f859qrPZb98BFMKcxBgmd_OZxG_Iup-79ozSc=
-- ADIB.CA: status=RECENT_ACCEPTED latest=2026-07-19 age_days=2 sources=3 expected=Abu Dhabi Islamic Bank Egypt summary=Abu Dhabi Islamic Bank Egypt (ADIB.CA) has released Board of Directors' decisions in July 2026, along with AGM minutes and financial results for the year ended December 2025.
-  - Abu Dhabi Islamic Bank- Egypt (ADIB.CA) - Board of Directors' Decisions (July 19, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEMu-gARaI-lPxQgHGPQoDBxSjPGSIO9FQbfHq4VH-8MnluGPm7Q6X0W-Yc29np02U-5BQTvAFCp3j_9SJHc0QP92Yl1kqsTln_bvgiV3iRPnAOCIkhL-2P3X6oH0prse_dkHar021TEboy-7En4fzuQz0=
-  - Abu Dhabi Islamic Bank- Egypt (ADIB.CA) - AGM Minutes (before Certification) (March 24, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFvnuCj5GQGrK4TsGv__bS7udF3tmxx5consXQRtPcp9a0O2hfRRZx_xDi9Pd41l8g6qeAGHX59ZcBJ6XQbzJ9HMz9I3ihZlcO5Xc11DznNdpvNGDSNFT_zVH04jmiZfN4wTpwR6SsyZ1hskX4E25-8ojHeWyQD7TCtNzvbGMU=
-  - Abu Dhabi Islamic Bank- Egypt (ADIB.CA) - Board of Directors' Decisions (March 15, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFvnuCj5GQGrK4TsGv__bS7udF3tmxx5consXQRtPcp9a0O2hfRRZx_xDi9Pd41l8g6qeAGHX59ZcBJ6XQbzJ9HMz9I3ihZlcO5Xc11DznNdpvNGDSNFT_zVH04jmiZfN4wTpwR6SsyZ1hskX4E25-8ojHeWyQD7TCtNzvbGMU=
-- DAPH.CA: status=RECENT_ACCEPTED latest=2026-07-09 age_days=12 sources=3 expected=Development & Engineering Consultants summary=Development & Engineering Consultants (DAPH.CA) has recent disclosures regarding its Board of Directors and shareholder structure, as well as AGM minutes and a listing committee decision in June 2026.
-  - Development & Engineering Consultants (DAPH.CA) - Disclosure Form for the BoD & the Shareholders' Structure (July 9, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFfXUDIpECS5tw7__sCE0kgytddcCkQQg0eyaHQkEhTW7Bgb0oLT4WMksU0IUh1vC7A_XZWJmVvXZCwYTCF2glvZc6Y4t8c0fp39zWPsRRWFFm9N4GhdXAXu2KFZbjLl_yZ52tt15r6ZNS0qKdK9LnSxOdQqMF1XMEz9qzc2BGDzPEOiYEsAARtXNDuMQ2lMXK1Oyaq7Lxgg1KLvM9oa8LrDj0qgwyA0xCKiWwnAdorWxcXuxwdgi0drBAeqPkXIvKud1GQNGQ_WzU=
-  - Development & Engineering Consultants (DAPH.CA) - AGM Minutes (June 21, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGYE0lq6eC0YP1RQ07leN-7rkoN6RnQuOEzmBpCI7szcL1NZ5ptsDhg1WdyclDsGkdO3h0c2DEPlEK8DIp_nFoCKlUeScfzwS2WCr66X7d6g3S6kH_oQZ_ueJFf5peJ9tUNwE7exDN8-JnySlYNDlLr
-  - Release from Development & Engineering Consultants (DAPH.CA) Concerning the Board of Directors & the Executive Managers (June 16, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGYE0lq6eC0YP1RQ07leN-7rkoN6RnQuOEzmBpCI7szcL1NZ5ptsDhg1WdyclDsGkdO3h0c2DEPlEK8DIp_nFoCKlUeScfzwS2WCr66X7d6g3S6kH_oQZ_ueJFf5peJ9tUNwE7exDN8-JnySlYNDlLr
-- CIEB.CA: status=RECENT_ACCEPTED latest=2026-07-07 age_days=14 sources=3 expected=Credit Agricole Egypt summary=Credit Agricole Egypt (CIEB.CA) has reported Q1 2026 financial results, announced Board of Directors' decisions in July 2026, and declared dividends payable in April 2026.
-  - Credit Agricole Egypt (CIEB.CA) - Board of Directors' Decisions (July 7, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH8tOel10NTz-spY_Ccd7yLjlGn7RISaoxKFsH9zhKBvuYTegW5NMpmAh-IQgpxtMg6DrDEbNPkPYpNelE4bBUHHPYPGcxGcaDcRIjhgP8rkaNk0JEwvFzn4CAsPjWwq0DNt8LMfAC8MKS9c_Eemo1o
-  - Credit Agricole Egypt (CIEB.CA) Reports Its Financial Results (Standalone) for the Period from 01/01/2026 to 31/03/2026 (April 30, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH8tOel10NTz-spY_Ccd7yLjlGn7RISaoxKFsH9zhKBvuYTegW5NMpmAh-IQgpxtMg6DrDEbNPkPYpNelE4bBUHHPYPGcxGcaDcRIjhgP8rkaNk0JEwvFzn4CAsPjWwq0DNt8LMfAC8MKS9c_Eemo1o
-  - Credit Agricole Egypt (CIEB.CA) - Disclosure Form Concerning the BoD & the Shareholders' Structure (April 20, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH8tOel10NTz-spY_Ccd7yLjlGn7RISaoxKFsH9zhKBvuYTegW5NMpmAh-IQgpxtMg6DrDEbNPkPYpNelE4bBUHHPYPGcxGcaDcRIjhgP8rkaNk0JEwvFzn4CAsPjWwq0DNt8LMfAC8MKS9c_Eemo1o
-- ETEL.CA: status=RECENT_ACCEPTED latest=2026-07-20 age_days=1 sources=3 expected=Telecom Egypt summary=Telecom Egypt (ETEL.CA) recently announced its decision not to proceed with a proposed data center transaction in July 2026, and has released Q1 2026 and FY 2025 financial results.
-  - Telecom Egypt Announces It Will Not Proceed with the Proposed RDH Transaction with Helios Investments (July 16, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGefBYOxmG0gjWViONq1v0JLuMeC-7OtZc3lkHCLXxmsPPodS5FGtgdDCCNAXy30Z-Bim7cJsCReb5Yr-o83zH_dAn5XWQASvnjQVVAYNy5r0ZeDbznSo-AVRIyRLCVLitIz1rfK554SST8kqPwO7LECjTFC_6P5GaSzGhCrHgnXrLbzLS0gRkVzmJHDPgYCawLHnbJh1aOZtWjULXLaRM14KPKh5-_Zu_2-YKTlCptv3oSgQ0B7Uj2Llg7LNLXR7y6m8m1mrF6FfmrSbfBwA==
-  - Telecom Egypt (ETEL.CA) - Disclosure Form for the BoD & the Shareholders' Structure (July 20, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHf-TXnFsRMj2H2IFsCNTYrKV5adl02MfeZ43VY7codRfYwJJM5Ov_VCn3JfYxvkICEdAStOKEymmyu6nIYlM0qRkSn2l8dSJKpULA9VFBI6VaV84EsXxGHMnsmr2MMICTau1ZzbOhG4slxtsdi9Su3
-  - Release from Telecom Egypt (ETEL.CA) Concerning the Board of Directors & the Executive Managers (July 16, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHf-TXnFsRMj2H2IFsCNTYrKV5adl02MfeZ43VY7codRfYwJJM5Ov_VCn3JfYxvkICEdAStOKEymmyu6nIYlM0qRkSn2l8dSJKpULA9VFBI6VaV84EsXxGHMnsmr2MMICTau1ZzbOhG4slxtsdi9Su3
+- ARCC.CA: status=RECENT_ACCEPTED latest=2026-07-16 age_days=5 sources=3 expected=Arabian Cement Company summary=Recent evidence for Arabian Cement Company (ARCC.CA) includes disclosures and financial performance updates from the Egyptian Exchange (EGX) and financial news outlets within the last 12 months.
+  - Arabian Cement Company (ARCC.CA) - Disclosure Form for the BoD & the Shareholders' Structure (July 16, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGcC-DqWcWYVoHE4f4sQQyuXxlLgHHUCLJ6hAbZew41Uc7G3oZbfTes1m1BEyO4g-Es2VmlH0aSWEUayToEEr5GuThSElW9z9Eu7QMdpZu1USgQbzM1yFZQ6RD-KAcptEsFiYILF7FDvYqtnbEuEA==
+  - Arabian Cement Company (ARCC.CA) - Listing Committee Decision (July 5, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFEuxv_e4tr5e0os3nJnVCdTV7GW7ZwHyNUdY8NObBSzgBLVJ5FewbF6cDTG9NEgXglqBL9ev7KcHQ3co9-HUKPyyy-dt1dN4Z1zopVYJO2Zryit5wKmrIZh3HH4D3tMGCRSNyKIjZiW62pQiL-DuY==
+  - Arabian Cement Company (ARCC.CA) – Capital Decrease through Terminating Treasury Stocks (July 1, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFEuxv_e4tr5e0os3nJnVCdTV7GW7ZwHyNUdY8NObBSzgBLVJ5FewbF6cDTG9NEgXglqBL9ev7KcHQ3co9-HUKPyyy-dt1dN4Z1zopVYJO2Zryit5wKmrIZh3HH4D3tMGCRSNyKIjZiW62pQiL-DuY==
+- SCEM.CA: status=RECENT_ACCEPTED latest=2026-03-31 age_days=112 sources=3 expected=Sinai Cement summary=Sinai Cement (SCEM.CA) has several recent disclosures and financial updates from the Egyptian Exchange and financial news portals.
+  - Sinai Cement (SCEM.CA) - Disclosure Form Concerning the BoD & the Shareholders' Structure (March 31, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF5ljqxVgVTYvwb6la2neXKlEMQuhyQkbGfYIuQucXmE6UckLixbskihbbbbi4fjGUFeSx1Y3DjBqc9VCnXorC3EG4s01tmd0EKIzhQCDF5S_c77P7r55L-mJJ_o-lOPN06xQSJXa6-7RUiq2JoKg==
+  - Sinai Cement Co. (S.A.E) (EGX:SCEM) Detailed Annual and Quarterly Financials (March 31, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHTLRPQYD5bAhSrfvSFSsesKkteEG7WBaHffdpG31UM5czuWN9_i43vk4B-xU31tDhK6C20K8H0Py9eDP_bKb2dZksyNlWibgES4O74HaJC9i6Vj_9zYqN99O05IaxbAIZaZT8W4oMFp18_NA16vA==
+  - Sinai Cement (SCEM.CA) - Release Concerning the Board of Directors & the Executive Managers (February 5, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEBI8VVMcPlJFkEws6YTe1-_0xGMX0LKIG_IPO-vfUUpRk5ZBClwcIbIGx0YibHevZvNLMWmYDPdun7sDfaQ2fdGq16XVmk7wsF-y4ReNryKJqnrQWx2IO7gm37BIsOreC_fA-S6Wk4leuVI2fee0YQMgUdlbmhUQizIUlK-MY=
+- ADIB.CA: status=RECENT_ACCEPTED latest=2026-07-13 age_days=8 sources=3 expected=Abu Dhabi Islamic Bank Egypt summary=Abu Dhabi Islamic Bank Egypt (ADIB.CA) has recent disclosures from the Egyptian Exchange and updates on its Shariah compliance status.
+  - Abu Dhabi Islamic Bank- Egypt (ADIB.CA) - Disclosure Form for the BoD & the Shareholders' Structure (July 13, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG8m5SXwBZuyAvB8lP5o5PeC_pfYuoGoqhTYuW3c6ZlVs12CrLhMKcqp7rsmHUT5l6XF8OzWBMgsBFsBmj3amJxn7pmX5IEHXbd_NdU4RCl8I2VIHhXrYs0WRC3fUIxlq1RXtHAXMNs9NfCzNgKb5s=
+  - Abu Dhabi Islamic Bank- Egypt (ADIB.CA) - AGM Minutes (before Certification) (March 24, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEtuxYcg4QbSkiN3dFlxIZb6fd4ilzjF_utx6amO-2IdQBjzlcAmGgXUY00dcFXIH9_Zj5aqrATgEPw3F2JJ-EVgOlaLWzv5POSirtDmeYV9FAC7PmSUKU6jslE3YcPyJJEQLKIPNpFLq-wjF1bHu-s8P_pVGVQHK90CtUXMpc=
+  - Abu Dhabi Islamic Bank- Egypt (ADIB.CA) - Board of Directors' Decisions (March 15, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEtuxYcg4QbSkiN3dFlxIZb6fd4ilzjF_utx6amO-2IdQBjzlcAmGgXUY00dcFXIH9_Zj5aqrATgEPw3F2JJ-EVgOlaLWzv5POSirtDmeYV9FAC7PmSUKU6jslE3YcPyJJEQLKIPNpFLq-wjF1bHu-s8P_pVGVQHK90CtUXMpc=
+- DAPH.CA: status=RECENT_ACCEPTED latest=2026-07-09 age_days=12 sources=3 expected=Development & Engineering Consultants summary=Development & Engineering Consultants (DAPH.CA) has recent disclosures and financial updates from the Egyptian Exchange and financial data platforms.
+  - Development & Engineering Consultants (DAPH.CA) - Disclosure Form for the BoD & the Shareholders' Structure (July 9, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGwnrOkIhH8aDwcJclDLvvvYhp36MAUKJTB6tZpJfk_bcKuXb_xV2VaEIXGxLNGPUbPZId-2cmpaitEb7ndipe3aXpVvJr-jana061-c3Sxn-3Mkvz3LPU_W6jRnUgNLwdtykKGfmXwbl47tKnc62Wx
+  - Development & Engineering Consultants (DAPH.CA) - Listing Committee Decision (June 24, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEM3aQ26XmbxdqyDFkqtQkGZtijdn3dSoOIRf01S4I6WlCNvHdxeSzYsgsAlhXWWeF8pvNaJAUFOCtXJLIn3o_WFUuf6GLdLaK2zzPbKorDcDL4STDr3tUIMIwaHxBM
+  - Development & Engineering Consultants (DAPH.CA) - AGM Minutes (June 21, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGwnrOkIhH8aDwcJclDLvvvYhp36MAUKJTB6tZpJfk_bcKuXb_xV2VaEIXGxLNGPUbPZId-2cmpaitEb7ndipe3aXpVvJr-jana061-c3Sxn-3Mkvz3LPU_W6jRnUgNLwdtykKGfmXwbl47tKnc62Wx
+- CIEB.CA: status=RECENT_ACCEPTED latest=2026-07-15 age_days=6 sources=3 expected=Credit Agricole Egypt summary=Credit Agricole Egypt (CIEB.CA) has recent investor information and financial highlights available.
+  - Credit Agricole Egypt (CIEB.CA) - Additional Information as of Last Trading Date (July 15, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHbA4eY3R3_Tz9I4lxKuuZ6AbpOARZKevkqtEthWZi2AXWDoH_3ufdU2X2s8_sXrp5Uy7KJYNkw2kw14ZWThFBDPekEyfr2qRDmJQ4cgGV45QM7QOXIPFInYNUybKr5MLA44xRLcbiRzs5XyBEcZzm9N-punEDZlqz0
+  - Credit Agricole Egypt Investor Presentation – 2025 (available on Investor Relations page): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFk3Bl-c7iQehDKsu14qpn59Dz0ZLNVjGRFOFGWshawAzyDFnkzjb9oqQYcUwLLWecgM-ii-P_acxRUxIYBocADDbYi4u4HdL3db9EeEYijEImOivqONjYiFOUrd0eRvXiNGitQKOKo4ldS8slXdHkh94R3I_T1nau6nprMqW6MOKx6ISFcVz5cUHeOXdDJ
+  - Credit Agricole Egypt Financial Highlights as at December 31, 2024 (from Investor Presentation Dec-2024, published in 2025): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE-l8Jq-GhB3rAVhoOAV1wpyrnUVE6kYL6X3__i6ICAqf1Vf74FozOYUtDDwqSF2-v4tyYsCma4GzKJeCkZgoImaImsXwOemxrGW18_joEls_8GPeJACg7azPEgktIvGjZCFvFdzUjXt1XgbaYWOxjyd2i2wsdMAFP8q6dKUBQ5sa5vctXDTw==
+- ETEL.CA: status=RECENT_ACCEPTED latest=2026-07-16 age_days=5 sources=3 expected=Telecom Egypt summary=Telecom Egypt (ETEL.CA) has released its Q1 2026 and FY 2025 financial results and made a significant announcement regarding a proposed transaction.
+  - Telecom Egypt Announces It Will Not Proceed with the Proposed RDH Transaction with Helios Investments (July 16, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEKUf2fwx0R-QPrSHKbJ5N7EtdhTooPZXKGyQHpkiBv5BAbXcoEvQ4E2BjX8MPol6uHPR8VU6rVL_Lczjl-UitbS6Rmj_ccENaNdI7_XnuApuyaIeZTujp-vGuMx383lNQQLpugio6azLZB93FCZ1ycRyiSIn9oDiaRm0Wu6KY-wyIpGRuHGr3iGU75R0T37vYYj4GMcWOSNf0I4EasLptGsosEvlCWgCk=
+  - Q1 2026 Results: Telecom Egypt Reports Strong Underlying Business Performance (May 21, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFlwtbrYw7lR6lQdg0no4mDf-BVk3V3enqvjzSsQesypvRWLXxaQEN7grW9hftT_A_1RCzMx57tsqIBc-4M4PinVZYpkC6BS8huYqY=
+  - FY 2025 Results: Telecom Egypt Delivers Growth Ahead of Expectations (February 26, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEhsX8HGjL3jMy_zx8Od3yBQca8pKLdST7W2sup3EIAIJJijqmaWUlf4U_Uxz3RPxJ_WhXhQshPbpUk4iP6czmghcBH2wR3a_ktjyRwYop-axi5C9aa6Ffos7ggBxJWF86LgZgj5_74l0M=
 - AFDI.CA: status=ACCEPTED_UNDATED latest=n/a age_days=n/a sources=3 expected=Al Ahly for Development & Investment summary=Al Ahly for Development and Investment stock breaks downtrend line; Al Ahly for Development and Investment weighs exiting subsidiary; Pico Investments ups stake in AFDI to over 15% Gemini also reviewed web evidence but did not return ticker-specific citations.
   - Al Ahly for Development and Investment stock breaks downtrend line: https://english.mubasher.info/news/4597902/Al-Ahly-for-Development-and-Investment-stock-breaks-downtrend-line/
   - Al Ahly for Development and Investment weighs exiting subsidiary: https://english.mubasher.info/news/4309777/Al-Ahly-for-Development-and-Investment-weighs-exiting-subsidiary/
   - Pico Investments ups stake in AFDI to over 15%: https://english.mubasher.info/news/4078120/Pico-Investments-ups-stake-in-AFDI-to-over-15-/
-- EFIH.CA: status=RECENT_ACCEPTED latest=2026-07-20 age_days=1 sources=3 expected=E-Finance For Digital and Financial Investments summary=E-Finance For Digital and Financial Investments (EFIH.CA) has provided recent disclosures on its Board of Directors and shareholder structure, announced cash dividends, and reported strong Q1 2026 and FY 2025 financial results.
-  - E-finance For Digital and Financial Investments (EFIH.CA) - Disclosure Form for the BoD & the Shareholders' Structure (July 20, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHDFF2R0YqqINu6AFp-4WSNzJTaefb7SBpRcqDiaGdlLr07X95eoCcWpQEHtY50_2_E0HRwR_OFI8YM8W5GoNcrJvpNb8LRQdV7SRwl8p28p_cFaEKYjV9v_IGmYMSKhfmWKN8D4ZNdn9QN2rN5Bxez
-  - E-Finance For Digital and Financial Investements SAE (EFIH.CA) - Release Regarding the Periodic Disclosure to Shareholders (July 12, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHDFF2R0YqqINu6AFp-4WSNzJTaefb7SBpRcqDiaGdlLr07X95eoCcWpQEHtY50_2_E0HRwR_OFI8YM8W5GoNcrJvpNb8LRQdV7SRwl8p28p_cFaEKYjV9v_IGmYMSKhfmKKhfmWKN8D4ZNdn9QN2rN5Bxez
-  - Release from E-finance For Digital and Financial Investments (EFIH.CA) Concerning the Company's Auditor (July 12, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHDFF2R0YqqINu6AFp-4WSNzJTaefb7SBpRcqDiaGdlLr07X95eoCcWpQEHtY50_2_E0HRwR_OFI8YM8W5GoNcrJvpNb8LRQdV7SRwl8p28p_cFaEKYjV9v_IGmYMSKhfmWKN8D4ZNdn9QN2rN5Bxez
+- EFIH.CA: status=REJECTED_TICKER_MISMATCH latest=n/a age_days=n/a sources=0 expected=E-Finance For Digital and Financial Investments summary=Evidence rejected for EFIH.CA: source text did not clearly match EFIH.CA / E-Finance For Digital and Financial Investments.
 
 ## Warnings
 - Evidence for AFDI.CA matches the company but no source/report date was detected.
+- Evidence rejected for EFIH.CA: source text did not clearly match EFIH.CA / E-Finance For Digital and Financial Investments.
