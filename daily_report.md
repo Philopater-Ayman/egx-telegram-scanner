@@ -1,16 +1,16 @@
 # Telegram-First EGX Scanner Report
 
-Scan phase: Post-close tomorrow tickets
-Generated UTC: 2026-07-22T14:39:13.854441+00:00
-Generated Cairo: 2026-07-22 17:39
-Run timing: target 15:30 Cairo | generated Cairo 2026-07-22 17:39 | cron 30 12 * * 0-4
-Trigger: scheduled cron=30 12 * * 0-4 mapped to post_close; Cairo now 2026-07-22 17:31
+Scan phase: Evening tomorrow plan
+Generated UTC: 2026-07-22T17:51:45.970614+00:00
+Generated Cairo: 2026-07-22 20:51
+Run timing: target 19:30 Cairo | generated Cairo 2026-07-22 20:51 | cron 30 16 * * 0-4
+Trigger: scheduled cron=30 16 * * 0-4 mapped to evening_plan; Cairo now 2026-07-22 20:47
 
 ## Control Center
-- Action tickets: 2 prioritized signal(s)
-- BUY-ready candidates: 54
+- Action tickets: 3 prioritized signal(s)
+- BUY-ready candidates: 53
 - Data quality issues: 1
-- Tradeable price/liquidity tickers: 178/189
+- Tradeable price/liquidity tickers: 177/189
 - Top sector: Building Materials
 
 ## Market Context
@@ -19,7 +19,7 @@ Trigger: scheduled cron=30 12 * * 0-4 mapped to post_close; Cairo now 2026-07-22
 - As of: Wednesday, July 22
 - Freshness: DELAYED
 - EGX30 regime: CONSTRUCTIVE / above MA20 80.0% / above MA50 50.0%
-- EGX70 regime: BULLISH / above MA20 74.36% / above MA50 79.49%
+- EGX70 regime: BULLISH / above MA20 71.79% / above MA50 79.49%
 - Sector breadth: 52.38%
 - Risk mode: SELECTIVE_SWING_TRADES_ONLY
 
@@ -33,23 +33,28 @@ Trigger: scheduled cron=30 12 * * 0-4 mapped to post_close; Cairo now 2026-07-22
 ## AI Narrative
 - Provider: OpenRouter OK
 - Model: nvidia/nemotron-3-super-120b-a12b:free
-- Summary: Scanner prioritized ARCC.CA and MOED.CA as BUY watch setups based on liquidity, moving‑average alignment, RSI, and bullish‑watch outlook; EGX30 constructive and EGX70 bullish with 52.38% sector breadth keep risk mode in SELECTIVE_SWING_TRADES_ONLY, implying limited, selective exposure.
+- Summary: Scanner flagged ARCC.CA, MICH.CA and MOED.CA as watch/buy setups based on aligned price, liquidity above threshold, bullish watch outlook, while EGX30 constructive and EGX70 bullish keep risk mode selective swing trades only.
+- Do not mention quantities or position sizing.
+- ARCC.CA: price above MA20/MA50, RSI 62.6, liquidity tradeable, support 53.0, resistance 58.5, sector Building Materials, outlook bullish watch but momentum extended (low confidence).
+- MICH.CA: price above MAs, RSI 66.8, liquidity accumulation spike, support 34.0, resistance 39.48, sector General/Verified EGX Expansion, outlook bullish watch, momentum extended.
+- MOED.CA: price above MAs, RSI 68.0, liquidity accumulation spike (9x), support 0.65, resistance 0.74, sector General/Verified EGX Expansion, outlook bullish watch, momentum extended.
+- EGX30 constructive (80% above MA20) and EGX70 bullish (79% above MA50) with sector breadth ~52% keep risk mode selective swing trades only, adding uncertainty to near‑term moves.
 
 ## Top Liquidity Spikes
 - EGBE.CA: spike=12.62 liquidity=117882.98 outlook=WEAK_OR_RISKY score=29.37 buy_ready=False
 - AFMC.CA: spike=9.27 liquidity=160658272.0 outlook=WEAK_OR_RISKY score=0 buy_ready=False
-- MOED.CA: spike=9.07 liquidity=115032136.0 outlook=BULLISH_WATCH score=82.79 buy_ready=True
+- MOED.CA: spike=9.07 liquidity=115032136.0 outlook=BULLISH_WATCH score=82.71 buy_ready=True
 - ACGC.CA: spike=6.45 liquidity=139954992.0 outlook=WEAK_OR_RISKY score=0 buy_ready=False
-- TRTO.CA: spike=6.21 liquidity=6936.0 outlook=NEUTRAL score=39.79 buy_ready=False
+- TRTO.CA: spike=6.21 liquidity=6936.0 outlook=NEUTRAL score=39.71 buy_ready=False
 
 ## Sector Leaderboard
 - #1 Building Materials: score=12.54 5d=7.05% 20d=13.28% aboveMA50=83.33%
 - #2 Telecommunications: score=11.82 5d=3.44% 20d=6.96% aboveMA50=100.0%
-- #3 Real Estate: score=10.74 5d=2.72% 20d=14.49% aboveMA50=92.31%
+- #3 Real Estate: score=10.51 5d=2.72% 20d=14.49% aboveMA50=92.31%
 - #4 Industrial Goods & Cables: score=10.26 5d=3.91% 20d=4.76% aboveMA50=100.0%
 - #5 Fintech & Payments: score=9.99 5d=4.03% 20d=5.85% aboveMA50=50.0%
 - #6 Transportation & Logistics: score=8.91 5d=2.17% 20d=5.33% aboveMA50=100.0%
-- #7 General / Verified EGX Expansion: score=8.79 5d=2.83% 20d=7.2% aboveMA50=80.58%
+- #7 General / Verified EGX Expansion: score=8.71 5d=2.83% 20d=7.2% aboveMA50=79.61%
 - #8 Textiles: score=8.71 5d=2.21% 20d=4.09% aboveMA50=75.0%
 
 ## Today's Prioritized Action Tickets
@@ -57,9 +62,13 @@ Trigger: scheduled cron=30 12 * * 0-4 mapped to post_close; Cairo now 2026-07-22
   - Entry: 56.66 | Take profit: 61.2 | Stop loss: 54.39
   - Confidence: LOW | score=31.6 | outlook=BULLISH_WATCH 95
   - Reason: WATCH/BUY SETUP: ARCC.CA has aligned current price data, liquidity above threshold, price above MA20/MA50, RSI 62.64, support 53.0, resistance 58.5, and evidence sources. Macro trend is Bearish; market regime is SELECTIVE_SWING_TRADES_ONLY; verify price action in Thndr before treating it as a swing entry.
-- Priority #2: BUY MOED.CA
+- Priority #2: BUY MICH.CA
+  - Entry: 40.29 | Take profit: 43.51 | Stop loss: 38.68
+  - Confidence: LOW | score=30.98 | outlook=BULLISH_WATCH 89.71
+  - Reason: WATCH/BUY SETUP: MICH.CA has aligned current price data, liquidity above threshold, price above MA20/MA50, RSI 66.82, support 34.0, resistance 39.48, and evidence sources. Macro trend is Bearish; market regime is SELECTIVE_SWING_TRADES_ONLY; verify price action in Thndr before treating it as a swing entry.
+- Priority #3: BUY MOED.CA
   - Entry: 0.72 | Take profit: 0.78 | Stop loss: 0.69
-  - Confidence: LOW | score=28.4 | outlook=BULLISH_WATCH 82.79
+  - Confidence: LOW | score=28.4 | outlook=BULLISH_WATCH 82.71
   - Reason: WATCH/BUY SETUP: MOED.CA has aligned current price data, liquidity above threshold, price above MA20/MA50, RSI 68.03, support 0.65, resistance 0.74, and evidence sources. Macro trend is Bearish; market regime is SELECTIVE_SWING_TRADES_ONLY; verify price action in Thndr before treating it as a swing entry.
 
 ## Thndr Instruction
@@ -71,25 +80,25 @@ Trigger: scheduled cron=30 12 * * 0-4 mapped to post_close; Cairo now 2026-07-22
 - ORHD.CA: BULLISH_WATCH score=100 liquidity=ACCUMULATION_SPIKE sector=LEADING risk=No major short-term scanner risk flags.
 - PHDC.CA: BULLISH_WATCH score=100 liquidity=TRADEABLE sector=LEADING risk=No major short-term scanner risk flags.
 - MENA.CA: BULLISH_WATCH score=96 liquidity=TRADEABLE sector=LEADING risk=liquidity is cooling
-- IDRE.CA: BULLISH_WATCH score=95.79 liquidity=ACCUMULATION_SPIKE sector=IMPROVING risk=momentum is extended
-- ROTO.CA: BULLISH_WATCH score=95.79 liquidity=ACCUMULATION_SPIKE sector=IMPROVING risk=No major short-term scanner risk flags.
+- IDRE.CA: BULLISH_WATCH score=95.71 liquidity=ACCUMULATION_SPIKE sector=IMPROVING risk=momentum is extended
+- ROTO.CA: BULLISH_WATCH score=95.71 liquidity=ACCUMULATION_SPIKE sector=IMPROVING risk=No major short-term scanner risk flags.
 - ARCC.CA: BULLISH_WATCH score=95 liquidity=TRADEABLE sector=LEADING risk=momentum is extended
-- NEDA.CA: BULLISH_WATCH score=93.79 liquidity=TRADEABLE sector=IMPROVING risk=momentum is extended
+- NEDA.CA: BULLISH_WATCH score=93.71 liquidity=TRADEABLE sector=IMPROVING risk=momentum is extended
 - CANA.CA: BULLISH_WATCH score=90.37 liquidity=ACCUMULATION_SPIKE sector=IMPROVING risk=sector is not leading
 - EMFD.CA: BULLISH_WATCH score=90 liquidity=TRADEABLE sector=LEADING risk=liquidity is cooling
-- MICH.CA: BULLISH_WATCH score=89.79 liquidity=ACCUMULATION_SPIKE sector=IMPROVING risk=momentum is extended
+- MICH.CA: BULLISH_WATCH score=89.71 liquidity=ACCUMULATION_SPIKE sector=IMPROVING risk=momentum is extended
 
 ## BUY-Ready Candidates
 - ARCC.CA: rank=31.6 outlook=BULLISH_WATCH outlook_score=95 sector_rank=1 price=56.66 support=53.0 resistance=58.5 liquidity=27428028.0
-- MICH.CA: rank=30.98 outlook=BULLISH_WATCH outlook_score=89.79 sector_rank=7 price=40.29 support=34.0 resistance=39.48 liquidity=44662232.0
+- MICH.CA: rank=30.98 outlook=BULLISH_WATCH outlook_score=89.71 sector_rank=7 price=40.29 support=34.0 resistance=39.48 liquidity=44662232.0
 - ATQA.CA: rank=29.89 outlook=BULLISH_WATCH outlook_score=80.02 sector_rank=16 price=9.8 support=9.21 resistance=9.88 liquidity=87669784.0
 - ORWE.CA: rank=28.84 outlook=BULLISH_WATCH outlook_score=84.71 sector_rank=8 price=23.13 support=21.95 resistance=23.47 liquidity=47572396.0
-- MOED.CA: rank=28.4 outlook=BULLISH_WATCH outlook_score=82.79 sector_rank=7 price=0.72 support=0.65 resistance=0.74 liquidity=115032136.0
+- MOED.CA: rank=28.4 outlook=BULLISH_WATCH outlook_score=82.71 sector_rank=7 price=0.72 support=0.65 resistance=0.74 liquidity=115032136.0
 - ADIB.CA: rank=28.4 outlook=BULLISH_WATCH outlook_score=75.37 sector_rank=10 price=49.06 support=44.1 resistance=49.5 liquidity=87125688.0
-- CEFM.CA: rank=28.24 outlook=BULLISH_WATCH outlook_score=83.79 sector_rank=7 price=126.15 support=95.75 resistance=152.0 liquidity=36091260.0
+- CEFM.CA: rank=28.24 outlook=BULLISH_WATCH outlook_score=83.71 sector_rank=7 price=126.15 support=95.75 resistance=152.0 liquidity=36091260.0
 - ORHD.CA: rank=28.16 outlook=BULLISH_WATCH outlook_score=100 sector_rank=3 price=40.39 support=37.0 resistance=40.2 liquidity=340719776.0
 - CANA.CA: rank=27.88 outlook=BULLISH_WATCH outlook_score=90.37 sector_rank=10 price=37.5 support=34.7 resistance=37.5 liquidity=24469210.0
-- IDRE.CA: rank=27.68 outlook=BULLISH_WATCH outlook_score=95.79 sector_rank=7 price=47.77 support=41.1 resistance=52.68 liquidity=33654388.0
+- IDRE.CA: rank=27.68 outlook=BULLISH_WATCH outlook_score=95.71 sector_rank=7 price=47.77 support=41.1 resistance=52.68 liquidity=33654388.0
 
 ## Data Quality Issues
 - ANFI.CA: No usable market data returned. Check Yahoo symbol or add a manual fallback row.
@@ -112,7 +121,7 @@ Trigger: scheduled cron=30 12 * * 0-4 mapped to post_close; Cairo now 2026-07-22
 - AMIA.CA: score=24.4 buy_ready=False sector_rank=7 price=10.58 support=8.4 resistance=10.97 source=Yahoo Finance history + Mubasher delayed current trading data as_of=01:25 PM market time freshness=DELAYED_CURRENT RSI=73.76 liquidity=10039715.0 spike=0.86
 - AMOC.CA: score=24.3 buy_ready=True sector_rank=15 price=8.36 support=7.42 resistance=8.49 source=Yahoo Finance history + Mubasher delayed current trading data as_of=01:29 PM market time freshness=DELAYED_CURRENT RSI=65.03 liquidity=58542720.0 spike=1.01
 - APSW.CA: score=13.53 buy_ready=False sector_rank=7 price=8.91 support=8.0 resistance=9.34 source=Yahoo Finance history + Mubasher delayed current trading data as_of=01:01 PM market time freshness=DELAYED_CURRENT RSI=83.46 liquidity=1688140.13 spike=1.22
-- ARAB.CA: score=25.7 buy_ready=True sector_rank=3 price=0.24 support=0.2 resistance=0.26 source=Yahoo Finance as_of=2026-07-20T21:00:00+00:00 freshness=FRESH RSI=67.47 liquidity=134631297.94 spike=1.15
+- ARAB.CA: score=23.4 buy_ready=False sector_rank=3 price=0.23 support=0.2 resistance=0.26 source=Yahoo Finance history + Mubasher delayed current trading data as_of=01:29 PM market time freshness=DELAYED_CURRENT RSI=67.47 liquidity=120119224.0 spike=1.0
 - ARCC.CA: score=31.6 buy_ready=True sector_rank=1 price=56.66 support=53.0 resistance=58.5 source=Yahoo Finance history + Mubasher delayed current trading data as_of=01:29 PM market time freshness=DELAYED_CURRENT RSI=62.64 liquidity=27428028.0 spike=1.1
 - AREH.CA: score=19.4 buy_ready=False sector_rank=7 price=1.49 support=1.44 resistance=1.76 source=Yahoo Finance history + Mubasher delayed current trading data as_of=01:29 PM market time freshness=DELAYED_CURRENT RSI=41.18 liquidity=36437756.0 spike=0.99
 - ARVA.CA: score=14.4 buy_ready=False sector_rank=7 price=11.76 support=11.08 resistance=11.98 source=Yahoo Finance history + Mubasher delayed current trading data as_of=01:29 PM market time freshness=DELAYED_CURRENT_UNALIGNED RSI=50.0 liquidity=93310080.0 spike=5.92
@@ -171,7 +180,7 @@ Trigger: scheduled cron=30 12 * * 0-4 mapped to post_close; Cairo now 2026-07-22
 - ELWA.CA: score=9.97 buy_ready=False sector_rank=7 price=1.92 support=1.87 resistance=2.14 source=Yahoo Finance history + Mubasher delayed current trading data as_of=01:13 PM market time freshness=DELAYED_CURRENT RSI=44.74 liquidity=566256.25 spike=0.44
 - EMFD.CA: score=25.4 buy_ready=True sector_rank=3 price=11.8 support=11.24 resistance=12.22 source=Yahoo Finance history + Mubasher delayed current trading data as_of=01:28 PM market time freshness=DELAYED_CURRENT RSI=56.25 liquidity=49488936.0 spike=0.71
 - ENGC.CA: score=24.4 buy_ready=False sector_rank=7 price=41.2 support=33.91 resistance=44.89 source=Yahoo Finance history + Mubasher delayed current trading data as_of=01:27 PM market time freshness=DELAYED_CURRENT RSI=70.87 liquidity=14188989.0 spike=0.59
-- EOSB.CA: score=14.74 buy_ready=False sector_rank=7 price=1.48 support=1.5 resistance=1.55 source=Yahoo Finance as_of=2026-07-20T21:00:00+00:00 freshness=FRESH RSI=50.0 liquidity=56052.04 spike=1.14
+- EOSB.CA: score=-0.6 buy_ready=False sector_rank=7 price=1.48 support=1.48 resistance=1.48 source=StockAnalysis EGX public list (quote-only fallback) as_of=2026-07-22 freshness=QUOTE_ONLY RSI=50.0 liquidity=0.0 spike=0.0
 - EPCO.CA: score=25.24 buy_ready=False sector_rank=7 price=11.16 support=8.5 resistance=11.44 source=Yahoo Finance history + Mubasher delayed current trading data as_of=01:28 PM market time freshness=DELAYED_CURRENT RSI=84.28 liquidity=65161644.0 spike=2.92
 - EPPK.CA: score=18.21 buy_ready=True sector_rank=7 price=15.08 support=12.31 resistance=15.44 source=Yahoo Finance history + Mubasher delayed current trading data as_of=01:12 PM market time freshness=DELAYED_CURRENT RSI=58.23 liquidity=2087884.13 spike=1.86
 - ETEL.CA: score=30.16 buy_ready=False sector_rank=2 price=103.98 support=89.01 resistance=104.8 source=Yahoo Finance history + Mubasher delayed current trading data as_of=01:28 PM market time freshness=DELAYED_CURRENT RSI=80.92 liquidity=232829904.0 spike=3.38
@@ -292,39 +301,38 @@ Trigger: scheduled cron=30 12 * * 0-4 mapped to post_close; Cairo now 2026-07-22
 - These checks are historical context only, not a prediction or guarantee.
 
 ## Evidence
-- ARCC.CA: status=RECENT_ACCEPTED latest=2026-07-16 age_days=6 sources=3 expected=Arabian Cement Company summary=Arabian Cement Company (ARCC.CA) has released several official disclosures and financial updates on the Egyptian Exchange (EGX) within the last 12 months. These include updates on its Board of Directors and shareholder structure, decisions from Board meetings, and details regarding capital changes. The company also reported its latest quarterly financial results.
-  - Arabian Cement Company (ARCC.CA) - Disclosure Form for the BoD & the Shareholders' Structure (July 16, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFJoxgcFs1DX88IN_gd26vAI2ks0GkmF_IfQ8d2YWN52FFqyWazQGL5cZU-F_IZvRdjiEEhMof2bKfh29BnKxesoTprBktNWXuzH78v4gBbO2UdHxCeD4C0Wl1qKRpRM1pYsuaxaWBqr3LjJtDmfVfZY-WRir_nCiT34mOLU5s=
-  - Arabian Cement Company (ARCC.CA) - Decisions of the BoD Meeting (June 23, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFJoxgcFs1DX88IN_gd26vAI2ks0GkmF_IfQ8d2YWN52FFqyWazQGL5cZU-F_IZvRdjiEEhMof2bKfh29BnKxesoTprBktNWXuzH78v4gBbO2UdHxCeD4C0Wl1qKRpRM1pYsuaxaWBqr3LjJtDmfVfZY-WRir_nCiT34mOLU5s=
-  - Arabian Cement Company (ARCC.CA) - Capital Decrease through Terminating Treasury Stocks (July 1, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHD-pxMfVgvSvI-fvP2YeMT-pMj_ujeEzQ6hN1PhJUdDlZiOmV4BxVgez7-YoKgIOvofWSkNlJy8l6Jhxt5jnNAjj3eQ5FwIfiUQUJoyV18Cz27E1LGEohz90dDfBFVDLWxGKMo1hEAy1xXp0FuZLo=
-- MICH.CA: status=ACCEPTED_UNDATED latest=n/a age_days=n/a sources=3 expected=Misr Chemical Industries Co. summary=Misr Chemical Industries’ net profits decline to EGP 397m in 9M-25/26; Surpassing Misr Chemical stock’s current levels would lead to historical levels – Analysis; Misr Chemical Industries posts 10% decrease in H1-25/26 net profits Gemini also reviewed web evidence but did not return ticker-specific citations.
-  - Misr Chemical Industries’ net profits decline to EGP 397m in 9M-25/26: https://english.mubasher.info/news/4597505/Misr-Chemical-Industries-net-profits-decline-to-EGP-397m-in-9M-25-26/
-  - Surpassing Misr Chemical stock’s current levels would lead to historical levels – Analysis: https://english.mubasher.info/news/4586207/Surpassing-Misr-Chemical-stock-s-current-levels-would-lead-to-historical-levels-Analysis/
-  - Misr Chemical Industries posts 10% decrease in H1-25/26 net profits: https://english.mubasher.info/news/4554378/Misr-Chemical-Industries-posts-10-decrease-in-H1-25-26-net-profits/
-- ETEL.CA: status=RECENT_ACCEPTED latest=2026-07-20 age_days=2 sources=3 expected=Telecom Egypt summary=Telecom Egypt (ETEL.CA) has been active with numerous disclosures and financial reports over the past year. Key updates include board and shareholder structure changes, quarterly financial results, and significant corporate decisions such as not proceeding with a proposed transaction.
-  - Telecom Egypt (ETEL.CA) - Disclosure Form for the BoD & the Shareholders' Structure (July 20, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFwu7NLfPxdVjCCNq0GWk5iHe6wnYFKDTf65KG1rNS1xQ36E7usBhIDAHFZoAqpN_BTUdLTXV8gwFXt-H5NigirPFM2vSNO9dP6ccM05iIibINvISMMmmVkBkQXAEWuLbX68S2levdcbGUzPjkDI1A6
-  - Telecom Egypt Announces It Will Not Proceed with the Proposed RDH Transaction with Helios Investments (July 16, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHEtQhvQjVtjmB7SG4Q_xfpakiu6GrD5eW1OQpINdmi986MGPssH11FXPI2cH0RYHNcQDajfwrRGjSI9nb3dZShidQJU3utl5KwBAE=
-  - Q1 2026 Results: Telecom Egypt Reports Strong Underlying Business Performance (May 21, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHEtQhvQjVtjmB7SG4Q_xfpakiu6GrD5eW1OQpINdmi986MGPssH11FXPI2cH0RYHNcQDajfwrRGjSI9nb3dZShidQJU3utl5KwBAE=
-- ATQA.CA: status=RECENT_ACCEPTED latest=2026-07-08 age_days=14 sources=3 expected=Misr National Steel Ataqa summary=Misr National Steel Ataqa (ATQA.CA) has provided several recent disclosures to the EGX, including updates on its Board of Directors and shareholder structure, as well as minutes from its Annual and Extraordinary General Meetings. The company's financial performance for 2025 and H1-25 has also been reported.
-  - Misr National Steel - Ataqa (ATQA.CA) - Disclosure Form for the BoD & the Shareholders' Structure (July 8, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE-AjIKvt9hpOzGEWpdSbHVV3ut2MJ8mkL8dZpXKqN7_kyuE75KOKdaeBKQiNe92socg-3OiNNke0sYLY2DsieLuQ0eI31IaNITkfGZZMnbU19e-y40iy1j8Gf34zsN2Yl2V6tYLTfI6_ST7NfCoMvaotfz8VlnU5Qpu6WferM=
-  - Misr National Steel - Ataqa (ATQA.CA) - AGM Minutes (after Certification) (April 27, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE-AjIKvt9hpOzGEWpdSbHVV3ut2MJ8mkL8dZpXKqN7_kyuE75KOKdaeBKQiNe92socg-3OiNNke0sYLY2DsieLuQ0eI31IaNITkfGZZMnbU19e-y40iy1j8Gf34zsN2Yl2V6tYLTfI6_ST7NfCoMvaotfz8VlnU5Qpu6WferM=
-  - Misr National Steel - Ataqa (ATQA.CA) - AGM and EGM minutes (after Certification) (March 15, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE-AjIKvt9hpOzGEWpdSbHVV3ut2MJ8mkL8dZpXKqN7_kyuE75KOKdaeBKQiNe92socg-3OiNNke0sYLY2DsieLuQ0eI31IaNITkfGZZMnbU19e-y40iy1j8Gf34zsN2Yl2V6tYLTfI6_ST7NfCoMvaotfz8VlnU5Qpu6WferM=
-- SDTI.CA: status=ACCEPTED_UNDATED latest=n/a age_days=n/a sources=3 expected=SHARM DREAMS Co. for Touristic Investment S.A.E summary=Sharm Dreams stock maintains strong uptrend - Analysis; Sharm Dreams stock is experiencing sideways movement amid anticipation of next trend – Analysis; Sharm Dreams stock hits historic level halting driving buying force Gemini also reviewed web evidence but did not return ticker-specific citations.
-  - Sharm Dreams stock maintains strong uptrend - Analysis: https://english.mubasher.info/news/4577977/Sharm-Dreams-stock-maintains-strong-uptrend-Analysis/
-  - Sharm Dreams stock is experiencing sideways movement amid anticipation of next trend – Analysis: https://english.mubasher.info/news/4547831/Sharm-Dreams-stock-is-experiencing-sideways-movement-amid-anticipation-of-next-trend-Analysis/
-  - Sharm Dreams stock hits historic level halting driving buying force: https://english.mubasher.info/news/4529096/Sharm-Dreams-stock-hits-historic-level-halting-driving-buying-force/
-- ORWE.CA: status=RECENT_ACCEPTED latest=2026-05-21 age_days=62 sources=3 expected=Oriental Weavers summary=Oriental Weavers (ORWE.CA) has released its Q1 2026 earnings and financial statements, along with an investor presentation. The company also announced its Board of Directors' minutes and a dividend payment for the 2025 period.
-  - Release from Oriental Weavers (ORWE.CA) Concerning the Board of Directors' Minutes (May 21, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG53szHv0apUpU9-EZ3U0z26i8mz0RcxI5U0Tp1eMUlXpBRkjtX4xeCpijeNbrtWgfB_3ON3X9RrSXsysI_2OfhWkZaOg0akQPwUVwoRwR7IHhbE24IKOEobnuLT7sIZgMXPywTSffRkih23SArcg==
-  - Oriental Weavers 1Q 2026 Earnings Release (2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHl6whr4UEO7w6LURBqFEOYYV0xrKg2eJfie1gqdfTeMygg0Kh-aV-sYF1CFnzFqgfXvogLQpwJKIgO5gtE73_xB4qjQ2wmye8SDUmI4kZA_4uhsgLzBMhdKA4ndevQE_BdKGeAR3nYC-I=
-  - Oriental Weavers Financial Statements for 1Q 2026 - English (2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHl6whr4UEO7w6LURBqFEOYYV0xrKg2eJfie1gqdfTeMygg0Kh-aV-sYF1CFnzFqgfXvogLQpwJKIgO5gtE73_xB4qjQ2wmye8SDUmI4kZA_4uhsgLzBMhdKA4ndevQE_BdKGeAR3nYC-I=
-- MOED.CA: status=RECENT_ACCEPTED latest=2026-07-05 age_days=17 sources=3 expected=The Egyptian Modern Education Systems, S.A.E. summary=The Egyptian Modern Education Systems, S.A.E. (MOED.CA) has issued recent disclosures to shareholders and held an Extraordinary General Meeting. The company also reported its financial performance for fiscal year 2025.
-  - The Egyptian Modern Education Systems (MOED.CA) - Release Regarding Periodic Disclosure to Shareholders (July 5, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGmhdvGRjzoqGEMS-CmkncAbI3T8HA8cDkicDzFb6uzvNCE6c8ciKtuao_GJpajb3GW4LmT0DwCXyRsc7AlapIeXk7xF6yNLZn-SCnT6ecNhZy6xfqdP2JeOuGcTmoI8wX0ECEEYhTyKVMrk0mQVKPI
-  - The Egyptian Modern Education Systems (MOED.CA) - EGM Minutes (before Certification) (June 7, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGmhdvGRjzoqGEMS-CmkncAbI3T8HA8cDkicDzFb6uzvNCE6c8ciKtuao_GJpajb3GW4LmT0DwCXyRsc7AlapIeXk7xF6yNLZn-SCnT6ecNhZy6xfqdP2JeOuGcTmoI8wX0ECEEYhTyKVMrk0mQVKPI
-  - The Egyptian Modern Education Systems, S.A.E. (EGX:MOED) Financial Performance for fiscal year 2025: https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF3D-4mwL6H7cbVgjriTuUEeaY15jEDHPqR2PRqSDsOb_XBVAGnYRVHZXBj5Ae7CdXnMBKJEfEzoexnh8vVj-2iSKuDIUQ4Cn50dZ35EOJfAyUVm5zirezAnXUIFtMhQ11XV04=
-- ADIB.CA: status=RECENT_ACCEPTED latest=2026-02-05 age_days=167 sources=3 expected=Abu Dhabi Islamic Bank Egypt summary=Abu Dhabi Islamic Bank Egypt (ADIB.CA) has announced major decisions from its Board of Directors, including the approval of 2025 financial statements and governance reports. The bank's Shariah compliance status was also confirmed as Halal as of July 2026.
-  - Major Decisions of Abu Dhabi Islamic Bank - Egypt Board of Directors (February 5, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGtioeiUdjHCu5UalRiqKsRP9afPcGxQkWsv5WiMW2Z2r7tzI0ohgPhw6goOTpRFZ6jzxj_7zklRVDr-Sw6lPmsvLmziYv_oPRGO-EuCtHxkYrHQKISH6xXQQU1jzCfkcdVnDakIol-7H1S2GWvMuY4
-  - Is Abu Dhabi Islamic Bank Egypt SAE Halal? ADIB.CA Shariah Compliance Analysis (as of July 2026, based on 2025 Annual Report): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEsUugvyPd_Vh3zDqt6OHFQy3ow383QVZXy5-RqaTKnCXpB0phEilCVjr4GX3ujNU1S7LCaLViNhOTZFeXcmElCJXQNkYlBZicAUSCK0Ie95J1_yFCjm7yAmuXEOg==
-  - Abu Dhabi Islamic Bank - EGX:ADIB Financials (Latest Quarter Revenue per Share 30.60, TTM ROI 42.80%): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQExk8ZkDwNZm3uq_8qLNlqPoukDj-F2_i0hqOEUNuLVAV4m2e7A2eQX9TMxwZ3c18NrqbDyHh1ePefYH9nlXSQq5ah0JtKDdzZdJ7mLz6-k_cw9UBMq80mW3GcuYPvJETY1NoC9MvTdnpTfUY55AiqbBvDBCAbGJYNJJcZeyWtHU1VXUkgQSwPLBGDGD
+- ARCC.CA: status=RECENT_ACCEPTED latest=2026-07-21 age_days=1 sources=3 expected=Arabian Cement Company summary=Arabian Cement Company (ARCC.CA) has shown strong financial performance in 2025, with significant increases in revenue and earnings. The company's stock reached an all-time high in November 2025, and analysts currently recommend a 'Buy' rating with an upside potential. The next earnings report is anticipated in September 2026.
+  - Arabian Cement's consolidated net profits soar to EGP 2.5bn in 9M-25 (20 November 2025): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFvHFK-afuERCQOfmGtvVmlsaRVXlKFYocjA20QuM27KyR2laoicQPKQdX28KFbtmC3lXPMg7ayPWoE3aaRakv9zFUPNNpQn5QybebIlrYy9fFP7GDLbLfd-lp0xBmiy7HhfGHggbZVDWYoDhDdwOvFz58gFGA=
+  - ARCC reached its all-time high on Nov 12, 2025 with the price of 60.40 EGP (July 21 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHpCUNsoIdOMpeMuoIYLrwmVI1U76zgsoxf_gPM0JBK3TWi0y93BqcJ8lbYOZyemTfEcS64R2prY3GDT-6RKUgg5f4H7VZymjC0QwrJl4rr-OVZTGZhbLIh24If8Qd3ZDGJyZbinNcK
+  - Arabian Cement Company dividend yield was 10.51% in 2025 (July 21 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHpCUNsoIdOMpeMuoIYLrwmVI1U76zgsoxf_gPM0JBK3TWi0y93BqcJ8lbYOZyemTfEcS64R2prY3GDT-6RKUgg5f4H7VZymjC0QwrJl4rr-OVZTGZhbLIh24If8Qd3ZDGJyZbinNcK
+- MICH.CA: status=RECENT_ACCEPTED latest=2026-06-07 age_days=45 sources=3 expected=Misr Chemical Industries Co. summary=Misr Chemical Industries Co. (MICH.CA) has been active in project rehabilitation and has reported its financial results for FY2024/25 and H1 FY2025/26, showing a decline in profits. The company plans to release its next earnings report in September 2026.
+  - Misr Chemical Industries rolls out projects to rehabilitate 5 production units (07 June 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGS7rfrg-5mgisjCUsaINYQiUCsRtk0bDlwfeN5cCP1jSe68M8y9_CpBKkP8Gv1pGoYWIO2ncgzLj7IrlEOPP1s2Lp6GWsbp5_ltPJ9XrD5U6RGqJyaxSn2yMF53GKDwBxQr95Asny1r3-Tacqxvn_ZrQ==
+  - Misr Chemical Industries records 7% YoY profit fall in 9 months (19 April 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGS7rfrg-5mgisjCUsaINYQiUCsRtk0bDlwfeN5cCP1jSe68M8y9_CpBKkP8Gv1pGoYWIO2ncgzLj7IrlEOPP1s2Lp6GWsbp5_ltPJ1XrD5U6RGqJyaxSn2yMF53GKDwBxQr95Asny1r3-Tacqxvn_ZrQ==
+  - Misr Chemical Industries' H1 FY2025/26 profits decline 10% YoY (01 February 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGS7rfrg-5mgisjCUsaINYQiUCsRtk0bDlwfeN5cCP1jSe68M8y9_CpBKkP8Gv1pGoYWIO2ncgzLj7IrlEOPP1s2Lp6GWsbp5_ltPJ1XrD5U6RGqJyaxSn2yMF53GKDwBxQr95Asny1r3-Tacqxvn_ZrQ==
+- ETEL.CA: status=RECENT_ACCEPTED latest=2026-07-16 age_days=6 sources=3 expected=Telecom Egypt summary=Telecom Egypt (ETEL.CA) has recently announced strong financial results for Q1 2026 and FY 2025, with significant growth in revenue and earnings. The company also made a notable decision not to proceed with a proposed transaction with Helios Investments for its Regional Data Center Hub. Telecom Egypt is forecasting high single-digit revenue growth for 2026.
+  - Telecom Egypt Announces It Will Not Proceed with the Proposed RDH Transaction with Helios Investments (16 July 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFghGfTWH6aDHrxDdFhguURAm95DgcA2rvMz4JvZrdIvQo7oeoBW7qfrl17QRHq8Vt6RU9_OPDyYk3KG8eHjJhr5yHG3Wz3GRDa4ySYno7YRuVCeuF60FC8oEYyT-RDNQiqXS4gmqL_Sag=
+  - Q1 2026 Results: Telecom Egypt Reports Strong Underlying Business Performance (21 May 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFghGfTWH6aDHrxDdFhguURAm95DgcA2rvMz4JvZrdIvQo7oeoBW7qfrl17QRHq8Vt6RU9_OPDyYk3KG8eHjJhr5yHG3Wz3GRDa4ySYno7YRuVCeuF60FC8oEYyT-RDNQiqXS4gmqL_Sag=
+  - FY 2025 Results: Telecom Egypt Delivers Growth Ahead of Expectations (26 February 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFghGfTWH6aDHrxDdFhguURAm95DgcA2rvMz4JvZrdIvQo7oeoBW7qfrl17QRHq8Vt6RU9_OPDyYk3KG8eHjJhr5yHG3Wz3GRDa4ySYno7YRuVCeuF60FC8oEYyT-RDNQiqXS4gmqL_Sag=
+- ATQA.CA: status=RECENT_ACCEPTED latest=2026-08-12 age_days=0 sources=3 expected=Misr National Steel Ataqa summary=Misr National Steel Ataqa (ATQA.CA) reported a significant decrease in earnings in 2025 despite revenue growth. The company's net income for the latest quarter (Q1 2026) showed a positive turn. Recent disclosures and AGM minutes indicate ongoing corporate activities, and the next earnings report is expected in August 2026.
+  - Misr National Steel - Ataqa FY2025 revenue and earnings (July 7 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF1t418ba2yH_lHRxLLAq3WHdP21ZpquTv-UTmvfAT13NzqQFFA4otMTOsUHDOdef-G3Wjwz1u8t9n3mb7_TLYmwUpBaZLEeHjdBcs9iART88OEs4RA1M32Kv11WTuH0TykUN4=
+  - Misr National Steel - Ataqa Earnings Date, Aug 12, 2026 (July 7 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF1t418ba2yH_lHRxLLAq3WHdP21ZpquTv-UTmvfAT13NzqQFFA4otMTOsUHDOdef-G3Wjwz1u8t9n3mb7_TLYmwUpBaZLEeHjdBcs9iART88OEs4RA1M32Kv11WTuH0TykUN4=
+  - Misr National Steel's net income for the latest quarter was 12.045 million EGP (Latest Release: May 20, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHpB5pW0Ie3Xl8jW4uPJ4V8ixcd6uzcF_mvmBFvJn1CEUosqX8ziLwIvzb1fkSQVeAdd80NkLUovHklrcoMukeE5hsN0Z518UjOJb_bYxJPpL05YG73PYZZrloM7c-dj7Eg2m04QONuSWlJe-VCRD2NVTNZbCfSGgNnJUYRB_PH00szBUyhLr6Rl6Q==
+- SDTI.CA: status=RECENT_ACCEPTED latest=2026-07-19 age_days=3 sources=3 expected=SHARM DREAMS Co. for Touristic Investment S.A.E summary=SHARM DREAMS Co. for Touristic Investment S.A.E (SDTI.CA) has shown substantial growth in revenue and earnings in 2025. The company's stock is actively trading on the EGX, and recent board decisions and disclosures indicate ongoing corporate governance and activities.
+  - SHARM DREAMS Co. for Touristic Investment S.A.E stock trading at 48.00 EGP (July 19 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG87_C98yokO-J0ebEQ_PhK-57T17r-Wf8dPzvbrXGESsJpYZpLEVL_VWu_WRw95csQMrSeZRyW7FRXp4ax93l1VpM1dH0KwNDOPoTNBBmmYugfzSwrFIW1xdG_GSoMuWISrNjm3mcyuuZiaRVBQE0oAP-ss4KcwVg9WMu-tr4=
+  - SHARM DREAMS Co. for Touristic Investment S.A.E FY2025 revenue and earnings (July 7 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGO8N87ajDqS39XylHWTOysXEjH_Vu9MCbLMb700riqBdcZoPFqlQyPa2c_c5scXyMNj2Ydb1ep8KTiGDvtFu48xe7K0LaVnovarM6yMTmGGazs8Eal_YZ4tc_dMq_7pfv0o9E=
+  - Sharm Dreams Co. for Tourism Investment (SDTI.CA) - Disclosure Form for the BoD & the Shareholders' Structure (16 July 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE3lqvbSYWMWIH4sZLhWseBgDPS5Bq39m4Tu9Nl_hEETDnbk8xfMjEa4O9loP8RQ0dThMs3KQlUUSMckO-PgGAogZxkh_r4VWHsc_nhjNn6gliemxM6uny4C772PJy07T8ImeWRly9qdSKr1baBVc-D
+- ORWE.CA: status=RECENT_ACCEPTED latest=2026-07-20 age_days=2 sources=3 expected=Oriental Weavers summary=Oriental Weavers (ORWE.CA) reported increased net profits in Q1 2026 and for the last 12 months, with significant revenue growth in 2025 and Q1 2026. The company also announced a dividend payment in May 2026. Analysts maintain a 'Buy' rating with an expected upside.
+  - Oriental Weavers Carpets Company (S.A.E), Q1 2026 Earnings Call (03 June 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGL7tBlhOSJxy9eaSWwwW8FIHvh6WIw5MsOz8eNdkfIAyGAnEGhH_-gdszpQRO2bxMlCG3T-cuO5H84CqE7VCRms835JmqH1rBeKke_aaxXkZsLYsRx5EDg1zZMYqIyOEerxRhB1bk0cW1hP0mufFeTuqqiWubzy0zZOhDqXZPqs_gn4roDNzA=
+  - Oriental Weavers Carpets Company (S.A.E) Reports Earnings Results for the First Quarter Ended March 31, 2026 (May 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGL7tBlhOSJxy9eaSWwwW8FIHvh6WIw5MsOz8eNdkfIAyGAnEGhH_-gdszpQRO2bxMlCG3T-cuO5H84CqE7VCRms835JmqH1rBeKke_aaxXkZsLYsRx5EDg1zZMYqIyOEerxRhB1bk0cW1hP0mufFeTuqqiWubzy0zZOhDqXZPqs_gn4roDNzA=
+  - Oriental Weavers (ORWE) stock price and 52-week range (July 20 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEwu-rVKpAabhuAP7xc1jn7mb1082HvZsrY8-cBrqc3BReN0aHXk_SuGTat5d8K-m_gZHuSpbO5GugAfjdhQB2I7ZwG16IllJEBepV9VWL0HI-WpYP95219Udxd9j2Eb7i-zPrvh03C_2OdiA==
+- MOED.CA: status=RECENT_ACCEPTED latest=2026-07-20 age_days=2 sources=3 expected=The Egyptian Modern Education Systems, S.A.E. summary=The Egyptian Modern Education Systems, S.A.E. (MOED.CA) reported a significant leap in profits for the first nine months of 2026, despite incurring a loss in December 2025. The company's stock is actively traded on the EGX, and recent disclosures and EGM minutes highlight ongoing corporate activities. The latest quarterly net income was 2.481 million EGP.
+  - Egyptian Modern Education Systems' profits see 107.5% YoY leap in 9 months (03 May 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEHy2dK72nUen-uDF6pWO9V-aw7FM28vIse_6ywgH956fcWS9O8ogMDXhwxR_KTH2PVHnB717zy25MsqGld9naA__LDtRum_gas5DzyZ-RzNw6AP2JuU9gFK-CjG-rqD9-E3c2Kz2jWl7BBSFlEVQIdCA==
+  - Egyptian Modern Education Systems incurs EGP 2.4M loss by end-December 2025 (15 February 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEHy2dK72nUen-uDF6pWO9V-aw7FM28vIse_6ywgH956fcWS9O8ogMDXhwxR_KTH2PVHnB717zy25MsqGld9naA__LDtRum_gas5DzyZ-RzNw6AP2JuU9gFK-CjG-rqD9-E3c2Kz2jWl7BBSFlEVQIdCA==
+  - The Egyptian Modern Education Systems (MOED) stock price and 52-week range (July 20 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHvQocPbUqXYLT1aBp_e7i7opBLCvnu9w9WArEcBdfc0tdJFksGmV2Co46zMySHfv4RsyhPXQe4th6_VrorwzHDwcZ_tVroU8ZLERVOp3ACIfjUkoSyF3OZhun-NLjrGMzvCcZWoTR597xI4A_v4tqJ70cvqrLXkR-KLw==
+- ADIB.CA: status=RECENT_ACCEPTED latest=2026-07-21 age_days=1 sources=3 expected=Abu Dhabi Islamic Bank Egypt summary=Abu Dhabi Islamic Bank Egypt (ADIB.CA) has demonstrated strong financial performance, with significant increases in consolidated net profits in Q1 and H1 2025. The bank's stock reached an all-time high in May 2026, and analysts have a 'Strong Buy' rating with a positive 12-month price target. There was also a notable acquisition of a stake in the bank by an unknown buyer.
+  - Analysts' 'Strong Buy' rating and 12-month price target for Abu Dhabi Islamic Bank (Recent): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGDD59ypRo4pfMCb5fWsVQnGX4E96fJsww_Dkqkr1EjZPRglzeC_3DyF2MoE9IWt44RGoaiL2b5g5i7MT7XgXCcmw4o9BiENs8hka7Yq2IJ4a3BjgcWmx0HDcvdsVLpKc-LaeaGGCuLd0M1pYOS_2TDxQkaRthenfyg
+  - ADIB reached its all-time high on May 12, 2026 with the price of 50.08 EGP (July 21 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHgpvz5FxkR3FRU4Itx0YEvsi0005_ydBYDFKE9eXVu0BbY-07M5XTi5Txa5DJdU9MMlH0wGcHzqtE49U-E6DpB3UV2LhZuvQ-z8CZK_A53MPxby0RUDFsEpfZOIMvRvTdm5Qti62WM
+  - ADIB net income for the last quarter is 3.65 Billion EGP (July 21 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHgpvz5FxkR3FRU4Itx0YEvsi0005_ydBYDFKE9eXVu0BbY-07M5XTi5Txa5DJdU9MMlH0wGcHzqtE49U-E6DpB3UV2LhZuvQ-z8CZK_A53MPxby0RUDFsEpfZOIMvRvTdm5Qti62WM
 
 ## Warnings
-- Evidence for MICH.CA matches the company but no source/report date was detected.
-- Evidence for SDTI.CA matches the company but no source/report date was detected.
+- No blocking warnings.
