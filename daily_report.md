@@ -1,13 +1,13 @@
 # Telegram-First EGX Scanner Report
 
-Scan phase: Post-close tomorrow tickets
-Generated UTC: 2026-07-23T14:43:48.628507+00:00
-Generated Cairo: 2026-07-23 17:43
-Run timing: target 15:30 Cairo | generated Cairo 2026-07-23 17:43 | cron 30 12 * * 0-4
-Trigger: scheduled cron=30 12 * * 0-4 mapped to post_close; Cairo now 2026-07-23 17:38
+Scan phase: Evening tomorrow plan
+Generated UTC: 2026-07-23T18:00:44.907171+00:00
+Generated Cairo: 2026-07-23 21:00
+Run timing: target 19:30 Cairo | generated Cairo 2026-07-23 21:00 | cron 30 16 * * 0-4
+Trigger: scheduled cron=30 16 * * 0-4 mapped to evening_plan; Cairo now 2026-07-23 20:53
 
 ## Control Center
-- Action tickets: 3 prioritized signal(s)
+- Action tickets: 2 prioritized signal(s)
 - BUY-ready candidates: 63
 - Data quality issues: 1
 - Tradeable price/liquidity tickers: 187/189
@@ -33,23 +33,21 @@ Trigger: scheduled cron=30 12 * * 0-4 mapped to post_close; Cairo now 2026-07-23
 ## AI Narrative
 - Provider: OpenRouter OK
 - Model: nvidia/nemotron-3-super-120b-a12b:free
-- Summary: Scanner prioritized MOED.CA, CANA.CA and ARCC.CA as BUY setups under a bullish EGX30/EGX70 regime, highlighting liquidity spikes, price above key moving averages and supportive technical levels, while noting extended momentum and mixed sector strength.
-- MOED.CA – liquidity spike 6.4×, price above MA20/MA50, RSI ~65, support 0.65/resistance 0.76, outlook BULLISH_WATCH; uncertainty from extended momentum.
-- CANA.CA – liquidity spike 1.6×, price at resistance level, RSI ~62, support 34.7, Banking sector not leading, outlook BULLISH_WATCH; caution on sector weakness.
+- Summary: EGX30 and EGX70 are both bullish under a BROAD_RISK_ON regime; the scanner prioritized MOED.CA and ARCC.CA as BUY SETUPs due to aligned price action, liquidity spikes, moving‑average support, and sector strength, though confidence is low and momentum is extended.
 
 ## Top Liquidity Spikes
-- AFMC.CA: spike=6.41 liquidity=160658272.0 outlook=BULLISH_WATCH score=70.78 buy_ready=False
-- MOED.CA: spike=6.4 liquidity=115032136.0 outlook=BULLISH_WATCH score=89.78 buy_ready=True
+- AFMC.CA: spike=6.41 liquidity=160658272.0 outlook=BULLISH_WATCH score=70.87 buy_ready=False
+- MOED.CA: spike=6.4 liquidity=115032136.0 outlook=BULLISH_WATCH score=89.87 buy_ready=True
 - EGBE.CA: spike=6.27 liquidity=117882.98 outlook=WEAK_OR_RISKY score=29.23 buy_ready=False
 - ACGC.CA: spike=4.99 liquidity=139954992.0 outlook=BULLISH_WATCH score=77 buy_ready=False
-- ARVA.CA: spike=4.78 liquidity=93310080.0 outlook=BULLISH_WATCH score=90.78 buy_ready=True
+- ARVA.CA: spike=4.78 liquidity=93310080.0 outlook=BULLISH_WATCH score=90.87 buy_ready=True
 
 ## Sector Leaderboard
 - #1 Textiles: score=12.98 5d=5.58% 20d=12.01% aboveMA50=100.0%
 - #2 Building Materials: score=11.14 5d=4.54% 20d=11.45% aboveMA50=83.33%
 - #3 Telecommunications: score=10.94 5d=2.64% 20d=5.29% aboveMA50=100.0%
 - #4 Fintech & Payments: score=10.41 5d=4.96% 20d=7.23% aboveMA50=50.0%
-- #5 General / Verified EGX Expansion: score=9.78 5d=2.97% 20d=10.38% aboveMA50=87.38%
+- #5 General / Verified EGX Expansion: score=9.87 5d=3.07% 20d=10.38% aboveMA50=88.35%
 - #6 Industrial Goods & Cables: score=9.58 5d=1.72% 20d=5.64% aboveMA50=100.0%
 - #7 Transportation & Logistics: score=8.93 5d=1.56% 20d=6.73% aboveMA50=100.0%
 - #8 Real Estate: score=8.81 5d=-0.57% 20d=12.56% aboveMA50=92.31%
@@ -57,13 +55,9 @@ Trigger: scheduled cron=30 12 * * 0-4 mapped to post_close; Cairo now 2026-07-23
 ## Today's Prioritized Action Tickets
 - Priority #1: BUY MOED.CA
   - Entry: 0.72 | Take profit: 0.78 | Stop loss: 0.69
-  - Confidence: LOW | score=31.9 | outlook=BULLISH_WATCH 89.78
+  - Confidence: LOW | score=31.9 | outlook=BULLISH_WATCH 89.87
   - Reason: BUY SETUP: MOED.CA has aligned current price data, liquidity above threshold, price above MA20/MA50, RSI 64.75, support 0.65, resistance 0.76, and evidence sources. Macro trend is Bullish; market regime is BROAD_RISK_ON; verify price action in Thndr before treating it as a swing entry.
-- Priority #2: BUY CANA.CA
-  - Entry: 37.5 | Take profit: 40.5 | Stop loss: 36.0
-  - Confidence: LOW | score=31.18 | outlook=BULLISH_WATCH 90.23
-  - Reason: BUY SETUP: CANA.CA has aligned current price data, liquidity above threshold, price above MA20/MA50, RSI 62.43, support 34.7, resistance 37.5, and evidence sources. Macro trend is Bullish; market regime is BROAD_RISK_ON; verify price action in Thndr before treating it as a swing entry.
-- Priority #3: BUY ARCC.CA
+- Priority #2: BUY ARCC.CA
   - Entry: 56.66 | Take profit: 61.14 | Stop loss: 54.42
   - Confidence: LOW | score=30.06 | outlook=BULLISH_WATCH 95
   - Reason: BUY SETUP: ARCC.CA has aligned current price data, liquidity above threshold, price above MA20/MA50, RSI 58.08, support 53.5, resistance 58.5, and evidence sources. Macro trend is Bullish; market regime is BROAD_RISK_ON; verify price action in Thndr before treating it as a swing entry.
@@ -75,26 +69,26 @@ Trigger: scheduled cron=30 12 * * 0-4 mapped to post_close; Cairo now 2026-07-23
 
 ## Top 1-3 Day Outlook
 - NEDA.CA: BULLISH_WATCH score=100 liquidity=TRADEABLE sector=IMPROVING risk=No major short-term scanner risk flags.
-- ROTO.CA: BULLISH_WATCH score=96.78 liquidity=ACCUMULATION_SPIKE sector=IMPROVING risk=No major short-term scanner risk flags.
+- ROTO.CA: BULLISH_WATCH score=96.87 liquidity=ACCUMULATION_SPIKE sector=IMPROVING risk=No major short-term scanner risk flags.
 - ARCC.CA: BULLISH_WATCH score=95 liquidity=TRADEABLE sector=LEADING risk=No major short-term scanner risk flags.
 - ORWE.CA: BULLISH_WATCH score=93 liquidity=ACCUMULATION_SPIKE sector=LEADING risk=momentum is extended; close to resistance
-- ARVA.CA: BULLISH_WATCH score=90.78 liquidity=ACCUMULATION_SPIKE sector=IMPROVING risk=momentum is extended; close to resistance
-- ISMA.CA: BULLISH_WATCH score=90.78 liquidity=TRADEABLE sector=IMPROVING risk=No major short-term scanner risk flags.
-- ETRS.CA: BULLISH_WATCH score=90.78 liquidity=TRADEABLE sector=IMPROVING risk=No major short-term scanner risk flags.
+- ARVA.CA: BULLISH_WATCH score=90.87 liquidity=ACCUMULATION_SPIKE sector=IMPROVING risk=momentum is extended; close to resistance
+- ISMA.CA: BULLISH_WATCH score=90.87 liquidity=TRADEABLE sector=IMPROVING risk=No major short-term scanner risk flags.
+- ETRS.CA: BULLISH_WATCH score=90.87 liquidity=TRADEABLE sector=IMPROVING risk=No major short-term scanner risk flags.
 - CANA.CA: BULLISH_WATCH score=90.23 liquidity=ACCUMULATION_SPIKE sector=IMPROVING risk=momentum is extended; sector is not leading
-- MOED.CA: BULLISH_WATCH score=89.78 liquidity=ACCUMULATION_SPIKE sector=IMPROVING risk=momentum is extended
-- IDRE.CA: BULLISH_WATCH score=88.78 liquidity=ACCUMULATION_SPIKE sector=IMPROVING risk=momentum is extended
+- MOED.CA: BULLISH_WATCH score=89.87 liquidity=ACCUMULATION_SPIKE sector=IMPROVING risk=momentum is extended
+- IDRE.CA: BULLISH_WATCH score=88.87 liquidity=ACCUMULATION_SPIKE sector=IMPROVING risk=momentum is extended
 
 ## BUY-Ready Candidates
-- ARVA.CA: rank=34.9 outlook=BULLISH_WATCH outlook_score=90.78 sector_rank=5 price=11.76 support=10.5 resistance=11.98 liquidity=93310080.0
+- ARVA.CA: rank=34.9 outlook=BULLISH_WATCH outlook_score=90.87 sector_rank=5 price=11.76 support=10.5 resistance=11.98 liquidity=93310080.0
 - ORWE.CA: rank=33.02 outlook=BULLISH_WATCH outlook_score=93 sector_rank=1 price=23.13 support=21.95 resistance=23.47 liquidity=47572396.0
-- MOED.CA: rank=31.9 outlook=BULLISH_WATCH outlook_score=89.78 sector_rank=5 price=0.72 support=0.65 resistance=0.76 liquidity=115032136.0
+- MOED.CA: rank=31.9 outlook=BULLISH_WATCH outlook_score=89.87 sector_rank=5 price=0.72 support=0.65 resistance=0.76 liquidity=115032136.0
 - CANA.CA: rank=31.18 outlook=BULLISH_WATCH outlook_score=90.23 sector_rank=10 price=37.5 support=34.7 resistance=37.5 liquidity=24469210.0
 - ATQA.CA: rank=30.9 outlook=BULLISH_WATCH outlook_score=80.64 sector_rank=17 price=9.8 support=9.21 resistance=9.97 liquidity=87669784.0
 - ARCC.CA: rank=30.06 outlook=BULLISH_WATCH outlook_score=95 sector_rank=2 price=56.66 support=53.5 resistance=58.5 liquidity=27428028.0
 - PHAR.CA: rank=29.36 outlook=BULLISH_WATCH outlook_score=84.36 sector_rank=9 price=91.33 support=83.6 resistance=93.0 liquidity=46826904.0
-- IDRE.CA: rank=29.08 outlook=BULLISH_WATCH outlook_score=88.78 sector_rank=5 price=47.77 support=41.1 resistance=52.68 liquidity=33654388.0
-- CEFM.CA: rank=29.04 outlook=BULLISH_WATCH outlook_score=84.78 sector_rank=5 price=126.15 support=95.75 resistance=152.0 liquidity=36091260.0
+- IDRE.CA: rank=29.08 outlook=BULLISH_WATCH outlook_score=88.87 sector_rank=5 price=47.77 support=41.1 resistance=52.68 liquidity=33654388.0
+- CEFM.CA: rank=29.04 outlook=BULLISH_WATCH outlook_score=84.87 sector_rank=5 price=126.15 support=95.75 resistance=152.0 liquidity=36091260.0
 - EFIH.CA: rank=28.94 outlook=BULLISH_WATCH outlook_score=77 sector_rank=4 price=23.37 support=20.0 resistance=23.65 liquidity=129471040.0
 
 ## Data Quality Issues
@@ -193,7 +187,7 @@ Trigger: scheduled cron=30 12 * * 0-4 mapped to post_close; Cairo now 2026-07-23
 - GIHD.CA: score=25.9 buy_ready=False sector_rank=5 price=56.23 support=40.66 resistance=61.56 source=Yahoo Finance history + Mubasher delayed current trading data as_of=22 July 01:28 PM market time freshness=DELAYED_CURRENT RSI=74.57 liquidity=37503944.0 spike=0.86
 - GMCI.CA: score=18.49 buy_ready=False sector_rank=5 price=2.03 support=1.66 resistance=2.26 source=Yahoo Finance history + Mubasher delayed current trading data as_of=22 July 01:14 PM market time freshness=DELAYED_CURRENT RSI=60.49 liquidity=586233.13 spike=0.45
 - GRCA.CA: score=26.28 buy_ready=False sector_rank=5 price=62.4 support=48.0 resistance=68.95 source=Yahoo Finance history + Mubasher delayed current trading data as_of=22 July 01:28 PM market time freshness=DELAYED_CURRENT RSI=75.04 liquidity=37534952.0 spike=2.69
-- GSSC.CA: score=15.6 buy_ready=False sector_rank=5 price=270.81 support=270.81 resistance=270.81 source=Yahoo Finance history + Mubasher delayed current trading data as_of=22 July 01:28 PM market time freshness=DELAYED_CURRENT RSI=50.0 liquidity=5695533.5 spike=1.0
+- GSSC.CA: score=18.6 buy_ready=False sector_rank=5 price=270.81 support=240.0 resistance=288.95 source=Yahoo Finance history + Mubasher delayed current trading data as_of=22 July 01:28 PM market time freshness=DELAYED_CURRENT RSI=78.83 liquidity=5695533.5 spike=0.58
 - GTWL.CA: score=25.9 buy_ready=True sector_rank=5 price=103.03 support=49.37 resistance=118.88 source=Yahoo Finance history + Mubasher delayed current trading data as_of=22 July 01:29 PM market time freshness=DELAYED_CURRENT RSI=60.89 liquidity=82253488.0 spike=0.57
 - HDBK.CA: score=21.9 buy_ready=False sector_rank=10 price=82.84 support=75.3 resistance=166.0 source=Yahoo Finance history + Mubasher delayed current trading data as_of=22 July 01:27 PM market time freshness=DELAYED_CURRENT RSI=49.06 liquidity=16307979.0 spike=0.48
 - HELI.CA: score=22.9 buy_ready=False sector_rank=8 price=8.34 support=6.36 resistance=8.4 source=Yahoo Finance history + Mubasher delayed current trading data as_of=22 July 01:29 PM market time freshness=DELAYED_CURRENT RSI=90.71 liquidity=157026528.0 spike=0.87
@@ -298,38 +292,38 @@ Trigger: scheduled cron=30 12 * * 0-4 mapped to post_close; Cairo now 2026-07-23
 - These checks are historical context only, not a prediction or guarantee.
 
 ## Evidence
-- ARVA.CA: status=RECENT_ACCEPTED latest=2026-07-15 age_days=8 sources=3 expected=Arab Valves Company summary=Arab Valves Company (ARVA.CA) has shown significant stock price appreciation in the last 12 months, with financial reports indicating revenue growth and recent market disclosures. The company's stock price increased by over 160% in the last 52 weeks as of July 15, 2026.
-  - Arab Valves Company (EGX:ARVA) Statistics & Valuation Metrics (as of July 15, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFj1oR-5hRy30Oa_p2oyJ9AVoVN-zoLZqgo5kUKeNr6rI4P7b7e5aCSOwsXkKD-7ZZ3MNKKblv4g4t52pFKM4h9HJ9IDy_yuORmluSxaFf-2zs972Iq7vy_1Zck-OuqJc_z_sA1Kyzgoy2gvN3V0w==
-  - EGX:ARVA Financials | Arab Valves Co (TTM data, latest quarter revenue/net income changes): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHcU3vPr-0uB9GaAH6rjbXyEQ6fcQglxknNLou7v0Gz8xCfQt0jhjsjZ8Xo4bjY9AMApZMxMkf6CrKG71tguhuYHGOLSPr7qwqOxkeqGaOtjZtDSlbI1X8iQTSmxOZ48elvRD4kHIcCbBjuV1dOX9g4psAuFmKPm1MYyuKVISTYk3HO
-  - Arab Valves Co SAE (ARVA) Market Announcements (July 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH_fQeb61MWQwDvVS3oxblADXF6WjJmUI3SvS0auyjuoKv0vZci05Lh-5123fUsV4hcTlTDGEfTN_yNaAzXAwqPOVu9BKZg0omm3ZRbpaZovdREh02A8WLxEIFu1SWDf4iP9X6ndJjYYjgIO_czCEDe
-- ORWE.CA: status=RECENT_ACCEPTED latest=2026-09-02 age_days=0 sources=3 expected=Oriental Weavers summary=Oriental Weavers (ORWE.CA) reported strong financial performance in 2025, with revenue increasing by 9.61% and earnings by 11.13%. The company's latest 12-month revenue was EGP 27.17 billion, with profits of EGP 1.96 billion as of July 19, 2026.
-  - Oriental Weavers Carpets Company (S.A.E) (EGX:ORWE) Statistics & Valuation Metrics (as of July 19, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEl4MJQ1q6Md9bxdMwV7K6QLy_e7n2gWTq_nzWKLOdlFlVouc7c93brIycwbJsmS_3uRScMtPLi6vmZNhM2DmajZBccDVHGMg3omAFwZu_n7qLLnjQXdcQijzD5DzgHw0AMUOLYBVslxl65npmwcQ==
-  - Oriental Weavers - EGX:ORWE Financials - Investing.com (TTM data, latest quarter revenue/net income changes): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF7RHUpauHRLSDbwr8oe1pHKnvpD7GuXz9MLnSBKoOoD_bc7Z7gTYQaCextPLY-zIll2YnLKjVgaJSZq-5PAlTMK15PU-aGrwIJjDp5RIiB8942oPppjLksmGqK3GqVUguGmQ2M8rXjj_7MUOJXCBLpk2wJfpFXS6uqLduXlg==
-  - Oriental Weavers Carpets Company (S.A.E) (EGX:ORWE) Stock Price & Overview (2025 Financial Performance, Earnings Date Sep 2, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGucA4axYUTwXE4fCJX-_x0FCSkYzc30P0tkGjCXsS5vGDntpAa5dA_mARPHv-YZ85ADUumC_NLKc5f-Cy5B0Epvpi57srr6zTCef4J1R-X00UNEObHz126HbUv8Z7twkRKimg=
-- ACGC.CA: status=RECENT_ACCEPTED latest=2026-11-25 age_days=0 sources=3 expected=Arab Cotton Ginning summary=Arab Cotton Ginning (ACGC.CA) reported a decrease in revenue and earnings for fiscal year 2025. The company's latest quarter saw a net income loss, despite a positive TTM ROI of 14.407%.
-  - Arab Cotton Ginning - EGX:ACGC Financials - Investing.com (TTM data, latest quarter revenue/net income changes): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGYDjK70oPQdplTYG4eM74eb05dmY6XsYLNdI2OBoblzjkyHBTSiaBRXIWt2F_PQUXgRajVhgkgehob1sg4KGZWGoR3ULMoxTpTug3FdflIhMGdnfl4-g2qh6m1CHT6aAnKZrtzU_9mEl94yAqbuMA3p1vdY18xc9UyN9ZB9Q==
-  - Arabia Cotton Ginning Company (EGX:ACGC) Stock Price & Overview (Fiscal Year 2025 Financial Performance, Earnings Date Nov 25, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGlgckHpv-Nx1Tsv8dnlDLc5tscn_IdmZb66ZYcrnpgPUxxxvHGSdz2RSW_q6NXxZuE3gHlCJ6p3t6us4MnUVzwLkSS-Np9FWPBYf0BMU626lAmd_Rpwvx-9yuOEawb1UZ0oU0=
-  - Arabia Cotton Ginning Company Reports Earnings Results for Q1 Ended September 30, 2025 (June 11 CI): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE2fuApU0ZY7WG9EZsfV-3XOfCGViy5kKmlHa56pfLWEzXRP5pbjzxyNEqJoAvO7jigFcsfgeEP6Y2BbPrPSZkUmBW_L8o8rURUYdTM4GbwkjFjendjtDwiMP6rwrSB4Wc7Xk26ov2j6UQW0CtOKuPPZBUPDZOYU7YOx8Zubdy4GDe85DgDvig=
-- MOED.CA: status=RECENT_ACCEPTED latest=2026-07-22 age_days=1 sources=3 expected=The Egyptian Modern Education Systems, S.A.E. summary=The Egyptian Modern Education Systems, S.A.E. (MOED.CA) saw its stock price increase by over 56% in the last 52 weeks as of July 22, 2026. The company reported a 107.5% YoY leap in profits for 9 months as of May 3, 2026.
-  - The Egyptian Modern Education Systems, S.A.E. (EGX:MOED) Statistics & Valuation Metrics (as of July 22, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFp0EsNzfuB7uWGmrgYQ33drwDopStHCUxbgOlH2OYi6DNSauZR4b-V93vQfagifv4YKL_Cm037PbuYlgznfD8Vnbl8lF2SeM-70wAlbKUdHJu2uoWmR4-feY4CqS1DNEhfCYqH_ewDCLXyz3_Bqw==
-  - EGX:MOED Financials | The Egyptian Modern Education Systems - Investing.com (TTM data, latest quarter net income): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF4j7bNpNEuVhpJVJ6eS7PzL7QofonI7ozyc_phT-qcSGjK_MN_pbrNc5WmeNNKwVuMzP1etPt0DHIUZm7Lwg5tfWfHPtRO9SpBsgJHY4WJghiS1x2tm5uiE46Nag-LS74vMDJi4qmd_wPvUhz-dbN_6ijPQKzjaaVEDPXswJ57QMiOtUvEbYWI0O23yw==
-  - Egyptian Modern Education Systems' profits see 107.5% YoY leap in 9 months (03/05/2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQERiPXD-wwMRJKiBKimomvdoUi4CjIpkvz6qxHL_h-0JdszMdx6vkFb4WlLGtGByQcrYQKWQWOUkK6n0LuwqNnrJg6nXqYbHF-j5KVANqG0kaST2IDuPkEAtFkqo_o4x-KB-zUqxZyE-2gHIvAphZUUTw==
-- CANA.CA: status=RECENT_ACCEPTED latest=2026-07-16 age_days=7 sources=3 expected=Suez Canal Bank summary=Suez Canal Bank (CANA.CA) is listed on the Egyptian Exchange (EGX) and its investor relations page provides recent stock performance data, including a 51.47% year-to-date change.
-  - Investor Relations - Suez Canal Bank S.A.E. (Stock Overview, YTD % 51.47%): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFeZXHv6ASqM9a_BRJBSZC_uJVEohcOSAxGTNoTY7V_ydJc2j1PZMseUMesafIPYhFBFc6OFCyJzMi8TQzIi_uOklSBgvCGAS93iIal8dT0pWCGoUSrnyc_Z1g2W7M=
-  - The Egyptian Exchange - Company Details (Suez Canal Bank S.A.E., as of 30/06/2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGPHmWJoIIr3MEc_-yp6Pi8IR1-Z8-GhSEgpr8bf6eVj3Neu6a8caofsPzQTYd9cHPe7NJfhCoka2g2_iBstzfRjUpJ20-f6qWf5p8L52jOFCYVY0LDthWIG_QoMSfMfkiMMqKpLcka5RzyTHU_QmPFDH72-rE=
-  - Suez Canal Bank SAE (CANA.EG) Live Chart & Key Stats | EGX (as of July 16, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEboh7fVG17hzQ0_2wfPBOtPaqbnl1MP2UZghTcJTx2GkbrLBmxQHqQwpG8HLN2kAm5kbNZknNzFLgrXKf4W746iIKT3wY2XBXuSGQ0UPiE1rqATI9TsmSmMX-3evQ-6ZqdKQVFjZJpOSUXaAZ8gNZg
-- ATQA.CA: status=RECENT_ACCEPTED latest=2026-08-12 age_days=0 sources=3 expected=Misr National Steel Ataqa summary=Misr National Steel Ataqa (ATQA.CA) reported a significant decrease in earnings in 2025, despite an increase in revenue. The company's net profits shrank in H1-25.
-  - Misr National Steel - Ataqa (EGX:ATQA) Stock Price & Overview (2025 Financial Performance, Earnings Date Aug 12, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEGAl9CBRsRzdRX5w9BKiAci8K1YLrzBTdr84cp5JUDZD6Tmul-5Q2oMNh0iFF88gM3jN1GgpnZaOeh9r4Qo7o2lN1ADbPeG7imqEjZ_Q5TcSAPyi226suWdGSYImatSeP84J8=
-  - EGX:ATQA Financials | Misr National Steel SAE - Investing.com (TTM data, latest quarter revenue/net income changes): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHIsLyNAys4TkVlab_DTLztKDc96Mit_F0gu1cixrEFt5mnYTQlveGM2jG4XiIodSpNFQQboHggnVlCxNCZbItVFMiZv3NCCc0T84cdSR45Su0oYe2cUYESM60EokQQBNRG4ewnWtPyENBeSxVFiraqUqQMuHeshDWGpmFQpjdAKyVmt5_JKdCX-Ws=
-  - Misr National Steel - Ataqa (ATQA) News and Market Announcements (July 2026, H1-25 Financial Results): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG4ZFNwW1WLbds-GI4dubbwvQ2QKQoWQfvNWioHRjJ_fu6pq9xRpgQATJ-W8LgAOeWmBzPA7CJPy84TB354kbtts6tZHMoZRi4eooz9yBI0kh4fS491ZWGgkjWV-Ox-VXpZF4205o7UnWGQa6-S-6Tp
-- ARCC.CA: status=RECENT_ACCEPTED latest=2026-04-16 age_days=98 sources=3 expected=Arabian Cement Company summary=Arabian Cement Company (ARCC.CA) experienced substantial growth in 2025, with revenue increasing by 42.58% and earnings by 212.70%. The company also paid cash dividends of EGP 5.34 per share as of April 16, 2026.
-  - Arabian Cement Company S.A.E. (EGX:ARCC) Stock Price & Overview (2025 Financial Performance): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHjUjPTeQvhQp-lJyD6c9k0qmtQwAzQLEqUlZ39ME1m5acV9_-s1Hz-0NTbm9wvGvYRhUjDvxPaBpbc6aRduibWyhTFFxo8Lq6vL6nWWUqpFdsrF58igeiRoXLunO5xu-pbQ1o=
-  - Arabian Cement Co SAE - EGX:ARCC Financials - Investing.com (TTM data, latest quarter revenue changes): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF2Cgqwt7WLd5FKRn2_bhdOCjeoLKotWimTbsTPornOteJo12TSMHU3phD6P5SC4eMMqj3wcQg7b9hI-iYUTOXuQiwS9gzdTGLUKFy87T-mPt2IVDxjY-37Qa2htzTBvwRXJKHlWpZpCms2YoLjURKfJEmb1oIStRbdUofw-9uSHnujhr8=
-  - The Egyptian Exchange - Company Details (Arabian Cement Company, as of 16/07/2026, including cash dividends): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFh9qWgMAp21oNVGVAhfrd9W3xz1PqKxu8NMKVavT3HvxibqI-ta934IOcOtjw4CAI_avCK6GWN6S3KG-pvT-HShdgDa20aAAwpQYVLIQwMbxSdT_wETbL4RecQIX-eNO0_g4O7z6nBHrP3KHSDdZGaL-aOtxk=
-- ADPC.CA: status=RECENT_ACCEPTED latest=2026-03-31 age_days=114 sources=3 expected=The Arab Dairy Products Co. summary=The Arab Dairy Products Co. (ADPC.CA) reported a consolidated loss of EGP 188.8 million for the fiscal year and earnings results for Q1 ended March 31, 2026. The company's latest quarter showed a decrease in revenue and an increased net income loss.
-  - ARAB DAIRY - EGX:ADPC Financials - Investing.com (TTM data, latest quarter revenue/net income changes): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG9MLerGz4XfY_7b2kU6Mz6X04eCuU0nUlVff6PxY3IERJ4S9KlqzxuHx-QsmMYusXMUkYEResi2OuVLsd-kxKD5Gg0-Z5tHbCme8RcxMtBj5X7A9V-Tas49KnvM9c0_7KjlnyocXwMGNZNrEXVvX3LP6Z4a9gOgTbr-tqK6pNOp6Myt0L4BgecHj0=
-  - The Arab Dairy Products Co. Reports Earnings Results for the First Quarter Ended March 31, 2026 (Jun. 23 CI): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG3tjuOR-_R1IFjzjeKN8KKzU047hHiLuUGhdr4KKc2xO56gn8Rl_4FTAFgsDzfWj-JUKE2Vwvu-IjKXz7XbC_e1-m2AppAqCC9YdLrMYBRaeSzWUCSTj0cGQOph5oEDPwB_PkIcgz7xpetG4LiWpJsGpQFa5KvluSROuYBA7tE-miOoaoKtLyh
-  - Arab Dairy Products FY consol loss EGP 188.8 million (Apr. 02 RE): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG3tjuOR-_R1IFjzjeKN8KKzU047hHiLuUGhdr4KKc2xO56gn8Rl_4FTAFgsDzfWj-JUKE2Vwvu-IjKXz7XbC_e1-m2AppAqCC9YdLrMYBRaeSzWUCSTj0cGQOph5oEDPwB_PkIcgz7xpetG4LiWpJsGpQFa5KvluSROuYBA7tE-miOoaoKtLyh
+- ARVA.CA: status=RECENT_ACCEPTED latest=2026-07-15 age_days=8 sources=3 expected=Arab Valves Company summary=Arab Valves Company (ARVA.CA) has shown significant stock price growth in the last 52 weeks, increasing by over 160%. The company reported revenue of EGP 172.75 million and profits of 445,858 in the last 12 months as of July 15, 2026. For the latest quarter, released on April 29, 2026, revenue was EGP 49.056 million and net income was EGP 9.448 million. Recent corporate actions include disclosure forms for the Board of Directors and shareholders' structure, and an Annual General Meeting (AGM) in July 2026.
+  - Arab Valves Company (EGX:ARVA) Statistics & Valuation Metrics - Stock Analysis (July 15 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHFf2WCVS9YhO7Iq6cvsja0QMmznZv5V--C9Do6NW7o60VkSD75ggTLalxbv8EmE2G-IjV2rxV4WeAOjUwg__37msR-c870BYdwPvyoKSrNoBjE0BB17_KfKBBWOzYYwb_xSz2RK1v_ORW8_u6BUwQ==
+  - Arab Valves Company (EGX:ARVA) Stock Price & Overview (Jul 14, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHcBN3EnZbKqcgV3KmY7YKWPm_paGw40fb5BZ0BGfyaWl082qq5TRw2GOZoqa0olNnZmv32yNfuq4nm94sb2T-KO_eznH5ysCWiFiV7aBCOz3L9uqSdV3-S9YSpux6OeB7STj8=
+  - EGX:ARVA Financials | Arab Valves Co - Investing.com (Apr 29, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHwz4EMqLVv8NB0sJrKi9gFOON-tbKGKv8qnhU_sl8pcT2T65EbMNeosyThP7QVYA_AG9HWGXTvlbhQxjdkUSVV0DNcWxVhN0ykr_zsm4kiEgs4nv2QJ_W2XP740AFZus8o_mbrdMgix1fQOmhHhV--WtXF_Z1dDV_wSe6aF4RrbeS5
+- ORWE.CA: status=RECENT_ACCEPTED latest=2026-07-19 age_days=4 sources=3 expected=Oriental Weavers summary=Oriental Weavers (ORWE.CA) reported revenue of EGP 27.17 billion and profits of EGP 1.96 billion in the last 12 months as of July 19, 2026. Earnings per share for the same period was EGP 2.95. The stock price has seen a slight decrease of -1.31% in the last 52 weeks. The company's latest quarterly financials, released on March 31, 2026, show a gross margin of 12.60% on a TTM basis.
+  - Oriental Weavers Carpets Company (S.A.E) (EGX:ORWE) Statistics & Valuation Metrics (July 19 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF9_R9mgkZrkWkfAJzLcAb9_O042rAei1Y3Q9hxadhbZd0iANT3ugz36BGkofOs0pzzekKAUyMRrTHsslt5JZH5LKvKzltk-AvQp0o9oAg4gmaIrcbXMrf-yF4jZ8pW60h7WIjVADs5xNJIUK-yvg==
+  - Oriental Weavers - EGX:ORWE Financials - Investing.com (Latest Quarter): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHuC4nVrR5Kb9XlH2FgICQly8QzlD3oz-BkgEnlvoci7XybmbZzENR6mEZlzxAwdraXNVVpfB1Ee05hFpDnmkDUFrrbKa2oZpdweLprZEbh1YAhDSiROj1iumdL7zgvD_hVgyd4gfg3yr32NM8YJKtqMWTVOn_JDlkPoOKGXg==
+  - Oriental Weavers Carpets Company (S.A.E) (EGX:ORWE) Financials & Income Statement (March 31 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH3Kqo2COVHG-CgPP08FwH6_ywCVf2TvgXZu5kyBeOO6RUjkrLaHQK7O06tadse0WGFW5nUwEWvA0ugh80_h6xIqJOdnAScw7Q5O-vr0fbZhksflArG3lHMDEqPKOUK6C8ITuztFRZImwjUKPO1Uw==
+- ACGC.CA: status=RECENT_ACCEPTED latest=2026-07-15 age_days=8 sources=3 expected=Arab Cotton Ginning summary=Arab Cotton Ginning (ACGC.CA) reported revenue of EGP 2.63 billion in fiscal year 2025, a decrease of -34.79% year-over-year, with earnings of EGP 404.23 million, a decrease of -16.26%. For the latest quarter, revenue moved from EGP 971.857 million to EGP 705.155 million, and net income moved from EGP 266.682 million to -EGP 44.026 million. The company's last trading date on the EGX was July 15, 2026.
+  - Arabia Cotton Ginning Company (EGX:ACGC) Stock Price & Overview (Fiscal Year 2025): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEh9m_XcSzrauPq08716n9wgTqv2MltTdMxTc2TKKzqjsr_Xp4-PKp-8HIBS-rOp5Tul5-bsEOyIGhRb1KjxfhXzzfdjoZ6B5B9mYzPbV-W3UIlNe_1iGvNTUm4kQMNOeQswTk=
+  - Arab Cotton Ginning - EGX:ACGC Financials - Investing.com (Latest Quarter): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHuz7F8qt-rgmw8EB9QSlEwSiNyI9m4Gmnm8QLx8FzOM_FdZRB8TvhTN-9KksTdXaFCIOISnopgmEWChU1HNKNLiH1OYTo9ZjrLwBnvpENSBfvsfa_AUi9_nge6fGhmXmyoqyEZ2f5fDzRsiMl54mrGGXjDpC3klpWnqybKIQ==
+  - The Egyptian Exchange - Company Details (Jul 15, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG-lzYTRXNCItzucOpYde0SXrDJiwwwVmZxnvA_Ro8KtoLE-bwjGhMx8msmr1_1NI4ys03BKo7hYydta0t_NXTx_IYS82dYZ712mk1WSkLoTx2lyaqyPW_FtJY6LspNa1ifmxruq2dy1WEH0-TwaR2qyopTsBk=
+- MOED.CA: status=RECENT_ACCEPTED latest=2026-07-22 age_days=1 sources=3 expected=The Egyptian Modern Education Systems, S.A.E. summary=The Egyptian Modern Education Systems, S.A.E. (MOED.CA) generated revenue of EGP 52.19 million and profits of EGP 4.95 million in the last 12 months as of July 22, 2026. The stock price has increased by +56.18% in the last 52 weeks. For Q3 2026, the company reported a net sales revenue increase of 14.14% and a net income of EGP 2.48 million.
+  - The Egyptian Modern Education Systems, S.A.E. (EGX:MOED) Statistics & Valuation Metrics (July 22 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGYygS4PjY50LM90bEgwNHLg1GjNmEqvo4j3yxGuRvKOB1DintGZ11-zgxIpLb66mv3H_AtCRwt9WvzhVGXdOkKGA-sZmI1P_vVBfByRjfQbAVdPNBJ2-ZDBmdXkYEFFeAgRRTcE5PjRZ51klzDtA==
+  - Egyptian Modern Education Systems Income Statement – EGX:MOED - TradingView (Q3 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE8gKKHjNZHbyF5vHannpXX9PhS053DM2004NQs4hXfcOh1x-YguccqnxGEHmDJvqg144YqXqfIJI2HiME0A1HnITrSEVJjJ6BOAqPCFOQ448kgQ9elvbvF_SrhuVusWRd1MxW4FbIzoyqT0U9suv8QpPy5rQoGe9JyYFyc8F9_8Kx4tw==
+  - Egyptian Modern Education Systems SAE (المصرية لنظم التعليم الحديثة) (Egypt) (February 17 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH4_11-0N4ySKhqoL61UOnUZty2QD2jsyXRpDPqrVgDMpI3lRihTAWU67-CjcGAa2DZJQKtPgOo80BeqKYUIt8U2HEClrSy7IEvPlPJJrTikfrtRGsE4ZvG64vN4yCxybGAnSMWygtaibWLc48hQnoBJ_iVjO4Csy-Hwrjp5FlhGaV2rirBFDZJ-QPo5z2zlAmR8pZjEGfi9cyLG8be7Q9QIBZxaR7wX4r0_2hsqAfAvLRqNaOFPWbVqpNHsG1gMaKLQTZZMHBk8TPlyPkDEemXUUF-I3WVRMkVMaA6Lv7P9MIZFkwy8pxWcj-uMsdd2HmLL1BIgn2orHROIiWAgEYJCoFe6o7e3V_uYOiRvDSOveGCJr5_TnxVyzvBXH79KrUQDB4myGI-9j-zKUymDYPbrYwx0Gez0oIhsbkjUXWbugcKzMdtJqLOEwCEtPqG9yc5lomnBJBUCfjIJX_f3T
+- CANA.CA: status=OLD_ACCEPTED latest=2025-01-01 age_days=568 sources=3 expected=Suez Canal Bank summary=Suez Canal Bank delivers EGP 1.6bn profits in Q1-26; Suez Canal Bank unveils details for previous dividends payout; Suez Canal Bank to distribute EGP 5bn bonus shares for 2025 Gemini also reviewed web evidence but did not return ticker-specific citations.
+  - Suez Canal Bank delivers EGP 1.6bn profits in Q1-26: https://english.mubasher.info/news/4611255/Suez-Canal-Bank-delivers-EGP-1-6bn-profits-in-Q1-26/
+  - Suez Canal Bank unveils details for previous dividends payout: https://english.mubasher.info/news/4586807/Suez-Canal-Bank-unveils-details-for-previous-dividends-payout/
+  - Suez Canal Bank to distribute EGP 5bn bonus shares for 2025: https://english.mubasher.info/news/4581661/Suez-Canal-Bank-to-distribute-EGP-5bn-bonus-shares-for-2025/
+- ATQA.CA: status=RECENT_ACCEPTED latest=2026-07-15 age_days=8 sources=3 expected=Misr National Steel Ataqa summary=Misr National Steel Ataqa (ATQA.CA) reported revenue of EGP 6.33 billion in 2025, an increase of 16.58% year-over-year, with earnings of EGP 30.75 million. For the latest quarter, released on May 20, 2026, revenue was EGP 1.217 billion and net income was EGP 12.045 million. The company's last trading date on the EGX was July 15, 2026.
+  - Misr National Steel - Ataqa (EGX:ATQA) Stock Price & Overview (2025 Financial Performance): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE-NmaEo1ofGDD4BYQZb0NCiRMaTdP1tzvVEaARoG3FixdTx-qMltedN_ru0pXntaLwYdtyx7DFWgq5_ykNVcp2bRziAY-97b4wtbgrPKsfl14m1rjB2M7WzrNAjwJ1Tkx-MH8=
+  - EGX:ATQA Financials | Misr National Steel SAE - Investing.com (May 20, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEaqnEupOrAWHZKrG1UKomx3zqKuWCZRdPCH2g91IBXoHlhAzYPZKVkc2ZCBBrwxd9l6QYTWS1GtHttC_ivCHdI0GsVp2-vUxvdmzG_0j2bgJoEiQY2RtC2LB5gPyKlBuNCFTCt-bDZEO28b3NAfIAIofGGFuYF3BgJsXwno7YHnZjsEGYEyKNDWmw==
+  - Misr National Steel - Ataqa - The Egyptian Exchange - Company Details (Jul 15, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGgIHXbRH0JmuLpa3usiQw2qVXq02u5qRZtvdTgHnb2yGN1upe6sOO06nD4khXbzfNrDpimoiGZgZr-vxsJwxpTSdt3jDr2WsZcKCy2Celi87BphPVvWFIi3VkkFX951Gh_5RaCZVUd6DosnX-RusP191SPjqPBJrPK
+- ARCC.CA: status=RECENT_ACCEPTED latest=2026-07-16 age_days=7 sources=3 expected=Arabian Cement Company summary=Arabian Cement Company (ARCC.CA) reported revenue of EGP 3.00 billion for the quarter ending March 31, 2026, representing 17.28% growth. Revenue for the last twelve months reached EGP 12.89 billion, up 37.90% year-over-year. For the latest quarter, released on May 31, 2026, EPS was 2.50 and revenue was EGP 3 billion. Recent announcements from the EGX include a disclosure form for the Board of Directors and shareholders' structure on July 16, 2026, and decisions regarding a capital decrease through terminating treasury stocks on July 1, 2026.
+  - Arabian Cement Company S.A.E. (EGX:ARCC) Revenue - Stock Analysis (March 31 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGQ2C_qHMIglX-7LRXon8UxPRPuwUmyga2bs8Tiu9tj_0SHhYdRKyjNUQmGsFmp7QQM3JNd4XLEd896fJgjFzC3csMDcvfdQTYwZKTtMUCkJlCaHGv4VWoxKP-3emxrSUGr23SodB7EWxl7zw==
+  - The Egyptian Exchange - EGX News & Media Releases, Listing News, Members News, Financial Statements (Jul 16, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFii17XCxFuRKhnAe0Qn06pXK-3FG9GjpbVm4VPK0m6qxiPpnJoorEk9LizO04GG9XPVsrzrYQDfmFtZCP42ujnu2TmO_10DGCXlPZvWGrWZfctKtuyYMJK0gR-U8Ndrf61lcwijoWgc4x7LmI5iic=
+  - Arabian Cement Co SAE - EGX:ARCC Financials - Investing.com (May 31, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGXSnlcAOVJDTjE2UJpZP-tMdiZe0H-HjgXJXwO4YomzXI6hIQh29o8pI6ryYGtYwlGS8aefzowHtjB3UmnNq69ub4CUwuzM02LYq_V4YDXDfLIFq-DTJEA7ycz6IbH_KUiv-mehSdZlfcp7ncoTobDyLoYjzU-yJ54zODF9ndC_WxM7JQ==
+- ADPC.CA: status=RECENT_ACCEPTED latest=2026-07-14 age_days=9 sources=3 expected=The Arab Dairy Products Co. summary=The Arab Dairy Products Co. (ADPC.CA) reported revenue of EGP 2.80 billion and losses of EGP 244.29 million in the last 12 months as of July 14, 2026. Loss per share was -0.50. The stock price has increased by +23.68% in the last 52 weeks. For the latest quarter, released on June 22, 2026, revenue was EGP 564.036 million and net income was -EGP 122.929 million. Recent corporate announcements include financial results for Q1 2026 and Board of Directors' decisions in June 2026.
+  - The Arab Dairy Products Co. (EGX:ADPC) Statistics & Valuation Metrics - Stock Analysis (July 14 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFp5rAgWoclKh_IXlKumvdhtTHcWYiwy5-dtkiotwsCnV09KxiQ0zs04bdCkN9sISY1PcDuv_MeW23G-WXTfcyJh1fYRbEMcnR-WIJSlwZU1swUz45UKOa9nzAGToVoUeIPXtLk8T5m1NUpkHYzqg==
+  - The Arab Dairy Products Co. (EGX:ADPC) Stock Price & Overview - Stock Analysis (2024 Financial Performance): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEzGML_0GQDuGQpAjiXZ0q8ZwNfsGaj3tBzsy6JYYqomq4t8xpIQ8muW6sLgCcgXM4AKegk54BPsRch1HsjhtiwOo5tcrxYKZH-9dh5EuyS7CCc4JtL6DXJ565zlD8fdY5Xhcw==
+  - The Egyptian Exchange - EGX News & Media Releases, Listing News, Members News, Financial Statements (Jun 23, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHrgUeSaH0up3uDoeGVaicnlBO9m2qmQZ9Iv9fvB8StSAHj2L5PKQQNiiNjH02h20fU2NCRmKvwNkVN49okYL9J9AcKt75ETgmXi5KHvbooro_1zr8uUrZMtRlUptifx32-MkqMHaGxXQNS95xnXyI=
 
 ## Warnings
-- No blocking warnings.
+- Evidence for CANA.CA matches the company but appears old; latest detected date is 2025-01-01.
