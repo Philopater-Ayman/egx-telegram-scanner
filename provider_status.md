@@ -1,10 +1,10 @@
 # Provider Status
 
-Generated UTC: 2026-07-29T14:41:57.644565+00:00
-Generated Cairo: 2026-07-29 17:41
-- Scan phase: Post-close tomorrow tickets
-- Run timing: target 15:30 Cairo | generated Cairo 2026-07-29 17:41 | cron 30 12 * * 0-4
-- Trigger: scheduled cron=30 12 * * 0-4 mapped to post_close; Cairo now 2026-07-29 17:37
+Generated UTC: 2026-07-29T17:49:09.772306+00:00
+Generated Cairo: 2026-07-29 20:49
+- Scan phase: Evening tomorrow plan
+- Run timing: target 19:30 Cairo | generated Cairo 2026-07-29 20:49 | cron 30 16 * * 0-4
+- Trigger: scheduled cron=30 16 * * 0-4 mapped to evening_plan; Cairo now 2026-07-29 20:45
 
 - Macro source: Mubasher EGX market page (delayed public data)
 - Macro freshness: DELAYED
@@ -13,12 +13,12 @@ Generated Cairo: 2026-07-29 17:41
 - Market data: 176/189 tickers have tradeable current/delayed price data
 - Mubasher delayed current rows used: 182/189
 - Current/Yahoo technical mismatches blocked: 13/189
-- DirectFN public table health only, not trusted for action tickets: 249 rows | as_of=2026-07-29T14:37:25.693931+00:00 | error=none
+- DirectFN public table health only, not trusted for action tickets: 249 rows | as_of=2026-07-29T17:45:14.737021+00:00 | error=none
 - Data quality issues: 1
 - Evidence sources found: 24
 - AI narrative: OpenRouter OK (nvidia/nemotron-3-super-120b-a12b:free)
 - Telegram sent on latest run: True
-- Latest ticket id(s): 20260729T144157Z_BUY_MPCO.CA, 20260729T144157Z_BUY_WCDF.CA, 20260729T144157Z_BUY_ARCC.CA
+- Latest ticket id(s): 20260729T174909Z_BUY_MPCO.CA, 20260729T174909Z_BUY_WCDF.CA, 20260729T174909Z_BUY_ARCC.CA
 - Latest history write(s): /home/runner/work/egx-telegram-scanner/egx-telegram-scanner/trade_history.csv, /home/runner/work/egx-telegram-scanner/egx-telegram-scanner/trade_history.csv, /home/runner/work/egx-telegram-scanner/egx-telegram-scanner/trade_history.csv
 
 ## Warnings
