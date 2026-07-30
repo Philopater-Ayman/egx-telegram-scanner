@@ -1,12 +1,12 @@
 Sector,Ticker_Count,Median_5D_Return_%,Median_20D_Return_%,Above_MA20_%,Above_MA50_%,Median_Liquidity_Spike,Top_Liquidity_Stocks,Sector_Score,Sector_Rank
 Education,3,12.93,15.32,66.67,100.0,1.06,"TALM.CA, CIRA.CA, SCTS.CA",14.83,1
-Agriculture & Food Production,2,4.52,8.39,100.0,50.0,1.31,"MPCO.CA, IFAP.CA",9.96,2
+Agriculture & Food Production,2,4.52,8.39,100.0,50.0,3.39,"MPCO.CA, IFAP.CA",13.07,2
 Textiles,4,1.32,11.88,75.0,75.0,0.74,"SPIN.CA, ORWE.CA, KABO.CA, ACGC.CA",8.52,3
 Industrial Goods & Cables,2,0.31,8.52,50.0,100.0,0.93,"ELEC.CA, SWDY.CA",7.72,4
-General / Verified EGX Expansion,103,0.0,12.42,61.17,71.84,0.78,"AFMC.CA, BIOC.CA, RREI.CA, AALR.CA, EALR.CA",7.64,5
-Banking & Financials,10,-0.35,6.15,70.0,70.0,1.32,"HDBK.CA, COMI.CA, ADIB.CA, EXPA.CA, CANA.CA",7.27,6
-Telecommunications,2,0.82,10.02,50.0,50.0,1.18,"ETEL.CA, EGSA.CA",7.1,7
-Building Materials,6,-0.01,12.34,66.67,50.0,0.67,"SCEM.CA, LCSW.CA, ARCC.CA, MCQE.CA, PRCL.CA",6.97,8
+General / Verified EGX Expansion,103,0.0,12.42,60.19,71.84,0.78,"AFMC.CA, BIOC.CA, RREI.CA, AALR.CA, EALR.CA",7.62,5
+Telecommunications,2,0.82,10.02,50.0,50.0,1.18,"ETEL.CA, EGSA.CA",7.1,6
+Building Materials,6,-0.01,12.34,66.67,50.0,0.67,"SCEM.CA, LCSW.CA, ARCC.CA, MCQE.CA, PRCL.CA",6.97,7
+Banking & Financials,10,-0.35,6.15,70.0,70.0,0.89,"COMI.CA, ADIB.CA, EXPA.CA, HDBK.CA, CANA.CA",6.62,8
 Healthcare,6,-0.6,5.4,50.0,66.67,1.02,"PHAR.CA, NIPH.CA, RMDA.CA, ISPH.CA, CLHO.CA",5.88,9
 Energy & Petrochemicals,4,0.0,3.79,50.0,50.0,1.35,"AMOC.CA, EGAS.CA, MOIL.CA, EKHO.CA",5.79,10
 Fintech & Payments,2,-1.07,8.85,50.0,50.0,0.69,"FWRY.CA, EFIH.CA",5.37,11
@@ -15,7 +15,7 @@ Real Estate,13,0.0,5.68,30.77,61.54,0.79,"TMGH.CA, ZMID.CA, HELI.CA, ORHD.CA, PH
 Investment Holding,3,-0.67,5.41,33.33,66.67,0.82,"CCAP.CA, OIH.CA, BINV.CA",5.04,14
 Non-bank Financial Services,5,0.0,3.63,20.0,60.0,0.77,"BTFH.CA, HRHO.CA, CNFN.CA, CICH.CA, ATLC.CA",4.28,15
 Transportation & Logistics,2,-2.24,3.29,50.0,50.0,0.93,"CSAG.CA, ALCN.CA",4.16,16
-Basic Resources & Chemicals,10,-1.24,5.81,30.0,20.0,1.1,"ABUK.CA, ISMQ.CA, MFPC.CA, SKPC.CA, EGCH.CA",3.81,17
+Basic Resources & Chemicals,10,-1.24,5.81,30.0,20.0,1.1,"ABUK.CA, ATQA.CA, ISMQ.CA, MFPC.CA, SKPC.CA",3.81,17
 "Food, Beverages & Tobacco",7,-0.62,-0.4,0.0,28.57,0.79,"EAST.CA, EFID.CA, JUFO.CA, POUL.CA, OLFI.CA",1.71,18
 Tourism & Leisure,1,1.75,-0.15,0.0,0.0,0.61,MHOT.CA,1.58,19
 Industrial Goods & Construction,1,0.0,0.0,0.0,0.0,1.0,ORAS.CA,1.5,20
