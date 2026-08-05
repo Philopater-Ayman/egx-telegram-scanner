@@ -1,13 +1,13 @@
 # Telegram-First EGX Scanner Report
 
-Scan phase: Post-close tomorrow tickets
-Generated UTC: 2026-08-05T14:48:47.731983+00:00
-Generated Cairo: 2026-08-05 17:48
-Run timing: target 15:30 Cairo | generated Cairo 2026-08-05 17:48 | cron 30 12 * * 0-4
-Trigger: scheduled cron=30 12 * * 0-4 mapped to post_close; Cairo now 2026-08-05 17:42
+Scan phase: Evening tomorrow plan
+Generated UTC: 2026-08-05T18:05:39.082290+00:00
+Generated Cairo: 2026-08-05 21:05
+Run timing: target 19:30 Cairo | generated Cairo 2026-08-05 21:05 | cron 30 16 * * 0-4
+Trigger: scheduled cron=30 16 * * 0-4 mapped to evening_plan; Cairo now 2026-08-05 21:00
 
 ## Control Center
-- Action tickets: 2 prioritized signal(s)
+- Action tickets: 0 prioritized signal(s)
 - BUY-ready candidates: 79
 - Data quality issues: 1
 - Tradeable price/liquidity tickers: 170/189
@@ -33,11 +33,11 @@ Trigger: scheduled cron=30 12 * * 0-4 mapped to post_close; Cairo now 2026-08-05
 ## AI Narrative
 - Provider: OpenRouter OK
 - Model: nvidia/nemotron-3-super-120b-a12b:free
-- Summary: ...
-- ...
-- ...
-- ...
-- ...
+- Summary: EGX30 and EGX70 are bullish with broad risk‑on, sector breadth ~62% led by Healthcare, Automotive & Distribution, and Industrial Goods & Cables; the scanner flagged several accumulation‑spike stocks with a bullish‑watch outlook but noted extended momentum, mixed proximity to resistance and lacking fresh evidence, so it issued a HOLD stance.
+- Liquidity: accumulation spikes (liquidity_spike 2.5‑4.2×) show short‑term buying interest that could support upside over the next 1‑3 days if sustained.
+- Sector tailwind: leading sectors (Healthcare, Automotive & Distribution, Industrial Goods & Cables) have 100% of constituents above MA20/MA50, providing a supportive backdrop for stocks in those groups.
+- Technical stance: most tickets sit close to or just below their 20‑day resistance (support_distance_pct 6‑18%, resistance_distance_pct -3.5 to +0.7) with RSI ranging 54‑79, indicating some are extended or overheated and 
+- Regime & uncertainty: EGX30/EGX70 bullishness and broad risk‑on raise appetite, but without clear evidence or fresh catalyst the scanner defaults to HOLD, highlighting the need for confirmation before acting.
 
 ## Top Liquidity Spikes
 - MOIN.CA: spike=52.11 liquidity=167193888.0 outlook=WEAK_OR_RISKY score=0 buy_ready=False
@@ -57,14 +57,7 @@ Trigger: scheduled cron=30 12 * * 0-4 mapped to post_close; Cairo now 2026-08-05
 - #8 Building Materials: score=8.85 5d=-1.38% 20d=6.09% aboveMA50=100.0%
 
 ## Today's Prioritized Action Tickets
-- Priority #1: BUY HRHO.CA
-  - Entry: 27.91 | Take profit: 30.15 | Stop loss: 26.79
-  - Confidence: LOW | score=32.9 | outlook=BULLISH_WATCH 90.33
-  - Reason: WATCH/BUY SETUP: HRHO.CA has aligned current price data, liquidity above threshold, price above MA20/MA50, RSI 68.15, support 25.95, resistance 27.48, and evidence sources. Macro trend is Bullish; market regime is BROAD_RISK_ON; verify price action in Thndr before treating it as a swing entry.
-- Priority #2: BUY EFID.CA
-  - Entry: 30.79 | Take profit: 33.25 | Stop loss: 29.56
-  - Confidence: LOW | score=32.02 | outlook=BULLISH_WATCH 90.33
-  - Reason: WATCH/BUY SETUP: EFID.CA has aligned current price data, liquidity above threshold, price above MA20/MA50, RSI 65.92, support 26.64, resistance 31.99, and evidence sources. Macro trend is Bullish; market regime is BROAD_RISK_ON; verify price action in Thndr before treating it as a swing entry.
+- HOLD: Local fallback HOLD: no candidate passed evidence, liquidity, freshness, and technical gates.
 
 ## Thndr Instruction
 - Advisor-only signal mode is active. The scanner never executes trades.
@@ -296,38 +289,31 @@ Trigger: scheduled cron=30 12 * * 0-4 mapped to post_close; Cairo now 2026-08-05
 - These checks are historical context only, not a prediction or guarantee.
 
 ## Evidence
-- HRHO.CA: status=RECENT_ACCEPTED latest=2026-08-13 age_days=0 sources=3 expected=EFG Holding summary=EFG Holding (HRHO.CA) reported a 20.10% increase in revenue for 2025. The company's fintech subsidiary, Valu, commenced trading on the EGX, and EFG Hermes was ranked #1 in brokerage across five MENA markets in the first half of 2026. The company also released documents for its Ordinary General Meeting in April 2026 and Extraordinary General Meeting in September 2025. Upcoming earnings are scheduled for August 13, 2026.
-  - EFG Holding Company S.A.E (EGX:HRHO) Stock Price & Overview (2025 Financials, Earnings Date Aug 13, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEFzFMrPwVNiT2qIV9GElKJkENyYYOHfx1KuA8DFww6TEQh-kcnvoafvPCYJFIYArAyDtx99uei12Txye2gdZGAs8QoDN5xHkgt-4qPYmuBjNMvBjgqbra3LpZwyB2Z2yAIdCE=
-  - EFG Holding - News: Valu Commences Trading on EGX, EFG Hermes Ranks #1 in Brokerage (August 1, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFdWiu3LZM3VdPGlMtuqr995SqrzGFRSc82_ET_ilBmC0c0CzKhChkCQc4vu-5E49J-yleJ_HmjA8mtuvY73geOvTLyOT3YHf92IUPV16FdjcXJpg==
-  - The Egyptian Exchange - Market Activity - Historical Statistics - Stocks Data (Close Price 25/06/2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHklJbUkC9NuBnFp5kb2YMebMUu7SCK11RZuvJpL1sgHtAn6KOf7x534RVsG0gSF0yWAVPumr3_gbcbcPdQ9y0Al_nC7lqW2rJ-bKx-YTVQF42B4qS_OZzAlt0r3WmjZ1MyRLKBas94Lv9nIzh4WJpvvrQscIo=
-- EFID.CA: status=RECENT_ACCEPTED latest=2026-08-11 age_days=0 sources=3 expected=Edita Food Industries summary=Edita Food Industries (EFID.CA) demonstrated strong financial performance in 2025, with revenue increasing by 29.53% and earnings by 65.53%. The company reported 22.2% revenue growth in 2Q2025 and approved H1 2025 financials, including plans for Iraq expansion. Edita also announced a free share distribution and doubled its capital to EGP 280 million. Upcoming earnings are scheduled for August 11, 2026.
-  - Edita Food Industries SAE Stock Price Today | EGX: EFID Live - Investing.com (News on 2Q2025 revenue, FY2024 surge, H1 2025 financials, capital increase): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGVPXrCmXMNGS4N8GmW_8qsRk6vc1rtvFiBZ9346J4r8TQUEvkcUcdC4HiVUU7bNnZ_0n4-SJSs3QVXAz96fBBrDtgWSNCFQN7AosgX1HtUn47y7bRA2TTH8XgiE3ib7U13AysH-heXfbCoNuiv9zpFh_U=
-  - Edita Food Industries Company (S.A.E) (EGX:EFID) Stock Price & Overview (2025 Financials, Earnings Date Aug 11, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFejRhNyadwCYNig7Wvr9vvA0_NlXw2_o4Dc1GkgJxjncoEgN3tQiUD9MpchDwyl0vByZpiSmYy7iJZ7i3yUJTroHc7qB7DNm2SgJFvQZ4HgxR1ZjrUcp2ga84PzGK9M5dZeaY=
-  - Edita Food Industries SAE Share Price Today (EFID) | EGX - mystocks.africa: https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHDtbDMl-ygRLiCGhVhwFK9QTUKJ8OIjp0GDWH8MGpRoQVcf8YrReNSGscuBKfSBz-K-bxdmKIxqDBFF30uh3rjMt-wUr_iIVjqQ1RYxtN4Uip2q38iClFOAC8i4FpBwHwTT0xAO-FfKCKpjRKa4yuFwt6LT1YG
-- MTIE.CA: status=RECENT_ACCEPTED latest=2026-07-23 age_days=13 sources=3 expected=MM Group For Industry and International Trade summary=MM Group For Industry and International Trade (MTIE.CA) has been active on the EGX, with the exchange examining the registration of its capital increase shares as of July 20, 2026. The company reported increased profits in Q1 2026 (May 20, 2026) and approved a EGP 234 million capital hike through bonus shares (March 26, 2026, and May 17, 2026). The live share price was EGP 9.38 on July 23, 2026.
-  - MM Group for Industry & International Trade (MTIE) Stock Price | Starta Markets (Live price July 23, 2026, News on capital increase, Q1 2026 profits, bonus shares): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHPatp-Z4xnr7TE5VqkUCdZAW52roS3naT9fzBwLEQXqZZW6GRCT8s9GnPFMcT2WvNypk14rCwso-8H0015_HJ3SPdieaFis8T4IUGakiPSxLZxo0X5mLuUOkFD0qSMCg==
-  - MM Group for Industry Stock Price Today | EGX: MTIE Live - Investing.com: https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGjESceQcOChV1ZrXZbLM5EO5TRsYAUrVcspHYDYQQuplUxI40PMjvsdEQn0kyBtXN7vGkn98NYZyBe-kNNXoa-ndJWBislMEGteMuK6B3zWDNWC6x4Id8-fqLt3d8ufAleREpdvFilrX-Ob1gQ4YixoKI=
-  - MM Group for Industry & International Trade (MTIE.EG) Live Chart &... - mystocks.africa (Share price July 07, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF7ohgr_f-2KLFD73ge-dHl-F_w0b-3IVICgO08nfPlTTLymPFKxUJn18eMeRUQCcOEuG7DreS0AzodNljY4pBP3XH0lOYd_xRCIzI7YP_6GCT22DEQTw9gw67hs6DUcPtSq3YsbPSdTgdZF4ULQZMNUN1RtX8c1rJfduSM_WjrZ_qpcNmEkZ8gLng=
-- ALUM.CA: status=RECENT_ACCEPTED latest=2026-08-13 age_days=0 sources=3 expected=Arab Aluminum Company (S.A.E) summary=Arab Aluminum Company (ALUM.CA) reported annual revenue of EGP 579.20 million in 2025, marking a 33.84% growth. In the quarter ending December 31, 2025, revenue increased by 67.85% to EGP 136.14 million, and net income improved to EGP 8.61 million from a previous quarter's loss. The last trading date reported was July 30, 2026. Upcoming earnings are scheduled for August 13, 2026.
-  - Arab Aluminum Company (S.A.E) (EGX:ALUM) Stock Price & Overview (2025 Financials, Earnings Date Aug 13, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFEa3V1vdGoMe4UdVKLm6OYcfq8Oajpilxfa6_n3ttURVZTyANS1p1BGtOFNXlrR5TXIBm0yJlAKUPCRAVX1IslOIp96yZDufJYISTN7k1jl8dN_NVEy7iYwdNwB69xOYZPU_I=
-  - Arab Aluminum Company (S.A.E) (EGX:ALUM) Revenue (Annual 2025, Q4 2025): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG7GqmEnmmqSthDgnAX2WxdCa_KiN6k2ZgjOcaCtF2JvKTbDuXSCNvtFcmDwLeB15XAjH2PcyZ57tt_sNcc-Py4jdv5Hx74I2qtgLHwkAFWpI9HaMUtmreDhMeZWfhGlrn75QFrH_iVz3H4WQ==
-  - EGX:ALUM Financials | Arab Aluminum - Investing.com (Latest quarter revenue and net income): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHeiPBUKfqGuxqccCYAfWLgcAZTSfluTvtaYnSHi2y-aCqmU3mtNxokjwX1xCe57a6Pi3KRjEkF1olMmAUHo7AUGqGWfO5G7SgUA-Z6k-XDIGa5OJhOIZ1VQpaD7bjDO-b5b1cm74HHTddfvSr0nTiqxT9qJ9FaCeGX8yYZ
-- FWRY.CA: status=RECENT_ACCEPTED latest=2026-08-13 age_days=0 sources=3 expected=Fawry For Banking Technology and Electronic Payments summary=Fawry For Banking Technology and Electronic Payments (FWRY.CA) demonstrated strong financial performance in 2025, with revenue increasing by 57.00% and earnings by 82.19%. The company continued its growth into 2026, recording EGP 2.4 billion in consolidated revenues in Q1 2026. Fawry is expanding its services, including plans to launch a microinsurance subsidiary and receiving a EGP 250 million facility from EBRD for SME projects. Upcoming earnings are scheduled for August 13, 2026.
-  - Fawry for Banking Technology and Electronic Payments SAE (EGX:FWRY) - Stock Analysis (2025 Financials, Earnings Date Aug 13, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFhv_qe_3tiQ7CnX8Z2ZdZUfnotO_O0Uko_Mi0YrpF8M9v0nKq9OAvhszkHYmEo_BeSu5QJcIgCDGbOVsvhusyP_Ofw94Sut2e_XPPqdY_wBuPcQ4_yjeAn01uMNLEOCx-0cnc=
-  - Fawry for Banking Technology and Electronic Payments SAE (FWRY) - Mubasher Info (News on Q1 2026 revenues, EBRD facility, microinsurance, 2025 profits, 9M-25 profits - Last update: August 4, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEMr91OQAvHVRH723J5Hg3HxCDDL2hkRVCW_SJ0z9BxssLCy_ckd6gE78_ftYU9hxzo7WFLDADc_jaXFWmd-7Z2ybN3Knir5o5ePWfvNK5Wf6_uijXbYl_MTHFvIewbLiCH-4g27OKgj3Jy7dgaDYxY
-  - Fawry For Banking Technology And Electronic Payment Balance Sheet – EGX:FWRY (Q1 2026 Total Assets): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFm-DHH-_BL3s5Xs7eX3TQ2zzo6MbNP3h54zCyXBiNrnBxqbapfl3PKdq0cvYThVMkdZUvjh1iE7kR2IlCWXg5pVOy1sv1bZ1qYkeR_ArKjS2oc89rAfdW9YfQvgNV5KvRoEw6G58VIP40f2NqfbGF8Few909LHhzZ9b33fwXsjkw==
-- MFSC.CA: status=ACCEPTED_UNDATED latest=n/a age_days=n/a sources=3 expected=Egypt Free Shops Co. summary=Egypt Duty Free Shops posts lower consolidated net profits at nearly EGP 88m in Q1-25/26; Egypt Free Shops achieves higher profits in Q1-FY22/23; Egypt Free Shops’ earnings soar 26% in FY21/22 Gemini also reviewed web evidence but did not return ticker-specific citations.
+- HRHO.CA: status=REJECTED_TICKER_MISMATCH latest=n/a age_days=n/a sources=0 expected=EFG Holding summary=Evidence rejected for HRHO.CA: source text did not clearly match HRHO.CA / EFG Holding.
+- EFID.CA: status=REJECTED_TICKER_MISMATCH latest=n/a age_days=n/a sources=0 expected=Edita Food Industries summary=Evidence rejected for EFID.CA: source text did not clearly match EFID.CA / Edita Food Industries.
+- MTIE.CA: status=REJECTED_TICKER_MISMATCH latest=n/a age_days=n/a sources=0 expected=MM Group For Industry and International Trade summary=Evidence rejected for MTIE.CA: source text did not clearly match MTIE.CA / MM Group For Industry and International Trade.
+- ALUM.CA: status=ACCEPTED_UNDATED latest=n/a age_days=n/a sources=3 expected=Arab Aluminum Company (S.A.E) summary=Arab Aluminum’s stock holds steady as bullish pattern breaks; Arab Aluminum profits rise 7% in H1-17; Arab Aluminum OGM approves EGP 1/shr dividends
+  - Arab Aluminum’s stock holds steady as bullish pattern breaks: https://english.mubasher.info/news/4564438/Arab-Aluminum-s-stock-holds-steady-as-bullish-pattern-breaks/
+  - Arab Aluminum profits rise 7% in H1-17: https://english.mubasher.info/news/3144589/Arab-Aluminum-profits-rise-7-in-H1-17/
+  - Arab Aluminum OGM approves EGP 1/shr dividends: https://english.mubasher.info/news/3076498/Arab-Aluminum-OGM-approves-EGP-1-shr-dividends/
+- FWRY.CA: status=REJECTED_TICKER_MISMATCH latest=n/a age_days=n/a sources=0 expected=Fawry For Banking Technology and Electronic Payments summary=Evidence rejected for FWRY.CA: source text did not clearly match FWRY.CA / Fawry For Banking Technology and Electronic Payments.
+- MFSC.CA: status=ACCEPTED_UNDATED latest=n/a age_days=n/a sources=3 expected=Egypt Free Shops Co. summary=Egypt Duty Free Shops posts lower consolidated net profits at nearly EGP 88m in Q1-25/26; Egypt Free Shops achieves higher profits in Q1-FY22/23; Egypt Free Shops’ earnings soar 26% in FY21/22
   - Egypt Duty Free Shops posts lower consolidated net profits at nearly EGP 88m in Q1-25/26: https://english.mubasher.info/news/4530712/Egypt-Duty-Free-Shops-posts-lower-consolidated-net-profits-at-nearly-EGP-88m-in-Q1-25-26/
   - Egypt Free Shops achieves higher profits in Q1-FY22/23: https://english.mubasher.info/news/4042863/Egypt-Free-Shops-achieves-higher-profits-in-Q1-FY22-23/
   - Egypt Free Shops’ earnings soar 26% in FY21/22: https://english.mubasher.info/news/3993622/Egypt-Free-Shops-earnings-soar-26-in-FY21-22/
-- KZPC.CA: status=RECENT_ACCEPTED latest=2026-06-26 age_days=40 sources=3 expected=Kafr El Zayat For Pesticides & Chemicals Co.(S.A.E) summary=Kafr El Zayat For Pesticides & Chemicals Co. (KZPC.CA) reported standalone net profits of EGP 160,053,425 for H1 2025 (August 13, 2025). In 2025, the company's annual revenue was EGP 2.96 billion, a decrease of 17.21%. For the quarter ending March 31, 2026, revenue was EGP 498.60 million, with a net loss of EGP 13.48 million. The stock has shown a 13.76% increase over the last year.
-  - Kafr El Zayat For Pesticides & Chemicals Co.(S.A.E) (EGX:KZPC) Company Profile & Description (June 26, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFvNc-Rx9-zJP-R0tfCdR0wSEBfHD7OvzBR0CdgyGo-Y2e-rAZ6WSErm6A-LCmCn0wG5G7UeIqNFbrlswB5XCgPawhswlP0WO4uou_Nz5BA47ci9ogmpqSUwyYG_zMjyHwhTfo6QvAuzN9COg==
-  - Kafr El Zayat For Pesticides & Chemicals Co.(S.A.E) (EGX:KZPC) Revenue (Q1 2026, Annual 2025): https://vertexaisearch.google.com/grounding-api-redirect/AUZIYQF_Jx3VQVBnsqVbR2AUSLGwDOJPPjQvb8E0Ax-BSu_LUmiNi77NfMb75PbDYS_4pgQgo_BGnEHQp4eUsw5RyvOIjwyB72ZVvV7_O1SuAr1HrEWEgRq6zikWDvS0SwVjRQ4w2lt85k4SifQZnA==
-  - Market HighLights - Sigma Capital (H1 2025 Financial Results - August 13, 2025): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEerYZkoONYrdRzt8faxZDAEuqpOJYk6jWeWXHuWMjREW8VPiCm1W1hr76N8ADePoJfc5WqLkKA7xDXWnWkvA3Qwoo6psescjPez0vScaCgFIOkr6127KcAwhPR3ohn7UpTx2901foSXmhcGJrrD82d-SSCdhSiWthVeIOsYP9jQ_LUyHwyVGCgyeK3j7zg9DyzejPQWtNqkBta4f1l
-- PHAR.CA: status=RECENT_ACCEPTED latest=2026-08-03 age_days=2 sources=3 expected=Egyptian International Pharmaceutical Industries summary=Egyptian International Pharmaceutical Industries (PHAR.CA) has recent trading data, with its stock price at EGP 134.30 as of August 3, 2026. The company's 52-week range has been between EGP 43.60 and EGP 156.00. Financial statistics, including EPS and P/E ratio, are available based on Q1 2026 results.
-  - Egyptian International Pharmaceutical Industries Company (EGX:PHAR) - Stock Analysis (Company profile June 12, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGypWz7WKYDbBfGMSzO-n3JETZE_BgfVrahTTlYCLgVREI6pkhnX9oFz2goBOCqMKcuICUkmT9bflUHnbKF3scElkyzVTXTaUDnUUIyGr4mMZl-AkpGwoDo4-m-IrPDlh7kROl1-Y5-8gxYlg==
-  - EIPICO Stock Price Today | EGX: PHAR Live - Investing.com (Stock price Aug 03, 2026, 52-week range): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHmNCy7Ri0cQihqLG667ECA5z0RpFV8Sh8Qz_zJY0JqIPL9dm42viGp_Iuol1hBO4SCIsMiGn3bqvKcWNU513sOP28PyKxa3h9JVIhMsjL7BypRprfZoCerDFokkmKyVrnkReso7aTamwIqZg==
-  - Egyptian International Pharmaceuticals (EIPICO) - Mubasher Info (Q1 2026 statistics): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFcf7bMWnINLF6BRTxOMVhHFXwk2i5B5e_1SvANIMABv8P3fIr-JTAIdGguJAbGGe4CvWdbKGaBkrxrYPK_Q-U6yT5RKpAYqhFsDWIqOVoJYvPLUMdSmMcBumiZNSzmXd6gLGKAZRuzZ7lxLnZ37oLc
+- KZPC.CA: status=OLD_ACCEPTED latest=2024-01-01 age_days=947 sources=3 expected=Kafr El Zayat For Pesticides & Chemicals Co.(S.A.E) summary=Kafr El Zayat to set up fund with EGP 5m capital; Kafr El Zayat Pesticides targets EGP 1.73bn sales in 2024; Kafr El Zayat Pesticides’ EGM approves stock split, capital hike
+  - Kafr El Zayat to set up fund with EGP 5m capital: https://english.mubasher.info/news/4201137/Kafr-El-Zayat-to-set-up-fund-with-EGP-5m-capital/
+  - Kafr El Zayat Pesticides targets EGP 1.73bn sales in 2024: https://english.mubasher.info/news/4200526/Kafr-El-Zayat-Pesticides-targets-EGP-1-73bn-sales-in-2024/
+  - Kafr El Zayat Pesticides’ EGM approves stock split, capital hike: https://english.mubasher.info/news/4052937/Kafr-El-Zayat-Pesticides-EGM-approves-stock-split-capital-hike/
+- PHAR.CA: status=REJECTED_TICKER_MISMATCH latest=n/a age_days=n/a sources=0 expected=Egyptian International Pharmaceutical Industries summary=Evidence rejected for PHAR.CA: source text did not clearly match PHAR.CA / Egyptian International Pharmaceutical Industries.
 
 ## Warnings
+- Evidence rejected for HRHO.CA: source text did not clearly match HRHO.CA / EFG Holding.
+- Gemini batch evidence failed: 'NoneType' object has no attribute 'strip'
+- Evidence rejected for EFID.CA: source text did not clearly match EFID.CA / Edita Food Industries.
+- Evidence rejected for MTIE.CA: source text did not clearly match MTIE.CA / MM Group For Industry and International Trade.
+- Evidence for ALUM.CA matches the company but no source/report date was detected.
+- Evidence rejected for FWRY.CA: source text did not clearly match FWRY.CA / Fawry For Banking Technology and Electronic Payments.
 - Evidence for MFSC.CA matches the company but no source/report date was detected.
+- Evidence for KZPC.CA matches the company but appears old; latest detected date is 2024-01-01.
+- Evidence rejected for PHAR.CA: source text did not clearly match PHAR.CA / Egyptian International Pharmaceutical Industries.
