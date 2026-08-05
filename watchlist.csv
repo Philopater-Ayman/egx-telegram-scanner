@@ -1,6 +1,6 @@
 Ticker,Company Name,Sector,AI Status,Watchlist Tier,Signal Status
-IFAP.CA,International Agricultural Products,Agriculture & Food Production,Active Tracking,WATCH,WATCH_ONLY
-DOMT.CA,Arabian Food Industries Domty,"Food, Beverages & Tobacco",Active Tracking,WATCH,WATCH_ONLY
-EFIH.CA,E-Finance For Digital and Financial Investments,Fintech & Payments,Active Tracking,WATCH,WATCH_ONLY
-ALUM.CA,Arab Aluminum Company (S.A.E),General / Verified EGX Expansion,Active Tracking,WATCH,WATCH_ONLY
-EMFD.CA,Emaar Misr for Development,Real Estate,Active Tracking,WATCH,WATCH_ONLY
+HRHO.CA,EFG Holding,Non-bank Financial Services,Active Tracking,WATCH,BUY_READY
+EFID.CA,Edita Food Industries,"Food, Beverages & Tobacco",Active Tracking,WATCH,BUY_READY
+ALUM.CA,Arab Aluminum Company (S.A.E),General / Verified EGX Expansion,Active Tracking,WATCH,BUY_READY
+FWRY.CA,Fawry For Banking Technology and Electronic Payments,Fintech & Payments,Active Tracking,WATCH,BUY_READY
+MFSC.CA,Egypt Free Shops Co.,General / Verified EGX Expansion,Active Tracking,WATCH,BUY_READY
