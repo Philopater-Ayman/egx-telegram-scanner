@@ -1,33 +1,27 @@
 # Provider Status
 
-Generated UTC: 2026-08-10T09:18:33.396687+00:00
-Generated Cairo: 2026-08-10 12:18
-- Scan phase: Intraday liquidity update
-- Run timing: target 11:00 Cairo | generated Cairo 2026-08-10 12:18 | cron 0 8 * * 0-4
-- Trigger: scheduled cron=0 8 * * 0-4 mapped to intraday; Cairo now 2026-08-10 12:13
+Generated UTC: 2026-08-10T13:57:21.691753+00:00
+Generated Cairo: 2026-08-10 16:57
+- Scan phase: Post-close tomorrow tickets
+- Run timing: target 15:30 Cairo | generated Cairo 2026-08-10 16:57 | cron 30 12 * * 0-4
+- Trigger: scheduled cron=30 12 * * 0-4 mapped to post_close; Cairo now 2026-08-10 16:50
 
 - Macro source: Mubasher EGX market page (delayed public data)
 - Macro freshness: DELAYED
 - Macro trend: Bearish
-- Market regime: EGX30 BULLISH / EGX70 BULLISH / sector breadth 57.14% / risk mode BROAD_RISK_ON
-- Market data: 150/189 tickers have tradeable current/delayed price data
-- Mubasher delayed current rows used: 179/189
-- Current/Yahoo technical mismatches blocked: 39/189
-- DirectFN public table health only, not trusted for action tickets: 249 rows | as_of=2026-08-10T09:13:06.508431+00:00 | error=none
+- Market regime: EGX30 BULLISH / EGX70 BULLISH / sector breadth 52.38% / risk mode SELECTIVE_SWING_TRADES_ONLY
+- Market data: 139/189 tickers have tradeable current/delayed price data
+- Mubasher delayed current rows used: 181/189
+- Current/Yahoo technical mismatches blocked: 50/189
+- DirectFN public table health only, not trusted for action tickets: 249 rows | as_of=2026-08-10T13:51:03.065330+00:00 | error=none
 - Data quality issues: 1
-- Evidence sources found: 12
+- Evidence sources found: 21
 - AI narrative: OpenRouter OK (nvidia/nemotron-3-super-120b-a12b:free)
 - Telegram sent on latest run: True
-- Latest ticket id(s): 20260810T091833Z_HOLD_NONE
-- Latest history write(s): /home/runner/work/egx-telegram-scanner/egx-telegram-scanner/trade_history.csv
+- Latest ticket id(s): 20260810T135721Z_BUY_MOSC.CA, 20260810T135721Z_BUY_EGCH.CA, 20260810T135721Z_BUY_CLHO.CA
+- Latest history write(s): /home/runner/work/egx-telegram-scanner/egx-telegram-scanner/trade_history.csv, /home/runner/work/egx-telegram-scanner/egx-telegram-scanner/trade_history.csv, /home/runner/work/egx-telegram-scanner/egx-telegram-scanner/trade_history.csv
 
 ## Warnings
 - ANFI.CA: No usable market data returned. Check Yahoo symbol or add a manual fallback row.
-- Evidence rejected for ATQA.CA: source text did not clearly match ATQA.CA / Misr National Steel Ataqa.
-- Evidence for CNFN.CA matches the company but appears old; latest detected date is 2025-01-01.
 - Evidence for ALUM.CA matches the company but no source/report date was detected.
-- Evidence for CSAG.CA matches the company but no source/report date was detected.
-- Evidence for SWDY.CA matches the company but no source/report date was detected.
 - Evidence rejected for OCDI.CA: source text did not clearly match OCDI.CA / Sixth of October Development and Investment.
-- Evidence rejected for HRHO.CA: source text did not clearly match HRHO.CA / EFG Holding.
-- Evidence rejected for EFIH.CA: source text did not clearly match EFIH.CA / E-Finance For Digital and Financial Investments.
