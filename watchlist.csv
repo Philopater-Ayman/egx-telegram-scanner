@@ -1,6 +1,6 @@
 Ticker,Company Name,Sector,AI Status,Watchlist Tier,Signal Status
 ALUM.CA,Arab Aluminum Company (S.A.E),General / Verified EGX Expansion,Active Tracking,WATCH,BUY_READY
 MOSC.CA,Misr Oils & Soap,General / Verified EGX Expansion,Active Tracking,WATCH,BUY_READY
-EGCH.CA,Egyptian Chemical Industries Kima,Basic Resources & Chemicals,Active Tracking,WATCH,BUY_READY
-CNFN.CA,Contact Financial Holding,Non-bank Financial Services,Active Tracking,WATCH,BUY_READY
 CLHO.CA,Cleopatra Hospital Group,Healthcare,Active Tracking,WATCH,BUY_READY
+CNFN.CA,Contact Financial Holding,Non-bank Financial Services,Active Tracking,WATCH,BUY_READY
+EGCH.CA,Egyptian Chemical Industries Kima,Basic Resources & Chemicals,Active Tracking,WATCH,BUY_READY
