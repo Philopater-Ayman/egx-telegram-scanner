@@ -1,5 +1,6 @@
 Ticker,Company Name,Sector,AI Status,Watchlist Tier,Signal Status
-COSG.CA,Cairo Oil & Soap Company,General / Verified EGX Expansion,Active Tracking,WATCH,BUY_READY
 ETEL.CA,Telecom Egypt,Telecommunications,Active Tracking,WATCH,BUY_READY
-OLFI.CA,Obour Land For Food Industries,"Food, Beverages & Tobacco",Active Tracking,WATCH,BUY_READY
-COPR.CA,Copper for Commercial Investment & Real Estate Development,General / Verified EGX Expansion,Active Tracking,WATCH,BUY_READY
+COSG.CA,Cairo Oil & Soap Company,General / Verified EGX Expansion,Active Tracking,WATCH,BUY_READY
+SCEM.CA,Sinai Cement,Building Materials,Active Tracking,WATCH,BUY_READY
+EFIH.CA,E-Finance For Digital and Financial Investments,Fintech & Payments,Active Tracking,WATCH,BUY_READY
+MTIE.CA,MM Group For Industry and International Trade,Automotive & Distribution,Active Tracking,WATCH,BUY_READY
