@@ -1,5 +1,5 @@
 Ticker,Company Name,Sector,AI Status,Watchlist Tier,Signal Status
-CLHO.CA,Cleopatra Hospital Group,Healthcare,Active Tracking,WATCH,BUY_READY
-MOED.CA,"The Egyptian Modern Education Systems, S.A.E.",General / Verified EGX Expansion,Active Tracking,WATCH,BUY_READY
-CCAP.CA,Qalaa Holdings,Investment Holding,Active Tracking,WATCH,BUY_READY
-RTVC.CA,Remco Tourism Villages Construction,General / Verified EGX Expansion,Active Tracking,WATCH,BUY_READY
+CLHO.CA,Cleopatra Hospital Group,Healthcare,Active Tracking,WATCH,WATCH_ONLY
+MOED.CA,"The Egyptian Modern Education Systems, S.A.E.",General / Verified EGX Expansion,Active Tracking,WATCH,WATCH_ONLY
+CCAP.CA,Qalaa Holdings,Investment Holding,Active Tracking,WATCH,WATCH_ONLY
+RTVC.CA,Remco Tourism Villages Construction,General / Verified EGX Expansion,Active Tracking,WATCH,WATCH_ONLY
