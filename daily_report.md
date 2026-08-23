@@ -1,10 +1,10 @@
 # Telegram-First EGX Scanner Report
 
-Scan phase: Post-close tomorrow tickets
-Generated UTC: 2026-08-23T13:11:55.527272+00:00
-Generated Cairo: 2026-08-23 16:11
-Run timing: target 15:30 Cairo | generated Cairo 2026-08-23 16:11 | cron 30 12 * * 0-4
-Trigger: scheduled cron=30 12 * * 0-4 mapped to post_close; Cairo now 2026-08-23 16:08
+Scan phase: Evening tomorrow plan
+Generated UTC: 2026-08-23T16:52:38.107015+00:00
+Generated Cairo: 2026-08-23 19:52
+Run timing: target 19:30 Cairo | generated Cairo 2026-08-23 19:52 | cron 30 16 * * 0-4
+Trigger: scheduled cron=30 16 * * 0-4 mapped to evening_plan; Cairo now 2026-08-23 19:48
 
 ## Control Center
 - Action tickets: 0 prioritized signal(s)
@@ -33,11 +33,11 @@ Trigger: scheduled cron=30 12 * * 0-4 mapped to post_close; Cairo now 2026-08-23
 ## AI Narrative
 - Provider: OpenRouter OK
 - Model: nvidia/nemotron-3-super-120b-a12b:free
-- Summary: EGX30 and EGX70 are mixed with weak sector breadth (≈33%), triggering a defensive risk mode that blocks new buys; the scanner highlights several tickets with bullish‑watch or constructive outlooks and accumulation‑spike liquidity, but extended momentum and proximity to resistance keep confidence low, so it advises holding.
-- Tickets were prioritized for high rank scores, bullish‑watch/constructive outlooks, and strong sector ranks (Education, Transportation & Logistics, Building Materials) combined with accumulation‑spike liquidity regimes.
-- Liquidity is spiking or cooling, many stocks sit near resistance or far above support with elevated RSI, suggesting limited upside in the next 1‑3 days.
-- EGX30/EGX70 show mixed trends (negative 5‑day returns, high MA‑20/50 alignment) while sector breadth is weak, shifting the risk mode to DEFENSIVE_NO_NEW_BUY and increasing caution.
-- Uncertainty remains low confidence; a reversal could occur if breadth improves or liquidity dries up, so watch for changes in sector scores and MA crosses.
+- Summary: EGX30 and EGX70 are mixed with weak sector breadth (33%) and a defensive risk mode that blocks new buys; the scanner therefore holds, noting accumulation spikes on select tickets but extended momentum and cooling liquidity that limit near‑term upside.
+- Liquidity spikes on CCAP.CA, COPR.CA and others show short‑term buying interest, yet high RSI or proximity to resistance suggests limited room for gains over the next 1‑3 days.
+- Sector breadth is low; leading sectors (Education, Transportation & Logistics, Building Materials) have strong 20‑day returns but mixed 5‑day performance, indicating sector support may hold while short‑term momentum wane
+- EGX30/EGX70 regime shows mixed trends with negative median 5‑day returns, triggering defensive risk mode that prevents new buys; uncertainty remains about whether breadth will improve.
+- Many tickets sit well above their 20‑day support (e.g., TALM.CA ~24% above) while resistance is nearby, so any upside could be capped and downside risk persists.
 
 ## Top Liquidity Spikes
 - GRCA.CA: spike=8.53 liquidity=226897392.0 outlook=WEAK_OR_RISKY score=0 buy_ready=False
