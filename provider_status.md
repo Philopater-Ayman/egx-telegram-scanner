@@ -1,10 +1,10 @@
 # Provider Status
 
-Generated UTC: 2026-08-25T13:30:21.153248+00:00
-Generated Cairo: 2026-08-25 16:30
-- Scan phase: Post-close tomorrow tickets
-- Run timing: target 15:30 Cairo | generated Cairo 2026-08-25 16:30 | cron 30 12 * * 0-4
-- Trigger: scheduled cron=30 12 * * 0-4 mapped to post_close; Cairo now 2026-08-25 16:25
+Generated UTC: 2026-08-25T17:07:10.855059+00:00
+Generated Cairo: 2026-08-25 20:07
+- Scan phase: Evening tomorrow plan
+- Run timing: target 19:30 Cairo | generated Cairo 2026-08-25 20:07 | cron 30 16 * * 0-4
+- Trigger: scheduled cron=30 16 * * 0-4 mapped to evening_plan; Cairo now 2026-08-25 20:03
 
 - Macro source: Mubasher EGX market page (delayed public data)
 - Macro freshness: DELAYED
@@ -13,14 +13,15 @@ Generated Cairo: 2026-08-25 16:30
 - Market data: 158/189 tickers have tradeable current/delayed price data
 - Mubasher delayed current rows used: 183/189
 - Current/Yahoo technical mismatches blocked: 31/189
-- DirectFN public table health only, not trusted for action tickets: 213 rows | as_of=2026-08-25T13:25:48.206171+00:00 | error=none
+- DirectFN public table health only, not trusted for action tickets: 213 rows | as_of=2026-08-25T17:03:08.622925+00:00 | error=none
 - Data quality issues: 1
 - Evidence sources found: 21
-- AI narrative: OpenRouter OK (openai/gpt-oss-120b:free)
+- AI narrative: OpenRouter OK (nvidia/nemotron-3-super-120b-a12b:free)
 - Telegram sent on latest run: True
-- Latest ticket id(s): 20260825T133021Z_BUY_RTVC.CA, 20260825T133021Z_BUY_KABO.CA, 20260825T133021Z_BUY_CLHO.CA
+- Latest ticket id(s): 20260825T170710Z_BUY_RTVC.CA, 20260825T170710Z_BUY_KABO.CA, 20260825T170710Z_BUY_CLHO.CA
 - Latest history write(s): /home/runner/work/egx-telegram-scanner/egx-telegram-scanner/trade_history.csv, /home/runner/work/egx-telegram-scanner/egx-telegram-scanner/trade_history.csv, /home/runner/work/egx-telegram-scanner/egx-telegram-scanner/trade_history.csv
 
 ## Warnings
 - ANFI.CA: No usable market data returned. Check Yahoo symbol or add a manual fallback row.
-- Evidence rejected for COMI.CA: source text did not clearly match COMI.CA / Commercial International Bank Egypt.
+- Evidence for ACGC.CA matches the company but no source/report date was detected.
+- Evidence rejected for NHPS.CA: source text did not clearly match NHPS.CA / National Company for Housing Professional Syndicates SAE.
