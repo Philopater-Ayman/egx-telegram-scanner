@@ -1,13 +1,13 @@
 # Telegram-First EGX Scanner Report
 
-Scan phase: Pre-market risk check
-Generated UTC: 2026-08-25T06:06:13.146341+00:00
-Generated Cairo: 2026-08-25 09:06
-Run timing: target 08:45 Cairo | generated Cairo 2026-08-25 09:06 | cron 45 5 * * 0-4
-Trigger: scheduled cron=45 5 * * 0-4 mapped to pre_market; Cairo now 2026-08-25 09:01
+Scan phase: Open liquidity confirmation
+Generated UTC: 2026-08-25T07:17:04.548093+00:00
+Generated Cairo: 2026-08-25 10:17
+Run timing: target 09:15 Cairo | generated Cairo 2026-08-25 10:17 | cron 15 6 * * 0-4
+Trigger: scheduled cron=15 6 * * 0-4 mapped to open_confirm; Cairo now 2026-08-25 10:05
 
 ## Control Center
-- Action tickets: 3 prioritized signal(s)
+- Action tickets: 0 prioritized signal(s)
 - BUY-ready candidates: 58
 - Data quality issues: 1
 - Tradeable price/liquidity tickers: 172/189
@@ -33,11 +33,8 @@ Trigger: scheduled cron=45 5 * * 0-4 mapped to pre_market; Cairo now 2026-08-25 
 ## AI Narrative
 - Provider: OpenRouter OK
 - Model: nvidia/nemotron-3-super-120b-a12b:free
-- Summary: Scanner prioritized KWIN.CA, ALCN.CA and KABO.CA as BUY setups because each shows price above MA20/MA50, adequate liquidity and a bullish‑watch outlook, while EGX30 is bullish, EGX70 mixed and sector breadth is 42.9%, keeping risk mode in SELECTIVE_SWING_TRADES_ONLY.
-- KWIN.CA: price above MA20/MA50, RSI ~50, liquidity spike, support ~84, resistance ~112; outlook bullish watch but sector not leading adds uncertainty.
-- ALCN.CA: price above MA20/MA50, RSI 64 (extended momentum), liquidity tradeable, support ~28.8, resistance ~32.6; outlook bullish watch with risk from extended momentum.
-- KABO.CA: price above MA20/MA50, RSI 68 (extended), liquidity cooling, support ~7.75, resistance ~9.75; outlook bullish watch, uncertainty from cooling liquidity and extended momentum.
-- EGX30 bullish, EGX70 mixed, sector breadth 42.9%; market regime SELECTIVE_SWING_TRADES_ONLY means only high‑conviction setups are considered, increasing caution for the next 1‑3 days.
+- Summary: EGX30 bullish / EGX70 mixed / sector breadth 42.86% / risk mode SELECTIVE_SWING_TRADES_ONLY
+- Top rows were ranked by score, liquidity spike and sector rank, but many show overheated RSI, distant support or cooling liquidity, limiting near‑term upside.
 
 ## Top Liquidity Spikes
 - SUGR.CA: spike=18.73 liquidity=445642784.0 outlook=WEAK_OR_RISKY score=0 buy_ready=False
@@ -57,18 +54,7 @@ Trigger: scheduled cron=45 5 * * 0-4 mapped to pre_market; Cairo now 2026-08-25 
 - #8 Energy & Petrochemicals: score=7.48 5d=0.89% 20d=11.38% aboveMA50=75.0%
 
 ## Today's Prioritized Action Tickets
-- Priority #1: BUY KWIN.CA
-  - Entry: 100.52 | Take profit: 111.39 | Stop loss: 96.5
-  - Confidence: LOW | score=29.28 | outlook=BULLISH_WATCH 87.21
-  - Reason: BUY SETUP: KWIN.CA has aligned current price data, liquidity above threshold, price above MA20/MA50, RSI 49.62, support 84.08, resistance 111.95, and evidence sources. Macro trend is Bullish; market regime is SELECTIVE_SWING_TRADES_ONLY; verify price action in Thndr before treating it as a swing entry.
-- Priority #2: BUY ALCN.CA
-  - Entry: 31.0 | Take profit: 32.74 | Stop loss: 30.13
-  - Confidence: LOW | score=28.4 | outlook=BULLISH_WATCH 92.69
-  - Reason: BUY SETUP: ALCN.CA has aligned current price data, liquidity above threshold, price above MA20/MA50, RSI 64.04, support 28.8, resistance 32.61, and evidence sources. Macro trend is Bullish; market regime is SELECTIVE_SWING_TRADES_ONLY; verify price action in Thndr before treating it as a swing entry.
-- Priority #3: BUY KABO.CA
-  - Entry: 9.0 | Take profit: 9.72 | Stop loss: 8.64
-  - Confidence: LOW | score=27.4 | outlook=BULLISH_WATCH 82
-  - Reason: WATCH/BUY SETUP: KABO.CA has aligned current price data, liquidity above threshold, price above MA20/MA50, RSI 67.9, support 7.75, resistance 9.75, and evidence sources. Macro trend is Bullish; market regime is SELECTIVE_SWING_TRADES_ONLY; verify price action in Thndr before treating it as a swing entry.
+- HOLD: Local fallback HOLD: no candidate passed evidence, liquidity, freshness, and technical gates.
 
 ## Thndr Instruction
 - Advisor-only signal mode is active. The scanner never executes trades.
@@ -294,44 +280,39 @@ Trigger: scheduled cron=45 5 * * 0-4 mapped to pre_market; Cairo now 2026-08-25 
 - ZMID.CA: score=23.28 buy_ready=False sector_rank=11 price=8.05 support=7.06 resistance=8.2 source=Yahoo Finance history + Mubasher delayed current trading data as_of=24 August 01:29 PM market time freshness=DELAYED_CURRENT RSI=80.0 liquidity=119794720.0 spike=0.49
 
 ## Backtesting Lite
-- KWIN.CA: 180d return=48.65%, max drawdown=-34.04%, MA20>MA50 days last20=20, as_of=2026-08-22T21:00:00+00:00
-- ACGC.CA: 180d return=57.36%, max drawdown=-15.74%, MA20>MA50 days last20=20, as_of=2026-08-22T21:00:00+00:00
-- ALCN.CA: 180d return=33.73%, max drawdown=-15.87%, MA20>MA50 days last20=20, as_of=2026-08-22T21:00:00+00:00
+- KWIN.CA: 180d return=48.17%, max drawdown=-34.04%, MA20>MA50 days last20=20, as_of=2026-08-22T21:00:00+00:00
+- ACGC.CA: 180d return=56.1%, max drawdown=-15.74%, MA20>MA50 days last20=20, as_of=2026-08-22T21:00:00+00:00
+- ALCN.CA: 180d return=35.45%, max drawdown=-15.87%, MA20>MA50 days last20=20, as_of=2026-08-22T21:00:00+00:00
 - These checks are historical context only, not a prediction or guarantee.
 
 ## Evidence
-- KWIN.CA: status=RECENT_ACCEPTED latest=2026-08-09 age_days=16 sources=3 expected=El Kahera El Watania Investment summary=El Kahera El Watania Investment (KWIN.CA) has reported its standalone financial results for the first half of 2026, showing a net profit of EGP 2,748,135. The company has also made several market announcements in July and August 2026, including decisions from its Board of Directors meetings and disclosures regarding its shareholder structure. The stock reached an all-time high on July 27, 2026.
-  - El Kahera El Watania Investment (KWIN.CA) Reports its Financial Results (Standalone) for the Period from 01/01/2026 to 30/06/2026 (August 09, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEgqKyhYVJx0yp31xgWhgKmKibXDX57ho3G_VgRorqT8LSSjcOks7Wohlz7P-smcY-k_jhbLFM-YqvEhataXLHXU52l2RKKNk2l7d9HDOCHBcvP6ia9XScDWc-U9tI=
-  - El Kahera El Watania Investment (KWIN.CA) - Decisions of the BoD Meeting (August 9, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFzpZwtvSe30NKMojHPnTCeaLLjLzJS74oLfP4TshxEcW-CSEqnWZe10JQzbE-T0Xv22K5jNHAyyeEs3RME1v9kTeyVJMbKzqf7CTQiGmtCrXX11IKX7SdBN6nqUlIlthgNjVU2SqmWApk9UFvwVgQ=
-  - El Kahera El Watania Investment (KWIN.CA) - Release Regarding a Disclosure Form (July 29, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFzpZwtvSe30NKMojHPnTCeaLLjLzJS74oLfP4TshxEcW-CSEqnWZe10JQzbE-T0Xv22K5jNHAyyeEs3RME1v9kTeyVJMbKzqf7CTQiGmtCrXX11IKX7SdBN6nqUlIlthgNjVU2SqmWApk9UFvwVgQ=
-- ACGC.CA: status=RECENT_ACCEPTED latest=2026-08-20 age_days=5 sources=3 expected=Arab Cotton Ginning summary=Arab Cotton Ginning (ACGC.CA) has been active with several market announcements in July and August 2026, including a release concerning stock dividends and disclosures regarding its Board of Directors and shareholder structure. The EGX Listing Committee imposed a penalty on the company on August 20, 2026, for violating listing rules related to financial statements for periods ending December 31, 2025, and March 31, 2026. Insider trading executions were also reported on October 28, 2025.
-  - Release from Arab Cotton Ginning (ACGC.CA) Concerning a Stock dividends (August 3, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEQpTqsxknumzYP_5TbrZzE-GZjc31n6Ls98oW9mncWZeYy5cC7fU3JQY_4lIiRTTsd8pVYX2anX8Yg8FY9PMADCWEByqGcDZEVJEk1szwoFhAU3ZPk81jC93Zs2mF-nvuYnZKSmj18vTa3LiXK6bU=
-  - Arab Cotton Ginning (ACGC.CA) - Disclosure Form for the BoD & the Shareholders' Structure (July 9, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEQpTqsxknumzYP_5TbrZzE-GZjc31n6Ls98oW9mncWZeYy5cC7fU3JQY_4lIiRTTsd8pVYX2anX8Yg8FY9PMADCWEByqGcDZEVJEk1szwoFhAU3ZPk81jC93Zs2mF-nvuYnZKSmj18vTa3LiXK6bU=
-  - Arab Cotton Ginning (ACGC.CA) - EGM Minutes (Notarized) (July 7, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEQpTqsxknumzYP_5TbrZzE-GZjc31n6Ls98oW9mncWZeYy5cC7fU3JQY_4lIiRTTsd8pVYX2anX8Yg8FY9PMADCWEByqGcDZEVJEk1szwoFhAU3ZPk81jC93Zs2mF-nvuYnZKSmj18vTa3LiXK6bU=
-- ALCN.CA: status=RECENT_ACCEPTED latest=2026-02-01 age_days=205 sources=3 expected=Alexandria Containers and Cargo Handling summary=Alexandria Containers and Cargo Handling (ALCN.CA) has seen significant corporate activity in the past year. The company's board approved its 2026 budget and a EGP 1.2 billion investment plan in February 2026. In late 2025, there were multiple reports of acquisition interest, with AD Ports and Black Caspian Logistics considering taking over additional stakes in the company. The company also reported lower net profits in the first half of fiscal year 2025/2026.
-  - Alexandria Container's board approves 2026 budget, unveils EGP 1.2bn investment plan (February 1, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHMx8hS4Vor-BFYGY51j9JA2fLhvUSEoo4tF_g4x-i_rdQndCt7XuPmA9PSCWi6P4JG9ISFp7cXB8UKuU7OMtbdj8pY2QzLYhZ-LlCWWyYnx3sNbeCPLOHhWX8NXBMwa6TURI8XrqRyxnlHGFn2JuYlka1edQ==
-  - Alexandria Container logs lower net profits at EGP 3.3bn in H1-25/26 (January 25, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHMx8hS4Vor-BFYGY51j9JA2fLhvUSEoo4tF_g4x-i_rdQndCt7XuPmA9PSCWi6P4JG9ISFp7cXB8UKuU7OMtbdj8pY2QzLYhZ-LlCWWyYnx3sNbeCPLOHhWX8NXBMwa6TURI8XrqRyxnlHGFn2JuYlka1edQ==
-  - AD Ports aims to take over Alexandria Containers through additional stake (December 15, 2025): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHMx8hS4Vor-BFYGY51j9JA2fLhvUSEoo4tF_g4x-i_rdQndCt7XuPmA9PSCWi6P4JG9ISFp7cXB8UKuU7OMtbdj8pY2QzLYhZ-LlCWWyYnx3sNbeCPLOHhWX8NXBMwa6TURI8XrqRyxnlHGFn2JuYlka1edQ==
-- INFI.CA: status=RECENT_ACCEPTED latest=2026-08-03 age_days=22 sources=3 expected=Ismailia National Co. for Food Industries summary=Ismailia National Co. for Food Industries (INFI.CA) has released its earnings results for the second quarter and six months ended June 30, 2026, on August 3, 2026. The company also reported its first-quarter 2026 and full-year 2025 earnings earlier in the year. Shareholders approved a cash dividend of EGP 1 per share in March 2026, and the company held its Annual General Meeting on March 7, 2026.
-  - Ismailia National Co. for Food Industries Reports Earnings Results for the Second Quarter and Six Months Ended June 30, 2026 (August 03, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEr-POeDD3o8Et4sPoUcJsqOxGy6FEeBnJJJWDgdSdYut2csmsjjM5EmJqwRF7Yiv7ie0JLhxpkRCC_mMB7WAkCi-hN8DXBb5URDhr1Grd8xWSCkghsoNrS5dTMpvURwapnS253X9SGBgp2PFzM04LVMzTd5jLjDvJfTi4WecXqcJZORYm0YVur0NWgJUvcnWQQv2CfPn-Tfd5hSu6u80NORnxevv8QQAvs6KrAfWTfU-gKTrx4_BQ4UNOFL5-VMu9UtIVJuQ7sjoZ53TxMI-teEJI=
-  - Ismailia National Co. for Food Industries Reports Earnings Results for the First Quarter Ended March 31, 2026 (May 13, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEr-POeDD3o8Et4sPoUcJsqOxGy6FEeBnJJJWDgdSdYut2csmsjjM5EmJqwRF7Yiv7ie0JLhxpkRCC_mMB7WAkCi-hN8DXBb5URDhr1Grd8xWSCkghsoNrS5dTMpvURwapnS253X9SGBgp2PFzM04LVMzTd5jLjDvJfTi4WecXqcJZORYm0YVur0NWgJUvcnWQQv2CfPn-Tfd5hSu6u80NORnxevv8QQAvs6KrAfWTfU-gKTrx4_BQ4UNOFL5-VMu9UtIVJuQ7sjoZ53TxMI-teEJI=
-  - Ismailia Foods shareholders approve FY cash dividend EGP 1 per share (March 08, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEr-POeDD3o8Et4sPoUcJsqOxGy6FEeBnJJJWDgdSdYut2csmsjjM5EmJqwRF7Yiv7ie0JLhxpkRCC_mMB7WAkCi-hN8DXBb5URDhr1Grd8xWSCkghsoNrS5dTMpvURwapnS253X9SGBgp2PFzM04LVMzTd5jLjDvJfTi4WecXqcJZORYm0YVur0NWgJUvcnWQQv2CfPn-Tfd5hSu6u80NORnxevv8QQAvs6KrAfWTfU-gKTrx4_BQ4UNOFL5-VMu9UtIVJuQ7sjoZ53TxMI-teEJI=
-- KABO.CA: status=RECENT_ACCEPTED latest=2026-07-15 age_days=41 sources=3 expected=El Nasr Clothing and Textiles summary=El Nasr Clothing and Textiles (KABO.CA) has been actively expanding its operations, as evidenced by international agreements and an expansion plan unveiled in December 2025. The company has also issued several market disclosures and financial statements in recent months, including periodic disclosures to shareholders and decisions from its Board of Directors meetings in June and July 2026. Unaudited consolidated net profits for Q1-25/26 were reported, and KABO sold over 1.9 million shares in Alexandria Spinning and Weaving.
-  - El Nasr Clothes & Textiles (Kabo) (KABO.CA) - Release Concerning the Periodic Disclosure to Shareholders (July 15, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEmvGxxLFLt__uVXsJDCKW8bekcECscT5IDWX-d5nWfrK7V30Y9EATjWsWv33VyKtW0-88sjaQBQnJZYcLyfOe03N245o3WbxhlqdvRhT2HqRx_rfgG0HKO0nDcycxtaQU8eovW7uz7Nbla9YGgxe8=
-  - El Nasr Clothes & Textiles (Kabo) (KABO.CA) - Disclosure Form for the BoD & the Shareholders' Structure (July 13, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEmvGxxLFLt__uVXsJDCKW8bekcECscT5IDWX-d5nWfrK7V30Y9EATjWsWv33VyKtW0-88sjaQBQnJZYcLyfOe03N245o3WbxhlqdvRhT2HqRx_rfgG0HKO0nDcycxtkQU8eovW7uz7Nbla9YGgxe8=
-  - Release from El Nasr Clothes & Textiles (Kabo) (KABO.CA) Concerning the Financial Statements (June 23, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEmvGxxLFLt__uVXsJDCKW8bekcECscT5IDWX-d5nWfrK7V30Y9EATjWsWv33VyKtW0-88sjaQBQnJZYcLyfOe03N245o3WbxhlqdvRhT2HqRx_rfgG0HKO0nDcycxtkQU8eovW7uz7Nbla9YGgxe8=
-- SPIN.CA: status=RECENT_ACCEPTED latest=2026-08-06 age_days=19 sources=3 expected=Alexandria Spinning and Weaving summary=Alexandria Spinning and Weaving (SPIN.CA) has had recent Board of Directors meetings in August 2026, with decisions and invitations released. The Egyptian Exchange approved the listing of an EGP 80.2 million capital hike for the company in July 2025. Recent news also indicates the company logged EGP 159.5 million in revenues in Q1-25/26 and ended FY24/25 with net losses. Additionally, El Nasr Clothing and Textiles (KABO) sold over 1.9 million shares in Spinalex for EGP 20 million.
-  - Alexandria Spinning & Weaving (SPINALEX) (SPIN.CA) - Decisions of the Board of Directors' Meeting (August 6, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGZ75m54HLcAXAvkmHabW_oYG9-8ZVbKgmgjcs3E4LCMLm0KndehCUoixecikJj1aVyHQcLC2dJq2AUKhkfehCusm2wTTetPyu64s4AZVe3_fo9Nf3GNkxno4X823qwq_LBfkx44G100G-ADScBlQ0=
-  - Release from Alexandria Spinning & Weaving (SPINALEX) (SPIN.CA) Concerning the BoD Meeting Invitation (August 5, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGZ75m54HLcAXAvkmHabW_oYG9-8ZVbKgmgjcs3E4LCMLm0KndehCUoixecikJj1aVyHQcLC2dJq2AUKhkfehCusm2wTTetPyu64s4AZVe3_fo9Nf3GNkxno4X823qwq_LBfkx44G100G-ADScBlQ0=
-  - EGX nods to listing EGP 80.2M capital hike for Spinalex (July 30, 2025): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGm4dQ3Hvfa1s79R-6BcC-e99lHT14tvXgHgugsRyxeA5gq4dj0hF39JK4_6M8PRQa6_16kV2FG1NQis5xDFJ6OOochgqvEN-oSAM8M96B56Sw09C8sV5yiMQIprTjWCqQ6ds57aeQw6oIjKLZ4=
-- EFIH.CA: status=RECENT_ACCEPTED latest=2026-08-20 age_days=5 sources=3 expected=E-Finance For Digital and Financial Investments summary=E-Finance For Digital and Financial Investments (EFIH.CA) has issued several releases concerning its Board of Directors' decisions and periodic disclosures to shareholders in July and August 2026. The company declared cash dividends with an ex-dividend date of June 25, 2026. Recent news indicates strong financial performance, with 42% higher net profits in Q1-26 and consolidated revenues exceeding EGP 2.2 billion, and consolidated profits surpassing EGP 2.4 billion in 2025. E-finance is also reportedly eyeing a full acquisition of an NBFS company.
-  - Release from E-Finance For Digital and Financial Investements SAE (EFIH.CA) Concerning the Board of Directors' Decisions (August 20, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGEEVMuD7GVYqycKYyKrnTKAoZ0DbXpeUJ0trNZQJ-b7MpmDbBNbfZBh0b-tOChFPcOjJTHdJbDKm2ayXoTy-I_sTfz3TRtcks7RQ0C3jK5Q1rZrtlgRG5TQM3jIlaGD3RO47-4Yv_SfXwYXTfGHUA=
-  - Release from E-Finance For Digital and Financial Investements SAE (EFIH.CA) Concerning the Board of Directors' Decisions (August 12, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGEEVMuD7GVYqycKYyKrnTKAoZ0DbXpeUJ0trNZQJ-b7MpmDbBNbfZBh0b-tOChFPcOjJTHdJbDKm2ayXoTy-I_sTfz3TRtcks7RQ0C3jK5Q1rZrtlgRG5TQM3jIlaGD3RO47-4Yv_SfXwYXTfGHUA=
-  - E-Finance For Digital and Financial Investements SAE (EFIH.CA) - Release Concerning the Periodic Disclosure to Shareholders (July 22, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGEEVMuD7GVYqycKYyKrnTKAoZ0DbXpeUJ0trNZQJ-b7MpmDbBNbfZBh0b-tOChFPcOjJTHdJbDKm2ayXoTy-I_sTfz3TRtcks7RQ0C3jK5Q1rZrtlgRG5TQM3jIlaGD3RO47-4Yv_SfXwYXTfGHUA=
-- FWRY.CA: status=RECENT_ACCEPTED latest=2026-08-19 age_days=6 sources=3 expected=Fawry For Banking Technology and Electronic Payments summary=Fawry For Banking Technology and Electronic Payments (FWRY.CA) reported strong 1H2026 results on August 13, 2026, with significant year-on-year growth in revenues, EBITDA, and net profit. The company has also issued several periodic disclosures to shareholders in July 2026 and secured a financing facility. Recent news highlights Fawry's Q1-26 consolidated revenues, a EGP 250 million facility from EBRD for youth-led SME projects, and plans to launch a microinsurance subsidiary. A stock analysis and Shariah compliance report was updated on August 19, 2026.
-  - Fawry Releases 1H2026 Results (August 13, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGyBD9nB9MJ14GrgDq7qBSe0eNDA2ghQenpLS9HNrvcZ9Tr4K-hqHRjOM9a04H9E66Z8bWG3egMGV9QIvVMqEFdya9aJW8wUBtJziCgWhUNOQFNuBkv0r0v
-  - Fawry For Banking Technology And Electronic Payment (FWRY.CA) - Release Regarding the Periodic Disclosure to Shareholders (July 22, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFauXtIfukc-yiY6vFgJI0sIGIBE5QsVUVEx38yb0U3Jjg3iKuneeEBqZU3jl87EfsiGZ715RfQB-yznVt_4oCgpgf_jL_RJ7GBJ66OCvGiLl3OsPbfwT2ssugeJBaGKzMb3qDqLPTcFzIW4WeaL_U=
-  - Release from Fawry For Banking Technology And Electronic Payment (FWRY.CA) Regarding the Obtaining of a Financing Facility (July 19, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFauXtIfukc-yiY6vFgJI0sIGIBE5QsVUVEx38yb0U3Jjg3iKuneeEBqZU3jl87EfsiGZ715RfQB-yznVt_4oCgpgf_jL_RJ7GBJ66OCvGiLl3OsPbfwT2ssugeJBaGKzMb3qDqLPTcFzIW4WeaL_U=
+- KWIN.CA: status=ACCEPTED_UNDATED latest=n/a age_days=n/a sources=3 expected=El Kahera El Watania Investment summary=ADIB Egypt&#39;s Cairo National unveils equity reduction transaction worth over EGP 3m; El Kahera El Watania to buy stake in Assiut for Agricultural Development; Tycoon Holding acquires 85% of Alexandria National Investment
+  - ADIB Egypt&#39;s Cairo National unveils equity reduction transaction worth over EGP 3m: https://english.mubasher.info/news/4546852/ADIB-Egypt-s-Cairo-National-unveils-equity-reduction-transaction-worth-over-EGP-3m/
+  - El Kahera El Watania to buy stake in Assiut for Agricultural Development: https://english.mubasher.info/news/4009433/El-Kahera-El-Watania-to-buy-stake-in-Assiut-for-Agricultural-Development/
+  - Tycoon Holding acquires 85% of Alexandria National Investment: https://english.mubasher.info/news/3844623/Tycoon-Holding-acquires-85-of-Alexandria-National-Investment/
+- ACGC.CA: status=ACCEPTED_UNDATED latest=n/a age_days=n/a sources=3 expected=Arab Cotton Ginning summary=Arab Cotton Ginning’s stock nears significant resistance level; Arab Cotton Ginning’s standalone profit grows 142% YoY in 9M-23/24; Arab Cotton Ginning’s consolidated profit leaps 371% YoY in H1-23/24
+  - Arab Cotton Ginning’s stock nears significant resistance level: https://english.mubasher.info/news/4549011/Arab-Cotton-Ginning-s-stock-nears-significant-resistance-level/
+  - Arab Cotton Ginning’s standalone profit grows 142% YoY in 9M-23/24: https://english.mubasher.info/news/4302757/Arab-Cotton-Ginning-s-standalone-profit-grows-142-YoY-in-9M-23-24/
+  - Arab Cotton Ginning’s consolidated profit leaps 371% YoY in H1-23/24: https://english.mubasher.info/news/4279332/Arab-Cotton-Ginning-s-consolidated-profit-leaps-371-YoY-in-H1-23-24/
+- ALCN.CA: status=REJECTED_TICKER_MISMATCH latest=n/a age_days=n/a sources=0 expected=Alexandria Containers and Cargo Handling summary=Evidence rejected for ALCN.CA: source text did not clearly match ALCN.CA / Alexandria Containers and Cargo Handling.
+- INFI.CA: status=RECENT_ACCEPTED latest=2026-01-01 age_days=236 sources=3 expected=Ismailia National Co. for Food Industries summary=Foodico stock targets higher levels; Foodico plans to log nearly EGP 70.5m profits in 2026; Foodico to secure EGP 12m loan from national bank
+  - Foodico stock targets higher levels: https://english.mubasher.info/news/4564894/Foodico-stock-targets-higher-levels/
+  - Foodico plans to log nearly EGP 70.5m profits in 2026: https://english.mubasher.info/news/4541309/Foodico-plans-to-log-nearly-EGP-70-5m-profits-in-2026/
+  - Foodico to secure EGP 12m loan from national bank: https://english.mubasher.info/news/3888447/Foodico-to-secure-EGP-12m-loan-from-national-bank/
+- KABO.CA: status=ACCEPTED_UNDATED latest=n/a age_days=n/a sources=3 expected=El Nasr Clothing and Textiles summary=KABO posts EGP 17m in Q1-25/26 unaudited consolidated net profits; KABO sells over 1.9m shares in Spinalex for EGP 20m; KABO unveils international agreements, expansion plan including export lines
+  - KABO posts EGP 17m in Q1-25/26 unaudited consolidated net profits: https://english.mubasher.info/news/4600162/KABO-posts-EGP-17m-in-Q1-25-26-unaudited-consolidated-net-profits/
+  - KABO sells over 1.9m shares in Spinalex for EGP 20m: https://english.mubasher.info/news/4543747/KABO-sells-over-1-9m-shares-in-Spinalex-for-EGP-20m/
+  - KABO unveils international agreements, expansion plan including export lines: https://english.mubasher.info/news/4533185/KABO-unveils-international-agreements-expansion-plan-including-export-lines/
+- SPIN.CA: status=REJECTED_TICKER_MISMATCH latest=n/a age_days=n/a sources=0 expected=Alexandria Spinning and Weaving summary=Evidence rejected for SPIN.CA: source text did not clearly match SPIN.CA / Alexandria Spinning and Weaving.
+- EFIH.CA: status=REJECTED_TICKER_MISMATCH latest=n/a age_days=n/a sources=0 expected=E-Finance For Digital and Financial Investments summary=Evidence rejected for EFIH.CA: source text did not clearly match EFIH.CA / E-Finance For Digital and Financial Investments.
+- FWRY.CA: status=REJECTED_TICKER_MISMATCH latest=n/a age_days=n/a sources=0 expected=Fawry For Banking Technology and Electronic Payments summary=Evidence rejected for FWRY.CA: source text did not clearly match FWRY.CA / Fawry For Banking Technology and Electronic Payments.
 
 ## Warnings
-- No blocking warnings.
+- Evidence for KWIN.CA matches the company but no source/report date was detected.
+- Gemini batch evidence failed: Server disconnected without sending a response.
+- Evidence for ACGC.CA matches the company but no source/report date was detected.
+- Evidence rejected for ALCN.CA: source text did not clearly match ALCN.CA / Alexandria Containers and Cargo Handling.
+- Evidence for KABO.CA matches the company but no source/report date was detected.
+- Evidence rejected for SPIN.CA: source text did not clearly match SPIN.CA / Alexandria Spinning and Weaving.
+- Evidence rejected for EFIH.CA: source text did not clearly match EFIH.CA / E-Finance For Digital and Financial Investments.
+- Evidence rejected for FWRY.CA: source text did not clearly match FWRY.CA / Fawry For Banking Technology and Electronic Payments.
