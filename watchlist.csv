@@ -1,6 +1,6 @@
 Ticker,Company Name,Sector,AI Status,Watchlist Tier,Signal Status
-RTVC.CA,Remco Tourism Villages Construction,General / Verified EGX Expansion,Active Tracking,WATCH,BUY_READY
-KABO.CA,El Nasr Clothing and Textiles,Textiles,Active Tracking,WATCH,BUY_READY
-CLHO.CA,Cleopatra Hospital Group,Healthcare,Active Tracking,WATCH,BUY_READY
-COMI.CA,Commercial International Bank Egypt,Banking & Financials,Active Tracking,WATCH,BUY_READY
-IFAP.CA,International Agricultural Products,Agriculture & Food Production,Active Tracking,WATCH,BUY_READY
+RTVC.CA,Remco Tourism Villages Construction,General / Verified EGX Expansion,Active Tracking,WATCH,WATCH_ONLY
+KABO.CA,El Nasr Clothing and Textiles,Textiles,Active Tracking,WATCH,WATCH_ONLY
+CLHO.CA,Cleopatra Hospital Group,Healthcare,Active Tracking,WATCH,WATCH_ONLY
+COMI.CA,Commercial International Bank Egypt,Banking & Financials,Active Tracking,WATCH,WATCH_ONLY
+IFAP.CA,International Agricultural Products,Agriculture & Food Production,Active Tracking,WATCH,WATCH_ONLY
