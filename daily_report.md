@@ -1,10 +1,10 @@
 # Telegram-First EGX Scanner Report
 
-Scan phase: Pre-market risk check
-Generated UTC: 2026-08-26T06:08:06.446545+00:00
-Generated Cairo: 2026-08-26 09:08
-Run timing: target 08:45 Cairo | generated Cairo 2026-08-26 09:08 | cron 45 5 * * 0-4
-Trigger: scheduled cron=45 5 * * 0-4 mapped to pre_market; Cairo now 2026-08-26 09:03
+Scan phase: Open liquidity confirmation
+Generated UTC: 2026-08-26T07:08:54.516591+00:00
+Generated Cairo: 2026-08-26 10:08
+Run timing: target 09:15 Cairo | generated Cairo 2026-08-26 10:08 | cron 15 6 * * 0-4
+Trigger: scheduled cron=15 6 * * 0-4 mapped to open_confirm; Cairo now 2026-08-26 10:05
 
 ## Control Center
 - Action tickets: 0 prioritized signal(s)
@@ -33,11 +33,9 @@ Trigger: scheduled cron=45 5 * * 0-4 mapped to pre_market; Cairo now 2026-08-26 
 ## AI Narrative
 - Provider: OpenRouter OK
 - Model: nvidia/nemotron-3-super-120b-a12b:free
-- Summary: EGX30/EGX70 remain mixed with weak sector breadth (14.29%), keeping risk mode defensive and blocking new buys; scanner flags several accumulation‑spike stocks but marks them HOLD due to overheated RSI, sector lag, or proximity to resistance.
-- Tickets were prioritized by highest rank_score and liquidity accumulation spikes, showing constructive or bullish‑watch outlooks despite the overall weak breadth.
-- Liquidity spikes suggest short‑term accumulation, but support/resistance distances (e.g., CCRS.CA near resistance, ALUM.CA far above support) imply limited upside and possible pullback over the next 1‑3 days.
-- Leading sectors (Investment Holding, Agriculture & Food, Textiles) show strong MA alignment, yet low overall breadth means even these stocks face headwinds from the defensive market regime.
-- EGX30/EGX70 mixed trend and defensive risk mode override individual bullish signals, maintaining a HOLD stance with uncertainty about near‑term direction.
+- Summary: Scanner prioritized these tickets based on high rank scores and liquidity spikes, but the EGX30/EGX70 mixed trend, weak sector breadth (14.29%), and defensive risk mode keep all actions at HOLD.
+- Liquidity: several stocks show accumulation spikes or tradeable regimes, indicating short‑term interest, yet many have overheated RSI (>70) suggesting caution.
+- Sector & technicals: tickets sit in leading sectors (Investment Holding, Textiles) but sector breadth is low; most are near resistance or above support, limiting near‑term upside.
 
 ## Top Liquidity Spikes
 - EBSC.CA: spike=9.61 liquidity=53502448.0 outlook=WEAK_OR_RISKY score=0 buy_ready=False
@@ -274,8 +272,8 @@ Trigger: scheduled cron=45 5 * * 0-4 mapped to pre_market; Cairo now 2026-08-26 
 - ZMID.CA: score=20.8 buy_ready=False sector_rank=11 price=7.92 support=7.06 resistance=8.25 source=Yahoo Finance history + Mubasher delayed current trading data as_of=25 August 01:29 PM market time freshness=DELAYED_CURRENT RSI=71.79 liquidity=107459664.0 spike=0.45
 
 ## Backtesting Lite
-- CCRS.CA: 180d return=110.07%, max drawdown=-34.85%, MA20>MA50 days last20=20, as_of=2026-08-23T21:00:00+00:00
-- ALUM.CA: 180d return=61.71%, max drawdown=-21.86%, MA20>MA50 days last20=15, as_of=2026-08-23T21:00:00+00:00
+- CCRS.CA: 180d return=108.57%, max drawdown=-34.85%, MA20>MA50 days last20=20, as_of=2026-08-23T21:00:00+00:00
+- ALUM.CA: 180d return=62.25%, max drawdown=-21.86%, MA20>MA50 days last20=15, as_of=2026-08-23T21:00:00+00:00
 - RUBX.CA: 180d return=40.45%, max drawdown=-18.45%, MA20>MA50 days last20=20, as_of=2026-08-23T21:00:00+00:00
 - These checks are historical context only, not a prediction or guarantee.
 
