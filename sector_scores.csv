@@ -10,8 +10,8 @@ Agriculture & Food Production,2,1.23,9.54,50.0,100.0,0.47,"MPCO.CA, IFAP.CA",7.6
 Tourism & Leisure,1,-0.05,8.54,100.0,0.0,1.71,MHOT.CA,7.25,9
 "Food, Beverages & Tobacco",7,0.91,8.52,71.43,57.14,0.43,"EAST.CA, SUGR.CA, JUFO.CA, EFID.CA, POUL.CA",6.57,10
 Technology & Distribution,1,5.12,-1.73,100.0,0.0,1.24,RAYA.CA,6.56,11
-Real Estate,13,0.79,3.97,46.15,76.92,0.76,"ZMID.CA, ARAB.CA, PHDC.CA, HELI.CA, TMGH.CA",5.94,12
-General / Verified EGX Expansion,103,0.0,6.49,53.4,73.79,0.47,"LUTS.CA, OFH.CA, GTWL.CA, CCRS.CA, DAPH.CA",5.82,13
+General / Verified EGX Expansion,103,0.15,6.49,54.37,74.76,0.47,"LUTS.CA, OFH.CA, GTWL.CA, CCRS.CA, DAPH.CA",5.94,12
+Real Estate,13,0.79,3.97,46.15,76.92,0.76,"ZMID.CA, ARAB.CA, PHDC.CA, HELI.CA, TMGH.CA",5.94,13
 Basic Resources & Chemicals,10,-0.11,5.64,50.0,80.0,0.52,"EGAL.CA, ATQA.CA, ABUK.CA, MFPC.CA, SKPC.CA",5.76,14
 Telecommunications,2,-0.02,3.29,50.0,50.0,0.45,"ETEL.CA, EGSA.CA",4.32,15
 Energy & Petrochemicals,4,-0.21,4.71,25.0,75.0,0.27,"AMOC.CA, EGAS.CA, MOIL.CA, EKHO.CA",4.26,16
