@@ -1,10 +1,10 @@
 # Telegram-First EGX Scanner Report
 
-Scan phase: Open liquidity confirmation
-Generated UTC: 2026-08-27T17:39:38.961462+00:00
-Generated Cairo: 2026-08-27 20:39
-Run timing: target 09:15 Cairo | generated Cairo 2026-08-27 20:39 | cron 15 6 * * 0-4
-Trigger: scheduled cron=15 6 * * 0-4 mapped to open_confirm; Cairo now 2026-08-27 20:35
+Scan phase: Intraday liquidity update
+Generated UTC: 2026-08-27T18:49:02.216399+00:00
+Generated Cairo: 2026-08-27 21:49
+Run timing: target 11:00 Cairo | generated Cairo 2026-08-27 21:49 | cron 0 8 * * 0-4
+Trigger: scheduled cron=0 8 * * 0-4 mapped to intraday; Cairo now 2026-08-27 21:44
 
 ## Control Center
 - Action tickets: 3 prioritized signal(s)
@@ -33,10 +33,10 @@ Trigger: scheduled cron=15 6 * * 0-4 mapped to open_confirm; Cairo now 2026-08-2
 ## AI Narrative
 - Provider: OpenRouter OK
 - Model: nvidia/nemotron-3-super-120b-a12b:free
-- Summary: Scanner prioritized EBSC.CA, SPIN.CA and MCQE.CA as watch/buy setups under a SELECTIVE_SWING_TRADES_ONLY regime, with EGX30 showing constructive breadth and EGX70 mixed, overall sector breadth at 42.9% and low confidence due to sector‑not‑leading signals and mixed momentum.
-- EBSC.CA: price above MA20/MA50, RSI 57.5, liquidity spike 2.6×, support 1.85/resistance 2.28, BULLISH_WATCH outlook; sector not leading adds uncertainty.
-- SPIN.CA: liquidity spike 2.1×, price above MAs, RSI 67.6, support 15.3/resistance 21.9, BULLISH_WATCH outlook; momentum extended and far above support raise caution.
-- MCQE.CA: liquidity cooling (0.28× spike), price above MAs, RSI 64.9, support 178/resistance 292, BULLISH_WATCH outlook; Building Materials sector leads but weak liquidity increases uncertainty.
+- Summary: Scanner prioritized EBSC.CA, MCQE.CA, and DAPH.CA as watch/buy setups because each shows price above MA20/MA50, acceptable liquidity, and a bullish watch outlook, while overall sector breadth is modest (42.86%) and the EGX30 constructive/EGX70 mixed regime keeps risk mode in selective swing trades only.
+- Liquidity: EBSC.CA and DAPH.CA exhibit accumulation spikes (liquidity spikes 2.63× and 3.03×), whereas MCQE.CA’s liquidity is cooling (spike 0.28×).
+- Outlook & sector: All three carry a BULLISH_WATCH outlook (scores 93.8, 78.0, 83.8) but their sectors are not leading; leading sectors are Textiles, Building Materials, and Investment Holding.
+- Support/resistance proximity: Prices sit modestly above key support (EBSC ~11% above 1.85, MCQE ~32% above 178, DAPH ~26% above 92) with nearby resistance, limiting near‑term upside.
 
 ## Top Liquidity Spikes
 - FAIT.CA: spike=6.49 liquidity=40687024.0 outlook=BULLISH_WATCH score=76.8 buy_ready=False
@@ -60,14 +60,14 @@ Trigger: scheduled cron=15 6 * * 0-4 mapped to open_confirm; Cairo now 2026-08-2
   - Entry: 2.05 | Take profit: 2.27 | Stop loss: 1.97
   - Confidence: LOW | score=29.59 | outlook=BULLISH_WATCH 93.82
   - Reason: WATCH/BUY SETUP: EBSC.CA has aligned current price data, liquidity above threshold, price above MA20/MA50, RSI 57.45, support 1.85, resistance 2.28, and evidence sources. Macro trend is Bearish; market regime is SELECTIVE_SWING_TRADES_ONLY; verify price action in Thndr before treating it as a swing entry.
-- Priority #2: BUY SPIN.CA
-  - Entry: 19.16 | Take profit: 21.77 | Stop loss: 18.39
-  - Confidence: LOW | score=29.58 | outlook=BULLISH_WATCH 95
-  - Reason: WATCH/BUY SETUP: SPIN.CA has aligned current price data, liquidity above threshold, price above MA20/MA50, RSI 67.57, support 15.3, resistance 21.88, and evidence sources. Macro trend is Bearish; market regime is SELECTIVE_SWING_TRADES_ONLY; verify price action in Thndr before treating it as a swing entry.
-- Priority #3: BUY MCQE.CA
+- Priority #2: BUY MCQE.CA
   - Entry: 234.54 | Take profit: 290.86 | Stop loss: 225.16
   - Confidence: LOW | score=28.4 | outlook=BULLISH_WATCH 78
   - Reason: WATCH/BUY SETUP: MCQE.CA has aligned current price data, liquidity above threshold, price above MA20/MA50, RSI 64.88, support 178.0, resistance 292.32, and evidence sources. Macro trend is Bearish; market regime is SELECTIVE_SWING_TRADES_ONLY; verify price action in Thndr before treating it as a swing entry.
+- Priority #3: BUY DAPH.CA
+  - Entry: 116.0 | Take profit: 146.26 | Stop loss: 111.36
+  - Confidence: LOW | score=28.39 | outlook=BULLISH_WATCH 83.82
+  - Reason: WATCH/BUY SETUP: DAPH.CA has aligned current price data, liquidity above threshold, price above MA20/MA50, RSI 58.11, support 92.1, resistance 147.0, and evidence sources. Macro trend is Bearish; market regime is SELECTIVE_SWING_TRADES_ONLY; verify price action in Thndr before treating it as a swing entry.
 
 ## Thndr Instruction
 - Advisor-only signal mode is active. The scanner never executes trades.
@@ -299,37 +299,36 @@ Trigger: scheduled cron=15 6 * * 0-4 mapped to open_confirm; Cairo now 2026-08-2
 - These checks are historical context only, not a prediction or guarantee.
 
 ## Evidence
-- FAIT.CA: status=OLD_ACCEPTED latest=2025-01-01 age_days=603 sources=3 expected=Faisal Islamic Bank of Egypt summary=Faisal Islamic Bank of Egypt unveils dividends for 2025; Faisal Islamic Bank of Egypt’s consolidated net profits drop to EGP 4.6bn in 2025; Faisal Islamic Bank of Egypt posts 63% lower standalone net profits in 2025 Gemini also reviewed web evidence but did not return ticker-specific citations.
-  - Faisal Islamic Bank of Egypt unveils dividends for 2025: https://english.mubasher.info/news/4585552/Faisal-Islamic-Bank-of-Egypt-unveils-dividends-for-2025/
-  - Faisal Islamic Bank of Egypt’s consolidated net profits drop to EGP 4.6bn in 2025: https://english.mubasher.info/news/4582812/Faisal-Islamic-Bank-of-Egypt-s-consolidated-net-profits-drop-to-EGP-4-6bn-in-2025/
-  - Faisal Islamic Bank of Egypt posts 63% lower standalone net profits in 2025: https://english.mubasher.info/news/4548875/Faisal-Islamic-Bank-of-Egypt-posts-63-lower-standalone-net-profits-in-2025/
-- ARAB.CA: status=RECENT_ACCEPTED latest=2026-08-23 age_days=4 sources=3 expected=Arab Developers Holding summary=Recent disclosures and news for Arab Developers Holding (ARAB.CA) indicate various corporate actions, including EGM decisions, listing committee decisions, and a significant capital increase approval.
-  - ARAB Developers Holding (ARAB.CA) - EGM Decisions (August 16, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFeLjpWSAM-l1KxzDeobsRcoevzXFpqfvvHrCYNT3ou6CtUz5e26lDwCNnDdVzURbvsXpWLBjKmT5Nv7Yov9lKHTM6EixujOAz4n85EJVzQp74vn9GFKpF2qSN_x8df7qH9ObpfSkDP5AWkGZfFo78=
-  - ARAB Developers Holding (ARAB.CA) - Listing Committee Decision (August 9, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFeLjpWSAM-l1KxzDeobsRcoevzXFpqfvvHrCYNT3ou6CtUz5e26lDwCNnDdVzURbvsXpWLBjKmT5Nv7Yov9lKHTM6EixujOAz4n85EJVzQp74vn9GFKpF2qSN_x8df7qH9ObpfSkDP5AWkGZfFo78=
-  - ARAB Developers Holding (ARAB.CA) - EGM Minutes (before Certification) (August 23, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH_ldX2A5u3f9JORBnE-xE5BNAxsnZfCeDqybTjbM1iN660ATTlwKeLiKTR2OP5fFllS9-FEPZYG6LJV3rRs8v1U9PNw1s71CPMx_aEt6m-uM9JcXBtYs6cETZTbV4h74TXpgP1xrwKjnZ6nftKs63a
-- EBSC.CA: status=RECENT_ACCEPTED latest=2026-08-04 age_days=23 sources=3 expected=Osool ESB Securities Brokerage summary=Osool ESB Securities Brokerage (EBSC.CA) has released several recent disclosures concerning its Board of Directors and shareholder structure, along with news of a new MoU.
-  - Release from Osool Brokerage Securities Co. (EBSC.CA) Concerning the Board of Directors & the Executive Managers (August 4, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHg9sojKyWoFgY_GDugLi5FgjgUkP0H5IT82C4EHPT9qMU8qgLObKzwjI-6nHIjuenXfUAwnEr7mcEygzBM7o9SVJzRwoGHJTuMiOwO7UnnNKSFSysLLc6IY2MUnxwVWS_ZpG8gKes0Z0GE5CqgfRjH
-  - Osool ESB Securities Brokerage (EBSC.CA) - Disclosure Form for the BoD & the Shareholders' Structure (July 16, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHg9sojKyWoFgY_GDugLi5FgjgUkP0H5IT82C4EHPT9qMU8qgLObKzwjI-6nHIjuenXfUAwnEr7mcEygzBM7o9SVJzRwoGHJTuMiOwO7UnnNKSFSysLLc6IY2MUnxwVWS_ZpG8gKes0Z0GE5CqgfRjH
-  - Release from Osool Brokerage Securities Co. (EBSC.CA) Regarding a News Published on a Website (June 17, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHg9sojKyWoFgY_GDugLi5FgjgUkP0H5IT82C4EHPT9qMU8qgLObKzwjI-6nHIjuenXfUAwnEr7mcEygzBM7o9SVJzRwoGHJTuMiOwO7UnnNKSFSysLLc6IY2MUnxwVWS_ZpG8gKes0Z0GE5CqgfRjH
-- SPIN.CA: status=RECENT_ACCEPTED latest=2026-06-29 age_days=59 sources=1 expected=Alexandria Spinning and Weaving summary=Alexandria Spinning and Weaving (SPIN.CA) has been the subject of a voluntary purchase offer, with recent amendments to the target percentage.
-  - Alexandria Spinning & Weaving (SPINALEX) - Release from FRA concerning amendment to voluntary purchase offer (June 29, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH-2W6IDZjSb5miGYThReEago26y0JdFnsIUEy39_K1Qo6KqmK5Ih96gJ3mwFLCokdhQib6bmAoFoS3BFXEnhythNmZdiVTruHKREWocCctYiWJ9dpX_C9vQtxzCqUNkwRdKQc2HrnFAeUFsFf9Gp-GFeA=
+- FAIT.CA: status=RECENT_ACCEPTED latest=2026-08-27 age_days=0 sources=3 expected=Faisal Islamic Bank of Egypt summary=Faisal Islamic Bank of Egypt (FAIT.CA) has released several recent disclosures and board decisions. The company is also listed as Shariah-compliant.
+  - Faisal Islamic Bank of Egypt (FAIT.CA - FAITA.CA) - Board of Directors' Decisions (August 27, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFn7hZBGf3bpb5XOKuabDHfEaeQda-D6_MgYP7emnY1AEbcwm4--1MGY5lLwccB3jRAQo1Bg0Ekstfd4YdNhgq86iZXW5L635KM3RM0aQg_GHhACJjM1irIvs-FqBLrIAJjsisi_D8aIbuiFy6jrC5ssT-pF-jUcrkiEtqT1Pb9NJmDB7RraVohIT_t5kG8cqjVbfGvowE1-l3UJxHO4zInzCPDSoWeXcNurqo-kA5qVJjZA0Xp3WMvZNlOqC9gkCg7PkcV_f_gJ5S6GEKoYeJiPEBA2MJW9uc3h0cfxbpnqKkomCOWefD1IIPW_wUfLx4zZ8xtSCciWBkBDaeK
+  - Release from Faisal Islamic Bank of Egypt (FAITA.CA-FAIT.CA) Regarding the Bank's Indicators (August 20, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGEQwK9tm8ExIuvp1ufCH5bkDZuRIWypUKk2u3J1mH1c9NMnBjeWfU3VWKFpXxfJaxTFoQhMv0l6C8K7mXJaB7RnglJaZRF7DrejB8H7qOHjrM3xXIgwb4CAzG6kJ-rMouOuwqhUYh4SyxCxzF4_zZ5
+  - Release from Faisal Islamic Bank of Egypt - In EGP (FAIT.CA) Regarding the Performance Indicators (July 16, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH68okl-hLjFCNzORhY6ZqdM0XYfc4ql_iD9SwwU2pAk7CTIZVwK1sn_HNUT0NBfqNA-prd3QlVRWKxBk3d4aagWghw9WzplTtb4iNvFYJJ8FqJriE-vHqHpRYIX2bwQ0MRsYYDJzc
+- ARAB.CA: status=RECENT_ACCEPTED latest=2026-08-27 age_days=0 sources=3 expected=Arab Developers Holding summary=Arab Developers Holding (ARAB.CA) has had several recent extraordinary general meeting (EGM) related disclosures and news regarding expansion plans and capital increases.
+  - ARAB Developers Holding (ARAB.CA) - EGM Minutes (before Certification) (August 23, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFHJUaHnyFq9khyuanCrIY3uEXgypcovbOqW4pG1YUltGG5-eJJnMa6bmG6SIRpfZGYHL5PlcMvDjzLShDsxHXv0G5iErq8g9CL4FmP-gUDW031O0YoZMZJ4SeuSR94wu17jL4amLZ1UgigASlWwoU
+  - ARAB Developers Holding (ARAB.CA) - EGM Decisions (August 27, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFlD6zrMD29BG_kapwgY7z4j5Ymw5GZTwpHkXj9_2aKnM3cllbD0eFEpdbi9lE3MLg2_D1NvMqOvGaJ04JkvkB26Tu1anMf3YM0P_pyMWGC6s6beARn_TZUIwt5BISU0RitRNcmVuuRR3bIUefBzyWARr5rPRLTSmtNK-fBYhKGuDGAexZXQlpL1KiejYnnk58jIfglRwpRFpWGBRmaDPc
+  - Release from ARAB Developers Holding (ARAB.CA) Regarding the EGM (July 29, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFHJUaHnyFq9khyuanCrIY3uEXgypcovbOqW4pG1YUltGG5-eJJnMa6bmG6SIRpfZGYHL5PlcMvDjzLShDsxHXv0G5iErq8g9CL4FmP-gUDW031O0YoZMZJ4SeuSR94wu17jL4amLZ1UgigASlWwoU
+- EBSC.CA: status=RECENT_ACCEPTED latest=2026-08-19 age_days=8 sources=3 expected=Osool ESB Securities Brokerage summary=Osool ESB Securities Brokerage (EBSC.CA) has recent market analysis and a disclosure form within the last 12 months. The company is classified as not Shariah-compliant.
+  - Osool ESB Securities Brokerage (EBSC) Stock Analysis Today — EGX (Last updated: August 19, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFbP8s-JBZaIait3wSpSYrzae_LwXN-OfDjGKHGHPGZSneHFKSO7DMVN_ri0UsUMGdMtrh8o18p4BCZPmBIPTc0yWBMjuC-CyVCZybsX4jRvhTcQkT3_CDazsndw6UpuA==
+  - Osool ESB Securities Brokerage (EBSC.CA) - Disclosure Form for the BoD & the Shareholders' Structure (July 22, 2025): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGUMhr3_sQ8QpnKCiA9fALlmbN08iLeN3f7irGl3t_G7M32vtKWqrIgUuDNh1QeJ7uZrH7jtRkzWn0j8gWehEjZeeGZ27hxjBEoJ_gosUwmONKEqE2OxVkuaA_t7zKD3yCrQW_rWC9Ai69tWBdYSpFmp5cWji2WK8-1H4NtOyMW4p_xkC8r1Nu4PM5ufQnJNqnemxNyI_GM_lbbCw==
+  - Osool ESB Securities Brokerage (EBSC.CA) is not halal (May 21, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHRv4W3zGqke1ci1UUvSPEtxgeOK9RdoyntJOktDaxd4EH-Hrfr2o-c0t0485_CyFE5Mz470xlPos-TT1SWD2yje_jJTQdhVCRs3kyhGYFlZaSunyjsdiMkiXYh
+- SPIN.CA: status=REJECTED_TICKER_MISMATCH latest=n/a age_days=n/a sources=0 expected=Alexandria Spinning and Weaving summary=Evidence rejected for SPIN.CA: source text did not clearly match SPIN.CA / Alexandria Spinning and Weaving.
 - CCRS.CA: status=OLD_ACCEPTED latest=2016-01-01 age_days=3891 sources=3 expected=Gulf Canadian Company for Arab Real Estate Investment summary=10 EGX-listed firms deny ties to UAE-based Abraaj; Gulf Canadian OGM to discuss 2016 financials Thursday; Gulf Canadian OGM to discuss 2016 results 22 March Gemini also reviewed web evidence but did not return ticker-specific citations.
   - 10 EGX-listed firms deny ties to UAE-based Abraaj: https://english.mubasher.info/news/3308086/10-EGX-listed-firms-deny-ties-to-UAE-based-Abraaj/
   - Gulf Canadian OGM to discuss 2016 financials Thursday: https://english.mubasher.info/news/3076282/Gulf-Canadian-OGM-to-discuss-2016-financials-Thursday/
   - Gulf Canadian OGM to discuss 2016 results 22 March: https://english.mubasher.info/news/3067564/Gulf-Canadian-OGM-to-discuss-2016-results-22-March/
-- MCQE.CA: status=RECENT_ACCEPTED latest=2025-12-18 age_days=252 sources=3 expected=Misr Cement Qena summary=Misr Cement Qena (MCQE.CA) has seen recent activity including being added to the EGX 30 index, various board decisions, and news regarding expansion plans and a solar energy partnership.
-  - Misr Cement Company (S.A.E)(CASE:MCQE) added to EGX 30 Index (August 4, 2025): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFAopwhK844vkIorStyTdZWBVYuzhKW4cHJhUwIKdVTyqc9j6ru431y31rV2_p8aT4xuIpJS3f91b5qZl2qFwIcFk-Lh-edUN4xKUvLkMJzvkyA6DcRj0aGrbzO4DBuuHWy38tVeWQx2yXINj3sis3jB3hYGW19ltIK4yzoeiYV83pP7iE1yZup83MKbQ==
-  - Misr Cement Company (S.A.E) Reports Earnings Results for the First Quarter Ended March 31, 2025 (June 1, 2025): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFAopwhK844vkIorStyTdZWBVYuzhKW4cHJhUwIKdVTyqc9j6ru431y31rV2_p8aT4xuIpJS3f91b5qZl2qFwIcFk-Lh-edUN4xKUvLkMJzvkyA6DcRj0aGrbzO4DBuuHWy38tVeWQx2yXINj3sis3jB3hYGW19ltIK4yzoeiYV83pP7iE1yZup83MKbQ==
-  - Release from Misr Cement (Qena) (MCQE.CA) Concerning a Published News (December 18, 2025): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF9tJJMLYQMqu4iT4J36wnzfWH6X9rLEvC-bDZj9pXt8rKbfCJJNbpfKoi1Wk-W8OG7j6JKeLSRP4bhloz4i8Fdryj29WsKogF-TCXpuEr3ZUA_sVNTOfiYYnno85SNv_ujdbHi9Htla7q_VMjfUcJsbcvOZ_nMyueOhMpwf1dUjmHYfeEBsktiDudGIAc5FgeI35k6QDDaYCV_0Qu97g==
-- DAPH.CA: status=RECENT_ACCEPTED latest=2026-07-20 age_days=38 sources=3 expected=Development & Engineering Consultants summary=Development & Engineering Consultants (DAPH.CA) has issued several recent disclosures and minutes from its Annual General Meetings.
-  - Development & Engineering Consultants (DAPH.CA) - AGM Minutes (after Certification) (July 20, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGazjafl23_2U1rflMGDZo6AqkswJUAQqDQmB9b5pWAeot32cRxALltk7KcJEp9FIjL9vjb1wlc8BRLW4Qmn59US4r5AC-pNQ_7EieADZpx0sVuMbqHZ3UYxSz8Ih8yH6UhObxTPf3YhANzGyJphERDhCP0cZNSv6_Wd5ozjWVQaQ==
-  - Development & Engineering Consultants (DAPH.CA) - Disclosure Form for the BoD & the Shareholders' Structure (July 9, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGazjafl23_2U1rflMGDZo6AqkswJUAQqDQmB9b5pWAeot32cRxALltk7KcJEp9FIjL9vjb1wlc8BRLW4Qmn59US4r5AC-pNQ_7EieADZpx0sVuMbqHZ3UYxSz8Ih8yH6UhObxTPf3YhANzGyJphERDhCP0cZNSv6_Wd5ozjWVQaQ==
-  - Development & Engineering Consultants (DAPH.CA) - AGM Minutes (June 21, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGazjafl23_2U1rflMGDZo6AqkswJUAQqDQmB9b5pWAeot32cRxALltk7KcJEp9FIjL9vjb1wlc8BRLW4Qmn59US4r5AC-pNQ_7EieADZpx0sVuMbqHZ3UYxSz8Ih8yH6UhObxTPf3YhANzGyJphERDhCP0cZNSv6_Wd5ozjWVQaQ==
-- EMFD.CA: status=RECENT_ACCEPTED latest=2026-08-09 age_days=18 sources=3 expected=Emaar Misr for Development summary=Emaar Misr for Development (EMFD.CA) has had recent board meetings, AGM minutes, and disclosures regarding its shareholder structure. The company also reported higher revenues in 2025 and is involved in a large-scale project.
-  - Emaar Misr for Development (EMFD.CA) - Decisions of the BoD's Meeting (August 9, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFZHCGeWyOzUnUSrbaNmGHAZDsmX-xIzUJ5Et0ePRM0mjyBpTufHfSoTfsY0PbekYebGXWNPmpoMQxqrGdMobpJPLnrRh9RMLVQ2ZWeH9fBPb6vXUOBKW2Yus3hlwN_mqz-49qxLYJF3aWatHAYVeSW
-  - Emaar Misr for Development (EMFD.CA) - Disclosure Form for the BoD & the Shareholders' Structure (July 12, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFZHCGeWyOzUnUSrbaNmGHAZDsmX-xIzUJ5Et0ePRM0mjyBpTufHfSoTfsY0PbekYebGXWNPmpoMQxqrGdMobpJPLnrRh9RMLVQ2ZWeH9fBPb6vXUOBKW2Yus3hlwN_mqz-49qxLYJF3aWatHAYVeSW
-  - Emaar Misr for Development (EMFD.CA) - Decisions of the BoD Meeting (June 24, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFZHCGeWyOzUnUSrbaNmGHAZDsmX-xIzUJ5Et0ePRM0mjyBpTufHfSoTfsY0PbekYebGXWNPmpoMQxqrGdMobpJPLnrRh9RMLVQ2ZWeH9fBPb6vXUOBKW2Yus3hlwN_mqz-49qxLYJF3aWatHAYVeSW
+- MCQE.CA: status=RECENT_ACCEPTED latest=2026-08-06 age_days=21 sources=3 expected=Misr Cement Qena summary=Misr Cement Qena (MCQE.CA) has released recent earnings reports, board decisions, and news regarding a partnership.
+  - Misr Cement – Qena (Reuters: MCQE.CA) – FY 2023 Earnings Release (March 3, 2024): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFe5Wwh2Tz9t9-TEerk0SfsujzjAr564VZRom_GuoS044MiN6g0VgwQIqKdx07sZ_ou_NQzhhS2_aHytqjhnZGpp5y4LEIu0Ar2gDrShx8m9mW7ZKGE1FZu4IZZ4831g3RxxUG687kgN92GzZwyX3DSapHuaBm0msjaWrZoph6RtonNBKlodRgHNYqAGE2zL62LUjL7AbhwwZk70TPhDJuMPEKQSIyBA_PbGmmthUzvZgdVCcQs7lZIOUo
+  - Misr Cement – Qena (Reuters: MCQE.CA) – 9M 2023 Earnings Release (November 13, 2023): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFTjvi0eLGi0TFuHleHTxYKFWy5gLg8vlZ5lEWfuZ8WV__YqVprAg1DhC0PYNircom0u9XSI_Pfy2FDSXYTaKznTzBfPOxekEVzYlIB8LzdPgOEoiF66XBDouuGLlWETszbOErSeoYwS59_AdPwbA5t
+  - Release from Misr Cement (Qena) (MCQE.CA) Concerning the Board of Directors & the Executive Managers (August 6, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE8PZib5LpbJWzGTIUuH9uYAXkHZlPAaljRG90LjcbaoMLUoiXgLX4fDlW25EwEeI2BR8l_jXloPN-Bn_5ihr6hj1v3n6od70Lv-AGCrjVlXwf1NyrkjMFNOehlfkcfsxuAFtY-NlmM75P1zcVHfJ4
+- DAPH.CA: status=RECENT_ACCEPTED latest=2026-08-16 age_days=11 sources=3 expected=Development & Engineering Consultants summary=Development & Engineering Consultants (DAPH.CA) has numerous recent disclosures and financial reports from the Egyptian Exchange.
+  - Development & Engineering Consultants (DAPH.CA) - Board of Directors' Decisions (August 16, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFVN1iTr220SMK8ZzQPhS3zxbqkOC6iumHcSe_4xaN07jJmjGkRgRtC6HKcQkwIXn1tIB6i2LuwEClUUZ6wfeDcxUW_ordkdbeul_3X3z6K91I5xlBrdFTtKrEuGM91cSdRrJBGaA==
+  - Development & Engineering Consultants (DAPH.CA) - AGM Minutes (after Certification) (July 21, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFVN1iTr220SMK8ZzQPhS3zxbqkOC6iumHcSe_4xaN07jJmjGkRgRtC6HKcQkwIXn1tIB6i2LuwEClUUZ6wfeDcxUW_ordkdbeul_3X3z6K91I5xlBrdFTtKrEuGM91cSdRrJBGaA==
+  - Development & Engineering Consultants (DAPH.CA) - Disclosure Form for the BoD & the Shareholders' Structure (July 12, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFVN1iTr220SMK8ZzQPhS3zxbqkOC6iumHcSe_4xaN07jJmjGkRgRtC6HKcQkwIXn1tIB6i2LuwEClUUZ6wfeDcxUW_ordkdbeul_3X3z6K91I5xlBrdFTtKrEuGM91cSdRrJBGaA==
+- EMFD.CA: status=RECENT_ACCEPTED latest=2026-07-15 age_days=43 sources=3 expected=Emaar Misr for Development summary=Emaar Misr for Development (EMFD.CA) has a recent disclosure form and reported significant revenue growth in 2023 with plans for 2025. The company is classified as not Shariah-compliant.
+  - Emaar Misr for Development (EMFD.CA) - Disclosure Form for the BoD & the Shareholders' Structure (April 13, 2025): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGmlEqItmGQVoTYhIwZCXOjLQEuaGd5HiaTxn1WVYJsZTnq93WUwwhNIAVsd6liMOeFhNYoJjJlT7W6zd198pZLw2ncxOaQKeXoK8RIFVD5WEsBQUqCEfcHgj6Rkg0L5qxwe-iRgJQvGu12zqrZ
+  - Emaar Misr for Development S.A.E. revenue increased to EGP 15.1 billion in 2023 and plans to implement projects worth USD 1 billion in 2025 (July 15, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEjxZjusDbNgRIzfKHyrmpmwi5_SqBcxA_9OLNNsAkVB1MwJ2vYB5ly-YykXJCflp-6SHJ0UpGletpmjS_bweiqo-I56MtWOekfxln9_kWLKQflw9AHaVBE9nHEE6cu77KWLpHOoDigmDixQW_g9bZpFg==
+  - Emaar Misr for Development SAE (EMFD.CA) is not halal (August 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHTlEdYnxoK6CqK6blN7XHv-lVDxX21XqHjRmUWj5kIMsJguQwXzlEjcKD1bdQn5vedsRKEN2Z9JMGcTgqatqhoQL2odWLFpwATAgQ_5l7RDvkc5ITYMR5srSpd
 
 ## Warnings
-- Evidence for FAIT.CA matches the company but appears old; latest detected date is 2025-01-01.
+- Evidence rejected for SPIN.CA: source text did not clearly match SPIN.CA / Alexandria Spinning and Weaving.
 - Evidence for CCRS.CA matches the company but appears old; latest detected date is 2016-01-01.
