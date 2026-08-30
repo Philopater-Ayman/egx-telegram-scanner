@@ -1,10 +1,10 @@
 # Telegram-First EGX Scanner Report
 
-Scan phase: Open liquidity confirmation
-Generated UTC: 2026-08-30T11:55:00.436548+00:00
-Generated Cairo: 2026-08-30 14:55
-Run timing: target 09:15 Cairo | generated Cairo 2026-08-30 14:55 | cron 15 6 * * 0-4
-Trigger: scheduled cron=15 6 * * 0-4 mapped to open_confirm; Cairo now 2026-08-30 14:50
+Scan phase: Intraday liquidity update
+Generated UTC: 2026-08-30T13:32:07.520726+00:00
+Generated Cairo: 2026-08-30 16:32
+Run timing: target 11:00 Cairo | generated Cairo 2026-08-30 16:32 | cron 0 8 * * 0-4
+Trigger: scheduled cron=0 8 * * 0-4 mapped to intraday; Cairo now 2026-08-30 16:28
 
 ## Control Center
 - Action tickets: 3 prioritized signal(s)
@@ -33,7 +33,18 @@ Trigger: scheduled cron=15 6 * * 0-4 mapped to open_confirm; Cairo now 2026-08-3
 ## AI Narrative
 - Provider: OpenRouter OK
 - Model: nvidia/nemotron-3-super-120b-a12b:free
-- Summary: Scanner flags EMFD.CA, MPCO.CA and RTVC.CA as watch/buy setups under a selective swing‑trade regime, citing aligned price action, adequate liquidity and bullish watch outlook but flagging low confidence due to extended momentum and sector lag.
+- Summary: We need to output JSON with keys summary and bullets (3-5 short strings). Must not make trade decision, not invent live data, not mention quantities or position sizing. Explain why scanner selected prioritized tickets, what liquidity/sector/support/resistance/outlook means for next 1-3 days, and how EGX30/EGX70 market regime changes risk mode, and include uncertainty.
+
+We have data: primary ticket MCQE.CA, tickets list includes MCQE.CA, SPIN.CA, ORWE.CA. Market regime: EGX30 CONSTRUCTIVE, EGX70 MIXED, risk mode SELECTIVE_SWING_TRADES_ONLY. Sector breadth 42.86%, leading sectors: Textiles, Building Materials, Agriculture & Food Production.
+
+We need to summarize why scanner selected these tick
+- Bullets: maybe 4 bullets.
+
+Bullet 1:
+- SPIN.CA (Textiles) shows RSI 67.6, price above moving averages, liquidity spike modest; extended momentum and far‑above‑support imply possible pullback; outlook BULLISH_WATCH (83).
+- ORWE.CA (Textiles) has RSI 44.6, price above MA20/MA50, liquidity cooling; weaker momentum but still above support; outlook BULLISH_WATCH (84) with caution.
+- Make sure no quantities or position sizing. No mention of entry, TP, SL? The instruction:
+- price above moving averages
 
 ## Top Liquidity Spikes
 - BINV.CA: spike=12.65 liquidity=74521208.0 outlook=WEAK_OR_RISKY score=0 buy_ready=False
@@ -53,18 +64,18 @@ Trigger: scheduled cron=15 6 * * 0-4 mapped to open_confirm; Cairo now 2026-08-3
 - #8 Basic Resources & Chemicals: score=6.65 5d=-0.11% 20d=5.64% aboveMA50=80.0%
 
 ## Today's Prioritized Action Tickets
-- Priority #1: BUY EMFD.CA
-  - Entry: 12.65 | Take profit: 13.67 | Stop loss: 12.14
-  - Confidence: LOW | score=33.4 | outlook=BULLISH_WATCH 82.23
-  - Reason: WATCH/BUY SETUP: EMFD.CA has aligned current price data, liquidity above threshold, price above MA20/MA50, RSI 64.0, support 11.08, resistance 12.36, and evidence sources. Macro trend is Bearish; market regime is SELECTIVE_SWING_TRADES_ONLY; verify price action in Thndr before treating it as a swing entry.
-- Priority #2: BUY MPCO.CA
-  - Entry: 2.21 | Take profit: 2.39 | Stop loss: 2.12
-  - Confidence: LOW | score=27.4 | outlook=BULLISH_WATCH 80.51
-  - Reason: WATCH/BUY SETUP: MPCO.CA has aligned current price data, liquidity above threshold, price above MA20/MA50, RSI 64.71, support 1.88, resistance 2.38, and evidence sources. Macro trend is Bearish; market regime is SELECTIVE_SWING_TRADES_ONLY; verify price action in Thndr before treating it as a swing entry.
-- Priority #3: BUY RTVC.CA
-  - Entry: 4.23 | Take profit: 4.57 | Stop loss: 4.06
-  - Confidence: LOW | score=27.0 | outlook=BULLISH_WATCH 73.15
-  - Reason: WATCH/BUY SETUP: RTVC.CA has aligned current price data, liquidity above threshold, price above MA20/MA50, RSI 65.56, support 3.73, resistance 4.36, and evidence sources. Macro trend is Bearish; market regime is SELECTIVE_SWING_TRADES_ONLY; verify price action in Thndr before treating it as a swing entry.
+- Priority #1: BUY MCQE.CA
+  - Entry: 233.54 | Take profit: 290.86 | Stop loss: 224.2
+  - Confidence: LOW | score=28.4 | outlook=BULLISH_WATCH 78
+  - Reason: WATCH/BUY SETUP: MCQE.CA has aligned current price data, liquidity above threshold, price above MA20/MA50, RSI 64.88, support 178.0, resistance 292.32, and evidence sources. Macro trend is Bearish; market regime is SELECTIVE_SWING_TRADES_ONLY; verify price action in Thndr before treating it as a swing entry.
+- Priority #2: BUY SPIN.CA
+  - Entry: 19.75 | Take profit: 21.77 | Stop loss: 18.96
+  - Confidence: LOW | score=27.5 | outlook=BULLISH_WATCH 83
+  - Reason: WATCH/BUY SETUP: SPIN.CA has aligned current price data, liquidity above threshold, price above MA20/MA50, RSI 67.57, support 15.3, resistance 21.88, and evidence sources. Macro trend is Bearish; market regime is SELECTIVE_SWING_TRADES_ONLY; verify price action in Thndr before treating it as a swing entry.
+- Priority #3: BUY ORWE.CA
+  - Entry: 26.35 | Take profit: 28.45 | Stop loss: 25.3
+  - Confidence: LOW | score=27.4 | outlook=BULLISH_WATCH 84
+  - Reason: WATCH/BUY SETUP: ORWE.CA has aligned current price data, liquidity above threshold, price above MA20/MA50, RSI 44.57, support 22.55, resistance 27.41, and evidence sources. Macro trend is Bearish; market regime is SELECTIVE_SWING_TRADES_ONLY; verify price action in Thndr before treating it as a swing entry.
 
 ## Thndr Instruction
 - Advisor-only signal mode is active. The scanner never executes trades.
@@ -296,39 +307,39 @@ Trigger: scheduled cron=15 6 * * 0-4 mapped to open_confirm; Cairo now 2026-08-3
 - These checks are historical context only, not a prediction or guarantee.
 
 ## Evidence
-- EMFD.CA: status=RECENT_ACCEPTED latest=2026-09-02 age_days=0 sources=3 expected=Emaar Misr for Development summary=Emaar Misr for Development (EMFD.CA) has shown recent activity with financial results for 2025 and Q1-25, board meetings, and upcoming earnings reports. The company's revenue in 2025 increased by 4.24% to EGP 19.81 billion, although earnings decreased by 66.89% to EGP 4.97 billion. The stock is actively traded on the EGX, with its next earnings report expected on September 2, 2026.
-  - Emaar Misr for Development (EMFD.CA) - Decisions of the BoD's Meeting (August 9, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHbgxj4TjXnqfXwlO_3kNhAl9Q1LR0bL8bkniTl68jBdvGUZfWESalaETE_U8uZch2N_qTMF3hjg4d5EDE94gJLF9S4nwlg16XF_Bek6a4BSwSqEAV6lvGsEHtNF6rDnwdeII0DEgvAd8aCgHksJU-O
-  - Emaar Misr for Development (EMFD.CA) - Disclosure Form for the BoD & the Shareholders' Structure (July 12, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHbgxj4TjXnqfXwlO_3kNhAl9Q1LR0bL8bkniTl68jBdvGUZfWESalaETE_U8uZch2N_qTMF3hjg4d5EDE94gJLF9S4nwlg16XF_Bek6a4BSwSqEAV6lvGsEHtNF6rDnwdeII0DEgvAd8aCgHksJU-O
-  - Emaar Misr for Development (EMFD.CA) - Decisions of the BoD Meeting (June 24, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHbgxj4TjXnqfXwlO_3kNhAl9Q1LR0bL8bkniTl68jBdvGUZfWESalaETE_U8uZch2N_qTMF3hjg4d5EDE94gJLF9S4nwlg16XF_Bek6a4BSwSqEAV6lvGsEHtNF6rDnwdeII0DEgvAd8aCgHksJU-O
-- ARAB.CA: status=ACCEPTED_UNDATED latest=n/a age_days=n/a sources=3 expected=Arab Developers Holding summary=Arab Developers Holding unveils EGP 1bn expansion plans to improve financial efficiency; FRA gives initial approval for Arab Developers’ rights issue; Arab Developers stock stabilizes after correction Gemini also reviewed web evidence but did not return ticker-specific citations.
-  - Arab Developers Holding unveils EGP 1bn expansion plans to improve financial efficiency: https://english.mubasher.info/news/4601724/Arab-Developers-Holding-unveils-EGP-1bn-expansion-plans-to-improve-financial-efficiency/
-  - FRA gives initial approval for Arab Developers’ rights issue: https://english.mubasher.info/news/4582627/FRA-gives-initial-approval-for-Arab-Developers-rights-issue/
-  - Arab Developers stock stabilizes after correction: https://english.mubasher.info/news/4564643/Arab-Developers-stock-stabilizes-after-correction/
-- MCQE.CA: status=OLD_ACCEPTED latest=2025-01-01 age_days=606 sources=3 expected=Misr Cement Qena summary=Misr Cement to distribute EGP 10/shr dividends for 2025; Misr Cement stock is testing technical level ahead of historical peak – Analysis; Misr Cement witnesses 3,254% remarkable jump in 9M-25 consolidated net profits Gemini also reviewed web evidence but did not return ticker-specific citations.
-  - Misr Cement to distribute EGP 10/shr dividends for 2025: https://english.mubasher.info/news/4586191/Misr-Cement-to-distribute-EGP-10-shr-dividends-for-2025/
-  - Misr Cement stock is testing technical level ahead of historical peak – Analysis: https://english.mubasher.info/news/4560306/Misr-Cement-stock-is-testing-technical-level-ahead-of-historical-peak-Analysis/
-  - Misr Cement witnesses 3,254% remarkable jump in 9M-25 consolidated net profits: https://english.mubasher.info/news/4524754/Misr-Cement-witnesses-3-254-remarkable-jump-in-9M-25-consolidated-net-profits/
-- SPIN.CA: status=REJECTED_TICKER_MISMATCH latest=n/a age_days=n/a sources=0 expected=Alexandria Spinning and Weaving summary=Evidence rejected for SPIN.CA: source text did not clearly match SPIN.CA / Alexandria Spinning and Weaving.
-- KABO.CA: status=ACCEPTED_UNDATED latest=n/a age_days=n/a sources=3 expected=El Nasr Clothing and Textiles summary=KABO posts EGP 17m in Q1-25/26 unaudited consolidated net profits; KABO sells over 1.9m shares in Spinalex for EGP 20m; KABO unveils international agreements, expansion plan including export lines Gemini also reviewed web evidence but did not return ticker-specific citations.
-  - KABO posts EGP 17m in Q1-25/26 unaudited consolidated net profits: https://english.mubasher.info/news/4600162/KABO-posts-EGP-17m-in-Q1-25-26-unaudited-consolidated-net-profits/
-  - KABO sells over 1.9m shares in Spinalex for EGP 20m: https://english.mubasher.info/news/4543747/KABO-sells-over-1-9m-shares-in-Spinalex-for-EGP-20m/
-  - KABO unveils international agreements, expansion plan including export lines: https://english.mubasher.info/news/4533185/KABO-unveils-international-agreements-expansion-plan-including-export-lines/
-- MPCO.CA: status=RECENT_ACCEPTED latest=2026-08-23 age_days=7 sources=3 expected=Mansoura Poultry summary=Mansoura Poultry (MPCO.CA) has released its latest earnings report on May 31, 2026, showing an EPS of -0.04 and revenue of 156.22M. The company's capital increase was approved on September 24, 2025, from EGP 125 million to EGP 131,250,000. Mansoura Poultry also reported a plunge in consolidated net profits in 2025 to EGP 1.38 million. The company is scheduled to release its next earnings on August 23, 2026.
-  - Mansourah Poultry Latest Earnings Release (May 31, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGXSfdUXTTwt9P6MKIId00t0BqeVovYdOTqTbNifaHa5qYG93K2iWxmA6D3h3L9rVKa7OoiWOuYBWy7axzBY5YbUQsBrhgH1Qoo3rTZI8gc-pooMebCcU38VbKlVzJGEszP5XJwjZ88DIocKw==
-  - Mansoura Poultry Company Posted Annual Plunge in Consolidated Net Profits in 2025: https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFIH0Bm--a11Ogd0pBA1avvjMdWYzXh4SQOpgx2OwXx9ZLyWTC3h1nF8WQH60fDn6saGpc2C3j7Sskb9QtqZ4RR3FZK5lJCPlPhKjUWw6N0awkuXvdQbvZl389NvhT6vau4o9feQDygGVmpmLq0eMTYjAn7J5Y=
-  - Mansoura Poultry Stock Under Selling Pressure Since December 2025: https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFIH0Bm--a11Ogd0pBA1avvjMdWYzXh4SQOpgx2OwXx9ZLyWTC3h1nF8WQH60fDn6saGpc2C3j7Sskb9QtqZ4RR3FZK5lJCPlPhKjUWw6N0awkuXvdQbvZl389NvhT6vau4o9feQDygGVmpmLq0eMTYjAn7J5Y=
-- ORWE.CA: status=OLD_ACCEPTED latest=2025-01-01 age_days=606 sources=3 expected=Oriental Weavers summary=Oriental Weavers to disburse EGP 1.5/shr dividends for 2025; Oriental Weavers’ consolidated profits cross EGP 2.2bn in 2025; Oriental Weavers generates EGP 12.5bn consolidated sales in H1-25 Gemini also reviewed web evidence but did not return ticker-specific citations.
-  - Oriental Weavers to disburse EGP 1.5/shr dividends for 2025: https://english.mubasher.info/news/4590236/Oriental-Weavers-to-disburse-EGP-1-5-shr-dividends-for-2025/
-  - Oriental Weavers’ consolidated profits cross EGP 2.2bn in 2025: https://english.mubasher.info/news/4562972/Oriental-Weavers-consolidated-profits-cross-EGP-2-2bn-in-2025/
-  - Oriental Weavers generates EGP 12.5bn consolidated sales in H1-25: https://english.mubasher.info/news/4487417/Oriental-Weavers-generates-EGP-12-5bn-consolidated-sales-in-H1-25/
-- RTVC.CA: status=RECENT_ACCEPTED latest=2026-07-12 age_days=49 sources=3 expected=Remco Tourism Villages Construction summary=Remco Tourism Villages Construction (RTVC.CA) has seen recent stock price movements, with daily trading data available up to July 12, 2026. The company held its Annual General Meeting on June 6, 2026. Full-year 2024 earnings were released on May 14, 2026, showing a significant increase in revenue to EGP 5.96 billion and net income to EGP 2.81 billion. There have also been recent announcements regarding board changes and acquisitions.
-  - Remco Touristic Villages Constr Stock Price Live Data (Current): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQExm6x3o4UPRz1HXHciPCBR97P7_FYQMoMAbvRbm2RIbKwoxJJ05dycrZcP37cl8p40Qkw4RXZB7tjyM-IFeXKu-t5i4A2_pf2QCUoB0SI9wEMV0lzTJSBN3mmhDKLA3PmbR7yerKa3NW6cvQ==
-  - Remco Touristic Villages Constr Historical Prices (July 12, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEGhgE5W75HpDGTwlY-iccuVa3a-0iZacPT66t-_UYam1S_p1rUxEkZbNrgufBBAoNXbuy3ni-qf3mcdVPnWrDnhq_Mzub4BoZgUsrGABuH8Lm7RYNofyXsT90dUbzDw9v3__bjsMIeD8aIFaUcSHOv_taFTHWjmbEf6w==
-  - Remco Touristic Villages Constr Historical Prices (July 9, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEGhgE5W75HpDGTwlY-iccuVa3a-0iZacPT66t-_UYam1S_p1rUxEkZbNrgufBBAoNXbuy3ni-qf3mcdVPnWrDnhq_Mzub4BoZgUsrGABuH8Lm7RYNofyXsT90dUbzDw9v3__bjsMIeD8aIFaUcSHOv_taFTHWjmbEf6w==
+- EMFD.CA: status=OLD_ACCEPTED latest=2025-01-01 age_days=606 sources=3 expected=Emaar Misr for Development summary=Emaar Misr posts higher revenues at EGP 19.8bn in 2025; Emaar Misr’s consolidated net profits drop to EGP 4.2bn in 9M-25; Emaar Misr, Golden Coast to establish EGP 900bn project in Red Sea Gemini also reviewed web evidence but did not return ticker-specific citations.
+  - Emaar Misr posts higher revenues at EGP 19.8bn in 2025: https://english.mubasher.info/news/4561643/Emaar-Misr-posts-higher-revenues-at-EGP-19-8bn-in-2025/
+  - Emaar Misr’s consolidated net profits drop to EGP 4.2bn in 9M-25: https://english.mubasher.info/news/4525192/Emaar-Misr-s-consolidated-net-profits-drop-to-EGP-4-2bn-in-9M-25/
+  - Emaar Misr, Golden Coast to establish EGP 900bn project in Red Sea: https://english.mubasher.info/news/4495287/Emaar-Misr-Golden-Coast-to-establish-EGP-900bn-project-in-Red-Sea/
+- ARAB.CA: status=RECENT_ACCEPTED latest=2026-08-23 age_days=7 sources=3 expected=Arab Developers Holding summary=Recent evidence for Arab Developers Holding (ARAB.CA) includes financial results, capital increases, and disclosures to the EGX, with reports spanning from August 2025 to August 2026.
+  - ARAB Developers Holding (ARAB.CA) - EGM Minutes (before Certification) (August 23, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHEIdGITmBhETy4apZwq2Ghe61xl6HelAkqZa5ZZH2eVC10Pj8BRwcNPGaq_pgpGRMVZeUILApvcXpeGTVifwOdJlqnbfjLRp5DdwUFdJGaCmeQE6Aj2zlkhY4ejTLWjLmACzDUks33iz9gAiikQ9ri
+  - Release from ARAB Developers Holding (ARAB.CA) Regarding the EGM (July 29, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHEIdGITmBhETy4apZwq2Ghe61xl6HelAkqZa5ZZH2eVC10Pj8BRwcNPGaq_pgpGRMVZeUILApvcXpeGTVifwOdJlqnbfjLRp5DdwUFdJGaCmeQE6Aj2zlkhY4ejTLWjLmACzDUks33iz9gAiikQ9ri
+  - ARAB Developers Holding (ARAB.CA) - Disclosure Form for the BoD & the Shareholders' Structure (July 20, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHEIdGITmBhETy4apZwq2Ghe61xl6HelAkqZa5ZZH2eVC10Pj8BRwcNPGaq_pgpGRMVZeUILApvcXpeGTVifwOdJlqnbfjLRp5DdwUFdJGaCmeQE6Aj2zlkhY4ejTLWjLmACzDUks33iz9gAiikQ9ri
+- MCQE.CA: status=RECENT_ACCEPTED latest=2026-08-06 age_days=24 sources=3 expected=Misr Cement Qena summary=Misr Cement Qena (MCQE.CA) has reported strong financial performance in H1 2026 and FY 2025, with plans for alternative fuel investments. The company also made several disclosures to the EGX.
+  - Misr Cement Qena logs 94.4% YoY higher consolidated profits in H1 2026 (August 6, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHnMVoR4SC8fjyfforV4ciw_sfNeFBHENxIs770Zr0UA5wTThdvSL3nyq0sMdH6MfvHdwQxKIbvlHODxanxealS4b8XSI3_2-2yzzgksfwLBBCp0nsLfutmEBns5tKqZbBpdowPsCltf98-qzWQ-l_EWg==
+  - Misr Cement Qena plans alternative fuel investments at Qena, Minya plants (June 25, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHnMVoR4SC8fjyfforV4ciw_sfNeFBHENxIs770Zr0UA5wTThdvSL3nyq0sMdH6MfvHdwQxKIbvlHODxanxealS4b8XSI3_2-2yzzgksfwLBBCp0nsLfutmEBns5tKqZbBpdowPsCltf98-qzWQ-l_EWg==
+  - Misr Cement (Qena) (MCQE.CA) Reports Its Financial Results (Consolidated) for The Period ending 31/12/2025 (March 5, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQERU1p6NoR7H0KyNWF_eAJH33iIqhuRL3NZwOALNNYWcG0jABjNuqFF3bThhD3sBagZsWg7dUG0FnKkH0c9uwbGa064rdIc--YiX5Xs7OXaA428DDu4DcflQitGiG6F6vn_c1n2_XshI1n6JU7JipgU52jXqTsjAFZJ9QSH1q3OEQ==
+- SPIN.CA: status=RECENT_ACCEPTED latest=2026-08-02 age_days=28 sources=3 expected=Alexandria Spinning and Weaving summary=Alexandria Spinning and Weaving (SPIN.CA) has reported Q2 2026 earnings and is subject to a proposed acquisition of a 20% stake. Financial statements and key metrics for the last 12 months are also available.
+  - Alexandria Spinning & Weaving Co. Reports Earnings Results for the Second Quarter and Six Months Ended December 31, 2025 (August 2, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHNTwQijDdCdC8fPnwE8OpYtSBu99d6NTukFXr3H96HqwkD84zdMUNSttXc17GL4hrzpnd4Lf5auJUb1WO_zrl60RFjHI_Ua5WF8YK301K8jIxmmpknb5LCrE4Lu80VqDkyXemd7OdOqf4D5aGHE-q8hmvpPjXB9GZlmnZwoBZl4TkNmSDKk_I=
+  - New Construction Chemical and ESCOM Company proposed to acquire 20% stake in Alexandria Spinning & Weaving Co. (April 4, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHNTwQijDdCdC8fPnwE8OpYtSBu99d6NTukFXr3H96HqwkD84zdMUNSttXc17GL4hrzpnd4Lf5auJUb1WO_zrl60RFjHI_Ua5WF8YK301K8jIxmmpknb5LCrE4Lu80VqDkyXemd7OdOqf4D5aGHE-q8hmvpPjXB9GZlmnZwoBZl4TkNmSDKk_I=
+  - Alexandria Spinning & Weaving Income Statement Q2 2026 (Released in 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHIRW0HZINUZKMlfIGW01tU2m6CU9XbWj4dwl9qD_HIuwbSc4jCKYM17UDgejf96TJnV-RGJU4S8ari3Bl8Y-g75coDXbZR91wcpE06IXfBq-2UBNtg3onkx_XX-RzFchw4iLR2Em0JIng1YQQsAx_RrTD1tqBsh_6_nr8gdFOXP6JkYg==
+- KABO.CA: status=RECENT_ACCEPTED latest=2026-08-19 age_days=11 sources=3 expected=El Nasr Clothing and Textiles summary=El Nasr Clothing and Textiles (KABO.CA) has released Q1 2026 and FY 2025 earnings, proposed a capital increase, and made several disclosures to the EGX. The company's financial performance for fiscal year 2024 and Q3 2025 is also available.
+  - El Nasr Clothes & Textiles (Kabo) (KABO.CA) - Release Regarding a Disclosure Form (August 19, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHindZK8OIUoT-tJrAKS5hEXCXaBu4_a-326s0axtgQz5ilP2kOv0Je5FIcvp-yuvzhaCilouhbW02g87Yl4VkAadYzhs2uCJqgXIV8GT0AmpUfIGczZzBOlSuJE5kk5m4J8mNt1Uzr8rDKOFK3aZe5
+  - El Nasr Clothes & Textiles (Kabo) (KABO.CA) - Release Concerning the Periodic Disclosure to Shareholders (July 15, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHindZK8OIUoT-tJrAKS5hEXCXaBu4_a-326s0axtgQz5ilP2kOv0Je5FIcvp-yuvzhaCilouhbW02g87Yl4VkAadYzhs2uCJqgXIV8GT0AmpUfIGczZzBOlSuJE5kk5m4J8mNt1Uzr8rDKOFK3aZe5
+  - El Nasr Clothes & Textiles (Kabo) (KABO.CA) - Disclosure Form for the BoD & the Shareholders' Structure (July 13, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHindZK8OIUoT-tJrAKS5hEXCXaBu4_a-326s0axtgQz5ilP2kOv0Je5FIcvp-yuvzhaCilouhbW02g87Yl4VkAadYzhs2uCJqgXIV8GT0AmpUfIGczZzBOlSuJE5kk5m4J8mNt1Uzr8rDKOFK3aZe5
+- MPCO.CA: status=OLD_ACCEPTED latest=2025-01-01 age_days=606 sources=3 expected=Mansoura Poultry summary=Mansoura Poultry’s consolidated net profits drop in 2025; revenues near EGP 857m; Mansoura Poultry’s stock rebounds from key support level; Mansoura Poultry stock witnesses clear emergence of buying power Gemini also reviewed web evidence but did not return ticker-specific citations.
+  - Mansoura Poultry’s consolidated net profits drop in 2025; revenues near EGP 857m: https://english.mubasher.info/news/4596342/Mansoura-Poultry-s-consolidated-net-profits-drop-in-2025-revenues-near-EGP-857m/
+  - Mansoura Poultry’s stock rebounds from key support level: https://english.mubasher.info/news/4554482/Mansoura-Poultry-s-stock-rebounds-from-key-support-level/
+  - Mansoura Poultry stock witnesses clear emergence of buying power: https://english.mubasher.info/news/4539119/Mansoura-Poultry-stock-witnesses-clear-emergence-of-buying-power/
+- ORWE.CA: status=RECENT_ACCEPTED latest=2026-07-28 age_days=33 sources=3 expected=Oriental Weavers summary=Oriental Weavers (ORWE.CA) has been active with several EGX disclosures, board meetings, and AGM minutes. The company reported strong financial results for 2025 and H1 2025, along with dividend disbursements and strategic agreements.
+  - Oriental Weavers (ORWE.CA) - Disclosure Form for the BoD & the Shareholders' Structure (July 28, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGJMfzeBag3ml2rTZZm0hzjeOPkva1sQda35qiKZHUiapo00icGF5Tgsfn57KyAg7s8hxQnTV36PY39AFUN40FVHRAlQhsGFCz0X5lT9QVl1NNfVC1fDSlalCJyHWDvEDuPzbBmuPDNIMFVNG5RulV_
+  - Release from Oriental Weavers (ORWE.CA) Concerning the Board of Directors' Minutes (May 21, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGJMfzeBag3ml2rTZZm0hzjeOPkva1sQda35qiKZHUiapo00icGF5Tgsfn57KyAg7s8hxQnTV36PY39AFUN40FVHRAlQhsGFCz0X5lT9QVX1NNfVC1fDSlalCJyHWDvEDuPzbBmuPDNIMFVNG5RulV_
+  - Oriental Weavers (ORWE.CA) - Minutes of the Board of Directors' Meeting (May 21, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGJMfzeBag3ml2rTZZm0hzjeOPkva1sQda35qiKZHUiapo00icGF5Tgsfn57KyAg7s8hxQnTV36PY39AFUN40FVHRAlQhsGFCz0X5lT9QVX1NNfVC1fDSlalCJyHWDvEDuPzbBmuPDNIMFVNG5RulV_
+- RTVC.CA: status=RECENT_ACCEPTED latest=2026-07-13 age_days=48 sources=3 expected=Remco Tourism Villages Construction summary=Remco Tourism Villages Construction (RTVC.CA) has made recent disclosures to the EGX, including AGM minutes and shareholder structure updates. The company was also involved in acquisition activities and reported its 2024 annual and Q4 2024 revenue.
+  - Remco for Touristic Villages Construction (RTVC.CA) - Disclosure Form for the BoD & the Shareholders' Structure (July 13, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFfFRhqTv_0X72nblsSezS3B8oujwICZ70l3JUsdgTVdH5S-I7ff4cs8NOMmsT5Ed7hhdNnmgbxqbu5Od2Dscks16t9Q2VYnDCPyMn5aQoIq7jjtHdSQgEv7N5_zz-UHaUKgkp1JCylWWTIBqnDBO0ZDAXaA8Ntxj_LIYbGHM6iTl8=
+  - Remco for Touristic Villages Construction (RTVC.CA) - AGM Minutes (Notarized) (June 28, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFfFRhqTv_0X72nblsSezS3B8oujwICZ70l3JUsdgTVdH5S-I7ff4cs8NOMmsT5Ed7hhdNnmgbxqbu5Od2Dscks16t9Q2VYnDCPyMn5aQoIq7jjtHdSQgEv7N5_zz-UHaUKgkp1JCylWWTIBqnDBO0ZDAXaA8Ntxj_LIYbGHM6iTl8=
+  - Remco for Touristic Villages Construction (RTVC.CA) - AGM Resolutions (June 7, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFfFRhqTv_0X72nblsSezS3B8oujwICZ70l3JUsdgTVdH5S-I7ff4cs8NOMmsT5Ed7hhdNnmgbxqbu5Od2Dscks16t9Q2VYnDCPyMn5aQoIq7jjtHdSQgEv7N5_zz-UHaUKgkp1JCylWWTIBqnDBO0ZDAXaA8Ntxj_LIYbGHM6iTl8=
 
 ## Warnings
-- Evidence for ARAB.CA matches the company but no source/report date was detected.
-- Evidence for MCQE.CA matches the company but appears old; latest detected date is 2025-01-01.
-- Evidence rejected for SPIN.CA: source text did not clearly match SPIN.CA / Alexandria Spinning and Weaving.
-- Evidence for KABO.CA matches the company but no source/report date was detected.
-- Evidence for ORWE.CA matches the company but appears old; latest detected date is 2025-01-01.
+- Evidence for EMFD.CA matches the company but appears old; latest detected date is 2025-01-01.
+- Evidence for MPCO.CA matches the company but appears old; latest detected date is 2025-01-01.
