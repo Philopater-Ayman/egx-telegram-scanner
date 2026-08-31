@@ -1,6 +1,6 @@
 Ticker,Company Name,Sector,AI Status,Watchlist Tier,Signal Status
-EMFD.CA,Emaar Misr for Development,Real Estate,Active Tracking,WATCH,WATCH_ONLY
-MCQE.CA,Misr Cement Qena,Building Materials,Active Tracking,WATCH,WATCH_ONLY
-SPIN.CA,Alexandria Spinning and Weaving,Textiles,Active Tracking,WATCH,WATCH_ONLY
-ORWE.CA,Oriental Weavers,Textiles,Active Tracking,WATCH,WATCH_ONLY
-MPCO.CA,Mansoura Poultry,Agriculture & Food Production,Active Tracking,WATCH,WATCH_ONLY
+SPIN.CA,Alexandria Spinning and Weaving,Textiles,Active Tracking,WATCH,BUY_READY
+ORWE.CA,Oriental Weavers,Textiles,Active Tracking,WATCH,BUY_READY
+SKPC.CA,Sidi Kerir Petrochemicals,Basic Resources & Chemicals,Active Tracking,WATCH,BUY_READY
+BINV.CA,B Investments Holding,Investment Holding,Active Tracking,WATCH,BUY_READY
+CIEB.CA,Credit Agricole Egypt,Banking & Financials,Active Tracking,WATCH,BUY_READY
