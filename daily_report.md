@@ -1,10 +1,10 @@
 # Telegram-First EGX Scanner Report
 
-Scan phase: Open liquidity confirmation
-Generated UTC: 2026-08-31T13:41:38.645081+00:00
-Generated Cairo: 2026-08-31 16:41
-Run timing: target 09:15 Cairo | generated Cairo 2026-08-31 16:41 | cron 15 6 * * 0-4
-Trigger: scheduled cron=15 6 * * 0-4 mapped to open_confirm; Cairo now 2026-08-31 16:38
+Scan phase: Intraday liquidity update
+Generated UTC: 2026-08-31T15:49:16.589180+00:00
+Generated Cairo: 2026-08-31 18:49
+Run timing: target 11:00 Cairo | generated Cairo 2026-08-31 18:49 | cron 0 8 * * 0-4
+Trigger: scheduled cron=0 8 * * 0-4 mapped to intraday; Cairo now 2026-08-31 18:45
 
 ## Control Center
 - Action tickets: 0 prioritized signal(s)
@@ -33,11 +33,10 @@ Trigger: scheduled cron=15 6 * * 0-4 mapped to open_confirm; Cairo now 2026-08-3
 ## AI Narrative
 - Provider: OpenRouter OK
 - Model: nvidia/nemotron-3-super-120b-a12b:free
-- Summary: EGX30 shows a mixed trend while EGX70 is bearish; sector breadth is only about one‑third positive, keeping the risk mode in DEFENSIVE_NO_NEW_BUY despite several stocks flashing bullish watch signals.
-- The scanner prioritized tickets by rank score; all selected stocks have a BULLISH_WATCH outlook but are marked HOLD because the defensive regime blocks new buys.
-- Liquidity shows accumulation spikes in FAIT.CA, KWIN.CA, CIEB.CA and PRDC.CA, indicating short‑term inflows, yet many others are in a TRADEABLE regime and overall sector breadth remains weak.
-- Most tickets sit well above their 20‑day support (e.g., MCQE.CA ~32% above, KWIN.CA ~33% above) and close to resistance (CIEB.CA <1% below, PRDC.CA ~1% below), suggesting limited upside and a quick test of support if sen
-- EGX30’s mixed trend and EGX70’s bearish trend shift the risk mode to DEFENSIVE_NO_NEW_BUY, adding uncertainty that even bullish watch scores could reverse if breadth does not improve in the next 1‑3 days.
+- Summary: Scanner flagged several high‑rank stocks with bullish watch outlooks and liquidity accumulation spikes, but the EGX30 mixed/EGX70 bearish regime and weak sector breadth keep risk mode defensive, so no new buys are advised.
+- Top tickets (FAIT.CA, MCQE.CA, KWIN.CA) show accumulation spikes and near‑term resistance, suggesting short‑term buying pressure but limited upside over 1‑3 days.
+- Sector breadth is only 33 % with leading sectors in Building Materials, Textiles and Industrial Goods; most stocks are far above support, making downside risk notable if momentum stalls.
+- EGX30’s mixed trend and EGX70’s bearish trend shift the risk mode to DEFENSIVE_NO_NEW_BUY, meaning the scanner suppresses new BUY signals despite individual bullish outlooks.
 
 ## Top Liquidity Spikes
 - AJWA.CA: spike=10.75 liquidity=522743808.0 outlook=WEAK_OR_RISKY score=23.99 buy_ready=False
