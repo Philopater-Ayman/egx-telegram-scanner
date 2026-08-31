@@ -1,10 +1,10 @@
 # Telegram-First EGX Scanner Report
 
-Scan phase: Pre-market risk check
-Generated UTC: 2026-08-31T11:53:03.664445+00:00
-Generated Cairo: 2026-08-31 14:53
-Run timing: target 08:45 Cairo | generated Cairo 2026-08-31 14:53 | cron 45 5 * * 0-4
-Trigger: scheduled cron=45 5 * * 0-4 mapped to pre_market; Cairo now 2026-08-31 14:49
+Scan phase: Open liquidity confirmation
+Generated UTC: 2026-08-31T13:41:38.645081+00:00
+Generated Cairo: 2026-08-31 16:41
+Run timing: target 09:15 Cairo | generated Cairo 2026-08-31 16:41 | cron 15 6 * * 0-4
+Trigger: scheduled cron=15 6 * * 0-4 mapped to open_confirm; Cairo now 2026-08-31 16:38
 
 ## Control Center
 - Action tickets: 0 prioritized signal(s)
@@ -33,11 +33,11 @@ Trigger: scheduled cron=45 5 * * 0-4 mapped to pre_market; Cairo now 2026-08-31 
 ## AI Narrative
 - Provider: OpenRouter OK
 - Model: nvidia/nemotron-3-super-120b-a12b:free
-- Summary: EGX30 mixed, EGX70 bearish, sector breadth 33% → defensive risk mode, no new buys. Scanner prioritizes FAIT.CA, MCQE.CA, KWIN.CA (high rank_score, bullish watch outlook, accumulation‑spike liquidity) despite proximity to resistance and mixed breadth.
-- Tickets selected for top rank_score, bullish watch outlook, and accumulation‑spike liquidity; sectors (Banking, Building Materials, General) align with leading sector groups.
-- Liquidity spikes suggest near‑term accumulation; tight resistance distances (e.g., CIEB.CA <1% away) limit upside, while wider support gaps allow pull‑back potential; outlook remains watchful.
-- EGX30 mixed and EGX70 bearish with weak MA20 breadth (<50%) shift risk mode to DEFENSIVE_NO_NEW_BUY, overriding individual ticket strength.
-- Uncertainty from cooling liquidity in some names, overheated RSI, and limited evidence means the bullish watch could reverse quickly; expect heightened volatility over the next 1‑3 days.
+- Summary: EGX30 shows a mixed trend while EGX70 is bearish; sector breadth is only about one‑third positive, keeping the risk mode in DEFENSIVE_NO_NEW_BUY despite several stocks flashing bullish watch signals.
+- The scanner prioritized tickets by rank score; all selected stocks have a BULLISH_WATCH outlook but are marked HOLD because the defensive regime blocks new buys.
+- Liquidity shows accumulation spikes in FAIT.CA, KWIN.CA, CIEB.CA and PRDC.CA, indicating short‑term inflows, yet many others are in a TRADEABLE regime and overall sector breadth remains weak.
+- Most tickets sit well above their 20‑day support (e.g., MCQE.CA ~32% above, KWIN.CA ~33% above) and close to resistance (CIEB.CA <1% below, PRDC.CA ~1% below), suggesting limited upside and a quick test of support if sen
+- EGX30’s mixed trend and EGX70’s bearish trend shift the risk mode to DEFENSIVE_NO_NEW_BUY, adding uncertainty that even bullish watch scores could reverse if breadth does not improve in the next 1‑3 days.
 
 ## Top Liquidity Spikes
 - AJWA.CA: spike=10.75 liquidity=522743808.0 outlook=WEAK_OR_RISKY score=23.99 buy_ready=False
