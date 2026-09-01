@@ -1,10 +1,10 @@
 # Telegram-First EGX Scanner Report
 
-Scan phase: Intraday liquidity update
-Generated UTC: 2026-09-01T13:01:13.800765+00:00
-Generated Cairo: 2026-09-01 16:01
-Run timing: target 11:00 Cairo | generated Cairo 2026-09-01 16:01 | cron 0 8 * * 0-4
-Trigger: scheduled cron=0 8 * * 0-4 mapped to intraday; Cairo now 2026-09-01 15:58
+Scan phase: Post-close tomorrow tickets
+Generated UTC: 2026-09-01T16:50:40.687496+00:00
+Generated Cairo: 2026-09-01 19:50
+Run timing: target 15:30 Cairo | generated Cairo 2026-09-01 19:50 | cron 30 12 * * 0-4
+Trigger: scheduled cron=30 12 * * 0-4 mapped to post_close; Cairo now 2026-09-01 19:46
 
 ## Control Center
 - Action tickets: 0 prioritized signal(s)
@@ -33,11 +33,9 @@ Trigger: scheduled cron=0 8 * * 0-4 mapped to intraday; Cairo now 2026-09-01 15:
 ## AI Narrative
 - Provider: OpenRouter OK
 - Model: nvidia/nemotron-3-super-120b-a12b:free
-- Summary: EGX30 is constructive while EGX70 is bearish, sector breadth is weak at 14.3%, and risk mode is DEFENSIVE_NO_NEW_BUY; the scanner flags accumulation spikes and bullish watch outlooks on several tickets but keeps them as HOLD due to the defensive regime and low confidence.
-- Top tickets (PRDC.CA, EBSC.CA, CIEB.CA) show liquidity accumulation spikes (2‑4×) and BULLISH_WATCH outlooks, yet they sit near or above resistance with tight or negative resistance distances, limiting near‑term upside.
-- Support distances range from ~5% to ~20% while resistance distances are often ≤0% or slightly positive, indicating price may stall or retreat in the next 1‑3 days despite short‑term buying interest.
-- Only Investment Holding, Textiles, and Industrial Goods & Cables are leading sectors; most flagged tickets belong to non‑leading sectors, reducing sector‑based conviction.
-- The EGX30 constructive trend versus EGX70 bearish trend shifts the market regime to defensive, prompting the scanner to maintain HOLD with low confidence amid mixed liquidity and technical signals.
+- Summary: EGX30 constructive while EGX70 bearish, sector breadth low at 14.3% triggers defensive_no_new_buy mode; scanner highlights accumulation‑spike stocks with bullish‑watch outlook but holds due to weak sector leadership and nearby resistance.
+- PRDC.CA, EBSC.CA, CIEB.CA show strong liquidity spikes (3‑4× average) and bullish‑watch outlook, yet trade close to 20‑day resistance, limiting near‑term upside.
+- ABUK.CA and SKPC.CA exhibit elevated RSI (>70) and extended momentum, suggesting possible overbought conditions and higher short‑term volatility.
 
 ## Top Liquidity Spikes
 - SVCE.CA: spike=7.14 liquidity=746993600.0 outlook=WEAK_OR_RISKY score=0 buy_ready=False
