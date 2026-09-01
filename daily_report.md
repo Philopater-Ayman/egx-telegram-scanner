@@ -1,10 +1,10 @@
 # Telegram-First EGX Scanner Report
 
-Scan phase: Post-close tomorrow tickets
-Generated UTC: 2026-09-01T16:50:40.687496+00:00
-Generated Cairo: 2026-09-01 19:50
-Run timing: target 15:30 Cairo | generated Cairo 2026-09-01 19:50 | cron 30 12 * * 0-4
-Trigger: scheduled cron=30 12 * * 0-4 mapped to post_close; Cairo now 2026-09-01 19:46
+Scan phase: Evening tomorrow plan
+Generated UTC: 2026-09-01T19:30:17.343863+00:00
+Generated Cairo: 2026-09-01 22:30
+Run timing: target 19:30 Cairo | generated Cairo 2026-09-01 22:30 | cron 30 16 * * 0-4
+Trigger: scheduled cron=30 16 * * 0-4 mapped to evening_plan; Cairo now 2026-09-01 22:27
 
 ## Control Center
 - Action tickets: 0 prioritized signal(s)
@@ -33,9 +33,11 @@ Trigger: scheduled cron=30 12 * * 0-4 mapped to post_close; Cairo now 2026-09-01
 ## AI Narrative
 - Provider: OpenRouter OK
 - Model: nvidia/nemotron-3-super-120b-a12b:free
-- Summary: EGX30 constructive while EGX70 bearish, sector breadth low at 14.3% triggers defensive_no_new_buy mode; scanner highlights accumulation‑spike stocks with bullish‑watch outlook but holds due to weak sector leadership and nearby resistance.
-- PRDC.CA, EBSC.CA, CIEB.CA show strong liquidity spikes (3‑4× average) and bullish‑watch outlook, yet trade close to 20‑day resistance, limiting near‑term upside.
-- ABUK.CA and SKPC.CA exhibit elevated RSI (>70) and extended momentum, suggesting possible overbought conditions and higher short‑term volatility.
+- Summary: EGX30 is constructive while EGX70 is bearish; sector breadth is low (14.3%) and risk mode is DEFENSIVE_NO_NEW_BUY, so the scanner only flags HOLD tickets with bullish‑watch outlook and accumulation spikes.
+- Top tickets (PRDC.CA, EBSC.CA, CIEB.CA) rank high due to liquidity spikes >2.8× and a bullish watch outlook, even though their sectors are not leading.
+- Support lies within ~20% of current price while resistance is tight, limiting near‑term upside; RSI readings between 60‑75 show moderate momentum.
+- EGX70’s bearish trend and weak MA20 breadth keep the overall risk mode defensive, overriding individual ticket optimism.
+- Uncertainty persists from mixed sector performance and low breadth, so any short‑term move could reverse quickly.
 
 ## Top Liquidity Spikes
 - SVCE.CA: spike=7.14 liquidity=746993600.0 outlook=WEAK_OR_RISKY score=0 buy_ready=False
