@@ -1,5 +1,6 @@
 Ticker,Company Name,Sector,AI Status,Watchlist Tier,Signal Status
-NCCW.CA,Nasr Company for Civil Works,General / Verified EGX Expansion,Active Tracking,WATCH,BUY_READY
-LCSW.CA,Lecico Egypt,Building Materials,Active Tracking,WATCH,BUY_READY
-CSAG.CA,Canal Shipping Agencies,Transportation & Logistics,Active Tracking,WATCH,BUY_READY
-MAAL.CA,Marseille Almasreia Alkhalegeya For Holding Investment SAE,General / Verified EGX Expansion,Active Tracking,WATCH,BUY_READY
+ALCN.CA,Alexandria Containers and Cargo Handling,Transportation & Logistics,Active Tracking,WATCH,BUY_READY
+FERC.CA,Ferchem Misr Fertilizers and Chemicals,Basic Resources & Chemicals,Active Tracking,WATCH,BUY_READY
+EGCH.CA,Egyptian Chemical Industries Kima,Basic Resources & Chemicals,Active Tracking,WATCH,BUY_READY
+MBSC.CA,Misr Beni Suef Cement,Building Materials,Active Tracking,WATCH,BUY_READY
+ARCC.CA,Arabian Cement Company,Building Materials,Active Tracking,WATCH,BUY_READY
