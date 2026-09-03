@@ -1,13 +1,13 @@
 # Telegram-First EGX Scanner Report
 
-Scan phase: Post-close tomorrow tickets
-Generated UTC: 2026-09-03T16:38:59.326494+00:00
-Generated Cairo: 2026-09-03 19:38
-Run timing: target 15:30 Cairo | generated Cairo 2026-09-03 19:38 | cron 30 12 * * 0-4
-Trigger: scheduled cron=30 12 * * 0-4 mapped to post_close; Cairo now 2026-09-03 19:34
+Scan phase: Evening tomorrow plan
+Generated UTC: 2026-09-03T19:25:50.350695+00:00
+Generated Cairo: 2026-09-03 22:25
+Run timing: target 19:30 Cairo | generated Cairo 2026-09-03 22:25 | cron 30 16 * * 0-4
+Trigger: scheduled cron=30 16 * * 0-4 mapped to evening_plan; Cairo now 2026-09-03 22:20
 
 ## Control Center
-- Action tickets: 0 prioritized signal(s)
+- Action tickets: 3 prioritized signal(s)
 - BUY-ready candidates: 57
 - Data quality issues: 1
 - Tradeable price/liquidity tickers: 176/189
@@ -33,11 +33,10 @@ Trigger: scheduled cron=30 12 * * 0-4 mapped to post_close; Cairo now 2026-09-03
 ## AI Narrative
 - Provider: OpenRouter OK
 - Model: nvidia/nemotron-3-super-120b-a12b:free
-- Summary: EGX30 bullish / EGX70 mixed; scanner highlights accumulation spikes in leading sectors but evidence is weak, keeping confidence low.
-- Top picks (ALCN.CA, EGCH.CA, FERC.CA) show accumulation spikes, strong liquidity and near‑term support, suggesting a bullish watch for the next 1‑3 days.
-- Sector strength in Transportation & Logistics and Basic Resources drives selection, yet many stocks sit far above support or show cooling liquidity, limiting upside.
-- EGX70’s mixed breadth and below‑MA20 weakness shift risk mode to selective swing trades only, increasing uncertainty.
-- Evidence gaps and low confidence scores mean any short‑term move remains tentative; watch for confirmation before acting.
+- Summary: Scanner prioritized ALCN.CA, EGCH.CA and MBSC.CA as BUY setups under a selective swing regime, reflecting a bullish EGX30, mixed EGX70 and moderate sector breadth.
+- ALCN.CA shows strong liquidity accumulation, price above MA20/MA50, RSI in the mid‑50s, near support, and leads the Transportation & Logistics sector; bullish watch but low confidence.
+- EGCH.CA exhibits high liquidity spike, price above moving averages, RSI around 49, belongs to Basic Resources & Chemicals, and carries a bullish watch with low confidence.
+- MBSC.CA has cooling liquidity, extended momentum, price far above support, sits in Building Materials, and presents a bullish watch with lower outlook score and higher short‑term volatility.
 
 ## Top Liquidity Spikes
 - EPPK.CA: spike=3.67 liquidity=4250953.5 outlook=WEAK_OR_RISKY score=21.16 buy_ready=False
@@ -57,7 +56,18 @@ Trigger: scheduled cron=30 12 * * 0-4 mapped to post_close; Cairo now 2026-09-03
 - #8 Tourism & Leisure: score=6.77 5d=1.58% 20d=10.59% aboveMA50=0.0%
 
 ## Today's Prioritized Action Tickets
-- HOLD: Local fallback HOLD: no candidate passed evidence, liquidity, freshness, and technical gates.
+- Priority #1: BUY ALCN.CA
+  - Entry: 32.98 | Take profit: 35.62 | Stop loss: 31.66
+  - Confidence: LOW | score=34.4 | outlook=BULLISH_WATCH 100
+  - Reason: BUY SETUP: ALCN.CA has aligned current price data, liquidity above threshold, price above MA20/MA50, RSI 56.44, support 30.03, resistance 32.8, and evidence sources. Macro trend is Bullish; market regime is SELECTIVE_SWING_TRADES_ONLY; verify price action in Thndr before treating it as a swing entry.
+- Priority #2: BUY EGCH.CA
+  - Entry: 14.45 | Take profit: 15.61 | Stop loss: 13.87
+  - Confidence: LOW | score=30.58 | outlook=BULLISH_WATCH 100
+  - Reason: BUY SETUP: EGCH.CA has aligned current price data, liquidity above threshold, price above MA20/MA50, RSI 48.73, support 13.3, resistance 14.79, and evidence sources. Macro trend is Bullish; market regime is SELECTIVE_SWING_TRADES_ONLY; verify price action in Thndr before treating it as a swing entry.
+- Priority #3: BUY MBSC.CA
+  - Entry: 419.32 | Take profit: 467.65 | Stop loss: 402.55
+  - Confidence: LOW | score=28.4 | outlook=BULLISH_WATCH 72
+  - Reason: BUY SETUP: MBSC.CA has aligned current price data, liquidity above threshold, price above MA20/MA50, RSI 64.1, support 253.1, resistance 470.0, and evidence sources. Macro trend is Bullish; market regime is SELECTIVE_SWING_TRADES_ONLY; verify price action in Thndr before treating it as a swing entry.
 
 ## Thndr Instruction
 - Advisor-only signal mode is active. The scanner never executes trades.
@@ -149,7 +159,7 @@ Trigger: scheduled cron=30 12 * * 0-4 mapped to post_close; Cairo now 2026-09-03
 - EBSC.CA: score=23.66 buy_ready=True sector_rank=14 price=2.14 support=1.88 resistance=2.43 source=Yahoo Finance history + Mubasher delayed current trading data as_of=01:29 PM market time freshness=DELAYED_CURRENT RSI=68.29 liquidity=10259838.0 spike=0.73
 - ECAP.CA: score=11.23 buy_ready=False sector_rank=14 price=33.62 support=31.16 resistance=43.5 source=Yahoo Finance history + Mubasher delayed current trading data as_of=01:29 PM market time freshness=DELAYED_CURRENT RSI=26.83 liquidity=7561694.0 spike=0.42
 - EDFM.CA: score=17.57 buy_ready=True sector_rank=14 price=425.33 support=390.0 resistance=425.0 source=Yahoo Finance history + Mubasher delayed current trading data as_of=01:25 PM market time freshness=DELAYED_CURRENT RSI=59.18 liquidity=3049342.25 spike=1.43
-- EEII.CA: score=17.66 buy_ready=False sector_rank=14 price=2.35 support=2.4 resistance=2.4 source=Yahoo Finance history + Mubasher delayed current trading data as_of=01:28 PM market time freshness=DELAYED_CURRENT RSI=50.0 liquidity=11398212.0 spike=1.0
+- EEII.CA: score=17.66 buy_ready=False sector_rank=14 price=2.35 support=2.35 resistance=2.35 source=Yahoo Finance history + Mubasher delayed current trading data as_of=01:28 PM market time freshness=DELAYED_CURRENT RSI=50.0 liquidity=11398212.0 spike=1.0
 - EFIC.CA: score=14.4 buy_ready=False sector_rank=3 price=193.04 support=193.0 resistance=260.0 source=Yahoo Finance history + Mubasher delayed current trading data as_of=01:27 PM market time freshness=DELAYED_CURRENT RSI=20.29 liquidity=15734034.0 spike=0.34
 - EFID.CA: score=21.46 buy_ready=False sector_rank=17 price=30.2 support=29.71 resistance=34.89 source=Yahoo Finance history + Mubasher delayed current trading data as_of=01:29 PM market time freshness=DELAYED_CURRENT RSI=37.61 liquidity=81616344.0 spike=0.95
 - EFIH.CA: score=20.42 buy_ready=False sector_rank=19 price=23.22 support=22.16 resistance=25.4 source=Yahoo Finance history + Mubasher delayed current trading data as_of=01:29 PM market time freshness=DELAYED_CURRENT RSI=36.52 liquidity=102321912.0 spike=0.89
@@ -289,40 +299,39 @@ Trigger: scheduled cron=30 12 * * 0-4 mapped to post_close; Cairo now 2026-09-03
 - These checks are historical context only, not a prediction or guarantee.
 
 ## Evidence
-- ALCN.CA: status=REJECTED_TICKER_MISMATCH latest=n/a age_days=n/a sources=0 expected=Alexandria Containers and Cargo Handling summary=Evidence rejected for ALCN.CA: source text did not clearly match ALCN.CA / Alexandria Containers and Cargo Handling.
-- EGCH.CA: status=REJECTED_TICKER_MISMATCH latest=n/a age_days=n/a sources=0 expected=Egyptian Chemical Industries Kima summary=Evidence rejected for EGCH.CA: source text did not clearly match EGCH.CA / Egyptian Chemical Industries Kima.
-- FERC.CA: status=OLD_ACCEPTED latest=2025-01-01 age_days=610 sources=3 expected=Ferchem Misr Fertilizers and Chemicals summary=Ferchem Misr’s board greenlights EGP 500m dividends for 2025; Ferchem Misr’s profits soar 4,238% in 2025; Ferchem Misr’s profit leaps 75% in 9M
+- ALCN.CA: status=RECENT_ACCEPTED latest=2026-09-01 age_days=2 sources=3 expected=Alexandria Containers and Cargo Handling summary=Alexandria Containers and Cargo Handling (ALCN.CA) has shown strong financial performance and significant market activity in the last 12 months. The company was added to the EGX 30 Index in September 2026. It reported increased revenues and net income for Q2 2026 and H1 2026, with a positive outlook for FY 2026. There have been several disclosures regarding board decisions, dividend declarations, and strategic moves related to its stake in Egypt Maritime Ports, including a tender offer from Abu Dhabi Ports Company in late 2025.
+  - Alexandria Container&Cargo Handling Company(CASE: ALCN) added to EGX 30 Index (September 1, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHLWqy10Ey_tNbSFUIsBaTKGr95DhTGZXS8uqyJB_FH-RDy3thBRfrQzMHYcR4B_35q4GPL7rl2W_N6yBxts53OX_lMusj_oIfWGEFNS8ypzsP3gw1YSQeRUkMSqiNIn4v4XoQ5SVwqRZfZKzSyU9UM0mMcNbhsjxyBJC-TGTimY49qOJJ5jbEMoyTBV18h9rMAfjkoQb_bLYa8PwpJogdzImrGRb5M8nWj6K0fbDe1R4Sa90UtlEFvd4in
+  - Alexandria Containers and goods (ALCN.CA) Reports its Financial Results for the Period from 01/01/2026 to 30/06/2026 (August 17, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHoJtDuHFap2tp4rCPz9BquEVJVRze8Rq3fN-qE9mKFkA05_cnE0y9u-4824rv_89y3Mm9x9ZzRlkNV-qbL7Gxq8FCRrtwyaAKWSf5rkMT_bt5IrRuDnVvozYABmmunQLWkYLSr1Wk=
+  - Alexandria Container&Cargo Handling (CASE:ALCN) - Second quarter 2026 earnings released (August 19, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQENXyOnADDmoSiGleasPKdWNAbLkELOsSBiTSaXRN7EVDqXAAz5Qapl94qxTtMWSVUjzB5W8QHYPNPVLOpo8CQ7eU5GDoexGhfGTTw2n6FAadjDxfXHRTnHYAmKcoOISFGLch7OG-r0Iv5z_PMkup_GWpP2VAdCQiEb3YF0OxzlEzdBP3W-W6L4ZqXfDZJhr1-krvFlNviEbF6wqVc=
+- EGCH.CA: status=RECENT_ACCEPTED latest=2026-08-11 age_days=23 sources=3 expected=Egyptian Chemical Industries Kima summary=Egyptian Chemical Industries Kima (EGCH.CA) has reported significant financial growth in the past year, with net profits jumping 92% YoY in FY2025/26. The company's stock has also seen a considerable increase. Recent disclosures include board decisions and updates on shareholder structure. The company is expected to release its next earnings report in September 2026.
+  - Kima's net profits jump 92% YoY in FY2025/26 (August 11, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQExA-qEEPAxYdK8H6ULgMUp1XsU-9OW_Ayn-W2_zezhxKtIaThn5GE_HNINP5-n7FeSHmhK_5kJ3UBcR1OpW2TWnV1zHmME75gYDym3_y55Z1I0up5FUtWOXUTQ37BrWQv6ccE7smUYGZvxUYom2FBu8g==
+  - Egyptian Chemical Industries (Kima) (EGCH.CA) - Decisions of the Board of Directors (August 11, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF-nAo6v0xtzgijcmxFaj20_FI50pABF10AhKWFKIvpP7wcbaDfbzoJoMdSoHPMbr2vVuE4-FMIqfTqOHj4IFshGzeYz3kuORtDnpcQRToj0sP4MdHw7LE_VlswM7xDdDskrhoTasmWPTDI-7IcTjyG
+  - Egyptian Chemical Industries (Kima) (EGCH.CA) - Disclosure Form for the BoD & the Shareholders' Structure (July 16, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF-nAo6v0xtzgijcmxFaj20_FI50pABF10AhKWFKIvpP7wcbaDfbzoJoMdSoHPMbr2vVuE4-FMIqfTqOHj4IFshGzeYz3kuORtDnpcQRToj0sP4MdHw7LE_VlswM7xDdDskrhoTasmWPTDI-7IcTjyG
+- FERC.CA: status=OLD_ACCEPTED latest=2025-01-01 age_days=610 sources=3 expected=Ferchem Misr Fertilizers and Chemicals summary=Ferchem Misr’s board greenlights EGP 500m dividends for 2025; Ferchem Misr’s profits soar 4,238% in 2025; Ferchem Misr’s profit leaps 75% in 9M Gemini also reviewed web evidence but did not return ticker-specific citations.
   - Ferchem Misr’s board greenlights EGP 500m dividends for 2025: https://english.mubasher.info/news/4600298/Ferchem-Misr-s-board-greenlights-EGP-500m-dividends-for-2025/
   - Ferchem Misr’s profits soar 4,238% in 2025: https://english.mubasher.info/news/4564349/Ferchem-Misr-s-profits-soar-4-238-in-2025/
   - Ferchem Misr’s profit leaps 75% in 9M: https://english.mubasher.info/news/3560738/Ferchem-Misr-s-profit-leaps-75-in-9M/
-- MBSC.CA: status=OLD_ACCEPTED latest=2025-01-01 age_days=610 sources=3 expected=Misr Beni Suef Cement summary=Misr Beni Suef’s consolidated net profits near EGP 4bn in 2025; Misr Beni Suef’s consolidated net profits hit EGP 953m in H1-25; Misr Beni Suef Cement’s consolidate profits fall to EGP 574m in Q1-25
-  - Misr Beni Suef’s consolidated net profits near EGP 4bn in 2025: https://english.mubasher.info/news/4599415/Misr-Beni-Suef-s-consolidated-net-profits-near-EGP-4bn-in-2025/
-  - Misr Beni Suef’s consolidated net profits hit EGP 953m in H1-25: https://english.mubasher.info/news/4488249/Misr-Beni-Suef-s-consolidated-net-profits-hit-EGP-953m-in-H1-25/
-  - Misr Beni Suef Cement’s consolidate profits fall to EGP 574m in Q1-25: https://english.mubasher.info/news/4455784/Misr-Beni-Suef-Cement-s-consolidate-profits-fall-to-EGP-574m-in-Q1-25/
-- ARCC.CA: status=OLD_ACCEPTED latest=2025-01-01 age_days=610 sources=3 expected=Arabian Cement Company summary=Arabian Cement to pay out EGP 2bn dividends for 2025; Arabian Cement’s EGM approves nearly EGP 8m capital cut; Arabian Cement’s consolidated profits near EGP 3.6bn in 2025
-  - Arabian Cement to pay out EGP 2bn dividends for 2025: https://english.mubasher.info/news/4587912/Arabian-Cement-to-pay-out-EGP-2bn-dividends-for-2025/
-  - Arabian Cement’s EGM approves nearly EGP 8m capital cut: https://english.mubasher.info/news/4583762/Arabian-Cement-s-EGM-approves-nearly-EGP-8m-capital-cut/
-  - Arabian Cement’s consolidated profits near EGP 3.6bn in 2025: https://english.mubasher.info/news/4562679/Arabian-Cement-s-consolidated-profits-near-EGP-3-6bn-in-2025/
-- MASR.CA: status=OLD_ACCEPTED latest=2025-01-01 age_days=610 sources=3 expected=Madinet Masr For Housing and Development summary=Madinet Masr to pay out EGP 0.15/shr for 2025 upon equityholders&#39; approval; Madinet Masr logs 24% higher consolidated profits in 2025; dividends recommended; Madinet Masr to distribute treasury stocks in first-ever move
-  - Madinet Masr to pay out EGP 0.15/shr for 2025 upon equityholders&#39; approval: https://english.mubasher.info/news/4601386/Madinet-Masr-to-pay-out-EGP-0-15-shr-for-2025-upon-equityholders-approval/
-  - Madinet Masr logs 24% higher consolidated profits in 2025; dividends recommended: https://english.mubasher.info/news/4578449/Madinet-Masr-logs-24-higher-consolidated-profits-in-2025-dividends-recommended/
-  - Madinet Masr to distribute treasury stocks in first-ever move: https://english.mubasher.info/news/4577724/Madinet-Masr-to-distribute-treasury-stocks-in-first-ever-move/
-- ABUK.CA: status=ACCEPTED_UNDATED latest=n/a age_days=n/a sources=3 expected=Abu Qir Fertilizers summary=Abu Qir Fertilizers generates EGP 5.6bn net profits in Q1-26 unaudited results; Abu Qir Fertilizers&#39; board approves $5.6m coated urea project; Abu Qir Fertilizers&#39; profits exceed EGP 5.1bn in H1-25/26
-  - Abu Qir Fertilizers generates EGP 5.6bn net profits in Q1-26 unaudited results: https://english.mubasher.info/news/4604919/Abu-Qir-Fertilizers-generates-EGP-5-6bn-net-profits-in-Q1-26-unaudited-results/
-  - Abu Qir Fertilizers&#39; board approves $5.6m coated urea project: https://english.mubasher.info/news/4585599/Abu-Qir-Fertilizers-board-approves-5-6m-coated-urea-project/
-  - Abu Qir Fertilizers&#39; profits exceed EGP 5.1bn in H1-25/26: https://english.mubasher.info/news/4554415/Abu-Qir-Fertilizers-profits-exceed-EGP-5-1bn-in-H1-25-26/
-- MFSC.CA: status=ACCEPTED_UNDATED latest=n/a age_days=n/a sources=3 expected=Egypt Free Shops Co. summary=Egypt Duty Free Shops posts lower consolidated net profits at nearly EGP 88m in Q1-25/26; Egypt Free Shops achieves higher profits in Q1-FY22/23; Egypt Free Shops’ earnings soar 26% in FY21/22
+- MBSC.CA: status=RECENT_ACCEPTED latest=2026-08-12 age_days=22 sources=3 expected=Misr Beni Suef Cement summary=Misr Beni Suef Cement (MBSC.CA) has demonstrated strong financial growth, with consolidated profits rising significantly in H1 2026 and Q1 2026. The company's stock has also seen a substantial increase over the last year. Key developments include a partnership for a solar project, a proposed cash dividend for 2025, and the approval of a capital reduction.
+  - Misr Beni Suef Cement's consolidated profits rise 31.3% YoY in H1 2026 (August 12, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGqzupJO8b8T9_kWDL-T-Guf_LHqmECfroyyAvDaB9TkdU_kQfX22_s0mkUY4zYIf6IMi0X99IzczumbOp0h8WB5-g9fZYJn1bgFwXxJ8OydiHLEsr5aQCD-z3EGnIO9zFSTmlFgF24HCjUHKvCLf0zKA==
+  - Misr Beni Suef Cement Co. S.A.E (EGX:MBSC) Income Statement – Q2 2026 (June 30, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG6Ri4mHatoRyRrFACFhNIgTM0oUziNsFDOw_5GXZCfSH_13daY_QnjRlHJVYehxsPkXGYH-l7kij16AqL-jf-kIoMAvCjYCcl06I4FdIfP0SOZ73xVqU2dMTZrBY7bT8SxcGXUqfJL1qqPR-aEvnP5Tsgd6SR5CosYRyLbYcBl95mJUA==
+  - Titan Egypt partners with SolarizEgypt on 11.45 MW solar project for Misr Beni Suef Cement (June 21, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGqzupJO8b8T9_kWDL-T-Guf_LHqmECfroyyAvDaB9TkdU_kQfX22_s0mkUY4zYIf6IMi0X99IzczumbOp0h8WB5-g9fZYJn1bgFwXxJ8OydiHLEsr5aQCD-z3EGnIO9zFSTmlFgF24HCjUHKvCLf0zKA==
+- ARCC.CA: status=RECENT_ACCEPTED latest=2026-07-16 age_days=49 sources=3 expected=Arabian Cement Company summary=Arabian Cement Company (ARCC.CA) has experienced significant revenue and earnings growth in 2025, with its stock price nearly doubling in the last year. The company has been active with various disclosures, including board decisions, shareholder structure updates, and dividend declarations. Recent financial reports indicate strong performance in Q1 2026 and the latest quarter.
+  - Arabian Cement Company (ARCC.CA) - Disclosure Form for the BoD & the Shareholders' Structure (July 16, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEU2qz9vh9nC208Ef2s07hF6ES0_p7AHqPfKJEudzxExjFi43IDv1q2HXJ7qh2qN67Uk7ELR0BkGS3nkOrnVRo7MyNzkexk4ovAx0ZGuZploerDsNO6DG5OhtjeSDVVAAf43gMC02k=
+  - Arabian Cement Company (ARCC.CA) - Decisions of the BoD Meeting (June 23, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGKZXsUi-3K6OPmbwyQvYVxWoe5qgdCXJGu2WbsRsO4EVVxCtOKOtdgstCBRvJAZfVqKWcNKLgKcMwH4yAlaj8QnhKi9y_dlCttvYka1TOjCzZ0bvGj3OnmLe2SL-Xqgk6znChL9f1ffv-E1-G6hIOpJAtjoedUwSRXfZDa95U=
+  - Arabian Cement Company S.A.E. Reports Earnings Results for the First Quarter Ended March 31, 2026 (June 1, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHFN9zsc1NmUTpJrmYD5RGhQwiSUbPBEjHLbS8RVGlL7x1nuvGvlBncMkWPIxQ42Vcca9_ur-xDpCipJvDvI0GoI7hBoQOo6xTejwppX-_8AIY38fSES7b6TB--Fc8-Iov3pARB-UofdEyItkq31XME0DfbNMV-oFekiNkUSTru4gF6aC2mEzxp
+- MASR.CA: status=RECENT_ACCEPTED latest=2026-08-10 age_days=24 sources=3 expected=Madinet Masr For Housing and Development summary=Madinet Masr For Housing and Development (MASR.CA) has shown robust financial performance with significant increases in revenue and net income in 2025 and the first half of 2026. The company's stock price has also seen substantial growth over the last year. Recent earnings reports indicate continued positive trends, and analysts maintain a 'Strong Buy' rating with an optimistic price target.
+  - Madinet Masr For Housing and Development (CASE:MASR) - Second quarter 2026 earnings released (August 10, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFuPaOLiAjmYMxZj46iwWLqZakrXtFIhP_CFyzT55uS14rwxIwLnUf-wjHrI3lZWDu9jv_VlBcCQdP5gorShMVJDjtfTV2p00ouX4dcgk4gsiQsWuqjNW0Y3n3ulfsqbBC47g-FmD_isr2ucUnuGZcvPcRHQSybgHipWMlKO786vgsarjkeik-XgWeGQKZjSEuHOgiFQerRqBpWDkudUGkxqs_poLb-WRNWLly-QNrtn-IcyBuXgNFrIEmv
+  - Madinet Masr For Housing and Development (EGX:MASR) Revenue - Last twelve months (March 31, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH4zS1SUPoaCevvOjH7KnP6mrlaQzFz2s4G2hsgV4DNa74kEvtzsweCwXo4SJww4qm6KfSyN76H35Eph0f6tfjiG97g1h7e7ysdLeZjY7isyZjziorKCLvWwPVBtD1q1gB-DNuKVr0jbn7kgA==
+  - Madinet Masr For Housing and Development (CASE:MASR) - First quarter 2026 earnings released (March 31, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFuPaOLiAjmYMxZj46iwWLqZakrXtFIhP_CFyzT55uS14rwxIwLnUf-wjHrI3lZWDu9jv_VlBcCQdP5gorShMVJDjtfTV2p00ouX4dcgk4gsiQsWuqjNW0Y3n3ulfsqbBC47g-FmD_isr2ucUnuGZcvPcRHQSybgHipWMlKO786vgsarjkeik-XgWeGQKZjSEuHOgiFQerRqBpWDkudUGkxqs_poLb-WRNWLly-QNrtn-IcyBuXgNFrIEmv
+- ABUK.CA: status=RECENT_ACCEPTED latest=2026-07-30 age_days=35 sources=3 expected=Abu Qir Fertilizers summary=Abu Qir Fertilizers (ABUK.CA) has reported a significant profit surge in H1 FY 2025/26, driven by increased revenues and export gains, and has completed a project to boost production capacity. While FY 2024/25 saw a drop in net profits, the company is actively pursuing new projects like a coated urea plant and a solar power project. Its stock price has also seen a substantial increase over the last year.
+  - Abu Qir Fertilizers Posts 119% Profit Surge on Revenue, Export Gains | H1 FY 2025/26 (July 30, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEzAAHQ-4xuribZGDq8pIP6Wb_ht_WGVbxJM2VSEPThznp8YNHjrldg5ig6VPOd64SY58HpzZ8Jj7NDZ_FLb5Vwqs9WYoF12oReo-by6qkCW7gsrScfIBJIZ0rq0A9nVjkRdnRpYyUIIF6PiSsCmFtz1RgO_AH1wuGB15L2-khoP39KGCNWiQ5wmvhkSIZ0-YSLWxs=
+  - Abu Qir Fertilizers Posts 119% Profit Surge on Revenue, Export Gains | Q1 2026 (July 30, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEzAAHQ-4xuribZGDq8pIP6Wb_ht_WGVbxJM2VSEPThznp8YNHjrldg5ig6VPOd64SY58HpzZ8Jj7NDZ_FLb5Vwqs9WYoF12oReo-by6qkCW7gsrScfIBJIZ0rq0A9nVjkRdnRpYyUIIF6PiSsCmFtz1RgO_AH1wuGB15L2-khoP39KGCNWiQ5wmvhkSIZ0-YSLWxs=
+  - Abu Qir Fertilizers Posts 119% Profit Surge on Revenue, Export Gains | Ammonia Converter Revamp Project (July 30, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEzAAHQ-4xuribZGDq8pIP6Wb_ht_WGVbxJM2VSEPThznp8YNHjrldg5ig6VPOd64SY58HpzZ8Jj7NDZ_FLb5Vwqs9WYoF12oReo-by6qkCW7gsrScfIBJIZ0rq0A9nVjkRdnRpYyUIIF6PiSsCmFtz1RgO_AH1wuGB15L2-khoP39KGCNWiQ5wmvhkSIZ0-YSLWxs=
+- MFSC.CA: status=ACCEPTED_UNDATED latest=n/a age_days=n/a sources=3 expected=Egypt Free Shops Co. summary=Egypt Duty Free Shops posts lower consolidated net profits at nearly EGP 88m in Q1-25/26; Egypt Free Shops achieves higher profits in Q1-FY22/23; Egypt Free Shops’ earnings soar 26% in FY21/22 Gemini also reviewed web evidence but did not return ticker-specific citations.
   - Egypt Duty Free Shops posts lower consolidated net profits at nearly EGP 88m in Q1-25/26: https://english.mubasher.info/news/4530712/Egypt-Duty-Free-Shops-posts-lower-consolidated-net-profits-at-nearly-EGP-88m-in-Q1-25-26/
   - Egypt Free Shops achieves higher profits in Q1-FY22/23: https://english.mubasher.info/news/4042863/Egypt-Free-Shops-achieves-higher-profits-in-Q1-FY22-23/
   - Egypt Free Shops’ earnings soar 26% in FY21/22: https://english.mubasher.info/news/3993622/Egypt-Free-Shops-earnings-soar-26-in-FY21-22/
 
 ## Warnings
-- Evidence rejected for ALCN.CA: source text did not clearly match ALCN.CA / Alexandria Containers and Cargo Handling.
-- Gemini batch evidence failed: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
-- Evidence rejected for EGCH.CA: source text did not clearly match EGCH.CA / Egyptian Chemical Industries Kima.
 - Evidence for FERC.CA matches the company but appears old; latest detected date is 2025-01-01.
-- Evidence for MBSC.CA matches the company but appears old; latest detected date is 2025-01-01.
-- Evidence for ARCC.CA matches the company but appears old; latest detected date is 2025-01-01.
-- Evidence for MASR.CA matches the company but appears old; latest detected date is 2025-01-01.
-- Evidence for ABUK.CA matches the company but no source/report date was detected.
 - Evidence for MFSC.CA matches the company but no source/report date was detected.
