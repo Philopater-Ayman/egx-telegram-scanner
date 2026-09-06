@@ -1,13 +1,13 @@
 # Telegram-First EGX Scanner Report
 
-Scan phase: Intraday liquidity update
-Generated UTC: 2026-09-06T11:59:08.719886+00:00
-Generated Cairo: 2026-09-06 14:59
-Run timing: target 11:00 Cairo | generated Cairo 2026-09-06 14:59 | cron 0 8 * * 0-4
-Trigger: scheduled cron=0 8 * * 0-4 mapped to intraday; Cairo now 2026-09-06 14:52
+Scan phase: Post-close tomorrow tickets
+Generated UTC: 2026-09-06T15:44:06.006406+00:00
+Generated Cairo: 2026-09-06 18:44
+Run timing: target 15:30 Cairo | generated Cairo 2026-09-06 18:44 | cron 30 12 * * 0-4
+Trigger: scheduled cron=30 12 * * 0-4 mapped to post_close; Cairo now 2026-09-06 18:35
 
 ## Control Center
-- Action tickets: 3 prioritized signal(s)
+- Action tickets: 0 prioritized signal(s)
 - BUY-ready candidates: 62
 - Data quality issues: 1
 - Tradeable price/liquidity tickers: 162/189
@@ -33,8 +33,11 @@ Trigger: scheduled cron=0 8 * * 0-4 mapped to intraday; Cairo now 2026-09-06 14:
 ## AI Narrative
 - Provider: OpenRouter OK
 - Model: nvidia/nemotron-3-super-120b-a12b:free
-- Summary: Scanner flagged ALCN.CA, FAIT.CA and MBSC.CA as BUY SETUPs because each trades above its 20‑/50‑day MA, shows RSI near 60, and sits above identified support with resistance nearby, while the EGX30/EGX70 remain in a BULLISH, BROAD_RISK_ON regime that supports buys but urges caution due to low confidence and mixed liquidity signals.
-- ALCN.CA (Transportation & Logistics): price 32.88 > MA20/MA50, RSI 59.3, liquidity tradeable, support 30.03 / resistance 34.18 – near‑term upside limited to ~3.5% before resistance.
+- Summary: EGX30 and EGX70 are both bullish with sector breadth at 57.1%, putting the market in BROAD_RISK_ON mode; the scanner flagged several BUY_READY tickets based on strong rank scores, liquidity spikes and sector alignment, but overall confidence remains LOW due to mixed evidence and extended momentum.
+- Selected tickets show high rank_score, BULLISH_WATCH outlook and liquidity accumulation spikes, aligning with leading sectors (Building Materials, Transportation & Logistics, Investment Holding).
+- Liquidity/sector/support‑resistance context: many are trading near resistance (small resistance_distance_pct) or far above support, indicating near‑term upside potential but also proximity to overhead resistance or exten
+- EGX30/EGX70 bullish breadth shifts risk mode to BROAD_RISK_ON, raising buy tolerance while adding uncertainty because momentum is stretched and some stocks are well above their 20‑day support.
+- Uncertainty remains: evidence scores vary, several tickets lack clear source confirmation, RSI values approach overbought levels, and the primary HOLD signal reflects low confidence, suggesting possible consolidation or 
 
 ## Top Liquidity Spikes
 - MEPA.CA: spike=9.86 liquidity=277690400.0 outlook=WEAK_OR_RISKY score=0 buy_ready=False
@@ -54,18 +57,7 @@ Trigger: scheduled cron=0 8 * * 0-4 mapped to intraday; Cairo now 2026-09-06 14:
 - #8 Textiles: score=6.7 5d=0.0% 20d=7.68% aboveMA50=50.0%
 
 ## Today's Prioritized Action Tickets
-- Priority #1: BUY ALCN.CA
-  - Entry: 32.88 | Take profit: 35.52 | Stop loss: 31.56
-  - Confidence: LOW | score=31.9 | outlook=BULLISH_WATCH 100
-  - Reason: BUY SETUP: ALCN.CA has aligned current price data, liquidity above threshold, price above MA20/MA50, RSI 59.31, support 30.03, resistance 34.18, and evidence sources. Macro trend is Bullish; market regime is BROAD_RISK_ON; verify price action in Thndr before treating it as a swing entry.
-- Priority #2: BUY FAIT.CA
-  - Entry: 46.0 | Take profit: 49.68 | Stop loss: 44.16
-  - Confidence: LOW | score=31.2 | outlook=BULLISH_WATCH 85.2
-  - Reason: BUY SETUP: FAIT.CA has aligned current price data, liquidity above threshold, price above MA20/MA50, RSI 63.28, support 37.01, resistance 45.79, and evidence sources. Macro trend is Bullish; market regime is BROAD_RISK_ON; verify price action in Thndr before treating it as a swing entry.
-- Priority #3: BUY MBSC.CA
-  - Entry: 404.68 | Take profit: 467.65 | Stop loss: 388.49
-  - Confidence: LOW | score=30.9 | outlook=BULLISH_WATCH 80
-  - Reason: BUY SETUP: MBSC.CA has aligned current price data, liquidity above threshold, price above MA20/MA50, RSI 58.82, support 254.37, resistance 470.0, and evidence sources. Macro trend is Bullish; market regime is BROAD_RISK_ON; verify price action in Thndr before treating it as a swing entry.
+- HOLD: Local fallback HOLD: no candidate passed evidence, liquidity, freshness, and technical gates.
 
 ## Thndr Instruction
 - Advisor-only signal mode is active. The scanner never executes trades.
@@ -297,36 +289,34 @@ Trigger: scheduled cron=0 8 * * 0-4 mapped to intraday; Cairo now 2026-09-06 14:
 - These checks are historical context only, not a prediction or guarantee.
 
 ## Evidence
-- RAYA.CA: status=RECENT_ACCEPTED latest=2026-08-31 age_days=6 sources=3 expected=Raya Holding summary=Raya Holding has released its H1 2026 consolidated financial results, reporting EGP 33.8 billion in revenues, a 22% year-on-year increase. The company also published its Q1 2026 quarterly financial reports and board meeting disclosures. Additionally, Raya Holding announced its Q3 and 9M 2025 record-breaking results.
-  - Raya Holding Announces H1 2026 Financial Results, Reporting EGP 33.8 Billion in Revenues and 22% Year-on-Year Growth (August 31, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEFVXEj_gh-ac0N0goA147nd-vur0vXJBBaKKN8xfaiMxImqvLAxCsRvCMmVxvCEne57xsZiu32O0oldpq8OQ-RZRLn4KDOSdnMO6HU4tPmHzItvpc6ZPZm1yLUq7b1cey8nlL5eXV6vMzxz2AdOzqsc7wHqUN4OEHCAvAwsw878k1qHdvT47LQKKiAY1EzgKKm1US3K8E79ZDwyvn6t7_aI8I6IdFtKaTxeb3p-NZcZm7kQ56LQyRCT8_RoTDZcFjQisE
-  - Raya Quarterly Financials Report Q1 2026 (May 14, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFO4Jgb440TtTlS1FeBV78oEsU66eYuXYobLHd0amEBvHygL5zjb5se58xoPm4xOlrJbjobEhY0-eNPuMrn-HKqAiCMXlFE3BUcS14lTefjUjqnAeQWBLl_8dX6
-  - Raya Non-consolidated Quarterly Financials Report Q1 2026 (May 14, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFO4Jgb440TtTlS1FeBV78oEsU66eYuXYobLHd0amEBvHygL5zjb5se58xoPm4xOlrJbjobEhY0-eNPuMrn-HKqAiCMXlFE3BUcS14lTefjUjqnAeQWBLl_8dX6
-- ALCN.CA: status=RECENT_ACCEPTED latest=2026-09-05 age_days=1 sources=3 expected=Alexandria Containers and Cargo Handling summary=Alexandria Containers and Cargo Handling released its financial statements for the transitional period from July to December 2025. Abu Dhabi Ports Company PJSC proposed to acquire a 70.67% stake in the company in December 2025, and an annual dividend was announced, payable in November 2025.
-  - Alexandria Containers and goods (ALCN.CA) Financial Statements for the transitional financial period : From 01/07/2025 To 31/12/2025 (March 18, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFIWikQUlTzhxcj3R9xlQu4CpVO-nEPFRkPcT3hBFIW2jphePTaYmqZhXLjYCPf5ol87lZWZ9eBEWdhVV5Vh_A9m9MSFlMyPGzXoSKJuNrt9Nuex2arb1tOBWbEGegjqa0KwIGpDlvhEj5xZorZ1wg0Wao
-  - Abu Dhabi Ports Company PJSC proposed to acquire 70.67% stake in Alexandria Container and Cargo Handling Company S.A.E (CASE:ALCN) on December 14, 2025 (September 05, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEDsAdU7_MMi6DDCbn5c2VW5_t5YmalcyrqBapCx3urs67WVmOXykN-iPGMW_bDXeOQnvq5Brqrm6JYdZUlUzETQ67fLGR5IXQxCej7OK0QHJ1t7JHUddP3l33DYFZrHwpcdAKcMMaO1Gmu1gYog9rfAbiAFLsy1Rg271KwrJBcG_z6D1-MFo24j0aGt7IM0iaw_NuPBA6rpUEKJWU
-  - Alexandria Container&Cargo Handling Company announces Annual dividend, payable on November 13, 2025 (September 05, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEDsAdU7_MMi6DDCbn5c2VW5_t5YmalcyrqBapCx3urs67WVmOXykN-iPGMW_bDXeOQnvq5Brqrm6JYdZUlUzETQ67fLGR5IXQxCej7OK0QHJ1t7JHUddP3l33DYFZrHwpcdAKcMMaO1Gmu1gYog9rfAbiAFLsy1Rg271KwrJBcG_z6D1-MFo24j0aGt7IM0iaw_NuPBA6rpUEKJWU
-- FAIT.CA: status=RECENT_ACCEPTED latest=2026-01-01 age_days=248 sources=2 expected=Faisal Islamic Bank of Egypt summary=Faisal Islamic Bank of Egypt published its consolidated financial statements for the year ended December 31, 2025. The bank also reported its Q1 2026 income statement, showing an increase in total revenue and net income.
-  - Faisal Islamic Bank of Egypt – SAE - Consolidated Financial Statements (December 31, 2025): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEstN2R_2y-kp5hPzpDrhzzXqaeeiT00X71dhQOxmoBIoBO_Qel7mJPdr4v5AdAHxNrGLynGT0mxenCwPNXlOfRdLIEa_i2tPQf5Bn2iZuFj2wYXouxgVREbkqvr_yZwH-M9nzE_sh9zDgku9--JXrQxgm9vnxpxC4W-0M5KH7rvXlLJnDwRD6i3Mt4XgCZzJqmvBpFzFzK1-yS
-  - Faisal Islamic Bank of Egypt Income Statement – EGX:FAIT (Q1 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEbrialZY8gx0YIDal9TL2S2bvVu41YLEhgfRBlmx_jFRs3yEoCe42lsDKRCL-92YNYMmDkDmIeMObJ_Yans7uwveBKBWqpTIts3rpU5vq44ZosB6dE9TrwkftfLBI8uxKIDqDk9i6sAl-R0z9dPJxjPSz9TBVc3eUitf1moSskrJflLg
-- MBSC.CA: status=RECENT_ACCEPTED latest=2026-08-26 age_days=11 sources=3 expected=Misr Beni Suef Cement summary=Misr Beni Suef Cement reported its Q2 2026 income statement with increased revenue and net income. An overview of its financials, including revenue, profits, cash, debt, and margins, was available as of June 30, 2026. Investing.com also provided a financial overview and key ratios for the company.
-  - Misr Beni Suef Cement Co. SAE Income Statement – EGX:MBSC (Q2 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFFa2ZMHIhXva7FWFbJF3PVXkrOububfokHqdFA2XEjDYewBkdg1NGGZoI9xl2zBcMT-WClJCgyWPb4kIjP_wuTq-jMIwaisv1uBMFfq9z_eno3GwBcTwXM4QbgUVASvBOevtKRbgOIhBoDBWcA3mCR6aiH5Nm-qc2FMyh_gY0MdX-unA
-  - Misr Beni Suef Cement Co. S.A.E (EGX:MBSC) Financials Overview (June 30, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFCZ4NJad2gn-kaZU7dx7hFmUdKR3PMyKieqzSZX0KZ61kVyJgGFRaBW6duRpsCRYxgPBInQzV8KwCGEO88qQUAmQ_k3-PF7cpZ6fs-2SlOLqDki-5aLk5Akr6lFat-pKKvgap-0xL2yhUFwMNNww
-  - Misr Beni Suef Cement - EGX:MBSC Financials - Investing.com (August 26, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFwIyYFoa3jPxaQrPv46DEfXgpfcCxl3QJ8J8c3mEFeYBsgedxQ_w4FYYLjbRO3Yy8gWljv11atBdt0ndglrg53RZVerJUXSIGXUnlPcGpGdgQ4mVMs6UpIbM383rmSbY9kwROFUu1B_cAwtEFmUELA_BslQadVJ8SyPZLZ-Mi-BuV7DC0=
-- MCQE.CA: status=RECENT_ACCEPTED latest=2026-01-01 age_days=248 sources=3 expected=Misr Cement Qena summary=Misr Cement Qena's Q1 2026 income statement showed its total revenue and net income. The company's balance sheet for Q1 2026 indicated an increase in total assets and liabilities. Investing.com also provided a financial overview and key ratios for Misr Cement Qena.
-  - Misr Cement Co. (Qena) Income Statement – EGX:MCQE (Q1 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHdkvVhQHIaQO6VD9jR6RhijfR26OpdidCbdkHNtqcKsgTw9sAZv3klWNDd-RvNkJHRRwM7C1PAAif1_9E30HbofARzhtHb15gaxlJJvyJIHxJB-ATaJ2F2JpiQV83ZX-P1miuWicg6nV6eo79edDZeZHSEeZJiYyRMW03aJzoUTZkroQ
-  - Misr Cement Co. (Qena) Balance Sheet – EGX:MCQE (Q1 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHZa5qNNc6ZqZbSvLgQUisi4muLNRRYbMy4Cw0jd_vjd4dr61me9CDI47cb1dS3pI18tF3AhcKCuSKoofcWOl00EgUNTzs_K8ewx9Yjk7SA4dM0d3ngTE9y-04xPg8WbCYQPSCXIDhR5A8a5rKxbmFmo-GOwsAViWlKuGu3x1JUPw
-  - EGX:MCQE Financials | Qena - Investing.com (Latest Quarter EPS 25.45): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFbC39pwTTyERcFcxUXOmwUc6_FgTi7x0s3e87FfcUuxdzlGoUs-BxDESYkuT410yAmGjrbg3Z5s4SLmovEyZ5sRJTzhdy80L0i-H6_jqszvnqqAivxXN4XMA53XBuYhgVYZWpT5BfkiBgiv2Y8bVw658-yeTt0rU1ugcGOjg
-- CIEB.CA: status=RECENT_ACCEPTED latest=2026-07-29 age_days=39 sources=3 expected=Credit Agricole Egypt summary=Credit Agricole Egypt announced its standalone financial results for the period ended June 30, 2026, reporting a net profit of EGP 3,608 million. The Egyptian Exchange also published the company's standalone financial results for the same period. Additionally, condensed consolidated interim financial statements as of June 30, 2025, were released in October 2025.
-  - Crédit Agricole Egypt Press Release: Standalone Financial Results for the period ended June 30, 2026 (July 28, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFO0mljxtiVFpFCTNNzPivhNIRJHGeqwWGfeRpVlJA9zoA5HCowVcdnf_Brk9af43ip2wOBRa0fc0lqSrk3vQ6ipfOslz3tQ5jJwRTQkggJNAgLkwHieW9xPlblSZRb03CW111cg9q5LEsYq2FSXoIL5wL5B1PQ1zR1P3jBPXLArhL3MqKrnEz3rxYWpF5-t2WAYWym0jsJ87jaPhgy_irLCq49fOogrzADpKNqD0M4ICM09y3-iHWSCKSCrEkdXA
-  - Credit Agricole Egypt (CIEB.CA) Reports its Financial Results (Standalone) for the Period from 01/01/2026 to 30/06/2026 (July 29, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHWGDUisJExoEDD3YJ4Ygg-RCGI0qGXE9Jv557cPXnwsk7gh3LM6Wr7wT6GblCSi7q5fWtsOm9Es5xugpIGxFNf8kQUmYz77NwFGQ8ksexwcJbN4s3dUd-H3tPSC6_AtJCHNKZm5_AOQp61CElugtP77fM
-  - Condensed Consolidated Interim Financial Statements as at 30 June 2025 (October 28, 2025): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHu_ThhZ8K-4OF8GSc1x-U2hi9jqyARKY0P6TL07o9HfEDHGXVLWBk6AbM3hS1G_9qt80fNoenJdxYxsou1gO8SPW62jfiHzO40ADYUA__Plk2yuMKclHHFStEtQ0Su0nhbdsmi-fMXOVCKYupkQnzhhpqMRiyi3GbrVa2CC8mT0ab7VfjE50VeC3N2HPNBnwMWhcUA9NtxnnrmJi2ZopRq4e6KrUYke_arwtf7kHcDswQQ_IGekXMyU3YDuldCeRRCg7Hl_9MuN8Tt1aRZLhanrKmLjy7vI5KMjWHB9-o
-- BINV.CA: status=RECENT_ACCEPTED latest=2026-09-04 age_days=2 sources=3 expected=B Investments Holding summary=B Investments Holding has a permanent archive of its EGX filings from April to August 2026, including financial statements, AGM minutes, and board resolutions. The company also released its disclosure form for the Board of Directors and shareholders' structure as of June 30, 2026. Recent trading data and dividend information, including a coupon payment in July 2026, are available.
-  - B Investments Holding (BINV) Disclosures — Permanent Archive (September 04, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEZUp-B4LJd2JIzrKQFky1vz0pQERJSv0fvxQxyMGm44CMj2IxdODWeaKq1bbUG3K_vKmZomC74nn04JRoNZc01RvzZbFrjwZ47UHR3LjeRqEdAjrSJoMR1U7OtmHEoxe1MFmnqXOs
-  - B Investments Holding (BINV.CA) - Disclosure Form for the BoD & the Shareholders' Structure (July 16, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFPaAfZbDwcPWm5dA9lWEGqS6Npo1jm5hgVJKGVVcbsiCRaFFWKBs_bWrBpWAy0bbsGQ0m33jV7maJu_HiRGcyljPQBulK7csVWipGHJBGjYXR0VQYCORU3UF7HBRwC
-  - B Investments Holding - The Egyptian Exchange - Company Details (September 02, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG98s4Fj6Du1gPl_1DQdtObL_DzaWLTg0sOgVLVYrCrmmxMq9HC8cpl7CNPjtvafvVcDjxVLqGstipi6zJubQVoROOZ8LUxkLEFfz0e3-s0ymHgTBpG_vOhCX9OBxGsekHYF2VALdEpUQfw5mL9VrBfiZRz_nRbRWz5
-- EGCH.CA: status=OLD_ACCEPTED latest=2025-01-01 age_days=613 sources=2 expected=Egyptian Chemical Industries Kima summary=Egyptian Chemical Industries Kima's financials are available on Investing.com, providing an overview of its income statement, including revenue, gross profit, operating income, and net income for the latest quarter. Decypha also lists Kima's annual and quarterly financial reports for 2025.
-  - EGX:EGCH Financials | Kima - Investing.com (Latest Quarter EPS 1.63, Net Income -658.74): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGTqaeQauyxb_u7kJ5Pob1NTC60WZTNZ8QfU2FgzDRXcrR8zq4RhvYnVJPi6254-tTpEjUcW-I9uiT_xMpBEBJSti3jv01D4buH5wfZuy7pblr2h3YH8ngWfSEqGp2yBwcwbqQQe7Hln_Ut65ZaQemYfReGDMmMZIj2DcqKdA==
-  - Kima Profile - Decypha (Mentions Kima Annual Financials Report 2025, Kima Quarterly Financials Report Q3 2025, Kima Quarterly Financials Report Q2 2025): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFBGjndkeLA9X9PezQ3feTFbpKJMYmB_2BrLBTNwF5OI3gLsaPgfzmcZOnRGTYAY1RcKY471qLNfFp8ZTHuMEz-vcLAtp3rSUeihDDWCEVyhX94NBWiuR_xqaROLdiXRl8PdFChqE1oRatbzIojx0zTOtYG1BqJ4YtYS18J4tE
+- RAYA.CA: status=OLD_ACCEPTED latest=2025-01-01 age_days=613 sources=3 expected=Raya Holding summary=Raya stock maintains bullish momentum above EGP 9; Aman Holding, MSMEDA partner to inject EGP 300m into SMEs across Egypt; Raya Holding’s consolidated profits surge in 2025; revenues hit EGP 63.8bn
+  - Raya stock maintains bullish momentum above EGP 9: https://english.mubasher.info/news/4601857/Raya-stock-maintains-bullish-momentum-above-EGP-9/
+  - Aman Holding, MSMEDA partner to inject EGP 300m into SMEs across Egypt: https://english.mubasher.info/news/4577815/Aman-Holding-MSMEDA-partner-to-inject-EGP-300m-into-SMEs-across-Egypt/
+  - Raya Holding’s consolidated profits surge in 2025; revenues hit EGP 63.8bn: https://english.mubasher.info/news/4564195/Raya-Holding-s-consolidated-profits-surge-in-2025-revenues-hit-EGP-63-8bn/
+- ALCN.CA: status=REJECTED_TICKER_MISMATCH latest=n/a age_days=n/a sources=0 expected=Alexandria Containers and Cargo Handling summary=Evidence rejected for ALCN.CA: source text did not clearly match ALCN.CA / Alexandria Containers and Cargo Handling.
+- FAIT.CA: status=OLD_ACCEPTED latest=2025-01-01 age_days=613 sources=3 expected=Faisal Islamic Bank of Egypt summary=Faisal Islamic Bank of Egypt unveils dividends for 2025; Faisal Islamic Bank of Egypt’s consolidated net profits drop to EGP 4.6bn in 2025; Faisal Islamic Bank of Egypt posts 63% lower standalone net profits in 2025
+  - Faisal Islamic Bank of Egypt unveils dividends for 2025: https://english.mubasher.info/news/4585552/Faisal-Islamic-Bank-of-Egypt-unveils-dividends-for-2025/
+  - Faisal Islamic Bank of Egypt’s consolidated net profits drop to EGP 4.6bn in 2025: https://english.mubasher.info/news/4582812/Faisal-Islamic-Bank-of-Egypt-s-consolidated-net-profits-drop-to-EGP-4-6bn-in-2025/
+  - Faisal Islamic Bank of Egypt posts 63% lower standalone net profits in 2025: https://english.mubasher.info/news/4548875/Faisal-Islamic-Bank-of-Egypt-posts-63-lower-standalone-net-profits-in-2025/
+- MBSC.CA: status=OLD_ACCEPTED latest=2025-01-01 age_days=613 sources=3 expected=Misr Beni Suef Cement summary=Misr Beni Suef’s consolidated net profits near EGP 4bn in 2025; Misr Beni Suef’s consolidated net profits hit EGP 953m in H1-25; Misr Beni Suef Cement’s consolidate profits fall to EGP 574m in Q1-25
+  - Misr Beni Suef’s consolidated net profits near EGP 4bn in 2025: https://english.mubasher.info/news/4599415/Misr-Beni-Suef-s-consolidated-net-profits-near-EGP-4bn-in-2025/
+  - Misr Beni Suef’s consolidated net profits hit EGP 953m in H1-25: https://english.mubasher.info/news/4488249/Misr-Beni-Suef-s-consolidated-net-profits-hit-EGP-953m-in-H1-25/
+  - Misr Beni Suef Cement’s consolidate profits fall to EGP 574m in Q1-25: https://english.mubasher.info/news/4455784/Misr-Beni-Suef-Cement-s-consolidate-profits-fall-to-EGP-574m-in-Q1-25/
+- MCQE.CA: status=OLD_ACCEPTED latest=2025-01-01 age_days=613 sources=3 expected=Misr Cement Qena summary=Misr Cement to distribute EGP 10/shr dividends for 2025; Misr Cement stock is testing technical level ahead of historical peak – Analysis; Misr Cement witnesses 3,254% remarkable jump in 9M-25 consolidated net profits
+  - Misr Cement to distribute EGP 10/shr dividends for 2025: https://english.mubasher.info/news/4586191/Misr-Cement-to-distribute-EGP-10-shr-dividends-for-2025/
+  - Misr Cement stock is testing technical level ahead of historical peak – Analysis: https://english.mubasher.info/news/4560306/Misr-Cement-stock-is-testing-technical-level-ahead-of-historical-peak-Analysis/
+  - Misr Cement witnesses 3,254% remarkable jump in 9M-25 consolidated net profits: https://english.mubasher.info/news/4524754/Misr-Cement-witnesses-3-254-remarkable-jump-in-9M-25-consolidated-net-profits/
+- CIEB.CA: status=REJECTED_TICKER_MISMATCH latest=n/a age_days=n/a sources=0 expected=Credit Agricole Egypt summary=Evidence rejected for CIEB.CA: source text did not clearly match CIEB.CA / Credit Agricole Egypt.
+- BINV.CA: status=REJECTED_TICKER_MISMATCH latest=n/a age_days=n/a sources=0 expected=B Investments Holding summary=Evidence rejected for BINV.CA: source text did not clearly match BINV.CA / B Investments Holding.
+- EGCH.CA: status=REJECTED_TICKER_MISMATCH latest=n/a age_days=n/a sources=0 expected=Egyptian Chemical Industries Kima summary=Evidence rejected for EGCH.CA: source text did not clearly match EGCH.CA / Egyptian Chemical Industries Kima.
 
 ## Warnings
-- Evidence for EGCH.CA matches the company but appears old; latest detected date is 2025-01-01.
+- Evidence for RAYA.CA matches the company but appears old; latest detected date is 2025-01-01.
+- Gemini batch evidence failed: Server disconnected without sending a response.
+- Evidence rejected for ALCN.CA: source text did not clearly match ALCN.CA / Alexandria Containers and Cargo Handling.
+- Evidence for FAIT.CA matches the company but appears old; latest detected date is 2025-01-01.
+- Evidence for MBSC.CA matches the company but appears old; latest detected date is 2025-01-01.
+- Evidence for MCQE.CA matches the company but appears old; latest detected date is 2025-01-01.
+- Evidence rejected for CIEB.CA: source text did not clearly match CIEB.CA / Credit Agricole Egypt.
+- Evidence rejected for BINV.CA: source text did not clearly match BINV.CA / B Investments Holding.
+- Evidence rejected for EGCH.CA: source text did not clearly match EGCH.CA / Egyptian Chemical Industries Kima.
