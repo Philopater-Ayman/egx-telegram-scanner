@@ -1,10 +1,10 @@
 # Telegram-First EGX Scanner Report
 
-Scan phase: Post-close tomorrow tickets
-Generated UTC: 2026-09-06T15:44:06.006406+00:00
-Generated Cairo: 2026-09-06 18:44
-Run timing: target 15:30 Cairo | generated Cairo 2026-09-06 18:44 | cron 30 12 * * 0-4
-Trigger: scheduled cron=30 12 * * 0-4 mapped to post_close; Cairo now 2026-09-06 18:35
+Scan phase: Evening tomorrow plan
+Generated UTC: 2026-09-06T18:30:29.435338+00:00
+Generated Cairo: 2026-09-06 21:30
+Run timing: target 19:30 Cairo | generated Cairo 2026-09-06 21:30 | cron 30 16 * * 0-4
+Trigger: scheduled cron=30 16 * * 0-4 mapped to evening_plan; Cairo now 2026-09-06 21:26
 
 ## Control Center
 - Action tickets: 0 prioritized signal(s)
@@ -33,11 +33,10 @@ Trigger: scheduled cron=30 12 * * 0-4 mapped to post_close; Cairo now 2026-09-06
 ## AI Narrative
 - Provider: OpenRouter OK
 - Model: nvidia/nemotron-3-super-120b-a12b:free
-- Summary: EGX30 and EGX70 are both bullish with sector breadth at 57.1%, putting the market in BROAD_RISK_ON mode; the scanner flagged several BUY_READY tickets based on strong rank scores, liquidity spikes and sector alignment, but overall confidence remains LOW due to mixed evidence and extended momentum.
-- Selected tickets show high rank_score, BULLISH_WATCH outlook and liquidity accumulation spikes, aligning with leading sectors (Building Materials, Transportation & Logistics, Investment Holding).
-- Liquidity/sector/support‑resistance context: many are trading near resistance (small resistance_distance_pct) or far above support, indicating near‑term upside potential but also proximity to overhead resistance or exten
-- EGX30/EGX70 bullish breadth shifts risk mode to BROAD_RISK_ON, raising buy tolerance while adding uncertainty because momentum is stretched and some stocks are well above their 20‑day support.
-- Uncertainty remains: evidence scores vary, several tickets lack clear source confirmation, RSI values approach overbought levels, and the primary HOLD signal reflects low confidence, suggesting possible consolidation or 
+- Summary: EGX30 and EGX70 both show bullish trends with sector breadth at 57%, putting the market in a broad risk‑on mode; the scanner’s top tickets are chosen for their high rank scores, bullish‑watch outlook, and liquidity spikes that suggest near‑term accumulation.
+- Tickets such as RAYA.CA, ALCN.CA and FAIT.CA rank highest due to strong scores, bullish watch outlook and liquidity regimes marked as ACCUMULATION_SPIKE or TRADEABLE, indicating recent buying interest.
+- Their price positions sit close to resistance (small resistance_distance_pct) or far above support, which in the next 1‑3 days could allow modest upside but also signals extended momentum that may stall or reverse.
+- Leading sectors—Building Materials, Transportation & Logistics, and Investment Holding—show high above‑MA percentages and align with the EGX30/EGX70 bullish breadth, reinforcing the broad risk‑on environment.
 
 ## Top Liquidity Spikes
 - MEPA.CA: spike=9.86 liquidity=277690400.0 outlook=WEAK_OR_RISKY score=0 buy_ready=False
@@ -312,7 +311,7 @@ Trigger: scheduled cron=30 12 * * 0-4 mapped to post_close; Cairo now 2026-09-06
 
 ## Warnings
 - Evidence for RAYA.CA matches the company but appears old; latest detected date is 2025-01-01.
-- Gemini batch evidence failed: Server disconnected without sending a response.
+- Gemini batch evidence failed: 500 INTERNAL. {'error': {'code': 500, 'message': 'An internal error has occurred. Please retry or report in https://developers.generativeai.google/guide/troubleshooting', 'status': 'INTERNAL'}}
 - Evidence rejected for ALCN.CA: source text did not clearly match ALCN.CA / Alexandria Containers and Cargo Handling.
 - Evidence for FAIT.CA matches the company but appears old; latest detected date is 2025-01-01.
 - Evidence for MBSC.CA matches the company but appears old; latest detected date is 2025-01-01.
