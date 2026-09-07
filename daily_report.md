@@ -1,20 +1,20 @@
 # Telegram-First EGX Scanner Report
 
-Scan phase: Intraday liquidity update
-Generated UTC: 2026-09-07T13:59:52.045770+00:00
-Generated Cairo: 2026-09-07 16:59
-Run timing: target 11:00 Cairo | generated Cairo 2026-09-07 16:59 | cron 0 8 * * 0-4
-Trigger: scheduled cron=0 8 * * 0-4 mapped to intraday; Cairo now 2026-09-07 16:52
+Scan phase: Post-close tomorrow tickets
+Generated UTC: 2026-09-07T17:51:21.935102+00:00
+Generated Cairo: 2026-09-07 20:51
+Run timing: target 15:30 Cairo | generated Cairo 2026-09-07 20:51 | cron 30 12 * * 0-4
+Trigger: scheduled cron=30 12 * * 0-4 mapped to post_close; Cairo now 2026-09-07 20:47
 
 ## Control Center
-- Action tickets: 0 prioritized signal(s)
+- Action tickets: 3 prioritized signal(s)
 - BUY-ready candidates: 69
 - Data quality issues: 1
 - Tradeable price/liquidity tickers: 178/189
 - Top sector: Agriculture & Food Production
 
 ## Market Context
-- Market trend: Bullish
+- Market trend: Bearish
 - Source: Mubasher EGX market page (delayed public data)
 - As of: Monday, September 07
 - Freshness: DELAYED
@@ -33,14 +33,7 @@ Trigger: scheduled cron=0 8 * * 0-4 mapped to intraday; Cairo now 2026-09-07 16:
 ## AI Narrative
 - Provider: OpenRouter OK
 - Model: nvidia/nemotron-3-super-120b-a12b:free
-- Summary: We need to produce a concise Telegram narrative for a personal EGX stock scanner. Must not make a new trade decision, not invent live data, not mention quantities or position sizing. Explain why the local scanner selected these prioritized tickets, what liquidity/sector/support/resistance/outlook means for the next 1-3 days, and how the EGX30/EGX70 market regime changes risk mode, and include uncertainty. Return only valid compact JSON with keys summary and bullets, where bullets is 3 to 5 short strings.
-
-We must not include any extra text, only JSON.
-
-We need to derive summary and bullets from the payload. The payload includes market_regime: EGX30 BULLISH, EGX70 BULLISH, sector breadth 71.4
-- EGX30 BULLISH / EGX70 BULLISH / sector breadth 71.4% / risk mode BROAD_RISK_ON – scanner flags accumulation‑spike tickets in leading sectors with bullish watch outlooks.
-- Tickets (CICH, IFAP, CIEB, etc.) ranked by high score and accumulation‑spike liquidity, with bullish‑watch outlooks and sector ranks inside the top‑performing Agriculture, Textiles or Transport groups.
-- Sector breadth shows >70% of stocks above MA20/MA50 in leading sectors, reinforcing the bias toward those groups and reducing idiosyncratic risk.
+- Summary: Scanner flagged IFAP.CA, CIEB.CA, FAIT.CA as watch/buy setups due to price above MA20/MA50, adequate liquidity, and bullish watch outlook while EGX30/70 remain bullish under a broad risk‑on mode, though macro trend stays bearish and confidence is low.
 
 ## Top Liquidity Spikes
 - EFIC.CA: spike=107.91 liquidity=5138710016.0 outlook=CONSTRUCTIVE score=58.8 buy_ready=False
@@ -60,7 +53,18 @@ We need to derive summary and bullets from the payload. The payload includes mar
 - #8 Investment Holding: score=8.59 5d=-2.74% 20d=14.39% aboveMA50=100.0%
 
 ## Today's Prioritized Action Tickets
-- HOLD: Local fallback HOLD: no candidate passed evidence, liquidity, freshness, and technical gates.
+- Priority #1: BUY IFAP.CA
+  - Entry: 21.61 | Take profit: 23.33 | Stop loss: 20.75
+  - Confidence: LOW | score=33.62 | outlook=BULLISH_WATCH 100
+  - Reason: WATCH/BUY SETUP: IFAP.CA has aligned current price data, liquidity above threshold, price above MA20/MA50, RSI 55.02, support 20.2, resistance 22.7, and evidence sources. Macro trend is Bearish; market regime is BROAD_RISK_ON; verify price action in Thndr before treating it as a swing entry.
+- Priority #2: BUY CIEB.CA
+  - Entry: 25.59 | Take profit: 27.63 | Stop loss: 24.57
+  - Confidence: LOW | score=33.14 | outlook=BULLISH_WATCH 90.31
+  - Reason: WATCH/BUY SETUP: CIEB.CA has aligned current price data, liquidity above threshold, price above MA20/MA50, RSI 63.16, support 24.0, resistance 26.27, and evidence sources. Macro trend is Bearish; market regime is BROAD_RISK_ON; verify price action in Thndr before treating it as a swing entry.
+- Priority #3: BUY FAIT.CA
+  - Entry: 47.89 | Take profit: 51.73 | Stop loss: 45.97
+  - Confidence: LOW | score=32.18 | outlook=BULLISH_WATCH 80.31
+  - Reason: WATCH/BUY SETUP: FAIT.CA has aligned current price data, liquidity above threshold, price above MA20/MA50, RSI 63.38, support 37.01, resistance 46.0, and evidence sources. Macro trend is Bearish; market regime is BROAD_RISK_ON; verify price action in Thndr before treating it as a swing entry.
 
 ## Thndr Instruction
 - Advisor-only signal mode is active. The scanner never executes trades.
@@ -292,34 +296,38 @@ We need to derive summary and bullets from the payload. The payload includes mar
 - These checks are historical context only, not a prediction or guarantee.
 
 ## Evidence
-- CICH.CA: status=REJECTED_TICKER_MISMATCH latest=n/a age_days=n/a sources=0 expected=CI Capital Holding summary=Evidence rejected for CICH.CA: source text did not clearly match CICH.CA / CI Capital Holding.
-- IFAP.CA: status=ACCEPTED_UNDATED latest=n/a age_days=n/a sources=3 expected=International Agricultural Products summary=International Agricultural Products stock is testing key psychological barrier – Analysis; International Agricultural Products’ non-consolidated net profits hit EGP 12.5m in Q1-25/26; El Dawlia Fertilizers announces new company of EGP 500m authorised capital
-  - International Agricultural Products stock is testing key psychological barrier – Analysis: https://english.mubasher.info/news/4560334/International-Agricultural-Products-stock-is-testing-key-psychological-barrier-Analysis/
-  - International Agricultural Products’ non-consolidated net profits hit EGP 12.5m in Q1-25/26: https://english.mubasher.info/news/4525080/International-Agricultural-Products-non-consolidated-net-profits-hit-EGP-12-5m-in-Q1-25-26/
-  - El Dawlia Fertilizers announces new company of EGP 500m authorised capital: https://english.mubasher.info/news/3971612/El-Dawlia-Fertilizers-announces-new-company-of-EGP-500m-authorised-capital/
-- CIEB.CA: status=REJECTED_TICKER_MISMATCH latest=n/a age_days=n/a sources=0 expected=Credit Agricole Egypt summary=Evidence rejected for CIEB.CA: source text did not clearly match CIEB.CA / Credit Agricole Egypt.
-- SIPC.CA: status=OLD_ACCEPTED latest=2020-01-01 age_days=2441 sources=3 expected=Sabaa International Company for Pharmaceutical and Chemical Industry summary=Sabaa Pharmaceutical&#39;s shareholders approve capital raise via bonus issue; FRA approves Sabaa Pharmaceutical&#39;s capital raise; Sabaa Pharmaceutical&#39;s profit leaps 76% in 2020 initial results
-  - Sabaa Pharmaceutical&#39;s shareholders approve capital raise via bonus issue: https://english.mubasher.info/news/3809286/Sabaa-Pharmaceutical-s-shareholders-approve-capital-raise-via-bonus-issue/
-  - FRA approves Sabaa Pharmaceutical&#39;s capital raise: https://english.mubasher.info/news/3789753/FRA-approves-Sabaa-Pharmaceutical-s-capital-raise/
-  - Sabaa Pharmaceutical&#39;s profit leaps 76% in 2020 initial results: https://english.mubasher.info/news/3779465/Sabaa-Pharmaceutical-s-profit-leaps-76-in-2020-initial-results/
-- FAIT.CA: status=OLD_ACCEPTED latest=2025-01-01 age_days=614 sources=3 expected=Faisal Islamic Bank of Egypt summary=Faisal Islamic Bank of Egypt unveils dividends for 2025; Faisal Islamic Bank of Egypt’s consolidated net profits drop to EGP 4.6bn in 2025; Faisal Islamic Bank of Egypt posts 63% lower standalone net profits in 2025
-  - Faisal Islamic Bank of Egypt unveils dividends for 2025: https://english.mubasher.info/news/4585552/Faisal-Islamic-Bank-of-Egypt-unveils-dividends-for-2025/
-  - Faisal Islamic Bank of Egypt’s consolidated net profits drop to EGP 4.6bn in 2025: https://english.mubasher.info/news/4582812/Faisal-Islamic-Bank-of-Egypt-s-consolidated-net-profits-drop-to-EGP-4-6bn-in-2025/
-  - Faisal Islamic Bank of Egypt posts 63% lower standalone net profits in 2025: https://english.mubasher.info/news/4548875/Faisal-Islamic-Bank-of-Egypt-posts-63-lower-standalone-net-profits-in-2025/
-- ARAB.CA: status=ACCEPTED_UNDATED latest=n/a age_days=n/a sources=3 expected=Arab Developers Holding summary=Arab Developers Holding unveils EGP 1bn expansion plans to improve financial efficiency; FRA gives initial approval for Arab Developers’ rights issue; Arab Developers stock stabilizes after correction
-  - Arab Developers Holding unveils EGP 1bn expansion plans to improve financial efficiency: https://english.mubasher.info/news/4601724/Arab-Developers-Holding-unveils-EGP-1bn-expansion-plans-to-improve-financial-efficiency/
-  - FRA gives initial approval for Arab Developers’ rights issue: https://english.mubasher.info/news/4582627/FRA-gives-initial-approval-for-Arab-Developers-rights-issue/
-  - Arab Developers stock stabilizes after correction: https://english.mubasher.info/news/4564643/Arab-Developers-stock-stabilizes-after-correction/
-- EXPA.CA: status=REJECTED_TICKER_MISMATCH latest=n/a age_days=n/a sources=0 expected=Export Development Bank of Egypt summary=Evidence rejected for EXPA.CA: source text did not clearly match EXPA.CA / Export Development Bank of Egypt.
-- FWRY.CA: status=REJECTED_TICKER_MISMATCH latest=n/a age_days=n/a sources=0 expected=Fawry For Banking Technology and Electronic Payments summary=Evidence rejected for FWRY.CA: source text did not clearly match FWRY.CA / Fawry For Banking Technology and Electronic Payments.
+- CICH.CA: status=RECENT_ACCEPTED latest=2026-01-01 age_days=249 sources=3 expected=CI Capital Holding summary=CI Capital Holding (CICH.CA) has reported strong financial results recently. For the first half of 2026, the company recorded revenues of EGP 5.5 billion and a net profit after tax and minority interest (NPATM) of EGP 942 million, with Group Assets Under Management (AUMs) reaching EGP 196.2 billion. In Q1 2026, revenues were EGP 2.7 billion and NPATM was EGP 440 million, with AUMs exceeding EGP 186 billion. The full year 2025 results showed revenues of EGP 10.2 billion and NPATM of EGP 1.6 billion, with AUMs over EGP 150 billion. The company's standalone net profit for H1 2026 was EGP 790,081,682. In 2025, the company's revenue increased by 21.75% to EGP 4.51 billion, though earnings decreased by 27.76% to EGP 1.61 billion.
+  - CI Capital Holding For Financial Investments (CICH.CA) Reports its Financial Results (Standalone) for the Period from 01/01/2026 to 30/06/2026 - The Egyptian Exchange: https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQENX7bH0SE1aN-cK9omdgF4pB5dxmKLJc21KkhubOdFgVZyRRuEPRoLsVbJkbEmTw8zuij5m98-sUjqSsfLCYoIgXZ0u0WnD26rbXPkNurwfYrEJOTYAQoYsJ3bUXkctToQUF2fOoT-SqSo72nXi64f0O4=
+  - CI Capital Holding Reports Strong Financial Results in H1 2026, with Revenues and NPATM Reaching EGP 5.5bn & EGP 942mn, Respectively, while Group AUMs Record EGP 196.2bn ($4bn) - CI Capital: https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHiyJQW2r2WNq6qQdLI7q6zJ518BVMP0VXI5vRl_YfNBwFhsTzUxVhdNQg5vjCAjMKE72FP3xUt_CJfbjAhZ_TEDsjYiVLLAOQRi9cfEbqgvUzykRYHsMgZI5JThisGDkodCDWufd5u6raneKu5qE5rNX21PmX1wddfBPiWoEx9SfAwcQhwQNl7t9a4FEaawbME32amlnVJvBfGAWTjoxT6nLr3L2nvHrfvWZELX4sT9LcsW6oNQAsf1VVFFfAavoIH4kFCGuTMHwunxYW4IV3j8w58Pq4XLq9qiqEhaQ7kf5X0rBWYe-DpRLsyBlHGF0qmdwiTFaBJvNMB69RfnA==
+  - Media Releases Archives - CI Capital: https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEU_nzCVqnlXHKjg1S6zGf_Ji1rpA07PpdbpAHJIj-8YPrRQE_CSRBSuzv70sFIBHNgP4j2rp0Gx8lWTDhzWByN3g_KtUnk5ZJGCdt6mUwboNLp7LjZgMpSZazIUEvgcXdSHr6QE04zAdmeOjI=
+- IFAP.CA: status=RECENT_ACCEPTED latest=2026-08-24 age_days=14 sources=3 expected=International Agricultural Products summary=International Agricultural Products (IFAP.CA) has released several disclosures and financial results recently. The company issued a disclosure form on June 25, 2026. Consolidated financial results for the period from July 1, 2025, to March 31, 2026, were reported on June 15, 2026. The Annual General Meeting (AGM) minutes were notarized on August 24, 2026, and earlier on April 15, 2026. The Egyptian Exchange's Listing Committee made a decision regarding the company on August 9, 2026. For fiscal year 2025, the company's revenue increased by 9.51% to EGP 2.11 billion, while earnings decreased by 17.46% to EGP 421.54 million.
+  - International Agricultural Products (IFAP) Disclosures — Permanent Archive | FoudaLens: https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGnxM6MIHFQw0d70zHgmEtZ0fXW4Tk-FJ0IaWk--oR8Mh6g2TjMbA39ze7L0DlQt5_qs51Qom0miJurO6_YcfyKu2yP5wEXqKfitN3X4VgIxPWmYNuZFdLeMtdo0OPFCUIUk1kxew==
+  - The Egyptian Exchange - EGX News & Media Releases, Listing News, Members News, Financial Statements: https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE8bkOcTqZOF7NA5VVVFvYlJ0ShUA4GWrqavy1otGUhtCC5weg7ee61YDH4iZ3C3OQep-n8w1-l5A_v1uW1qsYwyNCNzVCVVl_vB4bXxIXf76-BDHqyfxtga3tQ668eLwWNVQcJ2hkIK6mzHwqXlg==
+  - International Company for Agricultural Crops (EGX:IFAP) Stock Price & Overview: https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHhwxy4ztdMucHUvShzNPci6Xw1WuLFEr_l0WmZelxatfEQ9u2X6qlkuGyWrlnNYzny8e0vUPN5VPCt5dZrflwNU-nUTJIWQNT6LagRIn10-HTg3aIJjOoPoXyjG9e6J6Fblg==
+- CIEB.CA: status=RECENT_ACCEPTED latest=2026-01-01 age_days=249 sources=3 expected=Credit Agricole Egypt summary=Credit Agricole Egypt (CIEB.CA) has been active with recent market announcements and financial reporting. In July 2026, there were releases concerning the Board of Directors and Executive Managers, financial results, and Board of Directors meeting decisions. The bank's consolidated profits exceeded EGP 1.7 billion in Q1 2026. However, consolidated net profits for 2025 registered a 13% decrease. For the full year 2025, the company's revenue decreased by 4.41% to EGP 12.66 billion, and earnings decreased by 13.34% to EGP 6.20 billion. The stock's price history is available since August 2025.
+  - Financial Information - Investor Relations - - Credit Agricole Egypt: https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH6DpXNRDNOPqQyx9r4gSSO6ZuNM2iUmc-8tIEp4u_2dFKFiALY_U_TlPa9mATRj37w24AtvLJbhTwZX7nxZYjI6HEF7AgMCCXaCtwFodBB1zrTbq9M4NjNX5Y3Ipnkk2gOHd7Je8jH2n3VhNbyY4uWw6vssgNIGsTU0dEPgcdWHQauqqQFBTJ-WDtb8MGA7OsKKZY=
+  - Credit Agricole - Egypt - Mubasher Info: https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGDzb6GhwN8UQYs-PPa24K16jadFZHhJOrL6XD33RkhUbFthBmql8f1OoBHDC6EIWcQYnRv5ApkMIX4VNyxrS972BmJ2Rfj9YaBHlQcW4QOGEXJxAFrVEjYCT0lGKzkQp2fY0bv8agYRuovdb6OA2Y=
+  - Credit Agricole - Egypt Bank (S.A.E.) (CIEB) Share Price - EGX | Wallflake: https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEtnoP1_w391kB2omm9faS1G2RCSaRQwSmBGBveePAci3mPyT787JyExLXkRO80aV8_ak24wx6CEmAqq2e_x7e0YUIETktc42H5ksa61MzWYRKSr_kXl0NxBn1d1Lw1zASXQNyfIWQg
+- SIPC.CA: status=RECENT_ACCEPTED latest=2026-08-13 age_days=25 sources=3 expected=Sabaa International Company for Pharmaceutical and Chemical Industry summary=Sabaa International Company for Pharmaceutical and Chemical Industry (SIPC.CA) reported its financial results for the first half of 2026 on August 13, 2026, showing a net profit of EGP 2,910, a significant decrease compared to EGP 11,933,331 in H1 2025. The company also issued a release regarding the reasons for delaying its financial statements for the fiscal year ended December 31, 2025. Earnings results for Q1 2026 were reported on June 14, 2026, and for the full year 2025 on May 10, 2026. The company specializes in the research, development, and manufacturing of generic pharmaceuticals, cosmetics, and nutraceuticals.
+  - Sabaa International Company for Pharmaceutical and Chemical (SIPC.CA) Reports Its Financial Results for the Period From 01/01/2026 to 30/06/2026 | FoudaLens: https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHxBmvgq_l0Z0UPOk-Mr6DNTy6P_nMv08ikHDh7FobK3mQOXkrRatJTts6gVu1EsXylJRyzP2VMLo5iSWosPy3COEXL2V9hMP0O6GRQK10L-ZAk6yYt43NsqP8ybtgb
+  - Release from Sabaa International Company For Pharmaceutical and Chemical (SIPC.CA) Concerning the Financial Statements - The Egyptian Exchange: https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHo-Exb-idS2EwfsxtFuxTmRbgedpQtBxvWxL5n1TS0K5ExuZHXvrGYIyd5Z7IXtxWpMcQwC6uH4Y3OqZOw_hUh97DA3tpJQrEW4H2o8tI2pHjvDaWnL5Qh0KH-3YZNf_lsrsoBQ_tgacMUu0BbIL6C9J0=
+  - Sabaa International Company for Pharmaceutical and Chemical Industry - MarketScreener: https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHoFPV7z9Sf9OVxikQUEpZypiBS9HodQcB5pxEcCfMfXSQGJ8k22eziCbekn9JQxDCQnq23y9Vkrm7Oz4bNHLVceHTTx8YsKYPOrYy7gp5nsLZxSkjamdLCHBOCy8AhnNNJXT80mGmQMMkzbimXfxDT6ksSgJyYOK2bWuZS-9AnEmtck6x_TYMokJt_UhQv_qQ=
+- FAIT.CA: status=RECENT_ACCEPTED latest=2026-08-26 age_days=12 sources=3 expected=Faisal Islamic Bank of Egypt summary=Faisal Islamic Bank of Egypt (FAIT.CA) reported its 6-month consolidated results on August 26, 2026, along with a release regarding the bank's indicators. The bank's stock price and news are available on Investing.com. For the fiscal year 2025, the company's revenue decreased by 0.68% to EGP 12.02 billion, and earnings decreased by 64.40% to EGP 4.30 billion. The company provides retail banking, business banking, and investment banking services.
+  - The Egyptian Exchange - EGX News & Media Releases, Listing News, Members News, Financial Statements: https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGR-htrHjVhgdhWnTlhkMFBjcC1eiDbehJgWtbC8J7yB6HSm3Qs-tgy88iptNl9oOIhr1viJ3zGhSA0q19RflDFBTS3FxmX4jjilVDred4zG15QevhBWsjzzqJ8Csbvw-ZGonWgcwMqieeBpo_B5Xd7c2c=
+  - Faisal Islamic Bank of Egypt Stock Price Today | EGX: FAIT Live - Investing.com: https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGL45LkGdX-dkZu0hNW4tyPNZXeU2enI4pwACBIXiRyeJ7kjHDBrXDWn1r00ndmlPtGd-ymHpDuu4EIU9enN8u3mdU_Rtlm9EE-xQFyxjVCZqQH7oPMM9qNTrECyaWctMrB9STVTA883Oyf
+  - Faisal Islamic Bank of Egypt (EGX:FAIT) Stock Price & Overview: https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFYOftGt7AGgkFZHW7fnreKkCfjLCmhR6_rFXrBrHt0i_Ww2IrAKYCMby9JuNCfCJJp49-lyVPnpMNB3AiMwxMKQNFxYuYvqYuzvU3PU-v_HpGZvy2E89eGLLYhJIO-jd1gWA==
+- ARAB.CA: status=RECENT_ACCEPTED latest=2026-08-26 age_days=12 sources=3 expected=Arab Developers Holding summary=Arab Developers Holding (ARAB.CA) has seen recent activity on the Egyptian Exchange. On August 26, 2026, the Listing Committee addressed the company to comply with listing rules. The minutes of the Extraordinary General Meeting (EGM) were released on August 23, 2026, and a release regarding the EGM was issued on July 30, 2026. A disclosure form for the Board of Directors and shareholders' structure was released on July 21, 2026, and an EGM invitation was issued on July 20, 2026. The company reported consolidated net profits of EGP 70.80 million in H1 2025, but consolidated net profits declined to EGP 159.28 million in 9M 2025. Arab Developers Holding has unveiled EGP 1 billion expansion plans and its EGM approved a capital increase of EGP 1 billion. The company, formerly Porto Group, transformed into Arab Developers Holding in February 2022 as part of an expansion strategy. They recorded contracted sales of EGP 4.6 billion in 2024 and EGP 7.6 billion in 2025.
+  - ARAB Developers Holding (ARAB.CA) - Listing Committee Decision - The Egyptian Exchange: https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH6U7OPDuNQsixcJ-s43cKwsf_F1-iQXMVzFuZAbiAdcHH8V9k5FnQGFhN8IIdw9-kbLhq9KhU1OrYIuhLqn51qPBSyF0dO7YA4cLQIt5LuJXzAmIwrFJwzRHwsXKmgh4vc1nv4l140j8MmqLvkeC_3iw==
+  - ARAB Developers Holding - Mubasher Info: https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHhpZT5Wd8Crz3_kHh9T48V1nMGXU0XkAmL7aATZBiTCibYxqtqR_HWnnkbnIR5PnGtdWBypUjVGVJcTaik8YSdDb1nWp8GptHZ9IYu0OLIq3a2eVIpnpKnAMppeCh6t3Le_XT44uNuQkAiDMJLvgM=
+  - Release from ARAB Developers Holding (ARAB.CA) Regarding the EGM | FoudaLens: https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGqn9t43-pYJCcPfxDXNu6RQfVvBNCq8DZwQc5s29FeW1pIKiTKgWPZOH8fShT1cwODXW6tpPxtF9uNcYGtFOQzsAkEAlo40p_HlibXBJbAX_NUHODWs1I_IQloZXg=
+- EXPA.CA: status=RECENT_ACCEPTED latest=2026-08-24 age_days=14 sources=3 expected=Export Development Bank of Egypt summary=Export Development Bank of Egypt (EXPA.CA) has released several recent financial reports and market announcements. On August 20, 2026, a release concerning the Board of Directors and Executive Managers was issued. The bank reported its 6-month standalone results on August 13, 2026, and August 24, 2026, and its 6-month consolidated results on August 13, 2026. The Annual General Meeting (AGM) minutes were notarized on July 30, 2026, and both AGM and EGM minutes were released on July 27, 2026. A periodic disclosure to shareholders was also released on July 22, 2026. The bank achieved consolidated net profits after tax of EGP 4.31 billion in 9M 2025 and EGP 2.64 billion in H1 2025. The board approved a capital hike to EGP 13.60 billion from EGP 9.89 billion. In Q1 2026, the net income was EGP 2.86 billion.
+  - Export Development Bank of Egypt (EXPA) - Stock - Mubasher Info: https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGJwbdrlhFJyOnjUriuVzp-03WX73F6Y-p-4cN1C_jkaHqfUDFKZt-LjBSTd8bw8YdUSUUNSE5xT93XTEnFxO9auRybS8DNZboieyTl0Tje7rk98TX3lz3bXg4nqJRLbgC5wt2zUMMdeuTp2OQxgx4=
+  - Export Development Bank of Egypt (EXPA) Disclosures — Permanent Archive | FoudaLens: https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGvIZVh5eenjbqDmesPYVOe_InzZ6iZy74aAz4lziFDp0hExP21NxHEfdAjOF8vp5r195SsknuNNXqBr3adMmbuDXEtcoPuFMfaJe9Ct35JOlfAmCgMCqS8YSADPhEczwJv_9CCfQ==
+  - Investor Relations - News - MistNews: https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHslk05SdJkp1Ht9pvxDp31Ra9st6xYmGg_u38O34wUNMd_bsXX5DHeQ-XTXdZhjzXtGQVZ8BCIFL3Pms_zzDXO2XmB-LdBYiRLUZ05Jqv5-gDJQshop_XGmkBT4mT06SVwM696fwoQgZLIWC8lj2WYDqyH1gw22HqNHSQxmyuYk81FGk4GYxt-pmfMjys3lImKjhPDshKr8X8HjCT6kEFykLhJ5FvRF4SNs_j-Ni8ELQmyDNkGlF22eR7cslWfYhYmLslRt6DSok09WHvF9ur-LNHPPeaJ41ZK0p9Tc1KNQoMSFmsFxHpJ7tfVeryCCjTo4f8Ec5ImvSfypoSEB_BhYpxLq7MBGfWn
+- FWRY.CA: status=RECENT_ACCEPTED latest=2026-08-13 age_days=25 sources=3 expected=Fawry For Banking Technology and Electronic Payments summary=Fawry For Banking Technology and Electronic Payments (FWRY.CA) has released several recent financial reports and news. The company reported standalone financial results for H1 2026 on August 13, 2026, and for Q1 2026 on May 17, 2026. Periodic disclosures to shareholders were released on July 22, 2026, and July 12, 2026. Fawry also announced obtaining a financing facility on July 19, 2026. Recent partnerships include NARD (June 29, 2026) and Crystal Mind (July 21, 2026) for integrated POS and payment solutions, and CDS (August 9, 2026) for direct integration with Odoo Business Management System. Fawry recorded EGP 2.4 billion in consolidated revenues in Q1 2026 and EGP 3 billion in consolidated profits for 2025. The EBRD granted Fawry MSME an EGP 250 million facility for youth-led SME projects, and Fawry plans to launch a microinsurance subsidiary. The company also reported 6-month standalone results for H1 2025 on August 14, 2025.
+  - Fawry For Banking Technology And Electronic Payment - The Egyptian Exchange: https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFTQJK69R7iXYSb2DgDi9rUkPQ98ofwmhI9TBl6H2CTmI8m8i6yDaiYDINEDTiLwPwxYy8llVobkiUwQdujic9eEhYEzDmhwicqHC5JCRkMXhyYNTRYUzi2PDap3JduVtr3jcRnSt-xMIuFd4zDXnmx-Q==
+  - Release from Fawry For Banking Technology And Electronic Payment (FWRY.CA) Regarding the Financial Results Report - The Egyptian Exchange: https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHm9GhgUGjpNcqKEpnrpSCUnh01L1Wy4XWcRrGi45BiIPlU7seQSOeKMm64yQXjBtBhzFqI0YfI8CKEfmw7PLjsc-ifMhqw9Wq3xjblTUM2WokyFkg3sFnb6shzMpmppLisYI9sVqWWpdXNMb-zQeBfqw==
+  - Fawry For Banking Technology And Electronic Payment - The Egyptian Exchange: https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEcVfpoj6AjrskgYkrk9f4wLb_EDeDZeWCDsFBa0VG_A14erry6Jra4H0eYxgq0QZDSfRZu_uEpi5Ti8akU8P6NSvvCkV4LmYvWZAzTnkg5xhmhtIg4C_ilKvyYoK7OjWnG9P8GdgoHlUp0BLFiCozhXQ==
 
 ## Warnings
-- Evidence rejected for CICH.CA: source text did not clearly match CICH.CA / CI Capital Holding.
-- Gemini batch evidence failed: Server disconnected without sending a response.
-- Evidence for IFAP.CA matches the company but no source/report date was detected.
-- Evidence rejected for CIEB.CA: source text did not clearly match CIEB.CA / Credit Agricole Egypt.
-- Evidence for SIPC.CA matches the company but appears old; latest detected date is 2020-01-01.
-- Evidence for FAIT.CA matches the company but appears old; latest detected date is 2025-01-01.
-- Evidence for ARAB.CA matches the company but no source/report date was detected.
-- Evidence rejected for EXPA.CA: source text did not clearly match EXPA.CA / Export Development Bank of Egypt.
-- Evidence rejected for FWRY.CA: source text did not clearly match FWRY.CA / Fawry For Banking Technology and Electronic Payments.
+- No blocking warnings.
