@@ -1,13 +1,13 @@
 # Telegram-First EGX Scanner Report
 
-Scan phase: Post-close tomorrow tickets
-Generated UTC: 2026-09-09T16:52:34.132021+00:00
-Generated Cairo: 2026-09-09 19:52
-Run timing: target 15:30 Cairo | generated Cairo 2026-09-09 19:52 | cron 30 12 * * 0-4
-Trigger: scheduled cron=30 12 * * 0-4 mapped to post_close; Cairo now 2026-09-09 19:47
+Scan phase: Evening tomorrow plan
+Generated UTC: 2026-09-09T19:26:50.585878+00:00
+Generated Cairo: 2026-09-09 22:26
+Run timing: target 19:30 Cairo | generated Cairo 2026-09-09 22:26 | cron 30 16 * * 0-4
+Trigger: scheduled cron=30 16 * * 0-4 mapped to evening_plan; Cairo now 2026-09-09 22:20
 
 ## Control Center
-- Action tickets: 3 prioritized signal(s)
+- Action tickets: 0 prioritized signal(s)
 - BUY-ready candidates: 68
 - Data quality issues: 1
 - Tradeable price/liquidity tickers: 187/189
@@ -33,11 +33,11 @@ Trigger: scheduled cron=30 12 * * 0-4 mapped to post_close; Cairo now 2026-09-09
 ## AI Narrative
 - Provider: OpenRouter OK
 - Model: nvidia/nemotron-3-super-120b-a12b:free
-- Summary: The scanner highlighted GIHD.CA, ETEL.CA and ORWE.CA as watch/buy setups while the EGX30 shows a bullish trend and the EGX70 a constructive one, sector breadth is ~67% and the risk mode is BROAD_RISK_ON, but the macro trend remains bearish, so any bullish bias is tentative.
-- GIHD.CA: price above MA20/MA50, RSI ~68, liquidity spike 3.5×, ~8% below resistance, momentum extended and sector not leading → watch for a possible pull‑back or breakout in the next 1‑3 days.
-- ETEL.CA: price above MA20/MA50, RSI ~53, liquidity spike 2.6×, ~12.5% above support, no short‑term risk flags → modest upside if support holds over the next few days.
-- ORWE.CA: price above MA20/MA50, RSI ~64, liquidity cooling, momentum extended, ~4.7% below resistance → watch for weakening momentum or a short‑term stall.
-- Market regime: EGX30 bullish / EGX70 constructive with BROAD_RISK_ON risk mode; macro bearish trend adds uncertainty, so treat all signals as watch‑only entries.
+- Summary: EGX30 is bullish and EGX70 constructive with sector breadth at 66.7%, putting the market in a broad risk‑on mode; the scanner’s top tickets were chosen for their accumulation‑spike liquidity and strong outlook scores, but many show extended momentum, cooling liquidity or overheated RSI, so the near‑term outlook remains a watch with notable uncertainty.
+- Liquidity: GIHD.CA, ETEL.CA and EFIC.CA display accumulation spikes (liquidity spikes 3.5‑7.1), signalling short‑term buying interest, while ORWE.CA and CERA.CA show cooling or overheated RSI, suggesting weaker follow‑th
+- Sector support: Leading sectors Textiles, Building Materials and Telecommunications boost tickets from those groups (ACGC.CA, ORWE.CA in Textiles; ETEL.CA in Telecom) that trade above their 20‑ and 50‑day averages and ho
+- Technical positioning: Most tickets are nearer resistance than support (e.g., SDTI.CA 1 % from resistance, GIHD.CA 8 % from resistance), limiting upside room in the next 1‑3 days unless a clear breakout occurs.
+- Market regime shift: The bullish EGX30 and constructive EGX70 outlook shift risk mode to broad risk on, yet low confidence and risk notes (extended momentum, sector not leading, liquidity cooling) keep uncertainty high f
 
 ## Top Liquidity Spikes
 - AMES.CA: spike=8.56 liquidity=1622371200.0 outlook=WEAK_OR_RISKY score=16.51 buy_ready=False
@@ -57,18 +57,7 @@ Trigger: scheduled cron=30 12 * * 0-4 mapped to post_close; Cairo now 2026-09-09
 - #8 Industrial Goods & Cables: score=8.16 5d=3.17% 20d=10.57% aboveMA50=50.0%
 
 ## Today's Prioritized Action Tickets
-- Priority #1: BUY GIHD.CA
-  - Entry: 73.94 | Take profit: 79.86 | Stop loss: 70.98
-  - Confidence: LOW | score=32.62 | outlook=BULLISH_WATCH 83.51
-  - Reason: WATCH/BUY SETUP: GIHD.CA has aligned current price data, liquidity above threshold, price above MA20/MA50, RSI 67.77, support 58.01, resistance 79.9, and evidence sources. Macro trend is Bearish; market regime is BROAD_RISK_ON; verify price action in Thndr before treating it as a swing entry.
-- Priority #2: BUY ETEL.CA
-  - Entry: 120.4 | Take profit: 130.04 | Stop loss: 115.58
-  - Confidence: LOW | score=32.14 | outlook=BULLISH_WATCH 100
-  - Reason: WATCH/BUY SETUP: ETEL.CA has aligned current price data, liquidity above threshold, price above MA20/MA50, RSI 53.45, support 107.0, resistance 126.4, and evidence sources. Macro trend is Bearish; market regime is BROAD_RISK_ON; verify price action in Thndr before treating it as a swing entry.
-- Priority #3: BUY ORWE.CA
-  - Entry: 28.09 | Take profit: 30.33 | Stop loss: 26.97
-  - Confidence: LOW | score=30.9 | outlook=BULLISH_WATCH 76
-  - Reason: WATCH/BUY SETUP: ORWE.CA has aligned current price data, liquidity above threshold, price above MA20/MA50, RSI 63.86, support 24.5, resistance 29.41, and evidence sources. Macro trend is Bearish; market regime is BROAD_RISK_ON; verify price action in Thndr before treating it as a swing entry.
+- HOLD: Local fallback HOLD: no candidate passed evidence, liquidity, freshness, and technical gates.
 
 ## Thndr Instruction
 - Advisor-only signal mode is active. The scanner never executes trades.
@@ -300,37 +289,37 @@ Trigger: scheduled cron=30 12 * * 0-4 mapped to post_close; Cairo now 2026-09-09
 - These checks are historical context only, not a prediction or guarantee.
 
 ## Evidence
-- GIHD.CA: status=RECENT_ACCEPTED latest=2026-08-12 age_days=28 sources=3 expected=Gharbia Islamic Housing Development Company summary=Gharbia Islamic Housing Development Company (GIHD.CA) has released several disclosures and financial results through the Egyptian Exchange (EGX) and platforms like FoudaLens and Mubasher Info within the last 12 months. These include financial statements for the first half of 2026 and the first quarter of 2026, as well as board meeting minutes and shareholder structure disclosures.
-  - Gharbia Islamic Housing Development (GIHD.CA) Reports Its Financial Results for the Period From 01/01/2026 to 30/06/2026 (August 12, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE0puwbJ_qsp9GspVQG46pis3UOzZlqa7lursC0VJpurWKgEYS9nwDXPnkp7aC5vCEGOOHLvZGlR7DXrZSU01BujmDpgH0j5QtU2Q1FgbbRuWO1mQkFXBphgppuvmLryTFk37MZrQI=
-  - Gharbia Islamic Housing Development (GIHD.CA) - Minutes of the Board of Director's Meeting (August 12, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE0puwbJ_qsp9GspVQG46pis3UOzZlqa7lursC0VJpurWKgEYS9nwDXPnkp7aC5vCEGOOHLvZGlR7DXrZSU01BujmDpgH0j5QtU2Q1FgbbRuWO1mQkFXBphgppuvmLryTFk37MZrQI=
-  - Gharbia Islamic Housing Development (GIHD.CA) - Release Regarding a Disclosure Form (August 4, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFxon0ysgT_o9imcoDewBa-i878SORQrXJzgF6h217GLnkd04FelUXK0tUuvdpx7-sVucOeW5aG7t6_uIWjFzjiCkqclMr9Iz3wB4_HTuTOijHC4Kn_GInst2NqPwUZ4I_fsVW1sGWzUh6A-LRQj_hH
-- ETEL.CA: status=RECENT_ACCEPTED latest=2026-09-03 age_days=6 sources=3 expected=Telecom Egypt summary=Telecom Egypt (ETEL.CA) has been active with several market announcements and financial disclosures in the past year. Key updates include signing new agreements, being upgraded to the FTSE Russell mid-cap segment, and releasing quarterly financial results.
-  - Telecom Egypt (ETEL.CA) - Disclosure Form for the BoD & the Shareholders' Structure (September 1, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEcwf4_enbySxb8NVvsEbtGZWiPPkrvD1DivP_d05Xn1Tt-YJmwPf5LbWY6oRvcZx0dnoM1XuX8Mg81biggir5UZk009mi2qfA1WE7bvsI6iVLuBirF8UoQRUvs4EmsPPZwDoCo1rQ_okIkW7zrWHXD5Y8=
-  - Release from Telecom Egypt (ETEL.CA) Concerning the Signing of an Agreement (September 3, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGQZ5gB8FfTFgsc3sEKvViaTDZAp5OP4lQC_oMuKjLZajdYZwP2yVkngfOJtgvXKqqWXvw1S8lJepnrjk19zzL65JSU_rBMiYXi8p0lHBlpUmrY_0ygByCMpqhiFJYi3b2v95itzeNBZLb7Y4wKzA4Jw2K48KAizeZMh-drSpI=
-  - Release from Telecom Egypt (ETEL.CA) Concerning FTSE Russell Emerging Markets Index (August 23, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGQZ5gB8FfTFgsc3sEKvViaTDZAp5OP4lQC_oMuKjLZajdYZwP2yVkngfOJtgvXKqqWXvw1S8lJepnrjk19zzL65JSU_rBMiYXi8p0lHBlpUmrY_0ygByCMpqhiFJYi3b2v95itzeNBZLb7Y4wKzA4Jw2K48KAizeZMh-drSpI=
-- ACGC.CA: status=RECENT_ACCEPTED latest=2026-08-19 age_days=21 sources=3 expected=Arab Cotton Ginning summary=Arab Cotton Ginning (ACGC.CA) has provided several disclosures to the EGX in the last year, including financial results and board decisions. The company also faced a penalty from the EGX Listing Committee for delayed financial statements.
-  - Arab Cotton Ginning (ACGC.CA) - Listing Committee Decision to impose EGP 40,000 penalty (August 19, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFsZUnoHNMY9VGy8s_cRhmVoTvTWL3RWq5KO36JCHHvYrdeECitdwhIomuLPB4lXZV7GrKO26Dm28vt2_-tMDRMqhhJht6dF8UrOp2zzc7JGpLGdSQ_mClTtr3lRnGOVP_G6DrhHBJck5aCJfq94w==
-  - Arab Cotton Ginning (ACGC.CA) - Disclosure Form for the BoD & the Shareholders' Structure (July 12, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGOp5IsqvszxVUvfkbzJSg_1KDzIS1ACpNn_BnQlu2uLoJIpkejOm5u04R1IM738D03jb-_vFudpFC-qEv74Y4hKlC9D7s1vkGx_QpdKwnSsAsqIpNr-Xg8PLsg3_X5VPabxurmfU4=
-  - Arab Cotton Ginning (ACGC.CA) - EGM Minutes (Notarized) (July 8, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGOp5IsqvszxVUvfkbzJSg_1KDzIS1ACpNn_BnQlu2uLoJIpkejOm5u04R1IM738D03jb-_vFudpFC-qEv74Y4hKlC9D7s1vkGx_QpdKwnSsAsqIpNr-Xg8PLsg3_X5VPabxurmfU4=
-- ORWE.CA: status=RECENT_ACCEPTED latest=2026-09-04 age_days=5 sources=2 expected=Oriental Weavers summary=Recent official disclosures for Oriental Weavers (ORWE.CA) within the last 12 months are limited in the search results. The company's investor relations page shows older reports, but market data and company profiles confirm its listing on the EGX.
-  - Oriental Weavers Carpet (ORWE.EG) company profile on the EGX (Undated, confirms EGX listing): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEyWtqCTy0Ck6aPenV2ma_9P64YrXQfv8hNmfZPB266Rw_lRoglMSZP1tlXHArsGV50cm-D1_vfFEv8N75x4hC0vctWmVXKho_-aZEEOX3awM7TKzGEMyXfKvjJVZg4C6s5KDyCSCpt6kd7hRZWSQDfLFK4dohPsg==
-  - Oriental Weavers Stock Price Today | EGX: ORWE Live - Investing.com (September 4, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHg7A1B2YG2Z_jr3_uh1kupKQraBiPpNwg79NDDUqiDuqtWL6BcZogAc7Jq0KNh1OmBGsunQr-had-iWbCujKtMwsxfwqdMsyqLPZz25FOlpvqn71F640q88in2eQ8zx3_QK7xi9gwVkm-_rw==
-- EFIC.CA: status=OLD_ACCEPTED latest=2025-01-01 age_days=616 sources=3 expected=Egyptian Financial and Industrial summary=EFIC’s consolidated profits near EGP 820m in 2025; dividends proposed; EFIC ordered to pay over EGP 126m as penalties; EFIC generates lower consolidated net profits at EGP 803m in 9M-25; net sales near EGP 8bn Gemini also reviewed web evidence but did not return ticker-specific citations.
+- GIHD.CA: status=OLD_ACCEPTED latest=2016-01-01 age_days=3904 sources=3 expected=Gharbia Islamic Housing Development Company summary=Gharbia Islamic Housing to discuss raising capital mid-December; Gharbia Islamic Housing to distribute EGP 0.2/shr; Gharbia Islamic Housing profits fall 46% in 2016
+  - Gharbia Islamic Housing to discuss raising capital mid-December: https://english.mubasher.info/news/3147599/Gharbia-Islamic-Housing-to-discuss-raising-capital-mid-December/
+  - Gharbia Islamic Housing to distribute EGP 0.2/shr: https://english.mubasher.info/news/3082262/Gharbia-Islamic-Housing-to-distribute-EGP-0-2-shr/
+  - Gharbia Islamic Housing profits fall 46% in 2016: https://english.mubasher.info/news/3068305/Gharbia-Islamic-Housing-profits-fall-46-in-2016/
+- ETEL.CA: status=REJECTED_TICKER_MISMATCH latest=n/a age_days=n/a sources=0 expected=Telecom Egypt summary=Evidence rejected for ETEL.CA: source text did not clearly match ETEL.CA / Telecom Egypt.
+- ACGC.CA: status=ACCEPTED_UNDATED latest=n/a age_days=n/a sources=3 expected=Arab Cotton Ginning summary=Arab Cotton Ginning’s stock nears significant resistance level; Arab Cotton Ginning’s standalone profit grows 142% YoY in 9M-23/24; Arab Cotton Ginning’s consolidated profit leaps 371% YoY in H1-23/24
+  - Arab Cotton Ginning’s stock nears significant resistance level: https://english.mubasher.info/news/4549011/Arab-Cotton-Ginning-s-stock-nears-significant-resistance-level/
+  - Arab Cotton Ginning’s standalone profit grows 142% YoY in 9M-23/24: https://english.mubasher.info/news/4302757/Arab-Cotton-Ginning-s-standalone-profit-grows-142-YoY-in-9M-23-24/
+  - Arab Cotton Ginning’s consolidated profit leaps 371% YoY in H1-23/24: https://english.mubasher.info/news/4279332/Arab-Cotton-Ginning-s-consolidated-profit-leaps-371-YoY-in-H1-23-24/
+- ORWE.CA: status=OLD_ACCEPTED latest=2025-01-01 age_days=616 sources=3 expected=Oriental Weavers summary=Oriental Weavers to disburse EGP 1.5/shr dividends for 2025; Oriental Weavers’ consolidated profits cross EGP 2.2bn in 2025; Oriental Weavers generates EGP 12.5bn consolidated sales in H1-25
+  - Oriental Weavers to disburse EGP 1.5/shr dividends for 2025: https://english.mubasher.info/news/4590236/Oriental-Weavers-to-disburse-EGP-1-5-shr-dividends-for-2025/
+  - Oriental Weavers’ consolidated profits cross EGP 2.2bn in 2025: https://english.mubasher.info/news/4562972/Oriental-Weavers-consolidated-profits-cross-EGP-2-2bn-in-2025/
+  - Oriental Weavers generates EGP 12.5bn consolidated sales in H1-25: https://english.mubasher.info/news/4487417/Oriental-Weavers-generates-EGP-12-5bn-consolidated-sales-in-H1-25/
+- EFIC.CA: status=OLD_ACCEPTED latest=2025-01-01 age_days=616 sources=3 expected=Egyptian Financial and Industrial summary=EFIC’s consolidated profits near EGP 820m in 2025; dividends proposed; EFIC ordered to pay over EGP 126m as penalties; EFIC generates lower consolidated net profits at EGP 803m in 9M-25; net sales near EGP 8bn
   - EFIC’s consolidated profits near EGP 820m in 2025; dividends proposed: https://english.mubasher.info/news/4579891/EFIC-s-consolidated-profits-near-EGP-820m-in-2025-dividends-proposed/
   - EFIC ordered to pay over EGP 126m as penalties: https://english.mubasher.info/news/4535935/EFIC-ordered-to-pay-over-EGP-126m-as-penalties/
   - EFIC generates lower consolidated net profits at EGP 803m in 9M-25; net sales near EGP 8bn: https://english.mubasher.info/news/4528902/EFIC-generates-lower-consolidated-net-profits-at-EGP-803m-in-9M-25-net-sales-near-EGP-8bn/
-- CERA.CA: status=RECENT_ACCEPTED latest=2026-07-16 age_days=55 sources=3 expected=The Arab Ceramic Co. summary=The Arab Ceramic Co. (CERA.CA) has released several disclosures and financial updates in the past year, including shareholder structure forms, AGM minutes, and board decisions. The company also reported its Q1 2026 financial results.
-  - The Arab Ceramic CO.- Ceramica Remas (CERA.CA) - Disclosure Form for the BoD & the Shareholders' Structure (July 16, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFTYngdsPRAk8fCENGXEX-6T7lrxUf8k4WFSOQv6XHt7CHCkqabchWMUDSmALE_oNjAXA2niTl3SoxQJCZBL-aeVKDWLRHFL3-O30jv7EOiJibPuZswB6VHngb0gPnWet37cQzqWmF2IKmwl94WoSBRrLNMDipcQ5M9ekSlRg==
-  - The Arab Ceramic CO.- Ceramica Remas (CERA.CA) - AGM Minutes (after Certification) (May 24, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFTYngdsPRAk8fCENGXEX-6T7lrxUf8k4WFSOQv6XHt7CHCkqabchWMUDSmALE_oNjAXA2niTl3SoxQJCZBL-aeVKDWLRHFL3-O30jv7EOiJibPuZswB6VHngb0gPnWet37cQzqWmF2IKmwl94WoSBRrLNMDipcQ5M9ekSlRg==
-  - The Arab Ceramic CO.- Ceramica Remas (CERA.CA) - Board of Directors' Decision (May 19, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFTYngdsPRAk8fCENGXEX-6T7lrxUf8k4WFSOQv6XHt7CHCkqabchWMUDSmALE_oNjAXA2niTl3SoxQJCZBL-aeVKDWLRHFL3-O30jv7EOiJibPuZswB6VHngb0gPnWet37cQzqWmF2IKmwl94WoSBRrLNMDipcQ5M9ekSlRg==
-- RUBX.CA: status=RECENT_ACCEPTED latest=2026-08-06 age_days=34 sources=3 expected=Rubex International for Plastic and Acrylic Manufacturing summary=Rubex International for Plastic and Acrylic Manufacturing (RUBX.CA) has released several disclosures and financial updates in the last year, including audit committee reports, board meeting minutes, and shareholder structure forms. The company also reported revenue growth for the quarter ending June 30, 2026.
-  - Rubex International for Plastic and Acrylic Manufacturing (RUBX.CA) - Audit Committee Report (August 6, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHO3NmycwLQemCjInRKuk4cVgRzIAL18EEYQdf8K82WVxfUD5zGhuP3B_kYO8Lr044Bbh5UuO9C5MxKH8E8b7CUpCLYDq7r8hZKY9zofZ2vmfKScnPRNRbKzV5ACZIf37XDrxC6ehJoLEnPcJ4F0yXO
-  - Rubex International for Plastic and Acrylic Manufacturing (RUBX.CA) - Minutes of the Board of Directors' Meeting (August 5, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHO3NmycwLQemCjInRKuk4cVgRzIAL18EEYQdf8K82WVxfUD5zGhuP3B_kYO8Lr044Bbh5UuO9C5MxKH8E8b7CUpCLYDq7r8hZKY9zofZ2vmfKScnPRNRbKzV5ACZIf37XDrxC6ehJoLEnPcJ4F0yXO
-  - Rubex International for Plastic and Acrylic Manufacturing (RUBX.CA) - Release Concerning the BoD Invitation (August 5, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHO3NmycwLQemCjInRKuk4cVgRzIAL18EEYQdf8K82WVxfUD5zGhuP3B_kYO8Lr044Bbh5UuO9C5MxKH8E8b7CUpCLYDq7r8hZKY9zofZ2vmfKScnPRNRbKzV5ACZIf37XDrxC6ehJoLEnPcJ4F0yXO
-- SDTI.CA: status=RECENT_ACCEPTED latest=2026-08-11 age_days=29 sources=3 expected=SHARM DREAMS Co. for Touristic Investment S.A.E summary=SHARM DREAMS Co. for Touristic Investment S.A.E (SDTI.CA) has provided numerous disclosures and financial reports in the last year, including 6-month and full-year results for 2025, and Q1 2026 results. Recent news indicates a plunge in H1 profits for 2026.
-  - Sharm Dreams' H1 profits plunge by 55.3% YoY (August 11, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEP9n3K17csvd8mQie94PTGkxbo7ahC8gVrbPqDgOcD8tJ4yalRl-DR9Od4WLWIdKYVsN4qAbzS5n3joOY7k1DEioHLC05AKgWMoDteJ2DMbF02tIJqk3E0T29TcJTRKFCfJYiLd2PBDVjr4b9pxJXLAQ==
-  - Sharm Dreams Co. for Tourism Investment (SDTI.CA) Reports 6 Months Results (August 11, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFudJwlPNxPuVNCfjUkvo0QuzBMm5iwGr5rYiGgx2HWyUtc0ogh8oKcxMp4gcH532BgGXJGNSRwFzWZM-Xakfroz28-bdnN5lcpR9BAmqFcZ5xv9HMpnGNmD5xK7k240hi094prtsk=
-  - Sharm Dreams Co. for Tourism Investment (SDTI.CA) - Disclosure Form for the BoD & the Shareholders' Structure (July 16, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFudJwlPNxPuVNCfjUkvo0QuzBMm5iwGr5rYiGgx2HWyUtc0ogh8oKcxMp4gcH532BgGXJGNSRwFzWZM-Xakfroz28-bdnN5lcpR9BAmqFcZ5xv9HMpnGNmD5xK7k240hi094prtsk=
+- CERA.CA: status=REJECTED_TICKER_MISMATCH latest=n/a age_days=n/a sources=0 expected=The Arab Ceramic Co. summary=Evidence rejected for CERA.CA: source text did not clearly match CERA.CA / The Arab Ceramic Co..
+- RUBX.CA: status=REJECTED_TICKER_MISMATCH latest=n/a age_days=n/a sources=0 expected=Rubex International for Plastic and Acrylic Manufacturing summary=Evidence rejected for RUBX.CA: source text did not clearly match RUBX.CA / Rubex International for Plastic and Acrylic Manufacturing.
+- SDTI.CA: status=ACCEPTED_UNDATED latest=n/a age_days=n/a sources=3 expected=SHARM DREAMS Co. for Touristic Investment S.A.E summary=Sharm Dreams stock maintains strong uptrend - Analysis; Sharm Dreams stock is experiencing sideways movement amid anticipation of next trend – Analysis; Sharm Dreams stock hits historic level halting driving buying force
+  - Sharm Dreams stock maintains strong uptrend - Analysis: https://english.mubasher.info/news/4577977/Sharm-Dreams-stock-maintains-strong-uptrend-Analysis/
+  - Sharm Dreams stock is experiencing sideways movement amid anticipation of next trend – Analysis: https://english.mubasher.info/news/4547831/Sharm-Dreams-stock-is-experiencing-sideways-movement-amid-anticipation-of-next-trend-Analysis/
+  - Sharm Dreams stock hits historic level halting driving buying force: https://english.mubasher.info/news/4529096/Sharm-Dreams-stock-hits-historic-level-halting-driving-buying-force/
 
 ## Warnings
+- Evidence for GIHD.CA matches the company but appears old; latest detected date is 2016-01-01.
+- Gemini batch evidence failed: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+- Evidence rejected for ETEL.CA: source text did not clearly match ETEL.CA / Telecom Egypt.
+- Evidence for ACGC.CA matches the company but no source/report date was detected.
+- Evidence for ORWE.CA matches the company but appears old; latest detected date is 2025-01-01.
 - Evidence for EFIC.CA matches the company but appears old; latest detected date is 2025-01-01.
+- Evidence rejected for CERA.CA: source text did not clearly match CERA.CA / The Arab Ceramic Co..
+- Evidence rejected for RUBX.CA: source text did not clearly match RUBX.CA / Rubex International for Plastic and Acrylic Manufacturing.
+- Evidence for SDTI.CA matches the company but no source/report date was detected.
