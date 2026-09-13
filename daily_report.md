@@ -1,13 +1,13 @@
 # Telegram-First EGX Scanner Report
 
-Scan phase: Open liquidity confirmation
-Generated UTC: 2026-09-13T11:49:22.203189+00:00
-Generated Cairo: 2026-09-13 14:49
-Run timing: target 09:15 Cairo | generated Cairo 2026-09-13 14:49 | cron 15 6 * * 0-4
-Trigger: scheduled cron=15 6 * * 0-4 mapped to open_confirm; Cairo now 2026-09-13 14:44
+Scan phase: Intraday liquidity update
+Generated UTC: 2026-09-13T13:09:53.622658+00:00
+Generated Cairo: 2026-09-13 16:09
+Run timing: target 11:00 Cairo | generated Cairo 2026-09-13 16:09 | cron 0 8 * * 0-4
+Trigger: scheduled cron=0 8 * * 0-4 mapped to intraday; Cairo now 2026-09-13 16:03
 
 ## Control Center
-- Action tickets: 3 prioritized signal(s)
+- Action tickets: 0 prioritized signal(s)
 - BUY-ready candidates: 36
 - Data quality issues: 1
 - Tradeable price/liquidity tickers: 176/189
@@ -26,23 +26,21 @@ Trigger: scheduled cron=15 6 * * 0-4 mapped to open_confirm; Cairo now 2026-09-1
 ## Top Liquidity
 - CCAP.CA: liquidity=1473943552.0 spike=2.06 score=31.52
 - MPCO.CA: liquidity=429554912.0 spike=3.17 score=12.72
-- MASR.CA: liquidity=291440992.0 spike=3.49 score=30.11
+- MASR.CA: liquidity=291443456.0 spike=3.49 score=30.11
 - DTPP.CA: liquidity=259677680.0 spike=7.48 score=13.13
 - AMES.CA: liquidity=254730528.0 spike=1.15 score=12.43
 
 ## AI Narrative
 - Provider: OpenRouter OK
 - Model: nvidia/nemotron-3-super-120b-a12b:free
-- Summary: The scanner flagged MASR.CA, POUL.CA and EPCO.CA as watch/buy setups because each shows liquidity accumulation spikes, price above key moving averages, and bullish watch outlook, but the macro trend remains bearish and the EGX70 index is weak, keeping risk mode in selective swing trades only.
-- Liquidity spikes (>3x) suggest short‑term buying interest, yet sector breadth is low (42.86%) and none of the tickets belong to leading sectors, limiting tailwinds.
-- Each stock trades above its 20‑/50‑day MA with RSI in the 59‑68 range, placing it near defined support (≈7.5‑37‑10.8) and resistance (≈8.8‑41‑12.9) levels that could constrain moves over the next 1‑3 days.
-- EGX30 shows a constructive trend while EGX70 is bearish, prompting the SELECTIVE_SWING_TRADES_ONLY risk mode; low confidence scores and extended momentum add uncertainty, so price action should be verified before acting.
+- Summary: EGX30 is constructive while EGX70 is bearish, prompting a selective swing‑trade risk mode; the scanner highlighted a few stocks with accumulation spikes and bullish‑watch outlooks, but many show overheated RSI, limited sector leadership, and tight support‑resistance zones, keeping confidence low.
+- Liquidity: CCAP.CA, MASR.CA, POUL.CA and EPCO.CA display accumulation spikes (liquidity_spike 2‑4×), indicating short‑term buying interest.
 
 ## Top Liquidity Spikes
 - DTPP.CA: spike=7.48 liquidity=259677680.0 outlook=WEAK_OR_RISKY score=0 buy_ready=False
 - POUL.CA: spike=4.04 liquidity=85570080.0 outlook=BULLISH_WATCH score=77.77 buy_ready=True
 - EPCO.CA: spike=3.58 liquidity=72368440.0 outlook=BULLISH_WATCH score=90.82 buy_ready=True
-- MASR.CA: spike=3.49 liquidity=291440992.0 outlook=BULLISH_WATCH score=82.82 buy_ready=True
+- MASR.CA: spike=3.49 liquidity=291443456.0 outlook=BULLISH_WATCH score=82.82 buy_ready=True
 - NCCW.CA: spike=3.38 liquidity=148929728.0 outlook=WEAK_OR_RISKY score=0 buy_ready=False
 
 ## Sector Leaderboard
@@ -56,18 +54,7 @@ Trigger: scheduled cron=15 6 * * 0-4 mapped to open_confirm; Cairo now 2026-09-1
 - #8 Banking & Financials: score=4.85 5d=0.12% 20d=2.4% aboveMA50=80.0%
 
 ## Today's Prioritized Action Tickets
-- Priority #1: BUY MASR.CA
-  - Entry: 8.24 | Take profit: 8.9 | Stop loss: 7.91
-  - Confidence: LOW | score=30.11 | outlook=BULLISH_WATCH 82.82
-  - Reason: WATCH/BUY SETUP: MASR.CA has aligned current price data, liquidity above threshold, price above MA20/MA50, RSI 64.71, support 7.49, resistance 8.79, and evidence sources. Macro trend is Bearish; market regime is SELECTIVE_SWING_TRADES_ONLY; verify price action in Thndr before treating it as a swing entry.
-- Priority #2: BUY POUL.CA
-  - Entry: 40.08 | Take profit: 43.28 | Stop loss: 38.48
-  - Confidence: LOW | score=28.51 | outlook=BULLISH_WATCH 77.77
-  - Reason: WATCH/BUY SETUP: POUL.CA has aligned current price data, liquidity above threshold, price above MA20/MA50, RSI 67.58, support 36.97, resistance 40.99, and evidence sources. Macro trend is Bearish; market regime is SELECTIVE_SWING_TRADES_ONLY; verify price action in Thndr before treating it as a swing entry.
-- Priority #3: BUY EPCO.CA
-  - Entry: 11.74 | Take profit: 12.83 | Stop loss: 11.27
-  - Confidence: LOW | score=28.13 | outlook=BULLISH_WATCH 90.82
-  - Reason: WATCH/BUY SETUP: EPCO.CA has aligned current price data, liquidity above threshold, price above MA20/MA50, RSI 59.26, support 10.8, resistance 12.89, and evidence sources. Macro trend is Bearish; market regime is SELECTIVE_SWING_TRADES_ONLY; verify price action in Thndr before treating it as a swing entry.
+- HOLD: Local fallback HOLD: no candidate passed evidence, liquidity, freshness, and technical gates.
 
 ## Thndr Instruction
 - Advisor-only signal mode is active. The scanner never executes trades.
@@ -87,7 +74,7 @@ Trigger: scheduled cron=15 6 * * 0-4 mapped to open_confirm; Cairo now 2026-09-1
 - SKPC.CA: BULLISH_WATCH score=78.91 liquidity=TRADEABLE sector=IMPROVING risk=momentum is extended
 
 ## BUY-Ready Candidates
-- MASR.CA: rank=30.11 outlook=BULLISH_WATCH outlook_score=82.82 sector_rank=15 price=8.24 support=7.49 resistance=8.79 liquidity=291440992.0
+- MASR.CA: rank=30.11 outlook=BULLISH_WATCH outlook_score=82.82 sector_rank=15 price=8.24 support=7.49 resistance=8.79 liquidity=291443456.0
 - POUL.CA: rank=28.51 outlook=BULLISH_WATCH outlook_score=77.77 sector_rank=11 price=40.08 support=36.97 resistance=40.99 liquidity=85570080.0
 - EPCO.CA: rank=28.13 outlook=BULLISH_WATCH outlook_score=90.82 sector_rank=15 price=11.74 support=10.8 resistance=12.89 liquidity=72368440.0
 - BINV.CA: rank=27.39 outlook=BULLISH_WATCH outlook_score=93 sector_rank=1 price=51.35 support=46.25 resistance=55.0 liquidity=9993778.0
@@ -107,7 +94,7 @@ Trigger: scheduled cron=15 6 * * 0-4 mapped to open_confirm; Cairo now 2026-09-1
 - ACAMD.CA: score=20.19 buy_ready=False sector_rank=15 price=2.11 support=1.95 resistance=2.28 source=Yahoo Finance history + Mubasher delayed current trading data as_of=01:29 PM market time freshness=DELAYED_CURRENT RSI=51.67 liquidity=58198896.0 spike=1.03
 - ACGC.CA: score=25.4 buy_ready=True sector_rank=3 price=14.92 support=10.94 resistance=16.09 source=Yahoo Finance history + Mubasher delayed current trading data as_of=01:28 PM market time freshness=DELAYED_CURRENT RSI=69.89 liquidity=14526351.0 spike=0.34
 - ADCI.CA: score=13.94 buy_ready=False sector_rank=15 price=285.01 support=280.0 resistance=326.0 source=Yahoo Finance history + Mubasher delayed current trading data as_of=01:25 PM market time freshness=DELAYED_CURRENT RSI=54.12 liquidity=2813812.0 spike=0.26
-- ADIB.CA: score=21.94 buy_ready=False sector_rank=8 price=52.32 support=51.15 resistance=55.65 source=Yahoo Finance history + Mubasher delayed current trading data as_of=01:27 PM market time freshness=DELAYED_CURRENT RSI=44.4 liquidity=35015916.0 spike=0.49
+- ADIB.CA: score=21.94 buy_ready=False sector_rank=8 price=52.32 support=51.15 resistance=55.65 source=Yahoo Finance history + Mubasher delayed current trading data as_of=01:29 PM market time freshness=DELAYED_CURRENT RSI=44.4 liquidity=35068316.0 spike=0.49
 - ADPC.CA: score=18.13 buy_ready=False sector_rank=15 price=3.9 support=3.85 resistance=4.61 source=Yahoo Finance history + Mubasher delayed current trading data as_of=01:28 PM market time freshness=DELAYED_CURRENT RSI=44.78 liquidity=15824813.0 spike=0.54
 - AFDI.CA: score=8.24 buy_ready=False sector_rank=15 price=52.36 support=53.54 resistance=68.68 source=Yahoo Finance history + Mubasher delayed current trading data as_of=01:27 PM market time freshness=DELAYED_CURRENT RSI=29.38 liquidity=5116298.0 spike=0.18
 - AFMC.CA: score=16.75 buy_ready=False sector_rank=15 price=164.15 support=157.0 resistance=267.9 source=Yahoo Finance history + Mubasher delayed current trading data as_of=01:28 PM market time freshness=DELAYED_CURRENT RSI=20.72 liquidity=99310952.0 spike=1.31
@@ -160,7 +147,7 @@ Trigger: scheduled cron=15 6 * * 0-4 mapped to open_confirm; Cairo now 2026-09-1
 - ECAP.CA: score=7.45 buy_ready=False sector_rank=15 price=32.88 support=31.16 resistance=40.9 source=Yahoo Finance history + Mubasher delayed current trading data as_of=01:10 PM market time freshness=DELAYED_CURRENT RSI=32.51 liquidity=4319628.0 spike=0.24
 - EDFM.CA: score=14.76 buy_ready=True sector_rank=15 price=422.3 support=394.0 resistance=432.0 source=Yahoo Finance history + Mubasher delayed current trading data as_of=12:58 PM market time freshness=DELAYED_CURRENT RSI=53.11 liquidity=1636014.5 spike=0.85
 - EEII.CA: score=10.14 buy_ready=False sector_rank=15 price=2.29 support=2.33 resistance=3.43 source=Yahoo Finance history + Mubasher delayed current trading data as_of=01:29 PM market time freshness=DELAYED_CURRENT RSI=18.22 liquidity=7009827.5 spike=0.24
-- EFIC.CA: score=23.36 buy_ready=False sector_rank=5 price=204.78 support=192.75 resistance=260.0 source=Yahoo Finance history + Mubasher delayed current trading data as_of=01:29 PM market time freshness=DELAYED_CURRENT RSI=50.18 liquidity=85359720.0 spike=0.92
+- EFIC.CA: score=23.36 buy_ready=False sector_rank=5 price=204.78 support=192.75 resistance=260.0 source=Yahoo Finance history + Mubasher delayed current trading data as_of=01:29 PM market time freshness=DELAYED_CURRENT RSI=50.18 liquidity=85411472.0 spike=0.92
 - EFID.CA: score=21.51 buy_ready=False sector_rank=11 price=30.97 support=29.71 resistance=34.89 source=Yahoo Finance history + Mubasher delayed current trading data as_of=01:28 PM market time freshness=DELAYED_CURRENT RSI=42.89 liquidity=28628904.0 spike=0.51
 - EFIH.CA: score=22.4 buy_ready=False sector_rank=4 price=23.47 support=22.16 resistance=25.4 source=Yahoo Finance history + Mubasher delayed current trading data as_of=01:27 PM market time freshness=DELAYED_CURRENT RSI=43.16 liquidity=36635568.0 spike=0.43
 - EGAL.CA: score=21.36 buy_ready=False sector_rank=5 price=371.6 support=321.01 resistance=395.0 source=Yahoo Finance history + Mubasher delayed current trading data as_of=01:29 PM market time freshness=DELAYED_CURRENT RSI=76.39 liquidity=24068824.0 spike=0.14
@@ -214,7 +201,7 @@ Trigger: scheduled cron=15 6 * * 0-4 mapped to open_confirm; Cairo now 2026-09-1
 - LCSW.CA: score=22.05 buy_ready=True sector_rank=10 price=34.46 support=32.12 resistance=37.5 source=Yahoo Finance history + Mubasher delayed current trading data as_of=01:25 PM market time freshness=DELAYED_CURRENT RSI=54.46 liquidity=8374918.5 spike=0.25
 - LUTS.CA: score=8.13 buy_ready=False sector_rank=15 price=0.95 support=0.95 resistance=1.05 source=Yahoo Finance history + Mubasher delayed current trading data as_of=01:29 PM market time freshness=DELAYED_CURRENT_UNALIGNED RSI=50.0 liquidity=122066440.0 spike=0.44
 - MAAL.CA: score=14.73 buy_ready=False sector_rank=15 price=8.85 support=8.18 resistance=10.14 source=Yahoo Finance history + Mubasher delayed current trading data as_of=01:25 PM market time freshness=DELAYED_CURRENT RSI=55.45 liquidity=3602164.25 spike=0.26
-- MASR.CA: score=30.11 buy_ready=True sector_rank=15 price=8.24 support=7.49 resistance=8.79 source=Yahoo Finance history + Mubasher delayed current trading data as_of=01:28 PM market time freshness=DELAYED_CURRENT RSI=64.71 liquidity=291440992.0 spike=3.49
+- MASR.CA: score=30.11 buy_ready=True sector_rank=15 price=8.24 support=7.49 resistance=8.79 source=Yahoo Finance history + Mubasher delayed current trading data as_of=01:29 PM market time freshness=DELAYED_CURRENT RSI=64.71 liquidity=291443456.0 spike=3.49
 - MBSC.CA: score=23.68 buy_ready=True sector_rank=10 price=409.21 support=340.0 resistance=470.0 source=Yahoo Finance history + Mubasher delayed current trading data as_of=01:29 PM market time freshness=DELAYED_CURRENT RSI=61.64 liquidity=11863433.0 spike=0.11
 - MCQE.CA: score=21.68 buy_ready=False sector_rank=10 price=225.6 support=212.01 resistance=279.9 source=Yahoo Finance history + Mubasher delayed current trading data as_of=01:26 PM market time freshness=DELAYED_CURRENT RSI=60.09 liquidity=24243936.0 spike=0.4
 - MCRO.CA: score=23.13 buy_ready=True sector_rank=15 price=1.68 support=1.44 resistance=1.79 source=Yahoo Finance history + Mubasher delayed current trading data as_of=01:28 PM market time freshness=DELAYED_CURRENT RSI=69.05 liquidity=115102240.0 spike=0.99
@@ -299,35 +286,28 @@ Trigger: scheduled cron=15 6 * * 0-4 mapped to open_confirm; Cairo now 2026-09-1
 - These checks are historical context only, not a prediction or guarantee.
 
 ## Evidence
-- CCAP.CA: status=RECENT_ACCEPTED latest=2026-09-08 age_days=5 sources=3 expected=Qalaa Holdings summary=Qalaa Holdings (CCAP.CA) has released recent financial results and market updates. The company reported consolidated revenues of EGP 135.5 billion for the year ending December 31, 2025, with EBITDA remaining largely stable at EGP 21.7 billion. For the first quarter of 2025, consolidated revenues were EGP 37.2 billion. The company also announced its 2024 consolidated revenue of EGP 148.9 billion, a 53% year-over-year increase. News from September 2026 includes Board of Directors decisions and an EGM invitation. The stock price was 6.170 EGP on September 8, 2026.
-  - Qalaa Holdings Releases Consolidated Financial Results for FY25 (July 15, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFPajIwQESot-lRTP3wzY9J-or8UyArr7ANMNW02pjTRDvrhyEVa0pI_Oahz_MpqpryROElx67hGh7vj0WOMzeUwMpqHpNPtaIcba5ORr00H-0CNL6oXBTgYePuM8EdvkpL
-  - Qalaa Holdings Posts Stable Revenues for Q1 2025 (October 30, 2025): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHkz4Za6WnM36axvkJiDuiwebeYanNLH0C5UOe0ecoOXar41iI_5oEG-8zI5Ww0WMHtUc1JRdAG_mFKC6qCijYVcHQJWBwpp6bxztVbu22-IN0-6TJWox7SKFWo1tK7NGiipS98-TM1v3OSjxAMxRVSgPvuS3zi9ABdKglcmwOSXM-Vlg5GYQTG
-  - Qalaa Holdings Annual Report 2024 (Published 2025): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHnEUSLJlBIVIsQVmpHYOIjhVwg3nOORp5MrnMxJQ6aU8QgZQQsag_L93GjZUX9PVqoKVD8u4Z4F-CX3zsJophhBPSAYPZKIA4wvf_yxcNqSh0MGDMJifIQmy7B2yegj-d6SaHGyhGghy7rFTexi25
-- MASR.CA: status=RECENT_ACCEPTED latest=2026-11-11 age_days=0 sources=3 expected=Madinet Masr For Housing and Development summary=Madinet Masr For Housing and Development (MASR.CA) reported revenue of EGP 2.38 billion for the quarter ending June 30, 2026, with a 7.03% growth. The company's revenue for the last twelve months reached EGP 12.06 billion, an increase of 37.39% year-over-year. In 2025, annual revenue was EGP 11.71 billion, with earnings of EGP 3.16 billion. The Q1 2026 net income was EGP 594.19 million. The next earnings date is scheduled for November 11, 2026.
-  - Madinet Masr For Housing and Development (EGX:MASR) Revenue - Stock Analysis (June 30, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHg642NKwatHRTk_6Qv0wicwbH6dVInoq9bQfudYVTCjGw29ZxUd1GCV1-1UG-yfqjda9OwaspaP_wblh4msv2TjxYGOv-MZLUtfprmG7IbdQMhvAhpZdfLJX2pMRS0cv-asTPQPGr3e8SL
-  - Madinet Masr For Housing and Development (EGX:MASR) Stock Price & Overview (Last checked Aug 11, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH1UiQ37l9fgT_1LAm5pQdO5EEdZsJbTEkSIFVvBxI2gArs5apjiJ5hg-ylMtRvw9facl1lsnFR5GFqdUHgAQEPlBZrNdyejn83LdM_QU-Ii_LeMQ0edX6tTQqxXFnkR-DUeQ==
-  - Madinet Masr For Housing and Development (EGX:MASR) Financials Overview (Last updated Jun 30, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEhoOM7h8C8j0i35FWuJHhn5YzS0q_HmhTT__HpGLzHiiV_MygOqqR43O-Bc8y0cDTfkzAiiFOt-VPGKyWjX_Ml5JNTfUzWaUn4wMFVj0grSLwWzITgwNLsQr_MZglt_hpy4U3aLIAyPjJtLTaq
-- OIH.CA: status=RECENT_ACCEPTED latest=2026-09-13 age_days=0 sources=3 expected=Orascom Investment Holding summary=Orascom Investment Holding (OIH.CA) reported 2025 revenue of EGP 1.39 billion, a 189.60% increase from the previous year, with losses of EGP -533.78 million. The company's trailing twelve months (TTM) gross margin is -1.428%, and its revenue per share for the latest quarter was 60.533. Consolidated net losses for 9M-25 declined to EGP 806 million. The latest stock price was 2.14 EGP as of September 13, 2026. The next earnings date is August 24, 2026.
-  - Orascom Investment Holding S.A.E. (EGX:OIH) Stock Price & Overview (Last checked Aug 22, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGftCxSmr9nBx2Dq8iBnLViRXewuhSso1LdPJfYtn1LQ6uIhTun9SPkadT5dYAipNNGL78grkDdkG8SuBPkNbT6Vt8GBBYWV2hMxcKYwTJ9zKGSWp0kd7elKyNnZqSe5zfV
-  - EGX:OIH Financials | Orascom Telecom Media&Tech - Investing.com (Recent): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH8kZsgAqIIffn825QEL77SH9iC526wq7iOVNLBOmiCkAQdEgL_G6l_UeVlgkhkv8jTMooFfPr53z2NrRyKKUu0ZyQH7cI4Gj3O8WCE7hO6KxerDk9lGumOpNPiAQ7a8o6p7FTxmMoNEYl2_uuDEK-D0H1fyCC0SbZGV1HQWtOaCHXhx-mNbUcII3tKA8tsDvc=
-  - Orascom Investment Holding SAE Income Statement – EGX:OIH - TradingView (Recent): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGXpAM_4mwJ_44iWDDy5J3UZh67pioa-Bou7wRJszwLXfNBGyt8vDvOzy-2F0s-HXuXUq7y4lzc9T7bwKVJA3NEWTZq646r9fqM_ZlcsGc1sIr4zDC0isi2ephY8jahdqu5SkgfmX6fl8IzVEe75uOIF3XcHNCDL3R2gxR-8__Aw7Q=
-- POUL.CA: status=RECENT_ACCEPTED latest=2026-11-11 age_days=0 sources=3 expected=Cairo Poultry summary=Cairo Poultry (POUL.CA) reported 2025 revenue of EGP 15.82 billion, an increase of 7.08% year-over-year, with earnings of EGP 2.58 billion. For the quarter ending June 30, 2026, revenue was EGP 4.01 billion, contributing to a last twelve months revenue of EGP 15.95 billion. The company's Board of Directors made decisions on September 9, 2026. Cairo Poultry also approved the renewal of EGP 430 million in facilities. The stock price was 40.40 EGP as of September 2026. The next earnings date is November 11, 2026.
-  - EGX:POUL Financials | Cairo Poultry - Investing.com (Recent): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFbAISpb1bVKN0U3Fl0x2AmUvpYADebaXujPvICcpTAG-gMoSMozEQMimQ1SbxWpmyamV_UV1wf5wgGkqs3hgCcr4xKwoczo5_s8OGSJfV3jG2Z7iaP_c5q3Q5CZrf_Amsti3U0_kEy-BR8DBPYPCoNvVmej2FwVi43EYc=
-  - Cairo Poultry Company S.A.E. (EGX:POUL) Stock Price & Overview (Last checked Sep 5, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHNw-yPnkqg-kExHYgZOPj0yVrmmzeAtsodIRTxZ82USy5C7rGi0fmbc_fBZevLFxPvaunwvUBri73lj0URh4DGi6ZlumvhBDFsFwJTPzSlBRcNSFf4lm6SWyQ1IPcOSxt5qg==
-  - Cairo Poultry Company S.A.E. (EGX:POUL) Revenue - Stock Analysis (June 30, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFHT1efE7qFTbtgZ_1K9hR68-IDA2QP_v-eLG1mZ246I8aoI7lqP0icHuiq_6HVQuJmcU_ZbaDBkDnPUIRV54_epw-wGQDppyWovqugQre0FKbAnwaUQ-WvHIDB4lqc2zSMyHytQ5wLHgSz
-- EPCO.CA: status=RECENT_ACCEPTED latest=2026-08-24 age_days=20 sources=3 expected=Egypt for Poultry summary=Egypt for Poultry (EPCO.CA) reported a net profit of EGP 6,705,744 for the period from January 1, 2026, to June 30, 2026. In 2025, the company's revenue was EGP 8.81 million, an increase of 7.77% compared to the previous year, though it incurred losses of EGP -10.78 million. The next earnings date is August 24, 2026.
-  - Egypt for Poultry (EGX:EPCO) Stock Price & Overview (Last checked Aug 22, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHqPmV-tcsdlXmdkO7yJXjZ1uibr6WgO_7n5OXdnU5Fv4EWphvC3NuyhsT0qBAQuTyPqFGPBb2Uht8zkGSPKvzpwbb8j9y1L3kEIeRpPeRGn8dDICFPAlnlHaonNacH7InsBg==
-  - EGX:EPCO Financials | Egypt for Poultry - Investing.com (Recent): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGVx4L1mt2SgFH2J-ihC2OkG7mbr59th5QZoMmCrzsWtIjXDashI5sWUzjIz-mG1CF4Ins9gPVsqdmv_XX65Pt8TGLJkTOR5O7hj4rLaw-UnhS5LaBHpgaX7joemUaBsLBESzcFIbfY8NIBPWoZugI5Dk3NtgWBPAt7dkU=
-  - Egypt for Poultry (EPCO.CA) Reports its Financial Results (Consolidated) for the Period from 01/01/2026 to 30/06/2026 | FoudaLens (August 12, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFt2gIHKkNxoxFua-tz8MRnQClQGgGh1bL2OCYAjA3sv-fqMfmPU1psMj_mR3aPkNy_586GW0vaoc5XlTPrqxxNWjGpyCzRQDrSQoEM3DS5knY7tCBfX4AyyDhhKEI=
-- BINV.CA: status=RECENT_ACCEPTED latest=2026-09-10 age_days=3 sources=3 expected=B Investments Holding summary=B Investments Holding (BINV.CA) reported revenue of EGP 800.92 million and profits of EGP 619.77 million in the last 12 months, with earnings per share of 2.84. The stock price increased by 61.87% in the last 52 weeks as of August 29, 2026. Consolidated profits for H1 2026 leaped by 19.78% year-over-year. The company also exited Infinity solar power projects for $8.25 million in July 2026. Cash dividends were declared on July 8, 2026, with an ex-dividend date of July 21, 2026, and payment on July 26, 2026. The latest trade price was EGP 51.90 on September 10, 2026.
-  - B Investments Holding S.A.E. (EGX:BINV) Statistics & Valuation Metrics - Stock Analysis (August 29, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHlgLEgsqLEdP8-cT4cRlRpoArMNEbqKiUx-cHEM--at3_1WQiGgWuh3qgEborKIDfzbCin8lVYD7zriPbcJUbGPkOnpO38xDP_yxcNqSh0MGDMJifIQmy7B2yegj-d6SaHGyhGghy7rFTexi25
-  - B Investments Holdings 51.9 0.78 - Arab Finance - Company Profile (August 13, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGlFOFfOwygO2ttU2awFRi0kk8viLV22PbnHhJB1J02cVcTad7ubKq6sLv43GWYtOBUBWSr2D0unYY6hbJqq2SU-Jq3x40-FviFGjmu0SQKtpKKvXCTHq9gtPJFwZfCCkkVAAabGu4DxFQr-MX9Gp2M
-  - B Investments Holding S.A.E. Stock (BINV) - Quote Egyptian Exchange- MarketScreener (August 13, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFigqCO8JWQkdK3h3BFmaklP-Cf9cHxFJM814y4sU7f9gf2rnezd2zN87ZUQNLh4s25L-RdXiGxPeXcseqaAAt0WeLGAbuHdPr0vxrqD27xvr_kRF1LIHigDQ-ecScK_YCP_kvv_8ay2hwnbuzUiE1TXbp0ewazcQ7ThcZphGaDCsUm-Xpl8Yg==
+- CCAP.CA: status=REJECTED_TICKER_MISMATCH latest=n/a age_days=n/a sources=0 expected=Qalaa Holdings summary=Evidence rejected for CCAP.CA: source text did not clearly match CCAP.CA / Qalaa Holdings.
+- MASR.CA: status=OLD_ACCEPTED latest=2025-01-01 age_days=620 sources=3 expected=Madinet Masr For Housing and Development summary=Madinet Masr to pay out EGP 0.15/shr for 2025 upon equityholders&#39; approval; Madinet Masr logs 24% higher consolidated profits in 2025; dividends recommended; Madinet Masr to distribute treasury stocks in first-ever move
+  - Madinet Masr to pay out EGP 0.15/shr for 2025 upon equityholders&#39; approval: https://english.mubasher.info/news/4601386/Madinet-Masr-to-pay-out-EGP-0-15-shr-for-2025-upon-equityholders-approval/
+  - Madinet Masr logs 24% higher consolidated profits in 2025; dividends recommended: https://english.mubasher.info/news/4578449/Madinet-Masr-logs-24-higher-consolidated-profits-in-2025-dividends-recommended/
+  - Madinet Masr to distribute treasury stocks in first-ever move: https://english.mubasher.info/news/4577724/Madinet-Masr-to-distribute-treasury-stocks-in-first-ever-move/
+- OIH.CA: status=REJECTED_TICKER_MISMATCH latest=n/a age_days=n/a sources=0 expected=Orascom Investment Holding summary=Evidence rejected for OIH.CA: source text did not clearly match OIH.CA / Orascom Investment Holding.
+- POUL.CA: status=ACCEPTED_UNDATED latest=n/a age_days=n/a sources=3 expected=Cairo Poultry summary=Cairo Poultry stock approaching historic peak – Analysis; Cairo Poultry cancels commercial license in Dubai&#39;s JAFZA; Cairo Poultry sees EGP 871m block-trading deal
+  - Cairo Poultry stock approaching historic peak – Analysis: https://english.mubasher.info/news/4539104/Cairo-Poultry-stock-approaching-historic-peak-Analysis/
+  - Cairo Poultry cancels commercial license in Dubai&#39;s JAFZA: https://english.mubasher.info/news/3962334/Cairo-Poultry-cancels-commercial-license-in-Dubai-s-JAFZA/
+  - Cairo Poultry sees EGP 871m block-trading deal: https://english.mubasher.info/news/3862165/Cairo-Poultry-sees-EGP-871m-block-trading-deal/
+- EPCO.CA: status=REJECTED_TICKER_MISMATCH latest=n/a age_days=n/a sources=0 expected=Egypt for Poultry summary=Evidence rejected for EPCO.CA: source text did not clearly match EPCO.CA / Egypt for Poultry.
+- BINV.CA: status=REJECTED_TICKER_MISMATCH latest=n/a age_days=n/a sources=0 expected=B Investments Holding summary=Evidence rejected for BINV.CA: source text did not clearly match BINV.CA / B Investments Holding.
 - TALM.CA: status=REJECTED_TICKER_MISMATCH latest=n/a age_days=n/a sources=0 expected=Talim Management Services summary=Evidence rejected for TALM.CA: source text did not clearly match TALM.CA / Talim Management Services.
-- CERA.CA: status=RECENT_ACCEPTED latest=2026-08-17 age_days=27 sources=3 expected=The Arab Ceramic Co. summary=The Arab Ceramic Co. (CERA.CA) reported 2025 revenue of EGP 2.29 billion, a 21.30% increase from the previous year, with earnings of EGP 37.57 million. For Q1 2026, the company saw a net sales revenue increase of 16.59% and a net income of EGP 5.70 million. The company's total assets grew by 32.5% in Q1 2026. The next earnings date is August 17, 2026.
-  - The Arab Ceramic Co. (EGX:CERA) Stock Price & Overview (Last checked Aug 11, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE70ZGB7cLsOtPVBB5odnRjJVCs-xGFcP5q2blN1Ztym0wcAix1J5U3UrvM2NzirM4TnP6r3-x9gCBiffd6nKz2318Nauz0URZuYhCqaGedzDQpRRPWH4P78RD2RCoD5pFhjg==
-  - Arab Ceramic Co. - Ceramica Remas Income Statement – EGX:CERA - TradingView (Q1 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFkrdjRaswN-P9JKwFqvtX4ZwhLNL_31pnB_SQ947eAXbS3OaqpO7y7PHqa6Z51_hEqjCANM_VgoE1ZSOxeyvcY_9FGcM7ti2vWshAIZ7UogwL0yv5Imhwt1tW8QxsCw45mC7qBKseGKmaGLtsziyW9UxLJKI2XqHtAVsWIjwQ81mnt
-  - The Arab Ceramic Co.-Ceramica Remas (الشركة العربية للخزف) Company Profile - Egypt (March 17, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEZCAcBy2swCxOylL6QAofytedzdG7XLMGI0XTraaIE0U4RdqboJ9giAiy6JsEQeQdy7LS9rkgO3K_qrU3X63Hj9B5gsg1yobxpg-r0p482Oi7SkqWh9ABKxjdNSgL5tzh1gCO2u9HN5oftUy3xNj_TQqXUa7MTtCjotV6rS67tMMC22D2XpSTt7rCCYLVGl4yrTsJoYS_g33iC3jG_D987G7qW2piR-j1M2HdSKBj_Hfjr4pQe0LWOK1yolCg8j4Xv2ZNdxxYXF82nfSgqxDbhxXYyW9t0aLRp8-SoRanQVNjFV7Fj13zdcr7ika2SH1vKuENlz-hrN3yEQnjneqZSOtrMrm-rmDoAqNpUgWX8_NlcnvHYHnzqk-YGC14sQTwxEXRBgV43X4_4hAwD0imKtJYBjAuFj3Bjq7DMRaNJzjLXdD-_X5CmNgNjjwqc8dv-5D1RrTMzr20jL1vR20V9bdl-egnquRpakehYI7ubHo42FLtirAaHtMyogMn4B8Oo6Am0DcdRwa2_MF8txOky2OmnDPifc7b2p0bpwl7C
+- CERA.CA: status=REJECTED_TICKER_MISMATCH latest=n/a age_days=n/a sources=0 expected=The Arab Ceramic Co. summary=Evidence rejected for CERA.CA: source text did not clearly match CERA.CA / The Arab Ceramic Co..
 
 ## Warnings
+- Evidence rejected for CCAP.CA: source text did not clearly match CCAP.CA / Qalaa Holdings.
+- Gemini batch evidence failed: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+- Evidence for MASR.CA matches the company but appears old; latest detected date is 2025-01-01.
+- Evidence rejected for OIH.CA: source text did not clearly match OIH.CA / Orascom Investment Holding.
+- Evidence for POUL.CA matches the company but no source/report date was detected.
+- Evidence rejected for EPCO.CA: source text did not clearly match EPCO.CA / Egypt for Poultry.
+- Evidence rejected for BINV.CA: source text did not clearly match BINV.CA / B Investments Holding.
 - Evidence rejected for TALM.CA: source text did not clearly match TALM.CA / Talim Management Services.
+- Evidence rejected for CERA.CA: source text did not clearly match CERA.CA / The Arab Ceramic Co..
