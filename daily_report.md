@@ -1,13 +1,13 @@
 # Telegram-First EGX Scanner Report
 
-Scan phase: Post-close tomorrow tickets
-Generated UTC: 2026-09-13T16:35:23.816386+00:00
-Generated Cairo: 2026-09-13 19:35
-Run timing: target 15:30 Cairo | generated Cairo 2026-09-13 19:35 | cron 30 12 * * 0-4
-Trigger: scheduled cron=30 12 * * 0-4 mapped to post_close; Cairo now 2026-09-13 19:30
+Scan phase: Evening tomorrow plan
+Generated UTC: 2026-09-13T18:55:54.164221+00:00
+Generated Cairo: 2026-09-13 21:55
+Run timing: target 19:30 Cairo | generated Cairo 2026-09-13 21:55 | cron 30 16 * * 0-4
+Trigger: scheduled cron=30 16 * * 0-4 mapped to evening_plan; Cairo now 2026-09-13 21:51
 
 ## Control Center
-- Action tickets: 0 prioritized signal(s)
+- Action tickets: 3 prioritized signal(s)
 - BUY-ready candidates: 36
 - Data quality issues: 1
 - Tradeable price/liquidity tickers: 176/189
@@ -33,11 +33,7 @@ Trigger: scheduled cron=30 12 * * 0-4 mapped to post_close; Cairo now 2026-09-13
 ## AI Narrative
 - Provider: OpenRouter OK
 - Model: nvidia/nemotron-3-super-120b-a12b:free
-- Summary: EGX30 shows a constructive trend while EGX70 is bearish; sector breadth is 42.86% and risk mode is set to SELECTIVE_SWING_TRADES_ONLY. The local scanner found no ticket that satisfied evidence, liquidity, freshness, and technical gates, so it issued a HOLD fallback for all candidates.
-- Liquidity spikes appear in several names (e.g., MASR.CA, POUL.CA) but lack fresh evidence to confirm a near‑term catalyst.
-- Leading sectors are Investment Holding, Telecommunications, and Textiles; many tickers display RSI >70 or extended momentum, suggesting possible overextension in the next 1‑3 days.
-- Support/resistance analysis shows several stocks trading close to resistance (e.g., CCAP.CA, OIH.CA) with limited upside room, reducing short‑term bullish conviction.
-- The divergent EGX30/EGX70 regime (constructive vs bearish) shifts risk to selective swing trades only, increasing uncertainty and prompting the scanner to default to HOLD.
+- Summary: Scanner prioritized MASR.CA, POUL.CA, and EPCO.CA as watch/buy setups because each trades above its MA20/MA50, shows liquidity spikes, and carries a bullish‑watch outlook, while the broader market displays a constructive EGX30 but a bearish EGX70, keeping risk mode in SELECTIVE_SWING_TRADES_ONLY.
 
 ## Top Liquidity Spikes
 - DTPP.CA: spike=7.48 liquidity=259677680.0 outlook=WEAK_OR_RISKY score=0 buy_ready=False
@@ -57,7 +53,18 @@ Trigger: scheduled cron=30 12 * * 0-4 mapped to post_close; Cairo now 2026-09-13
 - #8 Banking & Financials: score=4.85 5d=0.12% 20d=2.4% aboveMA50=80.0%
 
 ## Today's Prioritized Action Tickets
-- HOLD: Local fallback HOLD: no candidate passed evidence, liquidity, freshness, and technical gates.
+- Priority #1: BUY MASR.CA
+  - Entry: 8.24 | Take profit: 8.9 | Stop loss: 7.91
+  - Confidence: LOW | score=30.11 | outlook=BULLISH_WATCH 82.82
+  - Reason: WATCH/BUY SETUP: MASR.CA has aligned current price data, liquidity above threshold, price above MA20/MA50, RSI 64.71, support 7.49, resistance 8.79, and evidence sources. Macro trend is Bearish; market regime is SELECTIVE_SWING_TRADES_ONLY; verify price action in Thndr before treating it as a swing entry.
+- Priority #2: BUY POUL.CA
+  - Entry: 40.08 | Take profit: 43.28 | Stop loss: 38.48
+  - Confidence: LOW | score=28.51 | outlook=BULLISH_WATCH 77.77
+  - Reason: WATCH/BUY SETUP: POUL.CA has aligned current price data, liquidity above threshold, price above MA20/MA50, RSI 67.58, support 36.97, resistance 40.99, and evidence sources. Macro trend is Bearish; market regime is SELECTIVE_SWING_TRADES_ONLY; verify price action in Thndr before treating it as a swing entry.
+- Priority #3: BUY EPCO.CA
+  - Entry: 11.74 | Take profit: 12.83 | Stop loss: 11.27
+  - Confidence: LOW | score=28.13 | outlook=BULLISH_WATCH 90.82
+  - Reason: WATCH/BUY SETUP: EPCO.CA has aligned current price data, liquidity above threshold, price above MA20/MA50, RSI 59.26, support 10.8, resistance 12.89, and evidence sources. Macro trend is Bearish; market regime is SELECTIVE_SWING_TRADES_ONLY; verify price action in Thndr before treating it as a swing entry.
 
 ## Thndr Instruction
 - Advisor-only signal mode is active. The scanner never executes trades.
@@ -289,28 +296,38 @@ Trigger: scheduled cron=30 12 * * 0-4 mapped to post_close; Cairo now 2026-09-13
 - These checks are historical context only, not a prediction or guarantee.
 
 ## Evidence
-- CCAP.CA: status=REJECTED_TICKER_MISMATCH latest=n/a age_days=n/a sources=0 expected=Qalaa Holdings summary=Evidence rejected for CCAP.CA: source text did not clearly match CCAP.CA / Qalaa Holdings.
-- MASR.CA: status=OLD_ACCEPTED latest=2025-01-01 age_days=620 sources=3 expected=Madinet Masr For Housing and Development summary=Madinet Masr to pay out EGP 0.15/shr for 2025 upon equityholders&#39; approval; Madinet Masr logs 24% higher consolidated profits in 2025; dividends recommended; Madinet Masr to distribute treasury stocks in first-ever move
-  - Madinet Masr to pay out EGP 0.15/shr for 2025 upon equityholders&#39; approval: https://english.mubasher.info/news/4601386/Madinet-Masr-to-pay-out-EGP-0-15-shr-for-2025-upon-equityholders-approval/
-  - Madinet Masr logs 24% higher consolidated profits in 2025; dividends recommended: https://english.mubasher.info/news/4578449/Madinet-Masr-logs-24-higher-consolidated-profits-in-2025-dividends-recommended/
-  - Madinet Masr to distribute treasury stocks in first-ever move: https://english.mubasher.info/news/4577724/Madinet-Masr-to-distribute-treasury-stocks-in-first-ever-move/
-- OIH.CA: status=REJECTED_TICKER_MISMATCH latest=n/a age_days=n/a sources=0 expected=Orascom Investment Holding summary=Evidence rejected for OIH.CA: source text did not clearly match OIH.CA / Orascom Investment Holding.
-- POUL.CA: status=ACCEPTED_UNDATED latest=n/a age_days=n/a sources=3 expected=Cairo Poultry summary=Cairo Poultry stock approaching historic peak – Analysis; Cairo Poultry cancels commercial license in Dubai&#39;s JAFZA; Cairo Poultry sees EGP 871m block-trading deal
-  - Cairo Poultry stock approaching historic peak – Analysis: https://english.mubasher.info/news/4539104/Cairo-Poultry-stock-approaching-historic-peak-Analysis/
-  - Cairo Poultry cancels commercial license in Dubai&#39;s JAFZA: https://english.mubasher.info/news/3962334/Cairo-Poultry-cancels-commercial-license-in-Dubai-s-JAFZA/
-  - Cairo Poultry sees EGP 871m block-trading deal: https://english.mubasher.info/news/3862165/Cairo-Poultry-sees-EGP-871m-block-trading-deal/
-- EPCO.CA: status=REJECTED_TICKER_MISMATCH latest=n/a age_days=n/a sources=0 expected=Egypt for Poultry summary=Evidence rejected for EPCO.CA: source text did not clearly match EPCO.CA / Egypt for Poultry.
-- BINV.CA: status=REJECTED_TICKER_MISMATCH latest=n/a age_days=n/a sources=0 expected=B Investments Holding summary=Evidence rejected for BINV.CA: source text did not clearly match BINV.CA / B Investments Holding.
-- TALM.CA: status=REJECTED_TICKER_MISMATCH latest=n/a age_days=n/a sources=0 expected=Talim Management Services summary=Evidence rejected for TALM.CA: source text did not clearly match TALM.CA / Talim Management Services.
-- CERA.CA: status=REJECTED_TICKER_MISMATCH latest=n/a age_days=n/a sources=0 expected=The Arab Ceramic Co. summary=Evidence rejected for CERA.CA: source text did not clearly match CERA.CA / The Arab Ceramic Co..
+- CCAP.CA: status=RECENT_ACCEPTED latest=2026-10-07 age_days=0 sources=3 expected=Qalaa Holdings summary=Qalaa Holdings (CCAP.CA) has released its consolidated financial results for the year ending December 31, 2025, on July 15, 2026, reporting EGP 135.5 billion in revenue and a net loss after minority of EGP 1.2 billion. The company's stock price has seen a significant increase of over 122% in the last 52 weeks as of September 4, 2026. Upcoming earnings are expected on October 7, 2026.
+  - Qalaa Holdings Consolidated Financial Results for FY25 (Released July 15, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH_tUSN37iXzk8WmcEXq4pVGuPjJ32Gwch9cvqR_TJ4wD37Ods0qBS2tRinEFIKMS6oIVFGusRvzdQuTBlu-odv3SLrwwpMZchIHQaVk5I4HCrbZ1HtuZ95fQtrMVGP04uuSw==
+  - Qalaa Holdings Consolidated Financial Results for FY24 (Released July 6, 2025): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH_tUSN37iXzk8WmcEXq4pVGuPjJ32Gwch9cvqR_TJ4wD37Ods0qBS2tRinEFIKMS6oIVFGusRvzdQuTBlu-odv3SLrwwpMZchIHQaVk5I4HCrbZ1HtuZ95fQtrMVGP04uuSw==
+  - QALA For Financial Investments (EGX:CCAP) Statistics & Valuation Metrics (as of September 4, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHiNkpVZXu55I8nIhYYel9kPSywCSwU_bGCfwe081qpv8tIlvgoSymV-rTtdbMoWu_D0YaGNBDPf9mRv_0B4DctWd_mDU1g2Pv4cVrQrAWYk4tbBtlRQR-LvuEdOAFSZbKjLoPZ4XAbRU43gjeSjQ==
+- MASR.CA: status=RECENT_ACCEPTED latest=2026-09-10 age_days=3 sources=3 expected=Madinet Masr For Housing and Development summary=Madinet Masr For Housing and Development (MASR.CA) reported its Q2 2026 earnings on August 10, 2026, with EPS of EGP 0.16 and revenue up 7.0% from Q2 2025. The company's stock has increased by 108.33% over the last year as of September 10, 2026. An annual dividend of EGP 0.1500 per share was announced on May 6, 2026, payable on May 24, 2026. The company also announced an equity buyback for 42.7 million shares on June 29, 2026.
+  - Madinet Masr For Housing and Development Reports Earnings Results for the Second Quarter and Six Months Ended June 30, 2026 (August 9, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH1xS-OjtI8RoVVhupDMi1K-jMDaKRHpiiT5ZIuJbLDEOGMs-Xr2_bOYgxid_rwwFonQKv58mu2iVbxodBvgYju9ynIV7F3ued6qdH0HufhMUtR8qPjk8PjrIQ8skjNRTVAbGtbnqbBoJz15z0hMsyLGfwMpTJPU0aaG4lIKE5fQkkf_7SzGdE=
+  - Madinet Masr For Housing and Development Announces Annual Dividend, Payable on May 24, 2026 (May 6, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG5h2E8PcPFPGy4zO0PrppQIPa2cS2gJJXxHDsTVdb1Ykbr9S_A6KhIm0yLXdV_T0lNaDodgOyVu3PGD_tw1V_IuMu6zxA2nI0XftARJ3ALhL1AC1LWctq_C2G0skJu_BJKV50gH99om4VtvSF0-O3RESqnEz68-QaY6zDhq-Oj5MkQdoU6WkOblwGkX65O-oLQgm4y1cJbnQPzHzF5Y1eUNremX1mFiUAvOHOeB
+  - Madinet Masr For Housing and Development Announces an Equity Buyback for 42,700,000 shares (June 29, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH1xS-OjtI8RoVVhupDMi1K-jMDaKRHpiiT5ZIuJbLDEOGMs-Xr2_bOYgxid_rwwFonQKv58mu2iVbxodBvgYju9ynIV7F3ued6qdH0HufhMUtR8qPjk8PjrIQ8skjNRTVAbGtbnqbBoJz15z0hMsyLGfwMpTJPU0aaG4lIKE5fQkkf_7SzGdE=
+- OIH.CA: status=RECENT_ACCEPTED latest=2026-08-26 age_days=18 sources=3 expected=Orascom Investment Holding summary=Orascom Investment Holding (OIH.CA) faced a EGP 10,000 penalty from the EGX Listing Committee on May 20, 2026, for failing to provide its standalone and consolidated financial statements for the fiscal year ending December 31, 2025. A similar penalty was imposed on June 18, 2025, for not providing FY24 annual and Q1 2025 quarterly financial statements.
+  - Orascom Investment Holding (OIH.CA) - Listing Committee Decision (May 20, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHXGkwwWB3lWbz2kUpVp0vyLNvCvW0xXhKk0oe1mszd1txbv7Ezurc6Ys1N7StPMxJiP3ZvoC4jOhXi594v1V3KSdMC7kapFI6Fw0X02q7ZH6ooqtq3zeDGvFvLyvpksHgBG1xrhJL4pbBm-RuXhw==
+  - Orascom Investment Holding (OIH.CA) - Listing Committee Decision (June 18, 2025): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGUEqQKxzLPmoIZ--XRTOj_QBKBMVB5XVPeDAP4VyUHZR3ObpHgFBdF404zOKblMPub4OPtQYUU3J6V9KvsfhlIPvIFXQB1wuifDU1gRnEtM90jAcJ4jFBntcVXmwtGjOV1Y7VodJeKzuPEq--dz-1ndhk=
+  - Orascom Investment Holding - The Egyptian Exchange - Company Details (as of August 26, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFm7jbMLeeVypcu0jX-ubKHkiydyryqWcLH9EVlGMT19IMXmjcpgqKFTXLo9wlcRDG2c-QCzjoZAQFZmHsEuKW_1n6XRmsPYWaft7YipBXqwkuTnltyn427SUQBe_TiKXcxChiZ3bPSZIquJflDRRpw6wi_ibj2nJHa
+- POUL.CA: status=RECENT_ACCEPTED latest=2026-09-09 age_days=4 sources=3 expected=Cairo Poultry summary=Cairo Poultry (POUL.CA) announced the decisions of its Board of Directors' meeting on September 9, 2026. The company declared cash dividends for 2025 on April 14, 2026. In 2025, Cairo Poultry's revenue increased by 7.08% to EGP 15.82 billion, and earnings rose by 17.78% to EGP 2.58 billion.
+  - Cairo Poultry (POUL.CA) - Decisions of the Board of Directors' Meeting (September 9, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG5SIv-SLdY0EkNHMI-HoBLp5qH_23TV2jLjLFhiNpcRhnEHeHrCCE5Yf2NiMBD77wsfwEWQrLBuY0ml3hL3SO4HvK9v_6fIELIS2wIj-VuXmkUJzRChKSFX9dmbRZ4KOSOkDb252bLpwnb3tp13Q==
+  - Cairo Poultry declares cash dividends for 2025 (April 14, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFofHeTfW3Fo5wq5m1qNNNOwHHqGPG-qyyM04yfth5XhVWMjefpE2_kTcgzm_JAKFRe_Qmdy2gJ_0SXd_pIo7fgzcBqLKc8j8Gg0yADHj00DP4AWBDafi6xZzcYPMIJcMVtFYTWH3djr5ce5qLBoaoLNg==
+  - EGX:POUL Financials | Cairo Poultry - Investing.com (as of September 5, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFz8JiB_iMlwsVX97JXXUTEt9SQeVHuHtUC57CFNQz-VvL2cL1YN8c6f3R-IEAGTbvvE5IOvljfqztFBEMpMeAjfHVwA6lnooSVoxMWZN9giYslRpaEivJjuZxVqX5QNKKyfHg==
+- EPCO.CA: status=RECENT_ACCEPTED latest=2026-09-13 age_days=0 sources=3 expected=Egypt for Poultry summary=Egypt for Poultry (EPCO.CA) is listed on the Egyptian Exchange and operates within the Food, Beverage sector. As of December 30, 2024, Artej for Investment and Real Estate Development SAE holds 33.87% ownership. The current stock price is 11.090 EGP.
+  - Egypt for Poultry Profile - Decypha (as of 2025): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF4oF6l_-9UVWKdRI7XBJqswyzoyD2Z1YzR8qm5S6JcN4yIfkJqM7aAgArvYuOwwAndLn9QlXNWIa3pvKvsb2J-Mlebi-cRvmAUZq_dTHQalhFuoz_LMufAP_JYdr3exKJjOiODJGBdx6sLyQ0YTzYwKQZLIS83
+  - Egypt for Poultry Stock Price Today | EGX: EPCO Live - Investing.com (as of September 13, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEVLPDCVCk8I-uhzuvLzAuCJEJo3kUrjmfCndaJNryxurxpSP3weXH7hEjr-PqKTCq9jiyhh6ByILozQKKb4lXrw_E9_5-uUKxmKXdLmPcnoCDQSDZc72KUjyoIk3A0wNfPqTqpsv-r316C
+  - Egypt for Poultry (EPCO) - Mubasher Info (Company Purpose and Ownership): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF0E2LMjRXpV1oFbf4gM_fDLlXU1SSoYYfx-OB7Un2jJQhFwPn6IHGBSLwtJpPmaWr_t-34z_CnCRt4llMC7tu84V72K3hB7yxrvQHBEFoFtO9EYD4hVdDoT65eIojGUelugmsxISftz0B22tun_B0gMYomfAlld-0=
+- BINV.CA: status=RECENT_ACCEPTED latest=2026-09-08 age_days=5 sources=3 expected=B Investments Holding summary=B Investments Holding (BINV.CA) submitted its disclosure form for the Board of Directors and shareholders' structure for the period ending June 30, 2026, on July 16, 2026. A similar disclosure for the period ending September 30, 2025, was made on November 4, 2025. The coupon payment date was July 26, 2026.
+  - B Investments Holding S . A . E (BINV.CA) - Disclosure Form Concerning the BoD & the Shareholders' Structure (July 16, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFpSKaQVMRcAmlxBKp8e1TT6Lel2EABxF2WjO_khTzR2xkPSbYkvaCpOlbIKjXgZi-h7jfSQlq8EAkPsdmxUEtD794v8WPPTrMqipUOtBhXpA-xr4b9W2Ev37hrf6D9
+  - B Investments Holding S . A . E (BINV.CA) - Disclosure Form Concerning the BoD & the Shareholders' Structure (November 4, 2025): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHnpzeLu8yvns25bponoNaA4bAfy8C3rSjVGVVvSkNpwQ_yMRRlsWNOkc59yWu8hvUdVh-emMwGftMtKPy3b937DTv6BegxBnlGs_SkTgeCIqLqm28P0u7_4bj2rO2by8RFTFa4VJ0FRH_UJGlItg==
+  - B Investments Holding - The Egyptian Exchange - Company Details (as of September 8, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGrJMc0GSinPwjWH3IImSnGU2VrGUEg4jjeNvGkKMBn1RCgRg5iDKx-Z20BAYX2EpgowmduDQqB3NoIA9W_Opu1Udbuuy33GrSsSZQwnFN-STq9zcpz8abX0bZmBnutx9EWLmBeGIaPtsISVzPgG7xqD1GNEY1v7U9G
+- TALM.CA: status=RECENT_ACCEPTED latest=2026-09-09 age_days=4 sources=3 expected=Talim Management Services summary=Talim Management Services (TALM.CA) provided its stock performance data as of September 9, 2026, with a 52-week high of EGP 20.86 and a low of EGP 10.60. The company submitted a disclosure form for its Board of Directors and shareholders' structure on July 7, 2026. Recent news also indicates consolidated profits exceeding EGP 399 million in six months and higher consolidated net profits in FY24/25 with revenues reaching EGP 1.8 billion.
+  - Stock Performance - Taaleem Management Services (as of September 9, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEuPOc5YEqfU9KLjD6XunkSFzghhQy046LBZPpquM44dy9xZsvj-PIVHq8tyizm9NqRUzoN813Q6QEkco3cBl3o_kLqwPaRlpZ9Ygsr_1uDDmMwJY7E2KIEumhP4o0MEkI=
+  - Taaleem Management Services (TALM.CA) - Disclosure Form for the BoD & the Shareholders' Structure (July 7, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEtOKeZkGIyYADTLfc9ooMPBIgUgmZLMr-4eBqXAMX2xMitp9n4JEldpCRPABqzgGzrA7yk-9gKAhZengbMihnn4W5WTx0-PaNIDovxe3Vl_sdg6h0stoPCS1Ofa-nN5_vhNMMFV6IE3d47nlQvsSuF2
+  - Taaleem Management Services (TALM.CA) - Release Regarding a Disclosure Form (August 28, 2025): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHWAFI7d5TEQ0WI4uIxFI_Tl0PBrSbh1f6OCDYU0yToizqellgNN4H_zx5wh4ickqo-zNw4hG1xeThYvbxpKKJPxB81IiriEQtjTkPDO6Shdtb5oo53bnmQhzIgmEzGF8TKIVyhpblj9F4yHwqhp7UsOc0=
+- CERA.CA: status=RECENT_ACCEPTED latest=2026-09-13 age_days=0 sources=3 expected=The Arab Ceramic Co. summary=The Arab Ceramic Co. (CERA.CA) submitted its disclosure form for the Board of Directors and shareholders' structure for the period ending June 30, 2026, on September 13, 2026. The company reported its 6-month results on August 22, 2026, and its full-year 2025 earnings on May 19, 2026, with revenue increasing by 21.30% to EGP 2.29 billion. The next earnings date is August 17, 2026.
+  - The Arab Ceramic CO.- Ceramica Remas (CERA.CA) - Disclosure Form for the BoD & the Shareholders' Structure (September 13, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEJRSvG_QhwB6BN7C6uxlGFsD4stHWY-9pEPRTbdnQjA75iN1zGTsvzMaT23BsGIKJXVTPBNloIlFEeRTXGKvGsSSCY4z7fkJMjlrzBvM4i5_M1-r0dUwJOTlDjWbFHdm-VH5qroTWXtB-MVLEz9MIkfXY=
+  - The Arab Ceramic CO.- Ceramica Remas (CERA.CA) Reports 6 Months Results (August 22, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFxgQNfaLRRlM5xPr-YBU7YZuFdXJx5TEn6gfUjsEcNFoLhgz5pguR1e6-CZ759n2PcwvfXlFhqUx6Db5e7nga3KqY4eD9hmE6-NKz4NH9CB8SDfh5TkgWRBdmOmfdxYsogR6pYallrZaW5B46vFZLl87Y=
+  - The Arab Ceramic Co. Reports Earnings Results for the Full Year Ended December 31, 2025 (May 19, 2026): https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQENTzSI_qxMmKW8FCr0WoaCpS8nnWY8xO1-HEOg6tWkQLl9qIjCfsVwRFqouAuSeyjDBB7McIrBe9GbdgiDtwDeS9EvbTJMUxrkDx-SYt_tGQAVhXhEW3U61tmp0OcYaC9z-bRj5LxbzKhAJXHGCf-liv1YeCPBNGJNqr9Q9_jAwA4=
 
 ## Warnings
-- Evidence rejected for CCAP.CA: source text did not clearly match CCAP.CA / Qalaa Holdings.
-- Gemini batch evidence failed: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
-- Evidence for MASR.CA matches the company but appears old; latest detected date is 2025-01-01.
-- Evidence rejected for OIH.CA: source text did not clearly match OIH.CA / Orascom Investment Holding.
-- Evidence for POUL.CA matches the company but no source/report date was detected.
-- Evidence rejected for EPCO.CA: source text did not clearly match EPCO.CA / Egypt for Poultry.
-- Evidence rejected for BINV.CA: source text did not clearly match BINV.CA / B Investments Holding.
-- Evidence rejected for TALM.CA: source text did not clearly match TALM.CA / Talim Management Services.
-- Evidence rejected for CERA.CA: source text did not clearly match CERA.CA / The Arab Ceramic Co..
+- No blocking warnings.
