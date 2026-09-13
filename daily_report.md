@@ -1,10 +1,10 @@
 # Telegram-First EGX Scanner Report
 
-Scan phase: Intraday liquidity update
-Generated UTC: 2026-09-13T13:09:53.622658+00:00
-Generated Cairo: 2026-09-13 16:09
-Run timing: target 11:00 Cairo | generated Cairo 2026-09-13 16:09 | cron 0 8 * * 0-4
-Trigger: scheduled cron=0 8 * * 0-4 mapped to intraday; Cairo now 2026-09-13 16:03
+Scan phase: Post-close tomorrow tickets
+Generated UTC: 2026-09-13T16:35:23.816386+00:00
+Generated Cairo: 2026-09-13 19:35
+Run timing: target 15:30 Cairo | generated Cairo 2026-09-13 19:35 | cron 30 12 * * 0-4
+Trigger: scheduled cron=30 12 * * 0-4 mapped to post_close; Cairo now 2026-09-13 19:30
 
 ## Control Center
 - Action tickets: 0 prioritized signal(s)
@@ -33,8 +33,11 @@ Trigger: scheduled cron=0 8 * * 0-4 mapped to intraday; Cairo now 2026-09-13 16:
 ## AI Narrative
 - Provider: OpenRouter OK
 - Model: nvidia/nemotron-3-super-120b-a12b:free
-- Summary: EGX30 is constructive while EGX70 is bearish, prompting a selective swing‑trade risk mode; the scanner highlighted a few stocks with accumulation spikes and bullish‑watch outlooks, but many show overheated RSI, limited sector leadership, and tight support‑resistance zones, keeping confidence low.
-- Liquidity: CCAP.CA, MASR.CA, POUL.CA and EPCO.CA display accumulation spikes (liquidity_spike 2‑4×), indicating short‑term buying interest.
+- Summary: EGX30 shows a constructive trend while EGX70 is bearish; sector breadth is 42.86% and risk mode is set to SELECTIVE_SWING_TRADES_ONLY. The local scanner found no ticket that satisfied evidence, liquidity, freshness, and technical gates, so it issued a HOLD fallback for all candidates.
+- Liquidity spikes appear in several names (e.g., MASR.CA, POUL.CA) but lack fresh evidence to confirm a near‑term catalyst.
+- Leading sectors are Investment Holding, Telecommunications, and Textiles; many tickers display RSI >70 or extended momentum, suggesting possible overextension in the next 1‑3 days.
+- Support/resistance analysis shows several stocks trading close to resistance (e.g., CCAP.CA, OIH.CA) with limited upside room, reducing short‑term bullish conviction.
+- The divergent EGX30/EGX70 regime (constructive vs bearish) shifts risk to selective swing trades only, increasing uncertainty and prompting the scanner to default to HOLD.
 
 ## Top Liquidity Spikes
 - DTPP.CA: spike=7.48 liquidity=259677680.0 outlook=WEAK_OR_RISKY score=0 buy_ready=False
