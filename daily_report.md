@@ -1,10 +1,10 @@
 # Telegram-First EGX Scanner Report
 
-Scan phase: Post-close tomorrow tickets
-Generated UTC: 2026-09-14T18:11:00.458982+00:00
-Generated Cairo: 2026-09-14 21:11
-Run timing: target 15:30 Cairo | generated Cairo 2026-09-14 21:11 | cron 30 12 * * 0-4
-Trigger: scheduled cron=30 12 * * 0-4 mapped to post_close; Cairo now 2026-09-14 21:07
+Scan phase: Evening tomorrow plan
+Generated UTC: 2026-09-14T20:24:37.891083+00:00
+Generated Cairo: 2026-09-14 23:24
+Run timing: target 19:30 Cairo | generated Cairo 2026-09-14 23:24 | cron 30 16 * * 0-4
+Trigger: scheduled cron=30 16 * * 0-4 mapped to evening_plan; Cairo now 2026-09-14 23:21
 
 ## Control Center
 - Action tickets: 0 prioritized signal(s)
@@ -33,10 +33,11 @@ Trigger: scheduled cron=30 12 * * 0-4 mapped to post_close; Cairo now 2026-09-14
 ## AI Narrative
 - Provider: OpenRouter OK
 - Model: nvidia/nemotron-3-super-120b-a12b:free
-- Summary: EGX30 and EGX70 are bearish with weak breadth (sector breadth ~14%), putting the scanner in defensive mode that blocks new buys; the top tickets are flagged as bullish watch due to sector strength, liquidity spikes, and proximity to resistance, but the overall market regime limits upside potential.
-- Tickets were prioritized for their bullish watch outlook, accumulation or tradeable liquidity regimes, and leadership in Telecommunications, Education, and Textiles sectors despite the bearish EGX30/EGX70 trend.
-- Liquidity shows mixed signals—some spikes suggest short‑term interest, while many stocks sit far above 20‑day support and near 20‑day resistance, indicating limited room for gains in the next 1‑3 days and a risk of pullb
-- The bearish EGX30/EGX70 regime and low sector breadth shift risk mode to DEFENSIVE_NO_NEW_BUY, so the scanner only advises holding or watching existing positions; uncertainty remains due to overheated RSI readings, cooli
+- Summary: EGX30 and EGX70 are bearish with weak breadth (sector breadth ~14%); risk mode is defensive, so no new buys are allowed. The scanner flags a handful of stocks that show accumulation spikes or bullish‑watch outlooks despite the cautious market backdrop.
+- CIRA.CA (Education) – accumulation spike, liquidity surge, price sitting just below 20‑day resistance; sector is a leader, but bearish regime adds uncertainty to any breakout.
+- ETEL.CA (Telecom) – top‑ranked sector, tradeable liquidity, RSI >70 signals overheated; close to resistance suggests possible short‑term pull‑back despite bullish watch.
+- ACGC.CA & KABO.CA (Textiles) – tradeable liquidity cooling, momentum extended, prices far above support; watch for resistance test or reversal in the next 1‑3 days.
+- SNFC.CA – accumulation spike with liquidity inflow, price tight to resistance; sector not among leaders, so signal reliability is lower under the current defensive regime.
 
 ## Top Liquidity Spikes
 - UNIT.CA: spike=24.38 liquidity=145631696.0 outlook=WEAK_OR_RISKY score=0 buy_ready=False
