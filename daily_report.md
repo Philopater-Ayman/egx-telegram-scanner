@@ -1,10 +1,10 @@
 # Telegram-First EGX Scanner Report
 
-Scan phase: Open liquidity confirmation
-Generated UTC: 2026-09-14T12:41:57.391367+00:00
-Generated Cairo: 2026-09-14 15:41
-Run timing: target 09:15 Cairo | generated Cairo 2026-09-14 15:41 | cron 15 6 * * 0-4
-Trigger: scheduled cron=15 6 * * 0-4 mapped to open_confirm; Cairo now 2026-09-14 15:38
+Scan phase: Intraday liquidity update
+Generated UTC: 2026-09-14T14:42:49.341939+00:00
+Generated Cairo: 2026-09-14 17:42
+Run timing: target 11:00 Cairo | generated Cairo 2026-09-14 17:42 | cron 0 8 * * 0-4
+Trigger: scheduled cron=0 8 * * 0-4 mapped to intraday; Cairo now 2026-09-14 17:38
 
 ## Control Center
 - Action tickets: 0 prioritized signal(s)
@@ -32,8 +32,12 @@ Trigger: scheduled cron=15 6 * * 0-4 mapped to open_confirm; Cairo now 2026-09-1
 
 ## AI Narrative
 - Provider: OpenRouter OK
-- Model: openai/gpt-oss-120b:free
-- Summary: 
+- Model: nvidia/nemotron-3-super-120b-a12b:free
+- Summary: EGX30 and EGX70 are bearish with weak sector breadth (14.29%), triggering a defensive risk mode that blocks new buys; the scanner highlights a few stocks with bullish‑watch outlook and liquidity spikes, but the prevailing regime keeps them on hold.
+- CIRA.CA (Education) shows an accumulation spike and sits close to resistance, earning a high rank score, yet the bearish market overrides its buy‑ready signal.
+- ETEL.CA (Telecom) leads its sector with strong liquidity, but an overheated RSI and defensive regime prevent a buy signal despite a bullish watch outlook.
+- Textiles names (ACGC.CA, KABO.CA, ORWE.CA) display cooling liquidity and extended momentum; outlook is bullish watch but risk notes advise caution.
+- Low sector breadth and sub‑MA20 weakness across EGX30/EGX70 create uncertainty about near‑term upside, so the scanner maintains a HOLD stance.
 
 ## Top Liquidity Spikes
 - UNIT.CA: spike=24.38 liquidity=145631696.0 outlook=WEAK_OR_RISKY score=0 buy_ready=False
