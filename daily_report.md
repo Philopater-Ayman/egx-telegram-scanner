@@ -1,10 +1,10 @@
 # Telegram-First EGX Scanner Report
 
-Scan phase: Intraday liquidity update
-Generated UTC: 2026-09-14T14:42:49.341939+00:00
-Generated Cairo: 2026-09-14 17:42
-Run timing: target 11:00 Cairo | generated Cairo 2026-09-14 17:42 | cron 0 8 * * 0-4
-Trigger: scheduled cron=0 8 * * 0-4 mapped to intraday; Cairo now 2026-09-14 17:38
+Scan phase: Post-close tomorrow tickets
+Generated UTC: 2026-09-14T18:11:00.458982+00:00
+Generated Cairo: 2026-09-14 21:11
+Run timing: target 15:30 Cairo | generated Cairo 2026-09-14 21:11 | cron 30 12 * * 0-4
+Trigger: scheduled cron=30 12 * * 0-4 mapped to post_close; Cairo now 2026-09-14 21:07
 
 ## Control Center
 - Action tickets: 0 prioritized signal(s)
@@ -33,11 +33,10 @@ Trigger: scheduled cron=0 8 * * 0-4 mapped to intraday; Cairo now 2026-09-14 17:
 ## AI Narrative
 - Provider: OpenRouter OK
 - Model: nvidia/nemotron-3-super-120b-a12b:free
-- Summary: EGX30 and EGX70 are bearish with weak sector breadth (14.29%), triggering a defensive risk mode that blocks new buys; the scanner highlights a few stocks with bullish‑watch outlook and liquidity spikes, but the prevailing regime keeps them on hold.
-- CIRA.CA (Education) shows an accumulation spike and sits close to resistance, earning a high rank score, yet the bearish market overrides its buy‑ready signal.
-- ETEL.CA (Telecom) leads its sector with strong liquidity, but an overheated RSI and defensive regime prevent a buy signal despite a bullish watch outlook.
-- Textiles names (ACGC.CA, KABO.CA, ORWE.CA) display cooling liquidity and extended momentum; outlook is bullish watch but risk notes advise caution.
-- Low sector breadth and sub‑MA20 weakness across EGX30/EGX70 create uncertainty about near‑term upside, so the scanner maintains a HOLD stance.
+- Summary: EGX30 and EGX70 are bearish with weak breadth (sector breadth ~14%), putting the scanner in defensive mode that blocks new buys; the top tickets are flagged as bullish watch due to sector strength, liquidity spikes, and proximity to resistance, but the overall market regime limits upside potential.
+- Tickets were prioritized for their bullish watch outlook, accumulation or tradeable liquidity regimes, and leadership in Telecommunications, Education, and Textiles sectors despite the bearish EGX30/EGX70 trend.
+- Liquidity shows mixed signals—some spikes suggest short‑term interest, while many stocks sit far above 20‑day support and near 20‑day resistance, indicating limited room for gains in the next 1‑3 days and a risk of pullb
+- The bearish EGX30/EGX70 regime and low sector breadth shift risk mode to DEFENSIVE_NO_NEW_BUY, so the scanner only advises holding or watching existing positions; uncertainty remains due to overheated RSI readings, cooli
 
 ## Top Liquidity Spikes
 - UNIT.CA: spike=24.38 liquidity=145631696.0 outlook=WEAK_OR_RISKY score=0 buy_ready=False
