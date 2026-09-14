@@ -1,6 +1,6 @@
 Ticker,Company Name,Sector,AI Status,Watchlist Tier,Signal Status
-MASR.CA,Madinet Masr For Housing and Development,General / Verified EGX Expansion,Active Tracking,WATCH,BUY_READY
-POUL.CA,Cairo Poultry,"Food, Beverages & Tobacco",Active Tracking,WATCH,BUY_READY
-EPCO.CA,Egypt for Poultry,General / Verified EGX Expansion,Active Tracking,WATCH,BUY_READY
-BINV.CA,B Investments Holding,Investment Holding,Active Tracking,WATCH,BUY_READY
-TALM.CA,Talim Management Services,Education,Active Tracking,WATCH,BUY_READY
+MASR.CA,Madinet Masr For Housing and Development,General / Verified EGX Expansion,Active Tracking,WATCH,WATCH_ONLY
+POUL.CA,Cairo Poultry,"Food, Beverages & Tobacco",Active Tracking,WATCH,WATCH_ONLY
+EPCO.CA,Egypt for Poultry,General / Verified EGX Expansion,Active Tracking,WATCH,WATCH_ONLY
+BINV.CA,B Investments Holding,Investment Holding,Active Tracking,WATCH,WATCH_ONLY
+TALM.CA,Talim Management Services,Education,Active Tracking,WATCH,WATCH_ONLY
