@@ -1,10 +1,10 @@
 # Telegram-First EGX Scanner Report
 
-Scan phase: Post-close tomorrow tickets
-Generated UTC: 2026-09-15T17:12:49.548277+00:00
-Generated Cairo: 2026-09-15 20:12
-Run timing: target 15:30 Cairo | generated Cairo 2026-09-15 20:12 | cron 30 12 * * 0-4
-Trigger: scheduled cron=30 12 * * 0-4 mapped to post_close; Cairo now 2026-09-15 20:09
+Scan phase: Evening tomorrow plan
+Generated UTC: 2026-09-15T19:47:49.133766+00:00
+Generated Cairo: 2026-09-15 22:47
+Run timing: target 19:30 Cairo | generated Cairo 2026-09-15 22:47 | cron 30 16 * * 0-4
+Trigger: scheduled cron=30 16 * * 0-4 mapped to evening_plan; Cairo now 2026-09-15 22:44
 
 ## Control Center
 - Action tickets: 0 prioritized signal(s)
@@ -32,8 +32,12 @@ Trigger: scheduled cron=30 12 * * 0-4 mapped to post_close; Cairo now 2026-09-15
 
 ## AI Narrative
 - Provider: OpenRouter OK
-- Model: openai/gpt-oss-120b:free
-- Summary: 
+- Model: nvidia/nemotron-3-super-120b-a12b:free
+- Summary: EGX30 and EGX70 are bearish with weak breadth; scanner stays in defensive risk mode, highlighting only watchlist tickets despite bullish watch outlooks.
+- Top tickets (TALM.CA, CIRA.CA, CCAP.CA) show accumulation spikes and extended momentum but sit far above 20‑day support, limiting near‑term upside.
+- Liquidity regimes vary – some stocks in ACCUMULATION_SPIKE suggest short‑term inflows, yet overall sector breadth is low (9.5%) and leading sectors are Investment Holding, Education, Telecom.
+- EGX30 trend BEARISH (31% above MA20) and EGX70 BEARISH (28% above MA20) shift risk mode to DEFENSIVE_NO_NEW_BUY, meaning new longs are discouraged until breadth improves.
+- Outlook tags are BULLISH_WATCH or CONSTRUCTIVE, but with high RSI and resistance proximity, uncertainty remains for the next 1‑3 days; expect choppy or sideways action.
 
 ## Top Liquidity Spikes
 - SPMD.CA: spike=33.41 liquidity=605398400.0 outlook=WEAK_OR_RISKY score=0 buy_ready=False
