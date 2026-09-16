@@ -1,24 +1,24 @@
 # Provider Status
 
-Generated UTC: 2026-09-16T11:29:30.267590+00:00
-Generated Cairo: 2026-09-16 14:29
-- Scan phase: Open liquidity confirmation
-- Run timing: target 09:15 Cairo | generated Cairo 2026-09-16 14:29 | cron 15 6 * * 0-4
-- Trigger: scheduled cron=15 6 * * 0-4 mapped to open_confirm; Cairo now 2026-09-16 14:26
+Generated UTC: 2026-09-16T13:04:16.386447+00:00
+Generated Cairo: 2026-09-16 16:04
+- Scan phase: Intraday liquidity update
+- Run timing: target 11:00 Cairo | generated Cairo 2026-09-16 16:04 | cron 0 8 * * 0-4
+- Trigger: scheduled cron=0 8 * * 0-4 mapped to intraday; Cairo now 2026-09-16 16:01
 
 - Macro source: Mubasher EGX market page (delayed public data)
 - Macro freshness: DELAYED
 - Macro trend: Bearish
 - Market regime: EGX30 BEARISH / EGX70 BEARISH / sector breadth 19.05% / risk mode DEFENSIVE_NO_NEW_BUY
-- Market data: 177/189 tickers have tradeable current/delayed price data
+- Market data: 175/189 tickers have tradeable current/delayed price data
 - Mubasher delayed current rows used: 181/189
-- Current/Yahoo technical mismatches blocked: 12/189
-- DirectFN public table health only, not trusted for action tickets: 254 rows | as_of=2026-09-16T11:26:37.274744+00:00 | error=none
+- Current/Yahoo technical mismatches blocked: 14/189
+- DirectFN public table health only, not trusted for action tickets: 254 rows | as_of=2026-09-16T13:01:30.512068+00:00 | error=none
 - Data quality issues: 1
 - Evidence sources found: 9
 - AI narrative: OpenRouter OK (nvidia/nemotron-3-super-120b-a12b:free)
 - Telegram sent on latest run: True
-- Latest ticket id(s): 20260916T112930Z_HOLD_NONE
+- Latest ticket id(s): 20260916T130416Z_HOLD_NONE
 - Latest history write(s): /home/runner/work/egx-telegram-scanner/egx-telegram-scanner/trade_history.csv
 
 ## Warnings
@@ -31,4 +31,4 @@ Generated Cairo: 2026-09-16 14:29
 - Evidence rejected for CERA.CA: source text did not clearly match CERA.CA / The Arab Ceramic Co..
 - Evidence rejected for TALM.CA: source text did not clearly match TALM.CA / Talim Management Services.
 - Evidence rejected for EASB.CA: source text did not clearly match EASB.CA / Egyptian Arabian Company (Themar) for securities Brokerage EAC.
-- Evidence rejected for HELI.CA: source text did not clearly match HELI.CA / Heliopolis Housing.
+- Evidence rejected for ORHD.CA: source text did not clearly match ORHD.CA / Orascom Development Egypt.
