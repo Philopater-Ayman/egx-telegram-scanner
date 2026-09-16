@@ -1,10 +1,10 @@
 # Telegram-First EGX Scanner Report
 
-Scan phase: Intraday liquidity update
-Generated UTC: 2026-09-16T13:04:15.096342+00:00
-Generated Cairo: 2026-09-16 16:04
-Run timing: target 11:00 Cairo | generated Cairo 2026-09-16 16:04 | cron 0 8 * * 0-4
-Trigger: scheduled cron=0 8 * * 0-4 mapped to intraday; Cairo now 2026-09-16 16:01
+Scan phase: Post-close tomorrow tickets
+Generated UTC: 2026-09-16T17:13:26.636785+00:00
+Generated Cairo: 2026-09-16 20:13
+Run timing: target 15:30 Cairo | generated Cairo 2026-09-16 20:13 | cron 30 12 * * 0-4
+Trigger: scheduled cron=30 12 * * 0-4 mapped to post_close; Cairo now 2026-09-16 20:10
 
 ## Control Center
 - Action tickets: 0 prioritized signal(s)
@@ -32,12 +32,8 @@ Trigger: scheduled cron=0 8 * * 0-4 mapped to intraday; Cairo now 2026-09-16 16:
 
 ## AI Narrative
 - Provider: OpenRouter OK
-- Model: nvidia/nemotron-3-super-120b-a12b:free
-- Summary: EGX30 and EGX70 are BEARISH with weak breadth (≈19% above MA20), risk mode DEFENSIVE_NO_NEW_BUY, so the scanner holds all tickets despite some bullish watch signals.
-- Top tickets (MPCO.CA, UNIT.CA, ETEL.CA, CIRA.CA) have high rank scores and BULLISH_WATCH outlook, appearing in leading sectors (Telecom, Agri & Food, Education) with varied liquidity regimes.
-- Liquidity ranges from high (ETEL.CA ~251M, TRADEABLE) to moderate spikes (UNIT.CA ACCUMULATION_SPIKE), but many stocks sit far above their 20‑day support, limiting near‑term upside.
-- Support/resistance distances are tight for some (e.g., ORHD.CA 6.5% below support, 2.5% below resistance) while RSI readings are elevated (68‑89), hinting at possible short‑term pull‑backs.
-- The bearish EGX30/EGX70 regime and defensive risk mode override individual bullish watches, keeping confidence LOW and advising HOLD with uncertainty about short‑term reversals.
+- Model: openai/gpt-oss-120b:free
+- Summary: 
 
 ## Top Liquidity Spikes
 - BINV.CA: spike=10.24 liquidity=114632032.0 outlook=WEAK_OR_RISKY score=0 buy_ready=False
