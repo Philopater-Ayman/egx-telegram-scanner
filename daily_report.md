@@ -1,10 +1,10 @@
 # Telegram-First EGX Scanner Report
 
-Scan phase: Post-close tomorrow tickets
-Generated UTC: 2026-09-16T17:13:26.636785+00:00
-Generated Cairo: 2026-09-16 20:13
-Run timing: target 15:30 Cairo | generated Cairo 2026-09-16 20:13 | cron 30 12 * * 0-4
-Trigger: scheduled cron=30 12 * * 0-4 mapped to post_close; Cairo now 2026-09-16 20:10
+Scan phase: Evening tomorrow plan
+Generated UTC: 2026-09-16T19:40:18.635799+00:00
+Generated Cairo: 2026-09-16 22:40
+Run timing: target 19:30 Cairo | generated Cairo 2026-09-16 22:40 | cron 30 16 * * 0-4
+Trigger: scheduled cron=30 16 * * 0-4 mapped to evening_plan; Cairo now 2026-09-16 22:37
 
 ## Control Center
 - Action tickets: 0 prioritized signal(s)
@@ -32,8 +32,12 @@ Trigger: scheduled cron=30 12 * * 0-4 mapped to post_close; Cairo now 2026-09-16
 
 ## AI Narrative
 - Provider: OpenRouter OK
-- Model: openai/gpt-oss-120b:free
-- Summary: 
+- Model: nvidia/nemotron-3-super-120b-a12b:free
+- Summary: EGX30 and EGX70 are bearish with weak breadth (19% above MA20), risk mode defensive, so scanner flags only HOLD tickets despite some bullish watch signals.
+- Tickets were prioritized by highest rank_score and tradeable liquidity, but outlook remains BULLISH_WATCH/CONSTRUCTIVE due to extended momentum and proximity to resistance.
+- Liquidity regimes are mostly TRADEABLE or ACCUMULATION_SPIKE with spikes near 1‑2× average, providing short‑term activity insufficient to overcome the bearish market backdrop.
+- Leading sectors (Telecom, Agriculture & Food Production, Investment Holding) show strong above‑MA20/50 readings, yet individual stocks sit far above 20‑day support (20‑30% distance) and near resistance, limiting upside o
+- The EGX30/EGX70 bearish trend shifts risk mode to DEFENSIVE_NO_NEW_BUY, adding uncertainty that any bullish watch could reverse if sector breadth deteriorates further.
 
 ## Top Liquidity Spikes
 - BINV.CA: spike=10.24 liquidity=114632032.0 outlook=WEAK_OR_RISKY score=0 buy_ready=False
