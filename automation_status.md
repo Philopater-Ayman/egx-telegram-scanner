@@ -1,10 +1,10 @@
 # Automation Status
 
-Generated UTC: 2026-09-17T17:13:35.017515+00:00
-Generated Cairo: 2026-09-17 20:13
-Scan phase: Post-close tomorrow tickets
-Run timing: target 15:30 Cairo | generated Cairo 2026-09-17 20:13 | cron 30 12 * * 0-4
-Trigger: scheduled cron=30 12 * * 0-4 mapped to post_close; Cairo now 2026-09-17 20:10
+Generated UTC: 2026-09-17T19:49:30.423991+00:00
+Generated Cairo: 2026-09-17 22:49
+Scan phase: Evening tomorrow plan
+Run timing: target 19:30 Cairo | generated Cairo 2026-09-17 22:49 | cron 30 16 * * 0-4
+Trigger: scheduled cron=30 16 * * 0-4 mapped to evening_plan; Cairo now 2026-09-17 22:46
 Market calendar: OPEN | Default Sunday-Thursday calendar | 10:00-14:30
 Telegram sent: True
 
@@ -20,5 +20,5 @@ Telegram sent: True
 - Mubasher delayed current rows used: 181/189
 - Current/Yahoo technical mismatches blocked: 10/189
 - DirectFN public table rows available, health only: 249
-- DirectFN public table as of: 2026-09-17T17:10:26.566348+00:00
+- DirectFN public table as of: 2026-09-17T19:46:37.104638+00:00
 - DirectFN error: none

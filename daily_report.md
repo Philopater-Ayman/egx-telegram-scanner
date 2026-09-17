@@ -1,10 +1,10 @@
 # Telegram-First EGX Scanner Report
 
-Scan phase: Post-close tomorrow tickets
-Generated UTC: 2026-09-17T17:13:33.261885+00:00
-Generated Cairo: 2026-09-17 20:13
-Run timing: target 15:30 Cairo | generated Cairo 2026-09-17 20:13 | cron 30 12 * * 0-4
-Trigger: scheduled cron=30 12 * * 0-4 mapped to post_close; Cairo now 2026-09-17 20:10
+Scan phase: Evening tomorrow plan
+Generated UTC: 2026-09-17T19:49:29.141369+00:00
+Generated Cairo: 2026-09-17 22:49
+Run timing: target 19:30 Cairo | generated Cairo 2026-09-17 22:49 | cron 30 16 * * 0-4
+Trigger: scheduled cron=30 16 * * 0-4 mapped to evening_plan; Cairo now 2026-09-17 22:46
 
 ## Control Center
 - Action tickets: 0 prioritized signal(s)
@@ -33,11 +33,11 @@ Trigger: scheduled cron=30 12 * * 0-4 mapped to post_close; Cairo now 2026-09-17
 ## AI Narrative
 - Provider: OpenRouter OK
 - Model: nvidia/nemotron-3-super-120b-a12b:free
-- Summary: EGX30 and EGX70 are both in a bearish trend with low sector breadth (≈19%), triggering a defensive risk mode that blocks new buys. The scanner’s top tickets were chosen because they show recent accumulation spikes and a bullish‑watch outlook, but most sit far above their 20‑day support, have elevated RSI, and belong to non‑leading sectors, making near‑term gains uncertain.
-- Tickets were selected for their strong liquidity‑spike (accumulation) and bullish‑watch scores, indicating short‑term buying interest despite the overall bearish market.
-- Many of these stocks trade well above their 20‑day support and show overheated RSI (>80), which limits upside and raises the chance of a pullback in the next 1‑3 days.
-- Sector breadth is weak; only Investment Holding, Telecommunications, and Agriculture & Food Production are leading, while most highlighted tickets lie in weaker sectors, reducing conviction.
-- With EGX30/EGX70 bearish and risk mode set to DEFENSIVE_NO_NEW_BUY, any upward movement is likely modest and uncertain, expecting sideways‑to‑weak price action over the coming days.
+- Summary: EGX30 and EGX70 are bearish with only 19% of sectors above their 20‑day MA, triggering a DEFENSIVE_NO_NEW_BUY risk mode; the scanner prioritized tickets by high rank scores and liquidity‑spike signals, but their bullish‑watch outlooks are tempered by overheated RSI, sector misalignment, and tight support‑resistance zones, so only a HOLD stance is warranted.
+- Top tickets (BINV.CA, WKOL.CA, GBCO.CA, ETEL.CA) exhibit strong accumulation‑spike liquidity and high rank scores, yet RSI >80 for BINV/ETEL/MFPC signals overextension.
+- Sector rank puts BINV/OIH in the leading Investment Holding group, but overall sector breadth is low (19%) and EGX30/EGX70 remain bearish, limiting any follow‑through.
+- Support/resistance distances are tight (e.g., WKOL ~6% above support, ETEL ~2.8% below resistance), indicating limited upside room over the next 1‑3 days.
+- Defensive market regime shifts risk mode to DEFENSIVE_NO_NEW_BUY, so despite bullish‑watch outlooks, uncertainty stays high and only HOLD is advised.
 
 ## Top Liquidity Spikes
 - EGAS.CA: spike=7.95 liquidity=68421800.0 outlook=WEAK_OR_RISKY score=0 buy_ready=False
