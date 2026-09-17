@@ -1,10 +1,10 @@
 # Telegram-First EGX Scanner Report
 
-Scan phase: Intraday liquidity update
-Generated UTC: 2026-09-17T13:02:08.741328+00:00
-Generated Cairo: 2026-09-17 16:02
-Run timing: target 11:00 Cairo | generated Cairo 2026-09-17 16:02 | cron 0 8 * * 0-4
-Trigger: scheduled cron=0 8 * * 0-4 mapped to intraday; Cairo now 2026-09-17 15:57
+Scan phase: Post-close tomorrow tickets
+Generated UTC: 2026-09-17T17:13:33.261885+00:00
+Generated Cairo: 2026-09-17 20:13
+Run timing: target 15:30 Cairo | generated Cairo 2026-09-17 20:13 | cron 30 12 * * 0-4
+Trigger: scheduled cron=30 12 * * 0-4 mapped to post_close; Cairo now 2026-09-17 20:10
 
 ## Control Center
 - Action tickets: 0 prioritized signal(s)
@@ -32,8 +32,12 @@ Trigger: scheduled cron=0 8 * * 0-4 mapped to intraday; Cairo now 2026-09-17 15:
 
 ## AI Narrative
 - Provider: OpenRouter OK
-- Model: openai/gpt-oss-120b:free
-- Summary: 
+- Model: nvidia/nemotron-3-super-120b-a12b:free
+- Summary: EGX30 and EGX70 are both in a bearish trend with low sector breadth (≈19%), triggering a defensive risk mode that blocks new buys. The scanner’s top tickets were chosen because they show recent accumulation spikes and a bullish‑watch outlook, but most sit far above their 20‑day support, have elevated RSI, and belong to non‑leading sectors, making near‑term gains uncertain.
+- Tickets were selected for their strong liquidity‑spike (accumulation) and bullish‑watch scores, indicating short‑term buying interest despite the overall bearish market.
+- Many of these stocks trade well above their 20‑day support and show overheated RSI (>80), which limits upside and raises the chance of a pullback in the next 1‑3 days.
+- Sector breadth is weak; only Investment Holding, Telecommunications, and Agriculture & Food Production are leading, while most highlighted tickets lie in weaker sectors, reducing conviction.
+- With EGX30/EGX70 bearish and risk mode set to DEFENSIVE_NO_NEW_BUY, any upward movement is likely modest and uncertain, expecting sideways‑to‑weak price action over the coming days.
 
 ## Top Liquidity Spikes
 - EGAS.CA: spike=7.95 liquidity=68421800.0 outlook=WEAK_OR_RISKY score=0 buy_ready=False
