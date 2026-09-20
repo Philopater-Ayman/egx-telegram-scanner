@@ -1,10 +1,10 @@
 # Telegram-First EGX Scanner Report
 
-Scan phase: Post-close tomorrow tickets
-Generated UTC: 2026-09-20T16:22:15.479960+00:00
-Generated Cairo: 2026-09-20 19:22
-Run timing: target 15:30 Cairo | generated Cairo 2026-09-20 19:22 | cron 30 12 * * 0-4
-Trigger: scheduled cron=30 12 * * 0-4 mapped to post_close; Cairo now 2026-09-20 19:19
+Scan phase: Evening tomorrow plan
+Generated UTC: 2026-09-20T18:58:31.444936+00:00
+Generated Cairo: 2026-09-20 21:58
+Run timing: target 19:30 Cairo | generated Cairo 2026-09-20 21:58 | cron 30 16 * * 0-4
+Trigger: scheduled cron=30 16 * * 0-4 mapped to evening_plan; Cairo now 2026-09-20 21:55
 
 ## Control Center
 - Action tickets: 0 prioritized signal(s)
@@ -32,8 +32,12 @@ Trigger: scheduled cron=30 12 * * 0-4 mapped to post_close; Cairo now 2026-09-20
 
 ## AI Narrative
 - Provider: OpenRouter OK
-- Model: openai/gpt-oss-120b:free
-- Summary: 
+- Model: nvidia/nemotron-3-super-120b-a12b:free
+- Summary: EGX30 and EGX70 are both in a bearish regime with low sector breadth (14.29%), triggering a defensive risk mode that blocks new buys despite individual bullish‑watch signals.
+- Market regime: EGX30 trend BEARISH, EGX70 trend BEARISH, breadth weak; risk mode set to DEFENSIVE_NO_NEW_BUY, overriding scanner’s bullish watch outlook.
+- Prioritized tickets (e.g., GBCO.CA, BINV.CA, OIH.CA) show high rank scores, accumulation‑spike liquidity, elevated RSI, and prices sitting close to 20‑day resistance with tight support distance, suggesting short‑term ups
+- Sector breadth is low; leading sectors are Investment Holding, Telecommunications, and Energy & Petrochemicals, yet most constituents remain below their 20‑day MA, limiting sustained follow‑through.
+- Uncertainty: resistance proximity, overheated RSI, and cooling liquidity spikes imply any upside could be fragile; expect range‑bound or modest pullback over the next 1‑3 days unless the EGX regime shifts.
 
 ## Top Liquidity Spikes
 - CANA.CA: spike=7.92 liquidity=113486960.0 outlook=WEAK_OR_RISKY score=0 buy_ready=False
