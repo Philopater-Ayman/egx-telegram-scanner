@@ -1,10 +1,10 @@
 # Telegram-First EGX Scanner Report
 
-Scan phase: Intraday liquidity update
-Generated UTC: 2026-09-20T12:50:51.286242+00:00
-Generated Cairo: 2026-09-20 15:50
-Run timing: target 11:00 Cairo | generated Cairo 2026-09-20 15:50 | cron 0 8 * * 0-4
-Trigger: scheduled cron=0 8 * * 0-4 mapped to intraday; Cairo now 2026-09-20 15:48
+Scan phase: Post-close tomorrow tickets
+Generated UTC: 2026-09-20T16:22:15.479960+00:00
+Generated Cairo: 2026-09-20 19:22
+Run timing: target 15:30 Cairo | generated Cairo 2026-09-20 19:22 | cron 30 12 * * 0-4
+Trigger: scheduled cron=30 12 * * 0-4 mapped to post_close; Cairo now 2026-09-20 19:19
 
 ## Control Center
 - Action tickets: 0 prioritized signal(s)
@@ -32,12 +32,8 @@ Trigger: scheduled cron=0 8 * * 0-4 mapped to intraday; Cairo now 2026-09-20 15:
 
 ## AI Narrative
 - Provider: OpenRouter OK
-- Model: nvidia/nemotron-3-super-120b-a12b:free
-- Summary: EGX30 and EGX70 are bearish with weak sector breadth (14.29%), keeping risk mode defensive and blocking new buys; the scanner highlights several stocks with bullish‑watch outlooks but extended momentum and proximity to resistance, suggesting caution for the next 1‑3 days.
-- Liquidity spikes in GBCO.CA, BINV.CA and SDTI.CA show accumulation, yet prices sit near 20‑day resistance, limiting short‑term upside.
-- Sector leadership is concentrated in Investment Holding, Telecommunications and Energy & Petrochemicals, while overall EGX breadth remains low, making any gains narrow and uncertain.
-- Most flagged tickets display RSI above 60 (some >80) and trade close to resistance, indicating extended momentum and a higher risk of pull‑back in the coming days.
-- The bearish EGX30/EGX70 trend shifts the scanner’s risk mode to DEFENSIVE_NO_NEW_BUY, so it holds existing positions and waits for clearer bullish confirmation before considering new exposure.
+- Model: openai/gpt-oss-120b:free
+- Summary: 
 
 ## Top Liquidity Spikes
 - CANA.CA: spike=7.92 liquidity=113486960.0 outlook=WEAK_OR_RISKY score=0 buy_ready=False
