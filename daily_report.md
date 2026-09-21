@@ -1,10 +1,10 @@
 # Telegram-First EGX Scanner Report
 
-Scan phase: Post-close tomorrow tickets
-Generated UTC: 2026-09-21T18:17:59.930185+00:00
-Generated Cairo: 2026-09-21 21:17
-Run timing: target 15:30 Cairo | generated Cairo 2026-09-21 21:17 | cron 30 12 * * 0-4
-Trigger: scheduled cron=30 12 * * 0-4 mapped to post_close; Cairo now 2026-09-21 21:14
+Scan phase: Evening tomorrow plan
+Generated UTC: 2026-09-21T20:31:41.141790+00:00
+Generated Cairo: 2026-09-21 23:31
+Run timing: target 19:30 Cairo | generated Cairo 2026-09-21 23:31 | cron 30 16 * * 0-4
+Trigger: scheduled cron=30 16 * * 0-4 mapped to evening_plan; Cairo now 2026-09-21 23:28
 
 ## Control Center
 - Action tickets: 0 prioritized signal(s)
@@ -32,12 +32,8 @@ Trigger: scheduled cron=30 12 * * 0-4 mapped to post_close; Cairo now 2026-09-21
 
 ## AI Narrative
 - Provider: OpenRouter OK
-- Model: nvidia/nemotron-3-super-120b-a12b:free
-- Summary: EGX30 and EGX70 are bearish with weak breadth, keeping risk mode defensive; scanner flags accumulation‑spike stocks with bullish‑watch outlook but holds due to regime.
-- Selected tickets show accumulation‑spike liquidity and bullish‑watch outlook (outlook scores 70‑93) but sit just below or near 20‑day resistance, limiting near‑term upside.
-- Leading sectors (Investment Holding, Telecommunications, Education) contrast with overall sector breadth of ~48%, indicating mixed participation.
-- Support distances range 8‑38% while resistance distances are tight (‑4% to +10%), suggesting price may test resistance soon or pull back to support.
-- EGX30/EGX70 bearish trend and low above‑MA20 breadth keep risk mode in DEFENSIVE_NO_NEW_BUY, so scanner maintains HOLD despite individual bullish cues; confidence remains LOW due to conflicting signals and limited eviden
+- Model: openai/gpt-oss-120b:free
+- Summary: 
 
 ## Top Liquidity Spikes
 - MIPH.CA: spike=19.25 liquidity=81043648.0 outlook=WEAK_OR_RISKY score=0 buy_ready=False
