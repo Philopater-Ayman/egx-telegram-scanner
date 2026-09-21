@@ -1,10 +1,10 @@
 # Telegram-First EGX Scanner Report
 
-Scan phase: Open liquidity confirmation
-Generated UTC: 2026-09-21T12:45:03.906047+00:00
-Generated Cairo: 2026-09-21 15:45
-Run timing: target 09:15 Cairo | generated Cairo 2026-09-21 15:45 | cron 15 6 * * 0-4
-Trigger: scheduled cron=15 6 * * 0-4 mapped to open_confirm; Cairo now 2026-09-21 15:41
+Scan phase: Intraday liquidity update
+Generated UTC: 2026-09-21T14:50:11.886567+00:00
+Generated Cairo: 2026-09-21 17:50
+Run timing: target 11:00 Cairo | generated Cairo 2026-09-21 17:50 | cron 0 8 * * 0-4
+Trigger: scheduled cron=0 8 * * 0-4 mapped to intraday; Cairo now 2026-09-21 17:46
 
 ## Control Center
 - Action tickets: 0 prioritized signal(s)
@@ -33,12 +33,11 @@ Trigger: scheduled cron=15 6 * * 0-4 mapped to open_confirm; Cairo now 2026-09-2
 ## AI Narrative
 - Provider: OpenRouter OK
 - Model: nvidia/nemotron-3-super-120b-a12b:free
-- Summary: EGX30 and EGX70 both BEARISH with sector breadth ~48%; risk mode DEFENSIVE_NO_NEW_BUY, so scanner keeps HOLD despite accumulation spikes in several tickets.
-- Local scanner HOLD: EGX30/EGX70 regime and sector breadth are defensive, so no new BUY is allowed.
-- EGX30/EGX70 bearish, sector breadth 47.6%, defensive risk mode; scanner flags accumulation spikes in select stocks but maintains HOLD due to weak breadth and extended momentum.
-- Tickets like GBCO.CA, SAUD.CA show ACCUMULATION_SPIKE liquidity and BULLISH_WATCH outlook, but prices sit 4‑12% below 20‑day support and RSI >60, indicating limited near‑term upside.
-- Sector breadth is weak (only 48% of stocks above MA20) and leading sectors (Investment Holding, Telecom, Education) are not broadly represented, reinforcing defensive stance.
-- EGX30/EGX70 bearish trend and low median 5‑day returns shift risk mode to DEFENSIVE_NO_NEW_BUY, overriding individual bullish signals and keeping confidence LOW.
+- Summary: EGX30 and EGX70 are bearish with weak breadth (47.6% sector participation); defensive risk mode blocks new buys despite several tickets showing bullish watch scores and liquidity spikes.
+- Scanner prioritized tickets like GBCO.CA, SAUD.CA, CANA.CA due to high outlook scores (>70) and accumulation‑spike liquidity, signaling short‑term buying interest.
+- Risk notes flag extended momentum, overheated RSI, or non‑leading sectors, suggesting limited follow‑through and possible pull‑back over the next 1‑3 days.
+- EGX30/EGX70 remain below MA20 breadth, keeping risk mode DEFENSIVE_NO_NEW_BUY, so the market does not support new buys despite bullish watch signals.
+- Uncertainty persists from mixed liquidity spikes and weak sector breadth; any upside could be capped by the broader bearish bias.
 
 ## Top Liquidity Spikes
 - MIPH.CA: spike=19.25 liquidity=81043648.0 outlook=WEAK_OR_RISKY score=0 buy_ready=False
