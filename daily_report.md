@@ -1,10 +1,10 @@
 # Telegram-First EGX Scanner Report
 
-Scan phase: Intraday liquidity update
-Generated UTC: 2026-09-21T14:50:11.886567+00:00
-Generated Cairo: 2026-09-21 17:50
-Run timing: target 11:00 Cairo | generated Cairo 2026-09-21 17:50 | cron 0 8 * * 0-4
-Trigger: scheduled cron=0 8 * * 0-4 mapped to intraday; Cairo now 2026-09-21 17:46
+Scan phase: Post-close tomorrow tickets
+Generated UTC: 2026-09-21T18:17:59.930185+00:00
+Generated Cairo: 2026-09-21 21:17
+Run timing: target 15:30 Cairo | generated Cairo 2026-09-21 21:17 | cron 30 12 * * 0-4
+Trigger: scheduled cron=30 12 * * 0-4 mapped to post_close; Cairo now 2026-09-21 21:14
 
 ## Control Center
 - Action tickets: 0 prioritized signal(s)
@@ -33,11 +33,11 @@ Trigger: scheduled cron=0 8 * * 0-4 mapped to intraday; Cairo now 2026-09-21 17:
 ## AI Narrative
 - Provider: OpenRouter OK
 - Model: nvidia/nemotron-3-super-120b-a12b:free
-- Summary: EGX30 and EGX70 are bearish with weak breadth (47.6% sector participation); defensive risk mode blocks new buys despite several tickets showing bullish watch scores and liquidity spikes.
-- Scanner prioritized tickets like GBCO.CA, SAUD.CA, CANA.CA due to high outlook scores (>70) and accumulation‑spike liquidity, signaling short‑term buying interest.
-- Risk notes flag extended momentum, overheated RSI, or non‑leading sectors, suggesting limited follow‑through and possible pull‑back over the next 1‑3 days.
-- EGX30/EGX70 remain below MA20 breadth, keeping risk mode DEFENSIVE_NO_NEW_BUY, so the market does not support new buys despite bullish watch signals.
-- Uncertainty persists from mixed liquidity spikes and weak sector breadth; any upside could be capped by the broader bearish bias.
+- Summary: EGX30 and EGX70 are bearish with weak breadth, keeping risk mode defensive; scanner flags accumulation‑spike stocks with bullish‑watch outlook but holds due to regime.
+- Selected tickets show accumulation‑spike liquidity and bullish‑watch outlook (outlook scores 70‑93) but sit just below or near 20‑day resistance, limiting near‑term upside.
+- Leading sectors (Investment Holding, Telecommunications, Education) contrast with overall sector breadth of ~48%, indicating mixed participation.
+- Support distances range 8‑38% while resistance distances are tight (‑4% to +10%), suggesting price may test resistance soon or pull back to support.
+- EGX30/EGX70 bearish trend and low above‑MA20 breadth keep risk mode in DEFENSIVE_NO_NEW_BUY, so scanner maintains HOLD despite individual bullish cues; confidence remains LOW due to conflicting signals and limited eviden
 
 ## Top Liquidity Spikes
 - MIPH.CA: spike=19.25 liquidity=81043648.0 outlook=WEAK_OR_RISKY score=0 buy_ready=False
