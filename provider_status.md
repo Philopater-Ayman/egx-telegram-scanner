@@ -1,10 +1,10 @@
 # Provider Status
 
-Generated UTC: 2026-09-22T11:33:57.754846+00:00
-Generated Cairo: 2026-09-22 14:33
-- Scan phase: Open liquidity confirmation
-- Run timing: target 09:15 Cairo | generated Cairo 2026-09-22 14:33 | cron 15 6 * * 0-4
-- Trigger: scheduled cron=15 6 * * 0-4 mapped to open_confirm; Cairo now 2026-09-22 14:30
+Generated UTC: 2026-09-22T13:03:27.117661+00:00
+Generated Cairo: 2026-09-22 16:03
+- Scan phase: Intraday liquidity update
+- Run timing: target 11:00 Cairo | generated Cairo 2026-09-22 16:03 | cron 0 8 * * 0-4
+- Trigger: scheduled cron=0 8 * * 0-4 mapped to intraday; Cairo now 2026-09-22 16:00
 
 - Macro source: Mubasher EGX market page (delayed public data)
 - Macro freshness: DELAYED
@@ -13,12 +13,12 @@ Generated Cairo: 2026-09-22 14:33
 - Market data: 177/186 tickers have tradeable current/delayed price data
 - Mubasher delayed current rows used: 179/186
 - Current/Yahoo technical mismatches blocked: 9/186
-- DirectFN public table health only, not trusted for action tickets: 251 rows | as_of=2026-09-22T11:30:23.784538+00:00 | error=none
+- DirectFN public table health only, not trusted for action tickets: 251 rows | as_of=2026-09-22T13:00:34.208526+00:00 | error=none
 - Data quality issues: 4
 - Evidence sources found: 6
 - AI narrative: OpenRouter OK (nvidia/nemotron-3-super-120b-a12b:free)
 - Telegram sent on latest run: True
-- Latest ticket id(s): 20260922T113357Z_HOLD_NONE
+- Latest ticket id(s): 20260922T130327Z_HOLD_NONE
 - Latest history write(s): /home/runner/work/egx-telegram-scanner/egx-telegram-scanner/trade_history.csv
 
 ## Warnings
@@ -31,7 +31,7 @@ Generated Cairo: 2026-09-22 14:33
 - Evidence rejected for ATQA.CA: source text did not clearly match ATQA.CA / Misr National Steel Ataqa.
 - Evidence rejected for ETEL.CA: source text did not clearly match ETEL.CA / Telecom Egypt.
 - Evidence rejected for ALCN.CA: source text did not clearly match ALCN.CA / Alexandria Containers and Cargo Handling.
+- Evidence rejected for HDBK.CA: source text did not clearly match HDBK.CA / Housing and Development Bank Egypt.
 - Evidence for SAUD.CA matches the company but appears old; latest detected date is 2025-01-01.
 - Evidence rejected for EXPA.CA: source text did not clearly match EXPA.CA / Export Development Bank of Egypt.
-- Evidence rejected for HDBK.CA: source text did not clearly match HDBK.CA / Housing and Development Bank Egypt.
 - Evidence for ABUK.CA matches the company but no source/report date was detected.
