@@ -1,10 +1,10 @@
 # Telegram-First EGX Scanner Report
 
-Scan phase: Post-close tomorrow tickets
-Generated UTC: 2026-09-22T17:08:51.564918+00:00
-Generated Cairo: 2026-09-22 20:08
-Run timing: target 15:30 Cairo | generated Cairo 2026-09-22 20:08 | cron 30 12 * * 0-4
-Trigger: scheduled cron=30 12 * * 0-4 mapped to post_close; Cairo now 2026-09-22 20:06
+Scan phase: Evening tomorrow plan
+Generated UTC: 2026-09-22T19:50:39.813510+00:00
+Generated Cairo: 2026-09-22 22:50
+Run timing: target 19:30 Cairo | generated Cairo 2026-09-22 22:50 | cron 30 16 * * 0-4
+Trigger: scheduled cron=30 16 * * 0-4 mapped to evening_plan; Cairo now 2026-09-22 22:48
 
 ## Control Center
 - Action tickets: 0 prioritized signal(s)
@@ -33,11 +33,11 @@ Trigger: scheduled cron=30 12 * * 0-4 mapped to post_close; Cairo now 2026-09-22
 ## AI Narrative
 - Provider: OpenRouter OK
 - Model: nvidia/nemotron-3-super-120b-a12b:free
-- Summary: Scanner holds due to bearish EGX30/EGX70 regime and defensive risk mode; top tickets show accumulation spikes but extended momentum and cooling liquidity, limiting near‑term upside.
-- Tickets were prioritized by high rank_score, liquidity spikes, and sector alignment despite the overall bearish breadth.
-- Accumulation spikes hint at short‑term buying interest, yet resistance is close, support is distant, and RSI is elevated, suggesting a sideways to slight pullback over the next 1‑3 days.
-- EGX30 and EGX70 are bearish with <35% of stocks above MA20, shifting risk mode to DEFENSIVE_NO_NEW_BUY and increasing uncertainty for new longs.
-- Mixed signals—extended momentum, cooling liquidity, and overbought RSI—mean price could stall or reverse; watch for a clear break of resistance or a liquidity drop for confirmation.
+- Summary: EGX30/EGX70 stay bearish with a defensive risk mode, so the scanner highlights only watch‑list tickets based on relative strength, liquidity spikes and sector leadership despite no new‑buy signal.
+- Top tickets (GBCO.CA, ETEL.CA) show accumulation spikes and bullish‑watch outlooks but sit near 20‑day resistance, limiting upside in the next 1‑3 days.
+- Sector breadth is weak (38.1% above MA20); leading sectors like Investment Holding and Telecommunications give relative strength, yet most stocks are extended (RSI>60) and liquidity is cooling.
+- Support/resistance gaps are modest (e.g., ETEL.CA ~23% above support, resistance slightly negative), suggesting price may test resistance before pulling back.
+- EGX30/EGX70 bearish trend shifts risk mode to DEFENSIVE_NO_NEW_BUY, raising uncertainty and discouraging new entries until breadth improves.
 
 ## Top Liquidity Spikes
 - NEDA.CA: spike=11.88 liquidity=7372879.0 outlook=NEUTRAL score=42.62 buy_ready=False
