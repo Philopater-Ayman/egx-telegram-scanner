@@ -1,10 +1,10 @@
 # Telegram-First EGX Scanner Report
 
-Scan phase: Intraday liquidity update
-Generated UTC: 2026-09-24T13:08:27.261507+00:00
-Generated Cairo: 2026-09-24 16:08
-Run timing: target 11:00 Cairo | generated Cairo 2026-09-24 16:08 | cron 0 8 * * 0-4
-Trigger: scheduled cron=0 8 * * 0-4 mapped to intraday; Cairo now 2026-09-24 16:05
+Scan phase: Post-close tomorrow tickets
+Generated UTC: 2026-09-24T17:26:39.364300+00:00
+Generated Cairo: 2026-09-24 20:26
+Run timing: target 15:30 Cairo | generated Cairo 2026-09-24 20:26 | cron 30 12 * * 0-4
+Trigger: scheduled cron=30 12 * * 0-4 mapped to post_close; Cairo now 2026-09-24 20:23
 
 ## Control Center
 - Action tickets: 0 prioritized signal(s)
@@ -33,11 +33,11 @@ Trigger: scheduled cron=0 8 * * 0-4 mapped to intraday; Cairo now 2026-09-24 16:
 ## AI Narrative
 - Provider: OpenRouter OK
 - Model: nvidia/nemotron-3-super-120b-a12b:free
-- Summary: EGX30 and EGX70 are bearish with weak breadth, triggering a defensive risk mode that blocks new buys; the scanner flags a few stocks with relative strength and liquidity spikes but keeps them on hold due to the overall market weakness.
-- MHOT.CA tops the rank because of a strong liquidity spike (2.35×), tourism‑sector leadership, price just 3.2% below 20‑day resistance and a bullish‑watch outlook, yet the bearish EGX regime forces a HOLD.
-- MAAL.CA and RUBX.CA show large accumulation‑spike liquidity but sit far above support and belong to non‑leading sectors, resulting in neutral/extended momentum and a HOLD despite the spikes.
-- ALCN.CA and EGTS.CA offer tradeable liquidity and moderate support distances with bullish‑watch scores, but sector breadth is low and both indices sit below their MA20/MA50, maintaining defensive risk.
-- Overall sector breadth is only 23.8% while leading sectors (Tourism & Leisure, Investment Holding, Telecommunications) contrast with bearish indices, creating uncertainty about short‑term reversals.
+- Summary: EGX30 and EGX70 are bearish with weak breadth (23.8% sector participation), risk mode is DEFENSIVE_NO_NEW_BUY, so the scanner only flags watch‑list tickets that show strong liquidity accumulation and near‑term support/resistance but does not allow new buys.
+- Prioritized tickets (MHOT.CA, MAAL.CA, RUBX.CA, etc.) scored high on rank_score due to liquidity spikes (2.35‑6.5× average) and bullish‑watch outlooks despite the bearish market.
+- Liquidity spikes indicate accumulation; support distances give upside room (e.g., MHOT +13.7% above 20‑day support) while some tickets sit close to resistance (RUBX within 0.3%), adding uncertainty for the next 1‑3 days.
+- Sector leadership is narrow—only Tourism & Leisure, Investment Holding, and Telecommunications show strong breadth; most flagged stocks belong to non‑leading sectors, lowering conviction.
+- The bearish EGX30/EGX70 regime forces the risk mode to DEFENSIVE_NO_NEW_BUY, so even tickets with bullish watch are held, reflecting uncertainty about short‑term direction.
 
 ## Top Liquidity Spikes
 - EGBE.CA: spike=9.05 liquidity=669469.5 outlook=WEAK_OR_RISKY score=32.54 buy_ready=False
