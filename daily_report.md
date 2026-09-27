@@ -1,10 +1,10 @@
 # Telegram-First EGX Scanner Report
 
-Scan phase: Post-close tomorrow tickets
-Generated UTC: 2026-09-27T17:10:19.126403+00:00
-Generated Cairo: 2026-09-27 20:10
-Run timing: target 15:30 Cairo | generated Cairo 2026-09-27 20:10 | cron 30 12 * * 0-4
-Trigger: scheduled cron=30 12 * * 0-4 mapped to post_close; Cairo now 2026-09-27 20:06
+Scan phase: Evening tomorrow plan
+Generated UTC: 2026-09-27T19:51:47.989810+00:00
+Generated Cairo: 2026-09-27 22:51
+Run timing: target 19:30 Cairo | generated Cairo 2026-09-27 22:51 | cron 30 16 * * 0-4
+Trigger: scheduled cron=30 16 * * 0-4 mapped to evening_plan; Cairo now 2026-09-27 22:48
 
 ## Control Center
 - Action tickets: 0 prioritized signal(s)
@@ -33,10 +33,7 @@ Trigger: scheduled cron=30 12 * * 0-4 mapped to post_close; Cairo now 2026-09-27
 ## AI Narrative
 - Provider: OpenRouter OK
 - Model: nvidia/nemotron-3-super-120b-a12b:free
-- Summary: EGX30 and EGX70 are bearish with thin sector breadth, putting the scanner in defensive mode; despite a few stocks showing bullish watch signals and liquidity spikes, no new buys are advised.
-- MHOT.CA shows strong liquidity spike and near‑term resistance, but the broader bearish trend keeps it on hold.
-- CIRA.CA and CANA.CA have decent liquidity yet sit far above support, limiting upside in the next 1‑3 days.
-- Sector leaders Tourism & Leisure and Telecommunications are bullish‑watch, but weak overall breadth and defensive risk mode outweigh the signal.
+- Summary: EGX30 and EGX70 are bearish with weak sector breadth, putting the market in a defensive mode that overrides the scanner’s bullish‑watch tickets, resulting in a HOLD recommendation.
 
 ## Top Liquidity Spikes
 - EGSA.CA: spike=15.36 liquidity=100936.9 outlook=CONSTRUCTIVE score=66 buy_ready=False
