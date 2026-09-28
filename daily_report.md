@@ -1,10 +1,10 @@
 # Telegram-First EGX Scanner Report
 
-Scan phase: Intraday liquidity update
-Generated UTC: 2026-09-28T16:25:08.949183+00:00
-Generated Cairo: 2026-09-28 19:25
-Run timing: target 11:00 Cairo | generated Cairo 2026-09-28 19:25 | cron 0 8 * * 0-4
-Trigger: scheduled cron=0 8 * * 0-4 mapped to intraday; Cairo now 2026-09-28 19:21
+Scan phase: Post-close tomorrow tickets
+Generated UTC: 2026-09-28T19:48:08.662882+00:00
+Generated Cairo: 2026-09-28 22:48
+Run timing: target 15:30 Cairo | generated Cairo 2026-09-28 22:48 | cron 30 12 * * 0-4
+Trigger: scheduled cron=30 12 * * 0-4 mapped to post_close; Cairo now 2026-09-28 22:44
 
 ## Control Center
 - Action tickets: 0 prioritized signal(s)
@@ -33,11 +33,7 @@ Trigger: scheduled cron=0 8 * * 0-4 mapped to intraday; Cairo now 2026-09-28 19:
 ## AI Narrative
 - Provider: OpenRouter OK
 - Model: nvidia/nemotron-3-super-120b-a12b:free
-- Summary: Scanner prioritized ETEL.CA, EXPA.CA, CIRA.CA, MAAL.CA, ALCN.CA based on rank_score, but all remain HOLD because EGX30/EGX70 are bearish and sector breadth is weak, keeping risk mode defensive.
-- EGX30 & EGX70 both BEARISH with <10% of stocks above MA20, signaling weak breadth and downside pressure for the next 1‑3 days.
-- Sector breadth at 4.8%; leading sectors (Telecom, Education, Investment Holding) show mixed signals, limiting near‑term upside catalysts.
-- Top tickets have tradeable liquidity but many sit far above 20‑day support or show cooling liquidity spikes, suggesting limited bounce potential.
-- Outlook scores range constructive to bullish watch, yet RSI extremes and sector‑rank constraints keep confidence LOW; uncertainty remains high.
+- Summary: EGX30 and EGX70 are bearish with weak breadth (~5% above MA20), triggering a defensive risk mode that blocks new buys; the scanner therefore prioritizes hold‑rated tickets that show relative liquidity strength, sector leadership, or constructive outlook despite the broader downside.
 
 ## Top Liquidity Spikes
 - EGSA.CA: spike=4.49 liquidity=29497.65 outlook=WEAK_OR_RISKY score=25.05 buy_ready=False
