@@ -1,10 +1,10 @@
 # Telegram-First EGX Scanner Report
 
-Scan phase: Pre-market risk check
-Generated UTC: 2026-09-28T12:01:01.458153+00:00
-Generated Cairo: 2026-09-28 15:01
-Run timing: target 08:45 Cairo | generated Cairo 2026-09-28 15:01 | cron 45 5 * * 0-4
-Trigger: scheduled cron=45 5 * * 0-4 mapped to pre_market; Cairo now 2026-09-28 14:58
+Scan phase: Open liquidity confirmation
+Generated UTC: 2026-09-28T13:48:40.359650+00:00
+Generated Cairo: 2026-09-28 16:48
+Run timing: target 09:15 Cairo | generated Cairo 2026-09-28 16:48 | cron 15 6 * * 0-4
+Trigger: scheduled cron=15 6 * * 0-4 mapped to open_confirm; Cairo now 2026-09-28 16:45
 
 ## Control Center
 - Action tickets: 0 prioritized signal(s)
@@ -32,8 +32,12 @@ Trigger: scheduled cron=45 5 * * 0-4 mapped to pre_market; Cairo now 2026-09-28 
 
 ## AI Narrative
 - Provider: OpenRouter OK
-- Model: openai/gpt-oss-120b:free
-- Summary: 
+- Model: nvidia/nemotron-3-super-120b-a12b:free
+- Summary: EGX30 and EGX70 are bearish with weak breadth (≈5% above MA20, sector breadth 4.8%), triggering DEFENSIVE_NO_NEW_BUY risk mode; the scanner highlights a few tickets with constructive/ bullish‑watch outlooks and liquidity spikes, but maintains HOLD due to the prevailing regime.
+- Top tickets (ETEL.CA, EXPA.CA, CIRA.CA) show constructive or bullish‑watch outlooks and liquidity spikes, yet are flagged HOLD because the bearish regime overrides short‑term signals.
+- Liquidity spikes (>1.7×) in ETEL.CA and MAAL.CA hint at short‑term interest, but support lies far below current prices, limiting near‑term downside protection.
+- Sector leadership is confined to Telecommunications and Education; overall sector breadth remains low (<5%), suggesting any strength may be isolated and prone to reversal.
+- EGX30/EGX70 bearish trend shifts risk mode to DEFENSIVE_NO_NEW_BUY, adding uncertainty; a sustained move above MA20 or a sector‑breadth rebound would be required to ease the hold stance.
 
 ## Top Liquidity Spikes
 - EGSA.CA: spike=4.49 liquidity=29497.65 outlook=WEAK_OR_RISKY score=25.05 buy_ready=False
