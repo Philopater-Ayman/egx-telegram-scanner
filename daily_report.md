@@ -1,10 +1,10 @@
 # Telegram-First EGX Scanner Report
 
-Scan phase: Intraday liquidity update
-Generated UTC: 2026-09-29T14:35:52.794124+00:00
-Generated Cairo: 2026-09-29 17:35
-Run timing: target 11:00 Cairo | generated Cairo 2026-09-29 17:35 | cron 0 8 * * 0-4
-Trigger: scheduled cron=0 8 * * 0-4 mapped to intraday; Cairo now 2026-09-29 17:31
+Scan phase: Post-close tomorrow tickets
+Generated UTC: 2026-09-29T18:13:24.371296+00:00
+Generated Cairo: 2026-09-29 21:13
+Run timing: target 15:30 Cairo | generated Cairo 2026-09-29 21:13 | cron 30 12 * * 0-4
+Trigger: scheduled cron=30 12 * * 0-4 mapped to post_close; Cairo now 2026-09-29 21:09
 
 ## Control Center
 - Action tickets: 0 prioritized signal(s)
@@ -32,11 +32,8 @@ Trigger: scheduled cron=0 8 * * 0-4 mapped to intraday; Cairo now 2026-09-29 17:
 
 ## AI Narrative
 - Provider: OpenRouter OK
-- Model: nvidia/nemotron-3-super-120b-a12b:free
-- Summary: EGX30 and EGX70 are bearish with weak breadth, putting the scanner in a defensive risk mode that blocks new buys; it highlights a few tickets with relatively better outlook but still flagged by cooling liquidity and mixed technicals.
-- ETEL.CA: constructive outlook and tradeable liquidity, but RSI appears overheated and liquidity is cooling, which may cap short‑term gains.
-- BINV.CA and CCAP.CA: bullish watch scores with reasonable support‑resistance spacing, yet liquidity is waning and the sector shows mixed signals.
-- AMOC.CA: constructive outlook with support near current price, but low RSI and modest liquidity spike add uncertainty.
+- Model: openai/gpt-oss-120b:free
+- Summary: 
 
 ## Top Liquidity Spikes
 - EGSA.CA: spike=3.76 liquidity=29497.65 outlook=WEAK_OR_RISKY score=4.06 buy_ready=False
