@@ -1,10 +1,10 @@
 # Telegram-First EGX Scanner Report
 
-Scan phase: Open liquidity confirmation
-Generated UTC: 2026-09-29T12:47:56.132637+00:00
-Generated Cairo: 2026-09-29 15:47
-Run timing: target 09:15 Cairo | generated Cairo 2026-09-29 15:47 | cron 15 6 * * 0-4
-Trigger: scheduled cron=15 6 * * 0-4 mapped to open_confirm; Cairo now 2026-09-29 15:45
+Scan phase: Intraday liquidity update
+Generated UTC: 2026-09-29T14:35:52.794124+00:00
+Generated Cairo: 2026-09-29 17:35
+Run timing: target 11:00 Cairo | generated Cairo 2026-09-29 17:35 | cron 0 8 * * 0-4
+Trigger: scheduled cron=0 8 * * 0-4 mapped to intraday; Cairo now 2026-09-29 17:31
 
 ## Control Center
 - Action tickets: 0 prioritized signal(s)
@@ -33,11 +33,10 @@ Trigger: scheduled cron=15 6 * * 0-4 mapped to open_confirm; Cairo now 2026-09-2
 ## AI Narrative
 - Provider: OpenRouter OK
 - Model: nvidia/nemotron-3-super-120b-a12b:free
-- Summary: EGX30 and EGX70 are bearish with weak breadth, triggering a defensive risk mode that blocks new buys; the scanner’s top tickets show constructive outlooks but cooling liquidity and elevated RSI, so only HOLD is advised for the next 1‑3 days.
-- Bearish regime: EGX30 only 5.9% above MA20, EGX70 5.4% above MA20; median 5‑day returns are negative.
-- Sector breadth at 0% and leading sectors (Telecom, Energy, Investment Holding) show limited upside despite individual stock strength.
-- Top tickets (e.g., ETEL.CA, BINV.CA, CCAP.CA) rank high on score but have cooling liquidity spikes (~0.5) and RSI near overbought, indicating short‑term pressure.
-- Defensive risk mode (DEFENSIVE_NO_NEW_BUY) overrides bullish watches, advising HOLD with uncertainty about a possible regime shift.
+- Summary: EGX30 and EGX70 are bearish with weak breadth, putting the scanner in a defensive risk mode that blocks new buys; it highlights a few tickets with relatively better outlook but still flagged by cooling liquidity and mixed technicals.
+- ETEL.CA: constructive outlook and tradeable liquidity, but RSI appears overheated and liquidity is cooling, which may cap short‑term gains.
+- BINV.CA and CCAP.CA: bullish watch scores with reasonable support‑resistance spacing, yet liquidity is waning and the sector shows mixed signals.
+- AMOC.CA: constructive outlook with support near current price, but low RSI and modest liquidity spike add uncertainty.
 
 ## Top Liquidity Spikes
 - EGSA.CA: spike=3.76 liquidity=29497.65 outlook=WEAK_OR_RISKY score=4.06 buy_ready=False
