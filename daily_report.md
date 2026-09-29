@@ -1,10 +1,10 @@
 # Telegram-First EGX Scanner Report
 
-Scan phase: Post-close tomorrow tickets
-Generated UTC: 2026-09-29T18:13:24.371296+00:00
-Generated Cairo: 2026-09-29 21:13
-Run timing: target 15:30 Cairo | generated Cairo 2026-09-29 21:13 | cron 30 12 * * 0-4
-Trigger: scheduled cron=30 12 * * 0-4 mapped to post_close; Cairo now 2026-09-29 21:09
+Scan phase: Evening tomorrow plan
+Generated UTC: 2026-09-29T21:00:23.924160+00:00
+Generated Cairo: 2026-09-30 00:00
+Run timing: target 19:30 Cairo | generated Cairo 2026-09-30 00:00 | cron 30 16 * * 0-4
+Trigger: scheduled cron=30 16 * * 0-4 mapped to evening_plan; Cairo now 2026-09-29 23:55
 
 ## Control Center
 - Action tickets: 0 prioritized signal(s)
@@ -32,8 +32,12 @@ Trigger: scheduled cron=30 12 * * 0-4 mapped to post_close; Cairo now 2026-09-29
 
 ## AI Narrative
 - Provider: OpenRouter OK
-- Model: openai/gpt-oss-120b:free
-- Summary: 
+- Model: nvidia/nemotron-3-super-120b-a12b:free
+- Summary: EGX30 and EGX70 are bearish with weak breadth, sector breadth at 0%, and risk mode set to defensive (no new buys), so the scanner holds; the top‑ranked tickets show a constructive or bullish‑watch outlook despite cooling liquidity and nearby resistance.
+- Market regime: EGX30/EGX70 bearish, low MA20/MA50 breadth, defensive risk mode blocks new buys.
+- Prioritized tickets (e.g., ETEL.CA, BINV.CA, CCAP.CA) have the highest rank scores, constructive/bullish‑watch outlook, tradeable but cooling liquidity, and sit near support with resistance only a few percent away.
+- Liquidity is cooling across sectors and RSI signals mixed (some overheated, some neutral), adding uncertainty to short‑term price action.
+- Sector breadth is zero; leading sectors (Telecom, Energy & Petrochemicals, Investment Holding) offer limited upside, so any 1‑3‑day move depends on news flow and broader sentiment, keeping confidence low.
 
 ## Top Liquidity Spikes
 - EGSA.CA: spike=3.76 liquidity=29497.65 outlook=WEAK_OR_RISKY score=4.06 buy_ready=False
@@ -262,11 +266,11 @@ Trigger: scheduled cron=30 12 * * 0-4 mapped to post_close; Cairo now 2026-09-29
 - TRTO.CA: score=-2.48 buy_ready=False sector_rank=16 price=0.05 support=0.05 resistance=0.08 source=Yahoo Finance as_of=2026-09-27T21:00:00+00:00 freshness=FRESH RSI=12.0 liquidity=3716.5 spike=0.13
 - UEFM.CA: score=7.52 buy_ready=False sector_rank=16 price=509.46 support=437.5 resistance=509.46 source=Yahoo Finance history + Mubasher delayed current trading data as_of=01:29 PM market time freshness=DELAYED_CURRENT_UNALIGNED RSI=50.0 liquidity=10914037.0 spike=3.56
 - UEGC.CA: score=6.52 buy_ready=False sector_rank=16 price=1.43 support=1.42 resistance=1.86 source=Yahoo Finance history + Mubasher delayed current trading data as_of=01:28 PM market time freshness=DELAYED_CURRENT RSI=21.82 liquidity=23369046.0 spike=0.55
-- UNIP.CA: score=2.69 buy_ready=False sector_rank=16 price=0.32 support=0.32 resistance=0.41 source=Yahoo Finance history + Mubasher delayed current trading data as_of=01:29 PM market time freshness=DELAYED_CURRENT RSI=20.59 liquidity=6165788.0 spike=0.3
+- UNIP.CA: score=2.69 buy_ready=False sector_rank=16 price=0.32 support=0.32 resistance=0.41 source=Yahoo Finance history + Mubasher delayed current trading data as_of=29 September 01:29 PM market time freshness=DELAYED_CURRENT RSI=20.59 liquidity=6165788.0 spike=0.3
 - UNIT.CA: score=13.11 buy_ready=False sector_rank=14 price=17.0 support=16.66 resistance=23.95 source=Yahoo Finance history + Mubasher delayed current trading data as_of=01:13 PM market time freshness=DELAYED_CURRENT RSI=41.72 liquidity=14764456.0 spike=1.03
-- WCDF.CA: score=4.31 buy_ready=False sector_rank=16 price=625.44 support=575.5 resistance=796.0 source=Yahoo Finance history + Mubasher delayed current trading data as_of=01:14 PM market time freshness=DELAYED_CURRENT RSI=31.96 liquidity=6411452.0 spike=1.19
-- WKOL.CA: score=6.52 buy_ready=False sector_rank=16 price=291.32 support=293.03 resistance=379.98 source=Yahoo Finance history + Mubasher delayed current trading data as_of=01:25 PM market time freshness=DELAYED_CURRENT RSI=20.92 liquidity=10683213.0 spike=0.8
-- ZEOT.CA: score=2.8 buy_ready=False sector_rank=16 price=11.26 support=10.6 resistance=14.85 source=Yahoo Finance history + Mubasher delayed current trading data as_of=01:27 PM market time freshness=DELAYED_CURRENT RSI=13.13 liquidity=5280775.5 spike=0.87
+- WCDF.CA: score=4.31 buy_ready=False sector_rank=16 price=625.44 support=575.5 resistance=796.0 source=Yahoo Finance history + Mubasher delayed current trading data as_of=29 September 01:14 PM market time freshness=DELAYED_CURRENT RSI=31.96 liquidity=6411452.0 spike=1.19
+- WKOL.CA: score=6.52 buy_ready=False sector_rank=16 price=291.32 support=293.03 resistance=379.98 source=Yahoo Finance history + Mubasher delayed current trading data as_of=29 September 01:25 PM market time freshness=DELAYED_CURRENT RSI=20.92 liquidity=10683213.0 spike=0.8
+- ZEOT.CA: score=2.8 buy_ready=False sector_rank=16 price=11.26 support=10.6 resistance=14.85 source=Yahoo Finance history + Mubasher delayed current trading data as_of=29 September 01:27 PM market time freshness=DELAYED_CURRENT RSI=13.13 liquidity=5280775.5 spike=0.87
 - ZMID.CA: score=3.05 buy_ready=False sector_rank=14 price=7.41 support=7.3 resistance=7.93 source=Yahoo Finance history + Mubasher delayed current trading data as_of=01:29 PM market time freshness=DELAYED_CURRENT_UNALIGNED RSI=50.0 liquidity=78149880.0 spike=0.45
 
 ## Backtesting Lite
