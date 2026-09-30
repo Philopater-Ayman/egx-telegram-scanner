@@ -1,10 +1,10 @@
 # Telegram-First EGX Scanner Report
 
-Scan phase: Post-close tomorrow tickets
-Generated UTC: 2026-09-30T18:05:44.122664+00:00
-Generated Cairo: 2026-09-30 21:05
-Run timing: target 15:30 Cairo | generated Cairo 2026-09-30 21:05 | cron 30 12 * * 0-4
-Trigger: scheduled cron=30 12 * * 0-4 mapped to post_close; Cairo now 2026-09-30 21:02
+Scan phase: Evening tomorrow plan
+Generated UTC: 2026-09-30T21:00:11.347367+00:00
+Generated Cairo: 2026-10-01 00:00
+Run timing: target 19:30 Cairo | generated Cairo 2026-10-01 00:00 | cron 30 16 * * 0-4
+Trigger: scheduled cron=30 16 * * 0-4 mapped to evening_plan; Cairo now 2026-09-30 23:53
 
 ## Control Center
 - Action tickets: 0 prioritized signal(s)
@@ -33,12 +33,11 @@ Trigger: scheduled cron=30 12 * * 0-4 mapped to post_close; Cairo now 2026-09-30
 ## AI Narrative
 - Provider: OpenRouter OK
 - Model: nvidia/nemotron-3-super-120b-a12b:free
-- Summary: EGX30 and EGX70 are both in a bearish regime with weak breadth (sector breadth 0%), triggering a defensive risk mode that blocks new buys; the scanner therefore prioritizes tickets as HOLD despite some showing bullish watch outlooks.
-- Top tickets (BINV.CA, CCAP.CA, ETEL.CA, etc.) rank high on scanner scores but remain HOLD because the market regime is bearish and risk mode is DEFENSIVE_NO_NEW_BUY.
-- Liquidity regimes vary: BINV.CA shows an accumulation spike, while most others are tradeable with cooling liquidity spikes, suggesting limited short‑term buying pressure.
-- Sector exposure is concentrated in leading groups (Investment Holding, Telecommunications, Energy & Petrochemicals); these sectors have mixed above‑MA20/MA50 percentages, indicating uneven strength.
-- Support/resistance distances show tickets trading 8‑22% below 20‑day support and 3‑22% below resistance, leaving room for a bounce but also room for further decline if bearish pressure persists.
-- Outlook tags are mostly BULLISH_WATCH or CONSTRUCTIVE with high outlook scores, yet uncertainty remains due to weak overall market breadth, low sector breadth, and the defensive risk mode that could reverse any short‑ter
+- Summary: EGX30 and EGX70 are both in a bearish regime with weak breadth (sector breadth 0.0%), prompting a defensive risk mode that blocks new buys; the scanner still highlights a few tickets with high rank scores and bullish‑watch outlooks due to accumulation spikes or tradeable liquidity, but their upside is constrained by the overall market weakness.
+- Prioritized tickets (BINV.CA, CCAP.CA, ETEL.CA, etc.) show the highest rank scores and a BULLISH_WATCH outlook, supported by accumulation spikes or tradeable liquidity regimes, indicating short‑term buying interest despi
+- Liquidity varies: BINV.CA is in ACCUMULATION_SPIKE, while most others are TRADEABLE with cooling liquidity spikes; support/resistance distances suggest limited room to move before hitting nearby resistance levels.
+- Sector breadth is 0.0% and leading sectors are Investment Holding, Telecommunications, and Energy & Petrochemicals, yet EGX30/EGX70 remain bearish with weak MA20/MA50 breadth, shifting the risk mode to DEFENSIVE_NO_NEW_B
+- Given low confidence scores, bearish median returns, and mixed technical signals, the next 1‑3 days remain uncertain; any potential upside is likely capped by the defensive market regime and cooling liquidity.
 
 ## Top Liquidity Spikes
 - BIOC.CA: spike=4.58 liquidity=275407136.0 outlook=WEAK_OR_RISKY score=0 buy_ready=False
@@ -101,7 +100,7 @@ Trigger: scheduled cron=30 12 * * 0-4 mapped to post_close; Cairo now 2026-09-30
 - AMER.CA: score=7.4 buy_ready=False sector_rank=17 price=4.21 support=4.21 resistance=5.97 source=Yahoo Finance history + Mubasher delayed current trading data as_of=01:29 PM market time freshness=DELAYED_CURRENT RSI=26.15 liquidity=38108308.0 spike=0.97
 - AMES.CA: score=8.4 buy_ready=False sector_rank=16 price=45.0 support=40.15 resistance=104.49 source=Yahoo Finance history + Mubasher delayed current trading data as_of=01:29 PM market time freshness=DELAYED_CURRENT RSI=19.37 liquidity=93878896.0 spike=0.36
 - AMIA.CA: score=10.34 buy_ready=False sector_rank=16 price=18.29 support=17.12 resistance=20.4 source=Yahoo Finance history + Mubasher delayed current trading data as_of=01:14 PM market time freshness=DELAYED_CURRENT RSI=45.39 liquidity=4936922.5 spike=0.19
-- AMOC.CA: score=19.82 buy_ready=False sector_rank=3 price=13.3 support=12.18 resistance=14.63 source=Yahoo Finance history + Mubasher delayed current trading data as_of=01:29 PM market time freshness=DELAYED_CURRENT RSI=39.17 liquidity=75743312.0 spike=0.51
+- AMOC.CA: score=19.82 buy_ready=False sector_rank=3 price=13.5 support=12.18 resistance=14.63 source=Yahoo Finance as_of=2026-09-28T21:00:00+00:00 freshness=FRESH RSI=39.17 liquidity=92576007.0 spike=0.63
 - APSW.CA: score=-3.19 buy_ready=False sector_rank=16 price=7.93 support=7.81 resistance=8.73 source=Yahoo Finance history + Mubasher delayed current trading data as_of=01:05 PM market time freshness=DELAYED_CURRENT RSI=28.46 liquidity=406406.31 spike=0.58
 - ARAB.CA: score=7.4 buy_ready=False sector_rank=17 price=0.23 support=0.2 resistance=0.27 source=Yahoo Finance history + Mubasher delayed current trading data as_of=01:29 PM market time freshness=DELAYED_CURRENT RSI=25.0 liquidity=47255696.0 spike=0.65
 - ARCC.CA: score=7.4 buy_ready=False sector_rank=21 price=62.63 support=60.01 resistance=81.85 source=Yahoo Finance history + Mubasher delayed current trading data as_of=01:29 PM market time freshness=DELAYED_CURRENT RSI=13.38 liquidity=20644582.0 spike=0.85
