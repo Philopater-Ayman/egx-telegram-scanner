@@ -1,10 +1,10 @@
 # Telegram-First EGX Scanner Report
 
-Scan phase: Intraday liquidity update
-Generated UTC: 2026-09-30T14:33:37.656618+00:00
-Generated Cairo: 2026-09-30 17:33
-Run timing: target 11:00 Cairo | generated Cairo 2026-09-30 17:33 | cron 0 8 * * 0-4
-Trigger: scheduled cron=0 8 * * 0-4 mapped to intraday; Cairo now 2026-09-30 17:30
+Scan phase: Post-close tomorrow tickets
+Generated UTC: 2026-09-30T18:05:44.122664+00:00
+Generated Cairo: 2026-09-30 21:05
+Run timing: target 15:30 Cairo | generated Cairo 2026-09-30 21:05 | cron 30 12 * * 0-4
+Trigger: scheduled cron=30 12 * * 0-4 mapped to post_close; Cairo now 2026-09-30 21:02
 
 ## Control Center
 - Action tickets: 0 prioritized signal(s)
@@ -33,11 +33,12 @@ Trigger: scheduled cron=0 8 * * 0-4 mapped to intraday; Cairo now 2026-09-30 17:
 ## AI Narrative
 - Provider: OpenRouter OK
 - Model: nvidia/nemotron-3-super-120b-a12b:free
-- Summary: Scanner flagged HOLD across all tickets because EGX30 and EGX70 are bearish with weak breadth, shifting risk mode to defensive, so no new buys are allowed despite some bullish‑watch outliers.
-- Top‑ranked tickets (BINV.CA, CCAP.CA, ETEL.CA) show bullish watch outlooks but sit in leading sectors (Investment Holding, Telecommunications) with mixed liquidity signals—accumulation spike for BINV.CA, cooling spikes f
-- Liquidity, support and resistance levels suggest limited near‑term upside: BINV.CA’s support ~21% below and resistance ~22% above, CCAP.CA’s support 13.5% below/resistance 10% above, ETEL.CA’s tight resistance just 3.2% 
-- EGX30 and EGX70 both bearish (<10% above MA20, negative median 5‑day returns) and sector breadth at 0% trigger DEFENSIVE_NO_NEW_BUY risk mode, overriding individual bullish watches and adding uncertainty to the 1‑3‑day o
-- Extended momentum, cooling liquidity in many names, and weak market breadth raise the risk of reversal, so the short‑term outlook remains mixed with potential for pull‑backs despite the bullish watch scores.
+- Summary: EGX30 and EGX70 are both in a bearish regime with weak breadth (sector breadth 0%), triggering a defensive risk mode that blocks new buys; the scanner therefore prioritizes tickets as HOLD despite some showing bullish watch outlooks.
+- Top tickets (BINV.CA, CCAP.CA, ETEL.CA, etc.) rank high on scanner scores but remain HOLD because the market regime is bearish and risk mode is DEFENSIVE_NO_NEW_BUY.
+- Liquidity regimes vary: BINV.CA shows an accumulation spike, while most others are tradeable with cooling liquidity spikes, suggesting limited short‑term buying pressure.
+- Sector exposure is concentrated in leading groups (Investment Holding, Telecommunications, Energy & Petrochemicals); these sectors have mixed above‑MA20/MA50 percentages, indicating uneven strength.
+- Support/resistance distances show tickets trading 8‑22% below 20‑day support and 3‑22% below resistance, leaving room for a bounce but also room for further decline if bearish pressure persists.
+- Outlook tags are mostly BULLISH_WATCH or CONSTRUCTIVE with high outlook scores, yet uncertainty remains due to weak overall market breadth, low sector breadth, and the defensive risk mode that could reverse any short‑ter
 
 ## Top Liquidity Spikes
 - BIOC.CA: spike=4.58 liquidity=275407136.0 outlook=WEAK_OR_RISKY score=0 buy_ready=False
