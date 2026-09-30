@@ -1,10 +1,10 @@
 # Telegram-First EGX Scanner Report
 
-Scan phase: Open liquidity confirmation
-Generated UTC: 2026-09-30T12:31:12.731198+00:00
-Generated Cairo: 2026-09-30 15:31
-Run timing: target 09:15 Cairo | generated Cairo 2026-09-30 15:31 | cron 15 6 * * 0-4
-Trigger: scheduled cron=15 6 * * 0-4 mapped to open_confirm; Cairo now 2026-09-30 15:28
+Scan phase: Intraday liquidity update
+Generated UTC: 2026-09-30T14:33:37.656618+00:00
+Generated Cairo: 2026-09-30 17:33
+Run timing: target 11:00 Cairo | generated Cairo 2026-09-30 17:33 | cron 0 8 * * 0-4
+Trigger: scheduled cron=0 8 * * 0-4 mapped to intraday; Cairo now 2026-09-30 17:30
 
 ## Control Center
 - Action tickets: 0 prioritized signal(s)
@@ -33,11 +33,11 @@ Trigger: scheduled cron=15 6 * * 0-4 mapped to open_confirm; Cairo now 2026-09-3
 ## AI Narrative
 - Provider: OpenRouter OK
 - Model: nvidia/nemotron-3-super-120b-a12b:free
-- Summary: EGX30 and EGX70 are bearish with weak breadth, putting the market in defensive mode; the scanner highlighted a few stocks with bullish‑watch outlooks that show relative strength, liquidity conditions, and proximity to key support/resistance levels for the next 1‑3 days.
-- BINV.CA shows the highest liquidity spike (1.96) and a bullish‑watch outlook, but its price is ~21% above 20‑day support and momentum is extended, limiting near‑term upside.
-- CCAP.CA trades with strong absolute liquidity (~596M) yet a cooling spike (0.73); it sits ~13% above support and ~10% below resistance, offering modest room before hitting resistance.
-- ETEL.CA has solid liquidity and a liquidity spike of 1.38, bullish‑watch outlook, with price just 3% below 20‑day resistance, indicating a tight range and potential breakout if momentum holds.
-- Sector breadth is zero; leading sectors (Investment Holding, Telecommunications, Energy & Petrochemicals) display mixed returns, reinforcing the defensive regime and urging caution despite individual bullish watches.
+- Summary: Scanner flagged HOLD across all tickets because EGX30 and EGX70 are bearish with weak breadth, shifting risk mode to defensive, so no new buys are allowed despite some bullish‑watch outliers.
+- Top‑ranked tickets (BINV.CA, CCAP.CA, ETEL.CA) show bullish watch outlooks but sit in leading sectors (Investment Holding, Telecommunications) with mixed liquidity signals—accumulation spike for BINV.CA, cooling spikes f
+- Liquidity, support and resistance levels suggest limited near‑term upside: BINV.CA’s support ~21% below and resistance ~22% above, CCAP.CA’s support 13.5% below/resistance 10% above, ETEL.CA’s tight resistance just 3.2% 
+- EGX30 and EGX70 both bearish (<10% above MA20, negative median 5‑day returns) and sector breadth at 0% trigger DEFENSIVE_NO_NEW_BUY risk mode, overriding individual bullish watches and adding uncertainty to the 1‑3‑day o
+- Extended momentum, cooling liquidity in many names, and weak market breadth raise the risk of reversal, so the short‑term outlook remains mixed with potential for pull‑backs despite the bullish watch scores.
 
 ## Top Liquidity Spikes
 - BIOC.CA: spike=4.58 liquidity=275407136.0 outlook=WEAK_OR_RISKY score=0 buy_ready=False
