@@ -1,24 +1,24 @@
 # Provider Status
 
-Generated UTC: 2026-09-30T11:23:39.561887+00:00
-Generated Cairo: 2026-09-30 14:23
-- Scan phase: Pre-market risk check
-- Run timing: target 08:45 Cairo | generated Cairo 2026-09-30 14:23 | cron 45 5 * * 0-4
-- Trigger: scheduled cron=45 5 * * 0-4 mapped to pre_market; Cairo now 2026-09-30 14:20
+Generated UTC: 2026-09-30T12:31:14.664472+00:00
+Generated Cairo: 2026-09-30 15:31
+- Scan phase: Open liquidity confirmation
+- Run timing: target 09:15 Cairo | generated Cairo 2026-09-30 15:31 | cron 15 6 * * 0-4
+- Trigger: scheduled cron=15 6 * * 0-4 mapped to open_confirm; Cairo now 2026-09-30 15:28
 
 - Macro source: Mubasher EGX market page (delayed public data)
 - Macro freshness: DELAYED
 - Macro trend: Bearish
 - Market regime: EGX30 BEARISH / EGX70 BEARISH / sector breadth 0.0% / risk mode DEFENSIVE_NO_NEW_BUY
-- Market data: 176/187 tickers have tradeable current/delayed price data
-- Mubasher delayed current rows used: 179/187
-- Current/Yahoo technical mismatches blocked: 11/187
-- DirectFN public table health only, not trusted for action tickets: 253 rows | as_of=2026-09-30T11:20:51.341371+00:00 | error=none
+- Market data: 168/187 tickers have tradeable current/delayed price data
+- Mubasher delayed current rows used: 180/187
+- Current/Yahoo technical mismatches blocked: 19/187
+- DirectFN public table health only, not trusted for action tickets: 253 rows | as_of=2026-09-30T12:28:14.359481+00:00 | error=none
 - Data quality issues: 3
 - Evidence sources found: 6
 - AI narrative: OpenRouter OK (nvidia/nemotron-3-super-120b-a12b:free)
 - Telegram sent on latest run: True
-- Latest ticket id(s): 20260930T112339Z_HOLD_NONE
+- Latest ticket id(s): 20260930T123114Z_HOLD_NONE
 - Latest history write(s): /home/runner/work/egx-telegram-scanner/egx-telegram-scanner/trade_history.csv
 
 ## Warnings
