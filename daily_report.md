@@ -1,10 +1,10 @@
 # Telegram-First EGX Scanner Report
 
-Scan phase: Pre-market risk check
-Generated UTC: 2026-10-01T11:50:14.434846+00:00
-Generated Cairo: 2026-10-01 14:50
-Run timing: target 08:45 Cairo | generated Cairo 2026-10-01 14:50 | cron 45 5 * * 0-4
-Trigger: scheduled cron=45 5 * * 0-4 mapped to pre_market; Cairo now 2026-10-01 14:47
+Scan phase: Open liquidity confirmation
+Generated UTC: 2026-10-01T13:08:34.506716+00:00
+Generated Cairo: 2026-10-01 16:08
+Run timing: target 09:15 Cairo | generated Cairo 2026-10-01 16:08 | cron 15 6 * * 0-4
+Trigger: scheduled cron=15 6 * * 0-4 mapped to open_confirm; Cairo now 2026-10-01 16:05
 
 ## Control Center
 - Action tickets: 0 prioritized signal(s)
@@ -33,11 +33,7 @@ Trigger: scheduled cron=45 5 * * 0-4 mapped to pre_market; Cairo now 2026-10-01 
 ## AI Narrative
 - Provider: OpenRouter OK
 - Model: nvidia/nemotron-3-super-120b-a12b:free
-- Summary: EGX30 and EGX70 are bearish with defensive risk mode; scanner flags a few stocks with bullish watch outlook and improving liquidity despite weak breadth.
-- GBCO.CA shows accumulation‑spike liquidity, sits near 20‑day resistance (2.66% away) in Automotive & Distribution, outlook BULLISH_WATCH.
-- KABO.CA and ACGC.CA (Textiles) have tradeable liquidity, RSI ~48‑50, support ~15% below, resistance ~10% away, outlook BULLISH_WATCH.
-- ORWE.CA liquidity cooling, RSI low, near support (6.8%) and resistance (5.9%), outlook BULLISH_WATCH but sector breadth remains thin.
-- Overall sector breadth is only 4.76% and EGX30/EGX70 below MA20/MA50, keeping risk mode DEFENSIVE_NO_NEW_BUY; any near‑term upside remains uncertain.
+- Summary: 
 
 ## Top Liquidity Spikes
 - BIOC.CA: spike=5.51 liquidity=390132896.0 outlook=WEAK_OR_RISKY score=0 buy_ready=False
