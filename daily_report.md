@@ -1,10 +1,10 @@
 # Telegram-First EGX Scanner Report
 
-Scan phase: Open liquidity confirmation
-Generated UTC: 2026-10-04T12:19:18.418983+00:00
-Generated Cairo: 2026-10-04 15:19
-Run timing: target 09:15 Cairo | generated Cairo 2026-10-04 15:19 | cron 15 6 * * 0-4
-Trigger: scheduled cron=15 6 * * 0-4 mapped to open_confirm; Cairo now 2026-10-04 15:15
+Scan phase: Intraday liquidity update
+Generated UTC: 2026-10-04T13:40:34.855291+00:00
+Generated Cairo: 2026-10-04 16:40
+Run timing: target 11:00 Cairo | generated Cairo 2026-10-04 16:40 | cron 0 8 * * 0-4
+Trigger: scheduled cron=0 8 * * 0-4 mapped to intraday; Cairo now 2026-10-04 16:36
 
 ## Control Center
 - Action tickets: 0 prioritized signal(s)
@@ -33,11 +33,7 @@ Trigger: scheduled cron=15 6 * * 0-4 mapped to open_confirm; Cairo now 2026-10-0
 ## AI Narrative
 - Provider: OpenRouter OK
 - Model: nvidia/nemotron-3-super-120b-a12b:free
-- Summary: EGX30 and EGX70 are bearish with weak breadth (sector breadth 23.8%), risk mode is DEFENSIVE_NO_NEW_BUY, so the scanner flags accumulation spikes in a few tickers but keeps all positions at HOLD due to uncertain short‑term outlook.
-- Liquidity spikes (ACCUMULATION_SPIKE) in ALCN.CA, BIOC.CA, EFIH.CA, FWRY.CA indicate short‑term buying interest, yet prices are near or above resistance, limiting upside in the next 1‑3 days.
-- Sector leadership is narrow—only Fintech & Payments, Energy & Petrochemicals, and Education show strength; most tickers lie in non‑leading sectors, reducing conviction for sustained moves.
-- Support/resistance distances show many stocks trading close to resistance (e.g., EFIH.CA +0.13%, FWRY.CA +3.56%) or with modest support gaps, suggesting limited room for upside before a pull‑back.
-- The bearish EGX30/EGX70 regime forces a DEFENSIVE_NO_NEW_BUY risk mode, adding uncertainty that any bullish watch could reverse quickly.
+- Summary: EGX30 and EGX70 remain bearish with weak breadth (23.8% sector participation) and a defensive risk mode that blocks new buys.
 
 ## Top Liquidity Spikes
 - MCQE.CA: spike=6.93 liquidity=146597552.0 outlook=WEAK_OR_RISKY score=0 buy_ready=False
