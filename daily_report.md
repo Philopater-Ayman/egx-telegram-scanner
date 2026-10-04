@@ -1,10 +1,10 @@
 # Telegram-First EGX Scanner Report
 
-Scan phase: Post-close tomorrow tickets
-Generated UTC: 2026-10-04T16:58:55.736473+00:00
-Generated Cairo: 2026-10-04 19:58
-Run timing: target 15:30 Cairo | generated Cairo 2026-10-04 19:58 | cron 30 12 * * 0-4
-Trigger: scheduled cron=30 12 * * 0-4 mapped to post_close; Cairo now 2026-10-04 19:55
+Scan phase: Evening tomorrow plan
+Generated UTC: 2026-10-04T19:46:59.170411+00:00
+Generated Cairo: 2026-10-04 22:46
+Run timing: target 19:30 Cairo | generated Cairo 2026-10-04 22:46 | cron 30 16 * * 0-4
+Trigger: scheduled cron=30 16 * * 0-4 mapped to evening_plan; Cairo now 2026-10-04 22:43
 
 ## Control Center
 - Action tickets: 0 prioritized signal(s)
@@ -33,11 +33,11 @@ Trigger: scheduled cron=30 12 * * 0-4 mapped to post_close; Cairo now 2026-10-04
 ## AI Narrative
 - Provider: OpenRouter OK
 - Model: nvidia/nemotron-3-super-120b-a12b:free
-- Summary: EGX30 and EGX70 are BEARISH with low sector breadth (23.8%); risk mode is DEFENSIVE_NO_NEW_BUY, so the scanner flags accumulation‑spike stocks with bullish watch outlook but keeps them as HOLD.
-- Liquidity: accumulation spikes on ALCN.CA, BIOC.CA, EFIH.CA, FWRY.CA indicate short‑term inflows, yet prices sit close to resistance (support‑distance 9‑18%).
-- Sector tilt: leading sectors are Fintech & Payments, Energy & Petrochemicals, Education – most show above‑MA20 strength despite overall bearish breadth.
-- Outlook: each ticket is marked BULLISH_WATCH (outlook scores 73‑100) suggesting upside potential, but buy_ready stays false because EGX30/EGX70 trend is BEARISH and risk mode is DEFENSIVE_NO_NEW_BUY.
-- Uncertainty: confidence is LOW, median 5‑day index returns are negative, and liquidity spikes may reverse; expect range‑bound or choppy action over the next 1‑3 days.
+- Summary: EGX30 and EGX70 are BEARISH with weak breadth (23.8%); risk mode is DEFENSIVE_NO_NEW_BUY, so the scanner flags all tickets as HOLD despite individual bullish watch signals.
+- Prioritized tickets show high outlook scores (73‑100) and recent liquidity spikes, concentrated in Fintech & Payments, Energy & Petrochemicals, and Education sectors.
+- Liquidity regimes are mostly ACCUMULATION_SPIKE or TRADEABLE, but prices sit near or above 20‑day resistance with limited upside distance, indicating short‑term pressure.
+- Broad market regime remains bearish (below MA20/MA50) and sector breadth is low, shifting risk mode to defensive and overriding individual bullish cues.
+- Uncertainty persists: outlook is a watch, not a confirmed breakout, and liquidity could reverse if bearish pressure continues.
 
 ## Top Liquidity Spikes
 - MCQE.CA: spike=6.93 liquidity=146597552.0 outlook=WEAK_OR_RISKY score=0 buy_ready=False
