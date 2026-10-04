@@ -1,10 +1,10 @@
 # Telegram-First EGX Scanner Report
 
-Scan phase: Intraday liquidity update
-Generated UTC: 2026-10-04T13:40:34.855291+00:00
-Generated Cairo: 2026-10-04 16:40
-Run timing: target 11:00 Cairo | generated Cairo 2026-10-04 16:40 | cron 0 8 * * 0-4
-Trigger: scheduled cron=0 8 * * 0-4 mapped to intraday; Cairo now 2026-10-04 16:36
+Scan phase: Post-close tomorrow tickets
+Generated UTC: 2026-10-04T16:58:55.736473+00:00
+Generated Cairo: 2026-10-04 19:58
+Run timing: target 15:30 Cairo | generated Cairo 2026-10-04 19:58 | cron 30 12 * * 0-4
+Trigger: scheduled cron=30 12 * * 0-4 mapped to post_close; Cairo now 2026-10-04 19:55
 
 ## Control Center
 - Action tickets: 0 prioritized signal(s)
@@ -33,7 +33,11 @@ Trigger: scheduled cron=0 8 * * 0-4 mapped to intraday; Cairo now 2026-10-04 16:
 ## AI Narrative
 - Provider: OpenRouter OK
 - Model: nvidia/nemotron-3-super-120b-a12b:free
-- Summary: EGX30 and EGX70 remain bearish with weak breadth (23.8% sector participation) and a defensive risk mode that blocks new buys.
+- Summary: EGX30 and EGX70 are BEARISH with low sector breadth (23.8%); risk mode is DEFENSIVE_NO_NEW_BUY, so the scanner flags accumulation‑spike stocks with bullish watch outlook but keeps them as HOLD.
+- Liquidity: accumulation spikes on ALCN.CA, BIOC.CA, EFIH.CA, FWRY.CA indicate short‑term inflows, yet prices sit close to resistance (support‑distance 9‑18%).
+- Sector tilt: leading sectors are Fintech & Payments, Energy & Petrochemicals, Education – most show above‑MA20 strength despite overall bearish breadth.
+- Outlook: each ticket is marked BULLISH_WATCH (outlook scores 73‑100) suggesting upside potential, but buy_ready stays false because EGX30/EGX70 trend is BEARISH and risk mode is DEFENSIVE_NO_NEW_BUY.
+- Uncertainty: confidence is LOW, median 5‑day index returns are negative, and liquidity spikes may reverse; expect range‑bound or choppy action over the next 1‑3 days.
 
 ## Top Liquidity Spikes
 - MCQE.CA: spike=6.93 liquidity=146597552.0 outlook=WEAK_OR_RISKY score=0 buy_ready=False
