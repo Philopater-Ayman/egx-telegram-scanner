@@ -1,10 +1,10 @@
 # Telegram-First EGX Scanner Report
 
-Scan phase: Open liquidity confirmation
-Generated UTC: 2026-10-05T14:32:05.140416+00:00
-Generated Cairo: 2026-10-05 17:32
-Run timing: target 09:15 Cairo | generated Cairo 2026-10-05 17:32 | cron 15 6 * * 0-4
-Trigger: scheduled cron=15 6 * * 0-4 mapped to open_confirm; Cairo now 2026-10-05 17:28
+Scan phase: Intraday liquidity update
+Generated UTC: 2026-10-05T16:46:16.198697+00:00
+Generated Cairo: 2026-10-05 19:46
+Run timing: target 11:00 Cairo | generated Cairo 2026-10-05 19:46 | cron 0 8 * * 0-4
+Trigger: scheduled cron=0 8 * * 0-4 mapped to intraday; Cairo now 2026-10-05 19:42
 
 ## Control Center
 - Action tickets: 0 prioritized signal(s)
@@ -33,11 +33,11 @@ Trigger: scheduled cron=15 6 * * 0-4 mapped to open_confirm; Cairo now 2026-10-0
 ## AI Narrative
 - Provider: OpenRouter OK
 - Model: nvidia/nemotron-3-super-120b-a12b:free
-- Summary: EGX30 and EGX70 are bearish with weak breadth; sector breadth is 57% and risk mode is DEFENSIVE_NO_NEW_BUY, so the scanner flags accumulation‑spike tickets with bullish watch outlook but maintains a HOLD stance.
-- Tickets HRHO.CA, AJWA.CA, EFIH.CA show ACCUMULATION_SPIKE liquidity (spikes 1.8‑6.2×) and BULLISH_WATCH outlook (scores 75‑88), indicating short‑term buying interest despite weak sector leadership.
-- Support lies 8‑24% below current price while resistance is within 0‑4% above, suggesting limited upside; RSI ranges 40‑78, with some stocks (ETEL.CA, TALM.CA) showing overheated readings.
-- Sector breadth is moderate (57%) and leading sectors are Telecommunications, Education, Investment Holding, yet most flagged tickets reside in non‑leading sectors, lowering conviction.
-- The overall EGX30/EGX70 bearish trend and DEFENSIVE_NO_NEW_BUY risk mode outweigh the bullish watch signals, so the scanner keeps a HOLD stance with low confidence and acknowledges uncertainty for the next 1‑3 days.
+- Summary: EGX30 and EGX70 are bearish with weak breadth; sector breadth 57% and risk mode defensive, so the scanner flags accumulation spikes but maintains a HOLD stance.
+- Tickets were selected for high outlook scores (>70) and liquidity‑spike patterns (accumulation) despite the bearish regime, indicating short‑term buying interest that is not yet actionable.
+- Liquidity spikes (e.g., HRHO.CA 4.65×, AJWA.CA 6.16×) suggest institutional accumulation, but prices sit close to resistance or far above support, limiting near‑term upside.
+- Leading sectors (Telecommunications, Education, Investment Holding) show better MA20/MA50 alignment, yet overall sector breadth remains moderate, keeping uncertainty elevated.
+- With EGX30/EGX70 trending bearish and risk mode set to DEFENSIVE_NO_NEW_BUY, the scanner holds all tickets at LOW confidence; bullish watch signals are tentative and could reverse if breadth weakens further.
 
 ## Top Liquidity Spikes
 - MBSC.CA: spike=10.31 liquidity=470803072.0 outlook=WEAK_OR_RISKY score=0 buy_ready=False
