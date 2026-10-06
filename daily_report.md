@@ -1,10 +1,10 @@
 # Telegram-First EGX Scanner Report
 
-Scan phase: Pre-market risk check
-Generated UTC: 2026-10-06T12:16:47.112552+00:00
-Generated Cairo: 2026-10-06 15:16
-Run timing: target 08:45 Cairo | generated Cairo 2026-10-06 15:16 | cron 45 5 * * 0-4
-Trigger: scheduled cron=45 5 * * 0-4 mapped to pre_market; Cairo now 2026-10-06 15:12
+Scan phase: Open liquidity confirmation
+Generated UTC: 2026-10-06T13:17:48.186525+00:00
+Generated Cairo: 2026-10-06 16:17
+Run timing: target 09:15 Cairo | generated Cairo 2026-10-06 16:17 | cron 15 6 * * 0-4
+Trigger: scheduled cron=15 6 * * 0-4 mapped to open_confirm; Cairo now 2026-10-06 16:14
 
 ## Control Center
 - Action tickets: 0 prioritized signal(s)
@@ -33,11 +33,10 @@ Trigger: scheduled cron=45 5 * * 0-4 mapped to pre_market; Cairo now 2026-10-06 
 ## AI Narrative
 - Provider: OpenRouter OK
 - Model: nvidia/nemotron-3-super-120b-a12b:free
-- Summary: EGX30 and EGX70 are bearish with weak breadth (42.86%); risk mode is DEFENSIVE_NO_NEW_BUY, so the scanner holds all tickets despite some showing accumulation spikes and bullish‑watch outlooks.
-- Top tickets (EFIH.CA, HRHO.CA, GBCO.CA) display accumulation‑spike liquidity and bullish‑watch outlook but sit above support with resistance nearby.
-- Liquidity spikes hint at short‑term interest, yet distant support and tight resistance limit upside over the next 1‑3 days.
-- Sector breadth is low at 42.86%; leading sectors are telecom, fintech, education, while most stocks stay below MA20/MA50, reinforcing a defensive stance.
-- Bearish EGX30/EGX70 trends and weak breadth shift risk mode to DEFENSIVE_NO_NEW_BUY, adding uncertainty to any new long exposure.
+- Summary: EGX30 and EGX70 are bearish with weak breadth; sector breadth 42.86% keeps risk mode defensive, so the scanner holds all tickets despite spotting accumulation‑spike liquidity and bullish‑watch outlook in a few names.
+- Accumulation‑spike liquidity in EFIH.CA, HRHO.CA, GBCO.CA etc hints at short‑term buying interest even while the indices trend bearish.
+- Most flagged tickets show a bullish‑watch outlook but sit near or above 20‑day resistance (e.g., EFIH.CA –2%, EXPA.CA +4.7%) with support 5‑22% away, limiting near‑term upside.
+- Sector breadth is low (42.86%); leading sectors are Telecom, Fintech & Payments, Education, yet many highlighted stocks belong to non‑leading sectors, reducing conviction.
 
 ## Top Liquidity Spikes
 - DAPH.CA: spike=7.2 liquidity=198143456.0 outlook=WEAK_OR_RISKY score=0 buy_ready=False
