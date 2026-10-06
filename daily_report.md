@@ -1,10 +1,10 @@
 # Telegram-First EGX Scanner Report
 
-Scan phase: Intraday liquidity update
-Generated UTC: 2026-10-06T14:42:58.332701+00:00
-Generated Cairo: 2026-10-06 17:42
-Run timing: target 11:00 Cairo | generated Cairo 2026-10-06 17:42 | cron 0 8 * * 0-4
-Trigger: scheduled cron=0 8 * * 0-4 mapped to intraday; Cairo now 2026-10-06 17:39
+Scan phase: Post-close tomorrow tickets
+Generated UTC: 2026-10-06T18:33:59.896272+00:00
+Generated Cairo: 2026-10-06 21:33
+Run timing: target 15:30 Cairo | generated Cairo 2026-10-06 21:33 | cron 30 12 * * 0-4
+Trigger: scheduled cron=30 12 * * 0-4 mapped to post_close; Cairo now 2026-10-06 21:30
 
 ## Control Center
 - Action tickets: 0 prioritized signal(s)
@@ -33,12 +33,11 @@ Trigger: scheduled cron=0 8 * * 0-4 mapped to intraday; Cairo now 2026-10-06 17:
 ## AI Narrative
 - Provider: OpenRouter OK
 - Model: nvidia/nemotron-3-super-120b-a12b:free
-- Summary: EGX30 and EGX70 are bearish with weak breadth (42.86% above MA20); risk mode is DEFENSIVE_NO_NEW_BUY, so the scanner maintains HOLD despite spotting accumulation‑spike stocks.
-- Top tickets (EFIH.CA, HRHO.CA, GBCO.CA) show accumulation‑spike liquidity and a BULLISH_WATCH outlook, but trade above 20‑day support with mixed resistance distances.
-- Liquidity spikes range 2.4‑4.3× average, while RSI sits between 55‑61, indicating moderate momentum without overbought extremes.
-- Sector leadership is confined to Telecommunications, Fintech & Payments, and Education; most flagged stocks lie outside these leading sectors, lowering conviction.
-- EGX30/EGX70 bearish trend and defensive risk mode override individual bullish signals, keeping the scanner in HOLD with low confidence.
-- Uncertainty persists due to sub‑50% MA20 breadth and proximity to resistance, so any near‑term move could reverse quickly.
+- Summary: EGX30 and EGX70 are bearish with weak breadth (42.86% sector participation), keeping risk mode defensive; the scanner therefore highlights only watch‑list tickets that show accumulation spikes and bullish‑watch outlooks despite the overall downtrend.
+- Selected tickets display strong liquidity spikes (accumulation) and high sector ranks, signaling short‑term buying interest even though the broader market is bearish.
+- Many are near or above their 20‑day support with resistance close by, and their bullish‑watch outlook suggests a possible 1‑3‑day bounce if momentum holds.
+- The bearish EGX30/EGX70 regime forces the risk mode to DEFENSIVE_NO_NEW_BUY, blocking new entries and emphasizing caution.
+- Uncertainty remains due to weakening breadth, cooling liquidity in some sectors, and mixed RSI readings, so the tickets stay on watch‑list only.
 
 ## Top Liquidity Spikes
 - DAPH.CA: spike=7.2 liquidity=198143456.0 outlook=WEAK_OR_RISKY score=0 buy_ready=False
