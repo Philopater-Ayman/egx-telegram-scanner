@@ -1,10 +1,10 @@
 # Telegram-First EGX Scanner Report
 
-Scan phase: Pre-market risk check
-Generated UTC: 2026-10-07T12:02:49.151122+00:00
-Generated Cairo: 2026-10-07 15:02
-Run timing: target 08:45 Cairo | generated Cairo 2026-10-07 15:02 | cron 45 5 * * 0-4
-Trigger: scheduled cron=45 5 * * 0-4 mapped to pre_market; Cairo now 2026-10-07 14:59
+Scan phase: Open liquidity confirmation
+Generated UTC: 2026-10-07T13:18:13.130453+00:00
+Generated Cairo: 2026-10-07 16:18
+Run timing: target 09:15 Cairo | generated Cairo 2026-10-07 16:18 | cron 15 6 * * 0-4
+Trigger: scheduled cron=15 6 * * 0-4 mapped to open_confirm; Cairo now 2026-10-07 16:14
 
 ## Control Center
 - Action tickets: 0 prioritized signal(s)
@@ -33,11 +33,11 @@ Trigger: scheduled cron=45 5 * * 0-4 mapped to pre_market; Cairo now 2026-10-07 
 ## AI Narrative
 - Provider: OpenRouter OK
 - Model: nvidia/nemotron-3-super-120b-a12b:free
-- Summary: EGX30 and EGX70 are BEARISH with weak breadth (sector breadth 52.38%); scanner flags accumulation spikes in a few stocks but defensive risk mode blocks new buys.
-- FWRY.CA & EFIH.CA show strong liquidity spikes (3.6×, 2.0×) and sit near 20‑day resistance, indicating a short‑term upside watch despite the bearish index backdrop.
-- LCSW.CA, MBSC.CA, ARCC.CA (Building Materials) have trade‑able liquidity and are above support, yet sector breadth is mixed and MA20/MA50 stays below 50%.
-- Overall EGX30/EGX70 remain below MA20/MA50 (21%/37% and 33%/36% above), keeping risk mode DEFENSIVE_NO_NEW_BUY, so the scanner holds all tickets.
-- Uncertainty: a shift in index breadth or a liquidity reversal could alter outlook; watch for MA crosses and sector rotation over the next 1‑3 days.
+- Summary: EGX30 and EGX70 are bearish with weak breadth (~52%); risk mode is defensive, blocking new buys. The scanner highlights top tickets in leading sectors that show accumulation spikes and a bullish‑watch outlook, but their proximity to resistance or extended distance from support introduces uncertainty for the next 1‑3 days.
+- FWRY.CA & EFIH.CA (Fintech & Payments) have accumulation spikes and sit near 20‑day resistance, limiting near‑term upside unless resistance breaks.
+- LCSW.CA, MBSC.CA, ARCC.CA (Building Materials) trade with solid liquidity and prices well above support, suggesting limited downside but also extended positioning.
+- Sector breadth just over half and leading sectors (Fintech, Telecom, Building Materials) provide selective strength while the overall EGX trend stays bearish, keeping risk defensive.
+- Bullish‑watch outlook combined with resistance proximity or extended momentum creates uncertainty for the next 1‑3 days.
 
 ## Top Liquidity Spikes
 - RAKT.CA: spike=4.35 liquidity=1328021.18 outlook=BULLISH_WATCH score=71.97 buy_ready=False
