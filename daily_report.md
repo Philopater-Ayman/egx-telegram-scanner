@@ -1,10 +1,10 @@
 # Telegram-First EGX Scanner Report
 
-Scan phase: Pre-market risk check
-Generated UTC: 2026-10-08T12:16:31.062456+00:00
-Generated Cairo: 2026-10-08 15:16
-Run timing: target 08:45 Cairo | generated Cairo 2026-10-08 15:16 | cron 45 5 * * 0-4
-Trigger: scheduled cron=45 5 * * 0-4 mapped to pre_market; Cairo now 2026-10-08 15:13
+Scan phase: Open liquidity confirmation
+Generated UTC: 2026-10-08T13:24:25.861512+00:00
+Generated Cairo: 2026-10-08 16:24
+Run timing: target 09:15 Cairo | generated Cairo 2026-10-08 16:24 | cron 15 6 * * 0-4
+Trigger: scheduled cron=15 6 * * 0-4 mapped to open_confirm; Cairo now 2026-10-08 16:20
 
 ## Control Center
 - Action tickets: 0 prioritized signal(s)
@@ -14,7 +14,7 @@ Trigger: scheduled cron=45 5 * * 0-4 mapped to pre_market; Cairo now 2026-10-08 
 - Top sector: Fintech & Payments
 
 ## Market Context
-- Market trend: Bullish
+- Market trend: Bearish
 - Source: Mubasher EGX market page (delayed public data)
 - As of: Wednesday, October 07
 - Freshness: DELAYED
@@ -33,10 +33,11 @@ Trigger: scheduled cron=45 5 * * 0-4 mapped to pre_market; Cairo now 2026-10-08 
 ## AI Narrative
 - Provider: OpenRouter OK
 - Model: nvidia/nemotron-3-super-120b-a12b:free
-- Summary: EGX30/EGX70 bearish, sector breadth defensive, risk mode blocks new buys; scanner flags accumulation‑spike stocks near resistance as watchlist holds.
-- Liquidity spikes (ACCUMULATION_SPIKE) in FWRY.CA, EFIH.CA, SIPC.CA show short‑term buying interest but prices sit close to 20‑day resistance, limiting near‑term upside.
-- Sector breadth is low (38.1% above MA20) with only Fintech & Payments, Telecommunications and Education relatively strong; defensive sectors keep the market bias bearish.
-- EGX30 trend BEARISH (21% above MA20) and EGX70 BEARISH (32.5% above MA20) trigger DEFENSIVE_NO_NEW_BUY risk mode, so the scanner only issues HOLD/watchlist signals.
+- Summary: EGX30 and EGX70 are bearish with a defensive risk mode, yet the scanner highlights a few accumulation‑spike stocks in leading sectors as bullish‑watch candidates for the next 1‑3 days.
+- FWRY.CA and EFIH.CA show strong liquidity spikes (3.1× and 1.9× average) and sit near 20‑day resistance, giving a short‑term upside bias despite overall bearish breadth.
+- SIPC.CA and MBSC.CA also display accumulation spikes but are far above support and belong to non‑leading sectors, lowering conviction.
+- Sector breadth is only 38 % above MA20, reinforcing the defensive stance; only Fintech & Payments, Telecommunications and Education show >50 % above MA20/50.
+- Given the EGX30/EGX70 bearish trend and risk mode DEFENSIVE_NO_NEW_BUY, the scanner issues HOLD signals with low confidence, acknowledging that a quick regime shift could alter outlook.
 
 ## Top Liquidity Spikes
 - DEIN.CA: spike=8.57 liquidity=31.05 outlook=WEAK_OR_RISKY score=34.24 buy_ready=False
