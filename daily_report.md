@@ -1,10 +1,10 @@
 # Telegram-First EGX Scanner Report
 
-Scan phase: Open liquidity confirmation
-Generated UTC: 2026-10-11T12:45:45.418940+00:00
-Generated Cairo: 2026-10-11 15:45
-Run timing: target 09:15 Cairo | generated Cairo 2026-10-11 15:45 | cron 15 6 * * 0-4
-Trigger: scheduled cron=15 6 * * 0-4 mapped to open_confirm; Cairo now 2026-10-11 15:42
+Scan phase: Intraday liquidity update
+Generated UTC: 2026-10-11T14:37:35.027756+00:00
+Generated Cairo: 2026-10-11 17:37
+Run timing: target 11:00 Cairo | generated Cairo 2026-10-11 17:37 | cron 0 8 * * 0-4
+Trigger: scheduled cron=0 8 * * 0-4 mapped to intraday; Cairo now 2026-10-11 17:33
 
 ## Control Center
 - Action tickets: 0 prioritized signal(s)
@@ -33,11 +33,9 @@ Trigger: scheduled cron=15 6 * * 0-4 mapped to open_confirm; Cairo now 2026-10-1
 ## AI Narrative
 - Provider: OpenRouter OK
 - Model: nvidia/nemotron-3-super-120b-a12b:free
-- Summary: EGX30 and EGX70 are both BEARISH with weak MA breadth, sector breadth at 23.8%, and risk mode set to DEFENSIVE_NO_NEW_BUY, so the scanner keeps all tickets at HOLD despite some bullish watch signals.
-- Top tickets (EFIH.CA, MBSC.CA, ARCC.CA, etc.) were selected for high outlook scores (>90) and notable liquidity spikes, indicating short‑term accumulation interest.
-- Liquidity regimes show accumulation spikes but support distances are wide (15‑28%) and resistance is near, limiting near‑term upside over the next 1‑3 days.
-- Sector breadth is low; leading sectors (Fintech & Payments, Telecommunications, Building Materials) show mixed returns, reinforcing the defensive market regime.
-- Given the bearish EGX30/EGX70 trend and defensive risk mode, the scanner maintains HOLD on all tickets with low confidence, acknowledging uncertainty from cooling liquidity and extended momentum.
+- Summary: EGX30 and EGX70 are bearish with weak breadth (23.8% above MA20), triggering defensive risk mode that blocks new buys; scanner flags tickets with strong outlook scores and liquidity spikes but holds due to regime uncertainty.
+- Tickets such as EFIH.CA and MBSC.CA show outlook scores above 90 and liquidity spikes, indicating short‑term buying interest despite being far above support.
+- Sector leadership is concentrated in Fintech & Payments and Telecommunications, yet overall sector breadth remains low, limiting follow‑through.
 
 ## Top Liquidity Spikes
 - CFGH.CA: spike=91.23 liquidity=717957.2 outlook=WEAK_OR_RISKY score=5.86 buy_ready=False
