@@ -1,10 +1,10 @@
 # Provider Status
 
-Generated UTC: 2026-10-11T11:38:57.609185+00:00
-Generated Cairo: 2026-10-11 14:38
-- Scan phase: Pre-market risk check
-- Run timing: target 08:45 Cairo | generated Cairo 2026-10-11 14:38 | cron 45 5 * * 0-4
-- Trigger: scheduled cron=45 5 * * 0-4 mapped to pre_market; Cairo now 2026-10-11 14:35
+Generated UTC: 2026-10-11T12:45:47.150350+00:00
+Generated Cairo: 2026-10-11 15:45
+- Scan phase: Open liquidity confirmation
+- Run timing: target 09:15 Cairo | generated Cairo 2026-10-11 15:45 | cron 15 6 * * 0-4
+- Trigger: scheduled cron=15 6 * * 0-4 mapped to open_confirm; Cairo now 2026-10-11 15:42
 
 - Macro source: Mubasher EGX market page (delayed public data)
 - Macro freshness: DELAYED
@@ -13,12 +13,12 @@ Generated Cairo: 2026-10-11 14:38
 - Market data: 173/187 tickers have tradeable current/delayed price data
 - Mubasher delayed current rows used: 181/187
 - Current/Yahoo technical mismatches blocked: 14/187
-- DirectFN public table health only, not trusted for action tickets: 233 rows | as_of=2026-10-11T11:35:05.935227+00:00 | error=none
+- DirectFN public table health only, not trusted for action tickets: 118 rows | as_of=2026-10-11T12:42:18.530680+00:00 | error=none
 - Data quality issues: 3
 - Evidence sources found: 9
 - AI narrative: OpenRouter OK (nvidia/nemotron-3-super-120b-a12b:free)
 - Telegram sent on latest run: True
-- Latest ticket id(s): 20261011T113857Z_HOLD_NONE
+- Latest ticket id(s): 20261011T124547Z_HOLD_NONE
 - Latest history write(s): /home/runner/work/egx-telegram-scanner/egx-telegram-scanner/trade_history.csv
 
 ## Warnings
@@ -31,6 +31,6 @@ Generated Cairo: 2026-10-11 14:38
 - Evidence for ARCC.CA matches the company but appears old; latest detected date is 2025-01-01.
 - Evidence for ARAB.CA matches the company but no source/report date was detected.
 - Evidence rejected for LCSW.CA: source text did not clearly match LCSW.CA / Lecico Egypt.
-- Evidence rejected for ETEL.CA: source text did not clearly match ETEL.CA / Telecom Egypt.
 - Evidence rejected for RUBX.CA: source text did not clearly match RUBX.CA / Rubex International for Plastic and Acrylic Manufacturing.
+- Evidence rejected for ETEL.CA: source text did not clearly match ETEL.CA / Telecom Egypt.
 - Evidence rejected for TALM.CA: source text did not clearly match TALM.CA / Talim Management Services.
