@@ -1,10 +1,10 @@
 # Telegram-First EGX Scanner Report
 
-Scan phase: Pre-market risk check
-Generated UTC: 2026-10-12T13:32:44.391453+00:00
-Generated Cairo: 2026-10-12 16:32
-Run timing: target 08:45 Cairo | generated Cairo 2026-10-12 16:32 | cron 45 5 * * 0-4
-Trigger: scheduled cron=45 5 * * 0-4 mapped to pre_market; Cairo now 2026-10-12 16:29
+Scan phase: Open liquidity confirmation
+Generated UTC: 2026-10-12T15:17:40.615920+00:00
+Generated Cairo: 2026-10-12 18:17
+Run timing: target 09:15 Cairo | generated Cairo 2026-10-12 18:17 | cron 15 6 * * 0-4
+Trigger: scheduled cron=15 6 * * 0-4 mapped to open_confirm; Cairo now 2026-10-12 18:14
 
 ## Control Center
 - Action tickets: 0 prioritized signal(s)
@@ -33,7 +33,11 @@ Trigger: scheduled cron=45 5 * * 0-4 mapped to pre_market; Cairo now 2026-10-12 
 ## AI Narrative
 - Provider: OpenRouter OK
 - Model: nvidia/nemotron-3-super-120b-a12b:free
-- Summary: 
+- Summary: EGX30 and EGX70 are bearish with weak breadth; sector breadth is low at 9.5% and risk mode is defensive (NO_NEW_BUY). The scanner flagged several tickets with high rank scores and a BULLISH_WATCH outlook, but they remain HOLD because the overall market regime overrides individual bullish signals.
+- Tickets were selected for their high rank scores and BULLISH_WATCH outlook, yet buy_ready is false due to the defensive EGX30/EGX70 regime and weak sector breadth.
+- Liquidity varies: most stocks show tradeable regimes but with cooling spikes or accumulation spikes, suggesting limited near‑term inflow and uncertain short‑term momentum.
+- Sector strength lies in Telecommunications and Fintech & Payments; many tickets sit close to resistance or far above support, indicating constrained upside potential over the next 1‑3 days.
+- The bearish EGX30/EGX70 trend shifts risk mode to defensive, overriding individual bullish views; uncertainty remains from mixed liquidity signals and divergent sector performance.
 
 ## Top Liquidity Spikes
 - MENA.CA: spike=8.03 liquidity=10051239.0 outlook=WEAK_OR_RISKY score=0 buy_ready=False
