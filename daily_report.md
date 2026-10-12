@@ -1,10 +1,10 @@
 # Telegram-First EGX Scanner Report
 
-Scan phase: Post-close tomorrow tickets
-Generated UTC: 2026-10-12T21:23:10.868757+00:00
-Generated Cairo: 2026-10-13 00:23
-Run timing: target 15:30 Cairo | generated Cairo 2026-10-13 00:23 | cron 30 12 * * 0-4
-Trigger: scheduled cron=30 12 * * 0-4 mapped to post_close; Cairo now 2026-10-13 00:20
+Scan phase: Evening tomorrow plan
+Generated UTC: 2026-10-12T23:09:22.740292+00:00
+Generated Cairo: 2026-10-13 02:09
+Run timing: target 19:30 Cairo | generated Cairo 2026-10-13 02:09 | cron 30 16 * * 0-4
+Trigger: scheduled cron=30 16 * * 0-4 mapped to evening_plan; Cairo now 2026-10-13 02:05
 
 ## Control Center
 - Action tickets: 0 prioritized signal(s)
@@ -33,11 +33,11 @@ Trigger: scheduled cron=30 12 * * 0-4 mapped to post_close; Cairo now 2026-10-13
 ## AI Narrative
 - Provider: OpenRouter OK
 - Model: nvidia/nemotron-3-super-120b-a12b:free
-- Summary: EGX30 and EGX70 are bearish with sector breadth at 9.5%, triggering a defensive risk mode that blocks new buys; the scanner highlights top tickets with bullish‑watch outlook but holds them due to weak breadth and cooling liquidity.
-- Top tickets (EFIH.CA, ARAB.CA, ETEL.CA) show bullish‑watch outlook and decent liquidity, yet many are far above support or have cooling liquidity, limiting near‑term upside.
-- Sector strength is narrow: Telecommunications leads with 50% above MA20, while most sectors stay below key moving averages, keeping overall breadth low.
-- Support/resistance distances are tight—most stocks sit 5‑25% below 20‑day resistance and 9‑40% above support—suggesting limited price movement over the next 1‑3 days.
-- The bearish EGX30/EGX70 trend and defensive risk mode outweigh individual bullish signals, so the scanner maintains HOLD with low confidence and high uncertainty.
+- Summary: EGX30 and EGX70 remain bearish with low sector breadth, keeping the risk mode defensive and blocking new buys despite several tickets showing bullish watch outlooks.
+- Liquidity is mostly tradeable but cooling; ARAB.CA and AMIA.CA show accumulation spikes, yet the sustainability of these inflows is uncertain.
+- Top tickets sit in leading sectors (Telecom, Fintech & Payments, Investment Holding) that outperform the broader market, providing relative strength.
+- Prices are either close to resistance (small resistance distance) or far above support, limiting near‑term upside and raising pullback risk over the next 1‑3 days.
+- Scanner outlook flags BULLISH_WATCH for most tickets, but the bearish EGX30/EGX70 regime overrides this, adding uncertainty to short‑term direction.
 
 ## Top Liquidity Spikes
 - MENA.CA: spike=8.03 liquidity=10051239.0 outlook=WEAK_OR_RISKY score=0 buy_ready=False
