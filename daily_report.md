@@ -1,10 +1,10 @@
 # Telegram-First EGX Scanner Report
 
-Scan phase: Pre-market risk check
-Generated UTC: 2026-10-13T12:58:54.449406+00:00
-Generated Cairo: 2026-10-13 15:58
-Run timing: target 08:45 Cairo | generated Cairo 2026-10-13 15:58 | cron 45 5 * * 0-4
-Trigger: scheduled cron=45 5 * * 0-4 mapped to pre_market; Cairo now 2026-10-13 15:55
+Scan phase: Open liquidity confirmation
+Generated UTC: 2026-10-13T14:08:36.447356+00:00
+Generated Cairo: 2026-10-13 17:08
+Run timing: target 09:15 Cairo | generated Cairo 2026-10-13 17:08 | cron 15 6 * * 0-4
+Trigger: scheduled cron=15 6 * * 0-4 mapped to open_confirm; Cairo now 2026-10-13 17:04
 
 ## Control Center
 - Action tickets: 0 prioritized signal(s)
@@ -33,11 +33,11 @@ Trigger: scheduled cron=45 5 * * 0-4 mapped to pre_market; Cairo now 2026-10-13 
 ## AI Narrative
 - Provider: OpenRouter OK
 - Model: nvidia/nemotron-3-super-120b-a12b:free
-- Summary: Scanner holds all tickets; EGX30/EGX70 bearish breadth and defensive risk mode block new buys despite a few bullish‑watch signals.
-- EGX30/EGX70 trend BEARISH with <20% of stocks above MA20/MA50 keeps risk mode DEFENSIVE_NO_NEW_BUY.
-- Top picks (ARAB.CA, ETEL.CA, BINV.CA) show high rank scores and liquidity spikes but outlooks are WATCH‑only; support is distant and resistance near, limiting near‑term upside.
-- Sector breadth is narrow at 5%; only Telecommunications shows >50% above MA20, reducing conviction across the market.
-- Uncertainty persists from mixed RSI readings, cooling liquidity in several names, and weak sector leadership.
+- Summary: EGX30 and EGX70 are bearish with thin sector breadth (5%), triggering a defensive risk mode that blocks new buys; the scanner flags a handful of stocks with bullish watch outlooks and liquidity spikes, but they sit near resistance or far above support, limiting near‑term upside.
+- Selected tickets show bullish watch outlooks and accumulation spikes, yet most trade above support with resistance close, capping short‑term gains.
+- Liquidity spikes (e.g., ARAB.CA 1.62×, AJWA.CA 1.98×) hint at interest, but proximity to resistance (ARAB.CA only 3.7% away) or being far above support suggests limited upside in the next 1‑3 days.
+- EGX30 BEARISH (18.75% above MA20) and EGX70 BEARISH (18.18% above MA20) keep risk mode DEFENSIVE_NO_NEW_BUY, so even positively scored names remain HOLD.
+- Uncertainty persists due to weak sector breadth (5%) and mixed liquidity; a clear break above resistance could shift sentiment, but downside pressure remains.
 
 ## Top Liquidity Spikes
 - ASCM.CA: spike=2.35 liquidity=20470022.0 outlook=WEAK_OR_RISKY score=0 buy_ready=False
