@@ -1,10 +1,10 @@
 # Telegram-First EGX Scanner Report
 
-Scan phase: Open liquidity confirmation
-Generated UTC: 2026-10-13T14:08:36.447356+00:00
-Generated Cairo: 2026-10-13 17:08
-Run timing: target 09:15 Cairo | generated Cairo 2026-10-13 17:08 | cron 15 6 * * 0-4
-Trigger: scheduled cron=15 6 * * 0-4 mapped to open_confirm; Cairo now 2026-10-13 17:04
+Scan phase: Intraday liquidity update
+Generated UTC: 2026-10-13T15:33:24.648008+00:00
+Generated Cairo: 2026-10-13 18:33
+Run timing: target 11:00 Cairo | generated Cairo 2026-10-13 18:33 | cron 0 8 * * 0-4
+Trigger: scheduled cron=0 8 * * 0-4 mapped to intraday; Cairo now 2026-10-13 18:29
 
 ## Control Center
 - Action tickets: 0 prioritized signal(s)
@@ -33,11 +33,11 @@ Trigger: scheduled cron=15 6 * * 0-4 mapped to open_confirm; Cairo now 2026-10-1
 ## AI Narrative
 - Provider: OpenRouter OK
 - Model: nvidia/nemotron-3-super-120b-a12b:free
-- Summary: EGX30 and EGX70 are bearish with thin sector breadth (5%), triggering a defensive risk mode that blocks new buys; the scanner flags a handful of stocks with bullish watch outlooks and liquidity spikes, but they sit near resistance or far above support, limiting near‑term upside.
-- Selected tickets show bullish watch outlooks and accumulation spikes, yet most trade above support with resistance close, capping short‑term gains.
-- Liquidity spikes (e.g., ARAB.CA 1.62×, AJWA.CA 1.98×) hint at interest, but proximity to resistance (ARAB.CA only 3.7% away) or being far above support suggests limited upside in the next 1‑3 days.
-- EGX30 BEARISH (18.75% above MA20) and EGX70 BEARISH (18.18% above MA20) keep risk mode DEFENSIVE_NO_NEW_BUY, so even positively scored names remain HOLD.
-- Uncertainty persists due to weak sector breadth (5%) and mixed liquidity; a clear break above resistance could shift sentiment, but downside pressure remains.
+- Summary: EGX30 and EGX70 are bearish with weak breadth (5% sector participation), triggering a DEFENSIVE_NO_NEW_BUY risk mode; the scanner therefore holds all tickets despite some bullish watches.
+- Tickets were prioritized by highest rank_score and bullish_watch outlook, but liquidity regimes (accumulation_spike or tradeable) and sector ranks show limited conviction amid overall market weakness.
+- Liquidity spikes, support/resistance distances, and RSI suggest near‑term pressure: many stocks sit close to resistance with extended momentum, while others are far above support, implying limited upside in the next 1‑3 
+- The bearish EGX30/EGX70 trend, low above‑MA20/MA50 percentages, and negative median returns shift the risk mode to defensive, blocking new buys until breadth improves.
+- Outlook scores and liquidity signals are uncertain; a sudden shift in sector sentiment or macro news could alter the short‑term bias despite the current defensive stance.
 
 ## Top Liquidity Spikes
 - ASCM.CA: spike=2.35 liquidity=20470022.0 outlook=WEAK_OR_RISKY score=0 buy_ready=False
