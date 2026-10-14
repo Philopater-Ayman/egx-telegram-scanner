@@ -1,31 +1,30 @@
 # Provider Status
 
-Generated UTC: 2026-10-14T17:28:31.470925+00:00
-Generated Cairo: 2026-10-14 20:28
-- Scan phase: Post-close tomorrow tickets
-- Run timing: target 15:30 Cairo | generated Cairo 2026-10-14 20:28 | cron 30 12 * * 0-4
-- Trigger: scheduled cron=30 12 * * 0-4 mapped to post_close; Cairo now 2026-10-14 20:23
+Generated UTC: 2026-10-14T20:20:06.729498+00:00
+Generated Cairo: 2026-10-14 23:20
+- Scan phase: Evening tomorrow plan
+- Run timing: target 19:30 Cairo | generated Cairo 2026-10-14 23:20 | cron 30 16 * * 0-4
+- Trigger: scheduled cron=30 16 * * 0-4 mapped to evening_plan; Cairo now 2026-10-14 23:15
 
 - Macro source: Mubasher EGX market page (delayed public data)
 - Macro freshness: DELAYED
 - Macro trend: Bullish
 - Market regime: EGX30 BEARISH / EGX70 BEARISH / sector breadth 0.0% / risk mode DEFENSIVE_NO_NEW_BUY
-- Market data: 171/185 tickers have tradeable current/delayed price data
-- Mubasher delayed current rows used: 175/185
-- Current/Yahoo technical mismatches blocked: 14/185
-- DirectFN public table health only, not trusted for action tickets: 254 rows | as_of=2026-10-14T17:23:53.560738+00:00 | error=none
-- Data quality issues: 5
+- Market data: 172/186 tickers have tradeable current/delayed price data
+- Mubasher delayed current rows used: 176/186
+- Current/Yahoo technical mismatches blocked: 14/186
+- DirectFN public table health only, not trusted for action tickets: 254 rows | as_of=2026-10-14T20:15:42.331959+00:00 | error=none
+- Data quality issues: 4
 - Evidence sources found: 9
 - AI narrative: OpenRouter OK (nvidia/nemotron-3-super-120b-a12b:free)
 - Telegram sent on latest run: True
-- Latest ticket id(s): 20261014T172831Z_HOLD_NONE
+- Latest ticket id(s): 20261014T202006Z_HOLD_NONE
 - Latest history write(s): /home/runner/work/egx-telegram-scanner/egx-telegram-scanner/trade_history.csv
 
 ## Warnings
 - EKHO.CA: No usable market data returned. Check Yahoo symbol or add a manual fallback row.
 - ANFI.CA: No usable market data returned. Check Yahoo symbol or add a manual fallback row.
 - ARVA.CA: No usable market data returned. Check Yahoo symbol or add a manual fallback row.
-- GTWL.CA: No usable market data returned. Check Yahoo symbol or add a manual fallback row.
 - MICH.CA: No usable market data returned. Check Yahoo symbol or add a manual fallback row.
 - Evidence rejected for ETEL.CA: source text did not clearly match ETEL.CA / Telecom Egypt.
 - Gemini grounding skipped because market regime is defensive; local fallback evidence used.
