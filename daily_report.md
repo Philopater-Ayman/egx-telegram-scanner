@@ -1,10 +1,10 @@
 # Telegram-First EGX Scanner Report
 
-Scan phase: Intraday liquidity update
-Generated UTC: 2026-10-14T13:19:11.619578+00:00
-Generated Cairo: 2026-10-14 16:19
-Run timing: target 11:00 Cairo | generated Cairo 2026-10-14 16:19 | cron 0 8 * * 0-4
-Trigger: scheduled cron=0 8 * * 0-4 mapped to intraday; Cairo now 2026-10-14 16:14
+Scan phase: Post-close tomorrow tickets
+Generated UTC: 2026-10-14T17:28:29.859119+00:00
+Generated Cairo: 2026-10-14 20:28
+Run timing: target 15:30 Cairo | generated Cairo 2026-10-14 20:28 | cron 30 12 * * 0-4
+Trigger: scheduled cron=30 12 * * 0-4 mapped to post_close; Cairo now 2026-10-14 20:23
 
 ## Control Center
 - Action tickets: 0 prioritized signal(s)
@@ -33,7 +33,10 @@ Trigger: scheduled cron=0 8 * * 0-4 mapped to intraday; Cairo now 2026-10-14 16:
 ## AI Narrative
 - Provider: OpenRouter OK
 - Model: nvidia/nemotron-3-super-120b-a12b:free
-- Summary: EGX30 and EGX70 are bearish with weak breadth, putting the market in defensive mode; the scanner flags a few tradeable stocks with bullish‑watch outlooks but notes cooling liquidity and mixed sector leadership, so no new buys are advised.
+- Summary: EGX30 and EGX70 are both BEARISH with near‑zero sector breadth, triggering a DEFENSIVE_NO_NEW_BUY risk mode; the scanner therefore flags only HOLD actions despite a few tickets showing bullish watch signals.
+- Top tickets (ETEL.CA, EFIH.CA, TALM.CA) were prioritized by high rank_score, TRADEABLE liquidity, and leading‑sector placement, even though their outlooks are BULLISH_WATCH or CONSTRUCTIVE.
+- Liquidity is cooling for most names, support lies 13‑35% below current prices while resistance is tight (4‑8% away), suggesting limited upside room over the next 1‑3 days.
+- Broad market weakness (EGX30/EGX70 below MA20/MA50, negative median returns) overrides individual bullish cues, keeping risk defensive and uncertain; any short‑term bounce remains speculative.
 
 ## Top Liquidity Spikes
 - MOSC.CA: spike=3.34 liquidity=10906855.0 outlook=WEAK_OR_RISKY score=0 buy_ready=False
