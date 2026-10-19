@@ -156,7 +156,6 @@ MILS.CA,General / Verified EGX Expansion,CANDIDATE,3.06,False,MISSING,WATCH_ONLY
 MOIL.CA,Energy & Petrochemicals,DISABLED,3.03,False,MISSING,WATCH_ONLY,flow_or_market_gate=MISSING/DEFENSIVE_NO_NEW_BUY;liquidity_below_min;below_MA50,WEAK_OR_RISKY,0.0,THIN,NEUTRAL
 RREI.CA,General / Verified EGX Expansion,CANDIDATE,3.0,False,MISSING,WATCH_ONLY,flow_or_market_gate=MISSING/DEFENSIVE_NO_NEW_BUY;below_MA50,WEAK_OR_RISKY,5.0,TRADEABLE,LAGGING
 GSSC.CA,General / Verified EGX Expansion,DISABLED,2.97,False,MISSING,WATCH_ONLY,flow_or_market_gate=MISSING/DEFENSIVE_NO_NEW_BUY;liquidity_below_min;below_MA50,WEAK_OR_RISKY,0.0,THIN,LAGGING
-GTWL.CA,General / Verified EGX Expansion,DISABLED,2.96,False,MISSING,WATCH_ONLY,flow_or_market_gate=MISSING/DEFENSIVE_NO_NEW_BUY;price_not_fresh;below_MA50,WEAK_OR_RISKY,0.0,TRADEABLE,LAGGING
 LUTS.CA,General / Verified EGX Expansion,DISABLED,2.92,False,MISSING,WATCH_ONLY,flow_or_market_gate=MISSING/DEFENSIVE_NO_NEW_BUY;price_not_fresh;below_MA50,WEAK_OR_RISKY,0.0,TRADEABLE,LAGGING
 EGBE.CA,Banking & Financials,DISABLED,2.9,False,MISSING,WATCH_ONLY,flow_or_market_gate=MISSING/DEFENSIVE_NO_NEW_BUY;liquidity_below_min;below_MA50,WEAK_OR_RISKY,0.0,THIN,LAGGING
 ODIN.CA,General / Verified EGX Expansion,DISABLED,2.88,False,MISSING,WATCH_ONLY,flow_or_market_gate=MISSING/DEFENSIVE_NO_NEW_BUY;price_not_fresh;below_MA50,WEAK_OR_RISKY,0.0,TRADEABLE,LAGGING

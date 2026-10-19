@@ -1,16 +1,16 @@
 # Telegram-First EGX Scanner Report
 
-Scan phase: Intraday liquidity update
-Generated UTC: 2026-10-19T15:15:42.477498+00:00
-Generated Cairo: 2026-10-19 18:15
-Run timing: target 11:00 Cairo | generated Cairo 2026-10-19 18:15 | cron 0 8 * * 0-4
-Trigger: scheduled cron=0 8 * * 0-4 mapped to intraday; Cairo now 2026-10-19 18:12
+Scan phase: Post-close tomorrow tickets
+Generated UTC: 2026-10-19T18:50:38.650408+00:00
+Generated Cairo: 2026-10-19 21:50
+Run timing: target 15:30 Cairo | generated Cairo 2026-10-19 21:50 | cron 30 12 * * 0-4
+Trigger: scheduled cron=30 12 * * 0-4 mapped to post_close; Cairo now 2026-10-19 21:46
 
 ## Control Center
 - Action tickets: 0 prioritized signal(s)
 - BUY-ready candidates: 0
-- Data quality issues: 3
-- Tradeable price/liquidity tickers: 173/187
+- Data quality issues: 4
+- Tradeable price/liquidity tickers: 173/186
 - Top sector: Telecommunications
 
 ## Market Context
@@ -33,11 +33,10 @@ Trigger: scheduled cron=0 8 * * 0-4 mapped to intraday; Cairo now 2026-10-19 18:
 ## AI Narrative
 - Provider: OpenRouter OK
 - Model: nvidia/nemotron-3-super-120b-a12b:free
-- Summary: EGX30 and EGX70 are bearish with weak breadth (0% sector upside), keeping risk mode defensive and blocking new buys; the scanner highlights a handful of top‑ranked tickets that show constructive outlooks but sit in a cooling liquidity environment.
-- Tickets were picked for their highest rank scores and sector leadership (Telecom, Fintech, etc.) despite the overall bearish EGX30/EGX70 regime.
-- Liquidity is mostly TRADEABLE or ACCUMULATION_SPIKE, yet liquidity_spike values are modest or cooling, suggesting limited short‑term trading capacity.
-- Each ticket lies a single‑digit to low‑double‑digit percent above its 20‑day support and similarly below resistance, implying modest upside potential over the next 1‑3 days.
-- Outlooks range from BULLISH_WATCH to CONSTRUCTIVE to NEUTRAL, but the defensive market regime adds uncertainty—any gains could reverse quickly if breadth does not improve.
+- Summary: EGX30 and EGX70 are both in a bearish regime with virtually no sector breadth, forcing the scanner into a defensive risk mode that blocks new buys and only flags tickets for watch.
+- The scanner prioritized tickets with the highest rank scores and constructive or bullish watches, even though their sectors are not currently leading, because they show relatively better liquidity conditions and proximit
+- Liquidity is mostly cooling or showing modest accumulation spikes, which suggests limited short‑term buying pressure; support lies 5‑30 % below current prices while resistance is 7‑18 % above, indicating a narrow trading
+- Sector breadth at 0 % and weak MA20/MA50 participation keep the market in a defensive stance, so risk mode stays DEFENSIVE_NO_NEW_BUY and any outlook remains uncertain until breadth improves.
 
 ## Top Liquidity Spikes
 - POUL.CA: spike=9.0 liquidity=253806336.0 outlook=WEAK_OR_RISKY score=22 buy_ready=False
@@ -83,6 +82,7 @@ Trigger: scheduled cron=0 8 * * 0-4 mapped to intraday; Cairo now 2026-10-19 18:
 - EKHO.CA: No usable market data returned. Check Yahoo symbol or add a manual fallback row.
 - ANFI.CA: No usable market data returned. Check Yahoo symbol or add a manual fallback row.
 - ARVA.CA: No usable market data returned. Check Yahoo symbol or add a manual fallback row.
+- GTWL.CA: No usable market data returned. Check Yahoo symbol or add a manual fallback row.
 
 ## Ranked Scanner Results
 - AALR.CA: score=3.22 buy_ready=False sector_rank=17 price=218.95 support=214.0 resistance=316.99 source=Yahoo Finance history + Mubasher delayed current trading data as_of=01:28 PM market time freshness=DELAYED_CURRENT RSI=25.72 liquidity=5823610.5 spike=0.49
@@ -176,7 +176,6 @@ Trigger: scheduled cron=0 8 * * 0-4 mapped to intraday; Cairo now 2026-10-19 18:
 - GMCI.CA: score=1.59 buy_ready=False sector_rank=17 price=1.54 support=1.47 resistance=1.78 source=Yahoo Finance as_of=2026-10-17T21:00:00+00:00 freshness=FRESH RSI=40.38 liquidity=187829.18 spike=0.49
 - GRCA.CA: score=5.73 buy_ready=False sector_rank=17 price=28.82 support=29.0 resistance=44.0 source=Yahoo Finance history + Mubasher delayed current trading data as_of=01:14 PM market time freshness=DELAYED_CURRENT RSI=30.07 liquidity=7334332.0 spike=1.0
 - GSSC.CA: score=2.97 buy_ready=False sector_rank=17 price=262.91 support=246.0 resistance=333.9 source=Yahoo Finance history + Mubasher delayed current trading data as_of=01:05 PM market time freshness=DELAYED_CURRENT RSI=41.05 liquidity=574986.94 spike=0.25
-- GTWL.CA: score=2.96 buy_ready=False sector_rank=17 price=125.0 support=108.1 resistance=127.4 source=Yahoo Finance history + Mubasher delayed current trading data as_of=01:29 PM market time freshness=DELAYED_CURRENT_UNALIGNED RSI=50.0 liquidity=208948864.0 spike=1.28
 - HDBK.CA: score=7.88 buy_ready=False sector_rank=9 price=93.59 support=96.1 resistance=121.4 source=Yahoo Finance history + Mubasher delayed current trading data as_of=01:27 PM market time freshness=DELAYED_CURRENT RSI=29.19 liquidity=30176600.0 spike=1.49
 - HELI.CA: score=7.4 buy_ready=False sector_rank=18 price=6.81 support=6.8 resistance=8.77 source=Yahoo Finance history + Mubasher delayed current trading data as_of=01:29 PM market time freshness=DELAYED_CURRENT RSI=30.91 liquidity=80312080.0 spike=1.0
 - HRHO.CA: score=13.4 buy_ready=False sector_rank=14 price=24.59 support=22.81 resistance=27.01 source=Yahoo Finance history + Mubasher delayed current trading data as_of=01:29 PM market time freshness=DELAYED_CURRENT RSI=52.6 liquidity=61172316.0 spike=0.45
