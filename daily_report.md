@@ -1,10 +1,10 @@
 # Telegram-First EGX Scanner Report
 
-Scan phase: Open liquidity confirmation
-Generated UTC: 2026-10-19T13:05:03.296413+00:00
-Generated Cairo: 2026-10-19 16:05
-Run timing: target 09:15 Cairo | generated Cairo 2026-10-19 16:05 | cron 15 6 * * 0-4
-Trigger: scheduled cron=15 6 * * 0-4 mapped to open_confirm; Cairo now 2026-10-19 16:01
+Scan phase: Intraday liquidity update
+Generated UTC: 2026-10-19T15:15:42.477498+00:00
+Generated Cairo: 2026-10-19 18:15
+Run timing: target 11:00 Cairo | generated Cairo 2026-10-19 18:15 | cron 0 8 * * 0-4
+Trigger: scheduled cron=0 8 * * 0-4 mapped to intraday; Cairo now 2026-10-19 18:12
 
 ## Control Center
 - Action tickets: 0 prioritized signal(s)
@@ -33,8 +33,11 @@ Trigger: scheduled cron=15 6 * * 0-4 mapped to open_confirm; Cairo now 2026-10-1
 ## AI Narrative
 - Provider: OpenRouter OK
 - Model: nvidia/nemotron-3-super-120b-a12b:free
-- Summary: EGX30 and EGX70 are bearish with weak breadth; defensive risk mode blocks new buys. The scanner highlights top‑ranked stocks (ETEL.CA, CPCI.CA, EFIH.CA) based on rank score and sector leadership, but liquidity is cooling and prices sit below key moving averages, so only a watch stance is advised for the next 1‑3 days.
-- ETEL.CA (Telecom) leads with rank 20.99 and BULLISH_WATCH outlook; liquidity is tradeable but cooling, price ~9% above 20‑day support and ~11% below resistance, offering limited near‑term upside if support holds.
+- Summary: EGX30 and EGX70 are bearish with weak breadth (0% sector upside), keeping risk mode defensive and blocking new buys; the scanner highlights a handful of top‑ranked tickets that show constructive outlooks but sit in a cooling liquidity environment.
+- Tickets were picked for their highest rank scores and sector leadership (Telecom, Fintech, etc.) despite the overall bearish EGX30/EGX70 regime.
+- Liquidity is mostly TRADEABLE or ACCUMULATION_SPIKE, yet liquidity_spike values are modest or cooling, suggesting limited short‑term trading capacity.
+- Each ticket lies a single‑digit to low‑double‑digit percent above its 20‑day support and similarly below resistance, implying modest upside potential over the next 1‑3 days.
+- Outlooks range from BULLISH_WATCH to CONSTRUCTIVE to NEUTRAL, but the defensive market regime adds uncertainty—any gains could reverse quickly if breadth does not improve.
 
 ## Top Liquidity Spikes
 - POUL.CA: spike=9.0 liquidity=253806336.0 outlook=WEAK_OR_RISKY score=22 buy_ready=False
