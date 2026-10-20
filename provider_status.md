@@ -1,35 +1,37 @@
 # Provider Status
 
-Generated UTC: 2026-10-19T21:15:12.462606+00:00
-Generated Cairo: 2026-10-20 00:15
-- Scan phase: Evening tomorrow plan
-- Run timing: target 19:30 Cairo | generated Cairo 2026-10-20 00:15 | cron 30 16 * * 0-4
-- Trigger: scheduled cron=30 16 * * 0-4 mapped to evening_plan; Cairo now 2026-10-20 00:10
+Generated UTC: 2026-10-20T10:26:26.487851+00:00
+Generated Cairo: 2026-10-20 13:26
+- Scan phase: Pre-market risk check
+- Run timing: target 08:45 Cairo | generated Cairo 2026-10-20 13:26 | cron 45 5 * * 0-4
+- Trigger: scheduled cron=45 5 * * 0-4 mapped to pre_market; Cairo now 2026-10-20 13:23
 
 - Macro source: Mubasher EGX market page (delayed public data)
 - Macro freshness: DELAYED
 - Macro trend: Bullish
 - Market regime: EGX30 BEARISH / EGX70 BEARISH / sector breadth 0.0% / risk mode DEFENSIVE_NO_NEW_BUY
-- Market data: 173/187 tickers have tradeable current/delayed price data
-- Mubasher delayed current rows used: 177/187
-- Current/Yahoo technical mismatches blocked: 14/187
-- DirectFN public table health only, not trusted for action tickets: 252 rows | as_of=2026-10-19T21:10:27.344446+00:00 | error=none
-- Data quality issues: 3
-- Evidence sources found: 15
-- AI narrative: OpenRouter OK (nvidia/nemotron-3-super-120b-a12b:free)
+- Market data: 166/186 tickers have tradeable current/delayed price data
+- Mubasher delayed current rows used: 171/186
+- Current/Yahoo technical mismatches blocked: 20/186
+- DirectFN public table health only, not trusted for action tickets: 252 rows | as_of=2026-10-20T10:23:47.109386+00:00 | error=none
+- Data quality issues: 4
+- Evidence sources found: 12
+- AI narrative: OpenRouter ERROR (openai/gpt-oss-120b:free)
 - Telegram sent on latest run: True
-- Latest ticket id(s): 20261019T211512Z_HOLD_NONE
+- Latest ticket id(s): 20261020T102626Z_HOLD_NONE
 - Latest history write(s): /home/runner/work/egx-telegram-scanner/egx-telegram-scanner/trade_history.csv
 
 ## Warnings
 - EKHO.CA: No usable market data returned. Check Yahoo symbol or add a manual fallback row.
 - ANFI.CA: No usable market data returned. Check Yahoo symbol or add a manual fallback row.
 - ARVA.CA: No usable market data returned. Check Yahoo symbol or add a manual fallback row.
+- GTWL.CA: No usable market data returned. Check Yahoo symbol or add a manual fallback row.
 - Evidence rejected for ETEL.CA: source text did not clearly match ETEL.CA / Telecom Egypt.
 - Gemini grounding skipped because market regime is defensive; local fallback evidence used.
-- Evidence for CPCI.CA matches the company but no source/report date was detected.
 - Evidence rejected for EFIH.CA: source text did not clearly match EFIH.CA / E-Finance For Digital and Financial Investments.
-- Evidence for SIPC.CA matches the company but appears old; latest detected date is 2020-01-01.
-- Evidence for ARCC.CA matches the company but appears old; latest detected date is 2025-01-01.
+- Evidence for SCEM.CA matches the company but appears old; latest detected date is 2025-01-01.
+- Evidence rejected for MFPC.CA: source text did not clearly match MFPC.CA / Misr Fertilizers Production.
 - Evidence for ARAB.CA matches the company but no source/report date was detected.
-- Evidence rejected for RUBX.CA: source text did not clearly match RUBX.CA / Rubex International for Plastic and Acrylic Manufacturing.
+- Evidence for POUL.CA matches the company but no source/report date was detected.
+- Evidence for SIPC.CA matches the company but appears old; latest detected date is 2020-01-01.
+- Evidence rejected for CCAP.CA: source text did not clearly match CCAP.CA / Qalaa Holdings.
