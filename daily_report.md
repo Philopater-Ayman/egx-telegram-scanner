@@ -1,10 +1,10 @@
 # Telegram-First EGX Scanner Report
 
-Scan phase: Post-close tomorrow tickets
-Generated UTC: 2026-10-21T17:28:48.608899+00:00
-Generated Cairo: 2026-10-21 20:28
-Run timing: target 15:30 Cairo | generated Cairo 2026-10-21 20:28 | cron 30 12 * * 0-4
-Trigger: scheduled cron=30 12 * * 0-4 mapped to post_close; Cairo now 2026-10-21 20:25
+Scan phase: Evening tomorrow plan
+Generated UTC: 2026-10-21T20:19:29.944845+00:00
+Generated Cairo: 2026-10-21 23:19
+Run timing: target 19:30 Cairo | generated Cairo 2026-10-21 23:19 | cron 30 16 * * 0-4
+Trigger: scheduled cron=30 16 * * 0-4 mapped to evening_plan; Cairo now 2026-10-21 23:15
 
 ## Control Center
 - Action tickets: 0 prioritized signal(s)
@@ -172,7 +172,7 @@ Trigger: scheduled cron=30 12 * * 0-4 mapped to post_close; Cairo now 2026-10-21
 - GIHD.CA: score=7.22 buy_ready=False sector_rank=19 price=46.92 support=45.46 resistance=78.73 source=Yahoo Finance history + Mubasher delayed current trading data as_of=01:29 PM market time freshness=DELAYED_CURRENT RSI=16.76 liquidity=15961278.0 spike=0.86
 - GMCI.CA: score=2.38 buy_ready=False sector_rank=19 price=1.54 support=1.47 resistance=1.77 source=Yahoo Finance as_of=2026-10-19T21:00:00+00:00 freshness=FRESH RSI=55.26 liquidity=151012.4 spike=0.41
 - GRCA.CA: score=9.08 buy_ready=False sector_rank=19 price=30.07 support=26.91 resistance=42.4 source=Yahoo Finance history + Mubasher delayed current trading data as_of=01:27 PM market time freshness=DELAYED_CURRENT RSI=36.44 liquidity=4854083.5 spike=0.76
-- GSSC.CA: score=4.0 buy_ready=False sector_rank=19 price=262.36 support=246.0 resistance=312.0 source=Yahoo Finance history + Mubasher delayed current trading data as_of=01:11 PM market time freshness=DELAYED_CURRENT RSI=50.1 liquidity=771951.5 spike=0.53
+- GSSC.CA: score=4.33 buy_ready=False sector_rank=19 price=264.03 support=246.0 resistance=312.0 source=Yahoo Finance as_of=2026-10-19T21:00:00+00:00 freshness=FRESH RSI=50.1 liquidity=1104965.54 spike=0.76
 - HDBK.CA: score=8.13 buy_ready=False sector_rank=12 price=98.94 support=90.26 resistance=119.0 source=Yahoo Finance history + Mubasher delayed current trading data as_of=01:28 PM market time freshness=DELAYED_CURRENT RSI=32.67 liquidity=23077260.0 spike=1.15
 - HELI.CA: score=14.48 buy_ready=False sector_rank=11 price=7.1 support=6.63 resistance=8.33 source=Yahoo Finance history + Mubasher delayed current trading data as_of=01:29 PM market time freshness=DELAYED_CURRENT RSI=43.48 liquidity=92602944.0 spike=1.26
 - HRHO.CA: score=12.3 buy_ready=False sector_rank=18 price=24.89 support=22.81 resistance=27.01 source=Yahoo Finance history + Mubasher delayed current trading data as_of=01:28 PM market time freshness=DELAYED_CURRENT RSI=58.85 liquidity=50959120.0 spike=0.38
