@@ -2,7 +2,7 @@ Sector,Ticker_Count,Median_5D_Return_%,Median_20D_Return_%,Above_MA20_%,Above_MA
 Telecommunications,2,0.45,0.17,50.0,50.0,1.38,"ETEL.CA, EGSA.CA",5.28,1
 Fintech & Payments,2,0.24,-1.16,0.0,0.0,1.15,"FWRY.CA, EFIH.CA",1.59,2
 Industrial Goods & Construction,1,0.0,0.0,0.0,0.0,1.0,ORAS.CA,1.5,3
-Banking & Financials,10,0.04,-6.16,20.0,10.0,1.03,"COMI.CA, EXPA.CA, ADIB.CA, SAUD.CA, HDBK.CA",1.23,4
+Banking & Financials,10,0.04,-6.16,20.0,10.0,1.04,"COMI.CA, EXPA.CA, ADIB.CA, HDBK.CA, SAUD.CA",1.23,4
 Transportation & Logistics,2,-0.77,-5.46,0.0,50.0,0.5,"ALCN.CA, CSAG.CA",0.85,5
 "Food, Beverages & Tobacco",7,1.08,-10.66,14.29,0.0,1.16,"EAST.CA, POUL.CA, JUFO.CA, EFID.CA, SUGR.CA",0.47,6
 Tourism & Leisure,1,0.0,0.0,0.0,0.0,0.23,MHOT.CA,0.35,7
@@ -14,9 +14,9 @@ Energy & Petrochemicals,3,-1.56,-5.44,0.0,33.33,0.37,"AMOC.CA, EGAS.CA, MOIL.CA"
 Building Materials,6,-1.69,-4.58,16.67,0.0,0.53,"MCQE.CA, MBSC.CA, SCEM.CA, LCSW.CA, ARCC.CA",-0.3,13
 General / Verified EGX Expansion,101,-1.6,-9.53,5.94,6.93,0.58,"RUBX.CA, CERA.CA, GTWL.CA, MPCI.CA, SIPC.CA",-1.29,14
 Textiles,4,-2.75,-6.68,0.0,0.0,0.77,"ORWE.CA, SPIN.CA, ACGC.CA, KABO.CA",-1.29,15
-Real Estate,13,0.0,-10.76,0.0,0.0,0.57,"TMGH.CA, PHDC.CA, EMFD.CA, ARAB.CA, HELI.CA",-1.3,16
+Real Estate,13,0.0,-10.76,0.0,0.0,0.57,"TMGH.CA, PHDC.CA, EMFD.CA, ARAB.CA, ORHD.CA",-1.3,16
 Non-bank Financial Services,5,-2.21,-9.59,0.0,0.0,0.96,"BTFH.CA, HRHO.CA, CNFN.CA, ATLC.CA, CICH.CA",-1.36,17
-Industrial Goods & Cables,2,-2.88,-13.53,0.0,0.0,1.31,"ELEC.CA, SWDY.CA",-1.88,18
+Industrial Goods & Cables,2,-2.88,-13.53,0.0,0.0,1.32,"ELEC.CA, SWDY.CA",-1.88,18
 Education,3,-5.97,-6.09,0.0,0.0,0.65,"SCTS.CA, TALM.CA, CIRA.CA",-2.63,19
 Technology & Distribution,1,-0.51,-16.29,0.0,0.0,0.42,RAYA.CA,-2.83,20
 Healthcare,6,-3.26,-13.64,0.0,0.0,0.59,"NIPH.CA, ISPH.CA, PHAR.CA, CLHO.CA, RMDA.CA",-3.15,21
