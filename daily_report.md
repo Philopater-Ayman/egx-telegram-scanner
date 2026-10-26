@@ -1,16 +1,16 @@
 # Telegram-First EGX Scanner Report
 
-Scan phase: Open liquidity confirmation
-Generated UTC: 2026-10-26T12:54:51.348504+00:00
-Generated Cairo: 2026-10-26 15:54
-Run timing: target 09:15 Cairo | generated Cairo 2026-10-26 15:54 | cron 15 6 * * 0-4
-Trigger: scheduled cron=15 6 * * 0-4 mapped to open_confirm; Cairo now 2026-10-26 15:51
+Scan phase: Intraday liquidity update
+Generated UTC: 2026-10-26T14:50:10.371685+00:00
+Generated Cairo: 2026-10-26 17:50
+Run timing: target 11:00 Cairo | generated Cairo 2026-10-26 17:50 | cron 0 8 * * 0-4
+Trigger: scheduled cron=0 8 * * 0-4 mapped to intraday; Cairo now 2026-10-26 17:46
 
 ## Control Center
 - Action tickets: 0 prioritized signal(s)
 - BUY-ready candidates: 0
-- Data quality issues: 3
-- Tradeable price/liquidity tickers: 151/187
+- Data quality issues: 4
+- Tradeable price/liquidity tickers: 150/186
 - Top sector: Investment Holding
 
 ## Market Context
@@ -79,6 +79,7 @@ Trigger: scheduled cron=15 6 * * 0-4 mapped to open_confirm; Cairo now 2026-10-2
 - EKHO.CA: No usable market data returned. Check Yahoo symbol or add a manual fallback row.
 - ANFI.CA: No usable market data returned. Check Yahoo symbol or add a manual fallback row.
 - ARVA.CA: No usable market data returned. Check Yahoo symbol or add a manual fallback row.
+- GTWL.CA: No usable market data returned. Check Yahoo symbol or add a manual fallback row.
 
 ## Ranked Scanner Results
 - AALR.CA: score=0.31 buy_ready=False sector_rank=18 price=189.71 support=192.0 resistance=293.0 source=Yahoo Finance history + Mubasher delayed current trading data as_of=01:27 PM market time freshness=DELAYED_CURRENT RSI=18.98 liquidity=3914608.5 spike=0.43
@@ -172,7 +173,6 @@ Trigger: scheduled cron=15 6 * * 0-4 mapped to open_confirm; Cairo now 2026-10-2
 - GMCI.CA: score=-1.56 buy_ready=False sector_rank=18 price=1.54 support=1.47 resistance=1.77 source=Yahoo Finance as_of=2026-10-24T21:00:00+00:00 freshness=FRESH RSI=34.62 liquidity=39066.72 spike=0.12
 - GRCA.CA: score=-3.61 buy_ready=False sector_rank=18 price=23.79 support=22.57 resistance=26.9 source=Yahoo Finance history + Mubasher delayed current trading data as_of=01:25 PM market time freshness=DELAYED_CURRENT_UNALIGNED RSI=50.0 liquidity=3986642.5 spike=0.77
 - GSSC.CA: score=-2.62 buy_ready=False sector_rank=18 price=230.3 support=222.22 resistance=300.0 source=Yahoo Finance history + Mubasher delayed current trading data as_of=01:14 PM market time freshness=DELAYED_CURRENT RSI=25.72 liquidity=980061.44 spike=0.8
-- GTWL.CA: score=6.4 buy_ready=False sector_rank=18 price=81.24 support=84.81 resistance=227.0 source=Yahoo Finance history + Mubasher delayed current trading data as_of=01:29 PM market time freshness=DELAYED_CURRENT RSI=10.6 liquidity=168395072.0 spike=0.99
 - HDBK.CA: score=4.68 buy_ready=False sector_rank=5 price=95.92 support=92.52 resistance=97.88 source=Yahoo Finance history + Mubasher delayed current trading data as_of=01:29 PM market time freshness=DELAYED_CURRENT_UNALIGNED RSI=50.0 liquidity=35665996.0 spike=1.7
 - HELI.CA: score=8.63 buy_ready=False sector_rank=10 price=6.28 support=5.96 resistance=7.96 source=Yahoo Finance history + Mubasher delayed current trading data as_of=01:28 PM market time freshness=DELAYED_CURRENT RSI=25.56 liquidity=101435224.0 spike=1.5
 - HRHO.CA: score=11.82 buy_ready=False sector_rank=7 price=23.99 support=22.81 resistance=27.01 source=Yahoo Finance history + Mubasher delayed current trading data as_of=01:29 PM market time freshness=DELAYED_CURRENT RSI=35.07 liquidity=74208856.0 spike=0.58
