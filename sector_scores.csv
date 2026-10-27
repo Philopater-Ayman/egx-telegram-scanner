@@ -1,7 +1,7 @@
 Sector,Ticker_Count,Median_5D_Return_%,Median_20D_Return_%,Above_MA20_%,Above_MA50_%,Median_Liquidity_Spike,Top_Liquidity_Stocks,Sector_Score,Sector_Rank
 Telecommunications,2,0.28,-1.05,0.0,0.0,1.46,"ETEL.CA, EGSA.CA",2.09,1
 Basic Resources & Chemicals,10,0.0,-0.45,10.0,20.0,0.79,"EGAL.CA, EGCH.CA, ABUK.CA, SKPC.CA, MFPC.CA",2.0,2
-General / Verified EGX Expansion,101,0.0,0.0,4.95,4.95,0.89,"MPCI.CA, CERA.CA, RUBX.CA, MEPA.CA, LUTS.CA",1.63,3
+General / Verified EGX Expansion,102,0.0,0.0,4.9,4.9,0.9,"GTWL.CA, MPCI.CA, CERA.CA, RUBX.CA, MEPA.CA",1.64,3
 Industrial Goods & Cables,2,0.0,0.0,0.0,0.0,1.06,"SWDY.CA, ELEC.CA",1.59,4
 Industrial Goods & Construction,1,0.0,0.0,0.0,0.0,1.0,ORAS.CA,1.5,5
 Real Estate,13,0.0,0.0,0.0,0.0,0.99,"TMGH.CA, ORHD.CA, ARAB.CA, HELI.CA, ZMID.CA",1.48,6
@@ -11,12 +11,12 @@ Energy & Petrochemicals,3,-1.77,-1.16,0.0,33.33,0.69,"AMOC.CA, EGAS.CA, MOIL.CA"
 Technology & Distribution,1,0.0,0.0,0.0,0.0,0.64,RAYA.CA,0.96,10
 Tourism & Leisure,1,0.0,0.0,0.0,0.0,0.64,MHOT.CA,0.96,11
 Non-bank Financial Services,5,-2.8,0.0,0.0,0.0,0.81,"BTFH.CA, HRHO.CA, ATLC.CA, CNFN.CA, CICH.CA",0.1,12
-Banking & Financials,10,-1.19,-9.05,0.0,0.0,0.97,"COMI.CA, ADIB.CA, HDBK.CA, CANA.CA, EXPA.CA",-0.82,13
+Banking & Financials,10,-1.19,-9.05,0.0,0.0,1.03,"COMI.CA, ADIB.CA, HDBK.CA, CANA.CA, EXPA.CA",-0.74,13
 "Food, Beverages & Tobacco",6,-2.71,-7.14,16.67,0.0,0.62,"POUL.CA, EAST.CA, JUFO.CA, EFID.CA, OLFI.CA",-1.08,14
 Textiles,4,-2.69,-11.8,0.0,0.0,1.44,"KABO.CA, ORWE.CA, ACGC.CA, SPIN.CA",-1.28,15
 Fintech & Payments,2,-4.09,-5.08,0.0,0.0,0.78,"FWRY.CA, EFIH.CA",-1.49,16
-Investment Holding,3,-4.53,-4.53,0.0,0.0,0.58,"CCAP.CA, OIH.CA, BINV.CA",-1.85,17
+Investment Holding,3,-4.53,-4.53,0.0,0.0,0.71,"CCAP.CA, OIH.CA, BINV.CA",-1.65,17
 Agriculture & Food Production,2,-4.38,-8.92,0.0,0.0,0.8,"MPCO.CA, IFAP.CA",-2.33,18
-Education,3,-5.74,-12.32,33.33,0.0,0.68,"TALM.CA, CIRA.CA, SCTS.CA",-2.74,19
+Education,3,-5.74,-12.32,33.33,0.0,0.6,"TALM.CA, CIRA.CA, SCTS.CA",-2.86,19
 Transportation & Logistics,2,-5.58,-9.1,0.0,0.0,0.48,"ALCN.CA, CSAG.CA",-3.32,20
 Automotive & Distribution,2,-10.9,-11.69,0.0,0.0,0.86,"GBCO.CA, MTIE.CA",-5.41,21
