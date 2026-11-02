@@ -1,10 +1,10 @@
 # Automation Status
 
-Generated UTC: 2026-11-02T15:43:07.241118+00:00
-Generated Cairo: 2026-11-02 17:43
-Scan phase: Open liquidity confirmation
-Run timing: target 09:15 Cairo | generated Cairo 2026-11-02 17:43 | cron 15 6 * * 0-4
-Trigger: scheduled cron=15 6 * * 0-4 mapped to open_confirm; Cairo now 2026-11-02 17:39
+Generated UTC: 2026-11-02T17:45:08.878218+00:00
+Generated Cairo: 2026-11-02 19:45
+Scan phase: Intraday liquidity update
+Run timing: target 11:00 Cairo | generated Cairo 2026-11-02 19:45 | cron 0 8 * * 0-4
+Trigger: scheduled cron=0 8 * * 0-4 mapped to intraday; Cairo now 2026-11-02 19:41
 Market calendar: OPEN | Default Sunday-Thursday calendar | 10:00-14:30
 Telegram sent: True
 
@@ -16,9 +16,9 @@ Telegram sent: True
 - 19:30 Cairo: tomorrow plan
 
 ## Data Health
-- Tradeable delayed/current price rows: 166/187
-- Mubasher delayed current rows used: 181/187
-- Current/Yahoo technical mismatches blocked: 21/187
+- Tradeable delayed/current price rows: 165/186
+- Mubasher delayed current rows used: 180/186
+- Current/Yahoo technical mismatches blocked: 21/186
 - DirectFN public table rows available, health only: 245
-- DirectFN public table as of: 2026-11-02T15:39:56.567805+00:00
+- DirectFN public table as of: 2026-11-02T17:41:16.087691+00:00
 - DirectFN error: none
