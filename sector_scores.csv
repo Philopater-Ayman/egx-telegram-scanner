@@ -3,19 +3,19 @@ Building Materials,6,11.62,-15.04,33.33,16.67,0.61,"MBSC.CA, MCQE.CA, SCEM.CA, P
 Tourism & Leisure,1,9.93,-10.08,0.0,0.0,0.94,MHOT.CA,3.37,2
 "Food, Beverages & Tobacco",7,4.62,-8.26,28.57,0.0,0.99,"POUL.CA, JUFO.CA, EAST.CA, EFID.CA, SUGR.CA",2.54,3
 Transportation & Logistics,2,3.72,-6.18,0.0,0.0,1.43,"ALCN.CA, CSAG.CA",2.39,4
-Banking & Financials,10,2.31,-7.34,20.0,20.0,0.59,"COMI.CA, ADIB.CA, HDBK.CA, CIEB.CA, SAUD.CA",1.54,5
+Banking & Financials,10,2.31,-7.34,40.0,20.0,0.4,"COMI.CA, ADIB.CA, HDBK.CA, EXPA.CA, CANA.CA",1.85,5
 Industrial Goods & Construction,1,0.0,0.0,0.0,0.0,1.0,ORAS.CA,1.5,6
-Fintech & Payments,2,2.78,-10.83,0.0,0.0,1.09,"EFIH.CA, FWRY.CA",0.59,7
+Fintech & Payments,2,2.78,-10.83,50.0,0.0,0.54,"FWRY.CA, EFIH.CA",1.25,7
 Real Estate,13,1.86,-11.64,15.38,7.69,0.94,"EMFD.CA, PHDC.CA, ORHD.CA, TMGH.CA, ZMID.CA",0.52,8
 Industrial Goods & Cables,2,5.97,-15.77,0.0,0.0,0.63,"SWDY.CA, ELEC.CA",0.18,9
 Telecommunications,2,1.33,-10.33,0.0,0.0,1.02,"ETEL.CA, EGSA.CA",-0.0,10
 General / Verified EGX Expansion,100,5.2,-17.64,7.0,4.0,0.7,"GTWL.CA, BIOC.CA, LUTS.CA, MPCI.CA, ACAMD.CA",-0.06,11
 Energy & Petrochemicals,3,1.21,-12.43,0.0,33.33,0.57,"AMOC.CA, EGAS.CA, MOIL.CA",-0.15,12
-Education,3,2.44,-13.16,0.0,0.0,0.74,"TALM.CA, CIRA.CA, SCTS.CA",-0.55,13
+Education,3,2.44,-13.16,0.0,0.0,0.84,"TALM.CA, CIRA.CA, SCTS.CA",-0.4,13
 Basic Resources & Chemicals,10,2.32,-15.54,0.0,0.0,0.6,"ABUK.CA, MFPC.CA, SKPC.CA, ATQA.CA, EGAL.CA",-1.27,14
 Technology & Distribution,1,-0.95,-23.38,0.0,0.0,2.51,RAYA.CA,-1.29,15
 Healthcare,6,1.43,-18.85,16.67,0.0,0.87,"NIPH.CA, ISPH.CA, PHAR.CA, RMDA.CA, CLHO.CA",-1.39,16
-Non-bank Financial Services,5,0.0,-13.46,0.0,0.0,0.7,"HRHO.CA, BTFH.CA, CNFN.CA, ATLC.CA, CICH.CA",-1.64,17
+Non-bank Financial Services,5,0.0,-13.46,0.0,0.0,0.64,"BTFH.CA, HRHO.CA, CNFN.CA, ATLC.CA, CICH.CA",-1.73,17
 Textiles,4,1.21,-15.33,0.0,0.0,0.32,"ORWE.CA, KABO.CA, SPIN.CA, ACGC.CA",-2.11,18
 Investment Holding,3,-3.05,-16.01,0.0,0.0,0.33,"CCAP.CA, OIH.CA, BINV.CA",-3.93,19
 Agriculture & Food Production,2,-1.91,-26.95,0.0,0.0,0.79,"MPCO.CA, IFAP.CA",-4.98,20
