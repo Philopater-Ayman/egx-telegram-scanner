@@ -1,16 +1,16 @@
 # Telegram-First EGX Scanner Report
 
-Scan phase: Pre-market risk check
-Generated UTC: 2026-11-03T13:02:11.571278+00:00
-Generated Cairo: 2026-11-03 15:02
-Run timing: target 08:45 Cairo | generated Cairo 2026-11-03 15:02 | cron 45 5 * * 0-4
-Trigger: scheduled cron=45 5 * * 0-4 mapped to pre_market; Cairo now 2026-11-03 14:59
+Scan phase: Open liquidity confirmation
+Generated UTC: 2026-11-03T14:06:34.418894+00:00
+Generated Cairo: 2026-11-03 16:06
+Run timing: target 09:15 Cairo | generated Cairo 2026-11-03 16:06 | cron 15 6 * * 0-4
+Trigger: scheduled cron=15 6 * * 0-4 mapped to open_confirm; Cairo now 2026-11-03 16:03
 
 ## Control Center
 - Action tickets: 0 prioritized signal(s)
 - BUY-ready candidates: 0
-- Data quality issues: 5
-- Tradeable price/liquidity tickers: 165/185
+- Data quality issues: 6
+- Tradeable price/liquidity tickers: 164/184
 - Top sector: Building Materials
 
 ## Market Context
@@ -25,10 +25,10 @@ Trigger: scheduled cron=45 5 * * 0-4 mapped to pre_market; Cairo now 2026-11-03 
 
 ## Top Liquidity
 - COMI.CA: liquidity=402637024.0 spike=0.75 score=15.74
-- GTWL.CA: liquidity=332320736.0 spike=1.83 score=19.62
 - EMFD.CA: liquidity=261490096.0 spike=5.67 score=23.21
 - PHDC.CA: liquidity=241357744.0 spike=2.76 score=7.73
 - ORAS.CA: liquidity=204893456.0 spike=1.0 score=4.6
+- ORHD.CA: liquidity=199924128.0 spike=1.82 score=5.85
 
 ## AI Narrative
 - Provider: OpenRouter ERROR
@@ -80,19 +80,20 @@ Trigger: scheduled cron=45 5 * * 0-4 mapped to pre_market; Cairo now 2026-11-03 
 - ANFI.CA: No usable market data returned. Check Yahoo symbol or add a manual fallback row.
 - ARVA.CA: No usable market data returned. Check Yahoo symbol or add a manual fallback row.
 - GDWA.CA: No usable market data returned. Check Yahoo symbol or add a manual fallback row.
+- GTWL.CA: No usable market data returned. Check Yahoo symbol or add a manual fallback row.
 - MILS.CA: No usable market data returned. Check Yahoo symbol or add a manual fallback row.
 
 ## Ranked Scanner Results
-- AALR.CA: score=10.98 buy_ready=False sector_rank=11 price=216.99 support=171.02 resistance=275.0 source=Yahoo Finance history + Mubasher delayed current trading data as_of=02:28 PM market time freshness=DELAYED_CURRENT RSI=39.94 liquidity=6013518.0 spike=0.68
+- AALR.CA: score=10.97 buy_ready=False sector_rank=11 price=216.99 support=171.02 resistance=275.0 source=Yahoo Finance history + Mubasher delayed current trading data as_of=02:28 PM market time freshness=DELAYED_CURRENT RSI=39.94 liquidity=6013518.0 spike=0.68
 - ABUK.CA: score=13.49 buy_ready=False sector_rank=14 price=77.76 support=79.01 resistance=95.75 source=Yahoo Finance history + Mubasher delayed current trading data as_of=02:29 PM market time freshness=DELAYED_CURRENT RSI=45.42 liquidity=91297456.0 spike=1.0
 - ACAMD.CA: score=14.12 buy_ready=False sector_rank=11 price=1.94 support=1.86 resistance=2.16 source=Yahoo Finance history + Mubasher delayed current trading data as_of=02:26 PM market time freshness=DELAYED_CURRENT RSI=45.16 liquidity=69431072.0 spike=1.58
 - ACGC.CA: score=4.61 buy_ready=False sector_rank=18 price=12.76 support=11.6 resistance=14.69 source=Yahoo Finance history + Mubasher delayed current trading data as_of=02:28 PM market time freshness=DELAYED_CURRENT RSI=45.77 liquidity=1450625.5 spike=0.19
 - ADCI.CA: score=6.36 buy_ready=False sector_rank=11 price=254.6 support=221.0 resistance=280.0 source=Yahoo Finance history + Mubasher delayed current trading data as_of=02:14 PM market time freshness=DELAYED_CURRENT RSI=40.98 liquidity=399275.44 spike=0.22
 - ADIB.CA: score=19.32 buy_ready=False sector_rank=5 price=48.06 support=43.16 resistance=50.1 source=Yahoo Finance history + Mubasher delayed current trading data as_of=02:28 PM market time freshness=DELAYED_CURRENT RSI=55.17 liquidity=99422680.0 spike=1.29
-- ADPC.CA: score=9.04 buy_ready=False sector_rank=11 price=2.99 support=2.53 resistance=3.69 source=Yahoo Finance history + Mubasher delayed current trading data as_of=02:29 PM market time freshness=DELAYED_CURRENT RSI=41.18 liquidity=4074135.75 spike=0.45
+- ADPC.CA: score=9.03 buy_ready=False sector_rank=11 price=2.99 support=2.53 resistance=3.69 source=Yahoo Finance history + Mubasher delayed current trading data as_of=02:29 PM market time freshness=DELAYED_CURRENT RSI=41.18 liquidity=4074135.75 spike=0.45
 - AFDI.CA: score=0.41 buy_ready=False sector_rank=11 price=43.76 support=34.8 resistance=54.89 source=Yahoo Finance history + Mubasher delayed current trading data as_of=02:29 PM market time freshness=DELAYED_CURRENT RSI=34.93 liquidity=1445761.13 spike=0.39
 - AFMC.CA: score=8.96 buy_ready=False sector_rank=11 price=132.0 support=117.5 resistance=134.7 source=Yahoo Finance history + Mubasher delayed current trading data as_of=02:29 PM market time freshness=DELAYED_CURRENT_UNALIGNED RSI=50.0 liquidity=56065884.0 spike=3.93
-- AJWA.CA: score=15.95 buy_ready=False sector_rank=11 price=214.38 support=179.0 resistance=229.98 source=Yahoo Finance history + Mubasher delayed current trading data as_of=02:14 PM market time freshness=DELAYED_CURRENT RSI=53.31 liquidity=6982454.0 spike=0.19
+- AJWA.CA: score=15.94 buy_ready=False sector_rank=11 price=214.38 support=179.0 resistance=229.98 source=Yahoo Finance history + Mubasher delayed current trading data as_of=02:14 PM market time freshness=DELAYED_CURRENT RSI=53.31 liquidity=6982454.0 spike=0.19
 - ALCN.CA: score=5.52 buy_ready=False sector_rank=4 price=32.25 support=30.01 resistance=32.48 source=Yahoo Finance history + Mubasher delayed current trading data as_of=02:28 PM market time freshness=DELAYED_CURRENT_UNALIGNED RSI=50.0 liquidity=16443271.0 spike=1.28
 - ALUM.CA: score=4.72 buy_ready=False sector_rank=11 price=18.49 support=16.02 resistance=24.68 source=Yahoo Finance history + Mubasher delayed current trading data as_of=02:25 PM market time freshness=DELAYED_CURRENT RSI=35.86 liquidity=1757160.5 spike=0.59
 - AMER.CA: score=16.21 buy_ready=False sector_rank=8 price=4.27 support=3.21 resistance=5.37 source=Yahoo Finance history + Mubasher delayed current trading data as_of=02:29 PM market time freshness=DELAYED_CURRENT RSI=39.46 liquidity=51658212.0 spike=0.94
@@ -102,8 +103,8 @@ Trigger: scheduled cron=45 5 * * 0-4 mapped to pre_market; Cairo now 2026-11-03 
 - APSW.CA: score=-1.56 buy_ready=False sector_rank=11 price=7.35 support=7.1 resistance=8.92 source=Yahoo Finance as_of=2026-11-01T22:00:00+00:00 freshness=FRESH RSI=33.13 liquidity=478940.69 spike=0.81
 - ARAB.CA: score=9.21 buy_ready=False sector_rank=8 price=0.23 support=0.2 resistance=0.28 source=Yahoo Finance history + Mubasher delayed current trading data as_of=02:29 PM market time freshness=DELAYED_CURRENT RSI=33.59 liquidity=57537832.0 spike=0.47
 - ARCC.CA: score=18.32 buy_ready=False sector_rank=1 price=63.03 support=58.01 resistance=73.73 source=Yahoo Finance history + Mubasher delayed current trading data as_of=02:29 PM market time freshness=DELAYED_CURRENT RSI=41.05 liquidity=9697464.0 spike=0.25
-- AREH.CA: score=9.19 buy_ready=False sector_rank=11 price=1.04 support=0.91 resistance=1.35 source=Yahoo Finance history + Mubasher delayed current trading data as_of=02:27 PM market time freshness=DELAYED_CURRENT RSI=38.0 liquidity=4222341.5 spike=0.59
-- ASCM.CA: score=0.82 buy_ready=False sector_rank=11 price=42.2 support=38.2 resistance=59.98 source=Yahoo Finance history + Mubasher delayed current trading data as_of=02:26 PM market time freshness=DELAYED_CURRENT RSI=33.54 liquidity=2854314.5 spike=0.36
+- AREH.CA: score=9.18 buy_ready=False sector_rank=11 price=1.04 support=0.91 resistance=1.35 source=Yahoo Finance history + Mubasher delayed current trading data as_of=02:27 PM market time freshness=DELAYED_CURRENT RSI=38.0 liquidity=4222341.5 spike=0.59
+- ASCM.CA: score=0.81 buy_ready=False sector_rank=11 price=42.2 support=38.2 resistance=59.98 source=Yahoo Finance history + Mubasher delayed current trading data as_of=02:26 PM market time freshness=DELAYED_CURRENT RSI=33.54 liquidity=2854314.5 spike=0.36
 - ASPI.CA: score=14.96 buy_ready=False sector_rank=11 price=0.3 support=0.27 resistance=0.38 source=Yahoo Finance history + Mubasher delayed current trading data as_of=02:29 PM market time freshness=DELAYED_CURRENT RSI=40.61 liquidity=12107006.0 spike=0.66
 - ATLC.CA: score=-2.41 buy_ready=False sector_rank=17 price=4.93 support=4.61 resistance=4.99 source=Yahoo Finance history + Mubasher delayed current trading data as_of=02:26 PM market time freshness=DELAYED_CURRENT_UNALIGNED RSI=50.0 liquidity=4285669.5 spike=0.64
 - ATQA.CA: score=7.49 buy_ready=False sector_rank=14 price=9.19 support=8.25 resistance=12.3 source=Yahoo Finance history + Mubasher delayed current trading data as_of=02:28 PM market time freshness=DELAYED_CURRENT RSI=31.9 liquidity=28982616.0 spike=0.58
@@ -133,13 +134,13 @@ Trigger: scheduled cron=45 5 * * 0-4 mapped to pre_market; Cairo now 2026-11-03 
 - DOMT.CA: score=7.81 buy_ready=False sector_rank=3 price=23.05 support=20.27 resistance=25.83 source=Yahoo Finance history + Mubasher delayed current trading data as_of=02:14 PM market time freshness=DELAYED_CURRENT RSI=46.46 liquidity=792772.19 spike=0.32
 - DSCW.CA: score=16.12 buy_ready=False sector_rank=11 price=1.4 support=1.23 resistance=1.73 source=Yahoo Finance history + Mubasher delayed current trading data as_of=02:27 PM market time freshness=DELAYED_CURRENT RSI=39.47 liquidity=19268432.0 spike=1.58
 - DTPP.CA: score=9.96 buy_ready=False sector_rank=11 price=46.1 support=36.0 resistance=334.0 source=Yahoo Finance history + Mubasher delayed current trading data as_of=02:29 PM market time freshness=DELAYED_CURRENT RSI=31.76 liquidity=15306360.0 spike=0.39
-- EALR.CA: score=0.59 buy_ready=False sector_rank=11 price=252.85 support=236.01 resistance=355.01 source=Yahoo Finance history + Mubasher delayed current trading data as_of=02:29 PM market time freshness=DELAYED_CURRENT RSI=27.25 liquidity=2624548.5 spike=0.79
+- EALR.CA: score=0.58 buy_ready=False sector_rank=11 price=252.85 support=236.01 resistance=355.01 source=Yahoo Finance history + Mubasher delayed current trading data as_of=02:29 PM market time freshness=DELAYED_CURRENT RSI=27.25 liquidity=2624548.5 spike=0.79
 - EASB.CA: score=7.92 buy_ready=False sector_rank=11 price=6.52 support=5.72 resistance=6.9 source=Yahoo Finance history + Mubasher delayed current trading data as_of=02:29 PM market time freshness=DELAYED_CURRENT_UNALIGNED RSI=50.0 liquidity=14550192.0 spike=2.98
 - EAST.CA: score=19.02 buy_ready=False sector_rank=3 price=31.17 support=27.01 resistance=32.44 source=Yahoo Finance history + Mubasher delayed current trading data as_of=02:29 PM market time freshness=DELAYED_CURRENT RSI=62.48 liquidity=40168108.0 spike=0.99
 - EBSC.CA: score=8.8 buy_ready=False sector_rank=11 price=1.51 support=1.37 resistance=1.59 source=Yahoo Finance history + Mubasher delayed current trading data as_of=02:25 PM market time freshness=DELAYED_CURRENT_UNALIGNED RSI=50.0 liquidity=9836683.0 spike=3.99
-- ECAP.CA: score=4.1 buy_ready=False sector_rank=11 price=26.39 support=24.8 resistance=31.61 source=Yahoo Finance history + Mubasher delayed current trading data as_of=02:14 PM market time freshness=DELAYED_CURRENT RSI=35.47 liquidity=1134540.38 spike=0.38
-- EDFM.CA: score=8.27 buy_ready=False sector_rank=11 price=349.45 support=312.92 resistance=396.28 source=Yahoo Finance history + Mubasher delayed current trading data as_of=02:25 PM market time freshness=DELAYED_CURRENT RSI=39.17 liquidity=2362505.75 spike=1.97
-- EEII.CA: score=8.12 buy_ready=False sector_rank=11 price=1.7 support=1.42 resistance=2.24 source=Yahoo Finance history + Mubasher delayed current trading data as_of=02:29 PM market time freshness=DELAYED_CURRENT RSI=34.18 liquidity=7752851.5 spike=1.2
+- ECAP.CA: score=4.09 buy_ready=False sector_rank=11 price=26.39 support=24.8 resistance=31.61 source=Yahoo Finance history + Mubasher delayed current trading data as_of=02:14 PM market time freshness=DELAYED_CURRENT RSI=35.47 liquidity=1134540.38 spike=0.38
+- EDFM.CA: score=8.26 buy_ready=False sector_rank=11 price=349.45 support=312.92 resistance=396.28 source=Yahoo Finance history + Mubasher delayed current trading data as_of=02:25 PM market time freshness=DELAYED_CURRENT RSI=39.17 liquidity=2362505.75 spike=1.97
+- EEII.CA: score=8.11 buy_ready=False sector_rank=11 price=1.7 support=1.42 resistance=2.24 source=Yahoo Finance history + Mubasher delayed current trading data as_of=02:29 PM market time freshness=DELAYED_CURRENT RSI=34.18 liquidity=7752851.5 spike=1.2
 - EFIC.CA: score=11.96 buy_ready=False sector_rank=14 price=135.89 support=121.0 resistance=172.98 source=Yahoo Finance history + Mubasher delayed current trading data as_of=02:29 PM market time freshness=DELAYED_CURRENT RSI=38.36 liquidity=7470001.0 spike=0.39
 - EFID.CA: score=17.02 buy_ready=False sector_rank=3 price=18.2 support=16.01 resistance=19.57 source=Yahoo Finance history + Mubasher delayed current trading data as_of=02:28 PM market time freshness=DELAYED_CURRENT RSI=47.3 liquidity=24369748.0 spike=0.72
 - EFIH.CA: score=16.5 buy_ready=False sector_rank=7 price=23.32 support=20.3 resistance=25.37 source=Yahoo Finance history + Mubasher delayed current trading data as_of=02:25 PM market time freshness=DELAYED_CURRENT RSI=46.63 liquidity=30748724.0 spike=0.45
@@ -149,9 +150,9 @@ Trigger: scheduled cron=45 5 * * 0-4 mapped to pre_market; Cairo now 2026-11-03 
 - EGCH.CA: score=7.49 buy_ready=False sector_rank=14 price=9.94 support=9.68 resistance=13.69 source=Yahoo Finance history + Mubasher delayed current trading data as_of=02:29 PM market time freshness=DELAYED_CURRENT RSI=27.96 liquidity=26940934.0 spike=0.49
 - EGSA.CA: score=5.15 buy_ready=False sector_rank=10 price=8.71 support=8.7 resistance=9.09 source=Yahoo Finance as_of=2026-11-01T22:00:00+00:00 freshness=FRESH RSI=40.7 liquidity=8710.0 spike=1.57
 - EGTS.CA: score=4.1 buy_ready=False sector_rank=8 price=11.93 support=10.19 resistance=17.35 source=Yahoo Finance history + Mubasher delayed current trading data as_of=02:26 PM market time freshness=DELAYED_CURRENT RSI=33.85 liquidity=5895677.5 spike=0.32
-- EHDR.CA: score=8.85 buy_ready=False sector_rank=11 price=1.95 support=1.8 resistance=2.61 source=Yahoo Finance history + Mubasher delayed current trading data as_of=02:27 PM market time freshness=DELAYED_CURRENT RSI=36.36 liquidity=5883025.5 spike=0.66
+- EHDR.CA: score=8.84 buy_ready=False sector_rank=11 price=1.95 support=1.8 resistance=2.61 source=Yahoo Finance history + Mubasher delayed current trading data as_of=02:27 PM market time freshness=DELAYED_CURRENT RSI=36.36 liquidity=5883025.5 spike=0.66
 - ELEC.CA: score=13.07 buy_ready=False sector_rank=9 price=1.54 support=1.34 resistance=1.96 source=Yahoo Finance history + Mubasher delayed current trading data as_of=02:27 PM market time freshness=DELAYED_CURRENT RSI=40.0 liquidity=28737446.0 spike=0.57
-- ELKA.CA: score=12.28 buy_ready=False sector_rank=11 price=1.41 support=1.21 resistance=1.66 source=Yahoo Finance history + Mubasher delayed current trading data as_of=02:29 PM market time freshness=DELAYED_CURRENT RSI=46.34 liquidity=7314540.5 spike=0.54
+- ELKA.CA: score=12.27 buy_ready=False sector_rank=11 price=1.41 support=1.21 resistance=1.66 source=Yahoo Finance history + Mubasher delayed current trading data as_of=02:29 PM market time freshness=DELAYED_CURRENT RSI=46.34 liquidity=7314540.5 spike=0.54
 - ELNA.CA: score=8.38 buy_ready=False sector_rank=11 price=39.68 support=33.46 resistance=41.59 source=Yahoo Finance history + Mubasher delayed current trading data as_of=02:28 PM market time freshness=DELAYED_CURRENT RSI=78.82 liquidity=415345.47 spike=0.66
 - ELSH.CA: score=10.07 buy_ready=False sector_rank=11 price=9.96 support=8.57 resistance=12.6 source=Yahoo Finance history + Mubasher delayed current trading data as_of=02:28 PM market time freshness=DELAYED_CURRENT RSI=37.57 liquidity=5110860.0 spike=0.31
 - ELWA.CA: score=0.79 buy_ready=False sector_rank=11 price=1.36 support=1.43 resistance=1.66 source=Yahoo Finance history + Mubasher delayed current trading data as_of=02:25 PM market time freshness=DELAYED_CURRENT RSI=0.0 liquidity=667507.88 spike=2.08
@@ -170,10 +171,9 @@ Trigger: scheduled cron=45 5 * * 0-4 mapped to pre_market; Cairo now 2026-11-03 
 - GBCO.CA: score=6.48 buy_ready=False sector_rank=21 price=21.6 support=20.9 resistance=32.97 source=Yahoo Finance history + Mubasher delayed current trading data as_of=02:29 PM market time freshness=DELAYED_CURRENT RSI=17.88 liquidity=106553272.0 spike=1.04
 - GGCC.CA: score=7.96 buy_ready=False sector_rank=11 price=0.53 support=0.49 resistance=0.75 source=Yahoo Finance history + Mubasher delayed current trading data as_of=02:29 PM market time freshness=DELAYED_CURRENT RSI=33.24 liquidity=14586559.0 spike=0.84
 - GIHD.CA: score=7.96 buy_ready=False sector_rank=11 price=42.81 support=32.1 resistance=68.0 source=Yahoo Finance history + Mubasher delayed current trading data as_of=02:27 PM market time freshness=DELAYED_CURRENT RSI=27.16 liquidity=12147646.0 spike=0.84
-- GMCI.CA: score=0.94 buy_ready=False sector_rank=11 price=1.36 support=1.34 resistance=1.77 source=Yahoo Finance history + Mubasher delayed current trading data as_of=02:09 PM market time freshness=DELAYED_CURRENT RSI=15.38 liquidity=633790.94 spike=2.17
+- GMCI.CA: score=0.93 buy_ready=False sector_rank=11 price=1.36 support=1.34 resistance=1.77 source=Yahoo Finance history + Mubasher delayed current trading data as_of=02:09 PM market time freshness=DELAYED_CURRENT RSI=15.38 liquidity=633790.94 spike=2.17
 - GRCA.CA: score=8.96 buy_ready=False sector_rank=11 price=29.31 support=25.0 resistance=29.31 source=Yahoo Finance history + Mubasher delayed current trading data as_of=02:27 PM market time freshness=DELAYED_CURRENT_UNALIGNED RSI=50.0 liquidity=21965278.0 spike=5.15
-- GSSC.CA: score=5.52 buy_ready=False sector_rank=11 price=242.69 support=211.52 resistance=288.0 source=Yahoo Finance history + Mubasher delayed current trading data as_of=02:14 PM market time freshness=DELAYED_CURRENT RSI=46.0 liquidity=553027.06 spike=0.58
-- GTWL.CA: score=19.62 buy_ready=False sector_rank=11 price=127.21 support=73.02 resistance=175.0 source=Yahoo Finance history + Mubasher delayed current trading data as_of=02:29 PM market time freshness=DELAYED_CURRENT RSI=41.7 liquidity=332320736.0 spike=1.83
+- GSSC.CA: score=5.51 buy_ready=False sector_rank=11 price=242.69 support=211.52 resistance=288.0 source=Yahoo Finance history + Mubasher delayed current trading data as_of=02:14 PM market time freshness=DELAYED_CURRENT RSI=46.0 liquidity=553027.06 spike=0.58
 - HDBK.CA: score=13.74 buy_ready=False sector_rank=5 price=94.15 support=83.01 resistance=112.02 source=Yahoo Finance history + Mubasher delayed current trading data as_of=02:28 PM market time freshness=DELAYED_CURRENT RSI=41.07 liquidity=10940613.0 spike=0.47
 - HELI.CA: score=9.21 buy_ready=False sector_rank=8 price=6.35 support=5.72 resistance=7.6 source=Yahoo Finance history + Mubasher delayed current trading data as_of=02:28 PM market time freshness=DELAYED_CURRENT RSI=32.28 liquidity=53671212.0 spike=0.79
 - HRHO.CA: score=7.31 buy_ready=False sector_rank=17 price=22.55 support=21.87 resistance=27.01 source=Yahoo Finance history + Mubasher delayed current trading data as_of=02:29 PM market time freshness=DELAYED_CURRENT RSI=27.39 liquidity=37277884.0 spike=0.39
@@ -182,7 +182,7 @@ Trigger: scheduled cron=45 5 * * 0-4 mapped to pre_market; Cairo now 2026-11-03 
 - IFAP.CA: score=-0.47 buy_ready=False sector_rank=20 price=15.65 support=15.12 resistance=19.97 source=Yahoo Finance history + Mubasher delayed current trading data as_of=02:25 PM market time freshness=DELAYED_CURRENT RSI=24.64 liquidity=3128223.75 spike=0.65
 - INFI.CA: score=13.96 buy_ready=False sector_rank=11 price=114.35 support=93.44 resistance=138.0 source=Yahoo Finance history + Mubasher delayed current trading data as_of=02:25 PM market time freshness=DELAYED_CURRENT RSI=47.93 liquidity=10994305.0 spike=0.53
 - IRON.CA: score=3.09 buy_ready=False sector_rank=14 price=23.88 support=23.34 resistance=32.25 source=Yahoo Finance history + Mubasher delayed current trading data as_of=02:29 PM market time freshness=DELAYED_CURRENT RSI=32.98 liquidity=5595455.0 spike=0.53
-- ISMA.CA: score=12.4 buy_ready=False sector_rank=11 price=19.05 support=14.11 resistance=27.06 source=Yahoo Finance history + Mubasher delayed current trading data as_of=02:29 PM market time freshness=DELAYED_CURRENT RSI=39.32 liquidity=7392430.5 spike=1.02
+- ISMA.CA: score=12.39 buy_ready=False sector_rank=11 price=19.05 support=14.11 resistance=27.06 source=Yahoo Finance history + Mubasher delayed current trading data as_of=02:29 PM market time freshness=DELAYED_CURRENT RSI=39.32 liquidity=7392430.5 spike=1.02
 - ISMQ.CA: score=14.69 buy_ready=False sector_rank=14 price=7.14 support=5.96 resistance=8.5 source=Yahoo Finance history + Mubasher delayed current trading data as_of=02:28 PM market time freshness=DELAYED_CURRENT RSI=45.29 liquidity=15750257.0 spike=1.1
 - ISPH.CA: score=7.44 buy_ready=False sector_rank=16 price=9.45 support=9.04 resistance=12.03 source=Yahoo Finance history + Mubasher delayed current trading data as_of=02:29 PM market time freshness=DELAYED_CURRENT RSI=29.15 liquidity=45242780.0 spike=0.99
 - JUFO.CA: score=22.02 buy_ready=False sector_rank=3 price=22.93 support=21.01 resistance=26.05 source=Yahoo Finance history + Mubasher delayed current trading data as_of=02:29 PM market time freshness=DELAYED_CURRENT RSI=44.4 liquidity=82605832.0 spike=4.8
@@ -199,7 +199,7 @@ Trigger: scheduled cron=45 5 * * 0-4 mapped to pre_market; Cairo now 2026-11-03 
 - MENA.CA: score=7.22 buy_ready=False sector_rank=8 price=5.78 support=5.45 resistance=7.05 source=Yahoo Finance history + Mubasher delayed current trading data as_of=02:28 PM market time freshness=DELAYED_CURRENT RSI=42.24 liquidity=4010229.75 spike=0.94
 - MEPA.CA: score=7.96 buy_ready=False sector_rank=11 price=1.26 support=1.14 resistance=1.81 source=Yahoo Finance history + Mubasher delayed current trading data as_of=02:27 PM market time freshness=DELAYED_CURRENT RSI=29.11 liquidity=10117199.0 spike=0.73
 - MFPC.CA: score=14.39 buy_ready=False sector_rank=14 price=40.14 support=40.66 resistance=47.96 source=Yahoo Finance history + Mubasher delayed current trading data as_of=02:28 PM market time freshness=DELAYED_CURRENT RSI=43.23 liquidity=75075736.0 spike=1.45
-- MFSC.CA: score=-1.49 buy_ready=False sector_rank=11 price=32.68 support=28.55 resistance=47.0 source=Yahoo Finance history + Mubasher delayed current trading data as_of=02:14 PM market time freshness=DELAYED_CURRENT RSI=31.83 liquidity=543638.13 spike=0.29
+- MFSC.CA: score=-1.5 buy_ready=False sector_rank=11 price=32.68 support=28.55 resistance=47.0 source=Yahoo Finance history + Mubasher delayed current trading data as_of=02:14 PM market time freshness=DELAYED_CURRENT RSI=31.83 liquidity=543638.13 spike=0.29
 - MHOT.CA: score=14.36 buy_ready=False sector_rank=2 price=14.97 support=13.0 resistance=16.68 source=Yahoo Finance history + Mubasher delayed current trading data as_of=02:14 PM market time freshness=DELAYED_CURRENT RSI=43.99 liquidity=6008429.0 spike=0.94
 - MICH.CA: score=10.41 buy_ready=False sector_rank=11 price=39.95 support=35.5 resistance=44.43 source=Yahoo Finance history + Mubasher delayed current trading data as_of=02:28 PM market time freshness=DELAYED_CURRENT RSI=46.58 liquidity=4447023.0 spike=0.73
 - MIPH.CA: score=4.18 buy_ready=False sector_rank=16 price=751.77 support=610.0 resistance=830.0 source=Yahoo Finance history + Mubasher delayed current trading data as_of=02:14 PM market time freshness=DELAYED_CURRENT RSI=43.35 liquidity=738188.5 spike=0.21
@@ -217,7 +217,7 @@ Trigger: scheduled cron=45 5 * * 0-4 mapped to pre_market; Cairo now 2026-11-03 
 - NHPS.CA: score=7.98 buy_ready=False sector_rank=11 price=59.67 support=53.5 resistance=60.0 source=Yahoo Finance history + Mubasher delayed current trading data as_of=02:27 PM market time freshness=DELAYED_CURRENT_UNALIGNED RSI=50.0 liquidity=18511278.0 spike=3.01
 - NINH.CA: score=6.23 buy_ready=False sector_rank=11 price=14.67 support=12.36 resistance=19.94 source=Yahoo Finance history + Mubasher delayed current trading data as_of=02:29 PM market time freshness=DELAYED_CURRENT RSI=33.21 liquidity=6266958.0 spike=0.72
 - NIPH.CA: score=15.44 buy_ready=False sector_rank=16 price=272.84 support=205.0 resistance=334.0 source=Yahoo Finance history + Mubasher delayed current trading data as_of=02:29 PM market time freshness=DELAYED_CURRENT RSI=47.67 liquidity=118997912.0 spike=0.95
-- OBRI.CA: score=11.22 buy_ready=False sector_rank=11 price=22.88 support=18.11 resistance=33.0 source=Yahoo Finance history + Mubasher delayed current trading data as_of=02:29 PM market time freshness=DELAYED_CURRENT RSI=39.8 liquidity=8251889.0 spike=0.68
+- OBRI.CA: score=11.21 buy_ready=False sector_rank=11 price=22.88 support=18.11 resistance=33.0 source=Yahoo Finance history + Mubasher delayed current trading data as_of=02:29 PM market time freshness=DELAYED_CURRENT RSI=39.8 liquidity=8251889.0 spike=0.68
 - OCDI.CA: score=13.21 buy_ready=False sector_rank=8 price=23.23 support=21.0 resistance=28.2 source=Yahoo Finance history + Mubasher delayed current trading data as_of=02:25 PM market time freshness=DELAYED_CURRENT RSI=40.49 liquidity=12927355.0 spike=0.38
 - OCPH.CA: score=5.88 buy_ready=False sector_rank=11 price=178.97 support=147.96 resistance=237.93 source=Yahoo Finance history + Mubasher delayed current trading data as_of=02:14 PM market time freshness=DELAYED_CURRENT RSI=37.3 liquidity=918903.56 spike=0.3
 - ODIN.CA: score=16.68 buy_ready=False sector_rank=11 price=1.99 support=1.7 resistance=2.67 source=Yahoo Finance history + Mubasher delayed current trading data as_of=02:28 PM market time freshness=DELAYED_CURRENT RSI=40.31 liquidity=11605427.0 spike=1.86
@@ -235,38 +235,38 @@ Trigger: scheduled cron=45 5 * * 0-4 mapped to pre_market; Cairo now 2026-11-03 
 - PRDC.CA: score=15.21 buy_ready=False sector_rank=8 price=6.09 support=5.08 resistance=7.98 source=Yahoo Finance history + Mubasher delayed current trading data as_of=02:29 PM market time freshness=DELAYED_CURRENT RSI=46.59 liquidity=10335697.0 spike=0.31
 - PRMH.CA: score=0.17 buy_ready=False sector_rank=11 price=1.93 support=1.81 resistance=1.95 source=Yahoo Finance history + Mubasher delayed current trading data as_of=02:29 PM market time freshness=DELAYED_CURRENT_UNALIGNED RSI=50.0 liquidity=4910929.0 spike=1.65
 - RACC.CA: score=1.73 buy_ready=False sector_rank=11 price=7.74 support=6.9 resistance=7.8 source=Yahoo Finance history + Mubasher delayed current trading data as_of=02:14 PM market time freshness=DELAYED_CURRENT_UNALIGNED RSI=50.0 liquidity=7530968.0 spike=1.12
-- RAKT.CA: score=3.01 buy_ready=False sector_rank=11 price=22.35 support=20.4 resistance=25.08 source=Yahoo Finance as_of=2026-11-01T22:00:00+00:00 freshness=FRESH RSI=53.99 liquidity=42442.65 spike=0.1
+- RAKT.CA: score=3.0 buy_ready=False sector_rank=11 price=22.35 support=20.4 resistance=25.08 source=Yahoo Finance as_of=2026-11-01T22:00:00+00:00 freshness=FRESH RSI=53.99 liquidity=42442.65 spike=0.1
 - RAYA.CA: score=10.5 buy_ready=False sector_rank=15 price=5.23 support=5.02 resistance=6.85 source=Yahoo Finance history + Mubasher delayed current trading data as_of=02:29 PM market time freshness=DELAYED_CURRENT RSI=33.65 liquidity=45086776.0 spike=2.51
 - RMDA.CA: score=17.84 buy_ready=False sector_rank=16 price=5.12 support=4.5 resistance=5.59 source=Yahoo Finance history + Mubasher delayed current trading data as_of=02:29 PM market time freshness=DELAYED_CURRENT RSI=44.55 liquidity=28109518.0 spike=1.2
 - ROTO.CA: score=3.37 buy_ready=False sector_rank=11 price=30.41 support=25.0 resistance=42.9 source=Yahoo Finance history + Mubasher delayed current trading data as_of=02:29 PM market time freshness=DELAYED_CURRENT RSI=27.92 liquidity=5407142.0 spike=0.74
 - RREI.CA: score=4.75 buy_ready=False sector_rank=11 price=2.67 support=1.96 resistance=4.24 source=Yahoo Finance history + Mubasher delayed current trading data as_of=02:27 PM market time freshness=DELAYED_CURRENT RSI=30.0 liquidity=6785726.0 spike=0.62
-- RTVC.CA: score=-1.44 buy_ready=False sector_rank=11 price=2.74 support=2.68 resistance=3.74 source=Yahoo Finance history + Mubasher delayed current trading data as_of=02:29 PM market time freshness=DELAYED_CURRENT RSI=18.35 liquidity=594091.38 spike=0.21
+- RTVC.CA: score=-1.45 buy_ready=False sector_rank=11 price=2.74 support=2.68 resistance=3.74 source=Yahoo Finance history + Mubasher delayed current trading data as_of=02:29 PM market time freshness=DELAYED_CURRENT RSI=18.35 liquidity=594091.38 spike=0.21
 - RUBX.CA: score=13.96 buy_ready=False sector_rank=11 price=12.81 support=10.51 resistance=19.7 source=Yahoo Finance history + Mubasher delayed current trading data as_of=02:28 PM market time freshness=DELAYED_CURRENT RSI=36.29 liquidity=55823056.0 spike=0.66
 - SAUD.CA: score=8.83 buy_ready=False sector_rank=5 price=19.98 support=19.3 resistance=23.95 source=Yahoo Finance history + Mubasher delayed current trading data as_of=02:25 PM market time freshness=DELAYED_CURRENT RSI=35.74 liquidity=5089679.5 spike=0.46
 - SCEM.CA: score=22.62 buy_ready=False sector_rank=1 price=88.04 support=73.9 resistance=95.5 source=Yahoo Finance history + Mubasher delayed current trading data as_of=02:28 PM market time freshness=DELAYED_CURRENT RSI=54.34 liquidity=30284620.0 spike=0.57
-- SCFM.CA: score=12.44 buy_ready=False sector_rank=11 price=211.8 support=153.02 resistance=252.9 source=Yahoo Finance history + Mubasher delayed current trading data as_of=02:25 PM market time freshness=DELAYED_CURRENT RSI=40.5 liquidity=4613364.0 spike=2.43
+- SCFM.CA: score=12.43 buy_ready=False sector_rank=11 price=211.8 support=153.02 resistance=252.9 source=Yahoo Finance history + Mubasher delayed current trading data as_of=02:25 PM market time freshness=DELAYED_CURRENT RSI=40.5 liquidity=4613364.0 spike=2.43
 - SCTS.CA: score=9.01 buy_ready=False sector_rank=13 price=491.65 support=410.0 resistance=588.0 source=Yahoo Finance history + Mubasher delayed current trading data as_of=02:14 PM market time freshness=DELAYED_CURRENT RSI=45.78 liquidity=3165861.0 spike=0.73
 - SDTI.CA: score=7.22 buy_ready=False sector_rank=11 price=86.07 support=81.55 resistance=87.65 source=Yahoo Finance history + Mubasher delayed current trading data as_of=02:28 PM market time freshness=DELAYED_CURRENT_UNALIGNED RSI=50.0 liquidity=43936964.0 spike=2.63
 - SEIG.CA: score=8.96 buy_ready=False sector_rank=11 price=266.15 support=246.0 resistance=280.0 source=Yahoo Finance history + Mubasher delayed current trading data as_of=02:29 PM market time freshness=DELAYED_CURRENT_UNALIGNED RSI=50.0 liquidity=44774904.0 spike=7.81
 - SIPC.CA: score=13.96 buy_ready=False sector_rank=11 price=4.56 support=3.73 resistance=6.43 source=Yahoo Finance history + Mubasher delayed current trading data as_of=02:27 PM market time freshness=DELAYED_CURRENT RSI=40.77 liquidity=17012442.0 spike=0.29
 - SKPC.CA: score=14.49 buy_ready=False sector_rank=14 price=14.42 support=14.01 resistance=16.74 source=Yahoo Finance history + Mubasher delayed current trading data as_of=02:29 PM market time freshness=DELAYED_CURRENT RSI=44.65 liquidity=33201694.0 spike=0.63
-- SMFR.CA: score=5.2 buy_ready=False sector_rank=11 price=186.03 support=165.0 resistance=245.0 source=Yahoo Finance history + Mubasher delayed current trading data as_of=02:29 PM market time freshness=DELAYED_CURRENT RSI=35.22 liquidity=2231640.0 spike=0.82
-- SNFC.CA: score=9.32 buy_ready=False sector_rank=11 price=10.6 support=10.08 resistance=11.65 source=Yahoo Finance history + Mubasher delayed current trading data as_of=02:14 PM market time freshness=DELAYED_CURRENT RSI=39.91 liquidity=6352130.5 spike=0.84
+- SMFR.CA: score=5.19 buy_ready=False sector_rank=11 price=186.03 support=165.0 resistance=245.0 source=Yahoo Finance history + Mubasher delayed current trading data as_of=02:29 PM market time freshness=DELAYED_CURRENT RSI=35.22 liquidity=2231640.0 spike=0.82
+- SNFC.CA: score=9.31 buy_ready=False sector_rank=11 price=10.6 support=10.08 resistance=11.65 source=Yahoo Finance history + Mubasher delayed current trading data as_of=02:14 PM market time freshness=DELAYED_CURRENT RSI=39.91 liquidity=6352130.5 spike=0.84
 - SPIN.CA: score=7.53 buy_ready=False sector_rank=18 price=14.52 support=12.0 resistance=17.25 source=Yahoo Finance history + Mubasher delayed current trading data as_of=02:14 PM market time freshness=DELAYED_CURRENT RSI=41.11 liquidity=3376760.0 spike=0.63
-- SPMD.CA: score=9.13 buy_ready=False sector_rank=11 price=0.34 support=0.3 resistance=0.4 source=Yahoo Finance history + Mubasher delayed current trading data as_of=02:29 PM market time freshness=DELAYED_CURRENT RSI=45.45 liquidity=4164847.75 spike=0.29
+- SPMD.CA: score=9.12 buy_ready=False sector_rank=11 price=0.34 support=0.3 resistance=0.4 source=Yahoo Finance history + Mubasher delayed current trading data as_of=02:29 PM market time freshness=DELAYED_CURRENT RSI=45.45 liquidity=4164847.75 spike=0.29
 - SUGR.CA: score=18.06 buy_ready=False sector_rank=3 price=47.31 support=44.62 resistance=54.35 source=Yahoo Finance history + Mubasher delayed current trading data as_of=02:25 PM market time freshness=DELAYED_CURRENT RSI=48.42 liquidity=16927432.0 spike=2.02
 - SVCE.CA: score=14.96 buy_ready=False sector_rank=11 price=8.45 support=7.01 resistance=10.87 source=Yahoo Finance history + Mubasher delayed current trading data as_of=02:29 PM market time freshness=DELAYED_CURRENT RSI=38.07 liquidity=24989348.0 spike=0.47
 - SWDY.CA: score=16.07 buy_ready=False sector_rank=9 price=108.51 support=97.0 resistance=121.0 source=Yahoo Finance history + Mubasher delayed current trading data as_of=02:29 PM market time freshness=DELAYED_CURRENT RSI=46.86 liquidity=34416748.0 spike=0.69
 - TALM.CA: score=9.72 buy_ready=False sector_rank=13 price=19.15 support=17.0 resistance=23.5 source=Yahoo Finance history + Mubasher delayed current trading data as_of=02:26 PM market time freshness=DELAYED_CURRENT RSI=25.32 liquidity=37538036.0 spike=1.44
 - TMGH.CA: score=13.21 buy_ready=False sector_rank=8 price=79.53 support=76.5 resistance=93.0 source=Yahoo Finance history + Mubasher delayed current trading data as_of=02:29 PM market time freshness=DELAYED_CURRENT RSI=38.94 liquidity=194675536.0 spike=0.76
-- TRTO.CA: score=-1.03 buy_ready=False sector_rank=11 price=0.05 support=0.05 resistance=0.07 source=Yahoo Finance as_of=2026-11-01T22:00:00+00:00 freshness=FRESH RSI=0.0 liquidity=4468.47 spike=0.62
+- TRTO.CA: score=-1.04 buy_ready=False sector_rank=11 price=0.05 support=0.05 resistance=0.07 source=Yahoo Finance as_of=2026-11-01T22:00:00+00:00 freshness=FRESH RSI=0.0 liquidity=4468.47 spike=0.62
 - UEFM.CA: score=5.94 buy_ready=False sector_rank=11 price=440.36 support=422.0 resistance=528.0 source=Yahoo Finance history + Mubasher delayed current trading data as_of=02:11 PM market time freshness=DELAYED_CURRENT RSI=23.58 liquidity=4935387.5 spike=2.52
 - UEGC.CA: score=14.96 buy_ready=False sector_rank=11 price=1.42 support=1.21 resistance=1.77 source=Yahoo Finance history + Mubasher delayed current trading data as_of=02:29 PM market time freshness=DELAYED_CURRENT RSI=48.57 liquidity=36058500.0 spike=0.79
-- UNIP.CA: score=7.77 buy_ready=False sector_rank=11 price=0.28 support=0.25 resistance=0.37 source=Yahoo Finance history + Mubasher delayed current trading data as_of=02:26 PM market time freshness=DELAYED_CURRENT RSI=37.93 liquidity=4804665.5 spike=0.64
+- UNIP.CA: score=7.76 buy_ready=False sector_rank=11 price=0.28 support=0.25 resistance=0.37 source=Yahoo Finance history + Mubasher delayed current trading data as_of=02:26 PM market time freshness=DELAYED_CURRENT RSI=37.93 liquidity=4804665.5 spike=0.64
 - UNIT.CA: score=14.59 buy_ready=False sector_rank=8 price=18.01 support=15.06 resistance=19.7 source=Yahoo Finance history + Mubasher delayed current trading data as_of=02:26 PM market time freshness=DELAYED_CURRENT RSI=56.7 liquidity=3282453.75 spike=1.05
 - WCDF.CA: score=0.89 buy_ready=False sector_rank=11 price=492.15 support=432.5 resistance=630.1 source=Yahoo Finance history + Mubasher delayed current trading data as_of=02:11 PM market time freshness=DELAYED_CURRENT RSI=32.62 liquidity=926700.94 spike=0.52
 - WKOL.CA: score=13.84 buy_ready=False sector_rank=11 price=247.8 support=218.0 resistance=309.43 source=Yahoo Finance history + Mubasher delayed current trading data as_of=02:25 PM market time freshness=DELAYED_CURRENT RSI=35.22 liquidity=10142625.0 spike=1.44
-- ZEOT.CA: score=8.72 buy_ready=False sector_rank=11 price=10.27 support=8.0 resistance=13.2 source=Yahoo Finance history + Mubasher delayed current trading data as_of=02:29 PM market time freshness=DELAYED_CURRENT RSI=49.87 liquidity=3751675.25 spike=0.52
+- ZEOT.CA: score=8.71 buy_ready=False sector_rank=11 price=10.27 support=8.0 resistance=13.2 source=Yahoo Finance history + Mubasher delayed current trading data as_of=02:29 PM market time freshness=DELAYED_CURRENT RSI=49.87 liquidity=3751675.25 spike=0.52
 - ZMID.CA: score=16.67 buy_ready=False sector_rank=8 price=6.65 support=5.91 resistance=7.85 source=Yahoo Finance history + Mubasher delayed current trading data as_of=02:29 PM market time freshness=DELAYED_CURRENT RSI=38.92 liquidity=82947048.0 spike=1.23
 
 ## Backtesting Lite
@@ -291,14 +291,14 @@ Trigger: scheduled cron=45 5 * * 0-4 mapped to pre_market; Cairo now 2026-11-03 
   - Misr Cement to distribute EGP 10/shr dividends for 2025: https://english.mubasher.info/news/4586191/Misr-Cement-to-distribute-EGP-10-shr-dividends-for-2025/
   - Misr Cement stock is testing technical level ahead of historical peak – Analysis: https://english.mubasher.info/news/4560306/Misr-Cement-stock-is-testing-technical-level-ahead-of-historical-peak-Analysis/
   - Misr Cement witnesses 3,254% remarkable jump in 9M-25 consolidated net profits: https://english.mubasher.info/news/4524754/Misr-Cement-witnesses-3-254-remarkable-jump-in-9M-25-consolidated-net-profits/
-- GTWL.CA: status=ACCEPTED_UNDATED latest=n/a age_days=n/a sources=3 expected=Golden Textiles & Clothes Wool summary=Golden Textiles profits jump 214%; Golden Textiles OGM OKs 50 piasters/shr dividends; Golden Textiles consolidated profits down 18.5% in FY16
-  - Golden Textiles profits jump 214%: https://english.mubasher.info/news/3108548/Golden-Textiles-profits-jump-214-/
-  - Golden Textiles OGM OKs 50 piasters/shr dividends: https://english.mubasher.info/news/3103061/Golden-Textiles-OGM-OKs-50-piasters-shr-dividends/
-  - Golden Textiles consolidated profits down 18.5% in FY16: https://english.mubasher.info/news/3092552/Golden-Textiles-consolidated-profits-down-18-5-in-FY16/
 - POUL.CA: status=ACCEPTED_UNDATED latest=n/a age_days=n/a sources=3 expected=Cairo Poultry summary=Cairo Poultry stock approaching historic peak – Analysis; Cairo Poultry cancels commercial license in Dubai&#39;s JAFZA; Cairo Poultry sees EGP 871m block-trading deal
   - Cairo Poultry stock approaching historic peak – Analysis: https://english.mubasher.info/news/4539104/Cairo-Poultry-stock-approaching-historic-peak-Analysis/
   - Cairo Poultry cancels commercial license in Dubai&#39;s JAFZA: https://english.mubasher.info/news/3962334/Cairo-Poultry-cancels-commercial-license-in-Dubai-s-JAFZA/
   - Cairo Poultry sees EGP 871m block-trading deal: https://english.mubasher.info/news/3862165/Cairo-Poultry-sees-EGP-871m-block-trading-deal/
+- ADIB.CA: status=ACCEPTED_UNDATED latest=n/a age_days=n/a sources=3 expected=Abu Dhabi Islamic Bank Egypt summary=ADIB Egypt’s consolidated profits leap to EGP 3.6bn in Q1-26; ADIB Egypt stock approaches breakout above EGP 41; ADIB Egypt’s stock holds uptrend despite corrections
+  - ADIB Egypt’s consolidated profits leap to EGP 3.6bn in Q1-26: https://english.mubasher.info/news/4607278/ADIB-Egypt-s-consolidated-profits-leap-to-EGP-3-6bn-in-Q1-26/
+  - ADIB Egypt stock approaches breakout above EGP 41: https://english.mubasher.info/news/4591391/ADIB-Egypt-stock-approaches-breakout-above-EGP-41/
+  - ADIB Egypt’s stock holds uptrend despite corrections: https://english.mubasher.info/news/4562331/ADIB-Egypt-s-stock-holds-uptrend-despite-corrections/
 
 ## Warnings
 - OpenRouter API error: 404
@@ -309,5 +309,5 @@ Trigger: scheduled cron=45 5 * * 0-4 mapped to pre_market; Cairo now 2026-11-03 
 - Evidence rejected for LCSW.CA: source text did not clearly match LCSW.CA / Lecico Egypt.
 - Evidence rejected for PRCL.CA: source text did not clearly match PRCL.CA / Ceramic and Porcelain.
 - Evidence for MCQE.CA matches the company but appears old; latest detected date is 2025-01-01.
-- Evidence for GTWL.CA matches the company but no source/report date was detected.
 - Evidence for POUL.CA matches the company but no source/report date was detected.
+- Evidence for ADIB.CA matches the company but no source/report date was detected.
