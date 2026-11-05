@@ -1,28 +1,27 @@
 # Provider Status
 
-Generated UTC: 2026-11-05T16:03:11.890036+00:00
-Generated Cairo: 2026-11-05 18:03
-- Scan phase: Intraday liquidity update
-- Run timing: target 11:00 Cairo | generated Cairo 2026-11-05 18:03 | cron 0 8 * * 0-4
-- Trigger: scheduled cron=0 8 * * 0-4 mapped to intraday; Cairo now 2026-11-05 17:59
+Generated UTC: 2026-11-05T20:12:15.484683+00:00
+Generated Cairo: 2026-11-05 22:12
+- Scan phase: Post-close tomorrow tickets
+- Run timing: target 15:30 Cairo | generated Cairo 2026-11-05 22:12 | cron 30 12 * * 0-4
+- Trigger: scheduled cron=30 12 * * 0-4 mapped to post_close; Cairo now 2026-11-05 22:08
 
 - Macro source: Mubasher EGX market page (delayed public data)
 - Macro freshness: DELAYED
 - Macro trend: Bullish
 - Market regime: EGX30 BEARISH / EGX70 BEARISH / sector breadth 9.52% / risk mode DEFENSIVE_NO_NEW_BUY
-- Market data: 163/185 tickers have tradeable current/delayed price data
-- Mubasher delayed current rows used: 178/185
-- Current/Yahoo technical mismatches blocked: 22/185
-- DirectFN public table health only, not trusted for action tickets: 249 rows | as_of=2026-11-05T15:59:46.501725+00:00 | error=none
-- Data quality issues: 5
+- Market data: 164/186 tickers have tradeable current/delayed price data
+- Mubasher delayed current rows used: 179/186
+- Current/Yahoo technical mismatches blocked: 22/186
+- DirectFN public table health only, not trusted for action tickets: 249 rows | as_of=2026-11-05T20:09:01.940577+00:00 | error=none
+- Data quality issues: 4
 - Evidence sources found: 12
 - AI narrative: OpenRouter ERROR (openai/gpt-oss-120b:free)
 - Telegram sent on latest run: True
-- Latest ticket id(s): 20261105T160311Z_HOLD_NONE
+- Latest ticket id(s): 20261105T201215Z_HOLD_NONE
 - Latest history write(s): /home/runner/work/egx-telegram-scanner/egx-telegram-scanner/trade_history.csv
 
 ## Warnings
-- TMGH.CA: No usable market data returned. Check Yahoo symbol or add a manual fallback row.
 - EKHO.CA: No usable market data returned. Check Yahoo symbol or add a manual fallback row.
 - ANFI.CA: No usable market data returned. Check Yahoo symbol or add a manual fallback row.
 - ARVA.CA: No usable market data returned. Check Yahoo symbol or add a manual fallback row.
