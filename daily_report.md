@@ -1,16 +1,16 @@
 # Telegram-First EGX Scanner Report
 
-Scan phase: Post-close tomorrow tickets
-Generated UTC: 2026-11-10T19:56:11.082542+00:00
-Generated Cairo: 2026-11-10 21:56
-Run timing: target 15:30 Cairo | generated Cairo 2026-11-10 21:56 | cron 30 12 * * 0-4
-Trigger: scheduled cron=30 12 * * 0-4 mapped to post_close; Cairo now 2026-11-10 21:53
+Scan phase: Evening tomorrow plan
+Generated UTC: 2026-11-10T21:54:41.072764+00:00
+Generated Cairo: 2026-11-10 23:54
+Run timing: target 19:30 Cairo | generated Cairo 2026-11-10 23:54 | cron 30 16 * * 0-4
+Trigger: scheduled cron=30 16 * * 0-4 mapped to evening_plan; Cairo now 2026-11-10 23:51
 
 ## Control Center
 - Action tickets: 0 prioritized signal(s)
 - BUY-ready candidates: 0
-- Data quality issues: 5
-- Tradeable price/liquidity tickers: 183/185
+- Data quality issues: 4
+- Tradeable price/liquidity tickers: 184/186
 - Top sector: Industrial Goods & Cables
 
 ## Market Context
@@ -26,9 +26,9 @@ Trigger: scheduled cron=30 12 * * 0-4 mapped to post_close; Cairo now 2026-11-10
 ## Top Liquidity
 - AMES.CA: liquidity=730505088.0 spike=6.34 score=24.4
 - BIOC.CA: liquidity=614217408.0 spike=5.04 score=28.4
+- GTWL.CA: liquidity=438486784.0 spike=2.01 score=22.42
 - CCAP.CA: liquidity=359285824.0 spike=0.88 score=15.33
 - COMI.CA: liquidity=339587520.0 spike=0.64 score=19.28
-- NIPH.CA: liquidity=254049216.0 spike=1.73 score=28.86
 
 ## AI Narrative
 - Provider: OpenRouter ERROR
@@ -36,11 +36,11 @@ Trigger: scheduled cron=30 12 * * 0-4 mapped to post_close; Cairo now 2026-11-10
 - Summary: OpenRouter narrative failed; local scanner summary used.
 
 ## Top Liquidity Spikes
-- AMES.CA: spike=6.34 liquidity=730505088.0 outlook=NEUTRAL score=39.45 buy_ready=False
-- GSSC.CA: spike=6.12 liquidity=8395782.0 outlook=CONSTRUCTIVE score=58.45 buy_ready=False
-- PRMH.CA: spike=5.79 liquidity=28723378.0 outlook=CONSTRUCTIVE score=67.45 buy_ready=False
-- OCPH.CA: spike=5.4 liquidity=24879768.0 outlook=CONSTRUCTIVE score=59.45 buy_ready=False
-- EEII.CA: spike=5.28 liquidity=47589260.0 outlook=CONSTRUCTIVE score=69.45 buy_ready=False
+- AMES.CA: spike=6.34 liquidity=730505088.0 outlook=NEUTRAL score=39.5 buy_ready=False
+- GSSC.CA: spike=6.12 liquidity=8395782.0 outlook=CONSTRUCTIVE score=58.5 buy_ready=False
+- PRMH.CA: spike=5.79 liquidity=28723378.0 outlook=CONSTRUCTIVE score=67.5 buy_ready=False
+- OCPH.CA: spike=5.4 liquidity=24879768.0 outlook=CONSTRUCTIVE score=59.5 buy_ready=False
+- EEII.CA: spike=5.28 liquidity=47589260.0 outlook=CONSTRUCTIVE score=69.5 buy_ready=False
 
 ## Sector Leaderboard
 - #1 Industrial Goods & Cables: score=12.18 5d=13.18% 20d=3.44% aboveMA50=50.0%
@@ -66,9 +66,9 @@ Trigger: scheduled cron=30 12 * * 0-4 mapped to post_close; Cairo now 2026-11-10
 - CIRA.CA: BULLISH_WATCH score=93 liquidity=ACCUMULATION_SPIKE sector=IMPROVING risk=close to resistance
 - SWDY.CA: BULLISH_WATCH score=91 liquidity=ACCUMULATION_SPIKE sector=LEADING risk=momentum is extended; far above support; close to resistance
 - TALM.CA: BULLISH_WATCH score=87 liquidity=ACCUMULATION_SPIKE sector=IMPROVING risk=far above support
-- SMFR.CA: BULLISH_WATCH score=86.45 liquidity=ACCUMULATION_SPIKE sector=IMPROVING risk=far above support; sector is not leading
-- SNFC.CA: BULLISH_WATCH score=84.45 liquidity=ACCUMULATION_SPIKE sector=IMPROVING risk=close to resistance; sector is not leading
-- KZPC.CA: BULLISH_WATCH score=82.45 liquidity=ACCUMULATION_SPIKE sector=IMPROVING risk=far above support; close to resistance; sector is not leading
+- SMFR.CA: BULLISH_WATCH score=86.5 liquidity=ACCUMULATION_SPIKE sector=IMPROVING risk=far above support; sector is not leading
+- SNFC.CA: BULLISH_WATCH score=84.5 liquidity=ACCUMULATION_SPIKE sector=IMPROVING risk=close to resistance; sector is not leading
+- KZPC.CA: BULLISH_WATCH score=82.5 liquidity=ACCUMULATION_SPIKE sector=IMPROVING risk=far above support; close to resistance; sector is not leading
 - ALCN.CA: BULLISH_WATCH score=81.2 liquidity=ACCUMULATION_SPIKE sector=IMPROVING risk=far above support; sector is not leading
 - PHAR.CA: BULLISH_WATCH score=81 liquidity=ACCUMULATION_SPIKE sector=LEADING risk=below MA50; close to resistance
 
@@ -80,7 +80,6 @@ Trigger: scheduled cron=30 12 * * 0-4 mapped to post_close; Cairo now 2026-11-10
 - FERC.CA: No usable market data returned. Check Yahoo symbol or add a manual fallback row.
 - ANFI.CA: No usable market data returned. Check Yahoo symbol or add a manual fallback row.
 - ARVA.CA: No usable market data returned. Check Yahoo symbol or add a manual fallback row.
-- GTWL.CA: No usable market data returned. Check Yahoo symbol or add a manual fallback row.
 
 ## Ranked Scanner Results
 - AALR.CA: score=20.4 buy_ready=False sector_rank=11 price=245.95 support=171.02 resistance=258.0 source=Yahoo Finance history + Mubasher delayed current trading data as_of=9 November 02:29 PM market time freshness=DELAYED_CURRENT RSI=56.28 liquidity=15631649.0 spike=0.89
@@ -173,6 +172,7 @@ Trigger: scheduled cron=30 12 * * 0-4 mapped to post_close; Cairo now 2026-11-10
 - GMCI.CA: score=12.11 buy_ready=False sector_rank=11 price=1.55 support=1.34 resistance=1.61 source=Yahoo Finance history + Mubasher delayed current trading data as_of=9 November 01:32 PM market time freshness=DELAYED_CURRENT RSI=51.11 liquidity=645809.81 spike=2.03
 - GRCA.CA: score=16.01 buy_ready=False sector_rank=11 price=32.02 support=22.57 resistance=34.9 source=Yahoo Finance history + Mubasher delayed current trading data as_of=9 November 02:28 PM market time freshness=DELAYED_CURRENT RSI=55.74 liquidity=6605336.0 spike=0.72
 - GSSC.CA: score=23.8 buy_ready=False sector_rank=11 price=260.98 support=211.52 resistance=273.0 source=Yahoo Finance history + Mubasher delayed current trading data as_of=9 November 02:13 PM market time freshness=DELAYED_CURRENT RSI=48.3 liquidity=8395782.0 spike=6.12
+- GTWL.CA: score=22.42 buy_ready=False sector_rank=11 price=144.01 support=73.02 resistance=149.9 source=Yahoo Finance history + Mubasher delayed current trading data as_of=9 November 02:29 PM market time freshness=DELAYED_CURRENT RSI=60.1 liquidity=438486784.0 spike=2.01
 - HDBK.CA: score=19.28 buy_ready=False sector_rank=15 price=99.46 support=83.01 resistance=105.74 source=Yahoo Finance history + Mubasher delayed current trading data as_of=9 November 02:29 PM market time freshness=DELAYED_CURRENT RSI=54.07 liquidity=11173953.0 spike=0.47
 - HELI.CA: score=20.4 buy_ready=False sector_rank=12 price=6.89 support=5.72 resistance=7.43 source=Yahoo Finance history + Mubasher delayed current trading data as_of=9 November 02:29 PM market time freshness=DELAYED_CURRENT RSI=47.87 liquidity=44843768.0 spike=0.6
 - HRHO.CA: score=16.64 buy_ready=False sector_rank=16 price=23.71 support=21.87 resistance=25.8 source=Yahoo Finance history + Mubasher delayed current trading data as_of=9 November 02:29 PM market time freshness=DELAYED_CURRENT RSI=40.08 liquidity=35088540.0 spike=0.7
