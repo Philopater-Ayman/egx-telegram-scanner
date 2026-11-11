@@ -1,10 +1,10 @@
 # Provider Status
 
-Generated UTC: 2026-11-11T15:49:27.083818+00:00
-Generated Cairo: 2026-11-11 17:49
-- Scan phase: Intraday liquidity update
-- Run timing: target 11:00 Cairo | generated Cairo 2026-11-11 17:49 | cron 0 8 * * 0-4
-- Trigger: scheduled cron=0 8 * * 0-4 mapped to intraday; Cairo now 2026-11-11 17:46
+Generated UTC: 2026-11-11T19:47:50.002390+00:00
+Generated Cairo: 2026-11-11 21:47
+- Scan phase: Post-close tomorrow tickets
+- Run timing: target 15:30 Cairo | generated Cairo 2026-11-11 21:47 | cron 30 12 * * 0-4
+- Trigger: scheduled cron=30 12 * * 0-4 mapped to post_close; Cairo now 2026-11-11 21:45
 
 - Macro source: Mubasher EGX market page (delayed public data)
 - Macro freshness: DELAYED
@@ -13,12 +13,12 @@ Generated Cairo: 2026-11-11 17:49
 - Market data: 175/186 tickers have tradeable current/delayed price data
 - Mubasher delayed current rows used: 180/186
 - Current/Yahoo technical mismatches blocked: 11/186
-- DirectFN public table health only, not trusted for action tickets: 251 rows | as_of=2026-11-11T15:46:47.560018+00:00 | error=none
+- DirectFN public table health only, not trusted for action tickets: 251 rows | as_of=2026-11-11T19:45:19.543926+00:00 | error=none
 - Data quality issues: 4
 - Evidence sources found: 15
 - AI narrative: OpenRouter ERROR (openai/gpt-oss-120b:free)
 - Telegram sent on latest run: True
-- Latest ticket id(s): 20261111T154927Z_HOLD_NONE
+- Latest ticket id(s): 20261111T194750Z_HOLD_NONE
 - Latest history write(s): /home/runner/work/egx-telegram-scanner/egx-telegram-scanner/trade_history.csv
 
 ## Warnings
