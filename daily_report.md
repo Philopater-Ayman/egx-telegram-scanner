@@ -1,10 +1,10 @@
 # Telegram-First EGX Scanner Report
 
-Scan phase: Pre-market risk check
-Generated UTC: 2026-11-16T14:01:31.578513+00:00
-Generated Cairo: 2026-11-16 16:01
-Run timing: target 08:45 Cairo | generated Cairo 2026-11-16 16:01 | cron 45 5 * * 0-4
-Trigger: scheduled cron=45 5 * * 0-4 mapped to pre_market; Cairo now 2026-11-16 15:58
+Scan phase: Open liquidity confirmation
+Generated UTC: 2026-11-16T15:37:42.239665+00:00
+Generated Cairo: 2026-11-16 17:37
+Run timing: target 09:15 Cairo | generated Cairo 2026-11-16 17:37 | cron 15 6 * * 0-4
+Trigger: scheduled cron=15 6 * * 0-4 mapped to open_confirm; Cairo now 2026-11-16 17:35
 
 ## Control Center
 - Action tickets: 0 prioritized signal(s)
