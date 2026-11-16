@@ -1,7 +1,7 @@
 Sector,Ticker_Count,Median_5D_Return_%,Median_20D_Return_%,Above_MA20_%,Above_MA50_%,Median_Liquidity_Spike,Top_Liquidity_Stocks,Sector_Score,Sector_Rank
-Tourism & Leisure,1,4.65,4.38,100.0,100.0,1.97,MHOT.CA,11.69,1
-Technology & Distribution,1,11.25,4.36,100.0,0.0,0.98,RAYA.CA,9.84,2
-"Food, Beverages & Tobacco",7,4.15,2.11,100.0,42.86,2.28,"EAST.CA, POUL.CA, SUGR.CA, JUFO.CA, OLFI.CA",9.79,3
+"Food, Beverages & Tobacco",6,4.96,1.79,100.0,50.0,3.23,"EAST.CA, SUGR.CA, JUFO.CA, OLFI.CA, EFID.CA",11.69,1
+Tourism & Leisure,1,4.65,4.38,100.0,100.0,1.97,MHOT.CA,11.69,2
+Technology & Distribution,1,11.25,4.36,100.0,0.0,0.98,RAYA.CA,9.84,3
 Building Materials,6,5.93,5.0,100.0,50.0,0.97,"PRCL.CA, SCEM.CA, MCQE.CA, LCSW.CA, MBSC.CA",9.32,4
 Telecommunications,2,3.4,-3.18,100.0,100.0,1.56,"ETEL.CA, EGSA.CA",9.07,5
 Agriculture & Food Production,2,7.53,2.11,100.0,0.0,1.61,"MPCO.CA, IFAP.CA",8.85,6
