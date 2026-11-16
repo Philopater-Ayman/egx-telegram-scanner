@@ -1,16 +1,16 @@
 # Telegram-First EGX Scanner Report
 
-Scan phase: Open liquidity confirmation
-Generated UTC: 2026-11-16T15:37:42.239665+00:00
-Generated Cairo: 2026-11-16 17:37
-Run timing: target 09:15 Cairo | generated Cairo 2026-11-16 17:37 | cron 15 6 * * 0-4
-Trigger: scheduled cron=15 6 * * 0-4 mapped to open_confirm; Cairo now 2026-11-16 17:35
+Scan phase: Intraday liquidity update
+Generated UTC: 2026-11-16T17:49:21.805381+00:00
+Generated Cairo: 2026-11-16 19:49
+Run timing: target 11:00 Cairo | generated Cairo 2026-11-16 19:49 | cron 0 8 * * 0-4
+Trigger: scheduled cron=0 8 * * 0-4 mapped to intraday; Cairo now 2026-11-16 19:47
 
 ## Control Center
 - Action tickets: 0 prioritized signal(s)
 - BUY-ready candidates: 0
-- Data quality issues: 5
-- Tradeable price/liquidity tickers: 185/185
+- Data quality issues: 4
+- Tradeable price/liquidity tickers: 186/186
 - Top sector: Food, Beverages & Tobacco
 
 ## Market Context
@@ -26,9 +26,9 @@ Trigger: scheduled cron=15 6 * * 0-4 mapped to open_confirm; Cairo now 2026-11-1
 ## Top Liquidity
 - ETEL.CA: liquidity=639616551.0 spike=2.55 score=26.5
 - BIOC.CA: liquidity=444764236.54 spike=2.63 score=21.66
+- GTWL.CA: liquidity=371567042.0 spike=1.4 score=18.2
 - EAST.CA: liquidity=351878820.53 spike=6.75 score=28.4
 - CCAP.CA: liquidity=322469542.23 spike=0.78 score=19.49
-- MPCO.CA: liquidity=276246653.42 spike=2.6 score=23.6
 
 ## AI Narrative
 - Provider: OpenRouter ERROR
@@ -36,7 +36,7 @@ Trigger: scheduled cron=15 6 * * 0-4 mapped to open_confirm; Cairo now 2026-11-1
 - Summary: OpenRouter narrative failed; local scanner summary used.
 
 ## Top Liquidity Spikes
-- INFI.CA: spike=7.8 liquidity=244755900.32 outlook=CONSTRUCTIVE score=65.66 buy_ready=False
+- INFI.CA: spike=7.8 liquidity=244755900.32 outlook=CONSTRUCTIVE score=65.75 buy_ready=False
 - EAST.CA: spike=6.75 liquidity=351878820.53 outlook=BULLISH_WATCH score=78 buy_ready=False
 - SUGR.CA: spike=4.67 liquidity=94361378.31 outlook=BULLISH_WATCH score=99 buy_ready=False
 - OLFI.CA: spike=4.18 liquidity=40883650.61 outlook=CONSTRUCTIVE score=66 buy_ready=False
@@ -65,11 +65,11 @@ Trigger: scheduled cron=15 6 * * 0-4 mapped to open_confirm; Cairo now 2026-11-1
 - ETEL.CA: BULLISH_WATCH score=96.07 liquidity=ACCUMULATION_SPIKE sector=IMPROVING risk=No major short-term scanner risk flags.
 - HDBK.CA: BULLISH_WATCH score=81.91 liquidity=ACCUMULATION_SPIKE sector=IMPROVING risk=far above support; sector is not leading
 - EAST.CA: BULLISH_WATCH score=78 liquidity=ACCUMULATION_SPIKE sector=LEADING risk=momentum is extended; far above support; close to resistance
-- SDTI.CA: BULLISH_WATCH score=77.66 liquidity=TRADEABLE sector=IMPROVING risk=sector is not leading
-- GMCI.CA: BULLISH_WATCH score=74.66 liquidity=TRADEABLE sector=IMPROVING risk=momentum is extended; far above support; sector is not leading
-- PRMH.CA: BULLISH_WATCH score=71.66 liquidity=ACCUMULATION_SPIKE sector=IMPROVING risk=overheated RSI; far above support; sector is not leading
-- RUBX.CA: BULLISH_WATCH score=71.66 liquidity=ACCUMULATION_SPIKE sector=IMPROVING risk=momentum is extended; far above support; sector is not leading; high short-term volatility
-- CPCI.CA: BULLISH_WATCH score=71.66 liquidity=TRADEABLE sector=IMPROVING risk=sector is not leading
+- SDTI.CA: BULLISH_WATCH score=77.75 liquidity=TRADEABLE sector=IMPROVING risk=sector is not leading
+- GMCI.CA: BULLISH_WATCH score=74.75 liquidity=TRADEABLE sector=IMPROVING risk=momentum is extended; far above support; sector is not leading
+- PRMH.CA: BULLISH_WATCH score=71.75 liquidity=ACCUMULATION_SPIKE sector=IMPROVING risk=overheated RSI; far above support; sector is not leading
+- RUBX.CA: BULLISH_WATCH score=71.75 liquidity=ACCUMULATION_SPIKE sector=IMPROVING risk=momentum is extended; far above support; sector is not leading; high short-term volatility
+- CPCI.CA: BULLISH_WATCH score=71.75 liquidity=TRADEABLE sector=IMPROVING risk=sector is not leading
 - MHOT.CA: BULLISH_WATCH score=70 liquidity=ACCUMULATION_SPIKE sector=LEADING risk=overheated RSI; far above support
 
 ## BUY-Ready Candidates
@@ -80,7 +80,6 @@ Trigger: scheduled cron=15 6 * * 0-4 mapped to open_confirm; Cairo now 2026-11-1
 - EKHO.CA: No usable market data returned. Check Yahoo symbol or add a manual fallback row.
 - ANFI.CA: No usable market data returned. Check Yahoo symbol or add a manual fallback row.
 - ARVA.CA: No usable market data returned. Check Yahoo symbol or add a manual fallback row.
-- GTWL.CA: No usable market data returned. Check Yahoo symbol or add a manual fallback row.
 
 ## Ranked Scanner Results
 - AALR.CA: score=15.4 buy_ready=False sector_rank=9 price=251.0 support=171.02 resistance=269.99 source=Yahoo Finance as_of=2026-11-11T22:00:00+00:00 freshness=FRESH RSI=75.08 liquidity=10481760.0 spike=0.51
@@ -174,6 +173,7 @@ Trigger: scheduled cron=15 6 * * 0-4 mapped to open_confirm; Cairo now 2026-11-1
 - GMCI.CA: score=20.92 buy_ready=False sector_rank=9 price=1.7 support=1.34 resistance=1.7 source=Yahoo Finance as_of=2026-11-11T22:00:00+00:00 freshness=FRESH RSI=63.33 liquidity=1520089.04 spike=3.97
 - GRCA.CA: score=19.4 buy_ready=False sector_rank=9 price=35.0 support=22.57 resistance=37.32 source=Yahoo Finance as_of=2026-11-11T22:00:00+00:00 freshness=FRESH RSI=73.57 liquidity=10481100.0 spike=0.92
 - GSSC.CA: score=9.78 buy_ready=False sector_rank=9 price=267.14 support=211.52 resistance=272.0 source=Yahoo Finance as_of=2026-11-11T22:00:00+00:00 freshness=FRESH RSI=70.98 liquidity=1379778.18 spike=0.91
+- GTWL.CA: score=18.2 buy_ready=False sector_rank=9 price=150.5 support=73.02 resistance=158.99 source=Yahoo Finance as_of=2026-11-11T22:00:00+00:00 freshness=FRESH RSI=84.35 liquidity=371567042.0 spike=1.4
 - HDBK.CA: score=29.3 buy_ready=False sector_rank=12 price=108.99 support=83.01 resistance=111.2 source=Yahoo Finance as_of=2026-11-11T22:00:00+00:00 freshness=FRESH RSI=57.77 liquidity=101097923.13 spike=3.45
 - HELI.CA: score=17.83 buy_ready=False sector_rank=17 price=7.01 support=5.72 resistance=7.3 source=Yahoo Finance as_of=2026-11-11T22:00:00+00:00 freshness=FRESH RSI=70.51 liquidity=46660075.68 spike=0.6
 - HRHO.CA: score=22.18 buy_ready=False sector_rank=16 price=25.36 support=21.87 resistance=26.0 source=Yahoo Finance as_of=2026-11-11T22:00:00+00:00 freshness=FRESH RSI=61.03 liquidity=30944019.14 spike=0.59
