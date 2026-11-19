@@ -1,30 +1,31 @@
 # Provider Status
 
-Generated UTC: 2026-11-19T17:01:45.748107+00:00
-Generated Cairo: 2026-11-19 19:01
-- Scan phase: Intraday liquidity update
-- Run timing: target 11:00 Cairo | generated Cairo 2026-11-19 19:01 | cron 0 8 * * 0-4
-- Trigger: scheduled cron=0 8 * * 0-4 mapped to intraday; Cairo now 2026-11-19 18:59
+Generated UTC: 2026-11-19T20:53:49.112742+00:00
+Generated Cairo: 2026-11-19 22:53
+- Scan phase: Post-close tomorrow tickets
+- Run timing: target 15:30 Cairo | generated Cairo 2026-11-19 22:53 | cron 30 12 * * 0-4
+- Trigger: scheduled cron=30 12 * * 0-4 mapped to post_close; Cairo now 2026-11-19 22:51
 
 - Macro source: Market context unavailable
 - Macro freshness: MISSING
 - Macro trend: Unavailable
 - Market regime: EGX30 BEARISH / EGX70 BEARISH / sector breadth 9.52% / risk mode DEFENSIVE_NO_NEW_BUY
-- Market data: 187/187 tickers have tradeable current/delayed price data
-- Mubasher delayed current rows used: 0/187
-- Current/Yahoo technical mismatches blocked: 0/187
-- DirectFN public table health only, not trusted for action tickets: 258 rows | as_of=2026-11-19T16:59:36.635115+00:00 | error=none
-- Data quality issues: 3
+- Market data: 186/186 tickers have tradeable current/delayed price data
+- Mubasher delayed current rows used: 0/186
+- Current/Yahoo technical mismatches blocked: 0/186
+- DirectFN public table health only, not trusted for action tickets: 258 rows | as_of=2026-11-19T20:51:07.116425+00:00 | error=none
+- Data quality issues: 4
 - Evidence sources found: 0
 - AI narrative: OpenRouter ERROR (openai/gpt-oss-120b:free)
 - Telegram sent on latest run: True
-- Latest ticket id(s): 20261119T170145Z_HOLD_NONE
+- Latest ticket id(s): 20261119T205349Z_HOLD_NONE
 - Latest history write(s): /home/runner/work/egx-telegram-scanner/egx-telegram-scanner/trade_history.csv
 
 ## Warnings
 - EKHO.CA: No usable market data returned. Check Yahoo symbol or add a manual fallback row.
 - ANFI.CA: No usable market data returned. Check Yahoo symbol or add a manual fallback row.
 - ARVA.CA: No usable market data returned. Check Yahoo symbol or add a manual fallback row.
+- GTWL.CA: No usable market data returned. Check Yahoo symbol or add a manual fallback row.
 - Mubasher stock page returned no evidence titles for HRHO.CA.
 - No Yahoo or Mubasher evidence found for HRHO.CA.
 - Evidence rejected for HRHO.CA: source text did not clearly match HRHO.CA / EFG Holding.
