@@ -1,10 +1,10 @@
 # Telegram-First EGX Scanner Report
 
-Scan phase: Post-close tomorrow tickets
-Generated UTC: 2026-11-19T20:53:47.871460+00:00
-Generated Cairo: 2026-11-19 22:53
-Run timing: target 15:30 Cairo | generated Cairo 2026-11-19 22:53 | cron 30 12 * * 0-4
-Trigger: scheduled cron=30 12 * * 0-4 mapped to post_close; Cairo now 2026-11-19 22:51
+Scan phase: Evening tomorrow plan
+Generated UTC: 2026-11-19T23:09:41.286472+00:00
+Generated Cairo: 2026-11-20 01:09
+Run timing: target 19:30 Cairo | generated Cairo 2026-11-20 01:09 | cron 30 16 * * 0-4
+Trigger: scheduled cron=30 16 * * 0-4 mapped to evening_plan; Cairo now 2026-11-20 01:07
 
 ## Control Center
 - Action tickets: 0 prioritized signal(s)
