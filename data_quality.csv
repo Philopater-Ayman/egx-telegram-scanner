@@ -1,191 +1,191 @@
 timestamp_utc,Ticker,Sector,Data_Status,Provider,Liquidity_Source,Technical_Source_Status,Price_As_Of,Freshness,Volume,Daily_Liquidity_EGP,Issue,Recommended_Action
-2026-11-19T23:09:36.287277+00:00,HRHO.CA,Non-bank Financial Services,OK,Yahoo Finance,Yahoo Finance,,2026-11-17T22:00:00+00:00,FRESH,11245018.0,284498946.82,,No action
-2026-11-19T23:09:36.287277+00:00,LCSW.CA,Building Materials,OK,Yahoo Finance,Yahoo Finance,,2026-11-17T22:00:00+00:00,FRESH,369742.0,14545650.34,,No action
-2026-11-19T23:09:36.287277+00:00,ARCC.CA,Building Materials,OK,Yahoo Finance,Yahoo Finance,,2026-11-17T22:00:00+00:00,FRESH,274716.0,18804309.36,,No action
-2026-11-19T23:09:36.287277+00:00,MENA.CA,Real Estate,OK,Yahoo Finance,Yahoo Finance,,2026-11-17T22:00:00+00:00,FRESH,5307942.0,39278771.31,,No action
-2026-11-19T23:09:36.287277+00:00,SUGR.CA,"Food, Beverages & Tobacco",OK,Yahoo Finance,Yahoo Finance,,2026-11-17T22:00:00+00:00,FRESH,197751.0,10203951.3,,No action
-2026-11-19T23:09:36.287277+00:00,SAUD.CA,Banking & Financials,OK,Yahoo Finance,Yahoo Finance,,2026-11-17T22:00:00+00:00,FRESH,802973.0,18468379.0,,No action
-2026-11-19T23:09:36.287277+00:00,SWDY.CA,Industrial Goods & Cables,OK,Yahoo Finance,Yahoo Finance,,2026-11-17T22:00:00+00:00,FRESH,180592.0,21304438.46,,No action
-2026-11-19T23:09:36.287277+00:00,EAST.CA,"Food, Beverages & Tobacco",OK,Yahoo Finance,Yahoo Finance,,2026-11-17T22:00:00+00:00,FRESH,1310021.0,44645518.08,,No action
-2026-11-19T23:09:36.287277+00:00,PRMH.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-17T22:00:00+00:00,FRESH,8927812.0,20623245.21,,No action
-2026-11-19T23:09:36.287277+00:00,CIEB.CA,Banking & Financials,OK,Yahoo Finance,Yahoo Finance,,2026-11-17T22:00:00+00:00,FRESH,670715.0,15567294.54,,No action
-2026-11-19T23:09:36.287277+00:00,ENGC.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-17T22:00:00+00:00,FRESH,576623.0,22488297.0,,No action
-2026-11-19T23:09:36.287277+00:00,INFI.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-17T22:00:00+00:00,FRESH,1534920.0,241749900.0,,No action
-2026-11-19T23:09:36.287277+00:00,ETEL.CA,Telecommunications,OK,Yahoo Finance,Yahoo Finance,,2026-11-17T22:00:00+00:00,FRESH,1604197.0,227715759.25,,No action
-2026-11-19T23:09:36.287277+00:00,MCQE.CA,Building Materials,OK,Yahoo Finance,Yahoo Finance,,2026-11-17T22:00:00+00:00,FRESH,219480.0,38762362.93,,No action
-2026-11-19T23:09:36.287277+00:00,COMI.CA,Banking & Financials,OK,Yahoo Finance,Yahoo Finance,,2026-11-17T22:00:00+00:00,FRESH,2859469.0,366012032.0,,No action
-2026-11-19T23:09:36.287277+00:00,AMES.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-17T22:00:00+00:00,FRESH,16502636.0,651854122.0,,No action
-2026-11-19T23:09:36.287277+00:00,NIPH.CA,Healthcare,OK,Yahoo Finance,Yahoo Finance,,2026-11-17T22:00:00+00:00,FRESH,612295.0,196546695.0,,No action
-2026-11-19T23:09:36.287277+00:00,MBSC.CA,Building Materials,OK,Yahoo Finance,Yahoo Finance,,2026-11-17T22:00:00+00:00,FRESH,193231.0,68210543.0,,No action
-2026-11-19T23:09:36.287277+00:00,SCEM.CA,Building Materials,OK,Yahoo Finance,Yahoo Finance,,2026-11-17T22:00:00+00:00,FRESH,283472.0,27780256.0,,No action
-2026-11-19T23:09:36.287277+00:00,BIOC.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-17T22:00:00+00:00,FRESH,570522.0,232202454.0,,No action
-2026-11-19T23:09:36.287277+00:00,ETRS.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-17T22:00:00+00:00,FRESH,780810.0,8378090.94,,No action
-2026-11-19T23:09:36.287277+00:00,ELKA.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-17T22:00:00+00:00,FRESH,13309775.0,19565369.63,,No action
-2026-11-19T23:09:36.287277+00:00,MPCI.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-17T22:00:00+00:00,FRESH,175883.0,62948524.63,,No action
-2026-11-19T23:09:36.287277+00:00,PRCL.CA,Building Materials,OK,Yahoo Finance,Yahoo Finance,,2026-11-17T22:00:00+00:00,FRESH,914173.0,17305295.17,,No action
-2026-11-19T23:09:36.287277+00:00,ADIB.CA,Banking & Financials,OK,Yahoo Finance,Yahoo Finance,,2026-11-17T22:00:00+00:00,FRESH,879276.0,40974260.26,,No action
-2026-11-19T23:09:36.287277+00:00,PHAR.CA,Healthcare,OK,Yahoo Finance,Yahoo Finance,,2026-11-17T22:00:00+00:00,FRESH,734519.0,77866360.76,,No action
-2026-11-19T23:09:36.287277+00:00,UNIT.CA,Real Estate,OK,Yahoo Finance,Yahoo Finance,,2026-11-17T22:00:00+00:00,FRESH,821196.0,12654630.23,,No action
-2026-11-19T23:09:36.287277+00:00,EFIH.CA,Fintech & Payments,OK,Yahoo Finance,Yahoo Finance,,2026-11-17T22:00:00+00:00,FRESH,1321742.0,33043550.0,,No action
-2026-11-19T23:09:36.287277+00:00,CAED.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-17T22:00:00+00:00,FRESH,213963.0,21620961.8,,No action
-2026-11-19T23:09:36.287277+00:00,SIPC.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-17T22:00:00+00:00,FRESH,3796428.0,19969212.15,,No action
-2026-11-19T23:09:36.287277+00:00,OCDI.CA,Real Estate,OK,Yahoo Finance,Yahoo Finance,,2026-11-17T22:00:00+00:00,FRESH,1260316.0,32264090.08,,No action
-2026-11-19T23:09:36.287277+00:00,HDBK.CA,Banking & Financials,OK,Yahoo Finance,Yahoo Finance,,2026-11-17T22:00:00+00:00,FRESH,247334.0,26877785.33,,No action
-2026-11-19T23:09:36.287277+00:00,ARAB.CA,Real Estate,OK,Yahoo Finance,Yahoo Finance,,2026-11-17T22:00:00+00:00,FRESH,130639817.0,33182514.58,,No action
-2026-11-19T23:09:36.287277+00:00,ZMID.CA,Real Estate,OK,Yahoo Finance,Yahoo Finance,,2026-11-17T22:00:00+00:00,FRESH,6636638.0,44531841.23,,No action
-2026-11-19T23:09:36.287277+00:00,PRDC.CA,Real Estate,OK,Yahoo Finance,Yahoo Finance,,2026-11-17T22:00:00+00:00,FRESH,1759689.0,11684334.73,,No action
-2026-11-19T23:09:36.287277+00:00,CLHO.CA,Healthcare,OK,Yahoo Finance,Yahoo Finance,,2026-11-17T22:00:00+00:00,FRESH,1544007.0,21322737.32,,No action
-2026-11-19T23:09:36.287277+00:00,ISPH.CA,Healthcare,OK,Yahoo Finance,Yahoo Finance,,2026-11-17T22:00:00+00:00,FRESH,1955171.0,20411984.42,,No action
-2026-11-19T23:09:36.287277+00:00,ASPI.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-17T22:00:00+00:00,FRESH,53008077.0,16962584.26,,No action
-2026-11-19T23:09:36.287277+00:00,GGCC.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-17T22:00:00+00:00,FRESH,19703598.0,11073421.62,,No action
-2026-11-19T23:09:36.287277+00:00,MCRO.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-17T22:00:00+00:00,FRESH,13900947.0,18488260.11,,No action
-2026-11-19T23:09:36.287277+00:00,UEGC.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-17T22:00:00+00:00,FRESH,15640770.0,23617562.55,,No action
-2026-11-19T23:09:36.287277+00:00,SDTI.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-17T22:00:00+00:00,FRESH,120687.0,9962712.22,,No action
-2026-11-19T23:09:36.287277+00:00,NCCW.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-17T22:00:00+00:00,FRESH,1753816.0,9944136.85,,No action
-2026-11-19T23:09:36.287277+00:00,RAYA.CA,Technology & Distribution,OK,Yahoo Finance,Yahoo Finance,,2026-11-17T22:00:00+00:00,FRESH,3661788.0,20982045.31,,No action
-2026-11-19T23:09:36.287277+00:00,ORHD.CA,Real Estate,OK,Yahoo Finance,Yahoo Finance,,2026-11-17T22:00:00+00:00,FRESH,5682877.0,58590464.25,,No action
-2026-11-19T23:09:36.287277+00:00,EGTS.CA,Real Estate,OK,Yahoo Finance,Yahoo Finance,,2026-11-17T22:00:00+00:00,FRESH,1217541.0,15645402.31,,No action
-2026-11-19T23:09:36.287277+00:00,RMDA.CA,Healthcare,OK,Yahoo Finance,Yahoo Finance,,2026-11-17T22:00:00+00:00,FRESH,3108757.0,16196624.09,,No action
-2026-11-19T23:09:36.287277+00:00,EFID.CA,"Food, Beverages & Tobacco",OK,Yahoo Finance,Yahoo Finance,,2026-11-17T22:00:00+00:00,FRESH,1448333.0,29545992.65,,No action
-2026-11-19T23:09:36.287277+00:00,MPRC.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-17T22:00:00+00:00,FRESH,196356.0,7587195.72,,No action
-2026-11-19T23:09:36.287277+00:00,MPCO.CA,Agriculture & Food Production,OK,Yahoo Finance,Yahoo Finance,,2026-11-17T22:00:00+00:00,FRESH,48654970.0,97309940.0,,No action
-2026-11-19T23:09:36.287277+00:00,CIRA.CA,Education,OK,Yahoo Finance,Yahoo Finance,,2026-11-17T22:00:00+00:00,FRESH,175986.0,6778980.8,,No action
-2026-11-19T23:09:36.287277+00:00,CCAP.CA,Investment Holding,OK,Yahoo Finance,Yahoo Finance,,2026-11-17T22:00:00+00:00,FRESH,41861509.0,253680742.14,,No action
-2026-11-19T23:09:36.287277+00:00,EFIC.CA,Basic Resources & Chemicals,OK,Yahoo Finance,Yahoo Finance,,2026-11-17T22:00:00+00:00,FRESH,60146.0,9743652.0,,No action
-2026-11-19T23:09:36.287277+00:00,ORWE.CA,Textiles,OK,Yahoo Finance,Yahoo Finance,,2026-11-17T22:00:00+00:00,FRESH,338947.0,8500790.73,,No action
-2026-11-19T23:09:36.287277+00:00,GIHD.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-17T22:00:00+00:00,FRESH,379728.0,19555992.0,,No action
-2026-11-19T23:09:36.287277+00:00,ATLC.CA,Non-bank Financial Services,OK,Yahoo Finance,Yahoo Finance,,2026-11-17T22:00:00+00:00,FRESH,2006924.0,10977873.86,,No action
-2026-11-19T23:09:36.287277+00:00,AFMC.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-17T22:00:00+00:00,FRESH,181365.0,25465460.31,,No action
-2026-11-19T23:09:36.287277+00:00,AJWA.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-17T22:00:00+00:00,FRESH,64744.0,17303482.07,,No action
-2026-11-19T23:09:36.287277+00:00,OFH.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-17T22:00:00+00:00,FRESH,14728206.0,10677949.7,,No action
-2026-11-19T23:09:36.287277+00:00,RUBX.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-17T22:00:00+00:00,FRESH,1452211.0,19212750.87,,No action
-2026-11-19T23:09:36.287277+00:00,SVCE.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-17T22:00:00+00:00,FRESH,5510509.0,51302841.1,,No action
-2026-11-19T23:09:36.287277+00:00,FAIT.CA,Banking & Financials,OK,Yahoo Finance,Yahoo Finance,,2026-11-17T22:00:00+00:00,FRESH,47325.0,2157546.76,,No action
-2026-11-19T23:09:36.287277+00:00,MICH.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-17T22:00:00+00:00,FRESH,204538.0,9306479.0,,No action
-2026-11-19T23:09:36.287277+00:00,EMFD.CA,Real Estate,OK,Yahoo Finance,Yahoo Finance,,2026-11-17T22:00:00+00:00,FRESH,3759928.0,47036700.14,,No action
-2026-11-19T23:09:36.287277+00:00,HELI.CA,Real Estate,OK,Yahoo Finance,Yahoo Finance,,2026-11-17T22:00:00+00:00,FRESH,8718246.0,57540422.77,,No action
-2026-11-19T23:09:36.287277+00:00,AMER.CA,Real Estate,OK,Yahoo Finance,Yahoo Finance,,2026-11-17T22:00:00+00:00,FRESH,8392312.0,35163787.76,,No action
-2026-11-19T23:09:36.287277+00:00,ELEC.CA,Industrial Goods & Cables,OK,Yahoo Finance,Yahoo Finance,,2026-11-17T22:00:00+00:00,FRESH,11126083.0,18246775.96,,No action
-2026-11-19T23:09:36.287277+00:00,EGAL.CA,Basic Resources & Chemicals,OK,Yahoo Finance,Yahoo Finance,,2026-11-17T22:00:00+00:00,FRESH,104016.0,31958916.0,,No action
-2026-11-19T23:09:36.287277+00:00,FWRY.CA,Fintech & Payments,OK,Yahoo Finance,Yahoo Finance,,2026-11-17T22:00:00+00:00,FRESH,5283758.0,89348346.97,,No action
-2026-11-19T23:09:36.287277+00:00,ACAMD.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-17T22:00:00+00:00,FRESH,39008825.0,76067210.61,,No action
-2026-11-19T23:09:36.287277+00:00,FAITA.CA,Banking & Financials,OK,Yahoo Finance,Yahoo Finance,,2026-11-17T22:00:00+00:00,FRESH,76222.0,76298.23,,No action
-2026-11-19T23:09:36.287277+00:00,COPR.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-17T22:00:00+00:00,FRESH,23565969.0,9167161.91,,No action
-2026-11-19T23:09:36.287277+00:00,AMOC.CA,Energy & Petrochemicals,OK,Yahoo Finance,Yahoo Finance,,2026-11-17T22:00:00+00:00,FRESH,4806698.0,63736816.58,,No action
-2026-11-19T23:09:36.287277+00:00,MOSC.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-17T22:00:00+00:00,FRESH,25961.0,6754013.86,,No action
-2026-11-19T23:09:36.287277+00:00,BTFH.CA,Non-bank Financial Services,OK,Yahoo Finance,Yahoo Finance,,2026-11-17T22:00:00+00:00,FRESH,38355834.0,87451300.42,,No action
-2026-11-19T23:09:36.287277+00:00,OIH.CA,Investment Holding,OK,Yahoo Finance,Yahoo Finance,,2026-11-17T22:00:00+00:00,FRESH,38273463.0,61620275.98,,No action
-2026-11-19T23:09:36.287277+00:00,MASR.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-17T22:00:00+00:00,FRESH,1889832.0,12397297.81,,No action
-2026-11-19T23:09:36.287277+00:00,CERA.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-17T22:00:00+00:00,FRESH,21920521.0,22797341.0,,No action
-2026-11-19T23:09:36.287277+00:00,DAPH.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-17T22:00:00+00:00,FRESH,171772.0,14755215.06,,No action
-2026-11-19T23:09:36.287277+00:00,EEII.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-17T22:00:00+00:00,FRESH,6299378.0,12598756.0,,No action
-2026-11-19T23:09:36.287277+00:00,KWIN.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-17T22:00:00+00:00,FRESH,158029.0,11229540.35,,No action
-2026-11-19T23:09:36.287277+00:00,LUTS.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-17T22:00:00+00:00,FRESH,96020451.0,66350130.18,,No action
-2026-11-19T23:09:36.287277+00:00,MAAL.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-17T22:00:00+00:00,FRESH,3561829.0,22795705.94,,No action
-2026-11-19T23:09:36.287277+00:00,DSCW.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-17T22:00:00+00:00,FRESH,5194506.0,7895649.02,,No action
-2026-11-19T23:09:36.287277+00:00,TMGH.CA,Real Estate,OK,Yahoo Finance,Yahoo Finance,,2026-11-17T22:00:00+00:00,FRESH,1833464.0,151260780.0,,No action
-2026-11-19T23:09:36.287277+00:00,PHDC.CA,Real Estate,OK,Yahoo Finance,Yahoo Finance,,2026-11-17T22:00:00+00:00,FRESH,7240516.0,83265934.0,,No action
-2026-11-19T23:09:36.287277+00:00,SKPC.CA,Basic Resources & Chemicals,OK,Yahoo Finance,Yahoo Finance,,2026-11-17T22:00:00+00:00,FRESH,1095309.0,16122948.77,,No action
-2026-11-19T23:09:36.287277+00:00,EGCH.CA,Basic Resources & Chemicals,OK,Yahoo Finance,Yahoo Finance,,2026-11-17T22:00:00+00:00,FRESH,2010430.0,20707429.38,,No action
-2026-11-19T23:09:36.287277+00:00,KZPC.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-17T22:00:00+00:00,FRESH,1068867.0,12815715.09,,No action
-2026-11-19T23:09:36.287277+00:00,ISMA.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-17T22:00:00+00:00,FRESH,354184.0,7260772.0,,No action
-2026-11-19T23:09:36.287277+00:00,AALR.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-17T22:00:00+00:00,FRESH,26582.0,6120239.83,,No action
-2026-11-19T23:09:36.287277+00:00,AMIA.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-17T22:00:00+00:00,FRESH,749083.0,12734411.0,,No action
-2026-11-19T23:09:36.287277+00:00,JUFO.CA,"Food, Beverages & Tobacco",OK,Yahoo Finance,Yahoo Finance,,2026-11-17T22:00:00+00:00,FRESH,316068.0,7370705.66,,No action
-2026-11-19T23:09:36.287277+00:00,EGSA.CA,Telecommunications,OK,Yahoo Finance,Yahoo Finance,,2026-11-17T22:00:00+00:00,FRESH,369.0,3321.0,,No action
-2026-11-19T23:09:36.287277+00:00,AXPH.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-17T22:00:00+00:00,FRESH,3190.0,4692490.0,,No action
-2026-11-19T23:09:36.287277+00:00,EXPA.CA,Banking & Financials,OK,Yahoo Finance,Yahoo Finance,,2026-11-17T22:00:00+00:00,FRESH,401140.0,5888735.32,,No action
-2026-11-19T23:09:36.287277+00:00,IRON.CA,Basic Resources & Chemicals,OK,Yahoo Finance,Yahoo Finance,,2026-11-17T22:00:00+00:00,FRESH,372484.0,8965689.77,,No action
-2026-11-19T23:09:36.287277+00:00,ROTO.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-17T22:00:00+00:00,FRESH,205247.0,6541222.06,,No action
-2026-11-19T23:09:36.287277+00:00,MOIN.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-17T22:00:00+00:00,FRESH,161511.0,5150585.69,,No action
-2026-11-19T23:09:36.287277+00:00,MTIE.CA,Automotive & Distribution,OK,Yahoo Finance,Yahoo Finance,,2026-11-17T22:00:00+00:00,FRESH,1931089.0,12764498.55,,No action
-2026-11-19T23:09:36.287277+00:00,GBCO.CA,Automotive & Distribution,OK,Yahoo Finance,Yahoo Finance,,2026-11-17T22:00:00+00:00,FRESH,1525258.0,34043758.09,,No action
-2026-11-19T23:09:36.287277+00:00,SNFC.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-17T22:00:00+00:00,FRESH,613745.0,6886219.06,,No action
-2026-11-19T23:09:36.287277+00:00,KABO.CA,Textiles,OK,Yahoo Finance,Yahoo Finance,,2026-11-17T22:00:00+00:00,FRESH,1173735.0,8075296.93,,No action
-2026-11-19T23:09:36.287277+00:00,TALM.CA,Education,OK,Yahoo Finance,Yahoo Finance,,2026-11-17T22:00:00+00:00,FRESH,204509.0,4116766.0,,No action
-2026-11-19T23:09:36.287277+00:00,CPCI.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-17T22:00:00+00:00,FRESH,6351.0,3663256.72,,No action
-2026-11-19T23:09:36.287277+00:00,ATQA.CA,Basic Resources & Chemicals,OK,Yahoo Finance,Yahoo Finance,,2026-11-17T22:00:00+00:00,FRESH,3079068.0,31899143.42,,No action
-2026-11-19T23:09:36.287277+00:00,CCRS.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-17T22:00:00+00:00,FRESH,3695762.0,7428481.58,,No action
-2026-11-19T23:09:36.287277+00:00,MOIL.CA,Energy & Petrochemicals,OK,Yahoo Finance,Yahoo Finance,,2026-11-17T22:00:00+00:00,FRESH,186927.0,129166.55,,No action
-2026-11-19T23:09:36.287277+00:00,SEIG.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-17T22:00:00+00:00,FRESH,14020.0,3249836.04,,No action
-2026-11-19T23:09:36.287277+00:00,GRCA.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-17T22:00:00+00:00,FRESH,219449.0,7007006.64,,No action
-2026-11-19T23:09:36.287277+00:00,DTPP.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-17T22:00:00+00:00,FRESH,569097.0,34145820.0,,No action
-2026-11-19T23:09:36.287277+00:00,ALCN.CA,Transportation & Logistics,OK,Yahoo Finance,Yahoo Finance,,2026-11-17T22:00:00+00:00,FRESH,164996.0,5316171.32,,No action
-2026-11-19T23:09:36.287277+00:00,POUL.CA,"Food, Beverages & Tobacco",OK,Yahoo Finance,Yahoo Finance,,2026-11-17T22:00:00+00:00,FRESH,8356491.0,64344979.11,,No action
-2026-11-19T23:09:36.287277+00:00,MILS.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-17T22:00:00+00:00,FRESH,46374.0,6496533.49,,No action
-2026-11-19T23:09:36.287277+00:00,MEPA.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-17T22:00:00+00:00,FRESH,4452012.0,5921176.15,,No action
-2026-11-19T23:09:36.287277+00:00,RREI.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-17T22:00:00+00:00,FRESH,2201091.0,5898924.03,,No action
-2026-11-19T23:09:36.287277+00:00,EGBE.CA,Banking & Financials,OK,Yahoo Finance,Yahoo Finance,,2026-11-17T22:00:00+00:00,FRESH,20650.0,10283.7,,No action
-2026-11-19T23:09:36.287277+00:00,ZEOT.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-17T22:00:00+00:00,FRESH,253645.0,2782485.72,,No action
-2026-11-19T23:09:36.287277+00:00,CANA.CA,Banking & Financials,OK,Yahoo Finance,Yahoo Finance,,2026-11-17T22:00:00+00:00,FRESH,525791.0,16925211.57,,No action
-2026-11-19T23:09:36.287277+00:00,NINH.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-17T22:00:00+00:00,FRESH,231572.0,3665784.74,,No action
-2026-11-19T23:09:36.287277+00:00,SPMD.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-17T22:00:00+00:00,FRESH,17193108.0,5639339.58,,No action
-2026-11-19T23:09:36.287277+00:00,ODIN.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-17T22:00:00+00:00,FRESH,1739694.0,3601166.46,,No action
-2026-11-19T23:09:36.287277+00:00,WKOL.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-17T22:00:00+00:00,FRESH,31017.0,5302666.53,,No action
-2026-11-19T23:09:36.287277+00:00,MOED.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-17T22:00:00+00:00,FRESH,10962591.0,5283968.79,,No action
-2026-11-19T23:09:36.287277+00:00,ACGC.CA,Textiles,OK,Yahoo Finance,Yahoo Finance,,2026-11-17T22:00:00+00:00,FRESH,183222.0,2482658.13,,No action
-2026-11-19T23:09:36.287277+00:00,UEFM.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-17T22:00:00+00:00,FRESH,2355.0,1184141.12,,No action
-2026-11-19T23:09:36.287277+00:00,EPCO.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-17T22:00:00+00:00,FRESH,362217.0,3067978.09,,No action
-2026-11-19T23:09:36.287277+00:00,ELSH.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-17T22:00:00+00:00,FRESH,368729.0,4019145.96,,No action
-2026-11-19T23:09:36.287277+00:00,ISMQ.CA,Basic Resources & Chemicals,OK,Yahoo Finance,Yahoo Finance,,2026-11-17T22:00:00+00:00,FRESH,777924.0,5391013.19,,No action
-2026-11-19T23:09:36.287277+00:00,EGAS.CA,Energy & Petrochemicals,OK,Yahoo Finance,Yahoo Finance,,2026-11-17T22:00:00+00:00,FRESH,31340.0,1522810.6,,No action
-2026-11-19T23:09:36.287277+00:00,GDWA.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-17T22:00:00+00:00,FRESH,8457917.0,4567275.36,,No action
-2026-11-19T23:09:36.287277+00:00,EHDR.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-17T22:00:00+00:00,FRESH,2193373.0,4540281.96,,No action
-2026-11-19T23:09:36.287277+00:00,MIPH.CA,Healthcare,OK,Yahoo Finance,Yahoo Finance,,2026-11-17T22:00:00+00:00,FRESH,1124.0,876630.06,,No action
-2026-11-19T23:09:36.287277+00:00,OBRI.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-17T22:00:00+00:00,FRESH,192638.0,4395999.1,,No action
-2026-11-19T23:09:36.287277+00:00,COSG.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-17T22:00:00+00:00,FRESH,3385191.0,4366896.26,,No action
-2026-11-19T23:09:36.287277+00:00,DOMT.CA,"Food, Beverages & Tobacco",OK,Yahoo Finance,Yahoo Finance,,2026-11-17T22:00:00+00:00,FRESH,97885.0,2477469.3,,No action
-2026-11-19T23:09:36.287277+00:00,AREH.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-17T22:00:00+00:00,FRESH,3978199.0,4057762.9,,No action
-2026-11-19T23:09:36.287277+00:00,ELNA.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-17T22:00:00+00:00,FRESH,1493.0,61631.04,,No action
-2026-11-19T23:09:36.287277+00:00,EALR.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-17T22:00:00+00:00,FRESH,6754.0,1997833.12,,No action
-2026-11-19T23:09:36.287277+00:00,OLFI.CA,"Food, Beverages & Tobacco",OK,Yahoo Finance,Yahoo Finance,,2026-11-17T22:00:00+00:00,FRESH,113167.0,2296158.53,,No action
-2026-11-19T23:09:36.287277+00:00,NHPS.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-17T22:00:00+00:00,FRESH,31371.0,1892926.14,,No action
-2026-11-19T23:09:36.287277+00:00,RACC.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-17T22:00:00+00:00,FRESH,491148.0,3875157.65,,No action
-2026-11-19T23:09:36.287277+00:00,ASCM.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-17T22:00:00+00:00,FRESH,85559.0,3859566.54,,No action
-2026-11-19T23:09:36.287277+00:00,GMCI.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-17T22:00:00+00:00,FRESH,281114.0,475082.68,,No action
-2026-11-19T23:09:36.287277+00:00,CNFN.CA,Non-bank Financial Services,OK,Yahoo Finance,Yahoo Finance,,2026-11-17T22:00:00+00:00,FRESH,414112.0,1635742.42,,No action
-2026-11-19T23:09:36.287277+00:00,OCPH.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-17T22:00:00+00:00,FRESH,18103.0,3666400.57,,No action
-2026-11-19T23:09:36.287277+00:00,ADCI.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-17T22:00:00+00:00,FRESH,2250.0,590625.0,,No action
-2026-11-19T23:09:36.287277+00:00,SPIN.CA,Textiles,OK,Yahoo Finance,Yahoo Finance,,2026-11-17T22:00:00+00:00,FRESH,119072.0,1783698.51,,No action
-2026-11-19T23:09:36.287277+00:00,ALUM.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-17T22:00:00+00:00,FRESH,77544.0,1522188.65,,No action
-2026-11-19T23:09:36.287277+00:00,EBSC.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-17T22:00:00+00:00,FRESH,931612.0,1416050.22,,No action
-2026-11-19T23:09:36.287277+00:00,ECAP.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-17T22:00:00+00:00,FRESH,45579.0,1282593.03,,No action
-2026-11-19T23:09:36.287277+00:00,GSSC.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-17T22:00:00+00:00,FRESH,956.0,251925.11,,No action
-2026-11-19T23:09:36.287277+00:00,IDRE.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-17T22:00:00+00:00,FRESH,74005.0,3075647.9,,No action
-2026-11-19T23:09:36.287277+00:00,PHTV.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-17T22:00:00+00:00,FRESH,137.0,45042.86,,No action
-2026-11-19T23:09:36.287277+00:00,ADPC.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-17T22:00:00+00:00,FRESH,969104.0,2849165.82,,No action
-2026-11-19T23:09:36.287277+00:00,ABUK.CA,Basic Resources & Chemicals,OK,Yahoo Finance,Yahoo Finance,,2026-11-17T22:00:00+00:00,FRESH,420514.0,32047371.56,,No action
-2026-11-19T23:09:36.287277+00:00,MFPC.CA,Basic Resources & Chemicals,OK,Yahoo Finance,Yahoo Finance,,2026-11-17T22:00:00+00:00,FRESH,1816307.0,69328434.86,,No action
-2026-11-19T23:09:36.287277+00:00,WCDF.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-17T22:00:00+00:00,FRESH,1108.0,568935.82,,No action
-2026-11-19T23:09:36.287277+00:00,FERC.CA,Basic Resources & Chemicals,OK,Yahoo Finance,Yahoo Finance,,2026-11-17T22:00:00+00:00,FRESH,14468.0,938539.2,,No action
-2026-11-19T23:09:36.287277+00:00,SMFR.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-17T22:00:00+00:00,FRESH,6727.0,1445901.4,,No action
-2026-11-19T23:09:36.287277+00:00,APSW.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-17T22:00:00+00:00,FRESH,108157.0,800361.81,,No action
-2026-11-19T23:09:36.287277+00:00,AFDI.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-17T22:00:00+00:00,FRESH,48247.0,2090542.6,,No action
-2026-11-19T23:09:36.287277+00:00,EASB.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-17T22:00:00+00:00,FRESH,178531.0,1078327.23,,No action
-2026-11-19T23:09:36.287277+00:00,UNIP.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-17T22:00:00+00:00,FRESH,6743887.0,2077117.18,,No action
-2026-11-19T23:09:36.287277+00:00,EOSB.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-17T22:00:00+00:00,FRESH,9878.0,15903.58,,No action
-2026-11-19T23:09:36.287277+00:00,DEIN.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-17T22:00:00+00:00,FRESH,0.0,0.0,Latest volume is missing or zero.,Review manually
-2026-11-19T23:09:36.287277+00:00,EPPK.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-17T22:00:00+00:00,FRESH,0.0,0.0,Latest volume is missing or zero.,Review manually
-2026-11-19T23:09:36.287277+00:00,MHOT.CA,Tourism & Leisure,OK,Yahoo Finance,Yahoo Finance,,2026-11-17T22:00:00+00:00,FRESH,70289.0,1121109.54,,No action
-2026-11-19T23:09:36.287277+00:00,SCTS.CA,Education,OK,Yahoo Finance,Yahoo Finance,,2026-11-17T22:00:00+00:00,FRESH,2670.0,1281573.27,,No action
-2026-11-19T23:09:36.287277+00:00,IFAP.CA,Agriculture & Food Production,OK,Yahoo Finance,Yahoo Finance,,2026-11-17T22:00:00+00:00,FRESH,197410.0,3162508.29,,No action
-2026-11-19T23:09:36.287277+00:00,CSAG.CA,Transportation & Logistics,OK,Yahoo Finance,Yahoo Finance,,2026-11-17T22:00:00+00:00,FRESH,88413.0,3168721.93,,No action
-2026-11-19T23:09:36.287277+00:00,SCFM.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-17T22:00:00+00:00,FRESH,6880.0,1515320.0,,No action
-2026-11-19T23:09:36.287277+00:00,MFSC.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-17T22:00:00+00:00,FRESH,43433.0,1476287.74,,No action
-2026-11-19T23:09:36.287277+00:00,CEFM.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-17T22:00:00+00:00,FRESH,3619.0,456283.53,,No action
-2026-11-19T23:09:36.287277+00:00,EDFM.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-17T22:00:00+00:00,FRESH,724.0,262638.25,,No action
-2026-11-19T23:09:36.287277+00:00,CICH.CA,Non-bank Financial Services,OK,Yahoo Finance,Yahoo Finance,,2026-11-17T22:00:00+00:00,FRESH,89734.0,925157.58,,No action
-2026-11-19T23:09:36.287277+00:00,NAHO.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-17T22:00:00+00:00,FRESH,23010.0,2968.29,,No action
-2026-11-19T23:09:36.287277+00:00,BINV.CA,Investment Holding,OK,Yahoo Finance,Yahoo Finance,,2026-11-17T22:00:00+00:00,FRESH,57898.0,2953955.99,,No action
-2026-11-19T23:09:36.287277+00:00,RAKT.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-17T22:00:00+00:00,FRESH,5681.0,127652.07,,No action
-2026-11-19T23:09:36.287277+00:00,ICID.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-17T22:00:00+00:00,FRESH,60912.0,1022103.4,,No action
-2026-11-19T23:09:36.287277+00:00,RTVC.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-17T22:00:00+00:00,FRESH,0.0,0.0,Latest volume is missing or zero.,Review manually
-2026-11-19T23:09:36.287277+00:00,ORAS.CA,Industrial Goods & Construction,OK,Yahoo Finance,Yahoo Finance,,2026-11-17T22:00:00+00:00,FRESH,0.0,0.0,Latest volume is missing or zero.,Review manually
-2026-11-19T23:09:36.287277+00:00,TRTO.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-17T22:00:00+00:00,FRESH,20500.0,1230.0,,No action
-2026-11-19T23:09:36.287277+00:00,CFGH.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-17T22:00:00+00:00,FRESH,0.0,0.0,Latest volume is missing or zero.,Review manually
-2026-11-19T23:09:36.287277+00:00,NEDA.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-17T22:00:00+00:00,FRESH,80899.0,199011.54,,No action
-2026-11-19T23:09:36.287277+00:00,ELWA.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-17T22:00:00+00:00,FRESH,603540.0,730283.42,,No action
-2026-11-19T23:09:36.287277+00:00,EKHO.CA,Energy & Petrochemicals,FAILED,Yahoo EKHO.CA / manual_market_data.csv,,,,MISSING,0.0,0.0,No usable market data returned. Check Yahoo symbol or add a manual fallback row.,Check Yahoo symbol or add manual_market_data.csv row
-2026-11-19T23:09:36.287277+00:00,ANFI.CA,General / Verified EGX Expansion,FAILED,Yahoo ANFI.CA / manual_market_data.csv,,,,MISSING,0.0,0.0,No usable market data returned. Check Yahoo symbol or add a manual fallback row.,Check Yahoo symbol or add manual_market_data.csv row
-2026-11-19T23:09:36.287277+00:00,ARVA.CA,General / Verified EGX Expansion,FAILED,Yahoo ARVA.CA / manual_market_data.csv,,,,MISSING,0.0,0.0,No usable market data returned. Check Yahoo symbol or add a manual fallback row.,Check Yahoo symbol or add manual_market_data.csv row
-2026-11-19T23:09:36.287277+00:00,GTWL.CA,General / Verified EGX Expansion,FAILED,Yahoo GTWL.CA / manual_market_data.csv,,,,MISSING,0.0,0.0,No usable market data returned. Check Yahoo symbol or add a manual fallback row.,Check Yahoo symbol or add manual_market_data.csv row
+2026-11-22T13:36:39.507068+00:00,ETRS.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-18T22:00:00+00:00,FRESH,7036124.0,79015669.3,,No action
+2026-11-22T13:36:39.507068+00:00,MOSC.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-18T22:00:00+00:00,FRESH,208350.0,61615347.79,,No action
+2026-11-22T13:36:39.507068+00:00,ZEOT.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-18T22:00:00+00:00,FRESH,4092240.0,52871741.11,,No action
+2026-11-22T13:36:39.507068+00:00,ETEL.CA,Telecommunications,OK,Yahoo Finance,Yahoo Finance,,2026-11-18T22:00:00+00:00,FRESH,1399305.0,191732777.08,,No action
+2026-11-22T13:36:39.507068+00:00,EFID.CA,"Food, Beverages & Tobacco",OK,Yahoo Finance,Yahoo Finance,,2026-11-18T22:00:00+00:00,FRESH,3568931.0,74947551.0,,No action
+2026-11-22T13:36:39.507068+00:00,EFIH.CA,Fintech & Payments,OK,Yahoo Finance,Yahoo Finance,,2026-11-18T22:00:00+00:00,FRESH,3628596.0,92638058.37,,No action
+2026-11-22T13:36:39.507068+00:00,AJWA.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-18T22:00:00+00:00,FRESH,754685.0,212828724.22,,No action
+2026-11-22T13:36:39.507068+00:00,SUGR.CA,"Food, Beverages & Tobacco",OK,Yahoo Finance,Yahoo Finance,,2026-11-18T22:00:00+00:00,FRESH,326938.0,17026931.64,,No action
+2026-11-22T13:36:39.507068+00:00,COSG.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-18T22:00:00+00:00,FRESH,66058053.0,93141852.53,,No action
+2026-11-22T13:36:39.507068+00:00,SWDY.CA,Industrial Goods & Cables,OK,Yahoo Finance,Yahoo Finance,,2026-11-18T22:00:00+00:00,FRESH,100984.0,11865620.0,,No action
+2026-11-22T13:36:39.507068+00:00,MPCI.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-18T22:00:00+00:00,FRESH,437729.0,152789302.11,,No action
+2026-11-22T13:36:39.507068+00:00,EAST.CA,"Food, Beverages & Tobacco",OK,Yahoo Finance,Yahoo Finance,,2026-11-18T22:00:00+00:00,FRESH,578275.0,19707613.06,,No action
+2026-11-22T13:36:39.507068+00:00,NIPH.CA,Healthcare,OK,Yahoo Finance,Yahoo Finance,,2026-11-18T22:00:00+00:00,FRESH,371926.0,113883745.74,,No action
+2026-11-22T13:36:39.507068+00:00,HRHO.CA,Non-bank Financial Services,OK,Yahoo Finance,Yahoo Finance,,2026-11-18T22:00:00+00:00,FRESH,4283233.0,109222441.5,,No action
+2026-11-22T13:36:39.507068+00:00,ENGC.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-18T22:00:00+00:00,FRESH,297992.0,11776643.98,,No action
+2026-11-22T13:36:39.507068+00:00,FWRY.CA,Fintech & Payments,OK,Yahoo Finance,Yahoo Finance,,2026-11-18T22:00:00+00:00,FRESH,5539711.0,95836996.07,,No action
+2026-11-22T13:36:39.507068+00:00,SAUD.CA,Banking & Financials,OK,Yahoo Finance,Yahoo Finance,,2026-11-18T22:00:00+00:00,FRESH,811249.0,19031900.8,,No action
+2026-11-22T13:36:39.507068+00:00,PRMH.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-18T22:00:00+00:00,FRESH,9115975.0,20602103.41,,No action
+2026-11-22T13:36:39.507068+00:00,CIEB.CA,Banking & Financials,OK,Yahoo Finance,Yahoo Finance,,2026-11-18T22:00:00+00:00,FRESH,729929.0,16810265.37,,No action
+2026-11-22T13:36:39.507068+00:00,LCSW.CA,Building Materials,OK,Yahoo Finance,Yahoo Finance,,2026-11-18T22:00:00+00:00,FRESH,184303.0,7333416.54,,No action
+2026-11-22T13:36:39.507068+00:00,INFI.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-18T22:00:00+00:00,FRESH,974633.0,156048490.22,,No action
+2026-11-22T13:36:39.507068+00:00,COMI.CA,Banking & Financials,OK,Yahoo Finance,Yahoo Finance,,2026-11-18T22:00:00+00:00,FRESH,2263137.0,288549967.5,,No action
+2026-11-22T13:36:39.507068+00:00,MOIN.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-18T22:00:00+00:00,FRESH,572604.0,18552370.47,,No action
+2026-11-22T13:36:39.507068+00:00,ARCC.CA,Building Materials,OK,Yahoo Finance,Yahoo Finance,,2026-11-18T22:00:00+00:00,FRESH,253726.0,17126505.0,,No action
+2026-11-22T13:36:39.507068+00:00,BIOC.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-18T22:00:00+00:00,FRESH,558200.0,218875793.82,,No action
+2026-11-22T13:36:39.507068+00:00,ELSH.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-18T22:00:00+00:00,FRESH,2070558.0,22175676.26,,No action
+2026-11-22T13:36:39.507068+00:00,MPRC.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-18T22:00:00+00:00,FRESH,424193.0,16263559.68,,No action
+2026-11-22T13:36:39.507068+00:00,CSAG.CA,Transportation & Logistics,OK,Yahoo Finance,Yahoo Finance,,2026-11-18T22:00:00+00:00,FRESH,130497.0,4709636.75,,No action
+2026-11-22T13:36:39.507068+00:00,EEII.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-18T22:00:00+00:00,FRESH,9168605.0,18520581.93,,No action
+2026-11-22T13:36:39.507068+00:00,MCQE.CA,Building Materials,OK,Yahoo Finance,Yahoo Finance,,2026-11-18T22:00:00+00:00,FRESH,122481.0,21801618.0,,No action
+2026-11-22T13:36:39.507068+00:00,MENA.CA,Real Estate,OK,Yahoo Finance,Yahoo Finance,,2026-11-18T22:00:00+00:00,FRESH,2925582.0,20947166.67,,No action
+2026-11-22T13:36:39.507068+00:00,RAYA.CA,Technology & Distribution,OK,Yahoo Finance,Yahoo Finance,,2026-11-18T22:00:00+00:00,FRESH,5525565.0,33042878.81,,No action
+2026-11-22T13:36:39.507068+00:00,FAITA.CA,Banking & Financials,OK,Yahoo Finance,Yahoo Finance,,2026-11-18T22:00:00+00:00,FRESH,90224.0,91036.01,,No action
+2026-11-22T13:36:39.507068+00:00,PHAR.CA,Healthcare,OK,Yahoo Finance,Yahoo Finance,,2026-11-18T22:00:00+00:00,FRESH,246446.0,25655028.22,,No action
+2026-11-22T13:36:39.507068+00:00,CAED.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-18T22:00:00+00:00,FRESH,107339.0,10484873.55,,No action
+2026-11-22T13:36:39.507068+00:00,ELKA.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-18T22:00:00+00:00,FRESH,7768577.0,11575179.8,,No action
+2026-11-22T13:36:39.507068+00:00,SIPC.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-18T22:00:00+00:00,FRESH,3289158.0,16807597.82,,No action
+2026-11-22T13:36:39.507068+00:00,SVCE.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-18T22:00:00+00:00,FRESH,5657412.0,51482451.36,,No action
+2026-11-22T13:36:39.507068+00:00,ORWE.CA,Textiles,OK,Yahoo Finance,Yahoo Finance,,2026-11-18T22:00:00+00:00,FRESH,413861.0,10383772.55,,No action
+2026-11-22T13:36:39.507068+00:00,ELEC.CA,Industrial Goods & Cables,OK,Yahoo Finance,Yahoo Finance,,2026-11-18T22:00:00+00:00,FRESH,8445128.0,13765558.6,,No action
+2026-11-22T13:36:39.507068+00:00,SNFC.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-18T22:00:00+00:00,FRESH,767749.0,8736983.71,,No action
+2026-11-22T13:36:39.507068+00:00,EMFD.CA,Real Estate,OK,Yahoo Finance,Yahoo Finance,,2026-11-18T22:00:00+00:00,FRESH,1702659.0,21794035.52,,No action
+2026-11-22T13:36:39.507068+00:00,OCDI.CA,Real Estate,OK,Yahoo Finance,Yahoo Finance,,2026-11-18T22:00:00+00:00,FRESH,570579.0,14275886.84,,No action
+2026-11-22T13:36:39.507068+00:00,ARAB.CA,Real Estate,OK,Yahoo Finance,Yahoo Finance,,2026-11-18T22:00:00+00:00,FRESH,126782200.0,32202679.83,,No action
+2026-11-22T13:36:39.507068+00:00,ZMID.CA,Real Estate,OK,Yahoo Finance,Yahoo Finance,,2026-11-18T22:00:00+00:00,FRESH,3558994.0,23809670.06,,No action
+2026-11-22T13:36:39.507068+00:00,EGTS.CA,Real Estate,OK,Yahoo Finance,Yahoo Finance,,2026-11-18T22:00:00+00:00,FRESH,2618778.0,33441796.26,,No action
+2026-11-22T13:36:39.507068+00:00,PRDC.CA,Real Estate,OK,Yahoo Finance,Yahoo Finance,,2026-11-18T22:00:00+00:00,FRESH,1505842.0,9787973.0,,No action
+2026-11-22T13:36:39.507068+00:00,MBSC.CA,Building Materials,OK,Yahoo Finance,Yahoo Finance,,2026-11-18T22:00:00+00:00,FRESH,152533.0,53386550.0,,No action
+2026-11-22T13:36:39.507068+00:00,SCEM.CA,Building Materials,OK,Yahoo Finance,Yahoo Finance,,2026-11-18T22:00:00+00:00,FRESH,276596.0,26973640.99,,No action
+2026-11-22T13:36:39.507068+00:00,CLHO.CA,Healthcare,OK,Yahoo Finance,Yahoo Finance,,2026-11-18T22:00:00+00:00,FRESH,1785360.0,25066454.33,,No action
+2026-11-22T13:36:39.507068+00:00,ISPH.CA,Healthcare,OK,Yahoo Finance,Yahoo Finance,,2026-11-18T22:00:00+00:00,FRESH,2549844.0,26518376.63,,No action
+2026-11-22T13:36:39.507068+00:00,MCRO.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-18T22:00:00+00:00,FRESH,20626340.0,27639296.29,,No action
+2026-11-22T13:36:39.507068+00:00,NCCW.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-18T22:00:00+00:00,FRESH,1821916.0,10202729.43,,No action
+2026-11-22T13:36:39.507068+00:00,SDTI.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-18T22:00:00+00:00,FRESH,194481.0,16141923.0,,No action
+2026-11-22T13:36:39.507068+00:00,UEGC.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-18T22:00:00+00:00,FRESH,10593907.0,15678982.56,,No action
+2026-11-22T13:36:39.507068+00:00,TMGH.CA,Real Estate,OK,Yahoo Finance,Yahoo Finance,,2026-11-18T22:00:00+00:00,FRESH,1342123.0,110792257.75,,No action
+2026-11-22T13:36:39.507068+00:00,ORHD.CA,Real Estate,OK,Yahoo Finance,Yahoo Finance,,2026-11-18T22:00:00+00:00,FRESH,4993569.0,51583567.39,,No action
+2026-11-22T13:36:39.507068+00:00,HDBK.CA,Banking & Financials,OK,Yahoo Finance,Yahoo Finance,,2026-11-18T22:00:00+00:00,FRESH,221755.0,24060417.5,,No action
+2026-11-22T13:36:39.507068+00:00,OFH.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-18T22:00:00+00:00,FRESH,11668869.0,8471599.02,,No action
+2026-11-22T13:36:39.507068+00:00,MHOT.CA,Tourism & Leisure,OK,Yahoo Finance,Yahoo Finance,,2026-11-18T22:00:00+00:00,FRESH,856303.0,12998679.8,,No action
+2026-11-22T13:36:39.507068+00:00,MPCO.CA,Agriculture & Food Production,OK,Yahoo Finance,Yahoo Finance,,2026-11-18T22:00:00+00:00,FRESH,33401602.0,66469188.3,,No action
+2026-11-22T13:36:39.507068+00:00,JUFO.CA,"Food, Beverages & Tobacco",OK,Yahoo Finance,Yahoo Finance,,2026-11-18T22:00:00+00:00,FRESH,788852.0,18269812.2,,No action
+2026-11-22T13:36:39.507068+00:00,ALCN.CA,Transportation & Logistics,OK,Yahoo Finance,Yahoo Finance,,2026-11-18T22:00:00+00:00,FRESH,172455.0,5572021.29,,No action
+2026-11-22T13:36:39.507068+00:00,GIHD.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-18T22:00:00+00:00,FRESH,248461.0,12577095.55,,No action
+2026-11-22T13:36:39.507068+00:00,KZPC.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-18T22:00:00+00:00,FRESH,1949890.0,22423735.0,,No action
+2026-11-22T13:36:39.507068+00:00,RUBX.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-18T22:00:00+00:00,FRESH,3034864.0,40211948.0,,No action
+2026-11-22T13:36:39.507068+00:00,EXPA.CA,Banking & Financials,OK,Yahoo Finance,Yahoo Finance,,2026-11-18T22:00:00+00:00,FRESH,492369.0,7203358.53,,No action
+2026-11-22T13:36:39.507068+00:00,HELI.CA,Real Estate,OK,Yahoo Finance,Yahoo Finance,,2026-11-18T22:00:00+00:00,FRESH,2564453.0,16925389.56,,No action
+2026-11-22T13:36:39.507068+00:00,AMES.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-18T22:00:00+00:00,FRESH,8265248.0,318955921.58,,No action
+2026-11-22T13:36:39.507068+00:00,ATQA.CA,Basic Resources & Chemicals,OK,Yahoo Finance,Yahoo Finance,,2026-11-18T22:00:00+00:00,FRESH,5276261.0,53395760.72,,No action
+2026-11-22T13:36:39.507068+00:00,EGAL.CA,Basic Resources & Chemicals,OK,Yahoo Finance,Yahoo Finance,,2026-11-18T22:00:00+00:00,FRESH,113067.0,34484303.23,,No action
+2026-11-22T13:36:39.507068+00:00,MASR.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-18T22:00:00+00:00,FRESH,2641126.0,17193730.86,,No action
+2026-11-22T13:36:39.507068+00:00,CERA.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-18T22:00:00+00:00,FRESH,13445411.0,13983226.93,,No action
+2026-11-22T13:36:39.507068+00:00,DAPH.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-18T22:00:00+00:00,FRESH,132630.0,11439337.5,,No action
+2026-11-22T13:36:39.507068+00:00,DSCW.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-18T22:00:00+00:00,FRESH,8032750.0,11888470.15,,No action
+2026-11-22T13:36:39.507068+00:00,DTPP.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-18T22:00:00+00:00,FRESH,340540.0,19676400.78,,No action
+2026-11-22T13:36:39.507068+00:00,GGCC.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-18T22:00:00+00:00,FRESH,19998671.0,11059264.53,,No action
+2026-11-22T13:36:39.507068+00:00,LUTS.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-18T22:00:00+00:00,FRESH,42492201.0,28597250.34,,No action
+2026-11-22T13:36:39.507068+00:00,MAAL.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-18T22:00:00+00:00,FRESH,2069217.0,12911913.61,,No action
+2026-11-22T13:36:39.507068+00:00,PHDC.CA,Real Estate,OK,Yahoo Finance,Yahoo Finance,,2026-11-18T22:00:00+00:00,FRESH,11131977.0,129353571.47,,No action
+2026-11-22T13:36:39.507068+00:00,KABO.CA,Textiles,OK,Yahoo Finance,Yahoo Finance,,2026-11-18T22:00:00+00:00,FRESH,1113126.0,7869801.01,,No action
+2026-11-22T13:36:39.507068+00:00,MFSC.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-18T22:00:00+00:00,FRESH,155368.0,5537315.43,,No action
+2026-11-22T13:36:39.507068+00:00,BTFH.CA,Non-bank Financial Services,OK,Yahoo Finance,Yahoo Finance,,2026-11-18T22:00:00+00:00,FRESH,58709904.0,132097284.0,,No action
+2026-11-22T13:36:39.507068+00:00,MICH.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-18T22:00:00+00:00,FRESH,127662.0,5710321.2,,No action
+2026-11-22T13:36:39.507068+00:00,AXPH.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-18T22:00:00+00:00,FRESH,2473.0,3645078.23,,No action
+2026-11-22T13:36:39.507068+00:00,ADIB.CA,Banking & Financials,OK,Yahoo Finance,Yahoo Finance,,2026-11-18T22:00:00+00:00,FRESH,971632.0,44889399.14,,No action
+2026-11-22T13:36:39.507068+00:00,CCRS.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-18T22:00:00+00:00,FRESH,4739267.0,9478534.0,,No action
+2026-11-22T13:36:39.507068+00:00,AMER.CA,Real Estate,OK,Yahoo Finance,Yahoo Finance,,2026-11-18T22:00:00+00:00,FRESH,23203981.0,92583884.41,,No action
+2026-11-22T13:36:39.507068+00:00,OLFI.CA,"Food, Beverages & Tobacco",OK,Yahoo Finance,Yahoo Finance,,2026-11-18T22:00:00+00:00,FRESH,291707.0,5898315.34,,No action
+2026-11-22T13:36:39.507068+00:00,RMDA.CA,Healthcare,OK,Yahoo Finance,Yahoo Finance,,2026-11-18T22:00:00+00:00,FRESH,3038433.0,15678313.82,,No action
+2026-11-22T13:36:39.507068+00:00,SKPC.CA,Basic Resources & Chemicals,OK,Yahoo Finance,Yahoo Finance,,2026-11-18T22:00:00+00:00,FRESH,1410736.0,20610852.48,,No action
+2026-11-22T13:36:39.507068+00:00,EGCH.CA,Basic Resources & Chemicals,OK,Yahoo Finance,Yahoo Finance,,2026-11-18T22:00:00+00:00,FRESH,1466222.0,14955464.12,,No action
+2026-11-22T13:36:39.507068+00:00,ATLC.CA,Non-bank Financial Services,OK,Yahoo Finance,Yahoo Finance,,2026-11-18T22:00:00+00:00,FRESH,1195458.0,6455473.31,,No action
+2026-11-22T13:36:39.507068+00:00,ASPI.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-18T22:00:00+00:00,FRESH,22221377.0,7155283.33,,No action
+2026-11-22T13:36:39.507068+00:00,EGAS.CA,Energy & Petrochemicals,OK,Yahoo Finance,Yahoo Finance,,2026-11-18T22:00:00+00:00,FRESH,96386.0,4883878.44,,No action
+2026-11-22T13:36:39.507068+00:00,CCAP.CA,Investment Holding,OK,Yahoo Finance,Yahoo Finance,,2026-11-18T22:00:00+00:00,FRESH,61235398.0,363125899.63,,No action
+2026-11-22T13:36:39.507068+00:00,EGSA.CA,Telecommunications,OK,Yahoo Finance,Yahoo Finance,,2026-11-18T22:00:00+00:00,FRESH,210.0,1890.0,,No action
+2026-11-22T13:36:39.507068+00:00,ACAMD.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-18T22:00:00+00:00,FRESH,48726646.0,94042424.22,,No action
+2026-11-22T13:36:39.507068+00:00,IRON.CA,Basic Resources & Chemicals,OK,Yahoo Finance,Yahoo Finance,,2026-11-18T22:00:00+00:00,FRESH,379923.0,9315712.13,,No action
+2026-11-22T13:36:39.507068+00:00,NINH.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-18T22:00:00+00:00,FRESH,577467.0,8708202.32,,No action
+2026-11-22T13:36:39.507068+00:00,PRCL.CA,Building Materials,OK,Yahoo Finance,Yahoo Finance,,2026-11-18T22:00:00+00:00,FRESH,498124.0,9285031.06,,No action
+2026-11-22T13:36:39.507068+00:00,FAIT.CA,Banking & Financials,OK,Yahoo Finance,Yahoo Finance,,2026-11-18T22:00:00+00:00,FRESH,23569.0,1070739.68,,No action
+2026-11-22T13:36:39.507068+00:00,CIRA.CA,Education,OK,Yahoo Finance,Yahoo Finance,,2026-11-18T22:00:00+00:00,FRESH,91299.0,3502229.7,,No action
+2026-11-22T13:36:39.507068+00:00,CNFN.CA,Non-bank Financial Services,OK,Yahoo Finance,Yahoo Finance,,2026-11-18T22:00:00+00:00,FRESH,2132786.0,8253881.58,,No action
+2026-11-22T13:36:39.507068+00:00,GBCO.CA,Automotive & Distribution,OK,Yahoo Finance,Yahoo Finance,,2026-11-18T22:00:00+00:00,FRESH,2404074.0,53851256.68,,No action
+2026-11-22T13:36:39.507068+00:00,MILS.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-18T22:00:00+00:00,FRESH,40530.0,5670552.45,,No action
+2026-11-22T13:36:39.507068+00:00,TALM.CA,Education,OK,Yahoo Finance,Yahoo Finance,,2026-11-18T22:00:00+00:00,FRESH,154825.0,3115079.13,,No action
+2026-11-22T13:36:39.507068+00:00,OIH.CA,Investment Holding,OK,Yahoo Finance,Yahoo Finance,,2026-11-18T22:00:00+00:00,FRESH,11443790.0,18310064.27,,No action
+2026-11-22T13:36:39.507068+00:00,MOIL.CA,Energy & Petrochemicals,OK,Yahoo Finance,Yahoo Finance,,2026-11-18T22:00:00+00:00,FRESH,63925.0,44044.33,,No action
+2026-11-22T13:36:39.507068+00:00,DOMT.CA,"Food, Beverages & Tobacco",OK,Yahoo Finance,Yahoo Finance,,2026-11-18T22:00:00+00:00,FRESH,86499.0,2215239.44,,No action
+2026-11-22T13:36:39.507068+00:00,AREH.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-18T22:00:00+00:00,FRESH,6327261.0,6580351.2,,No action
+2026-11-22T13:36:39.507068+00:00,POUL.CA,"Food, Beverages & Tobacco",OK,Yahoo Finance,Yahoo Finance,,2026-11-18T22:00:00+00:00,FRESH,12770519.0,96800533.05,,No action
+2026-11-22T13:36:39.507068+00:00,AALR.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-18T22:00:00+00:00,FRESH,14615.0,3388779.98,,No action
+2026-11-22T13:36:39.507068+00:00,CPCI.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-18T22:00:00+00:00,FRESH,3937.0,2264956.05,,No action
+2026-11-22T13:36:39.507068+00:00,SMFR.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-18T22:00:00+00:00,FRESH,9626.0,2085472.84,,No action
+2026-11-22T13:36:39.507068+00:00,ACGC.CA,Textiles,OK,Yahoo Finance,Yahoo Finance,,2026-11-18T22:00:00+00:00,FRESH,220057.0,2994975.69,,No action
+2026-11-22T13:36:39.507068+00:00,MTIE.CA,Automotive & Distribution,OK,Yahoo Finance,Yahoo Finance,,2026-11-18T22:00:00+00:00,FRESH,2164004.0,14174226.61,,No action
+2026-11-22T13:36:39.507068+00:00,AMIA.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-18T22:00:00+00:00,FRESH,399998.0,6763966.12,,No action
+2026-11-22T13:36:39.507068+00:00,GRCA.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-18T22:00:00+00:00,FRESH,119286.0,3751544.79,,No action
+2026-11-22T13:36:39.507068+00:00,KWIN.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-18T22:00:00+00:00,FRESH,52782.0,3701601.52,,No action
+2026-11-22T13:36:39.507068+00:00,UEFM.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-18T22:00:00+00:00,FRESH,2387.0,1200040.36,,No action
+2026-11-22T13:36:39.507068+00:00,SEIG.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-18T22:00:00+00:00,FRESH,5046.0,1166786.56,,No action
+2026-11-22T13:36:39.507068+00:00,ASCM.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-18T22:00:00+00:00,FRESH,115447.0,5102757.49,,No action
+2026-11-22T13:36:39.507068+00:00,AMOC.CA,Energy & Petrochemicals,OK,Yahoo Finance,Yahoo Finance,,2026-11-18T22:00:00+00:00,FRESH,4719041.0,62008200.36,,No action
+2026-11-22T13:36:39.507068+00:00,EFIC.CA,Basic Resources & Chemicals,OK,Yahoo Finance,Yahoo Finance,,2026-11-18T22:00:00+00:00,FRESH,21857.0,3503021.48,,No action
+2026-11-22T13:36:39.507068+00:00,EHDR.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-18T22:00:00+00:00,FRESH,1260562.0,2634574.47,,No action
+2026-11-22T13:36:39.507068+00:00,IDRE.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-18T22:00:00+00:00,FRESH,110703.0,4625171.2,,No action
+2026-11-22T13:36:39.507068+00:00,EGBE.CA,Banking & Financials,OK,Yahoo Finance,Yahoo Finance,,2026-11-18T22:00:00+00:00,FRESH,85340.0,42670.0,,No action
+2026-11-22T13:36:39.507068+00:00,CANA.CA,Banking & Financials,OK,Yahoo Finance,Yahoo Finance,,2026-11-18T22:00:00+00:00,FRESH,401763.0,13310408.62,,No action
+2026-11-22T13:36:39.507068+00:00,ISMA.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-18T22:00:00+00:00,FRESH,120266.0,2481087.48,,No action
+2026-11-22T13:36:39.507068+00:00,MEPA.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-18T22:00:00+00:00,FRESH,3371842.0,4484550.0,,No action
+2026-11-22T13:36:39.507068+00:00,GSSC.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-18T22:00:00+00:00,FRESH,5337.0,1417453.81,,No action
+2026-11-22T13:36:39.507068+00:00,ADCI.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-18T22:00:00+00:00,FRESH,5015.0,1305655.28,,No action
+2026-11-22T13:36:39.507068+00:00,ROTO.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-18T22:00:00+00:00,FRESH,69197.0,2212228.04,,No action
+2026-11-22T13:36:39.507068+00:00,OCPH.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-18T22:00:00+00:00,FRESH,10839.0,2156635.84,,No action
+2026-11-22T13:36:39.507068+00:00,EALR.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-18T22:00:00+00:00,FRESH,6897.0,2092963.56,,No action
+2026-11-22T13:36:39.507068+00:00,UNIP.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-18T22:00:00+00:00,FRESH,6797262.0,2093556.68,,No action
+2026-11-22T13:36:39.507068+00:00,MIPH.CA,Healthcare,OK,Yahoo Finance,Yahoo Finance,,2026-11-18T22:00:00+00:00,FRESH,925.0,715099.02,,No action
+2026-11-22T13:36:39.507068+00:00,NHPS.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-18T22:00:00+00:00,FRESH,29630.0,1770096.25,,No action
+2026-11-22T13:36:39.507068+00:00,ALUM.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-18T22:00:00+00:00,FRESH,90443.0,1766351.85,,No action
+2026-11-22T13:36:39.507068+00:00,SPMD.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-18T22:00:00+00:00,FRESH,11487140.0,3756294.69,,No action
+2026-11-22T13:36:39.507068+00:00,CEFM.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-18T22:00:00+00:00,FRESH,4847.0,606505.1,,No action
+2026-11-22T13:36:39.507068+00:00,MOED.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-18T22:00:00+00:00,FRESH,7200170.0,3448881.45,,No action
+2026-11-22T13:36:39.507068+00:00,ODIN.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-18T22:00:00+00:00,FRESH,1624395.0,3281277.87,,No action
+2026-11-22T13:36:39.507068+00:00,ICID.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-18T22:00:00+00:00,FRESH,130504.0,2255109.21,,No action
+2026-11-22T13:36:39.507068+00:00,RREI.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-18T22:00:00+00:00,FRESH,1222392.0,3239338.92,,No action
+2026-11-22T13:36:39.507068+00:00,RACC.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-18T22:00:00+00:00,FRESH,408922.0,3222305.41,,No action
+2026-11-22T13:36:39.507068+00:00,ADPC.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-18T22:00:00+00:00,FRESH,1109403.0,3195080.77,,No action
+2026-11-22T13:36:39.507068+00:00,EPCO.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-18T22:00:00+00:00,FRESH,126337.0,1077654.58,,No action
+2026-11-22T13:36:39.507068+00:00,GMCI.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-18T22:00:00+00:00,FRESH,19296.0,32610.24,,No action
+2026-11-22T13:36:39.507068+00:00,SCFM.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-18T22:00:00+00:00,FRESH,4688.0,1032344.51,,No action
+2026-11-22T13:36:39.507068+00:00,OBRI.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-18T22:00:00+00:00,FRESH,130895.0,2970007.62,,No action
+2026-11-22T13:36:39.507068+00:00,ECAP.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-18T22:00:00+00:00,FRESH,32330.0,909119.63,,No action
+2026-11-22T13:36:39.507068+00:00,SPIN.CA,Textiles,OK,Yahoo Finance,Yahoo Finance,,2026-11-18T22:00:00+00:00,FRESH,200172.0,2902494.0,,No action
+2026-11-22T13:36:39.507068+00:00,EASB.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-18T22:00:00+00:00,FRESH,657548.0,3820353.84,,No action
+2026-11-22T13:36:39.507068+00:00,ISMQ.CA,Basic Resources & Chemicals,OK,Yahoo Finance,Yahoo Finance,,2026-11-18T22:00:00+00:00,FRESH,498488.0,3434582.25,,No action
+2026-11-22T13:36:39.507068+00:00,EBSC.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-18T22:00:00+00:00,FRESH,389745.0,588514.95,,No action
+2026-11-22T13:36:39.507068+00:00,WKOL.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-18T22:00:00+00:00,FRESH,14368.0,2471439.6,,No action
+2026-11-22T13:36:39.507068+00:00,GDWA.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-18T22:00:00+00:00,FRESH,4559813.0,2434940.05,,No action
+2026-11-22T13:36:39.507068+00:00,WCDF.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-18T22:00:00+00:00,FRESH,483.0,248010.83,,No action
+2026-11-22T13:36:39.507068+00:00,ABUK.CA,Basic Resources & Chemicals,OK,Yahoo Finance,Yahoo Finance,,2026-11-18T22:00:00+00:00,FRESH,242631.0,18527303.31,,No action
+2026-11-22T13:36:39.507068+00:00,MFPC.CA,Basic Resources & Chemicals,OK,Yahoo Finance,Yahoo Finance,,2026-11-18T22:00:00+00:00,FRESH,1257129.0,48047471.91,,No action
+2026-11-22T13:36:39.507068+00:00,ELNA.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-18T22:00:00+00:00,FRESH,1928.0,79587.84,,No action
+2026-11-22T13:36:39.507068+00:00,EOSB.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-18T22:00:00+00:00,FRESH,41520.0,66847.2,,No action
+2026-11-22T13:36:39.507068+00:00,CICH.CA,Non-bank Financial Services,OK,Yahoo Finance,Yahoo Finance,,2026-11-18T22:00:00+00:00,FRESH,228833.0,2334096.56,,No action
+2026-11-22T13:36:39.507068+00:00,DEIN.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-18T22:00:00+00:00,FRESH,0.0,0.0,Latest volume is missing or zero.,Review manually
+2026-11-22T13:36:39.507068+00:00,EPPK.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-18T22:00:00+00:00,FRESH,0.0,0.0,Latest volume is missing or zero.,Review manually
+2026-11-22T13:36:39.507068+00:00,AFDI.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-18T22:00:00+00:00,FRESH,42087.0,1795431.41,,No action
+2026-11-22T13:36:39.507068+00:00,FERC.CA,Basic Resources & Chemicals,OK,Yahoo Finance,Yahoo Finance,,2026-11-18T22:00:00+00:00,FRESH,8874.0,582578.11,,No action
+2026-11-22T13:36:39.507068+00:00,COPR.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-18T22:00:00+00:00,FRESH,8880100.0,3418838.42,,No action
+2026-11-22T13:36:39.507068+00:00,SCTS.CA,Education,OK,Yahoo Finance,Yahoo Finance,,2026-11-18T22:00:00+00:00,FRESH,806.0,383164.35,,No action
+2026-11-22T13:36:39.507068+00:00,EDFM.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-18T22:00:00+00:00,FRESH,426.0,154535.76,,No action
+2026-11-22T13:36:39.507068+00:00,PHTV.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-18T22:00:00+00:00,FRESH,67.0,22028.26,,No action
+2026-11-22T13:36:39.507068+00:00,NAHO.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-18T22:00:00+00:00,FRESH,28608.0,3690.43,,No action
+2026-11-22T13:36:39.507068+00:00,RAKT.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-18T22:00:00+00:00,FRESH,5300.0,119091.0,,No action
+2026-11-22T13:36:39.507068+00:00,APSW.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-18T22:00:00+00:00,FRESH,15128.0,111947.2,,No action
+2026-11-22T13:36:39.507068+00:00,NEDA.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-18T22:00:00+00:00,FRESH,35846.0,88181.16,,No action
+2026-11-22T13:36:39.507068+00:00,RTVC.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-18T22:00:00+00:00,FRESH,0.0,0.0,Latest volume is missing or zero.,Review manually
+2026-11-22T13:36:39.507068+00:00,ORAS.CA,Industrial Goods & Construction,OK,Yahoo Finance,Yahoo Finance,,2026-11-18T22:00:00+00:00,FRESH,0.0,0.0,Latest volume is missing or zero.,Review manually
+2026-11-22T13:36:39.507068+00:00,TRTO.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-18T22:00:00+00:00,FRESH,14000.0,840.0,,No action
+2026-11-22T13:36:39.507068+00:00,BINV.CA,Investment Holding,OK,Yahoo Finance,Yahoo Finance,,2026-11-18T22:00:00+00:00,FRESH,27306.0,1387144.78,,No action
+2026-11-22T13:36:39.507068+00:00,UNIT.CA,Real Estate,OK,Yahoo Finance,Yahoo Finance,,2026-11-18T22:00:00+00:00,FRESH,245554.0,3737331.95,,No action
+2026-11-22T13:36:39.507068+00:00,IFAP.CA,Agriculture & Food Production,OK,Yahoo Finance,Yahoo Finance,,2026-11-18T22:00:00+00:00,FRESH,70707.0,1134140.34,,No action
+2026-11-22T13:36:39.507068+00:00,CFGH.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-18T22:00:00+00:00,FRESH,280.0,29.96,,No action
+2026-11-22T13:36:39.507068+00:00,ELWA.CA,General / Verified EGX Expansion,OK,Yahoo Finance,Yahoo Finance,,2026-11-18T22:00:00+00:00,FRESH,455403.0,560145.7,,No action
+2026-11-22T13:36:39.507068+00:00,EKHO.CA,Energy & Petrochemicals,FAILED,Yahoo EKHO.CA / manual_market_data.csv,,,,MISSING,0.0,0.0,No usable market data returned. Check Yahoo symbol or add a manual fallback row.,Check Yahoo symbol or add manual_market_data.csv row
+2026-11-22T13:36:39.507068+00:00,AFMC.CA,General / Verified EGX Expansion,FAILED,Yahoo AFMC.CA / manual_market_data.csv,,,,MISSING,0.0,0.0,No usable market data returned. Check Yahoo symbol or add a manual fallback row.,Check Yahoo symbol or add manual_market_data.csv row
+2026-11-22T13:36:39.507068+00:00,ANFI.CA,General / Verified EGX Expansion,FAILED,Yahoo ANFI.CA / manual_market_data.csv,,,,MISSING,0.0,0.0,No usable market data returned. Check Yahoo symbol or add a manual fallback row.,Check Yahoo symbol or add manual_market_data.csv row
+2026-11-22T13:36:39.507068+00:00,ARVA.CA,General / Verified EGX Expansion,FAILED,Yahoo ARVA.CA / manual_market_data.csv,,,,MISSING,0.0,0.0,No usable market data returned. Check Yahoo symbol or add a manual fallback row.,Check Yahoo symbol or add manual_market_data.csv row
+2026-11-22T13:36:39.507068+00:00,GTWL.CA,General / Verified EGX Expansion,FAILED,Yahoo GTWL.CA / manual_market_data.csv,,,,MISSING,0.0,0.0,No usable market data returned. Check Yahoo symbol or add a manual fallback row.,Check Yahoo symbol or add manual_market_data.csv row
