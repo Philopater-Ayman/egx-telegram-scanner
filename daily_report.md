@@ -1,16 +1,16 @@
 # Telegram-First EGX Scanner Report
 
-Scan phase: Evening tomorrow plan
-Generated UTC: 2026-11-22T21:57:03.985966+00:00
-Generated Cairo: 2026-11-22 23:57
-Run timing: target 19:30 Cairo | generated Cairo 2026-11-22 23:57 | cron 30 16 * * 0-4
-Trigger: scheduled cron=30 16 * * 0-4 mapped to evening_plan; Cairo now 2026-11-22 23:55
+Scan phase: Pre-market risk check
+Generated UTC: 2026-11-23T16:29:54.820220+00:00
+Generated Cairo: 2026-11-23 18:29
+Run timing: target 08:45 Cairo | generated Cairo 2026-11-23 18:29 | cron 45 5 * * 0-4
+Trigger: scheduled cron=45 5 * * 0-4 mapped to pre_market; Cairo now 2026-11-23 18:27
 
 ## Control Center
 - Action tickets: 0 prioritized signal(s)
 - BUY-ready candidates: 0
-- Data quality issues: 5
-- Tradeable price/liquidity tickers: 185/185
+- Data quality issues: 4
+- Tradeable price/liquidity tickers: 186/186
 - Top sector: Telecommunications
 
 ## Market Context
@@ -18,17 +18,17 @@ Trigger: scheduled cron=30 16 * * 0-4 mapped to evening_plan; Cairo now 2026-11-
 - Source: Market context unavailable
 - As of: None
 - Freshness: MISSING
-- EGX30 regime: MIXED / above MA20 75.0% / above MA50 45.0%
-- EGX70 regime: BEARISH / above MA20 55.0% / above MA50 17.5%
-- Sector breadth: 9.52%
+- EGX30 regime: BEARISH / above MA20 35.0% / above MA50 20.0%
+- EGX70 regime: BEARISH / above MA20 27.5% / above MA50 10.0%
+- Sector breadth: 4.76%
 - Risk mode: DEFENSIVE_NO_NEW_BUY
 
 ## Top Liquidity
-- CCAP.CA: liquidity=363125899.63 spike=0.97 score=14.4
-- AMES.CA: liquidity=318955921.58 spike=1.32 score=16.14
-- COMI.CA: liquidity=288549967.5 spike=0.59 score=20.06
-- BIOC.CA: liquidity=218875793.82 spike=1.11 score=19.72
-- AJWA.CA: liquidity=212828724.22 spike=5.42 score=23.5
+- ETEL.CA: liquidity=348619927.0 spike=1.23 score=21.86
+- HRHO.CA: liquidity=318335191.5 spike=4.03 score=21.4
+- COMI.CA: liquidity=266115917.12 spike=0.57 score=13.98
+- TMGH.CA: liquidity=183899755.0 spike=0.88 score=13.4
+- EFIH.CA: liquidity=181523154.97 spike=2.79 score=28.46
 
 ## AI Narrative
 - Provider: OpenRouter ERROR
@@ -36,21 +36,21 @@ Trigger: scheduled cron=30 16 * * 0-4 mapped to evening_plan; Cairo now 2026-11-
 - Summary: OpenRouter narrative failed; local scanner summary used.
 
 ## Top Liquidity Spikes
-- COSG.CA: spike=7.43 liquidity=93141852.53 outlook=NEUTRAL score=44.24 buy_ready=False
-- MOSC.CA: spike=7.13 liquidity=61615347.79 outlook=BULLISH_WATCH score=73.24 buy_ready=False
-- AJWA.CA: spike=5.42 liquidity=212828724.22 outlook=CONSTRUCTIVE score=59.24 buy_ready=False
-- ZEOT.CA: spike=5.35 liquidity=52871741.11 outlook=NEUTRAL score=47.24 buy_ready=False
-- ETRS.CA: spike=4.31 liquidity=79015669.3 outlook=BULLISH_WATCH score=77.24 buy_ready=False
+- ZEOT.CA: spike=5.06 liquidity=65844275.0 outlook=CONSTRUCTIVE score=64 buy_ready=False
+- HRHO.CA: spike=4.03 liquidity=318335191.5 outlook=CONSTRUCTIVE score=57 buy_ready=False
+- NAHO.CA: spike=3.98 liquidity=52347.0 outlook=WEAK_OR_RISKY score=2 buy_ready=False
+- EFIH.CA: spike=2.79 liquidity=181523154.97 outlook=BULLISH_WATCH score=93.71 buy_ready=False
+- MOSC.CA: spike=2.68 liquidity=26641788.61 outlook=CONSTRUCTIVE score=56 buy_ready=False
 
 ## Sector Leaderboard
-- #1 Telecommunications: score=6.72 5d=0.74% 20d=-1.56% aboveMA50=100.0%
-- #2 Fintech & Payments: score=6.12 5d=-0.45% 20d=0.19% aboveMA50=50.0%
-- #3 Transportation & Logistics: score=5.63 5d=0.44% 20d=0.08% aboveMA50=50.0%
-- #4 Banking & Financials: score=5.14 5d=-0.27% 20d=1.57% aboveMA50=50.0%
-- #5 Food, Beverages & Tobacco: score=4.71 5d=-1.61% 20d=1.56% aboveMA50=57.14%
-- #6 Building Materials: score=4.62 5d=-3.0% 20d=5.38% aboveMA50=50.0%
-- #7 Education: score=3.57 5d=-2.61% 20d=6.82% aboveMA50=33.33%
-- #8 Industrial Goods & Cables: score=3.5 5d=-4.52% 20d=1.87% aboveMA50=50.0%
+- #1 Telecommunications: score=8.31 5d=1.5% 20d=0.99% aboveMA50=100.0%
+- #2 Fintech & Payments: score=4.71 5d=-4.23% 20d=5.07% aboveMA50=50.0%
+- #3 Transportation & Logistics: score=3.26 5d=-3.05% 20d=-1.24% aboveMA50=50.0%
+- #4 Banking & Financials: score=2.44 5d=-3.05% 20d=0.05% aboveMA50=30.0%
+- #5 Energy & Petrochemicals: score=2.3 5d=-4.14% 20d=-1.76% aboveMA50=33.33%
+- #6 Building Materials: score=1.5 5d=-6.84% 20d=3.9% aboveMA50=33.33%
+- #7 Education: score=1.31 5d=-5.23% 20d=3.12% aboveMA50=0.0%
+- #8 Textiles: score=1.12 5d=-5.18% 20d=-1.09% aboveMA50=0.0%
 
 ## Today's Prioritized Action Tickets
 - HOLD: Local scanner HOLD: EGX30/EGX70 regime and sector breadth are defensive, so no new BUY is allowed.
@@ -61,254 +61,254 @@ Trigger: scheduled cron=30 16 * * 0-4 mapped to evening_plan; Cairo now 2026-11-
 - Choose position size yourself. This system no longer tracks account balances or holdings in the daily flow.
 
 ## Top 1-3 Day Outlook
-- EFIH.CA: BULLISH_WATCH score=79.12 liquidity=ACCUMULATION_SPIKE sector=LEADING risk=overheated RSI; far above support
-- ETRS.CA: BULLISH_WATCH score=77.24 liquidity=ACCUMULATION_SPIKE sector=IMPROVING risk=momentum is extended; sector is not leading
-- MOSC.CA: BULLISH_WATCH score=73.24 liquidity=ACCUMULATION_SPIKE sector=IMPROVING risk=momentum is extended; far above support; sector is not leading
-- FAIT.CA: CONSTRUCTIVE score=69.14 liquidity=TRADEABLE sector=IMPROVING risk=liquidity is cooling
-- MPCI.CA: CONSTRUCTIVE score=67.24 liquidity=TRADEABLE sector=IMPROVING risk=far above support; sector is not leading
-- SUGR.CA: CONSTRUCTIVE score=66.71 liquidity=TRADEABLE sector=IMPROVING risk=liquidity is cooling; momentum is extended
-- PRMH.CA: CONSTRUCTIVE score=66.24 liquidity=ACCUMULATION_SPIKE sector=IMPROVING risk=momentum is extended; far above support; sector is not leading
-- CSAG.CA: CONSTRUCTIVE score=65.63 liquidity=TRADEABLE sector=LEADING risk=liquidity is cooling; overheated RSI
-- HRHO.CA: CONSTRUCTIVE score=65.48 liquidity=ACCUMULATION_SPIKE sector=IMPROVING risk=close to resistance; sector is not leading
-- CIEB.CA: CONSTRUCTIVE score=65.14 liquidity=ACCUMULATION_SPIKE sector=IMPROVING risk=below MA50
+- EFIH.CA: BULLISH_WATCH score=93.71 liquidity=ACCUMULATION_SPIKE sector=LEADING risk=momentum is extended
+- FAIT.CA: BULLISH_WATCH score=89.44 liquidity=TRADEABLE sector=IMPROVING risk=No major short-term scanner risk flags.
+- SCEM.CA: BULLISH_WATCH score=76.5 liquidity=ACCUMULATION_SPIKE sector=IMPROVING risk=momentum is extended; far above support
+- CSAG.CA: BULLISH_WATCH score=76.26 liquidity=ACCUMULATION_SPIKE sector=LEADING risk=overheated RSI; far above support
+- ETEL.CA: BULLISH_WATCH score=71.31 liquidity=TRADEABLE sector=LEADING risk=overheated RSI
+- SAUD.CA: CONSTRUCTIVE score=64.44 liquidity=TRADEABLE sector=IMPROVING risk=liquidity is cooling; momentum is extended
+- ZEOT.CA: CONSTRUCTIVE score=64 liquidity=ACCUMULATION_SPIKE sector=LAGGING risk=momentum is extended; far above support; sector is not leading; high short-term volatility
+- EXPA.CA: CONSTRUCTIVE score=62.44 liquidity=ACCUMULATION_SPIKE sector=IMPROVING risk=below MA50
+- ENGC.CA: CONSTRUCTIVE score=61 liquidity=TRADEABLE sector=LAGGING risk=liquidity is cooling; far above support; sector is not leading
+- LCSW.CA: CONSTRUCTIVE score=59.5 liquidity=TRADEABLE sector=IMPROVING risk=liquidity is cooling; momentum is extended; far above support
 
 ## BUY-Ready Candidates
 - No BUY-ready candidates. Review block reasons and institution-flow status.
 
 ## Data Quality Issues
 - EKHO.CA: No usable market data returned. Check Yahoo symbol or add a manual fallback row.
-- AFMC.CA: No usable market data returned. Check Yahoo symbol or add a manual fallback row.
 - ANFI.CA: No usable market data returned. Check Yahoo symbol or add a manual fallback row.
 - ARVA.CA: No usable market data returned. Check Yahoo symbol or add a manual fallback row.
 - GTWL.CA: No usable market data returned. Check Yahoo symbol or add a manual fallback row.
 
 ## Ranked Scanner Results
-- AALR.CA: score=11.88 buy_ready=False sector_rank=12 price=231.87 support=171.02 resistance=269.99 source=Yahoo Finance as_of=2026-11-18T22:00:00+00:00 freshness=FRESH RSI=57.3 liquidity=3388779.98 spike=0.18
-- ABUK.CA: score=7.66 buy_ready=False sector_rank=17 price=76.36 support=73.6 resistance=95.69 source=Yahoo Finance as_of=2026-11-18T22:00:00+00:00 freshness=FRESH RSI=27.57 liquidity=18527303.31 spike=0.15
-- ACAMD.CA: score=14.32 buy_ready=False sector_rank=12 price=1.93 support=1.86 resistance=2.16 source=Yahoo Finance as_of=2026-11-18T22:00:00+00:00 freshness=FRESH RSI=49.06 liquidity=94042424.22 spike=1.41
-- ACGC.CA: score=11.47 buy_ready=False sector_rank=13 price=13.61 support=11.6 resistance=14.2 source=Yahoo Finance as_of=2026-11-18T22:00:00+00:00 freshness=FRESH RSI=54.92 liquidity=2994975.69 spike=0.38
-- ADCI.CA: score=9.8 buy_ready=False sector_rank=12 price=260.35 support=221.0 resistance=280.0 source=Yahoo Finance as_of=2026-11-18T22:00:00+00:00 freshness=FRESH RSI=41.16 liquidity=1305655.28 spike=0.49
-- ADIB.CA: score=15.06 buy_ready=False sector_rank=4 price=46.2 support=43.16 resistance=50.49 source=Yahoo Finance as_of=2026-11-18T22:00:00+00:00 freshness=FRESH RSI=49.56 liquidity=44889399.14 spike=0.58
-- ADPC.CA: score=8.69 buy_ready=False sector_rank=12 price=2.88 support=2.53 resistance=3.25 source=Yahoo Finance as_of=2026-11-18T22:00:00+00:00 freshness=FRESH RSI=43.43 liquidity=3195080.77 spike=0.4
-- AFDI.CA: score=7.29 buy_ready=False sector_rank=12 price=42.66 support=34.8 resistance=47.5 source=Yahoo Finance as_of=2026-11-18T22:00:00+00:00 freshness=FRESH RSI=48.46 liquidity=1795431.41 spike=0.64
-- AJWA.CA: score=23.5 buy_ready=False sector_rank=12 price=282.01 support=190.2 resistance=294.0 source=Yahoo Finance as_of=2026-11-18T22:00:00+00:00 freshness=FRESH RSI=87.27 liquidity=212828724.22 spike=5.42
-- ALCN.CA: score=16.82 buy_ready=False sector_rank=3 price=32.31 support=27.11 resistance=33.89 source=Yahoo Finance as_of=2026-11-18T22:00:00+00:00 freshness=FRESH RSI=55.03 liquidity=5572021.29 spike=0.51
-- ALUM.CA: score=9.26 buy_ready=False sector_rank=12 price=19.53 support=16.02 resistance=21.8 source=Yahoo Finance as_of=2026-11-18T22:00:00+00:00 freshness=FRESH RSI=60.89 liquidity=1766351.85 spike=0.61
-- AMER.CA: score=14.89 buy_ready=False sector_rank=15 price=3.99 support=3.21 resistance=4.74 source=Yahoo Finance as_of=2026-11-18T22:00:00+00:00 freshness=FRESH RSI=37.41 liquidity=92583884.41 spike=1.35
-- AMES.CA: score=16.14 buy_ready=False sector_rank=12 price=38.59 support=28.0 resistance=54.49 source=Yahoo Finance as_of=2026-11-18T22:00:00+00:00 freshness=FRESH RSI=57.64 liquidity=318955921.58 spike=1.32
-- AMIA.CA: score=11.26 buy_ready=False sector_rank=12 price=16.91 support=14.0 resistance=18.77 source=Yahoo Finance as_of=2026-11-18T22:00:00+00:00 freshness=FRESH RSI=44.53 liquidity=6763966.12 spike=0.5
-- AMOC.CA: score=10.35 buy_ready=False sector_rank=10 price=13.14 support=12.6 resistance=15.15 source=Yahoo Finance as_of=2026-11-18T22:00:00+00:00 freshness=FRESH RSI=34.31 liquidity=62008200.36 spike=0.43
-- APSW.CA: score=5.61 buy_ready=False sector_rank=12 price=7.4 support=7.1 resistance=8.07 source=Yahoo Finance as_of=2026-11-18T22:00:00+00:00 freshness=FRESH RSI=48.76 liquidity=111947.2 spike=0.24
-- ARAB.CA: score=18.19 buy_ready=False sector_rank=15 price=0.25 support=0.2 resistance=0.26 source=Yahoo Finance as_of=2026-11-18T22:00:00+00:00 freshness=FRESH RSI=63.64 liquidity=32202679.83 spike=0.41
-- ARCC.CA: score=19.85 buy_ready=False sector_rank=6 price=67.5 support=58.01 resistance=74.2 source=Yahoo Finance as_of=2026-11-18T22:00:00+00:00 freshness=FRESH RSI=61.54 liquidity=17126505.0 spike=0.63
-- AREH.CA: score=12.08 buy_ready=False sector_rank=12 price=1.04 support=0.91 resistance=1.17 source=Yahoo Finance as_of=2026-11-18T22:00:00+00:00 freshness=FRESH RSI=46.88 liquidity=6580351.2 spike=0.89
-- ASCM.CA: score=10.6 buy_ready=False sector_rank=12 price=44.2 support=38.2 resistance=50.4 source=Yahoo Finance as_of=2026-11-18T22:00:00+00:00 freshness=FRESH RSI=52.13 liquidity=5102757.49 spike=0.87
-- ASPI.CA: score=14.65 buy_ready=False sector_rank=12 price=0.32 support=0.27 resistance=0.36 source=Yahoo Finance as_of=2026-11-18T22:00:00+00:00 freshness=FRESH RSI=58.12 liquidity=7155283.33 spike=0.32
-- ATLC.CA: score=14.65 buy_ready=False sector_rank=14 price=5.4 support=3.93 resistance=6.06 source=Yahoo Finance as_of=2026-11-18T22:00:00+00:00 freshness=FRESH RSI=60.58 liquidity=6455473.31 spike=0.53
-- ATQA.CA: score=16.12 buy_ready=False sector_rank=17 price=10.12 support=8.25 resistance=11.01 source=Yahoo Finance as_of=2026-11-18T22:00:00+00:00 freshness=FRESH RSI=70.5 liquidity=53395760.72 spike=1.23
-- AXPH.CA: score=15.14 buy_ready=False sector_rank=12 price=1473.95 support=1135.0 resistance=1497.0 source=Yahoo Finance as_of=2026-11-18T22:00:00+00:00 freshness=FRESH RSI=62.63 liquidity=3645078.23 spike=0.71
-- BINV.CA: score=3.79 buy_ready=False sector_rank=21 price=50.8 support=50.6 resistance=59.45 source=Yahoo Finance as_of=2026-11-18T22:00:00+00:00 freshness=FRESH RSI=41.98 liquidity=1387144.78 spike=0.14
-- BIOC.CA: score=19.72 buy_ready=False sector_rank=12 price=392.11 support=212.05 resistance=447.0 source=Yahoo Finance as_of=2026-11-18T22:00:00+00:00 freshness=FRESH RSI=67.18 liquidity=218875793.82 spike=1.11
-- BTFH.CA: score=15.29 buy_ready=False sector_rank=14 price=2.25 support=2.05 resistance=2.64 source=Yahoo Finance as_of=2026-11-18T22:00:00+00:00 freshness=FRESH RSI=39.62 liquidity=132097284.0 spike=1.05
-- CAED.CA: score=18.5 buy_ready=False sector_rank=12 price=97.68 support=64.0 resistance=116.0 source=Yahoo Finance as_of=2026-11-18T22:00:00+00:00 freshness=FRESH RSI=56.31 liquidity=10484873.55 spike=0.38
-- CANA.CA: score=10.06 buy_ready=False sector_rank=4 price=33.13 support=29.33 resistance=48.49 source=Yahoo Finance as_of=2026-11-18T22:00:00+00:00 freshness=FRESH RSI=25.06 liquidity=13310408.62 spike=0.62
-- CCAP.CA: score=14.4 buy_ready=False sector_rank=21 price=5.93 support=5.55 resistance=6.44 source=Yahoo Finance as_of=2026-11-18T22:00:00+00:00 freshness=FRESH RSI=43.98 liquidity=363125899.63 spike=0.97
-- CCRS.CA: score=14.97 buy_ready=False sector_rank=12 price=2.0 support=1.3 resistance=2.49 source=Yahoo Finance as_of=2026-11-18T22:00:00+00:00 freshness=FRESH RSI=66.04 liquidity=9478534.0 spike=0.5
-- CEFM.CA: score=9.1 buy_ready=False sector_rank=12 price=125.13 support=97.79 resistance=138.99 source=Yahoo Finance as_of=2026-11-18T22:00:00+00:00 freshness=FRESH RSI=58.85 liquidity=606505.1 spike=0.21
-- CERA.CA: score=15.5 buy_ready=False sector_rank=12 price=1.04 support=0.93 resistance=1.23 source=Yahoo Finance as_of=2026-11-18T22:00:00+00:00 freshness=FRESH RSI=46.88 liquidity=13983226.93 spike=0.23
-- CFGH.CA: score=2.5 buy_ready=False sector_rank=12 price=0.11 support=0.1 resistance=0.11 source=Yahoo Finance as_of=2026-11-18T22:00:00+00:00 freshness=FRESH RSI=80.0 liquidity=29.96 spike=0.01
-- CICH.CA: score=7.53 buy_ready=False sector_rank=14 price=10.2 support=9.91 resistance=11.0 source=Yahoo Finance as_of=2026-11-18T22:00:00+00:00 freshness=FRESH RSI=40.38 liquidity=2334096.56 spike=0.98
-- CIEB.CA: score=20.62 buy_ready=False sector_rank=4 price=23.03 support=21.35 resistance=23.9 source=Yahoo Finance as_of=2026-11-18T22:00:00+00:00 freshness=FRESH RSI=56.6 liquidity=16810265.37 spike=1.78
-- CIRA.CA: score=13.93 buy_ready=False sector_rank=7 price=38.36 support=32.01 resistance=40.11 source=Yahoo Finance as_of=2026-11-18T22:00:00+00:00 freshness=FRESH RSI=67.13 liquidity=3502229.7 spike=0.2
-- CLHO.CA: score=17.7 buy_ready=False sector_rank=11 price=14.04 support=12.51 resistance=15.15 source=Yahoo Finance as_of=2026-11-18T22:00:00+00:00 freshness=FRESH RSI=56.4 liquidity=25066454.33 spike=0.69
-- CNFN.CA: score=13.73 buy_ready=False sector_rank=14 price=3.87 support=3.25 resistance=4.32 source=Yahoo Finance as_of=2026-11-18T22:00:00+00:00 freshness=FRESH RSI=55.15 liquidity=8253881.58 spike=1.14
-- COMI.CA: score=20.06 buy_ready=False sector_rank=4 price=127.5 support=117.41 resistance=131.36 source=Yahoo Finance as_of=2026-11-18T22:00:00+00:00 freshness=FRESH RSI=67.15 liquidity=288549967.5 spike=0.59
-- COPR.CA: score=6.91 buy_ready=False sector_rank=12 price=0.38 support=0.33 resistance=0.45 source=Yahoo Finance as_of=2026-11-18T22:00:00+00:00 freshness=FRESH RSI=44.36 liquidity=3418838.42 spike=0.18
-- COSG.CA: score=22.5 buy_ready=False sector_rank=12 price=1.41 support=1.11 resistance=1.49 source=Yahoo Finance as_of=2026-11-18T22:00:00+00:00 freshness=FRESH RSI=62.75 liquidity=93141852.53 spike=7.43
-- CPCI.CA: score=11.76 buy_ready=False sector_rank=12 price=575.3 support=550.84 resistance=597.07 source=Yahoo Finance as_of=2026-11-18T22:00:00+00:00 freshness=FRESH RSI=36.39 liquidity=2264956.05 spike=0.54
-- CSAG.CA: score=18.96 buy_ready=False sector_rank=3 price=36.09 support=30.1 resistance=37.36 source=Yahoo Finance as_of=2026-11-18T22:00:00+00:00 freshness=FRESH RSI=71.73 liquidity=4709636.75 spike=0.74
-- DAPH.CA: score=15.5 buy_ready=False sector_rank=12 price=86.25 support=65.2 resistance=98.1 source=Yahoo Finance as_of=2026-11-18T22:00:00+00:00 freshness=FRESH RSI=65.7 liquidity=11439337.5 spike=0.54
-- DEIN.CA: score=7.5 buy_ready=False sector_rank=12 price=10.35 support=10.35 resistance=12.42 source=Yahoo Finance as_of=2026-11-18T22:00:00+00:00 freshness=FRESH RSI=50.0 liquidity=0.0 spike=0.0
-- DOMT.CA: score=12.1 buy_ready=False sector_rank=5 price=25.61 support=20.27 resistance=26.5 source=Yahoo Finance as_of=2026-11-18T22:00:00+00:00 freshness=FRESH RSI=76.52 liquidity=2215239.44 spike=0.83
-- DSCW.CA: score=15.5 buy_ready=False sector_rank=12 price=1.48 support=1.23 resistance=1.66 source=Yahoo Finance as_of=2026-11-18T22:00:00+00:00 freshness=FRESH RSI=47.73 liquidity=11888470.15 spike=0.76
-- DTPP.CA: score=15.5 buy_ready=False sector_rank=12 price=57.78 support=36.0 resistance=69.99 source=Yahoo Finance as_of=2026-11-18T22:00:00+00:00 freshness=FRESH RSI=69.59 liquidity=19676400.78 spike=0.37
-- EALR.CA: score=9.59 buy_ready=False sector_rank=12 price=303.46 support=236.01 resistance=337.99 source=Yahoo Finance as_of=2026-11-18T22:00:00+00:00 freshness=FRESH RSI=63.06 liquidity=2092963.56 spike=0.27
-- EASB.CA: score=8.32 buy_ready=False sector_rank=12 price=5.81 support=5.03 resistance=7.2 source=Yahoo Finance as_of=2026-11-18T22:00:00+00:00 freshness=FRESH RSI=44.0 liquidity=3820353.84 spike=0.59
-- EAST.CA: score=21.88 buy_ready=False sector_rank=5 price=34.08 support=28.3 resistance=35.2 source=Yahoo Finance as_of=2026-11-18T22:00:00+00:00 freshness=FRESH RSI=58.28 liquidity=19707613.06 spike=0.37
-- EBSC.CA: score=8.08 buy_ready=False sector_rank=12 price=1.51 support=1.2 resistance=1.7 source=Yahoo Finance as_of=2026-11-18T22:00:00+00:00 freshness=FRESH RSI=52.83 liquidity=588514.95 spike=0.15
-- ECAP.CA: score=8.41 buy_ready=False sector_rank=12 price=28.12 support=24.8 resistance=30.4 source=Yahoo Finance as_of=2026-11-18T22:00:00+00:00 freshness=FRESH RSI=58.7 liquidity=909119.63 spike=0.35
-- EDFM.CA: score=6.65 buy_ready=False sector_rank=12 price=362.76 support=326.73 resistance=378.0 source=Yahoo Finance as_of=2026-11-18T22:00:00+00:00 freshness=FRESH RSI=66.39 liquidity=154535.76 spike=0.13
-- EEII.CA: score=18.92 buy_ready=False sector_rank=12 price=2.02 support=1.42 resistance=2.29 source=Yahoo Finance as_of=2026-11-18T22:00:00+00:00 freshness=FRESH RSI=68.0 liquidity=18520581.93 spike=1.21
-- EFIC.CA: score=10.16 buy_ready=False sector_rank=17 price=160.27 support=121.0 resistance=174.88 source=Yahoo Finance as_of=2026-11-18T22:00:00+00:00 freshness=FRESH RSI=62.9 liquidity=3503021.48 spike=0.14
-- EFID.CA: score=23.66 buy_ready=False sector_rank=5 price=21.0 support=16.01 resistance=21.35 source=Yahoo Finance as_of=2026-11-18T22:00:00+00:00 freshness=FRESH RSI=74.07 liquidity=74947551.0 spike=1.89
-- EFIH.CA: score=23.52 buy_ready=False sector_rank=2 price=25.53 support=20.3 resistance=26.18 source=Yahoo Finance as_of=2026-11-18T22:00:00+00:00 freshness=FRESH RSI=91.74 liquidity=92638058.37 spike=1.56
-- EGAL.CA: score=15.66 buy_ready=False sector_rank=17 price=304.99 support=270.1 resistance=318.0 source=Yahoo Finance as_of=2026-11-18T22:00:00+00:00 freshness=FRESH RSI=65.03 liquidity=34484303.23 spike=0.41
-- EGAS.CA: score=14.42 buy_ready=False sector_rank=10 price=50.67 support=43.0 resistance=61.68 source=Yahoo Finance as_of=2026-11-18T22:00:00+00:00 freshness=FRESH RSI=61.99 liquidity=4883878.44 spike=1.09
-- EGBE.CA: score=10.1 buy_ready=False sector_rank=4 price=0.5 support=0.47 resistance=0.51 source=Yahoo Finance as_of=2026-11-18T22:00:00+00:00 freshness=FRESH RSI=40.38 liquidity=42670.0 spike=0.88
-- EGCH.CA: score=14.66 buy_ready=False sector_rank=17 price=10.2 support=9.66 resistance=11.64 source=Yahoo Finance as_of=2026-11-18T22:00:00+00:00 freshness=FRESH RSI=44.63 liquidity=14955464.12 spike=0.36
-- EGSA.CA: score=14.4 buy_ready=False sector_rank=1 price=9.0 support=8.7 resistance=9.06 source=Yahoo Finance as_of=2026-11-18T22:00:00+00:00 freshness=FRESH RSI=74.36 liquidity=1890.0 spike=0.33
-- EGTS.CA: score=18.13 buy_ready=False sector_rank=15 price=12.77 support=10.19 resistance=14.45 source=Yahoo Finance as_of=2026-11-18T22:00:00+00:00 freshness=FRESH RSI=53.55 liquidity=33441796.26 spike=1.47
-- EHDR.CA: score=10.13 buy_ready=False sector_rank=12 price=2.09 support=1.8 resistance=2.28 source=Yahoo Finance as_of=2026-11-18T22:00:00+00:00 freshness=FRESH RSI=53.97 liquidity=2634574.47 spike=0.3
-- ELEC.CA: score=18.4 buy_ready=False sector_rank=8 price=1.63 support=1.34 resistance=1.78 source=Yahoo Finance as_of=2026-11-18T22:00:00+00:00 freshness=FRESH RSI=60.42 liquidity=13765558.6 spike=0.37
-- ELKA.CA: score=18.5 buy_ready=False sector_rank=12 price=1.49 support=1.21 resistance=1.63 source=Yahoo Finance as_of=2026-11-18T22:00:00+00:00 freshness=FRESH RSI=55.32 liquidity=11575179.8 spike=0.96
-- ELNA.CA: score=7.58 buy_ready=False sector_rank=12 price=41.28 support=35.01 resistance=44.2 source=Yahoo Finance as_of=2026-11-18T22:00:00+00:00 freshness=FRESH RSI=68.04 liquidity=79587.84 spike=0.1
-- ELSH.CA: score=19.52 buy_ready=False sector_rank=12 price=10.71 support=8.57 resistance=11.8 source=Yahoo Finance as_of=2026-11-18T22:00:00+00:00 freshness=FRESH RSI=57.41 liquidity=22175676.26 spike=1.51
-- ELWA.CA: score=-0.94 buy_ready=False sector_rank=12 price=1.23 support=1.16 resistance=1.59 source=Yahoo Finance as_of=2026-11-18T22:00:00+00:00 freshness=FRESH RSI=24.24 liquidity=560145.7 spike=0.42
-- EMFD.CA: score=18.19 buy_ready=False sector_rank=15 price=12.8 support=10.6 resistance=12.96 source=Yahoo Finance as_of=2026-11-18T22:00:00+00:00 freshness=FRESH RSI=76.04 liquidity=21794035.52 spike=0.32
-- ENGC.CA: score=21.5 buy_ready=False sector_rank=12 price=39.52 support=26.91 resistance=43.0 source=Yahoo Finance as_of=2026-11-18T22:00:00+00:00 freshness=FRESH RSI=58.9 liquidity=11776643.98 spike=0.58
-- EOSB.CA: score=7.56 buy_ready=False sector_rank=12 price=1.61 support=1.55 resistance=1.72 source=Yahoo Finance as_of=2026-11-18T22:00:00+00:00 freshness=FRESH RSI=50.0 liquidity=66847.2 spike=0.63
-- EPCO.CA: score=8.57 buy_ready=False sector_rank=12 price=8.53 support=7.0 resistance=9.98 source=Yahoo Finance as_of=2026-11-18T22:00:00+00:00 freshness=FRESH RSI=62.31 liquidity=1077654.58 spike=0.18
-- EPPK.CA: score=7.5 buy_ready=False sector_rank=12 price=9.78 support=9.78 resistance=9.78 source=Yahoo Finance as_of=2026-11-18T22:00:00+00:00 freshness=FRESH RSI=50.0 liquidity=0.0 spike=0.0
-- ETEL.CA: score=24.4 buy_ready=False sector_rank=1 price=137.02 support=115.0 resistance=147.0 source=Yahoo Finance as_of=2026-11-18T22:00:00+00:00 freshness=FRESH RSI=72.58 liquidity=191732777.08 spike=0.65
-- ETRS.CA: score=26.5 buy_ready=False sector_rank=12 price=11.23 support=9.51 resistance=11.58 source=Yahoo Finance as_of=2026-11-18T22:00:00+00:00 freshness=FRESH RSI=69.12 liquidity=79015669.3 spike=4.31
-- EXPA.CA: score=16.26 buy_ready=False sector_rank=4 price=14.63 support=12.43 resistance=15.0 source=Yahoo Finance as_of=2026-11-18T22:00:00+00:00 freshness=FRESH RSI=61.11 liquidity=7203358.53 spike=0.35
-- FAIT.CA: score=14.13 buy_ready=False sector_rank=4 price=45.43 support=40.0 resistance=47.46 source=Yahoo Finance as_of=2026-11-18T22:00:00+00:00 freshness=FRESH RSI=61.2 liquidity=1070739.68 spike=0.45
-- FAITA.CA: score=18.77 buy_ready=False sector_rank=4 price=1.01 support=0.98 resistance=1.03 source=Yahoo Finance as_of=2026-11-18T22:00:00+00:00 freshness=FRESH RSI=58.33 liquidity=91036.01 spike=2.81
-- FERC.CA: score=7.24 buy_ready=False sector_rank=17 price=65.65 support=52.63 resistance=72.69 source=Yahoo Finance as_of=2026-11-18T22:00:00+00:00 freshness=FRESH RSI=56.14 liquidity=582578.11 spike=0.07
-- FWRY.CA: score=21.4 buy_ready=False sector_rank=2 price=17.3 support=15.27 resistance=18.5 source=Yahoo Finance as_of=2026-11-18T22:00:00+00:00 freshness=FRESH RSI=52.12 liquidity=95836996.07 spike=0.79
-- GBCO.CA: score=13.4 buy_ready=False sector_rank=20 price=22.4 support=20.9 resistance=26.5 source=Yahoo Finance as_of=2026-11-18T22:00:00+00:00 freshness=FRESH RSI=41.41 liquidity=53851256.68 spike=0.51
-- GDWA.CA: score=7.93 buy_ready=False sector_rank=12 price=0.53 support=0.46 resistance=0.59 source=Yahoo Finance as_of=2026-11-18T22:00:00+00:00 freshness=FRESH RSI=49.12 liquidity=2434940.05 spike=0.23
-- GGCC.CA: score=15.5 buy_ready=False sector_rank=12 price=0.55 support=0.49 resistance=0.63 source=Yahoo Finance as_of=2026-11-18T22:00:00+00:00 freshness=FRESH RSI=52.27 liquidity=11059264.53 spike=0.56
-- GIHD.CA: score=16.5 buy_ready=False sector_rank=12 price=50.62 support=32.1 resistance=57.0 source=Yahoo Finance as_of=2026-11-18T22:00:00+00:00 freshness=FRESH RSI=66.45 liquidity=12577095.55 spike=0.72
-- GMCI.CA: score=8.53 buy_ready=False sector_rank=12 price=1.69 support=1.34 resistance=1.75 source=Yahoo Finance as_of=2026-11-18T22:00:00+00:00 freshness=FRESH RSI=73.33 liquidity=32610.24 spike=0.08
-- GRCA.CA: score=11.25 buy_ready=False sector_rank=12 price=31.45 support=22.57 resistance=37.32 source=Yahoo Finance as_of=2026-11-18T22:00:00+00:00 freshness=FRESH RSI=63.52 liquidity=3751544.79 spike=0.32
-- GSSC.CA: score=9.91 buy_ready=False sector_rank=12 price=265.59 support=211.52 resistance=296.0 source=Yahoo Finance as_of=2026-11-18T22:00:00+00:00 freshness=FRESH RSI=60.07 liquidity=1417453.81 spike=0.62
-- HDBK.CA: score=17.06 buy_ready=False sector_rank=4 price=108.5 support=83.01 resistance=111.2 source=Yahoo Finance as_of=2026-11-18T22:00:00+00:00 freshness=FRESH RSI=75.18 liquidity=24060417.5 spike=0.76
-- HELI.CA: score=16.19 buy_ready=False sector_rank=15 price=6.6 support=5.72 resistance=7.2 source=Yahoo Finance as_of=2026-11-18T22:00:00+00:00 freshness=FRESH RSI=53.33 liquidity=16925389.56 spike=0.24
-- HRHO.CA: score=21.51 buy_ready=False sector_rank=14 price=25.5 support=21.87 resistance=26.0 source=Yahoo Finance as_of=2026-11-18T22:00:00+00:00 freshness=FRESH RSI=61.59 liquidity=109222441.5 spike=1.66
-- ICID.CA: score=8.75 buy_ready=False sector_rank=12 price=17.28 support=14.26 resistance=17.98 source=Yahoo Finance as_of=2026-11-18T22:00:00+00:00 freshness=FRESH RSI=46.37 liquidity=2255109.21 spike=0.57
-- IDRE.CA: score=10.12 buy_ready=False sector_rank=12 price=41.78 support=29.11 resistance=47.25 source=Yahoo Finance as_of=2026-11-18T22:00:00+00:00 freshness=FRESH RSI=66.5 liquidity=4625171.2 spike=0.56
-- IFAP.CA: score=3.02 buy_ready=False sector_rank=19 price=16.04 support=15.12 resistance=19.4 source=Yahoo Finance as_of=2026-11-18T22:00:00+00:00 freshness=FRESH RSI=44.73 liquidity=1134140.34 spike=0.17
-- INFI.CA: score=20.08 buy_ready=False sector_rank=12 price=160.11 support=93.44 resistance=178.25 source=Yahoo Finance as_of=2026-11-18T22:00:00+00:00 freshness=FRESH RSI=84.05 liquidity=156048490.22 spike=2.79
-- IRON.CA: score=14.21 buy_ready=False sector_rank=17 price=24.52 support=23.13 resistance=27.22 source=Yahoo Finance as_of=2026-11-18T22:00:00+00:00 freshness=FRESH RSI=49.66 liquidity=9315712.13 spike=1.12
-- ISMA.CA: score=9.98 buy_ready=False sector_rank=12 price=20.63 support=14.11 resistance=22.54 source=Yahoo Finance as_of=2026-11-18T22:00:00+00:00 freshness=FRESH RSI=58.97 liquidity=2481087.48 spike=0.21
-- ISMQ.CA: score=8.09 buy_ready=False sector_rank=17 price=6.89 support=5.68 resistance=7.34 source=Yahoo Finance as_of=2026-11-18T22:00:00+00:00 freshness=FRESH RSI=68.88 liquidity=3434582.25 spike=0.28
-- ISPH.CA: score=17.7 buy_ready=False sector_rank=11 price=10.4 support=9.02 resistance=10.72 source=Yahoo Finance as_of=2026-11-18T22:00:00+00:00 freshness=FRESH RSI=57.04 liquidity=26518376.63 spike=0.39
-- JUFO.CA: score=16.88 buy_ready=False sector_rank=5 price=23.16 support=21.01 resistance=25.51 source=Yahoo Finance as_of=2026-11-18T22:00:00+00:00 freshness=FRESH RSI=48.73 liquidity=18269812.2 spike=0.67
-- KABO.CA: score=15.34 buy_ready=False sector_rank=13 price=7.07 support=5.58 resistance=7.74 source=Yahoo Finance as_of=2026-11-18T22:00:00+00:00 freshness=FRESH RSI=62.38 liquidity=7869801.01 spike=0.4
-- KWIN.CA: score=11.2 buy_ready=False sector_rank=12 price=70.13 support=44.02 resistance=85.83 source=Yahoo Finance as_of=2026-11-18T22:00:00+00:00 freshness=FRESH RSI=64.16 liquidity=3701601.52 spike=0.28
-- KZPC.CA: score=16.5 buy_ready=False sector_rank=12 price=11.5 support=11.45 resistance=14.77 source=Yahoo Finance as_of=2026-11-18T22:00:00+00:00 freshness=FRESH RSI=38.25 liquidity=22423735.0 spike=2.0
-- LCSW.CA: score=20.18 buy_ready=False sector_rank=6 price=39.79 support=28.0 resistance=42.14 source=Yahoo Finance as_of=2026-11-18T22:00:00+00:00 freshness=FRESH RSI=64.43 liquidity=7333416.54 spike=0.32
-- LUTS.CA: score=15.5 buy_ready=False sector_rank=12 price=0.67 support=0.47 resistance=0.84 source=Yahoo Finance as_of=2026-11-18T22:00:00+00:00 freshness=FRESH RSI=51.28 liquidity=28597250.34 spike=0.41
-- MAAL.CA: score=15.5 buy_ready=False sector_rank=12 price=6.24 support=4.88 resistance=7.64 source=Yahoo Finance as_of=2026-11-18T22:00:00+00:00 freshness=FRESH RSI=35.9 liquidity=12911913.61 spike=0.5
-- MASR.CA: score=15.5 buy_ready=False sector_rank=12 price=6.51 support=5.6 resistance=7.11 source=Yahoo Finance as_of=2026-11-18T22:00:00+00:00 freshness=FRESH RSI=37.79 liquidity=17193730.86 spike=0.49
-- MBSC.CA: score=17.85 buy_ready=False sector_rank=6 price=350.0 support=262.0 resistance=397.9 source=Yahoo Finance as_of=2026-11-18T22:00:00+00:00 freshness=FRESH RSI=77.46 liquidity=53386550.0 spike=0.74
-- MCQE.CA: score=18.85 buy_ready=False sector_rank=6 price=178.0 support=145.0 resistance=205.0 source=Yahoo Finance as_of=2026-11-18T22:00:00+00:00 freshness=FRESH RSI=59.98 liquidity=21801618.0 spike=0.4
-- MCRO.CA: score=17.5 buy_ready=False sector_rank=12 price=1.34 support=1.07 resistance=1.48 source=Yahoo Finance as_of=2026-11-18T22:00:00+00:00 freshness=FRESH RSI=51.22 liquidity=27639296.29 spike=0.56
-- MENA.CA: score=18.81 buy_ready=False sector_rank=15 price=7.16 support=5.45 resistance=7.9 source=Yahoo Finance as_of=2026-11-18T22:00:00+00:00 freshness=FRESH RSI=78.95 liquidity=20947166.67 spike=2.31
-- MEPA.CA: score=9.98 buy_ready=False sector_rank=12 price=1.33 support=1.14 resistance=1.55 source=Yahoo Finance as_of=2026-11-18T22:00:00+00:00 freshness=FRESH RSI=54.55 liquidity=4484550.0 spike=0.25
-- MFPC.CA: score=7.66 buy_ready=False sector_rank=17 price=38.22 support=37.23 resistance=47.63 source=Yahoo Finance as_of=2026-11-18T22:00:00+00:00 freshness=FRESH RSI=23.79 liquidity=48047471.91 spike=0.57
-- MFSC.CA: score=15.33 buy_ready=False sector_rank=12 price=35.64 support=28.55 resistance=42.4 source=Yahoo Finance as_of=2026-11-18T22:00:00+00:00 freshness=FRESH RSI=58.21 liquidity=5537315.43 spike=2.15
-- MHOT.CA: score=16.9 buy_ready=False sector_rank=18 price=15.18 support=13.0 resistance=17.0 source=Yahoo Finance as_of=2026-11-18T22:00:00+00:00 freshness=FRESH RSI=48.8 liquidity=12998679.8 spike=2.22
-- MICH.CA: score=15.21 buy_ready=False sector_rank=12 price=44.73 support=37.35 resistance=48.0 source=Yahoo Finance as_of=2026-11-18T22:00:00+00:00 freshness=FRESH RSI=71.98 liquidity=5710321.2 spike=0.76
-- MILS.CA: score=13.17 buy_ready=False sector_rank=12 price=139.91 support=94.24 resistance=163.0 source=Yahoo Finance as_of=2026-11-18T22:00:00+00:00 freshness=FRESH RSI=63.85 liquidity=5670552.45 spike=0.49
-- MIPH.CA: score=9.42 buy_ready=False sector_rank=11 price=773.08 support=610.0 resistance=820.0 source=Yahoo Finance as_of=2026-11-18T22:00:00+00:00 freshness=FRESH RSI=54.78 liquidity=715099.02 spike=0.37
-- MOED.CA: score=8.94 buy_ready=False sector_rank=12 price=0.48 support=0.39 resistance=0.56 source=Yahoo Finance as_of=2026-11-18T22:00:00+00:00 freshness=FRESH RSI=51.72 liquidity=3448881.45 spike=0.24
-- MOIL.CA: score=12.4 buy_ready=False sector_rank=10 price=0.69 support=0.6 resistance=0.71 source=Yahoo Finance as_of=2026-11-18T22:00:00+00:00 freshness=FRESH RSI=61.96 liquidity=44044.33 spike=0.21
-- MOIN.CA: score=20.04 buy_ready=False sector_rank=12 price=32.4 support=25.7 resistance=35.5 source=Yahoo Finance as_of=2026-11-18T22:00:00+00:00 freshness=FRESH RSI=64.19 liquidity=18552370.47 spike=1.77
-- MOSC.CA: score=26.5 buy_ready=False sector_rank=12 price=295.73 support=198.01 resistance=308.0 source=Yahoo Finance as_of=2026-11-18T22:00:00+00:00 freshness=FRESH RSI=69.43 liquidity=61615347.79 spike=7.13
-- MPCI.CA: score=21.98 buy_ready=False sector_rank=12 price=349.05 support=238.6 resistance=382.0 source=Yahoo Finance as_of=2026-11-18T22:00:00+00:00 freshness=FRESH RSI=57.63 liquidity=152789302.11 spike=1.24
-- MPCO.CA: score=16.89 buy_ready=False sector_rank=19 price=1.99 support=1.55 resistance=2.58 source=Yahoo Finance as_of=2026-11-18T22:00:00+00:00 freshness=FRESH RSI=58.65 liquidity=66469188.3 spike=0.64
-- MPRC.CA: score=19.5 buy_ready=False sector_rank=12 price=38.34 support=27.0 resistance=40.7 source=Yahoo Finance as_of=2026-11-18T22:00:00+00:00 freshness=FRESH RSI=69.98 liquidity=16263559.68 spike=0.72
-- MTIE.CA: score=11.4 buy_ready=False sector_rank=20 price=6.55 support=6.05 resistance=7.72 source=Yahoo Finance as_of=2026-11-18T22:00:00+00:00 freshness=FRESH RSI=41.31 liquidity=14174226.61 spike=0.64
-- NAHO.CA: score=6.5 buy_ready=False sector_rank=12 price=0.13 support=0.12 resistance=0.13 source=Yahoo Finance as_of=2026-11-18T22:00:00+00:00 freshness=FRESH RSI=53.85 liquidity=3690.43 spike=0.31
-- NCCW.CA: score=17.5 buy_ready=False sector_rank=12 price=5.6 support=4.05 resistance=6.34 source=Yahoo Finance as_of=2026-11-18T22:00:00+00:00 freshness=FRESH RSI=59.36 liquidity=10202729.43 spike=0.52
-- NEDA.CA: score=5.58 buy_ready=False sector_rank=12 price=2.46 support=2.26 resistance=2.58 source=Yahoo Finance as_of=2026-11-18T22:00:00+00:00 freshness=FRESH RSI=47.62 liquidity=88181.16 spike=0.44
-- NHPS.CA: score=9.27 buy_ready=False sector_rank=12 price=59.74 support=50.0 resistance=69.97 source=Yahoo Finance as_of=2026-11-18T22:00:00+00:00 freshness=FRESH RSI=58.42 liquidity=1770096.25 spike=0.22
-- NINH.CA: score=14.2 buy_ready=False sector_rank=12 price=15.08 support=12.36 resistance=18.5 source=Yahoo Finance as_of=2026-11-18T22:00:00+00:00 freshness=FRESH RSI=50.0 liquidity=8708202.32 spike=0.78
-- NIPH.CA: score=21.7 buy_ready=False sector_rank=11 price=306.2 support=205.0 resistance=365.5 source=Yahoo Finance as_of=2026-11-18T22:00:00+00:00 freshness=FRESH RSI=57.8 liquidity=113883745.74 spike=0.68
-- OBRI.CA: score=8.47 buy_ready=False sector_rank=12 price=22.69 support=18.11 resistance=26.2 source=Yahoo Finance as_of=2026-11-18T22:00:00+00:00 freshness=FRESH RSI=48.65 liquidity=2970007.62 spike=0.36
-- OCDI.CA: score=18.19 buy_ready=False sector_rank=15 price=25.02 support=21.0 resistance=26.64 source=Yahoo Finance as_of=2026-11-18T22:00:00+00:00 freshness=FRESH RSI=58.91 liquidity=14275886.84 spike=0.49
-- OCPH.CA: score=9.65 buy_ready=False sector_rank=12 price=198.97 support=147.96 resistance=224.0 source=Yahoo Finance as_of=2026-11-18T22:00:00+00:00 freshness=FRESH RSI=60.32 liquidity=2156635.84 spike=0.38
-- ODIN.CA: score=8.78 buy_ready=False sector_rank=12 price=2.02 support=1.7 resistance=2.28 source=Yahoo Finance as_of=2026-11-18T22:00:00+00:00 freshness=FRESH RSI=44.44 liquidity=3281277.87 spike=0.4
-- OFH.CA: score=16.97 buy_ready=False sector_rank=12 price=0.73 support=0.61 resistance=0.81 source=Yahoo Finance as_of=2026-11-18T22:00:00+00:00 freshness=FRESH RSI=57.39 liquidity=8471599.02 spike=0.42
-- OIH.CA: score=12.4 buy_ready=False sector_rank=21 price=1.6 support=1.5 resistance=1.84 source=Yahoo Finance as_of=2026-11-18T22:00:00+00:00 freshness=FRESH RSI=42.55 liquidity=18310064.27 spike=0.41
-- OLFI.CA: score=14.78 buy_ready=False sector_rank=5 price=20.22 support=17.86 resistance=21.24 source=Yahoo Finance as_of=2026-11-18T22:00:00+00:00 freshness=FRESH RSI=63.46 liquidity=5898315.34 spike=0.64
-- ORAS.CA: score=5.0 buy_ready=False sector_rank=16 price=71.05 support=71.05 resistance=71.05 source=Yahoo Finance as_of=2026-11-18T22:00:00+00:00 freshness=FRESH RSI=50.0 liquidity=0.0 spike=0.0
-- ORHD.CA: score=17.19 buy_ready=False sector_rank=15 price=10.33 support=8.5 resistance=10.71 source=Yahoo Finance as_of=2026-11-18T22:00:00+00:00 freshness=FRESH RSI=59.64 liquidity=51583567.39 spike=0.52
-- ORWE.CA: score=18.47 buy_ready=False sector_rank=13 price=25.09 support=22.2 resistance=26.75 source=Yahoo Finance as_of=2026-11-18T22:00:00+00:00 freshness=FRESH RSI=62.81 liquidity=10383772.55 spike=0.42
-- PHAR.CA: score=18.7 buy_ready=False sector_rank=11 price=104.1 support=90.2 resistance=113.97 source=Yahoo Finance as_of=2026-11-18T22:00:00+00:00 freshness=FRESH RSI=51.98 liquidity=25655028.22 spike=0.35
-- PHDC.CA: score=15.35 buy_ready=False sector_rank=15 price=11.62 support=10.33 resistance=13.05 source=Yahoo Finance as_of=2026-11-18T22:00:00+00:00 freshness=FRESH RSI=52.68 liquidity=129353571.47 spike=1.08
-- PHTV.CA: score=6.52 buy_ready=False sector_rank=12 price=328.78 support=300.0 resistance=349.0 source=Yahoo Finance as_of=2026-11-18T22:00:00+00:00 freshness=FRESH RSI=72.53 liquidity=22028.26 spike=0.02
-- POUL.CA: score=11.88 buy_ready=False sector_rank=5 price=7.58 support=7.51 resistance=10.4 source=Yahoo Finance as_of=2026-11-18T22:00:00+00:00 freshness=FRESH RSI=26.49 liquidity=96800533.05 spike=0.85
-- PRCL.CA: score=14.13 buy_ready=False sector_rank=6 price=18.64 support=16.65 resistance=23.06 source=Yahoo Finance as_of=2026-11-18T22:00:00+00:00 freshness=FRESH RSI=41.04 liquidity=9285031.06 spike=0.34
-- PRDC.CA: score=17.98 buy_ready=False sector_rank=15 price=6.5 support=5.08 resistance=7.2 source=Yahoo Finance as_of=2026-11-18T22:00:00+00:00 freshness=FRESH RSI=57.33 liquidity=9787973.0 spike=0.56
-- PRMH.CA: score=20.64 buy_ready=False sector_rank=12 price=2.26 support=1.7 resistance=2.66 source=Yahoo Finance as_of=2026-11-18T22:00:00+00:00 freshness=FRESH RSI=67.59 liquidity=20602103.41 spike=2.07
-- RACC.CA: score=8.72 buy_ready=False sector_rank=12 price=7.88 support=6.1 resistance=8.55 source=Yahoo Finance as_of=2026-11-18T22:00:00+00:00 freshness=FRESH RSI=68.75 liquidity=3222305.41 spike=0.51
-- RAKT.CA: score=5.62 buy_ready=False sector_rank=12 price=22.47 support=20.4 resistance=23.1 source=Yahoo Finance as_of=2026-11-18T22:00:00+00:00 freshness=FRESH RSI=98.21 liquidity=119091.0 spike=0.53
-- RAYA.CA: score=18.8 buy_ready=False sector_rank=9 price=5.98 support=5.02 resistance=6.33 source=Yahoo Finance as_of=2026-11-18T22:00:00+00:00 freshness=FRESH RSI=57.79 liquidity=33042878.81 spike=1.21
-- RMDA.CA: score=14.7 buy_ready=False sector_rank=11 price=5.16 support=4.5 resistance=5.72 source=Yahoo Finance as_of=2026-11-18T22:00:00+00:00 freshness=FRESH RSI=48.61 liquidity=15678313.82 spike=0.52
-- ROTO.CA: score=9.71 buy_ready=False sector_rank=12 price=31.97 support=25.0 resistance=36.8 source=Yahoo Finance as_of=2026-11-18T22:00:00+00:00 freshness=FRESH RSI=54.1 liquidity=2212228.04 spike=0.21
-- RREI.CA: score=8.74 buy_ready=False sector_rank=12 price=2.65 support=1.96 resistance=3.2 source=Yahoo Finance as_of=2026-11-18T22:00:00+00:00 freshness=FRESH RSI=50.0 liquidity=3239338.92 spike=0.27
-- RTVC.CA: score=5.5 buy_ready=False sector_rank=12 price=3.11 support=2.66 resistance=3.4 source=Yahoo Finance as_of=2026-11-18T22:00:00+00:00 freshness=FRESH RSI=73.68 liquidity=0.0 spike=0.0
-- RUBX.CA: score=16.5 buy_ready=False sector_rank=12 price=13.25 support=10.51 resistance=18.0 source=Yahoo Finance as_of=2026-11-18T22:00:00+00:00 freshness=FRESH RSI=54.02 liquidity=40211948.0 spike=0.69
-- SAUD.CA: score=21.06 buy_ready=False sector_rank=4 price=23.46 support=19.3 resistance=24.0 source=Yahoo Finance as_of=2026-11-18T22:00:00+00:00 freshness=FRESH RSI=73.96 liquidity=19031900.8 spike=0.85
-- SCEM.CA: score=17.85 buy_ready=False sector_rank=6 price=97.52 support=73.9 resistance=106.55 source=Yahoo Finance as_of=2026-11-18T22:00:00+00:00 freshness=FRESH RSI=80.64 liquidity=26973640.99 spike=0.59
-- SCFM.CA: score=8.53 buy_ready=False sector_rank=12 price=220.21 support=153.02 resistance=240.0 source=Yahoo Finance as_of=2026-11-18T22:00:00+00:00 freshness=FRESH RSI=60.04 liquidity=1032344.51 spike=0.27
-- SCTS.CA: score=6.81 buy_ready=False sector_rank=7 price=475.39 support=410.0 resistance=555.0 source=Yahoo Finance as_of=2026-11-18T22:00:00+00:00 freshness=FRESH RSI=45.13 liquidity=383164.35 spike=0.06
-- SDTI.CA: score=17.5 buy_ready=False sector_rank=12 price=83.0 support=75.01 resistance=90.99 source=Yahoo Finance as_of=2026-11-18T22:00:00+00:00 freshness=FRESH RSI=50.0 liquidity=16141923.0 spike=0.86
-- SEIG.CA: score=10.66 buy_ready=False sector_rank=12 price=231.23 support=142.0 resistance=280.0 source=Yahoo Finance as_of=2026-11-18T22:00:00+00:00 freshness=FRESH RSI=65.24 liquidity=1166786.56 spike=0.11
-- SIPC.CA: score=18.5 buy_ready=False sector_rank=12 price=5.11 support=3.73 resistance=5.89 source=Yahoo Finance as_of=2026-11-18T22:00:00+00:00 freshness=FRESH RSI=58.17 liquidity=16807597.82 spike=0.39
-- SKPC.CA: score=14.66 buy_ready=False sector_rank=17 price=14.61 support=14.01 resistance=15.75 source=Yahoo Finance as_of=2026-11-18T22:00:00+00:00 freshness=FRESH RSI=41.41 liquidity=20610852.48 spike=0.61
-- SMFR.CA: score=11.58 buy_ready=False sector_rank=12 price=216.65 support=165.0 resistance=264.0 source=Yahoo Finance as_of=2026-11-18T22:00:00+00:00 freshness=FRESH RSI=66.47 liquidity=2085472.84 spike=0.27
-- SNFC.CA: score=18.23 buy_ready=False sector_rank=12 price=11.38 support=10.08 resistance=11.48 source=Yahoo Finance as_of=2026-11-18T22:00:00+00:00 freshness=FRESH RSI=71.43 liquidity=8736983.71 spike=0.8
-- SPIN.CA: score=8.37 buy_ready=False sector_rank=13 price=14.5 support=12.0 resistance=16.48 source=Yahoo Finance as_of=2026-11-18T22:00:00+00:00 freshness=FRESH RSI=51.75 liquidity=2902494.0 spike=0.51
-- SPMD.CA: score=9.25 buy_ready=False sector_rank=12 price=0.33 support=0.3 resistance=0.37 source=Yahoo Finance as_of=2026-11-18T22:00:00+00:00 freshness=FRESH RSI=40.43 liquidity=3756294.69 spike=0.25
-- SUGR.CA: score=22.88 buy_ready=False sector_rank=5 price=52.08 support=44.62 resistance=55.99 source=Yahoo Finance as_of=2026-11-18T22:00:00+00:00 freshness=FRESH RSI=62.71 liquidity=17026931.64 spike=0.79
-- SVCE.CA: score=18.5 buy_ready=False sector_rank=12 price=9.1 support=7.01 resistance=10.0 source=Yahoo Finance as_of=2026-11-18T22:00:00+00:00 freshness=FRESH RSI=58.93 liquidity=51482451.36 spike=0.88
-- SWDY.CA: score=22.4 buy_ready=False sector_rank=8 price=117.5 support=97.0 resistance=123.45 source=Yahoo Finance as_of=2026-11-18T22:00:00+00:00 freshness=FRESH RSI=60.83 liquidity=11865620.0 spike=0.21
-- TALM.CA: score=12.54 buy_ready=False sector_rank=7 price=20.12 support=17.0 resistance=21.5 source=Yahoo Finance as_of=2026-11-18T22:00:00+00:00 freshness=FRESH RSI=57.49 liquidity=3115079.13 spike=0.17
-- TMGH.CA: score=17.19 buy_ready=False sector_rank=15 price=82.55 support=76.5 resistance=89.91 source=Yahoo Finance as_of=2026-11-18T22:00:00+00:00 freshness=FRESH RSI=57.27 liquidity=110792257.75 spike=0.51
-- TRTO.CA: score=4.5 buy_ready=False sector_rank=12 price=0.06 support=0.05 resistance=0.06 source=Yahoo Finance as_of=2026-11-18T22:00:00+00:00 freshness=FRESH RSI=66.67 liquidity=840.0 spike=0.16
-- UEFM.CA: score=10.7 buy_ready=False sector_rank=12 price=502.74 support=422.0 resistance=540.0 source=Yahoo Finance as_of=2026-11-18T22:00:00+00:00 freshness=FRESH RSI=70.29 liquidity=1200040.36 spike=0.62
-- UEGC.CA: score=17.5 buy_ready=False sector_rank=12 price=1.48 support=1.21 resistance=1.59 source=Yahoo Finance as_of=2026-11-18T22:00:00+00:00 freshness=FRESH RSI=56.1 liquidity=15678982.56 spike=0.52
-- UNIP.CA: score=9.59 buy_ready=False sector_rank=12 price=0.31 support=0.25 resistance=0.33 source=Yahoo Finance as_of=2026-11-18T22:00:00+00:00 freshness=FRESH RSI=62.82 liquidity=2093556.68 spike=0.32
-- UNIT.CA: score=3.73 buy_ready=False sector_rank=15 price=15.22 support=15.0 resistance=19.0 source=Yahoo Finance as_of=2026-11-18T22:00:00+00:00 freshness=FRESH RSI=29.25 liquidity=3737331.95 spike=1.4
-- WCDF.CA: score=7.74 buy_ready=False sector_rank=12 price=513.48 support=450.56 resistance=565.0 source=Yahoo Finance as_of=2026-11-18T22:00:00+00:00 freshness=FRESH RSI=57.45 liquidity=248010.83 spike=0.2
-- WKOL.CA: score=7.97 buy_ready=False sector_rank=12 price=172.01 support=145.33 resistance=275.8 source=Yahoo Finance as_of=2026-11-18T22:00:00+00:00 freshness=FRESH RSI=58.79 liquidity=2471439.6 spike=0.23
-- ZEOT.CA: score=26.5 buy_ready=False sector_rank=12 price=12.92 support=7.9 resistance=13.16 source=Yahoo Finance as_of=2026-11-18T22:00:00+00:00 freshness=FRESH RSI=71.26 liquidity=52871741.11 spike=5.35
-- ZMID.CA: score=18.19 buy_ready=False sector_rank=15 price=6.69 support=5.91 resistance=7.2 source=Yahoo Finance as_of=2026-11-18T22:00:00+00:00 freshness=FRESH RSI=51.7 liquidity=23809670.06 spike=0.31
+- AALR.CA: score=5.59 buy_ready=False sector_rank=15 price=204.77 support=171.02 resistance=269.99 source=Yahoo Finance as_of=2026-11-21T22:00:00+00:00 freshness=FRESH RSI=45.84 liquidity=3735414.42 spike=0.2
+- ABUK.CA: score=6.84 buy_ready=False sector_rank=16 price=74.0 support=73.6 resistance=92.89 source=Yahoo Finance as_of=2026-11-21T22:00:00+00:00 freshness=FRESH RSI=28.81 liquidity=68920714.0 spike=0.57
+- ACAMD.CA: score=11.86 buy_ready=False sector_rank=15 price=1.89 support=1.86 resistance=2.16 source=Yahoo Finance as_of=2026-11-21T22:00:00+00:00 freshness=FRESH RSI=48.15 liquidity=68217071.69 spike=0.99
+- ACGC.CA: score=16.23 buy_ready=False sector_rank=8 price=13.52 support=11.6 resistance=14.2 source=Yahoo Finance as_of=2026-11-21T22:00:00+00:00 freshness=FRESH RSI=61.35 liquidity=7761642.98 spike=1.01
+- ADCI.CA: score=7.41 buy_ready=False sector_rank=15 price=253.45 support=221.0 resistance=280.0 source=Yahoo Finance as_of=2026-11-21T22:00:00+00:00 freshness=FRESH RSI=45.76 liquidity=2551227.67 spike=0.93
+- ADIB.CA: score=13.98 buy_ready=False sector_rank=4 price=45.89 support=43.16 resistance=50.49 source=Yahoo Finance as_of=2026-11-21T22:00:00+00:00 freshness=FRESH RSI=42.48 liquidity=42419430.52 spike=0.56
+- ADPC.CA: score=6.46 buy_ready=False sector_rank=15 price=2.74 support=2.53 resistance=3.25 source=Yahoo Finance as_of=2026-11-21T22:00:00+00:00 freshness=FRESH RSI=40.57 liquidity=4600210.68 spike=0.59
+- AFDI.CA: score=8.69 buy_ready=False sector_rank=15 price=41.78 support=34.8 resistance=47.5 source=Yahoo Finance as_of=2026-11-21T22:00:00+00:00 freshness=FRESH RSI=40.3 liquidity=4012467.52 spike=1.41
+- AFMC.CA: score=14.86 buy_ready=False sector_rank=15 price=126.1 support=94.19 resistance=166.23 source=Yahoo Finance as_of=2026-11-21T22:00:00+00:00 freshness=FRESH RSI=49.72 liquidity=14841087.12 spike=0.48
+- AJWA.CA: score=19.2 buy_ready=False sector_rank=15 price=263.87 support=190.2 resistance=294.0 source=Yahoo Finance as_of=2026-11-21T22:00:00+00:00 freshness=FRESH RSI=72.95 liquidity=69327883.17 spike=1.67
+- ALCN.CA: score=13.53 buy_ready=False sector_rank=3 price=30.6 support=27.11 resistance=33.89 source=Yahoo Finance as_of=2026-11-21T22:00:00+00:00 freshness=FRESH RSI=46.93 liquidity=7226832.69 spike=0.67
+- ALUM.CA: score=6.59 buy_ready=False sector_rank=15 price=18.03 support=16.02 resistance=21.8 source=Yahoo Finance as_of=2026-11-21T22:00:00+00:00 freshness=FRESH RSI=47.55 liquidity=2731148.44 spike=0.96
+- AMER.CA: score=7.84 buy_ready=False sector_rank=18 price=3.57 support=3.21 resistance=4.74 source=Yahoo Finance as_of=2026-11-21T22:00:00+00:00 freshness=FRESH RSI=31.43 liquidity=88229128.29 spike=1.22
+- AMES.CA: score=13.86 buy_ready=False sector_rank=15 price=35.15 support=28.0 resistance=54.49 source=Yahoo Finance as_of=2026-11-21T22:00:00+00:00 freshness=FRESH RSI=53.74 liquidity=149711765.25 spike=0.6
+- AMIA.CA: score=4.36 buy_ready=False sector_rank=15 price=15.55 support=14.0 resistance=18.77 source=Yahoo Finance as_of=2026-11-21T22:00:00+00:00 freshness=FRESH RSI=27.25 liquidity=6504394.03 spike=0.47
+- AMOC.CA: score=9.92 buy_ready=False sector_rank=5 price=12.5 support=12.35 resistance=15.15 source=Yahoo Finance as_of=2026-11-21T22:00:00+00:00 freshness=FRESH RSI=20.52 liquidity=143788337.5 spike=1.0
+- APSW.CA: score=4.06 buy_ready=False sector_rank=15 price=7.4 support=7.1 resistance=8.07 source=Yahoo Finance as_of=2026-11-21T22:00:00+00:00 freshness=FRESH RSI=53.55 liquidity=205135.4 spike=0.44
+- ARAB.CA: score=14.4 buy_ready=False sector_rank=18 price=0.24 support=0.2 resistance=0.26 source=Yahoo Finance as_of=2026-11-21T22:00:00+00:00 freshness=FRESH RSI=55.56 liquidity=25202159.62 spike=0.33
+- ARCC.CA: score=16.6 buy_ready=False sector_rank=6 price=64.77 support=58.01 resistance=74.2 source=Yahoo Finance as_of=2026-11-21T22:00:00+00:00 freshness=FRESH RSI=53.91 liquidity=23849543.39 spike=0.85
+- AREH.CA: score=8.07 buy_ready=False sector_rank=15 price=0.99 support=0.91 resistance=1.17 source=Yahoo Finance as_of=2026-11-21T22:00:00+00:00 freshness=FRESH RSI=42.86 liquidity=6209989.89 spike=0.84
+- ASCM.CA: score=9.5 buy_ready=False sector_rank=15 price=42.6 support=38.2 resistance=50.4 source=Yahoo Finance as_of=2026-11-21T22:00:00+00:00 freshness=FRESH RSI=48.04 liquidity=5646629.8 spike=0.95
+- ASPI.CA: score=13.86 buy_ready=False sector_rank=15 price=0.3 support=0.27 resistance=0.36 source=Yahoo Finance as_of=2026-11-21T22:00:00+00:00 freshness=FRESH RSI=50.37 liquidity=20410006.23 spike=0.89
+- ATLC.CA: score=8.95 buy_ready=False sector_rank=19 price=4.91 support=3.93 resistance=6.06 source=Yahoo Finance as_of=2026-11-21T22:00:00+00:00 freshness=FRESH RSI=49.61 liquidity=5553612.45 spike=0.47
+- ATQA.CA: score=15.9 buy_ready=False sector_rank=16 price=10.02 support=8.25 resistance=11.01 source=Yahoo Finance as_of=2026-11-21T22:00:00+00:00 freshness=FRESH RSI=68.15 liquidity=92199976.09 spike=2.03
+- AXPH.CA: score=12.2 buy_ready=False sector_rank=15 price=1400.33 support=1135.0 resistance=1497.0 source=Yahoo Finance as_of=2026-11-21T22:00:00+00:00 freshness=FRESH RSI=58.68 liquidity=5321253.83 spike=1.01
+- BINV.CA: score=12.81 buy_ready=False sector_rank=17 price=50.64 support=49.0 resistance=58.5 source=Yahoo Finance as_of=2026-11-21T22:00:00+00:00 freshness=FRESH RSI=45.09 liquidity=10154383.32 spike=1.09
+- BIOC.CA: score=19.86 buy_ready=False sector_rank=15 price=359.0 support=212.05 resistance=447.0 source=Yahoo Finance as_of=2026-11-21T22:00:00+00:00 freshness=FRESH RSI=62.64 liquidity=92503530.0 spike=0.46
+- BTFH.CA: score=6.52 buy_ready=False sector_rank=19 price=2.12 support=2.05 resistance=2.59 source=Yahoo Finance as_of=2026-11-21T22:00:00+00:00 freshness=FRESH RSI=33.33 liquidity=136055584.58 spike=1.06
+- CAED.CA: score=14.8 buy_ready=False sector_rank=15 price=90.83 support=64.0 resistance=116.0 source=Yahoo Finance as_of=2026-11-21T22:00:00+00:00 freshness=FRESH RSI=52.8 liquidity=9946430.18 spike=0.36
+- CANA.CA: score=8.98 buy_ready=False sector_rank=4 price=32.04 support=29.33 resistance=48.49 source=Yahoo Finance as_of=2026-11-21T22:00:00+00:00 freshness=FRESH RSI=20.87 liquidity=17982578.67 spike=0.83
+- CCAP.CA: score=14.63 buy_ready=False sector_rank=17 price=5.69 support=5.55 resistance=6.4 source=Yahoo Finance as_of=2026-11-21T22:00:00+00:00 freshness=FRESH RSI=43.2 liquidity=165278273.78 spike=0.47
+- CCRS.CA: score=8.36 buy_ready=False sector_rank=15 price=1.87 support=1.3 resistance=2.49 source=Yahoo Finance as_of=2026-11-21T22:00:00+00:00 freshness=FRESH RSI=57.76 liquidity=4508109.99 spike=0.24
+- CEFM.CA: score=5.93 buy_ready=False sector_rank=15 price=117.35 support=97.79 resistance=138.99 source=Yahoo Finance as_of=2026-11-21T22:00:00+00:00 freshness=FRESH RSI=54.66 liquidity=1075395.39 spike=0.36
+- CERA.CA: score=13.86 buy_ready=False sector_rank=15 price=0.97 support=0.93 resistance=1.19 source=Yahoo Finance as_of=2026-11-21T22:00:00+00:00 freshness=FRESH RSI=40.54 liquidity=27915208.87 spike=0.5
+- CFGH.CA: score=0.86 buy_ready=False sector_rank=15 price=0.11 support=0.1 resistance=0.11 source=Yahoo Finance as_of=2026-11-21T22:00:00+00:00 freshness=FRESH RSI=80.0 liquidity=3235.25 spike=0.76
+- CICH.CA: score=-2.1 buy_ready=False sector_rank=19 price=9.95 support=9.88 resistance=11.0 source=Yahoo Finance as_of=2026-11-21T22:00:00+00:00 freshness=FRESH RSI=33.33 liquidity=1499564.47 spike=0.64
+- CIEB.CA: score=11.23 buy_ready=False sector_rank=4 price=22.41 support=21.35 resistance=23.9 source=Yahoo Finance as_of=2026-11-21T22:00:00+00:00 freshness=FRESH RSI=47.28 liquidity=5254293.38 spike=0.57
+- CIRA.CA: score=17.6 buy_ready=False sector_rank=7 price=36.98 support=32.01 resistance=40.11 source=Yahoo Finance as_of=2026-11-21T22:00:00+00:00 freshness=FRESH RSI=55.74 liquidity=9077961.23 spike=0.52
+- CLHO.CA: score=16.28 buy_ready=False sector_rank=12 price=14.0 support=12.51 resistance=15.15 source=Yahoo Finance as_of=2026-11-21T22:00:00+00:00 freshness=FRESH RSI=57.98 liquidity=16901542.0 spike=0.47
+- CNFN.CA: score=5.54 buy_ready=False sector_rank=19 price=3.68 support=3.25 resistance=4.32 source=Yahoo Finance as_of=2026-11-21T22:00:00+00:00 freshness=FRESH RSI=49.67 liquidity=4142664.4 spike=0.62
+- COMI.CA: score=13.98 buy_ready=False sector_rank=4 price=125.01 support=117.41 resistance=131.36 source=Yahoo Finance as_of=2026-11-21T22:00:00+00:00 freshness=FRESH RSI=67.09 liquidity=266115917.12 spike=0.57
+- COPR.CA: score=11.84 buy_ready=False sector_rank=15 price=0.37 support=0.33 resistance=0.45 source=Yahoo Finance as_of=2026-11-21T22:00:00+00:00 freshness=FRESH RSI=39.33 liquidity=9980302.23 spike=0.53
+- COSG.CA: score=17.04 buy_ready=False sector_rank=15 price=1.3 support=1.11 resistance=1.49 source=Yahoo Finance as_of=2026-11-21T22:00:00+00:00 freshness=FRESH RSI=52.46 liquidity=36464213.46 spike=2.59
+- CPCI.CA: score=1.81 buy_ready=False sector_rank=15 price=556.85 support=550.84 resistance=597.07 source=Yahoo Finance as_of=2026-11-21T22:00:00+00:00 freshness=FRESH RSI=33.17 liquidity=3951407.43 spike=0.93
+- CSAG.CA: score=21.56 buy_ready=False sector_rank=3 price=36.23 support=30.1 resistance=37.36 source=Yahoo Finance as_of=2026-11-21T22:00:00+00:00 freshness=FRESH RSI=76.86 liquidity=10901788.01 spike=1.63
+- DAPH.CA: score=13.86 buy_ready=False sector_rank=15 price=79.01 support=65.2 resistance=98.1 source=Yahoo Finance as_of=2026-11-21T22:00:00+00:00 freshness=FRESH RSI=47.46 liquidity=14328858.94 spike=0.69
+- DEIN.CA: score=5.86 buy_ready=False sector_rank=15 price=10.35 support=10.35 resistance=12.42 source=Yahoo Finance as_of=2026-11-21T22:00:00+00:00 freshness=FRESH RSI=50.0 liquidity=0.0 spike=0.0
+- DOMT.CA: score=10.62 buy_ready=False sector_rank=10 price=22.96 support=20.27 resistance=26.5 source=Yahoo Finance as_of=2026-11-21T22:00:00+00:00 freshness=FRESH RSI=50.93 liquidity=4376313.59 spike=1.55
+- DSCW.CA: score=13.86 buy_ready=False sector_rank=15 price=1.39 support=1.23 resistance=1.66 source=Yahoo Finance as_of=2026-11-21T22:00:00+00:00 freshness=FRESH RSI=42.0 liquidity=11629931.11 spike=0.74
+- DTPP.CA: score=15.86 buy_ready=False sector_rank=15 price=51.99 support=36.0 resistance=69.99 source=Yahoo Finance as_of=2026-11-21T22:00:00+00:00 freshness=FRESH RSI=56.0 liquidity=22524200.32 spike=0.43
+- EALR.CA: score=6.26 buy_ready=False sector_rank=15 price=279.18 support=236.01 resistance=337.99 source=Yahoo Finance as_of=2026-11-21T22:00:00+00:00 freshness=FRESH RSI=56.32 liquidity=2407648.26 spike=0.31
+- EASB.CA: score=4.61 buy_ready=False sector_rank=15 price=5.47 support=5.03 resistance=7.2 source=Yahoo Finance as_of=2026-11-21T22:00:00+00:00 freshness=FRESH RSI=37.98 liquidity=2758236.45 spike=0.42
+- EAST.CA: score=18.14 buy_ready=False sector_rank=10 price=32.6 support=28.3 resistance=35.2 source=Yahoo Finance as_of=2026-11-21T22:00:00+00:00 freshness=FRESH RSI=52.79 liquidity=22707920.14 spike=0.46
+- EBSC.CA: score=4.88 buy_ready=False sector_rank=15 price=1.42 support=1.2 resistance=1.7 source=Yahoo Finance as_of=2026-11-21T22:00:00+00:00 freshness=FRESH RSI=49.12 liquidity=1025204.47 spike=0.27
+- ECAP.CA: score=6.14 buy_ready=False sector_rank=15 price=27.27 support=24.8 resistance=30.4 source=Yahoo Finance as_of=2026-11-21T22:00:00+00:00 freshness=FRESH RSI=56.93 liquidity=2285444.2 spike=0.88
+- EDFM.CA: score=5.04 buy_ready=False sector_rank=15 price=362.76 support=326.73 resistance=378.0 source=Yahoo Finance as_of=2026-11-21T22:00:00+00:00 freshness=FRESH RSI=65.02 liquidity=186458.65 spike=0.16
+- EEII.CA: score=12.08 buy_ready=False sector_rank=15 price=1.89 support=1.42 resistance=2.29 source=Yahoo Finance as_of=2026-11-21T22:00:00+00:00 freshness=FRESH RSI=59.09 liquidity=6227368.51 spike=0.4
+- EFIC.CA: score=9.95 buy_ready=False sector_rank=16 price=147.26 support=121.0 resistance=174.88 source=Yahoo Finance as_of=2026-11-21T22:00:00+00:00 freshness=FRESH RSI=55.9 liquidity=6114824.01 spike=0.24
+- EFID.CA: score=17.14 buy_ready=False sector_rank=10 price=20.1 support=16.01 resistance=21.35 source=Yahoo Finance as_of=2026-11-21T22:00:00+00:00 freshness=FRESH RSI=63.99 liquidity=33112740.63 spike=0.82
+- EFIH.CA: score=28.46 buy_ready=False sector_rank=2 price=24.1 support=20.3 resistance=26.18 source=Yahoo Finance as_of=2026-11-21T22:00:00+00:00 freshness=FRESH RSI=62.22 liquidity=181523154.97 spike=2.79
+- EGAL.CA: score=16.84 buy_ready=False sector_rank=16 price=298.0 support=270.1 resistance=318.0 source=Yahoo Finance as_of=2026-11-21T22:00:00+00:00 freshness=FRESH RSI=57.43 liquidity=54398708.0 spike=0.69
+- EGAS.CA: score=11.88 buy_ready=False sector_rank=5 price=48.54 support=43.0 resistance=61.68 source=Yahoo Finance as_of=2026-11-21T22:00:00+00:00 freshness=FRESH RSI=54.71 liquidity=3955621.75 spike=0.87
+- EGBE.CA: score=2.6 buy_ready=False sector_rank=4 price=0.49 support=0.47 resistance=0.51 source=Yahoo Finance as_of=2026-11-21T22:00:00+00:00 freshness=FRESH RSI=31.34 liquidity=61268.11 spike=1.28
+- EGCH.CA: score=13.84 buy_ready=False sector_rank=16 price=9.74 support=9.66 resistance=11.3 source=Yahoo Finance as_of=2026-11-21T22:00:00+00:00 freshness=FRESH RSI=42.63 liquidity=24987599.29 spike=0.62
+- EGSA.CA: score=14.4 buy_ready=False sector_rank=1 price=9.0 support=8.7 resistance=9.06 source=Yahoo Finance as_of=2026-11-21T22:00:00+00:00 freshness=FRESH RSI=74.36 liquidity=4500.0 spike=0.78
+- EGTS.CA: score=13.4 buy_ready=False sector_rank=18 price=11.95 support=10.19 resistance=14.45 source=Yahoo Finance as_of=2026-11-21T22:00:00+00:00 freshness=FRESH RSI=47.41 liquidity=20776699.87 spike=0.9
+- EHDR.CA: score=11.23 buy_ready=False sector_rank=15 price=1.99 support=1.8 resistance=2.28 source=Yahoo Finance as_of=2026-11-21T22:00:00+00:00 freshness=FRESH RSI=47.89 liquidity=7371734.15 spike=0.83
+- ELEC.CA: score=14.06 buy_ready=False sector_rank=14 price=1.53 support=1.34 resistance=1.78 source=Yahoo Finance as_of=2026-11-21T22:00:00+00:00 freshness=FRESH RSI=52.73 liquidity=22531175.85 spike=0.68
+- ELKA.CA: score=13.86 buy_ready=False sector_rank=15 price=1.41 support=1.21 resistance=1.63 source=Yahoo Finance as_of=2026-11-21T22:00:00+00:00 freshness=FRESH RSI=50.98 liquidity=10787506.48 spike=0.88
+- ELNA.CA: score=7.86 buy_ready=False sector_rank=15 price=41.28 support=35.5 resistance=44.2 source=Yahoo Finance as_of=2026-11-21T22:00:00+00:00 freshness=FRESH RSI=60.36 liquidity=41.28 spike=0.0
+- ELSH.CA: score=13.27 buy_ready=False sector_rank=15 price=10.27 support=8.57 resistance=11.8 source=Yahoo Finance as_of=2026-11-21T22:00:00+00:00 freshness=FRESH RSI=54.52 liquidity=9416655.85 spike=0.64
+- ELWA.CA: score=-1.71 buy_ready=False sector_rank=15 price=1.17 support=1.16 resistance=1.59 source=Yahoo Finance as_of=2026-11-21T22:00:00+00:00 freshness=FRESH RSI=24.62 liquidity=1410448.99 spike=1.01
+- EMFD.CA: score=16.46 buy_ready=False sector_rank=18 price=11.99 support=10.6 resistance=12.96 source=Yahoo Finance as_of=2026-11-21T22:00:00+00:00 freshness=FRESH RSI=51.34 liquidity=145193118.05 spike=2.03
+- ENGC.CA: score=16.31 buy_ready=False sector_rank=15 price=37.49 support=26.91 resistance=43.0 source=Yahoo Finance as_of=2026-11-21T22:00:00+00:00 freshness=FRESH RSI=56.09 liquidity=6451991.8 spike=0.32
+- EOSB.CA: score=5.95 buy_ready=False sector_rank=15 price=1.61 support=1.55 resistance=1.72 source=Yahoo Finance as_of=2026-11-21T22:00:00+00:00 freshness=FRESH RSI=50.0 liquidity=94395.91 spike=0.85
+- EPCO.CA: score=5.95 buy_ready=False sector_rank=15 price=8.1 support=7.0 resistance=9.98 source=Yahoo Finance as_of=2026-11-21T22:00:00+00:00 freshness=FRESH RSI=52.0 liquidity=2092659.4 spike=0.35
+- EPPK.CA: score=5.86 buy_ready=False sector_rank=15 price=9.78 support=9.78 resistance=9.78 source=Yahoo Finance as_of=2026-11-21T22:00:00+00:00 freshness=FRESH RSI=50.0 liquidity=0.0 spike=0.0
+- ETEL.CA: score=21.86 buy_ready=False sector_rank=1 price=137.0 support=115.0 resistance=147.0 source=Yahoo Finance as_of=2026-11-21T22:00:00+00:00 freshness=FRESH RSI=77.24 liquidity=348619927.0 spike=1.23
+- ETRS.CA: score=19.86 buy_ready=False sector_rank=15 price=11.1 support=9.51 resistance=11.58 source=Yahoo Finance as_of=2026-11-21T22:00:00+00:00 freshness=FRESH RSI=64.91 liquidity=10613842.56 spike=0.57
+- EXPA.CA: score=19.86 buy_ready=False sector_rank=4 price=14.24 support=12.43 resistance=15.0 source=Yahoo Finance as_of=2026-11-21T22:00:00+00:00 freshness=FRESH RSI=53.92 liquidity=30446685.91 spike=1.94
+- FAIT.CA: score=17.93 buy_ready=False sector_rank=4 price=45.01 support=40.0 resistance=47.46 source=Yahoo Finance as_of=2026-11-21T22:00:00+00:00 freshness=FRESH RSI=59.42 liquidity=4354132.21 spike=1.8
+- FAITA.CA: score=10.74 buy_ready=False sector_rank=4 price=1.0 support=0.98 resistance=1.03 source=Yahoo Finance as_of=2026-11-21T22:00:00+00:00 freshness=FRESH RSI=50.72 liquidity=45450.0 spike=1.36
+- FERC.CA: score=5.0 buy_ready=False sector_rank=16 price=61.65 support=52.63 resistance=72.69 source=Yahoo Finance as_of=2026-11-21T22:00:00+00:00 freshness=FRESH RSI=52.27 liquidity=1155752.58 spike=0.15
+- FWRY.CA: score=18.88 buy_ready=False sector_rank=2 price=16.98 support=15.27 resistance=18.5 source=Yahoo Finance as_of=2026-11-21T22:00:00+00:00 freshness=FRESH RSI=56.23 liquidity=46269887.47 spike=0.39
+- GBCO.CA: score=13.4 buy_ready=False sector_rank=20 price=21.3 support=20.9 resistance=24.8 source=Yahoo Finance as_of=2026-11-21T22:00:00+00:00 freshness=FRESH RSI=45.78 liquidity=63936697.61 spike=0.64
+- GDWA.CA: score=13.92 buy_ready=False sector_rank=15 price=0.5 support=0.45 resistance=0.59 source=Yahoo Finance as_of=2026-11-21T22:00:00+00:00 freshness=FRESH RSI=43.25 liquidity=11155943.19 spike=1.03
+- GGCC.CA: score=13.86 buy_ready=False sector_rank=15 price=0.51 support=0.49 resistance=0.62 source=Yahoo Finance as_of=2026-11-21T22:00:00+00:00 freshness=FRESH RSI=46.94 liquidity=12399554.46 spike=0.62
+- GIHD.CA: score=12.86 buy_ready=False sector_rank=15 price=45.97 support=32.1 resistance=57.0 source=Yahoo Finance as_of=2026-11-21T22:00:00+00:00 freshness=FRESH RSI=54.41 liquidity=6999530.3 spike=0.4
+- GMCI.CA: score=4.17 buy_ready=False sector_rank=15 price=1.61 support=1.34 resistance=1.75 source=Yahoo Finance as_of=2026-11-21T22:00:00+00:00 freshness=FRESH RSI=66.67 liquidity=317025.1 spike=0.78
+- GRCA.CA: score=8.0 buy_ready=False sector_rank=15 price=28.25 support=22.57 resistance=37.32 source=Yahoo Finance as_of=2026-11-21T22:00:00+00:00 freshness=FRESH RSI=54.67 liquidity=4141280.5 spike=0.35
+- GSSC.CA: score=6.15 buy_ready=False sector_rank=15 price=234.26 support=211.52 resistance=296.0 source=Yahoo Finance as_of=2026-11-21T22:00:00+00:00 freshness=FRESH RSI=37.14 liquidity=2292702.57 spike=0.98
+- HDBK.CA: score=18.46 buy_ready=False sector_rank=4 price=103.5 support=83.01 resistance=111.2 source=Yahoo Finance as_of=2026-11-21T22:00:00+00:00 freshness=FRESH RSI=60.43 liquidity=40935699.0 spike=1.24
+- HELI.CA: score=11.4 buy_ready=False sector_rank=18 price=6.19 support=5.72 resistance=7.2 source=Yahoo Finance as_of=2026-11-21T22:00:00+00:00 freshness=FRESH RSI=46.43 liquidity=27724527.44 spike=0.4
+- HRHO.CA: score=21.4 buy_ready=False sector_rank=19 price=25.5 support=21.87 resistance=26.0 source=Yahoo Finance as_of=2026-11-21T22:00:00+00:00 freshness=FRESH RSI=65.16 liquidity=318335191.5 spike=4.03
+- ICID.CA: score=3.51 buy_ready=False sector_rank=15 price=16.55 support=14.26 resistance=17.98 source=Yahoo Finance as_of=2026-11-21T22:00:00+00:00 freshness=FRESH RSI=43.24 liquidity=655231.02 spike=0.17
+- IDRE.CA: score=6.82 buy_ready=False sector_rank=15 price=38.19 support=29.11 resistance=47.25 source=Yahoo Finance as_of=2026-11-21T22:00:00+00:00 freshness=FRESH RSI=51.48 liquidity=2966904.61 spike=0.36
+- IFAP.CA: score=7.8 buy_ready=False sector_rank=21 price=15.75 support=15.12 resistance=19.4 source=Yahoo Finance as_of=2026-11-21T22:00:00+00:00 freshness=FRESH RSI=44.73 liquidity=6395681.25 spike=0.95
+- INFI.CA: score=17.4 buy_ready=False sector_rank=15 price=153.5 support=93.44 resistance=178.25 source=Yahoo Finance as_of=2026-11-21T22:00:00+00:00 freshness=FRESH RSI=78.41 liquidity=141591623.5 spike=2.27
+- IRON.CA: score=11.12 buy_ready=False sector_rank=16 price=23.93 support=23.13 resistance=27.22 source=Yahoo Finance as_of=2026-11-21T22:00:00+00:00 freshness=FRESH RSI=46.08 liquidity=7282377.69 spike=0.87
+- ISMA.CA: score=9.26 buy_ready=False sector_rank=15 price=18.94 support=14.11 resistance=22.54 source=Yahoo Finance as_of=2026-11-21T22:00:00+00:00 freshness=FRESH RSI=50.81 liquidity=5404642.79 spike=0.44
+- ISMQ.CA: score=7.65 buy_ready=False sector_rank=16 price=6.4 support=5.68 resistance=7.34 source=Yahoo Finance as_of=2026-11-21T22:00:00+00:00 freshness=FRESH RSI=33.93 liquidity=8807744.13 spike=0.72
+- ISPH.CA: score=14.28 buy_ready=False sector_rank=12 price=9.99 support=9.02 resistance=10.72 source=Yahoo Finance as_of=2026-11-21T22:00:00+00:00 freshness=FRESH RSI=58.66 liquidity=34352222.6 spike=0.51
+- JUFO.CA: score=13.14 buy_ready=False sector_rank=10 price=21.77 support=21.01 resistance=25.51 source=Yahoo Finance as_of=2026-11-21T22:00:00+00:00 freshness=FRESH RSI=43.88 liquidity=24284827.37 spike=0.92
+- KABO.CA: score=17.45 buy_ready=False sector_rank=8 price=7.03 support=5.58 resistance=7.74 source=Yahoo Finance as_of=2026-11-21T22:00:00+00:00 freshness=FRESH RSI=56.99 liquidity=17977974.2 spike=0.89
+- KWIN.CA: score=7.33 buy_ready=False sector_rank=15 price=64.17 support=44.02 resistance=85.83 source=Yahoo Finance as_of=2026-11-21T22:00:00+00:00 freshness=FRESH RSI=58.21 liquidity=3474099.53 spike=0.26
+- KZPC.CA: score=4.01 buy_ready=False sector_rank=15 price=10.34 support=10.25 resistance=14.77 source=Yahoo Finance as_of=2026-11-21T22:00:00+00:00 freshness=FRESH RSI=32.94 liquidity=7151371.59 spike=0.64
+- LCSW.CA: score=21.6 buy_ready=False sector_rank=6 price=38.65 support=28.0 resistance=42.14 source=Yahoo Finance as_of=2026-11-21T22:00:00+00:00 freshness=FRESH RSI=62.58 liquidity=14655268.93 spike=0.65
+- LUTS.CA: score=6.86 buy_ready=False sector_rank=15 price=0.62 support=0.47 resistance=0.84 source=Yahoo Finance as_of=2026-11-21T22:00:00+00:00 freshness=FRESH RSI=33.63 liquidity=31164826.7 spike=0.44
+- MAAL.CA: score=8.86 buy_ready=False sector_rank=15 price=5.71 support=4.88 resistance=7.55 source=Yahoo Finance as_of=2026-11-21T22:00:00+00:00 freshness=FRESH RSI=28.77 liquidity=16912814.55 spike=0.65
+- MASR.CA: score=6.86 buy_ready=False sector_rank=15 price=6.11 support=5.6 resistance=7.11 source=Yahoo Finance as_of=2026-11-21T22:00:00+00:00 freshness=FRESH RSI=34.39 liquidity=26565565.71 spike=0.76
+- MBSC.CA: score=16.6 buy_ready=False sector_rank=6 price=332.0 support=262.0 resistance=397.9 source=Yahoo Finance as_of=2026-11-21T22:00:00+00:00 freshness=FRESH RSI=66.1 liquidity=45565672.0 spike=0.63
+- MCQE.CA: score=15.6 buy_ready=False sector_rank=6 price=168.21 support=145.0 resistance=205.0 source=Yahoo Finance as_of=2026-11-21T22:00:00+00:00 freshness=FRESH RSI=51.01 liquidity=28748267.62 spike=0.53
+- MCRO.CA: score=13.86 buy_ready=False sector_rank=15 price=1.25 support=1.07 resistance=1.48 source=Yahoo Finance as_of=2026-11-21T22:00:00+00:00 freshness=FRESH RSI=45.65 liquidity=18667570.0 spike=0.38
+- MENA.CA: score=16.66 buy_ready=False sector_rank=18 price=6.44 support=5.45 resistance=7.9 source=Yahoo Finance as_of=2026-11-21T22:00:00+00:00 freshness=FRESH RSI=62.13 liquidity=7260024.58 spike=0.77
+- MEPA.CA: score=10.27 buy_ready=False sector_rank=15 price=1.26 support=1.14 resistance=1.5 source=Yahoo Finance as_of=2026-11-21T22:00:00+00:00 freshness=FRESH RSI=50.0 liquidity=6416233.69 spike=0.35
+- MFPC.CA: score=6.84 buy_ready=False sector_rank=16 price=36.21 support=36.02 resistance=47.2 source=Yahoo Finance as_of=2026-11-21T22:00:00+00:00 freshness=FRESH RSI=21.8 liquidity=84871421.92 spike=0.99
+- MFSC.CA: score=6.0 buy_ready=False sector_rank=15 price=33.98 support=28.55 resistance=39.48 source=Yahoo Finance as_of=2026-11-21T22:00:00+00:00 freshness=FRESH RSI=54.69 liquidity=2140672.01 spike=1.0
+- MHOT.CA: score=8.16 buy_ready=False sector_rank=13 price=14.81 support=13.0 resistance=17.0 source=Yahoo Finance as_of=2026-11-21T22:00:00+00:00 freshness=FRESH RSI=48.23 liquidity=6030558.12 spike=1.01
+- MICH.CA: score=10.11 buy_ready=False sector_rank=15 price=41.98 support=37.35 resistance=48.0 source=Yahoo Finance as_of=2026-11-21T22:00:00+00:00 freshness=FRESH RSI=55.68 liquidity=5249431.02 spike=0.71
+- MILS.CA: score=9.75 buy_ready=False sector_rank=15 price=126.38 support=94.24 resistance=163.0 source=Yahoo Finance as_of=2026-11-21T22:00:00+00:00 freshness=FRESH RSI=51.19 liquidity=5892972.89 spike=0.51
+- MIPH.CA: score=5.11 buy_ready=False sector_rank=12 price=755.28 support=610.0 resistance=820.0 source=Yahoo Finance as_of=2026-11-21T22:00:00+00:00 freshness=FRESH RSI=51.45 liquidity=1827777.67 spike=0.92
+- MOED.CA: score=8.87 buy_ready=False sector_rank=15 price=0.45 support=0.39 resistance=0.54 source=Yahoo Finance as_of=2026-11-21T22:00:00+00:00 freshness=FRESH RSI=46.15 liquidity=5013008.97 spike=0.35
+- MOIL.CA: score=10.01 buy_ready=False sector_rank=5 price=0.68 support=0.6 resistance=0.71 source=Yahoo Finance as_of=2026-11-21T22:00:00+00:00 freshness=FRESH RSI=66.01 liquidity=92340.75 spike=0.44
+- MOIN.CA: score=12.22 buy_ready=False sector_rank=15 price=30.34 support=25.7 resistance=35.5 source=Yahoo Finance as_of=2026-11-21T22:00:00+00:00 freshness=FRESH RSI=56.25 liquidity=5361624.15 spike=0.54
+- MOSC.CA: score=20.22 buy_ready=False sector_rank=15 price=268.35 support=198.01 resistance=308.0 source=Yahoo Finance as_of=2026-11-21T22:00:00+00:00 freshness=FRESH RSI=58.44 liquidity=26641788.61 spike=2.68
+- MPCI.CA: score=16.86 buy_ready=False sector_rank=15 price=331.26 support=238.6 resistance=382.0 source=Yahoo Finance as_of=2026-11-21T22:00:00+00:00 freshness=FRESH RSI=54.09 liquidity=77836827.01 spike=0.63
+- MPCO.CA: score=13.4 buy_ready=False sector_rank=21 price=1.85 support=1.55 resistance=2.58 source=Yahoo Finance as_of=2026-11-21T22:00:00+00:00 freshness=FRESH RSI=53.51 liquidity=60945298.19 spike=0.59
+- MPRC.CA: score=16.86 buy_ready=False sector_rank=15 price=36.51 support=27.0 resistance=40.7 source=Yahoo Finance as_of=2026-11-21T22:00:00+00:00 freshness=FRESH RSI=60.7 liquidity=20365751.69 spike=0.87
+- MTIE.CA: score=11.4 buy_ready=False sector_rank=20 price=6.26 support=6.05 resistance=7.72 source=Yahoo Finance as_of=2026-11-21T22:00:00+00:00 freshness=FRESH RSI=38.08 liquidity=14036310.23 spike=0.63
+- NAHO.CA: score=8.91 buy_ready=False sector_rank=15 price=0.12 support=0.12 resistance=0.13 source=Yahoo Finance as_of=2026-11-21T22:00:00+00:00 freshness=FRESH RSI=46.67 liquidity=52347.0 spike=3.98
+- NCCW.CA: score=13.86 buy_ready=False sector_rank=15 price=5.16 support=4.05 resistance=6.34 source=Yahoo Finance as_of=2026-11-21T22:00:00+00:00 freshness=FRESH RSI=48.65 liquidity=15204625.83 spike=0.77
+- NEDA.CA: score=5.99 buy_ready=False sector_rank=15 price=2.46 support=2.26 resistance=2.54 source=Yahoo Finance as_of=2026-11-21T22:00:00+00:00 freshness=FRESH RSI=50.0 liquidity=138495.54 spike=0.7
+- NHPS.CA: score=6.65 buy_ready=False sector_rank=15 price=54.85 support=50.0 resistance=69.97 source=Yahoo Finance as_of=2026-11-21T22:00:00+00:00 freshness=FRESH RSI=48.31 liquidity=2798008.12 spike=0.35
+- NINH.CA: score=9.11 buy_ready=False sector_rank=15 price=14.38 support=12.36 resistance=18.5 source=Yahoo Finance as_of=2026-11-21T22:00:00+00:00 freshness=FRESH RSI=46.76 liquidity=5258349.02 spike=0.47
+- NIPH.CA: score=15.28 buy_ready=False sector_rank=12 price=284.0 support=205.0 resistance=365.5 source=Yahoo Finance as_of=2026-11-21T22:00:00+00:00 freshness=FRESH RSI=50.44 liquidity=128512556.0 spike=0.75
+- OBRI.CA: score=6.62 buy_ready=False sector_rank=15 price=20.46 support=18.11 resistance=26.2 source=Yahoo Finance as_of=2026-11-21T22:00:00+00:00 freshness=FRESH RSI=37.93 liquidity=4763681.13 spike=0.58
+- OCDI.CA: score=14.38 buy_ready=False sector_rank=18 price=22.56 support=21.0 resistance=26.64 source=Yahoo Finance as_of=2026-11-21T22:00:00+00:00 freshness=FRESH RSI=48.43 liquidity=43391135.93 spike=1.49
+- OCPH.CA: score=10.15 buy_ready=False sector_rank=15 price=187.97 support=147.96 resistance=224.0 source=Yahoo Finance as_of=2026-11-21T22:00:00+00:00 freshness=FRESH RSI=52.63 liquidity=6175942.36 spike=1.06
+- ODIN.CA: score=14.52 buy_ready=False sector_rank=15 price=2.01 support=1.7 resistance=2.28 source=Yahoo Finance as_of=2026-11-21T22:00:00+00:00 freshness=FRESH RSI=46.67 liquidity=11270992.54 spike=1.33
+- OFH.CA: score=13.86 buy_ready=False sector_rank=15 price=0.68 support=0.61 resistance=0.81 source=Yahoo Finance as_of=2026-11-21T22:00:00+00:00 freshness=FRESH RSI=44.0 liquidity=16687145.09 spike=0.85
+- OIH.CA: score=12.07 buy_ready=False sector_rank=17 price=1.48 support=1.46 resistance=1.84 source=Yahoo Finance as_of=2026-11-21T22:00:00+00:00 freshness=FRESH RSI=35.09 liquidity=51739834.23 spike=1.22
+- OLFI.CA: score=10.38 buy_ready=False sector_rank=10 price=19.83 support=17.86 resistance=21.24 source=Yahoo Finance as_of=2026-11-21T22:00:00+00:00 freshness=FRESH RSI=59.63 liquidity=3234610.1 spike=0.36
+- ORAS.CA: score=5.0 buy_ready=False sector_rank=11 price=71.05 support=71.05 resistance=71.05 source=Yahoo Finance as_of=2026-11-21T22:00:00+00:00 freshness=FRESH RSI=50.0 liquidity=0.0 spike=0.0
+- ORHD.CA: score=13.4 buy_ready=False sector_rank=18 price=9.81 support=8.5 resistance=10.71 source=Yahoo Finance as_of=2026-11-21T22:00:00+00:00 freshness=FRESH RSI=52.78 liquidity=69814780.94 spike=0.7
+- ORWE.CA: score=18.45 buy_ready=False sector_rank=8 price=24.83 support=22.2 resistance=26.75 source=Yahoo Finance as_of=2026-11-21T22:00:00+00:00 freshness=FRESH RSI=48.43 liquidity=15807597.34 spike=0.66
+- PHAR.CA: score=15.28 buy_ready=False sector_rank=12 price=98.6 support=90.2 resistance=113.97 source=Yahoo Finance as_of=2026-11-21T22:00:00+00:00 freshness=FRESH RSI=48.9 liquidity=42351657.34 spike=0.58
+- PHDC.CA: score=13.4 buy_ready=False sector_rank=18 price=11.03 support=10.33 resistance=12.8 source=Yahoo Finance as_of=2026-11-21T22:00:00+00:00 freshness=FRESH RSI=55.53 liquidity=120799531.29 spike=1.0
+- PHTV.CA: score=4.62 buy_ready=False sector_rank=15 price=330.68 support=300.0 resistance=349.0 source=Yahoo Finance as_of=2026-11-21T22:00:00+00:00 freshness=FRESH RSI=82.73 liquidity=1905708.8 spike=1.43
+- POUL.CA: score=10.14 buy_ready=False sector_rank=10 price=7.03 support=7.01 resistance=10.4 source=Yahoo Finance as_of=2026-11-21T22:00:00+00:00 freshness=FRESH RSI=23.97 liquidity=83284257.83 spike=0.73
+- PRCL.CA: score=8.6 buy_ready=False sector_rank=6 price=16.81 support=16.65 resistance=23.06 source=Yahoo Finance as_of=2026-11-21T22:00:00+00:00 freshness=FRESH RSI=31.8 liquidity=14371255.17 spike=0.52
+- PRDC.CA: score=13.4 buy_ready=False sector_rank=18 price=6.03 support=5.08 resistance=7.2 source=Yahoo Finance as_of=2026-11-21T22:00:00+00:00 freshness=FRESH RSI=49.26 liquidity=13007530.53 spike=0.74
+- PRMH.CA: score=16.62 buy_ready=False sector_rank=15 price=2.06 support=1.7 resistance=2.66 source=Yahoo Finance as_of=2026-11-21T22:00:00+00:00 freshness=FRESH RSI=57.94 liquidity=14631660.47 spike=1.38
+- RACC.CA: score=9.88 buy_ready=False sector_rank=15 price=7.44 support=6.1 resistance=8.55 source=Yahoo Finance as_of=2026-11-21T22:00:00+00:00 freshness=FRESH RSI=54.59 liquidity=6020730.77 spike=0.95
+- RAKT.CA: score=3.94 buy_ready=False sector_rank=15 price=22.47 support=20.4 resistance=23.06 source=Yahoo Finance as_of=2026-11-21T22:00:00+00:00 freshness=FRESH RSI=87.5 liquidity=86824.08 spike=0.41
+- RAYA.CA: score=17.48 buy_ready=False sector_rank=9 price=5.67 support=5.02 resistance=6.33 source=Yahoo Finance as_of=2026-11-21T22:00:00+00:00 freshness=FRESH RSI=56.85 liquidity=28613388.9 spike=1.02
+- RMDA.CA: score=12.28 buy_ready=False sector_rank=12 price=4.93 support=4.5 resistance=5.72 source=Yahoo Finance as_of=2026-11-21T22:00:00+00:00 freshness=FRESH RSI=46.98 liquidity=21972634.55 spike=0.72
+- ROTO.CA: score=9.13 buy_ready=False sector_rank=15 price=29.66 support=25.0 resistance=36.8 source=Yahoo Finance as_of=2026-11-21T22:00:00+00:00 freshness=FRESH RSI=49.21 liquidity=5276513.97 spike=0.53
+- RREI.CA: score=8.1 buy_ready=False sector_rank=15 price=2.43 support=1.96 resistance=3.06 source=Yahoo Finance as_of=2026-11-21T22:00:00+00:00 freshness=FRESH RSI=38.26 liquidity=4244719.26 spike=0.36
+- RTVC.CA: score=0.86 buy_ready=False sector_rank=15 price=3.11 support=2.66 resistance=3.17 source=Yahoo Finance as_of=2026-11-21T22:00:00+00:00 freshness=FRESH RSI=79.25 liquidity=0.0 spike=0.0
+- RUBX.CA: score=12.86 buy_ready=False sector_rank=15 price=12.19 support=10.51 resistance=15.98 source=Yahoo Finance as_of=2026-11-21T22:00:00+00:00 freshness=FRESH RSI=44.91 liquidity=19378795.84 spike=0.36
+- SAUD.CA: score=21.98 buy_ready=False sector_rank=4 price=22.54 support=19.3 resistance=24.0 source=Yahoo Finance as_of=2026-11-21T22:00:00+00:00 freshness=FRESH RSI=64.83 liquidity=10593304.55 spike=0.48
+- SCEM.CA: score=21.58 buy_ready=False sector_rank=6 price=93.52 support=73.9 resistance=106.55 source=Yahoo Finance as_of=2026-11-21T22:00:00+00:00 freshness=FRESH RSI=65.83 liquidity=99169072.04 spike=1.99
+- SCFM.CA: score=8.18 buy_ready=False sector_rank=15 price=214.56 support=153.02 resistance=240.0 source=Yahoo Finance as_of=2026-11-21T22:00:00+00:00 freshness=FRESH RSI=48.9 liquidity=2322611.97 spike=0.6
+- SCTS.CA: score=4.56 buy_ready=False sector_rank=7 price=459.22 support=410.0 resistance=555.0 source=Yahoo Finance as_of=2026-11-21T22:00:00+00:00 freshness=FRESH RSI=35.19 liquidity=1033245.0 spike=0.2
+- SDTI.CA: score=10.84 buy_ready=False sector_rank=15 price=80.67 support=75.01 resistance=90.99 source=Yahoo Finance as_of=2026-11-21T22:00:00+00:00 freshness=FRESH RSI=43.96 liquidity=7985523.12 spike=0.43
+- SEIG.CA: score=4.84 buy_ready=False sector_rank=15 price=213.87 support=142.0 resistance=280.0 source=Yahoo Finance as_of=2026-11-21T22:00:00+00:00 freshness=FRESH RSI=46.14 liquidity=1983858.07 spike=0.18
+- SIPC.CA: score=12.86 buy_ready=False sector_rank=15 price=4.63 support=3.73 resistance=5.89 source=Yahoo Finance as_of=2026-11-21T22:00:00+00:00 freshness=FRESH RSI=51.23 liquidity=15936414.09 spike=0.38
+- SKPC.CA: score=9.12 buy_ready=False sector_rank=16 price=14.12 support=13.85 resistance=15.46 source=Yahoo Finance as_of=2026-11-21T22:00:00+00:00 freshness=FRESH RSI=33.82 liquidity=38433651.29 spike=1.14
+- SMFR.CA: score=5.72 buy_ready=False sector_rank=15 price=203.02 support=165.0 resistance=264.0 source=Yahoo Finance as_of=2026-11-21T22:00:00+00:00 freshness=FRESH RSI=59.58 liquidity=1867987.06 spike=0.24
+- SNFC.CA: score=12.62 buy_ready=False sector_rank=15 price=11.09 support=10.08 resistance=11.48 source=Yahoo Finance as_of=2026-11-21T22:00:00+00:00 freshness=FRESH RSI=61.29 liquidity=5760489.87 spike=0.53
+- SPIN.CA: score=8.15 buy_ready=False sector_rank=8 price=13.99 support=12.0 resistance=16.48 source=Yahoo Finance as_of=2026-11-21T22:00:00+00:00 freshness=FRESH RSI=51.55 liquidity=2702182.45 spike=0.51
+- SPMD.CA: score=8.16 buy_ready=False sector_rank=15 price=0.31 support=0.3 resistance=0.37 source=Yahoo Finance as_of=2026-11-21T22:00:00+00:00 freshness=FRESH RSI=35.85 liquidity=6300761.82 spike=0.42
+- SUGR.CA: score=18.14 buy_ready=False sector_rank=10 price=49.73 support=44.62 resistance=55.99 source=Yahoo Finance as_of=2026-11-21T22:00:00+00:00 freshness=FRESH RSI=54.09 liquidity=11682273.11 spike=0.54
+- SVCE.CA: score=13.86 buy_ready=False sector_rank=15 price=8.52 support=7.01 resistance=10.0 source=Yahoo Finance as_of=2026-11-21T22:00:00+00:00 freshness=FRESH RSI=50.38 liquidity=55542095.98 spike=0.93
+- SWDY.CA: score=15.06 buy_ready=False sector_rank=14 price=114.05 support=97.0 resistance=123.45 source=Yahoo Finance as_of=2026-11-21T22:00:00+00:00 freshness=FRESH RSI=57.04 liquidity=33823353.21 spike=0.61
+- TALM.CA: score=16.52 buy_ready=False sector_rank=7 price=20.09 support=17.0 resistance=21.5 source=Yahoo Finance as_of=2026-11-21T22:00:00+00:00 freshness=FRESH RSI=66.31 liquidity=10541162.81 spike=0.56
+- TMGH.CA: score=13.4 buy_ready=False sector_rank=18 price=79.0 support=76.5 resistance=86.95 source=Yahoo Finance as_of=2026-11-21T22:00:00+00:00 freshness=FRESH RSI=48.57 liquidity=183899755.0 spike=0.88
+- TRTO.CA: score=2.86 buy_ready=False sector_rank=15 price=0.06 support=0.05 resistance=0.06 source=Yahoo Finance as_of=2026-11-21T22:00:00+00:00 freshness=FRESH RSI=66.67 liquidity=3882.06 spike=0.75
+- UEFM.CA: score=5.3 buy_ready=False sector_rank=15 price=477.92 support=422.0 resistance=540.0 source=Yahoo Finance as_of=2026-11-21T22:00:00+00:00 freshness=FRESH RSI=65.08 liquidity=1443318.44 spike=0.74
+- UEGC.CA: score=13.86 buy_ready=False sector_rank=15 price=1.38 support=1.21 resistance=1.59 source=Yahoo Finance as_of=2026-11-21T22:00:00+00:00 freshness=FRESH RSI=47.92 liquidity=16061498.4 spike=0.54
+- UNIP.CA: score=7.51 buy_ready=False sector_rank=15 price=0.28 support=0.25 resistance=0.33 source=Yahoo Finance as_of=2026-11-21T22:00:00+00:00 freshness=FRESH RSI=48.51 liquidity=3651133.17 spike=0.57
+- UNIT.CA: score=-1.23 buy_ready=False sector_rank=18 price=14.35 support=14.16 resistance=19.0 source=Yahoo Finance as_of=2026-11-21T22:00:00+00:00 freshness=FRESH RSI=25.61 liquidity=2366975.16 spike=0.86
+- WCDF.CA: score=5.07 buy_ready=False sector_rank=15 price=496.28 support=450.56 resistance=565.0 source=Yahoo Finance as_of=2026-11-21T22:00:00+00:00 freshness=FRESH RSI=51.2 liquidity=1210923.2 spike=0.99
+- WKOL.CA: score=7.89 buy_ready=False sector_rank=15 price=160.62 support=145.33 resistance=275.8 source=Yahoo Finance as_of=2026-11-21T22:00:00+00:00 freshness=FRESH RSI=49.96 liquidity=4031240.64 spike=0.38
+- ZEOT.CA: score=22.86 buy_ready=False sector_rank=15 price=12.5 support=7.9 resistance=13.9 source=Yahoo Finance as_of=2026-11-21T22:00:00+00:00 freshness=FRESH RSI=66.24 liquidity=65844275.0 spike=5.06
+- ZMID.CA: score=13.4 buy_ready=False sector_rank=18 price=6.27 support=5.91 resistance=7.2 source=Yahoo Finance as_of=2026-11-21T22:00:00+00:00 freshness=FRESH RSI=46.67 liquidity=51347393.63 spike=0.66
 
 ## Backtesting Lite
-- ETRS.CA: 180d return=59.02%, max drawdown=-16.61%, MA20>MA50 days last20=1, as_of=2026-11-18T22:00:00+00:00
-- MOSC.CA: 180d return=82.74%, max drawdown=-37.28%, MA20>MA50 days last20=0, as_of=2026-11-18T22:00:00+00:00
-- ZEOT.CA: 180d return=68.85%, max drawdown=-38.04%, MA20>MA50 days last20=0, as_of=2026-11-18T22:00:00+00:00
+- EFIH.CA: 180d return=12.73%, max drawdown=-18.55%, MA20>MA50 days last20=1, as_of=2026-11-21T22:00:00+00:00
+- ZEOT.CA: 180d return=66.15%, max drawdown=-38.04%, MA20>MA50 days last20=0, as_of=2026-11-21T22:00:00+00:00
+- SAUD.CA: 180d return=22.51%, max drawdown=-22.66%, MA20>MA50 days last20=0, as_of=2026-11-21T22:00:00+00:00
 - These checks are historical context only, not a prediction or guarantee.
 
 ## Evidence
-- ETRS.CA: status=REJECTED_TICKER_MISMATCH latest=n/a age_days=n/a sources=0 expected=Egyptian Transport and Commercial Services Company S.A.E. summary=Evidence rejected for ETRS.CA: source text did not clearly match ETRS.CA / Egyptian Transport and Commercial Services Company S.A.E..
-- MOSC.CA: status=REJECTED_TICKER_MISMATCH latest=n/a age_days=n/a sources=0 expected=Misr Oils & Soap summary=Evidence rejected for MOSC.CA: source text did not clearly match MOSC.CA / Misr Oils & Soap.
-- ZEOT.CA: status=REJECTED_TICKER_MISMATCH latest=n/a age_days=n/a sources=0 expected=Extracted Oil & Derivatives Co. summary=Evidence rejected for ZEOT.CA: source text did not clearly match ZEOT.CA / Extracted Oil & Derivatives Co..
-- ETEL.CA: status=REJECTED_TICKER_MISMATCH latest=n/a age_days=n/a sources=0 expected=Telecom Egypt summary=Evidence rejected for ETEL.CA: source text did not clearly match ETEL.CA / Telecom Egypt.
-- EFID.CA: status=REJECTED_TICKER_MISMATCH latest=n/a age_days=n/a sources=0 expected=Edita Food Industries summary=Evidence rejected for EFID.CA: source text did not clearly match EFID.CA / Edita Food Industries.
 - EFIH.CA: status=REJECTED_TICKER_MISMATCH latest=n/a age_days=n/a sources=0 expected=E-Finance For Digital and Financial Investments summary=Evidence rejected for EFIH.CA: source text did not clearly match EFIH.CA / E-Finance For Digital and Financial Investments.
-- AJWA.CA: status=REJECTED_TICKER_MISMATCH latest=n/a age_days=n/a sources=0 expected=AJWA For Food Industries Co. Egypt summary=Evidence rejected for AJWA.CA: source text did not clearly match AJWA.CA / AJWA For Food Industries Co. Egypt.
-- SUGR.CA: status=REJECTED_TICKER_MISMATCH latest=n/a age_days=n/a sources=0 expected=Delta Sugar summary=Evidence rejected for SUGR.CA: source text did not clearly match SUGR.CA / Delta Sugar.
+- ZEOT.CA: status=REJECTED_TICKER_MISMATCH latest=n/a age_days=n/a sources=0 expected=Extracted Oil & Derivatives Co. summary=Evidence rejected for ZEOT.CA: source text did not clearly match ZEOT.CA / Extracted Oil & Derivatives Co..
+- SAUD.CA: status=REJECTED_TICKER_MISMATCH latest=n/a age_days=n/a sources=0 expected=Al Baraka Bank Egypt summary=Evidence rejected for SAUD.CA: source text did not clearly match SAUD.CA / Al Baraka Bank Egypt.
+- ETEL.CA: status=REJECTED_TICKER_MISMATCH latest=n/a age_days=n/a sources=0 expected=Telecom Egypt summary=Evidence rejected for ETEL.CA: source text did not clearly match ETEL.CA / Telecom Egypt.
+- LCSW.CA: status=REJECTED_TICKER_MISMATCH latest=n/a age_days=n/a sources=0 expected=Lecico Egypt summary=Evidence rejected for LCSW.CA: source text did not clearly match LCSW.CA / Lecico Egypt.
+- SCEM.CA: status=REJECTED_TICKER_MISMATCH latest=n/a age_days=n/a sources=0 expected=Sinai Cement summary=Evidence rejected for SCEM.CA: source text did not clearly match SCEM.CA / Sinai Cement.
+- CSAG.CA: status=REJECTED_TICKER_MISMATCH latest=n/a age_days=n/a sources=0 expected=Canal Shipping Agencies summary=Evidence rejected for CSAG.CA: source text did not clearly match CSAG.CA / Canal Shipping Agencies.
+- HRHO.CA: status=REJECTED_TICKER_MISMATCH latest=n/a age_days=n/a sources=0 expected=EFG Holding summary=Evidence rejected for HRHO.CA: source text did not clearly match HRHO.CA / EFG Holding.
 
 ## Warnings
 - OpenRouter API error: 404
-- Mubasher stock page returned no evidence titles for ETRS.CA.
-- No Yahoo or Mubasher evidence found for ETRS.CA.
-- Evidence rejected for ETRS.CA: source text did not clearly match ETRS.CA / Egyptian Transport and Commercial Services Company S.A.E..
-- Gemini grounding skipped because market regime is defensive; local fallback evidence used.
-- Mubasher stock page returned no evidence titles for MOSC.CA.
-- No Yahoo or Mubasher evidence found for MOSC.CA.
-- Evidence rejected for MOSC.CA: source text did not clearly match MOSC.CA / Misr Oils & Soap.
-- Mubasher stock page returned no evidence titles for ZEOT.CA.
-- No Yahoo or Mubasher evidence found for ZEOT.CA.
-- Evidence rejected for ZEOT.CA: source text did not clearly match ZEOT.CA / Extracted Oil & Derivatives Co..
-- Mubasher stock page returned no evidence titles for ETEL.CA.
-- No Yahoo or Mubasher evidence found for ETEL.CA.
-- Evidence rejected for ETEL.CA: source text did not clearly match ETEL.CA / Telecom Egypt.
-- Mubasher stock page returned no evidence titles for EFID.CA.
-- No Yahoo or Mubasher evidence found for EFID.CA.
-- Evidence rejected for EFID.CA: source text did not clearly match EFID.CA / Edita Food Industries.
 - Mubasher stock page returned no evidence titles for EFIH.CA.
 - No Yahoo or Mubasher evidence found for EFIH.CA.
 - Evidence rejected for EFIH.CA: source text did not clearly match EFIH.CA / E-Finance For Digital and Financial Investments.
-- Mubasher stock page returned no evidence titles for AJWA.CA.
-- No Yahoo or Mubasher evidence found for AJWA.CA.
-- Evidence rejected for AJWA.CA: source text did not clearly match AJWA.CA / AJWA For Food Industries Co. Egypt.
-- Mubasher stock page returned no evidence titles for SUGR.CA.
-- No Yahoo or Mubasher evidence found for SUGR.CA.
-- Evidence rejected for SUGR.CA: source text did not clearly match SUGR.CA / Delta Sugar.
+- Gemini grounding skipped because market regime is defensive; local fallback evidence used.
+- Mubasher stock page returned no evidence titles for ZEOT.CA.
+- No Yahoo or Mubasher evidence found for ZEOT.CA.
+- Evidence rejected for ZEOT.CA: source text did not clearly match ZEOT.CA / Extracted Oil & Derivatives Co..
+- Mubasher stock page returned no evidence titles for SAUD.CA.
+- No Yahoo or Mubasher evidence found for SAUD.CA.
+- Evidence rejected for SAUD.CA: source text did not clearly match SAUD.CA / Al Baraka Bank Egypt.
+- Mubasher stock page returned no evidence titles for ETEL.CA.
+- No Yahoo or Mubasher evidence found for ETEL.CA.
+- Evidence rejected for ETEL.CA: source text did not clearly match ETEL.CA / Telecom Egypt.
+- Mubasher stock page returned no evidence titles for LCSW.CA.
+- No Yahoo or Mubasher evidence found for LCSW.CA.
+- Evidence rejected for LCSW.CA: source text did not clearly match LCSW.CA / Lecico Egypt.
+- Mubasher stock page returned no evidence titles for SCEM.CA.
+- No Yahoo or Mubasher evidence found for SCEM.CA.
+- Evidence rejected for SCEM.CA: source text did not clearly match SCEM.CA / Sinai Cement.
+- Mubasher stock page returned no evidence titles for CSAG.CA.
+- No Yahoo or Mubasher evidence found for CSAG.CA.
+- Evidence rejected for CSAG.CA: source text did not clearly match CSAG.CA / Canal Shipping Agencies.
+- Mubasher stock page returned no evidence titles for HRHO.CA.
+- No Yahoo or Mubasher evidence found for HRHO.CA.
+- Evidence rejected for HRHO.CA: source text did not clearly match HRHO.CA / EFG Holding.
