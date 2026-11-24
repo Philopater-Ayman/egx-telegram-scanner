@@ -1,24 +1,24 @@
 # Provider Status
 
-Generated UTC: 2026-11-24T16:23:07.606325+00:00
-Generated Cairo: 2026-11-24 18:23
-- Scan phase: Pre-market risk check
-- Run timing: target 08:45 Cairo | generated Cairo 2026-11-24 18:23 | cron 45 5 * * 0-4
-- Trigger: scheduled cron=45 5 * * 0-4 mapped to pre_market; Cairo now 2026-11-24 18:20
+Generated UTC: 2026-11-24T17:35:55.809018+00:00
+Generated Cairo: 2026-11-24 19:35
+- Scan phase: Open liquidity confirmation
+- Run timing: target 09:15 Cairo | generated Cairo 2026-11-24 19:35 | cron 15 6 * * 0-4
+- Trigger: scheduled cron=15 6 * * 0-4 mapped to open_confirm; Cairo now 2026-11-24 19:34
 
 - Macro source: Market context unavailable
 - Macro freshness: MISSING
 - Macro trend: Unavailable
 - Market regime: EGX30 BEARISH / EGX70 BEARISH / sector breadth 4.76% / risk mode DEFENSIVE_NO_NEW_BUY
-- Market data: 185/185 tickers have tradeable current/delayed price data
-- Mubasher delayed current rows used: 0/185
-- Current/Yahoo technical mismatches blocked: 0/185
-- DirectFN public table health only, not trusted for action tickets: 259 rows | as_of=2026-11-24T16:21:04.749444+00:00 | error=none
-- Data quality issues: 5
+- Market data: 184/184 tickers have tradeable current/delayed price data
+- Mubasher delayed current rows used: 0/184
+- Current/Yahoo technical mismatches blocked: 0/184
+- DirectFN public table health only, not trusted for action tickets: 259 rows | as_of=2026-11-24T17:34:11.632988+00:00 | error=none
+- Data quality issues: 6
 - Evidence sources found: 0
 - AI narrative: OpenRouter ERROR (openai/gpt-oss-120b:free)
 - Telegram sent on latest run: True
-- Latest ticket id(s): 20261124T162307Z_HOLD_NONE
+- Latest ticket id(s): 20261124T173555Z_HOLD_NONE
 - Latest history write(s): /home/runner/work/egx-telegram-scanner/egx-telegram-scanner/trade_history.csv
 
 ## Warnings
@@ -27,6 +27,7 @@ Generated Cairo: 2026-11-24 18:23
 - ARVA.CA: No usable market data returned. Check Yahoo symbol or add a manual fallback row.
 - AXPH.CA: No usable market data returned. Check Yahoo symbol or add a manual fallback row.
 - BIOC.CA: No usable market data returned. Check Yahoo symbol or add a manual fallback row.
+- GTWL.CA: No usable market data returned. Check Yahoo symbol or add a manual fallback row.
 - Mubasher stock page returned no evidence titles for AJWA.CA.
 - No Yahoo or Mubasher evidence found for AJWA.CA.
 - Evidence rejected for AJWA.CA: source text did not clearly match AJWA.CA / AJWA For Food Industries Co. Egypt.
